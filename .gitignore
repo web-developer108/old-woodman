@@ -1,0 +1,21 @@
+# Node
+node_modules/
+dist/
+
+# Vite
+.vite
+.env
+.env.*
+
+# Strapi CMS
+old-woodman-cms/build/
+old-woodman-cms/.cache/
+old-woodman-cms/.tmp/
+old-woodman-cms/public/uploads/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
