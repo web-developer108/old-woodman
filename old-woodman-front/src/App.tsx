@@ -59,11 +59,10 @@ function App() {
         ) : (
           <ul>
             {products.map((product) => (
-              <li key={product.id}>
-                <strong>{product.attributes.name}</strong> — {product.attributes.price} ₸
-                <br/>
-                <small>{product.attributes.description}</small>
-              </li>
+              <div key={product.id}>
+                <h3>{product.attributes?.name ?? 'Без названия'}</h3>
+                <p>Цена: {product.attributes?.price ?? 'Не указана'}</p>
+              </div>
             ))}
           </ul>
         )}
