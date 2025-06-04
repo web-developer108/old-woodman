@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
 type Product = {
   id: number
-  attributes: {
-    name: string
-    price: number
-    description: string
-  }
+  name: string
+  price: number
+  description: string
+
 }
 
 function App() {
@@ -31,7 +31,6 @@ function App() {
         console.error('Ошибка при загрузке продуктов:', err)
       })
   }, [])
-
 
   return (
     <>
@@ -60,8 +59,9 @@ function App() {
           <ul>
             {products.map((product) => (
               <div key={product.id}>
-                <h3>{product.attributes?.name ?? 'Без названия'}</h3>
-                <p>Цена: {product.attributes?.price ?? 'Не указана'}</p>
+                <h3>{product.name}</h3>
+                <p>Цена: {product.price}</p>
+                <p>{product.description}</p>
               </div>
             ))}
           </ul>
