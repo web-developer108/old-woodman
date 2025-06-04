@@ -16,14 +16,22 @@ function App() {
   const [products, setProducts] = useState<Product[]>([])
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/products`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error('Ошибка запроса')
+        return res.json()
+      })
       .then((data) => {
-        setProducts(data.data)
+        if (Array.isArray(data.data)) {
+          setProducts(data.data)
+        } else {
+          console.warn('Неправильный формат данных:', data)
+        }
       })
       .catch((err) => {
         console.error('Ошибка при загрузке продуктов:', err)
       })
   }, [])
+
 
   return (
     <>
