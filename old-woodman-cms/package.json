@@ -12,7 +12,8 @@
     "start": "npx strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "render:start": "mkdir -p .tmp && npx strapi start"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.14.0",
