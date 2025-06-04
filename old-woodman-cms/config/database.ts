@@ -60,11 +60,25 @@ export default ({ env }) => {
   };
 };
 */
+// config/database.ts
 export default ({ env }) => ({
   connection: {
-    client: 'postgres',
-    connection: env('DATABASE_URL'),
-    useNullAsDefault: true,
+    client: env('DATABASE_CLIENT', 'postgres'),
+    connection: {
+      host: env('DATABASE_HOST'),
+      port: env.int('DATABASE_PORT'),
+      database: env('DATABASE_NAME'),
+      user: env('DATABASE_USERNAME'),
+      password: env('DATABASE_PASSWORD'),
+      ssl: env.bool('DATABASE_SSL') && {
+        rejectUnauthorized: false,
+      },
+    },
+    pool: {
+      min: 0,
+      max: 5,
+    },
   },
 });
+
 
