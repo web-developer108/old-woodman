@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import ruCommon from './locals/ru/common.json';
-import kkCommon from './locals/kk/common.json';
+import ruCommon from './locales/ru/common.json';
+import kkCommon from './locales/kk/common.json';
 
 
 i18n
