@@ -1,9 +1,8 @@
 import { lazy } from 'react';
 import type { RouteObject } from 'react-router-dom';
-import Temporary from '../pages/temporary/temporary';
 
-//const Home = lazy(() => import('../pages/temporary/temporary'));
-const Home = Temporary;
+const Home = lazy(() => import('../pages/temporary/temporary'));
+
 // Doors
 const DoorsOverview = lazy(() => import('../pages/temporary/temporary'));
 const Classica = lazy(() => import('../pages/temporary/temporary'));
