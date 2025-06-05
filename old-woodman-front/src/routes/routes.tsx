@@ -35,17 +35,22 @@ const routes: RouteObject[] = [
   // Doors
   { path: '/doors', element: <DoorsOverview /> },
   { path: '/doors/classica', element: <Classica /> },
+  { path: '/doors/classica/:id', element: <DoorCollectionItem /> },
   { path: '/doors/loft', element: <Loft /> },
+  { path: '/doors/loft/:id', element: <DoorCollectionItem /> },
   { path: '/doors/balcony', element: <Balcony /> },
-  { path: '/doors/:collectionId', element: <DoorCollectionItem /> },
+  { path: '/doors/balcony/:id', element: <DoorCollectionItem /> },
 
   // Furniture
   { path: '/furniture', element: <FurnitureOverview /> },
   { path: '/furniture/consoles', element: <Consoles /> },
+  { path: '/furniture/consoles/:id', element: <FurnitureCollectionItem /> },
   { path: '/furniture/wardrobes', element: <Wardrobes /> },
+  { path: '/furniture/wardrobes/:id', element: <FurnitureCollectionItem /> },
   { path: '/furniture/beds', element: <Beds /> },
+  { path: '/furniture/beds/:id', element: <FurnitureCollectionItem/> },
   { path: '/furniture/chairs', element: <Chairs /> },
-  { path: '/furniture/:collectionId', element: <FurnitureCollectionItem /> },
+  { path: '/furniture/chairs/:id', element: <FurnitureCollectionItem/> },
 
   // Other
   { path: '/facades', element: <Facades /> },
