@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  src: unquote("url('/fonts/NunitoSans-all.woff2')") format('woff2');
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: unquote("url('/fonts/Vollkorn-400.woff2')") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: unquote("url('/fonts/Vollkorn-500.woff2')") format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
 :root {
   --text-main-color: #222222;
   --text-light-color: #ffffff;
@@ -7,7 +29,7 @@
   --button-blue-color: #37aee2;
   --button-green-color: #25d366;
 
-  --background-gray-color : #f4f4f4;
+  --background-gray-color: #f4f4f4;
 
   --text-main-disabled-color: #a7a7a8;
   --text-grey-dark-color: #535353;
@@ -21,4 +43,17 @@
   --button-main-active-color: #ecb912;
   --button-main-disabled-color: #e2e2e2;
 
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main-color);
+  background-color: var(--text-light-color);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Vollkorn', serif;
+  font-weight: 500;
 }
