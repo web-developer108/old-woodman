@@ -1,18 +1,25 @@
 import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
-import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
+import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 
 const defaultMeta: MetaTag[] = [
   { name: 'description', content: 'Мебель на заказ от Old Woodman — стиль и качество' },
   { property: 'og:title', content: 'Old Woodman' },
-  { property: 'og:description', content: 'Изготовление мебели и дверей по индивидуальному заказу' },
-  { property: 'og:image', content: 'https://oldwoodman.kz/og-image.jpg' }//скорректировать
 ];
 
-export const SeoHead: React.FC<SeoHeadProps> = ({ title, meta = [], includeDefaults = true }) => {
-  const { i18n } = useTranslation();
+export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = true }) => {
+  const { t, i18n } = usePageTranslate();
+  const title = t('title');
+  const description = t('description', '');
 
-  const mergedMeta = includeDefaults ? [...defaultMeta, ...meta] : meta;
+  const mergedMeta: MetaTag[] = [
+    ...(includeDefaults ? defaultMeta : []),
+    { name: 'description', content: description },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    ...meta
+  ];
+
 
   return (
     <Helmet>
