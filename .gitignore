@@ -19,3 +19,4 @@ old-woodman-cms/public/uploads/
 # OS
 .DS_Store
 Thumbs.db
+.idea
