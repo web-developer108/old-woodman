@@ -8,7 +8,7 @@ type WhatsappIconProps = {
 };
 
 export const WhatsappIcon: React.FC<WhatsappIconProps> = ({
-  color = AppColors.background.gray,
+  color = AppColors.background.grey,
   size = '24',
 }) => {
   return (

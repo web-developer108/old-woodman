@@ -10,7 +10,7 @@ type TelegramIconProps = {
 
 export const TelegramIcon: React.FC<TelegramIconProps> = ({
   backgroundColor = AppColors.text.grey,
-  arrowColor = AppColors.background.gray,
+  arrowColor = AppColors.background.grey,
   size = '24',
 }) => {
   return (
