@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 
 type Product = {
   id: number
@@ -31,9 +32,14 @@ const Temporary=()=> {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-        </a>
+      <div style={{width:'200px'}}>
+          <div>
+          <ColorButton
+          label ='кнопка'
+          variant ='green'
+          icon = {<span> U </span>}
+          />
+          </div>
         <a href="https://react.dev" target="_blank">
         </a>
       </div>
