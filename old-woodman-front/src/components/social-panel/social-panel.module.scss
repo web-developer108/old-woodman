@@ -1,0 +1,14 @@
+.panel {
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  grid-template-rows: 48px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: 40px;
+
+    gap: 8px;
+  }
+}
