@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
-import { TelegramIcon } from '../../components/icons/telegramm-icon/telegramm-icon.tsx';
-import { AppColors } from '../../styles.ts';
+//import { TelegramIcon } from '../../components/icons/telegramm-icon/telegramm-icon.tsx';
+//import { AppColors } from '../../styles.ts';
+//import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
+import { InstagrammIcon } from '../../components/icons/instagramm-icon/instagramm-icon.tsx';
 
 type Product = {
   id: number
@@ -39,7 +41,7 @@ const Temporary=()=> {
           <ColorButton
           label ='кнопка'
           variant ='green'
-          icon = {<TelegramIcon backgroundColor={AppColors.text.light} arrowColor ={AppColors.button.green} size ='30'/>}
+          icon = {<InstagrammIcon/>}
           />
           </div>
         <a href="https://react.dev" target="_blank">

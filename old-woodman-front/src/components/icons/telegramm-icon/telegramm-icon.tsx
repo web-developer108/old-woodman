@@ -13,7 +13,6 @@ export const TelegramIcon: React.FC<TelegramIconProps> = ({
   arrowColor = AppColors.background.gray,
   size = '24',
 }) => {
-  console.log('backgroundColor', backgroundColor)
   return (
     <svg
       className={styles.icon}
