@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type FavoriteItem = { id: number };
+type FavoriteItem = { id:  string };
 
 interface FavoritesContextType {
   favorites: FavoriteItem[];
-  toggleFavorite: (id: number) => void;
-  isFavorite: (id: number) => boolean;
+  toggleFavorite: (id: string) => void;
+  isFavorite: (id:  string) => boolean;
 }
 
 const FavoritesContext = createContext<FavoritesContextType | null>(null);
@@ -36,7 +36,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(favorites));
   }, [favorites]);
 
-  const toggleFavorite = (id: number) => {
+  const toggleFavorite = (id:  string) => {
     setFavorites((prev) => {
       const exists = prev.some((item) => item.id === id);
       if (exists) {
@@ -47,7 +47,7 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     });
   };
 
-  const isFavorite = (id: number) => favorites.some((item) => item.id === id);
+  const isFavorite = (id:  string) => favorites.some((item) => item.id === id);
 
   return (
     <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
