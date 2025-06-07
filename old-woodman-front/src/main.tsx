@@ -6,6 +6,7 @@ import App from './App';
 import { DeviceProvider } from './hooks/device/device.tsx';
 import { CartProvider } from './hooks/cart/cart.tsx';
 import './styles.scss';
+import { FavoritesProvider } from './hooks/favorites/favorites.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <DeviceProvider>
           <CartProvider>
-            <App/>
+            <FavoritesProvider>
+              <App/>
+            </FavoritesProvider>
           </CartProvider>
         </DeviceProvider>
       </BrowserRouter>
