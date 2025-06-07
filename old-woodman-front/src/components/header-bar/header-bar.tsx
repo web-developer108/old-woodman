@@ -4,6 +4,7 @@ import { CartIcon } from '../icons/cart-icon/cart-icon.tsx';
 import { BurgerIcon } from '../icons/burger-icon/burger-icon.tsx';
 import { Logo } from '../logo/logo.tsx';
 import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from './language-switcher/language-switcher.tsx';
 import styles from './header-bar.module.scss'
 
 export const HeaderBar = () => {
@@ -28,7 +29,9 @@ export const HeaderBar = () => {
         </div>
         {/* ПРАВАЯ ЧАСТЬ */}
         <div className={styles.right}>
-          <div className={styles.lang}>Рус | Каз</div>
+          <div className={styles.lang}>
+            <LanguageSwitcher />
+          </div>
 
           {/* Кнопка "Связаться" — только на mobile */}
           <div className={styles.contactBtn}>
