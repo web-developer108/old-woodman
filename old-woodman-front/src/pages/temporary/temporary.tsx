@@ -6,7 +6,7 @@ import { InstagramIcon } from '../../components/icons/instagram-icon/instagram-i
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { AppColors } from '../../styles.ts';
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
-import { HeaderBar } from '../../components/heder-bar/header-bar.tsx';
+import { HeaderBar } from '../../components/header-bar/header-bar.tsx';
 
 type Product = {
   id: number

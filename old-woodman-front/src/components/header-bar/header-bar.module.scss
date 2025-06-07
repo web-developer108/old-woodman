@@ -1,0 +1,83 @@
+.header {
+  background-color: white;
+  border-bottom: 1px solid #e3e3e3;
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .logo {
+      /* font-family: 'Vollkorn';
+       font-size: 24px;*/
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      font-size: 16px;
+      line-height: 1.25;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      .link {
+        all: unset;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 500;
+
+        &.active {
+          text-decoration: underline;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .lang {
+      font-size: 14px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .contactBtn {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    .burger {
+
+    }
+
+  }
+}
