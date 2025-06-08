@@ -2,44 +2,91 @@
   background-color: var(--background-grey-color);
   padding: 54px 20px 46px;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     padding: 48px 10px;
   }
 
-  .content {
+  .social {
+    grid-column: 1;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
   }
 
-  h2 {
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
+  .formContainer {
+    display: grid;
+    grid-column: 2;
 
-  .form {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-bottom: 20px;
+    .form,
+    .successMessage {
+      grid-column: 1;
+      grid-row: 1;
+      transition: opacity 0.3s ease;
+      width: 100%;
 
-    input {
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      width: 200px;
+
+      &.hidden {
+        display: none;
+      }
     }
 
-    button {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: white;
-      font-weight: 500;
-      cursor: pointer;
+    .form {
+      display: grid;
+      grid-template-rows: 120px 56px 56px 60px;
+      gap: 10px;
+      justify-self: left;
+      max-width: 520px;
+
+      .message {
+        grid-row: 1;
+        border: 1px solid var(--text-main-color-25);
+        border-radius: 10px;
+        padding: 18px;
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-main-color-50);
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .phone {
+        grid-row: 2;
+        padding: 18px;
+        border-radius: 10px;
+        border: 1px solid var(--text-main-color-25);
+        max-width: 520px;
+        outline: none;
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-main-color-50);
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        grid-row: 3;
+      }
+      .info{
+        grid-row: 4;
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--text-grey-color);
+      }
+
     }
   }
 

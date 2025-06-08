@@ -1,0 +1,16 @@
+.phone{
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--text-main-color-25);
+  max-width: 520px;
+  outline: none;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-main-color-50);
+
+}
+.error{
+  @extend .phone;
+  color: red;
+}

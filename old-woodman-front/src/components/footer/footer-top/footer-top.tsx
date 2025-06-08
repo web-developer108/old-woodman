@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './footer-top.module.scss';
+import { ColorButton } from '../../buttons/color-button/color-button.tsx';
+import { PhoneInput } from '../../phone-input/phone-input.tsx';
 
 export const FooterTop = () => {
   const [message, setMessage] = useState('');
@@ -32,32 +34,43 @@ export const FooterTop = () => {
   }
   return (
     <div className={styles.footerTop}>
-      <div className={styles.content}>
+      <div className={styles.social}>
         <h2>Остались вопросы?<br/>Задавайте — мы ответим</h2>
+      </div>
+      <div className={styles.formContainer}>
 
-        {sent ? (
+        <form onSubmit={handleSubmit} className={`${styles.form} ${sent ? styles.hidden : ''}`}>
+          <textarea
+            className={styles.message}
+            placeholder="Введите сообщение"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            name="message"
+          />
+        {/*  <input
+            className={styles.phone}
+            type="tel"
+            placeholder="Номер телефона"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            name="phone"
+          />*/}
+          <PhoneInput
+            value={phone}
+            onChange={setPhone}
+          />
+          <ColorButton label = 'Отправить запрос' />
+          <div className={styles.info}>Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомилисьс политикой конфиденциальности и согласен на обработку персональных
+            данных.</div>
+        </form>
+        <div
+          className={`${styles.successMessage} ${!sent ? styles.hidden : ''}`}
+        >
+          <span className={styles.close} onClick={() => setSent(false)}>×</span>
           <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-        ) : (
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <input
-              type="text"
-              placeholder="Введите сообщение"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              name="message"
-            />
-            <input
-              type="tel"
-              placeholder="Номер телефона"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              name="phone"
-            />
-            <button type="submit">Отправить запрос</button>
-          </form>
-        )}
+        </div>
       </div>
     </div>
   );
