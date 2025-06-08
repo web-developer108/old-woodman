@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import styles from './footer-top.module.scss';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
+import { WhatsappIcon } from '../../icons/whatsapp-icon/whatsapp-icon.tsx';
+import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
+import { AppColors } from '../../../styles.ts';
+import styles from './footer-top.module.scss';
+import { CloseIcon } from '../../icons/close-icon/close-icon.tsx';
 
 export const FooterTop = () => {
   const [message, setMessage] = useState('');
@@ -34,9 +38,13 @@ export const FooterTop = () => {
   }
   return (
     <div className={styles.footerTop}>
-      <div className={styles.social}>
-        <h2>Остались вопросы?<br/>Задавайте — мы ответим</h2>
+      <h2 className={styles.title}>ОСТАЛИСЬ ЕЩЁ ВОПРОСЫ?<br/>ЗАДАВАЙТЕ — МЫ ОТВЕТИМ</h2>
+      <div className={styles.buttons}>
+        <ColorButton label='Перейти в чат WhattsApp' variant='green' icon={<WhatsappIcon/>}/>
+        <ColorButton label='Написать в телеграмм' variant='blue'
+                     icon={<TelegramIcon arrowColor={AppColors.button.blue} backgroundColor={AppColors.text.light}/>}/>
       </div>
+
       <div className={styles.formContainer}>
 
         <form onSubmit={handleSubmit} className={`${styles.form} ${sent ? styles.hidden : ''}`}>
@@ -48,28 +56,24 @@ export const FooterTop = () => {
             required
             name="message"
           />
-        {/*  <input
-            className={styles.phone}
-            type="tel"
-            placeholder="Номер телефона"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-            name="phone"
-          />*/}
           <PhoneInput
             value={phone}
             onChange={setPhone}
           />
-          <ColorButton label = 'Отправить запрос' />
-          <div className={styles.info}>Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомилисьс политикой конфиденциальности и согласен на обработку персональных
-            данных.</div>
+          <ColorButton label='Отправить вопрос'/>
+          <div className={styles.info}>Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомилисьс
+            политикой конфиденциальности и согласен на обработку персональных
+            данных.
+          </div>
         </form>
-        <div
-          className={`${styles.successMessage} ${!sent ? styles.hidden : ''}`}
-        >
-          <span className={styles.close} onClick={() => setSent(false)}>×</span>
+
+        <div className={`${styles.successMessage} ${!sent ? styles.hidden : ''}`}>
+          <div className={styles.close} onClick={() => setSent(false)}>
+            <CloseIcon/>
+          </div>
           <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+        <div className={styles.text}> ИЛИ
         </div>
       </div>
     </div>
