@@ -1,0 +1,32 @@
+.wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.marquee {
+  display: inline-flex;
+  gap: 60px;
+  animation: scroll-left linear infinite;
+}
+
+.marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 48px;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

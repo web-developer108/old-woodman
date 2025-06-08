@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { HeaderBar } from '../../components/header-bar/header-bar.tsx';
+import styles from './temporary.module.scss'
+import { FooterTop } from '../../components/footer/footer-top/footer-top.tsx';
 
 type Product = {
   id: number
@@ -32,7 +34,18 @@ const Temporary = () => {
   return (
     <>
       <HeaderBar></HeaderBar>
-     <div style={{height:'500px', fontSize:'48px'}}> Страница находится в стадии разработки </div>
+      <div className={styles.wrapper} style={{ height: '500px', fontSize: '48px' }}>
+        <div
+          className={styles.marquee}
+          style={{ animationDuration: `${20}s` }}
+        >
+          <span>Страница находится в стадии разработки</span>
+          <span>Бет әзірленуде</span>
+          <span>Страница находится в стадии разработки</span>
+          <span>Бет әзірленуде</span>
+
+        </div>
+      </div>
       <div style={{ marginTop: '2rem' }}>
         <h2>📦 Продукты из CMS:</h2>
         {products.length === 0 ? (
@@ -49,6 +62,7 @@ const Temporary = () => {
           </ul>
         )}
       </div>
+      <FooterTop></FooterTop>
     </>
   )
 }

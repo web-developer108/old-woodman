@@ -1,0 +1,64 @@
+.footerTop {
+  background-color: var(--background-grey-color);
+  padding: 54px 20px 46px;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr ;
+    padding: 48px 10px;
+  }
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .form {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    input {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+
+    a {
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #25d366; // WhatsApp green
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:last-child {
+        background-color: #0088cc; // Telegram blue
+      }
+    }
+  }
+}
