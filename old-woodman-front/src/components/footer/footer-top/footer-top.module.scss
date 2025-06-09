@@ -1,0 +1,158 @@
+.footerTop {
+  background-color: var(--background-grey-color);
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 514px 50%;
+  grid-template-rows: 54px 200px 171px;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 66px 24px 313px 62px 170px;
+    padding: 0 10px;
+  }
+
+  .title {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 36px;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  .buttons {
+    grid-column: 2;
+    width: 100%;
+    grid-row: 3;
+    max-width: 360px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    justify-self: left;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 6;
+      justify-self: center;
+      max-width: 520px;
+    }
+    @media (max-width: 525px) {
+      max-width: 390px;
+    }
+  }
+
+  .formContainer {
+    display: grid;
+    grid-column: 3;
+    grid-row: 2/span3;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 4;
+      justify-self: center
+    }
+    @media (max-width: 525px) {
+      max-width: 390px;
+    }
+
+    .form,
+    .successMessage {
+      grid-column: 1;
+      grid-row: 1;
+      transition: opacity 0.3s ease;
+      width: 100%;
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    .successMessage {
+      background-color: var(--text-light-color);
+      border: 1px solid var(--text-grey-color);
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 18px;
+      border-radius: 10px;
+      @media (max-width: 525px) {
+        max-width: 350px;
+      }
+    }
+
+    .form {
+      display: grid;
+      grid-template-rows: 120px 56px 56px 60px;
+      gap: 10px;
+      justify-self: left;
+      max-width: 520px;
+
+      .message {
+        grid-row: 1;
+        border: 1px solid var(--text-main-color-25);
+        border-radius: 10px;
+        padding: 18px;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-main-color-50);
+        max-width: 520px;
+        width: 100%;
+        resize: none;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .phone {
+        grid-row: 2;
+        padding: 18px;
+        border-radius: 10px;
+        border: 1px solid var(--text-main-color-25);
+        max-width: 520px;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-main-color-50);
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        grid-row: 3;
+      }
+
+      .info {
+        grid-row: 4;
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--text-grey-color);
+        @media (max-width: 1200px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .text {
+    display: none;
+    @media (max-width: 1200px) {
+      display: block;
+      grid-column: 1;
+      grid-row: 5;
+      justify-self: center;
+      font-family: Vollkorn, serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+}

@@ -1,0 +1,89 @@
+.header {
+  height: 80px;
+
+  @media (max-width: 500px) {
+    height: 126px;
+    margin-bottom: 14px;
+  }
+
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 500px) {
+      height: 126px;
+      align-items: flex-end;
+      padding: 8px 16px;
+    }
+
+    .logo {
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      font-size: 16px;
+      line-height: 1.25;
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
+
+      .link {
+        all: unset;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 500;
+
+        &.active {
+          text-decoration: underline;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .lang {
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+
+    .contactBtn {
+      display: none;
+
+      @media (max-width: 1200px) {
+        display: block;
+        width: 100px;
+        height: 40px;
+      }
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    .burger {
+
+    }
+
+  }
+}

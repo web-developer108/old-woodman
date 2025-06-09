@@ -1,0 +1,37 @@
+.button {
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+
+  &:active {
+    filter: brightness(0.9);
+  }
+
+  &.light {
+    background-color: var(--background-grey-color);
+    color: var(--text-main-color);
+  }
+
+  &.dark {
+    background-color: var(--text-main-color);
+    color: var(--text-light-color);
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .text {
+    white-space: nowrap;
+  }
+}
