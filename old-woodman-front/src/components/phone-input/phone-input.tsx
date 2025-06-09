@@ -14,7 +14,7 @@ const  {t} = useTranslation('common')
   };
 
   const digitsCount = value.replace(/\D/g, '').length;
-  const isInvalid = digitsCount < 12;
+  const isInvalid = digitsCount < 11;
 
   return (
       <input
