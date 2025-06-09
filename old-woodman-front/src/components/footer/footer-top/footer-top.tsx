@@ -7,8 +7,10 @@ import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { AppColors } from '../../../styles.ts';
 import styles from './footer-top.module.scss';
 import { CloseIcon } from '../../icons/close-icon/close-icon.tsx';
+import { useTranslation } from 'react-i18next';
 
 export const FooterTop = () => {
+  const { t } = useTranslation('common')
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
   const [sent, setSent] = useState(false);
@@ -38,10 +40,10 @@ export const FooterTop = () => {
   }
   return (
     <div className={styles.footerTop}>
-      <h2 className={styles.title}>ОСТАЛИСЬ ЕЩЁ ВОПРОСЫ?<br/>ЗАДАВАЙТЕ — МЫ ОТВЕТИМ</h2>
+      <h2 className={styles.title}>{t('footer.title1')}<br/>{t('footer.title2')}</h2>
       <div className={styles.buttons}>
-        <ColorButton label='Перейти в чат WhattsApp' variant='green' icon={<WhatsappIcon/>}/>
-        <ColorButton label='Написать в телеграмм' variant='blue'
+        <ColorButton label={t('footer.button.whatsapp')} variant='green' icon={<WhatsappIcon/>}/>
+        <ColorButton label={t('footer.button.telegram')} variant='blue'
                      icon={<TelegramIcon arrowColor={AppColors.button.blue} backgroundColor={AppColors.text.light}/>}/>
       </div>
 
@@ -50,7 +52,7 @@ export const FooterTop = () => {
         <form onSubmit={handleSubmit} className={`${styles.form} ${sent ? styles.hidden : ''}`}>
           <textarea
             className={styles.message}
-            placeholder="Введите сообщение"
+            placeholder={t('footer.placeholder.message')}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
@@ -60,11 +62,8 @@ export const FooterTop = () => {
             value={phone}
             onChange={setPhone}
           />
-          <ColorButton label='Отправить вопрос'/>
-          <div className={styles.info}>Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомилисьс
-            политикой конфиденциальности и согласен на обработку персональных
-            данных.
-          </div>
+          <ColorButton label={t('footer.button.main')}/>
+          <div className={styles.info}>{t('footer.text.politics')}</div>
         </form>
 
         <div className={`${styles.successMessage} ${!sent ? styles.hidden : ''}`}>
@@ -73,8 +72,7 @@ export const FooterTop = () => {
           </div>
           <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
         </div>
-        <div className={styles.text}> ИЛИ
-        </div>
+        <div className={styles.text}> {t('footer.text.or')}</div>
       </div>
     </div>
   );

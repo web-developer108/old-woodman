@@ -5,6 +5,14 @@
   "gifts-decor": "Сыйлықтар мен декор",
   "promotions": "Акциялар",
   "contacts": "Байланыс",
-  "connect": "Байланыс"
-
+  "connect": "Байланыс",
+  "footer.title1": "Сұрақтар қалды ма?",
+  "footer.title2": "Сұраңыз - біз жауап береміз",
+  "footer.button.whatsapp": "WhatsApp чатына өтіңіз",
+  "footer.button.telegram": "Жеделхатта жазыңыз",
+  "footer.placeholder.message": "Хабарламаны енгізіңіз",
+  "footer.placeholder.phone": "Телефон нөмірі",
+  "footer.button.main": "Сұрақ жіберу",
+  "footer.text.politics": "\"Сұрақ жіберу\" батырмасын басу арқылы сіз құпиялылық саясатымен танысқаныңызды растайсыз және дербес деректерді өңдеуге келісесіз.",
+  "footer.text.or": "НЕМЕСЕ"
 }
