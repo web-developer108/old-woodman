@@ -28,11 +28,11 @@ const FAQ = lazy(() => import('../pages/temporary/temporary'));
 const Info = lazy(() => import('../pages/temporary/temporary'));
 const Terms = lazy(() => import('../pages/temporary/temporary'));
 const Favorites = lazy(() => import('../pages/temporary/temporary'));
+const Privacy = lazy(() => import('../pages/temporary/temporary'));
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
 
-  // Doors
   { path: '/doors', element: <DoorsOverview /> },
   { path: '/doors/classica', element: <Classica /> },
   { path: '/doors/classica/:id', element: <DoorCollectionItem /> },
@@ -41,7 +41,6 @@ const routes: RouteObject[] = [
   { path: '/doors/balcony', element: <Balcony /> },
   { path: '/doors/balcony/:id', element: <DoorCollectionItem /> },
 
-  // Furniture
   { path: '/furniture', element: <FurnitureOverview /> },
   { path: '/furniture/consoles', element: <Consoles /> },
   { path: '/furniture/consoles/:id', element: <FurnitureCollectionItem /> },
@@ -52,7 +51,6 @@ const routes: RouteObject[] = [
   { path: '/furniture/chairs', element: <Chairs /> },
   { path: '/furniture/chairs/:id', element: <FurnitureCollectionItem/> },
 
-  // Other
   { path: '/facades', element: <Facades /> },
   { path: '/gifts', element: <Gifts /> },
   { path: '/promotions', element: <Promotions /> },
@@ -62,6 +60,7 @@ const routes: RouteObject[] = [
   { path: '/info', element: <Info /> },
   { path: '/terms', element: <Terms /> },
   { path: '/favorites', element: <Favorites /> },
+  { path: '/privacy-policy', element: <Privacy /> },
 ];
 
 export default routes;

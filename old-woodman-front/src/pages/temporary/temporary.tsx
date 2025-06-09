@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { HeaderBar } from '../../components/header-bar/header-bar.tsx';
 import styles from './temporary.module.scss'
 import { FooterTop } from '../../components/footer/footer-top/footer-top.tsx';
+import { FooterBottom } from '../../components/footer/footer-bottom/footer-bottom.tsx';
 
 type Product = {
   id: number
@@ -62,7 +63,8 @@ const Temporary = () => {
           </ul>
         )}
       </div>
-      <FooterTop></FooterTop>
+      <FooterTop/>
+      <FooterBottom/>
     </>
   )
 }
