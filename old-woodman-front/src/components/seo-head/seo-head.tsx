@@ -1,6 +1,6 @@
-import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 import { Helmet } from 'react-helmet-async';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 
 const defaultMeta: MetaTag[] = [
   { name: 'description', content: 'Мебель на заказ от Old Woodman — стиль и качество' },
@@ -20,10 +20,9 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = t
     ...meta
   ];
 
-
   return (
     <Helmet>
-      <html lang={i18n.language} />
+      <html lang={i18n.language}/>
       <title>{title}</title>
       {mergedMeta.map((m, i) => (
         <meta
@@ -32,7 +31,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = t
           content={m.content}
         />
       ))}
-      <link rel="icon" href="/favicon.svg" />
+      <link rel="icon" href="/favicon.svg"/>
     </Helmet>
   );
 };

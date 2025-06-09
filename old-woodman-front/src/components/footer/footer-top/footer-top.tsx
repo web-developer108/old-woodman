@@ -2,12 +2,12 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
+import { useTranslation } from 'react-i18next';
 import { WhatsappIcon } from '../../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { AppColors } from '../../../styles.ts';
-import styles from './footer-top.module.scss';
 import { CloseIcon } from '../../icons/close-icon/close-icon.tsx';
-import { useTranslation } from 'react-i18next';
+import styles from './footer-top.module.scss';
 
 export const FooterTop = () => {
   const { t } = useTranslation('common')

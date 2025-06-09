@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Logo } from '../../logo/logo.tsx';
 import { useTranslation } from 'react-i18next';
-import styles from './footer-bottom.module.scss';
+import { Logo } from '../../logo/logo.tsx';
 import { SocialPanel } from '../../social-panel/social-panel.tsx';
 import { FooterLanguageSelect } from '../footer-language-select/footer-language-select.tsx';
+import styles from './footer-bottom.module.scss';
 
 export const FooterBottom = () => {
   const { t } = useTranslation('common');
@@ -55,7 +55,6 @@ export const FooterBottom = () => {
       <div className={styles.select}>
         <FooterLanguageSelect/>
       </div>
-
     </div>
   )
 }

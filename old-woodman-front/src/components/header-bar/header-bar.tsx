@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { HeartIcon } from '../icons/heart-icon/heart-icon.tsx';
 import { CartIcon } from '../icons/cart-icon/cart-icon.tsx';
 import { BurgerIcon } from '../icons/burger-icon/burger-icon.tsx';
 import { Logo } from '../logo/logo.tsx';
-import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './language-switcher/language-switcher.tsx';
-import styles from './header-bar.module.scss'
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
+import styles from './header-bar.module.scss'
 
 export const HeaderBar = () => {
   const { t } = useTranslation('common');
@@ -32,15 +32,12 @@ export const HeaderBar = () => {
           <NavLink to="/promotions" className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
           <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>
         </div>
-        {/* ПРАВАЯ ЧАСТЬ */}
         <div className={styles.right}>
           <div className={styles.lang}>
             <LanguageSwitcher/>
           </div>
-
-          {/* Кнопка "Связаться" — только на mobile */}
           <div className={styles.contactBtn}>
-             <OvalButton text={t('connect') }/>
+            <OvalButton text={t('connect')}/>
           </div>
 
           <div className={styles.icons}>

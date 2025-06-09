@@ -8,7 +8,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: 48px 66px 24px 313px 62px 170px;
     padding: 0 10px;
-    min-width: 414px;
   }
 
   .title {
@@ -42,8 +41,10 @@
       justify-self: center;
       max-width: 520px;
     }
+    @media (max-width: 525px) {
+      max-width: 390px;
+    }
   }
-
 
   .formContainer {
     display: grid;
@@ -54,6 +55,9 @@
       grid-row: 4;
       justify-self: center
     }
+    @media (max-width: 525px) {
+      max-width: 390px;
+    }
 
     .form,
     .successMessage {
@@ -62,11 +66,11 @@
       transition: opacity 0.3s ease;
       width: 100%;
 
-
       &.hidden {
         display: none;
       }
     }
+
     .successMessage {
       background-color: var(--text-light-color);
       border: 1px solid var(--text-grey-color);
@@ -75,7 +79,11 @@
       font-weight: 400;
       padding: 18px;
       border-radius: 10px;
+      @media (max-width: 525px) {
+        max-width: 350px;
+      }
     }
+
     .form {
       display: grid;
       grid-template-rows: 120px 56px 56px 60px;
@@ -131,7 +139,6 @@
           font-size: 12px;
         }
       }
-
     }
   }
 

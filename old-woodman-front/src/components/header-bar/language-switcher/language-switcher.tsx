@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-//import i18n from 'i18next';
 import styles from './language-switcher.module.scss';
 
 const languages = ['ru', 'kk'];
