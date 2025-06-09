@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+//import { Helmet } from 'react-helmet-async';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 
@@ -21,7 +21,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = t
   ];
 
   return (
-    <Helmet>
+    <div>
       <html lang={i18n.language}/>
       <title>{title}</title>
       {mergedMeta.map((m, i) => (
@@ -32,6 +32,6 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = t
         />
       ))}
       <link rel="icon" href="/favicon.svg"/>
-    </Helmet>
+    </div>
   );
 };
