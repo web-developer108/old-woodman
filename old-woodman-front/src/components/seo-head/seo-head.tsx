@@ -10,10 +10,8 @@ const defaultMeta: MetaTag[] = [
 
 export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [], includeDefaults = true }) => {
   const { t, i18n } = usePageTranslate();
-  console.log('t', t)
   const title = t('title');
   const description = t('description');
-console.log('title', title, 'description', description )
   const mergedMeta: MetaTag[] = [
     ...(includeDefaults ? defaultMeta : []),
     { name: 'description', content: description },
@@ -30,7 +28,7 @@ console.log('title', title, 'description', description )
     const oldMeta = document.querySelectorAll('[data-seo-head]');
     oldMeta.forEach((el) => el.parentNode?.removeChild(el));
 
-      mergedMeta.forEach((m) => {
+    mergedMeta.forEach((m) => {
       const tag = document.createElement('meta');
       if (m.name) tag.setAttribute('name', m.name);
       else if (m.property) tag.setAttribute('property', m.property);

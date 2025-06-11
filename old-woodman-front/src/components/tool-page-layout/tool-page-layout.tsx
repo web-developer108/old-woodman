@@ -5,20 +5,18 @@ import { FooterTop } from '../footer/footer-top/footer-top.tsx';
 import { FooterBottom } from '../footer/footer-bottom/footer-bottom.tsx';
 
 interface ToolPageLayoutProps {
-  isFullFooter?:boolean
+  isFullFooter?: boolean
   children: React.ReactNode;
 }
 
-export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({isFullFooter = true, children }) => {
-
-
+export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({ isFullFooter = true, children }) => {
 
   return (
     <div>
-      <SeoHead />
+      <SeoHead/>
       <HeaderBar/>
-      <main>{children}</main>
-      {isFullFooter &&<FooterTop/>}
+      {children}
+      {isFullFooter && <FooterTop/>}
       <FooterBottom/>
     </div>
   );
