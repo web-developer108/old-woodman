@@ -7,9 +7,11 @@ import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon
 import { AppColors } from '../../styles.ts';
 import styles from './home.module.scss'
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
+import { useDevice } from '../../hooks/device/device.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
+  const { isDesktop } = useDevice();
 
   const contactInfo = (
     <>
@@ -51,6 +53,22 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <section className={styles.offer}>
+          <h2>{t(isDesktop ? 'article-title' : 'article-title-mobile').toUpperCase()}</h2>
+          <div className={styles.features}>
+            <ul className={styles.checklist}>
+              <li> {t(isDesktop ? 'article-text1' : 'article-text1-mobile')}</li>
+              <li> {t(isDesktop ? 'article-text2' : 'article-text2-mobile')}</li>
+              <li> {t(isDesktop ? 'article-text3' : 'article-text3-mobile')}</li>
+            </ul>
+            <ul className={styles.checklist}>
+              <li> {t(isDesktop ? 'article-text4' : 'article-text4-mobile')}</li>
+              <li> {t(isDesktop ? 'article-text5' : 'article-text5-mobile')}</li>
+              <li> {t(isDesktop ? 'article-text6' : 'article-text6-mobile')}</li>
+              {!isDesktop && <li> {t('article-text7-mobile')}</li>}
+            </ul>
+          </div>
+        </section>
 
       </div>
     </ToolPageLayout>

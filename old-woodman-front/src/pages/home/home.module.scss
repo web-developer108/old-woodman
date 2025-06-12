@@ -102,6 +102,7 @@
 
     }
   }
+
   %contactInformationBase {
     height: 56px;
     background-color: var(--background-grey-color);
@@ -110,6 +111,7 @@
     font-weight: 400;
     color: var(--text-grey-color);
   }
+
   .contactInformationDesktop {
     @extend %contactInformationBase;
     display: flex;
@@ -126,6 +128,7 @@
       display: none;
     }
   }
+
   .contactInformationMobile {
     @extend %contactInformationBase;
     overflow: hidden;
@@ -139,7 +142,7 @@
 
     .marqueeTrack {
       display: flex;
-     // width: 200%;
+      // width: 200%;
       position: absolute;
       top: 0;
       left: 0;
@@ -173,5 +176,74 @@
       transform: translateX(-50%);
     }
   }
+
+  .offer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 0 156px 20px;
+
+    @media (max-width: 1200px) {
+      padding-bottom: 96px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 28px;
+
+      @media (max-width: 1200px) {
+        max-width: 540px;
+        padding: 0 0 36px 0;
+        font-size: 32px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      @media (max-width: 810px) {
+        max-width: 390px;
+        font-size: 24px;
+      }
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 484px 1fr;
+      gap: 58px;
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          position: relative;
+          padding-left: 34px;
+          margin-bottom: 28px;
+          line-height: 1.5;
+          color: var(--text-main-color);
+          font-size: 18px;
+          font-weight: 300;
+
+          &::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--text-grey-color);
+            font-size: 16px;
+            line-height: 1.5;
+          }
+
+          @media (max-width: 810px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
 
 }
