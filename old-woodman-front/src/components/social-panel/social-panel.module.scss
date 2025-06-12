@@ -5,7 +5,7 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     grid-template-columns: repeat(3, 40px);
     grid-template-rows: 40px;
 
