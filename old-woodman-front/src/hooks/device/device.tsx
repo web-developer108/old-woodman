@@ -27,9 +27,9 @@ export const DeviceProvider = (props: React.PropsWithChildren) => {
   }, []);
 
   useEffect(() => {
-    if (screenWidth <= 768) {
+    if (screenWidth <= 810) {
       setDevice('mobile');
-    } else if (screenWidth <= 960) {
+    } else if (screenWidth <= 1200) {
       setDevice('tablet');
     } else {
       setDevice('desktop');

@@ -102,4 +102,76 @@
 
     }
   }
+  %contactInformationBase {
+    height: 56px;
+    background-color: var(--background-grey-color);
+
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-grey-color);
+  }
+  .contactInformationDesktop {
+    @extend %contactInformationBase;
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 12px 20px 46px;
+    @media (max-width: 1200px) {
+      margin: 10px 10px 46px;
+    }
+    @media (max-width: 810px) {
+      display: none;
+    }
+  }
+  .contactInformationMobile {
+    @extend %contactInformationBase;
+    overflow: hidden;
+    position: relative;
+    display: none;
+    margin: 10px 0 46px 0;
+    @media (max-width: 810px) {
+      display: block;
+      padding: 0;
+    }
+
+    .marqueeTrack {
+      display: flex;
+     // width: 200%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      animation: marquee 20s linear infinite;
+      width: auto;
+      min-width: 200%;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    .marqueeContent {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 60%;
+      height: 100%;
+      gap: 36px;
+      flex-shrink: 0;
+      white-space: nowrap
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
 }

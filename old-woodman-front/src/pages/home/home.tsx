@@ -9,7 +9,16 @@ import styles from './home.module.scss'
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
 
 const Home = () => {
-  const { t } = usePageTranslate()
+  const { t } = usePageTranslate();
+
+  const contactInfo = (
+    <>
+      <span>{t('info-line1')}</span>
+      <span>{t('info-line2')}</span>
+      <span>{t('info-line3')}</span>
+    </>
+  );
+
   return (
     <ToolPageLayout>
       <div className={styles.homePageContainer}>
@@ -26,9 +35,23 @@ const Home = () => {
             <CircleButton bgColor={AppColors.button.blue} icon={
               <TelegramIcon
                 arrowColor={AppColors.button.blue}
-                                                                              backgroundColor={AppColors.text.light}/>}/>
+                backgroundColor={AppColors.text.light}/>}/>
           </div>
         </section>
+        <div className={styles.contactInformationDesktop}>
+          {contactInfo}
+        </div>
+        <div className={styles.contactInformationMobile}>
+          <div className={styles.marqueeTrack}>
+            <div className={styles.marqueeContent}>
+              {contactInfo}
+            </div>
+            <div className={styles.marqueeContent} aria-hidden="true">
+              {contactInfo}
+            </div>
+          </div>
+        </div>
+
       </div>
     </ToolPageLayout>
   )
