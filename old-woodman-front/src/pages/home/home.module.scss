@@ -250,8 +250,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+ box-sizing: border-box;
 
-    %bgContent{
+    %bgContent {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -259,16 +260,25 @@
       height: 206px;
       padding: 30px 0 24px 32px;
       justify-content: space-between;
-      @media (max-width: 900px) {
+      @media (max-width: 950px) {
         width: 193px;
       }
-      h3{
-       font-size: 32px;
+      @media (max-width: 810px) {
+        height: 172px;
+        padding: 14px 0 10px 24px;
+      }
+      @media (max-width: 810px) {
+        padding: 16px 0 18px 14px;
+      }
+
+      h3 {
+        font-size: 32px;
         @media (max-width: 810px) {
           font-size: 24px;
         }
       }
-      div{
+
+      div {
         font-size: 18px;
         font-weight: 400;
         @media (max-width: 810px) {
@@ -276,6 +286,7 @@
         }
       }
     }
+
     %background {
       max-width: 1180px;
       height: 260px;
@@ -284,17 +295,23 @@
       background-repeat: no-repeat;
       position: relative;
       border-radius: 10px;
-      margin: 0 20px;
+      margin: 0 12px;
+      @media (max-width: 810px) {
+        height: 196px;
+      }
 
       .bgContentWrapper {
         @extend %bgContent;
-        h3, div{
+
+        h3, div {
           color: var(--text-light-color);
         }
       }
-      .bgContentWrapperLast{
+
+      .bgContentWrapperLast {
         @extend %bgContent;
-        h3, div{
+
+        h3, div {
           color: var(--text-main-color);
         }
       }
@@ -306,6 +323,10 @@
       @media (max-width: 810px) {
         background-image: url('@assets/images/home/background-brown-mobile.jpg');
       }
+      @media (max-width: 520px) {
+        background-image: url('@assets/images/home/background-brown-small.jpg');
+        background-position: left center;
+      }
     }
 
     .backgroundBlue {
@@ -313,6 +334,12 @@
       background-image: url('@assets/images/home/background-blue-desktop.jpg');
       @media (max-width: 810px) {
         background-image: url('@assets/images/home/background-blue-mobile.jpg');
+      }
+
+
+      @media (max-width: 520px) {
+        background-image: url('@assets/images/home/background-blue-small.jpg');
+        background-position: left center;
       }
     }
 
@@ -322,6 +349,12 @@
       @media (max-width: 810px) {
         background-image: url('@assets/images/home/background-yellow-mobile.jpg');
       }
+
+
+      @media (max-width: 520px) {
+        background-image: url('@assets/images/home/background-yellow-small.jpg');
+        background-position: left center;
+      }
     }
 
     .buttonContainer {
@@ -330,7 +363,7 @@
       left: 390px;
       width: 40px;
       height: 40px;
-      @media (max-width: 900px) {
+      @media (max-width: 950px) {
         left: 235px;
       }
       @media (max-width: 810px) {
@@ -340,6 +373,7 @@
         right: 24px;
       }
     }
+
   }
 
 }
