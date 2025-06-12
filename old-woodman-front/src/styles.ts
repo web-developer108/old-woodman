@@ -12,5 +12,7 @@ export const AppColors = {
   background: {
     grey: '#f4f4f4',
     circleButton : '#e3e3e3',
+    circleButton40 : ' rgba(0, 0, 0, 0.50)',
+
   },
 } as const;

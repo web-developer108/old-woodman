@@ -4,14 +4,17 @@ import { ColorButton } from '../../components/buttons/color-button/color-button.
 import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
-import { AppColors } from '../../styles.ts';
-import styles from './home.module.scss'
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
 import { useDevice } from '../../hooks/device/device.tsx';
+import { AppColors } from '../../styles.ts';
+import styles from './home.module.scss'
+import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { isDesktop } = useDevice();
+  const navigate = useNavigate();
 
   const contactInfo = (
     <>
@@ -68,6 +71,39 @@ const Home = () => {
               {!isDesktop && <li> {t('article-text7-mobile')}</li>}
             </ul>
           </div>
+        </section>
+        <section className={styles.navigation}>
+          <div className={styles.backgroundBrown}>
+            <div className={styles.bgContentWrapper}>
+              <h3>{t('background-title1').toUpperCase()}</h3>
+              <div>{t('background-description1')}</div>
+            </div>
+            <div className={styles.buttonContainer}>
+              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+                            onClick={() => {navigate('/doors'); /* window.scrollTo(0, 0);*/}}/>
+            </div>
+          </div>
+          <div className={styles.backgroundBlue}>
+            <div className={styles.bgContentWrapper}>
+              <h3>{t('background-title2').toUpperCase()}</h3>
+              <div>{t('background-description2')}</div>
+            </div>
+            <div className={styles.buttonContainer}>
+              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+                            onClick={() => navigate('/furniture')}/>
+            </div>
+          </div>
+          <div className={styles.backgroundYellow}>
+            <div className={styles.bgContentWrapperLast}>
+              <h3>{t('background-title3').toUpperCase()}</h3>
+              <div>{t('background-description3')}</div>
+            </div>
+            <div className={styles.buttonContainer}>
+              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+                            onClick={() => navigate('/facades')}/>
+            </div>
+          </div>
+
         </section>
 
       </div>
