@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
@@ -6,11 +8,9 @@ import { CircleButton } from '../../components/buttons/circle-button/circle-butt
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
 import { useDevice } from '../../hooks/device/device.tsx';
+import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './home.module.scss'
-import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
-import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
 
 const Home = () => {
   const { t } = usePageTranslate();

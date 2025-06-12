@@ -32,13 +32,14 @@ export const HeaderBar = () => {
           <NavLink to="/promotions" className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
           <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>
         </div>
+        <div className={styles.contactBtn}>
+          <OvalButton text={t('connect')}/>
+        </div>
         <div className={styles.right}>
           <div className={styles.lang}>
             <LanguageSwitcher/>
           </div>
-          <div className={styles.contactBtn}>
-            <OvalButton text={t('connect')}/>
-          </div>
+
 
           <div className={styles.icons}>
             <HeartIcon/> <span>{favorites.length}</span>

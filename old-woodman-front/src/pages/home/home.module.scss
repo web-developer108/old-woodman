@@ -259,7 +259,7 @@
       height: 206px;
       padding: 30px 0 24px 32px;
       justify-content: space-between;
-      @media (max-width: 810px) {
+      @media (max-width: 900px) {
         width: 193px;
       }
       h3{
@@ -330,6 +330,9 @@
       left: 390px;
       width: 40px;
       height: 40px;
+      @media (max-width: 900px) {
+        left: 235px;
+      }
       @media (max-width: 810px) {
         top: auto;
         left: auto;
