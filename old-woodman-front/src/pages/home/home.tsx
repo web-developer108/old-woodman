@@ -10,11 +10,13 @@ import { AppColors } from '../../styles.ts';
 import styles from './home.module.scss'
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { isDesktop } = useDevice();
   const navigate = useNavigate();
+  const navigationRef = useRef<HTMLElement | null>(null);
 
   const contactInfo = (
     <>
@@ -32,7 +34,11 @@ const Home = () => {
             <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
             <div className={styles.description}>{t('hero.description')}</div>
             <div className={styles.buttonWrapper}>
-              <ColorButton label={t('hero.button')} icon={<ArrowBottomIcon/>}/>
+              <ColorButton label={t('hero.button')}
+                           icon={<ArrowBottomIcon/>}
+                           onClick={() => {
+                             navigationRef.current?.scrollIntoView({ behavior: 'smooth' });
+                           }}/>
             </div>
           </div>
           <div className={styles.circleButtons}>
@@ -72,7 +78,7 @@ const Home = () => {
             </ul>
           </div>
         </section>
-        <section className={styles.navigation}>
+        <section ref={navigationRef} className={styles.navigation}>
           <div className={styles.backgroundBrown}>
             <div className={styles.bgContentWrapper}>
               <h3>{t('background-title1').toUpperCase()}</h3>
