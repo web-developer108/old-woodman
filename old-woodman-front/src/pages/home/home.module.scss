@@ -379,10 +379,64 @@
     }
 
   }
-  .carpentry{
+
+  .carpentry {
     width: 100%;
-    display: grid;
+    margin: 156px 0;
     background-color: var(--background-grey-color);
+
+    .carpentryContainer {
+      max-width: 1180px;
+      width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 70px 54px 24px 72px 48px 232px 56px 262px 68px;
+      column-gap: 95px;
+
+      .carpentryTitle{
+        grid-column: 1;
+        grid-row: 2 / span 3;
+        font-size: 36px;
+        max-width: 347px;
+        line-height: 1.5;
+      }
+      .carpentryQuote{
+        grid-column: 2;
+        grid-row: 2;
+        font-family: 'Vollkorn', serif;
+        font-size: 18px;
+        font-weight: 400;
+        display: block;
+        max-width: 340px;
+        margin-bottom: 24px ;
+        color: var(--text-grey-color);
+        padding-left: 48px;
+
+      }
+      .carpentryButton{
+        grid-column: 2;
+        grid-row: 4;
+        max-width: 386px;
+        padding-left: 48px;
+
+      }
+      .carpentryInfo1{
+        grid-column: 1;
+        grid-row: 6/span 3 ;
+      }
+      .carpentryInfo2{
+        grid-column: 2;
+        grid-row: 6;
+      }
+      .carpentryInfo3{
+        grid-column: 2;
+        grid-row: 8;
+      }
+
+
+    }
+
   }
 
 }

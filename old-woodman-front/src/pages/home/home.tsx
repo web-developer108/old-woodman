@@ -11,6 +11,11 @@ import useDevice from '../../hooks/device/use-device.ts';
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './home.module.scss'
+import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
+import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
+import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
+import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
+import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -113,6 +118,42 @@ const Home = () => {
           </div>
         </section>
         <section className={styles.carpentry}>
+          <div className={styles.carpentryContainer}>
+            <h2 className={styles.carpentryTitle}>{t('carpentry-title').toUpperCase()} </h2>
+            <div className={styles.carpentryQuote}>
+              <span><i>{t('carpentry-italic')}</i></span>
+            </div>
+            <div className={styles.carpentryButton}>
+                <ColorButton icon={<ArrowTopRightIcon/>} label={t('carpentry-button')}></ColorButton>
+              </div>
+              <div className={styles.carpentryInfo1}>
+                <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
+                  {<>
+                    <div>{t('carpentry-text1.1')}</div>
+                    <div>{t('carpentry-text1.2')}</div>
+                    <div>{t('carpentry-text1.3')}</div>
+                  </>
+                  }
+                </MarkedInfo>
+              </div>
+              <div className={styles.carpentryInfo2}>
+                <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
+                  {
+                    <div>{t('carpentry-text2')}</div>
+
+                  }
+                </MarkedInfo>
+              </div>
+              <div className={styles.carpentryInfo3}>
+                <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
+                  {
+                    <div>{t('carpentry-text3')}</div>
+
+                  }
+                </MarkedInfo>
+              </div>
+
+            </div>
 
         </section>
 

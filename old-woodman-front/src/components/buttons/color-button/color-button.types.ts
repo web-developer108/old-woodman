@@ -7,4 +7,5 @@ export type ColorButtonProps = {
   variant?: ColorButtonVariant;
   icon?: React.ReactNode;
   onClick?: () => void;
+  disabled?:boolean;
 };
