@@ -39,21 +39,12 @@
     --button-green-color: #25d366;
 
     --background-grey-color: #f4f4f4;
+    --background-brown-color: #69423a;
+    --background-blue-color: #4384c0;
+    --background-yellow-color: #ffe0a8;
+    --background-orange-color: #e38535;
     --background-circle-button-color: #e3e3e3;
     --background-circle-button-color-40: rgba(0, 0, 0, 0.50);
-
-
-    --text-main-disabled-color: #a7a7a8;
-    --text-grey-dark-color: #535353;
-    --text-error-dark-color: #5f2120;
-    --text-warning-dark-color: #663c00;
-    --text-success-dark-color: #1e4620;
-
-    --icon-color: #c07001;
-
-    --button-main-hover-color: #efc333;
-    --button-main-active-color: #ecb912;
-    --button-main-disabled-color: #e2e2e2;
 
 }
 
