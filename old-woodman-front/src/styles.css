@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url("@assets/fonts/NunitoSans-all.woff2") format('woff2');
+    font-weight: 300 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('@assets/fonts/Vollkorn-400.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('@assets/fonts/Vollkorn-Italic.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('@assets/fonts/Vollkorn-500.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+}
+
+:root {
+    --text-main-color: #222222;
+    --text-main-color-25: rgba(34, 34, 34, 0.25);
+    --text-main-color-50: rgba(34, 34, 34, 0.50);
+    --text-light-color: #ffffff;
+    --text-grey-color: #666666;
+
+    --button-main-color: #ffc85d;
+    --button-blue-color: #37aee2;
+    --button-green-color: #25d366;
+
+    --background-grey-color: #f4f4f4;
+    --background-circle-button-color: #e3e3e3;
+    --background-circle-button-color-40: rgba(0, 0, 0, 0.50);
+
+
+    --text-main-disabled-color: #a7a7a8;
+    --text-grey-dark-color: #535353;
+    --text-error-dark-color: #5f2120;
+    --text-warning-dark-color: #663c00;
+    --text-success-dark-color: #1e4620;
+
+    --icon-color: #c07001;
+
+    --button-main-hover-color: #efc333;
+    --button-main-active-color: #ecb912;
+    --button-main-disabled-color: #e2e2e2;
+
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-main-color);
+    background-color: var(--text-light-color);
+    margin: 0;
+    min-width: 335px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Vollkorn', serif;
+    font-weight: 500;
+    margin: 0;
+}

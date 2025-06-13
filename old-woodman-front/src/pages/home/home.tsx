@@ -7,7 +7,7 @@ import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-import { useDevice } from '../../hooks/device/device.tsx';
+import useDevice from '../../hooks/device/use-device.ts';
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './home.module.scss'
