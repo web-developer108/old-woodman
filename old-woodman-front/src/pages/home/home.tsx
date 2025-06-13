@@ -86,7 +86,9 @@ const Home = () => {
             </div>
             <div className={styles.buttonContainer}>
               <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
-                            onClick={() => {navigate('/doors'); /* window.scrollTo(0, 0);*/}}/>
+                            onClick={() => {
+                              navigate('/doors'); /* window.scrollTo(0, 0);*/
+                            }}/>
             </div>
           </div>
           <div className={styles.backgroundBlue}>
@@ -109,6 +111,8 @@ const Home = () => {
                             onClick={() => navigate('/facades')}/>
             </div>
           </div>
+        </section>
+        <section className={styles.carpentry}>
 
         </section>
 
