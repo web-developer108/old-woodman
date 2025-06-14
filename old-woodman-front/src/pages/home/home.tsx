@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import 'simplebar-react/dist/simplebar.min.css';
+import SimpleBar from 'simplebar-react';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
@@ -10,12 +12,18 @@ import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon
 import useDevice from '../../hooks/device/use-device.ts';
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
-import styles from './home.module.scss'
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
 import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
 import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
 import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
 import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
+import gallery1 from '@assets/images/home/gallery1.jpg'
+import gallery2 from '@assets/images/home/gallery2.jpg'
+import gallery3 from '@assets/images/home/gallery3.jpg'
+import gallery4 from '@assets/images/home/gallery4.jpg'
+import gallery5 from '@assets/images/home/gallery5.jpg'
+import styles from './home.module.scss'
+import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -30,7 +38,17 @@ const Home = () => {
       <span>{t('info-line3')}</span>
     </>
   );
-
+  const galleryImages = [
+    { src: gallery1, alt: 'Lamp' },
+    { src: gallery2, alt: 'Door and sofa' },
+    { src: gallery3, alt: 'Sofa' },
+    { src: gallery4, alt: 'Door' },
+    { src: gallery5, alt: 'Interior' },
+    { src: gallery2, alt: 'Door and sofa' },
+    { src: gallery3, alt: 'Sofa' },
+    { src: gallery4, alt: 'Door' },
+    { src: gallery5, alt: 'Interior' },
+  ];
   return (
     <ToolPageLayout>
       <div className={styles.homePageContainer}>
@@ -155,6 +173,26 @@ const Home = () => {
 
             </div>
 
+        </section>
+        <section className={styles.gallery}>
+          <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
+          <div className={styles.galleryDescription}>{t('gallery-description')}</div>
+
+          <SimpleBar className={styles.galleryWrapper} autoHide={false}>
+            <div className={styles.galleryTrack}>
+              {galleryImages.map((img, index) => (
+                <img
+                  key={index}
+                  src={img.src}
+                  alt={img.alt}
+                  className={styles.galleryImage}
+                />
+              ))}
+            </div>
+          </SimpleBar>
+
+          <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
+          <SocialPanel/>
         </section>
 
       </div>

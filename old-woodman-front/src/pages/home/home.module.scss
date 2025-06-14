@@ -406,10 +406,6 @@
         grid-template-rows: 72px max-content max-content 72px  max-content 48px  max-content 48px max-content 48px 56px 72px;
         max-width: 100%;
       }
-      @media (max-width: 810px) {
-        // grid-template-columns: 12px 1fr 212px;
-
-      }
 
       .carpentryTitle {
         grid-column: 1;
@@ -468,9 +464,7 @@
           padding-left: 0;
         }
         @media (max-width: 417px) {
-
           width: 100%;
-
         }
 
       }
@@ -504,10 +498,87 @@
           max-width: 100%;
         }
       }
-
-
     }
-
   }
 
+  .gallery {
+    max-width: 1180px;
+    margin: 0 auto 156px;
+    @media (max-width: 1200px) {
+      padding: 0 24px;
+    }
+    @media (max-width: 1200px) {
+      padding: 0 14px;
+    }
+
+    .galleryTitle {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 24px;
+      @media (max-width: 810px) {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+    }
+
+    .galleryDescription {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 36px;
+      @media (max-width: 810px) {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+
+    .galleryWrapper {
+      padding-bottom: 20px;
+      position: relative;
+
+      .galleryTrack {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        grid-template-rows: repeat(2, auto);
+        gap: 12px;
+        position: relative;
+        height: 584px;
+
+        @media (max-width: 1200px) {
+        grid-template-rows: repeat(2, 182px);
+          height: 372px;
+          gap: 8px;
+        }
+        .galleryImage {
+          width: auto;
+          border-radius: 10px;
+          object-fit: cover;
+          @media (max-width: 1200px) {
+            max-height: 182px;
+          }
+          &:first-child {
+            max-height: 100%;
+            grid-row: span 2;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+
+
+    .social {
+      font-size: 18px;
+      text-align: center;
+      color: var(--text-grey-color);
+      margin-top: 35px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      @media (max-width: 810px) {
+        font-size: 14px;
+
+      }
+    }
+  }
 }
