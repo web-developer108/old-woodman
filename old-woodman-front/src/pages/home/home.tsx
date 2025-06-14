@@ -25,6 +25,7 @@ import gallery5 from '@assets/images/home/gallery5.jpg'
 import styles from './home.module.scss'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { Accordion } from '../../components/accordion/accordion.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -197,6 +198,9 @@ const Home = () => {
         </section>
         <section className={styles.textInfo}>
           <TextInfo/>
+        </section>
+        <section>
+          <Accordion/>
         </section>
 
       </div>
