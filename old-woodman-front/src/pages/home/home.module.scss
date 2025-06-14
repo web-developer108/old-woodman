@@ -384,6 +384,14 @@
     width: 100%;
     margin: 156px 0;
     background-color: var(--background-grey-color);
+    @media (max-width: 1200px) {
+      padding: 0 24px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 810px) {
+      padding: 0 12px;
+    }
 
     .carpentryContainer {
       max-width: 1180px;
@@ -393,15 +401,37 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 70px 54px 24px 72px 48px 232px 56px 262px 68px;
       column-gap: 95px;
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 72px max-content max-content 72px  max-content 48px  max-content 48px max-content 48px 56px 72px;
+        max-width: 100%;
+      }
+      @media (max-width: 810px) {
+        // grid-template-columns: 12px 1fr 212px;
 
-      .carpentryTitle{
+      }
+
+      .carpentryTitle {
         grid-column: 1;
         grid-row: 2 / span 3;
         font-size: 36px;
         max-width: 347px;
         line-height: 1.5;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 2;
+          max-width: 100%;
+          justify-self: center;
+          text-align: center;
+        }
+        @media (max-width: 810px) {
+          font-size: 24px;
+
+        }
+
       }
-      .carpentryQuote{
+
+      .carpentryQuote {
         grid-column: 2;
         grid-row: 2;
         font-family: 'Vollkorn', serif;
@@ -409,29 +439,70 @@
         font-weight: 400;
         display: block;
         max-width: 340px;
-        margin-bottom: 24px ;
+        margin-bottom: 24px;
         color: var(--text-grey-color);
         padding-left: 48px;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 3;
+          max-width: 100%;
+          text-align: center;
+          margin-bottom: 0;
+        }
+        @media (max-width: 810px) {
+          font-size: 14px;
 
+        }
       }
-      .carpentryButton{
+
+      .carpentryButton {
         grid-column: 2;
         grid-row: 4;
         max-width: 386px;
         padding-left: 48px;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 11;
+          width: 386px;
+          justify-self: center;
+          padding-left: 0;
+        }
+        @media (max-width: 417px) {
+
+          width: 100%;
+
+        }
 
       }
-      .carpentryInfo1{
+
+      .carpentryInfo1 {
         grid-column: 1;
-        grid-row: 6/span 3 ;
+        grid-row: 6/span 3;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 5;
+          max-width: 100%;
+        }
       }
-      .carpentryInfo2{
+
+      .carpentryInfo2 {
         grid-column: 2;
         grid-row: 6;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 7;
+          max-width: 100%;
+        }
       }
-      .carpentryInfo3{
+
+      .carpentryInfo3 {
         grid-column: 2;
         grid-row: 8;
+        @media (max-width: 1200px) {
+          grid-column: 1;
+          grid-row: 9;
+          max-width: 100%;
+        }
       }
 
 
