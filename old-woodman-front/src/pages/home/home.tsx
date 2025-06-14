@@ -24,6 +24,7 @@ import gallery4 from '@assets/images/home/gallery4.jpg'
 import gallery5 from '@assets/images/home/gallery5.jpg'
 import styles from './home.module.scss'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -142,36 +143,36 @@ const Home = () => {
               <span><i>{t('carpentry-italic')}</i></span>
             </div>
             <div className={styles.carpentryButton}>
-                <ColorButton icon={<ArrowTopRightIcon/>} label={t('carpentry-button')}></ColorButton>
-              </div>
-              <div className={styles.carpentryInfo1}>
-                <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
-                  {<>
-                    <div>{t('carpentry-text1.1')}</div>
-                    <div>{t('carpentry-text1.2')}</div>
-                    <div>{t('carpentry-text1.3')}</div>
-                  </>
-                  }
-                </MarkedInfo>
-              </div>
-              <div className={styles.carpentryInfo2}>
-                <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
-                  {
-                    <div>{t('carpentry-text2')}</div>
-
-                  }
-                </MarkedInfo>
-              </div>
-              <div className={styles.carpentryInfo3}>
-                <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
-                  {
-                    <div>{t('carpentry-text3')}</div>
-
-                  }
-                </MarkedInfo>
-              </div>
-
+              <ColorButton icon={<ArrowTopRightIcon/>} label={t('carpentry-button')}></ColorButton>
             </div>
+            <div className={styles.carpentryInfo1}>
+              <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
+                {<>
+                  <div>{t('carpentry-text1.1')}</div>
+                  <div>{t('carpentry-text1.2')}</div>
+                  <div>{t('carpentry-text1.3')}</div>
+                </>
+                }
+              </MarkedInfo>
+            </div>
+            <div className={styles.carpentryInfo2}>
+              <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
+                {
+                  <div>{t('carpentry-text2')}</div>
+
+                }
+              </MarkedInfo>
+            </div>
+            <div className={styles.carpentryInfo3}>
+              <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
+                {
+                  <div>{t('carpentry-text3')}</div>
+
+                }
+              </MarkedInfo>
+            </div>
+
+          </div>
 
         </section>
         <section className={styles.gallery}>
@@ -193,6 +194,9 @@ const Home = () => {
 
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
+        </section>
+        <section className={styles.textInfo}>
+          <TextInfo/>
         </section>
 
       </div>

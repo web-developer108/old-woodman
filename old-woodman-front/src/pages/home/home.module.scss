@@ -422,9 +422,7 @@
         }
         @media (max-width: 810px) {
           font-size: 24px;
-
         }
-
       }
 
       .carpentryQuote {
@@ -504,10 +502,10 @@
   .gallery {
     max-width: 1180px;
     margin: 0 auto 156px;
-    @media (max-width: 1200px) {
+    @media (max-width: 1240px) {
       padding: 0 24px;
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 810px) {
       padding: 0 14px;
     }
 
@@ -580,5 +578,23 @@
 
       }
     }
+  }
+  .textInfo{
+    background-color: var(--background-grey-color);
+    margin: 0 auto 156px;
+    max-width: 1180px;
+    border-radius: 10px;
+    padding: 65px;
+    box-sizing: border-box;
+    @media (max-width: 1240px) {
+      padding: 48px 24px;
+      margin: 0 24px 96px 24px;
+    }
+    @media (max-width: 810px) {
+      padding: 48px 14px;
+    }
+
+
+
   }
 }
