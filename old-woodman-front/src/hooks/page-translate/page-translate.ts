@@ -9,6 +9,5 @@ const getNamespaceFromPath = (pathname: string): string => {
 export const usePageTranslate = (customNs?: string) => {
   const location = useLocation();
   const namespace = customNs || getNamespaceFromPath(location.pathname);
-console.log('namespace', namespace)
   return useTranslation(namespace);
 };
