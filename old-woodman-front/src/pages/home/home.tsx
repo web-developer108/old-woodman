@@ -115,7 +115,7 @@ const Home = () => {
             <div className={styles.buttonContainer}>
               <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
                             onClick={() => {
-                              navigate('/doors'); /* window.scrollTo(0, 0);*/
+                              navigate('/doors');
                             }}/>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Home = () => {
               <ColorButton
                 icon={<ArrowTopRightIcon/>}
                 label={t('carpentry-button')}
-                onClick = {() => showModal(<Contacts/>)}
+                onClick={() => showModal(<Contacts/>)}
               ></ColorButton>
             </div>
             <div className={styles.carpentryInfo1}>
