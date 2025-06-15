@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
+import { useModal } from '../../../hooks/modal/use-modal.ts';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
-import { useTranslation } from 'react-i18next';
 import { WhatsappIcon } from '../../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
+import { Feedback } from '../../modal-windows/feedback/feedback.tsx';
 import { AppColors } from '../../../styles.ts';
-import { CloseIcon } from '../../icons/close-icon/close-icon.tsx';
 import styles from './footer-top.module.scss';
 
 export const FooterTop = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common');
+  const { showModal } = useModal();
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
-  const [sent, setSent] = useState(false);
+ // const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,26 +32,37 @@ export const FooterTop = () => {
       'RwBMdTUy5fFSOOCk-'//поменять на настройки заказчика
     )
       .then(() => {
-        setSent(true);
         setMessage('');
         setPhone('');
       })
       .catch((error) => {
         console.error('Ошибка отправки:', error);
       });
+    showModal(<Feedback/>)
   }
   return (
     <div className={styles.footerTop}>
       <h2 className={styles.title}>{t('footer.title1')}<br/>{t('footer.title2')}</h2>
       <div className={styles.buttons}>
-        <ColorButton label={t('footer.button.whatsapp')} variant='green' icon={<WhatsappIcon/>}/>
-        <ColorButton label={t('footer.button.telegram')} variant='blue'
-                     icon={<TelegramIcon arrowColor={AppColors.button.blue} backgroundColor={AppColors.text.light}/>}/>
+        <a href="https://wa.me/77081826004"
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+          <ColorButton label={t('footer.button.whatsapp')} variant='green' icon={<WhatsappIcon/>}/>
+        </a>
+        <a href="https://t.me/oldwoodmankz"
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+          <ColorButton label={t('footer.button.telegram')} variant='blue'
+                       icon={<TelegramIcon arrowColor={AppColors.button.blue}
+                                           backgroundColor={AppColors.text.light}/>}/>
+        </a>
       </div>
 
       <div className={styles.formContainer}>
 
-        <form onSubmit={handleSubmit} className={`${styles.form} ${sent ? styles.hidden : ''}`}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <textarea
             className={styles.message}
             placeholder={t('footer.placeholder.message')}
@@ -62,18 +75,11 @@ export const FooterTop = () => {
             value={phone}
             onChange={setPhone}
           />
-          <ColorButton label={t('footer.button.main')}/>
+          <ColorButton label={t('footer.button.main')} />
           <div className={styles.info}>{t('footer.text.politics')}</div>
         </form>
-
-        <div className={`${styles.successMessage} ${!sent ? styles.hidden : ''}`}>
-          <div className={styles.close} onClick={() => setSent(false)}>
-            <CloseIcon/>
-          </div>
-          <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-        </div>
-        <div className={styles.text}> {t('footer.text.or')}</div>
       </div>
+      <div className={styles.text}> {t('footer.text.or').toUpperCase()}</div>
     </div>
   );
 };

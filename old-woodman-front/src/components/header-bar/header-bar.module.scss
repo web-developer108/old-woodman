@@ -1,6 +1,5 @@
 .header {
   height: 80px;
-
   @media (max-width: 500px) {
     height: 126px;
     margin-bottom: 14px;
@@ -68,6 +67,7 @@
         display: block;
         width: 100px;
         height: 40px;
+        margin: 0 auto;
       }
     }
 

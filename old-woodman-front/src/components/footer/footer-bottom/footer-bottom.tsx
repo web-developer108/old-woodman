@@ -29,24 +29,24 @@ export const FooterBottom = () => {
       <div className={styles.order}>
         <h3>{t('footer.order')}</h3>
         <nav className={styles.navigation}>
-          <Link to="/doors" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('footer.doors')}</Link>
+          <Link to="/doors" className={styles.items}>{t('footer.doors')}</Link>
           <Link to="/furniture" className={styles.items}
-                onClick={() => window.scrollTo(0, 0)}>{t('footer.furniture')}</Link>
-          <Link to="/facades" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('footer.panels')}</Link>
-          <Link to="/gifts" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('footer.decor')}</Link>
-          <Link to="/promotions" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('promotions')}</Link>
+          >{t('footer.furniture')}</Link>
+          <Link to="/facades" className={styles.items}>{t('footer.panels')}</Link>
+          <Link to="/gifts" className={styles.items}>{t('footer.decor')}</Link>
+          <Link to="/promotions" className={styles.items}>{t('promotions')}</Link>
         </nav>
       </div>
       <div className={styles.helpful}>
         <h3>{t('footer.helpful')}</h3>
         <nav className={styles.navigation}>
-          <div className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('footer.questions')}</div>
+          <div className={styles.items}>{t('footer.questions')}</div>
           <Link to="/info" className={styles.items}
-                onClick={() => window.scrollTo(0, 0)}>{t('footer.info')}</Link>
-          <Link to="/terms" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('footer.terms')}</Link>
+          >{t('footer.info')}</Link>
+          <Link to="/terms" className={styles.items}>{t('footer.terms')}</Link>
           <Link to="/privacy-policy" className={styles.items}
-                onClick={() => window.scrollTo(0, 0)}>{t('footer.privacy')}</Link>
-          <Link to="/contacts" className={styles.items} onClick={() => window.scrollTo(0, 0)}>{t('contacts')}</Link>
+          >{t('footer.privacy')}</Link>
+          <Link to="/contacts" className={styles.items}>{t('contacts')}</Link>
         </nav>
       </div>
       <div className={styles.social}>

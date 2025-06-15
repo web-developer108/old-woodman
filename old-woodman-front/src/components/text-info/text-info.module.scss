@@ -1,0 +1,77 @@
+.textContainer {
+  background-color: var(--background-grey-color);
+  max-width: 1036px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  .textInfoTitle {
+    font-size: 36px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    @media (max-width: 1200px) {
+      text-align: center;
+      padding: 0 150px;
+    }
+    @media (max-width: 810px) {
+      font-size: 24px;
+      padding: 0;
+      margin-bottom: 36px;
+    }
+  }
+
+  .textInfoLabel {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    @media (max-width: 1200px) {
+      padding-left: 24px;
+    }
+  }
+
+  ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 112px;
+    max-height: 200px;
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 100%;
+    }
+
+    li {
+      max-width: 506px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.2;
+      @media (max-width: 1200px) {
+        max-width: 100%;
+      }
+
+    }
+
+    .text1 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .text2 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .text3 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .textInfoButton {
+    max-width: 386px;
+    @media (max-width: 1200px) {
+      margin: 48px auto 0;
+    }
+  }
+}

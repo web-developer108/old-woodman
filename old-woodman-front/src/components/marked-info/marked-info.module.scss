@@ -1,0 +1,35 @@
+.infoContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: 24px 1fr;
+  color: var(--text-grey-color);
+  font-size: 18px;
+  line-height: 1.5;
+
+  @media (max-width: 810px) {
+    font-size: 14px;
+  }
+
+  .icon {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: left;
+  }
+
+  .title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .text {
+    grid-column: 2;
+    grid-row: 2;
+    font-weight: 300;
+
+    > div {
+      margin-top: 24px;
+    }
+  }
+
+}
