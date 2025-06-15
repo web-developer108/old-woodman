@@ -461,8 +461,9 @@
           justify-self: center;
           padding-left: 0;
         }
-        @media (max-width: 417px) {
-          width: 100%;
+        @media (max-width: 420px) {
+          max-width: 100%;
+          width: 320px;
         }
 
       }

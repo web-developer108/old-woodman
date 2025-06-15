@@ -26,11 +26,14 @@ import styles from './home.module.scss'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { Contacts } from '../../components/modal-windows/contacts/contacts.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { isDesktop } = useDevice();
   const navigate = useNavigate();
+  const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
 
   const contactInfo = (
@@ -144,7 +147,11 @@ const Home = () => {
               <span><i>{t('carpentry-italic')}</i></span>
             </div>
             <div className={styles.carpentryButton}>
-              <ColorButton icon={<ArrowTopRightIcon/>} label={t('carpentry-button')}></ColorButton>
+              <ColorButton
+                icon={<ArrowTopRightIcon/>}
+                label={t('carpentry-button')}
+                onClick = {() => showModal(<Contacts/>)}
+              ></ColorButton>
             </div>
             <div className={styles.carpentryInfo1}>
               <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
