@@ -1,0 +1,30 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--text-grey-color);
+  @media (max-width: 810px) {
+    font-size: 14px;
+  }
+
+.breadcrumbLink {
+  text-decoration: none;
+  color: var(--text-grey-color);
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  margin: 0 8px;
+  color: var(--text-grey-color);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-grey-color);
+}
+}

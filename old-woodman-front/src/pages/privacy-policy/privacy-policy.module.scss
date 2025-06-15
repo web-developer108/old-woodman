@@ -1,0 +1,40 @@
+.policyContainer {
+  width: 100%;
+  height: auto;
+
+  .titleContainer {
+    height: 248px;
+    background-color: var(--background-grey-color);
+    margin: 0 20px 58px 20px;
+    box-sizing: border-box;
+    @media (max-width: 810px) {
+      height: 196px;
+      margin-bottom: 24px;
+    }
+    .mainHeader {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 100%;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      width: 951px;
+      margin: 0 auto;
+      padding: 57px 0;
+      vertical-align: center;
+      @media (max-width: 1200px) {
+        font-size: 36px;
+        //padding: 57px 40px;
+        width: 90%;
+      }
+      @media (max-width: 810px) {
+        font-size: 24px;
+      }
+    }
+
+  }
+  .policyContent{
+    max-width: 1180px;
+    margin: 0 auto;
+
+  }
+}
