@@ -29,18 +29,16 @@
 }
 
 .item {
-  // height: 80px;
-  // vertical-align: center;
-  //  border: 1px solid #ddd;
+
   border-radius: 10px;
   background-color: var(--background-grey-color);
-  //  margin-bottom: 12px;
-  // overflow: hidden;
   transition: all 0.3s ease;
   margin-bottom: 10px;
 }
 
 .question {
+  color: var(--text-main-color);
+  background-color: var(--background-grey-color);
   width: 100%;
   padding: 24px;
   font-weight: 400;
@@ -56,6 +54,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  box-shadow: none;
   @media (max-width: 810px) {
     font-size: 14px;
     height: 64px;
@@ -83,7 +82,7 @@
 }
 
 .answer {
-  padding: 0 20px;
+  padding: 0 20px 7px;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.5;
