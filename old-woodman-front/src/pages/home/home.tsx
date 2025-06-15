@@ -199,7 +199,7 @@ const Home = () => {
         <section className={styles.textInfo}>
           <TextInfo/>
         </section>
-        <section>
+        <section className={styles.questions}>
           <Accordion/>
         </section>
 

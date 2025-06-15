@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
-import styles from './accirdion.module.scss';
+import styles from './accordion.module.scss';
 import { useTranslation } from 'react-i18next';
 
-
 export const Accordion = () => {
-  const {t} = useTranslation('common')
+  const { t } = useTranslation('common')
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   const items = Array.from({ length: 8 }, (_, i) => {
@@ -16,7 +15,6 @@ export const Accordion = () => {
     };
   });
 
-
   const toggleItem = (index: number) => {
     setOpenIndices((prev) =>
       prev.includes(index)
@@ -26,7 +24,7 @@ export const Accordion = () => {
   };
   return (
     <div className={styles.faqContainer}>
-      <h2 className={styles.title}>Часто задаваемые вопросы</h2>
+      <h2 className={styles.title}>{t('accordion.title').toUpperCase()}</h2>
       <ul className={styles.list}>
         {items.map((item, index) => (
           <li key={index} className={`${styles.item} ${openIndices.includes(index) ? styles.open : ''}`}>
