@@ -15,7 +15,6 @@ export const FooterTop = () => {
   const { showModal } = useModal();
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
- // const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
