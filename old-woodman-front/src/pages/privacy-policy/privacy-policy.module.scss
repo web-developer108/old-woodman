@@ -1,0 +1,109 @@
+.policyContainer {
+  width: 100%;
+  height: auto;
+
+  .titleContainer {
+    height: 248px;
+    background-color: var(--background-grey-color);
+    margin: 0 20px 58px 20px;
+    @media (max-width: 810px) {
+      height: 196px;
+      margin:0 12px 24px 12px;
+    }
+
+    .mainHeader {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 100%;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      width: 951px;
+      margin: 0 auto;
+      padding: 57px 0;
+      vertical-align: center;
+      @media (max-width: 1200px) {
+        font-size: 36px;
+        width: 90%;
+      }
+      @media (max-width: 810px) {
+        font-size: 24px;
+      }
+    }
+
+  }
+
+  .policyContent {
+    max-width: 1180px;
+    margin: 0 auto;
+    @media (max-width: 1200px) {
+      max-width: 100%;
+      margin: 0 20px;
+    }
+    @media (max-width: 810px) {
+      margin: 0 12px;
+    }
+
+    .hierarchicalList {
+      counter-reset: main-section;
+      list-style: none;
+      padding-left: 0;
+
+      > li {
+        counter-increment: main-section;
+        counter-reset: subsection;
+        margin-bottom: 15px;
+        font-family: Vollkorn, serif;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 150%;
+        letter-spacing: 0;
+        @media (max-width: 1200px) {
+          font-size: 32px;
+        }
+        @media (max-width: 810px) {
+          font-size: 24px;
+        }
+
+        > div {
+          font-family: Nunito Sans, serif;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 150%;
+          letter-spacing: 0;
+        }
+
+        ol {
+          counter-reset: subsection;
+          list-style: none;
+          padding-left: 56px;
+          margin-top: 5px;
+          font-family: Nunito Sans, sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 150%;
+          letter-spacing: 0;
+          >li{
+            margin-bottom: 20px;
+          }
+          > li::before {
+            counter-increment: subsection;
+            content: counter(main-section) "." counter(subsection) ". "; /* 1.1., 2.1. */
+          }
+        }
+      }
+
+      > li::before {
+        content: counter(main-section) ". ";
+      }
+
+    }
+
+    .copyright {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0;
+      margin: 112px 0;
+    }
+  }
+}

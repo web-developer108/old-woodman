@@ -28,7 +28,7 @@ const FAQ = lazy(() => import('../pages/temporary/temporary'));
 const Info = lazy(() => import('../pages/temporary/temporary'));
 const Terms = lazy(() => import('../pages/temporary/temporary'));
 const Favorites = lazy(() => import('../pages/temporary/temporary'));
-const Privacy = lazy(() => import('../pages/temporary/temporary'));
+const Privacy = lazy(() => import('../pages/privacy-policy/privacy-policy'));
 const Ordered = lazy(() => import('../pages/temporary/temporary'));
 
 const routes: RouteObject[] = [
