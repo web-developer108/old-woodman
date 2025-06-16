@@ -8,7 +8,7 @@
     height: 964px;
     margin: 0 20px;
     background-color: var(--text-grey-color);
-    background-image: url('@assets/images/home/hero-large.jpg');
+    background-image: url('../../assets/images/home/hero-large.jpg');
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
       border-radius: 0;
     }
     @media (max-width: 1200px) {
-      background-image: url('@assets/images/home/hero-medium.jpg');
+      background-image: url('../../assets/images/home/hero-medium.jpg');
     }
     @media (max-width: 810px) {
       height: 864px;
@@ -320,43 +320,43 @@
 
     .backgroundBrown {
       @extend %background;
-      background-image: url('@assets/images/home/background-brown-desktop.jpg');
+      background-image: url('../../assets/images/home/background-brown-desktop.jpg');
       background-color: var(--background-brown-color);
       @media (max-width: 810px) {
-        background-image: url('@assets/images/home/background-brown-mobile.jpg');
+        background-image: url('../../assets/images/home/background-brown-mobile.jpg');
       }
       @media (max-width: 520px) {
-        background-image: url('@assets/images/home/background-brown-small.jpg');
+        background-image: url('../../assets/images/home/background-brown-small.jpg');
         background-position: left center;
       }
     }
 
     .backgroundBlue {
       @extend %background;
-      background-image: url('@assets/images/home/background-blue-desktop.jpg');
+      background-image: url('../../assets/images/home/background-blue-desktop.jpg');
       background-color: var(--background-blue-color);
       @media (max-width: 810px) {
-        background-image: url('@assets/images/home/background-blue-mobile.jpg');
+        background-image: url('../../assets/images/home/background-blue-mobile.jpg');
       }
 
 
       @media (max-width: 520px) {
-        background-image: url('@assets/images/home/background-blue-small.jpg');
+        background-image: url('../../assets/images/home/background-blue-small.jpg');
         background-position: left center;
       }
     }
 
     .backgroundYellow {
       @extend %background;
-      background-image: url('@assets/images/home/background-yellow-desktop.jpg');
+      background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
       background-color: var(--background-yellow-color);
       @media (max-width: 810px) {
-        background-image: url('@assets/images/home/background-yellow-mobile.jpg');
+        background-image: url('../../assets/images/home/background-yellow-mobile.jpg');
       }
 
 
       @media (max-width: 520px) {
-        background-image: url('@assets/images/home/background-yellow-small.jpg');
+        background-image: url('../../assets/images/home/background-yellow-small.jpg');
         background-position: left center;
       }
     }
