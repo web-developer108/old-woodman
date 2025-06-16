@@ -9,9 +9,30 @@ import styles from './social-panel.module.scss';
 export const SocialPanel: React.FC = () => {
   return (
     <div className={styles.panel}>
-      <CircleButton icon={<TelegramIcon />} />
-      <CircleButton icon={<WhatsappIcon color = {AppColors.text.grey} />} />
-      <CircleButton icon={<InstagramIcon />}/>
+      <a
+        href="https://t.me/old_woodman"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+      >
+        <CircleButton icon={<TelegramIcon/>}/>
+      </a>
+      <a
+        href="https://wa.me/77081826004"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+      >
+        <CircleButton icon={<WhatsappIcon color={AppColors.text.grey}/>}/>
+      </a>
+      <a
+        href="https://www.instagram.com/old.woodman/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <CircleButton icon={<InstagramIcon/>}/>
+      </a>
     </div>
   );
 };
