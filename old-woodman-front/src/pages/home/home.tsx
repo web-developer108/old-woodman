@@ -70,11 +70,26 @@ const Home = () => {
             </div>
           </div>
           <div className={styles.circleButtons}>
-            <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
-            <CircleButton bgColor={AppColors.button.blue} icon={
-              <TelegramIcon
-                arrowColor={AppColors.button.blue}
-                backgroundColor={AppColors.text.light}/>}/>
+            <a
+              href="https://wa.me/77081826004"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+            </a>
+            <a
+              href="https://wa.me/77081826004"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <CircleButton bgColor={AppColors.button.blue} icon={
+
+                <TelegramIcon
+                  arrowColor={AppColors.button.blue}
+                  backgroundColor={AppColors.text.light}/>}/>
+            </a>
           </div>
         </section>
         <div className={styles.contactInformationDesktop}>
