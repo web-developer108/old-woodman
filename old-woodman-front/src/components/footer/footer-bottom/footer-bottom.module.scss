@@ -94,14 +94,21 @@
       align-self: flex-start;
       gap: 0;
     }
-
-    .number {
-      line-height: 1.5;
-      font-size: 16px;
-      font-weight: 300;
+    >a {
+      display: flex;
+      flex-direction: row;
+      color: var(--text-grey-color);
       @media (max-width: 1200px) {
-        margin: 0;
-        font-size: 14px;
+        flex-direction: column;
+      }
+      .number {
+        line-height: 1.5;
+        font-size: 16px;
+        font-weight: 300;
+        @media (max-width: 1200px) {
+          margin: 0;
+          font-size: 14px;
+        }
       }
     }
   }

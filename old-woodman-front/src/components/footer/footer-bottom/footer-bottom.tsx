@@ -19,8 +19,14 @@ export const FooterBottom = () => {
         <p className={styles.time}>{t('footer.address3')} </p>
       </div>
       <div className={styles.whatsapp}>
-        <p className={styles.number}>WhatsApp: </p>
-        <p className={styles.number}> +7 (708) 182-60-04 </p>
+        <a href="https://wa.me/77081826004"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp"
+        >
+          <p className={styles.number}>WhatsApp: </p>
+          <p className={styles.number}> +7 (708) 182-60-04 </p>
+        </a>
       </div>
       <div className={styles.copyright}>
         <p>{`©Old Woodman. 2023—${currentYear}`}</p>
