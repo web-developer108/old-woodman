@@ -16,13 +16,15 @@ export const Contacts = () => {
         <a href="https://wa.me/77081826004"
            target="_blank"
            rel="noopener noreferrer"
+           aria-label="WhatsApp"
         >
           <ColorButton label={t('footer.button.whatsapp')} variant='green' icon={<WhatsappIcon/>}/>
         </a>
 
-        <a href="https://t.me/oldwoodmankz"
+        <a href="https://t.me/old_woodman"
            target="_blank"
            rel="noopener noreferrer"
+           aria-label="Telegram"
         >
           <ColorButton label={t('footer.button.telegram')} variant='blue'
                        icon={<TelegramIcon arrowColor={AppColors.button.blue}
