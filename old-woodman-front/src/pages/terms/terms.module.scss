@@ -3,9 +3,12 @@
   height: auto;
 
   .titleContainer {
-    height: 248px;
+    height: 184px;
     background-color: var(--background-grey-color);
     margin: 0 20px 58px 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
     @media (max-width: 810px) {
       height: 196px;
       margin: 0 12px 24px 12px;
@@ -14,12 +17,11 @@
     .mainHeader {
       font-weight: 500;
       font-size: 48px;
-      line-height: 100%;
+      line-height: 1;
       letter-spacing: 0;
       text-transform: uppercase;
-      width: 951px;
+      width: 1180px;
       margin: 0 auto;
-      padding: 57px 0;
       vertical-align: center;
       @media (max-width: 1200px) {
         font-size: 36px;
