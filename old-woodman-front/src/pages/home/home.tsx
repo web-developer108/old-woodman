@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import SimpleBar from 'simplebar-react';
@@ -35,7 +35,15 @@ const Home = () => {
   const navigate = useNavigate();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
-
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   const contactInfo = (
     <>
       <span>{t('info-line1')}</span>
@@ -54,6 +62,7 @@ const Home = () => {
     { src: gallery4, alt: 'Door' },
     { src: gallery5, alt: 'Interior' },
   ];
+
   return (
     <ToolPageLayout>
       <div className={styles.homePageContainer}>
@@ -221,7 +230,7 @@ const Home = () => {
         <section className={styles.textInfo}>
           <TextInfo/>
         </section>
-        <section className={styles.questions}>
+        <section id="faq" className={styles.questions}>
           <Accordion/>
         </section>
 

@@ -10,7 +10,7 @@ export const MarkLeafIcon: React.FC = () => {
           fill={AppColors.text.grey}/>
         <path d="M0.981389 22.9805L22.0684 1.89355" stroke={AppColors.text.grey} strokeWidth="1.5" stroke-linecap="round"
               strokeLinejoin="round"/>
-        <path d="M5.12839 18.8267L15.6719 8.2832" stroke={AppColors.background.grey} strokeWidth="1.5" stroke-linecap="square"
+        <path d="M5.12839 18.8267L15.6719 8.2832" stroke={AppColors.background.grey} strokeWidth="1.5" strokeLinecap="square"
               strokeLinejoin="round"/>
       </g>
       <defs>
