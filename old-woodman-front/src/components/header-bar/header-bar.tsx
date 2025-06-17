@@ -15,12 +15,14 @@ import { useEffect, useState } from 'react';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { CloseIcon } from '../icons/close-icon/close-icon.tsx';
 import styles from './header-bar.module.scss'
+import useDevice from '../../hooks/device/use-device.ts';
 
 export const HeaderBar = () => {
   const { t } = useTranslation('common');
   const { favorites } = useFavorites();
   const { cartItems } = useCart();
   const { showModal } = useModal();
+  const { isMobile } = useDevice();
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
@@ -31,6 +33,8 @@ export const HeaderBar = () => {
   }, [isMenuOpen]);
   const getNavLinkClass = (isActive: boolean) =>
     `${styles.link} ${isActive ? styles.active : ''}`;
+
+  const showElements   = !isMobile || !isMenuOpen
 
   return (
     <>
@@ -49,19 +53,27 @@ export const HeaderBar = () => {
                      className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
             <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>
           </div>
-          <div className={styles.contactBtn}>
-            <OvalButton text={t('connect')} onClick={() => showModal(<Contacts/>)}/>
-          </div>
+          {showElements   &&
+
+              <div className={styles.contactBtn}>
+                  <OvalButton text={t('connect')} onClick={() => showModal(<Contacts/>)}/>
+              </div>
+          }
           <div className={styles.right}>
-            <div className={styles.lang}>
-              <LanguageSwitcher/>
-            </div>
+            {showElements   &&
+                <>
+                    <div className={styles.lang}>
+                        <LanguageSwitcher/>
+                    </div>
 
 
-            <div className={styles.icons}>
-              <HeartIcon/> <span>{favorites.length}</span>
-              <CartIcon/> <span>{cartItems.length}</span>
-            </div>
+                    <div className={styles.icons}>
+                        <HeartIcon/> <span>{favorites.length}</span>
+                        <CartIcon/> <span>{cartItems.length}</span>
+                    </div>
+                </>
+            }
+
 
             <div className={styles.burger} onClick={() => setMenuOpen(!isMenuOpen)}>
               {isMenuOpen

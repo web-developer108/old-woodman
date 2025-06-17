@@ -11,6 +11,9 @@
   flex-direction: column;
   overflow-y: auto;
 
+  @media (max-width: 810px) {
+    padding-top: 96px;
+  }
   @media (max-width: 500px) {
     top: 126px;
   }
@@ -20,7 +23,7 @@
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 36px;
     margin: 0 auto 112px;
 
     li {
@@ -32,11 +35,13 @@
       letter-spacing: 0;
       text-align: center;
 
+      @media (max-width: 810px) {
+        font-size: 24px;
+      }
     }
   }
 
   .footerLinks {
-
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -48,15 +53,24 @@
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-thickness: 0;
-    >a{
+    gap: 12px;
+    margin: 0 auto;
+
+    @media (max-width: 810px) {
+      font-size: 14px;
+
+    }
+
+    > a {
       color: var(--text-grey-color);
+
       &:visited,
       &:hover,
       &:active {
         color: var(--text-grey-color);
       }
     }
-    gap: 12px;
+
     @media (max-width: 810px) {
       justify-content: center;
       flex-direction: column;
@@ -70,6 +84,8 @@
     gap: 12px;
     justify-content: center;
     margin-top: 16px;
-
+    @media (max-width: 810px) {
+      margin-top: 24px;
+    }
   }
 }
