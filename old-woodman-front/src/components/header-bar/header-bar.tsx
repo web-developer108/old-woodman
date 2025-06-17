@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
@@ -14,8 +14,8 @@ import { BurgerContent } from '../modal-windows/burger-content/burger-content.ts
 import { useEffect, useState } from 'react';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { CloseIcon } from '../icons/close-icon/close-icon.tsx';
-import styles from './header-bar.module.scss'
 import useDevice from '../../hooks/device/use-device.ts';
+import styles from './header-bar.module.scss'
 
 export const HeaderBar = () => {
   const { t } = useTranslation('common');
@@ -23,8 +23,10 @@ export const HeaderBar = () => {
   const { cartItems } = useCart();
   const { showModal } = useModal();
   const { isMobile } = useDevice();
-
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   const [isMenuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     return () => {
@@ -34,15 +36,22 @@ export const HeaderBar = () => {
   const getNavLinkClass = (isActive: boolean) =>
     `${styles.link} ${isActive ? styles.active : ''}`;
 
-  const showElements   = !isMobile || !isMenuOpen
+  const showElements = !isMobile || !isMenuOpen
 
   return (
     <>
       <header className={styles.header}>
         <div className={styles.container}>
-          <div className={styles.logo}>
-            <Logo/>
-          </div>
+          {isHome
+            ? (<div className={styles.logo}>
+              <Logo/>
+            </div>)
+            : (
+              <Link to="/" style={{ display: 'inline-block' }}>
+                <Logo/>
+              </Link>
+            )
+          }
           <div className={styles.menu}>
             <NavLink to="/doors" className={({ isActive }) => getNavLinkClass(isActive)}>{t('doors')}</NavLink>
             <NavLink to="/furniture" className={({ isActive }) => getNavLinkClass(isActive)}>{t('furniture')}</NavLink>
@@ -53,14 +62,14 @@ export const HeaderBar = () => {
                      className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
             <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>
           </div>
-          {showElements   &&
+          {showElements &&
 
               <div className={styles.contactBtn}>
                   <OvalButton text={t('connect')} onClick={() => showModal(<Contacts/>)}/>
               </div>
           }
           <div className={styles.right}>
-            {showElements   &&
+            {showElements &&
                 <>
                     <div className={styles.lang}>
                         <LanguageSwitcher/>
