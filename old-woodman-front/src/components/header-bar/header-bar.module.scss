@@ -1,5 +1,9 @@
 .header {
   height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--text-light-color);
   @media (max-width: 500px) {
     height: 126px;
     margin-bottom: 14px;
@@ -82,7 +86,7 @@
     }
 
     .burger {
-
+      cursor: pointer;
     }
 
   }
