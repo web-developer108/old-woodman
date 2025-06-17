@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useTranslation} from 'react-i18next';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { useCart } from '../../hooks/cart/cart.tsx';
@@ -57,7 +57,8 @@ export const HeaderBar = () => {
             <NavLink to="/furniture" className={({ isActive }) => getNavLinkClass(isActive)}>{t('furniture')}</NavLink>
             <NavLink to="/facades"
                      className={({ isActive }) => getNavLinkClass(isActive)}>{t('facades-panels')}</NavLink>
-            <NavLink to="/gifts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('gifts-decor')}</NavLink>
+            <NavLink to="/gifts" className={({ isActive }) => getNavLinkClass(isActive)}>
+              {t('gifts-decor')}</NavLink>
             <NavLink to="/promotions"
                      className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
             <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>

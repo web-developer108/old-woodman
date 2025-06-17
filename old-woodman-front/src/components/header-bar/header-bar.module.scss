@@ -6,7 +6,8 @@
   background-color: var(--text-light-color);
   @media (max-width: 500px) {
     height: 126px;
-    margin-bottom: 14px;
+    //margin-bottom: 14px;
+    z-index: 999;
   }
 
   .container {
@@ -19,7 +20,8 @@
     @media (max-width: 500px) {
       height: 126px;
       align-items: flex-end;
-      padding: 8px 16px;
+      padding: 14px 16px;
+      box-sizing: border-box;
     }
 
     .logo {
@@ -30,7 +32,8 @@
       gap: 30px;
       font-size: 16px;
       line-height: 1.25;
-
+      text-wrap: pretty;
+      hyphens: auto;
       @media (max-width: 1200px) {
         display: none;
       }
@@ -82,6 +85,9 @@
 
       span {
         font-size: 14px;
+      }
+      @media (max-width: 500px) {
+        display: none;
       }
     }
 

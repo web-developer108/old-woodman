@@ -26,7 +26,7 @@
     gap: 36px;
     margin: 0 auto 112px;
 
-    li {
+    a {
       cursor: pointer;
       font-family: Vollkorn, serif;
       font-weight: 500;
@@ -34,6 +34,8 @@
       line-height: 1.25;
       letter-spacing: 0;
       text-align: center;
+      text-decoration: none;
+      color: inherit;
 
       @media (max-width: 810px) {
         font-size: 24px;
