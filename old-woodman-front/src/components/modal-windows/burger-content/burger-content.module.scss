@@ -1,3 +1,5 @@
+@import '../../../mixins';
+
 .burgerMenu {
   position: fixed;
   top: 80px;
@@ -27,30 +29,22 @@
     margin: 0 auto 112px;
 
     a {
+      @include headingLarge;
       cursor: pointer;
       font-family: Vollkorn, serif;
       font-weight: 500;
-      font-size: 36px;
-      line-height: 1.25;
-      letter-spacing: 0;
       text-align: center;
       text-decoration: none;
       color: inherit;
 
-      @media (max-width: 810px) {
-        font-size: 24px;
-      }
     }
   }
 
   .footerLinks {
+    @include bodyText;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.25;
-    letter-spacing: 0;
     text-align: center;
     text-decoration: underline;
     text-decoration-style: solid;
@@ -58,10 +52,6 @@
     gap: 12px;
     margin: 0 auto;
 
-    @media (max-width: 810px) {
-      font-size: 14px;
-
-    }
 
     > a {
       color: var(--text-grey-color);
