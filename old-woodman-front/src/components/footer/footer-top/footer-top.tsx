@@ -77,7 +77,7 @@ export const FooterTop = () => {
             onChange={setPhone}
           />
           <ColorButton label={t('footer.button.main')} />
-          <div className={styles.info}>{t('footer.text.politics')}</div>
+          <div className={styles.info} dangerouslySetInnerHTML={{ __html: t('footer.text.politics') }}></div>
         </form>
       </div>
       <div className={styles.text}> {t('footer.text.or').toUpperCase()}</div>

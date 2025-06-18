@@ -1,3 +1,5 @@
+@import '../../mixins';
+
 .homePageContainer {
   max-width: 1920px;
   width: 100%;
@@ -66,12 +68,10 @@
       }
 
       .description {
+        @include bodyText;
         margin-bottom: 60px;
-        font-weight: 400;
-        font-size: 18px;
         line-height: 1.5;
         @media (max-width: 1200px) {
-          font-size: 14px;
           line-height: 1.4;
           margin-bottom: 24px;
         }
@@ -100,16 +100,13 @@
       @media (max-width: 1200px) {
         display: none;
       }
-
     }
   }
 
   %contactInformationBase {
+    @include bodyText;
     height: 56px;
     background-color: var(--background-grey-color);
-
-    font-size: 18px;
-    font-weight: 400;
     color: var(--text-grey-color);
   }
 
@@ -187,14 +184,11 @@
     }
 
     h2 {
-      font-size: 36px;
-      font-weight: 500;
+      @include headingLarge;
       margin-bottom: 28px;
-
       @media (max-width: 1200px) {
         max-width: 540px;
         padding: 0 0 36px 0;
-        font-size: 32px;
         text-align: center;
         margin: 0 auto;
       }
@@ -219,13 +213,11 @@
         margin: 0;
 
         li {
+          @include bodyTextSmall;
           position: relative;
           padding-left: 34px;
           margin-bottom: 28px;
-          line-height: 1.5;
           color: var(--text-main-color);
-          font-size: 18px;
-          font-weight: 300;
 
           &::before {
             content: '✓';
@@ -235,10 +227,6 @@
             color: var(--text-grey-color);
             font-size: 16px;
             line-height: 1.5;
-          }
-
-          @media (max-width: 810px) {
-            font-size: 14px;
           }
         }
       }
@@ -280,11 +268,7 @@
       }
 
       div {
-        font-size: 18px;
-        font-weight: 400;
-        @media (max-width: 810px) {
-          font-size: 14px;
-        }
+        @include bodyText;
       }
     }
 
@@ -408,44 +392,37 @@
       }
 
       .carpentryTitle {
+        @include headingLarge;
         grid-column: 1;
         grid-row: 2 / span 3;
-        font-size: 36px;
         max-width: 347px;
-        line-height: 1.5;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 2;
           max-width: 100%;
           justify-self: center;
           text-align: center;
-        }
-        @media (max-width: 810px) {
-          font-size: 24px;
+          margin-bottom: 12px;
         }
       }
 
       .carpentryQuote {
+        @include bodyText;
         grid-column: 2;
         grid-row: 2;
         font-family: 'Vollkorn', serif;
-        font-size: 18px;
-        font-weight: 400;
         display: block;
         max-width: 340px;
         margin-bottom: 24px;
         color: var(--text-grey-color);
         padding-left: 48px;
+        line-height: 1.5;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 3;
           max-width: 100%;
           text-align: center;
           margin-bottom: 0;
-        }
-        @media (max-width: 810px) {
-          font-size: 14px;
-
         }
       }
 
@@ -511,24 +488,13 @@
     }
 
     .galleryTitle {
-      font-size: 36px;
-      line-height: 1;
+      @include headingLarge;
       margin-bottom: 24px;
-      @media (max-width: 810px) {
-        font-size: 24px;
-        line-height: 1.25;
-      }
     }
 
     .galleryDescription {
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.5;
+      @include bodyTextSmall;
       margin-bottom: 36px;
-      @media (max-width: 810px) {
-        font-size: 14px;
-        line-height: 1.4;
-      }
     }
 
     .galleryWrapper {
