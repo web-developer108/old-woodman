@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .textContainer {
   background-color: var(--background-grey-color);
   max-width: 1036px;
@@ -5,7 +7,7 @@
   box-sizing: border-box;
 
   .textInfoTitle {
-    font-size: 36px;
+    @include headingLarge;
     line-height: 1.5;
     margin-bottom: 40px;
     @media (max-width: 1200px) {
@@ -13,7 +15,6 @@
       padding: 0 150px;
     }
     @media (max-width: 810px) {
-      font-size: 24px;
       padding: 0;
       margin-bottom: 36px;
     }
@@ -25,6 +26,9 @@
     line-height: 1.5;
     @media (max-width: 1200px) {
       padding-left: 24px;
+    }
+    @media (max-width: 810px) {
+      font-size: 14px;
     }
   }
 
@@ -42,10 +46,8 @@
     }
 
     li {
+      @include bodyTextSmall;
       max-width: 506px;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 1.2;
       @media (max-width: 1200px) {
         max-width: 100%;
       }

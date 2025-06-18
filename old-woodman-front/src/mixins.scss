@@ -1,3 +1,14 @@
+@mixin headingLarge {
+  font-size: 36px;
+  line-height: 1.25;
+  letter-spacing: 0;
+
+  @media (max-width: 810px) {
+    font-size: 24px;
+  }
+}
+
+
 @mixin bodyText {
   font-weight: 400;
   font-size: 18px;
@@ -9,12 +20,14 @@
   }
 }
 
-@mixin headingLarge {
-  font-size: 36px;
-  line-height: 1.25;
+@mixin bodyTextSmall {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
   letter-spacing: 0;
 
   @media (max-width: 810px) {
-    font-size: 24px;
+    font-size: 14px;
   }
 }
+
