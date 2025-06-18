@@ -1,3 +1,4 @@
+@import "../../../mixins";
 .footerTop {
   background-color: var(--background-grey-color);
   padding: 0 20px;
@@ -11,10 +12,9 @@
   }
 
   .title {
+    @include headingLarge;
     grid-column: 2;
     grid-row: 2;
-    font-size: 36px;
-    line-height: 1.25;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -80,6 +80,7 @@
       max-width: 520px;
 
       .message {
+
         grid-row: 1;
         border: 1px solid var(--text-main-color-25);
         border-radius: 10px;
@@ -92,7 +93,9 @@
         width: 100%;
         resize: none;
         box-sizing: border-box;
-
+        @media (max-width: 810px) {
+          font-size: 14px;
+        }
         &:focus {
           outline: none;
         }
@@ -108,7 +111,9 @@
         font-size: 16px;
         font-weight: 400;
         color: var(--text-main-color-50);
-
+        @media (max-width: 810px) {
+          font-size: 14px;
+        }
         &:focus {
           outline: none;
         }
@@ -126,7 +131,7 @@
         a{
           color: var(--text-grey-color);
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 810px) {
           font-size: 12px;
         }
       }
