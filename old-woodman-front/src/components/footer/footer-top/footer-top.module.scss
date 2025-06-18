@@ -123,6 +123,9 @@
         font-size: 14px;
         font-weight: 300;
         color: var(--text-grey-color);
+        a{
+          color: var(--text-grey-color);
+        }
         @media (max-width: 1200px) {
           font-size: 12px;
         }

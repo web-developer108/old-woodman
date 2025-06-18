@@ -1,4 +1,4 @@
-.phone{
+.phone, .error{
   padding: 18px;
   border-radius: 10px;
   border: 1px solid var(--text-main-color-25);
@@ -7,10 +7,18 @@
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--text-main-color-50);
+
+  &::placeholder {
+    color: var(--text-main-color-50);
+    opacity: 1;
+  }
+
+  .phone {
+    color: var(--text-main-color-50);
+  }
 
 }
 .error{
-  @extend .phone;
   color: red;
 }
+
