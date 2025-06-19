@@ -40,10 +40,6 @@ const Home = () => {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#faq' && faqRef.current) {
-     /* const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }*/
       faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
