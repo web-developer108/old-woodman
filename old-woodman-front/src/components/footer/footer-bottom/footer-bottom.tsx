@@ -46,7 +46,7 @@ export const FooterBottom = () => {
       <div className={styles.helpful}>
         <h3>{t('footer.helpful')}</h3>
         <nav className={styles.navigation}>
-          <div className={styles.items}>{t('footer.questions')}</div>
+          <Link to="/#faq" className={styles.items}>{t('footer.questions')}</Link>
           <Link to="/info" className={styles.items}
           >{t('footer.info')}</Link>
           <Link to="/terms" className={styles.items}>{t('footer.terms')}</Link>
