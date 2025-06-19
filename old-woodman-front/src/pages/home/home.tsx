@@ -35,15 +35,18 @@ const Home = () => {
   const navigate = useNavigate();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
+  const faqRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash) {
-      const element = document.querySelector(hash);
+    if (hash === '#faq' && faqRef.current) {
+     /* const element = document.querySelector(hash);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-      }
+      }*/
+      faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [location.hash]);
+  }, []);
   const contactInfo = (
     <>
       <span>{t('info-line1')}</span>
@@ -230,7 +233,7 @@ const Home = () => {
         <section className={styles.textInfo}>
           <TextInfo/>
         </section>
-        <section id="faq" className={styles.questions}>
+        <section ref={faqRef} id="faq" className={styles.questions}>
           <Accordion/>
         </section>
 

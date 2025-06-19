@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Logo } from '../../logo/logo.tsx';
 import { SocialPanel } from '../../social-panel/social-panel.tsx';
@@ -7,7 +7,23 @@ import styles from './footer-bottom.module.scss';
 
 export const FooterBottom = () => {
   const { t } = useTranslation('common');
+  const navigate = useNavigate();
+
   const currentYear = new Date().getFullYear();
+
+  const goToFaq = () => {
+    if (location.pathname === '/') {
+      const faqElement = document.getElementById('faq');
+      if (faqElement) {
+        faqElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/#faq');
+      }
+    } else {
+      navigate('/#faq');
+    }
+  };
+
   return (
     <div className={styles.footerBottom}>
       <div className={styles.logo}>
@@ -46,7 +62,7 @@ export const FooterBottom = () => {
       <div className={styles.helpful}>
         <h3>{t('footer.helpful')}</h3>
         <nav className={styles.navigation}>
-          <Link to="/#faq" className={styles.items}>{t('footer.questions')}</Link>
+          <Link to="/#faq"  onClick = {()=>goToFaq()} className={styles.items}>{t('footer.questions')}</Link>
           <Link to="/info" className={styles.items}
           >{t('footer.info')}</Link>
           <Link to="/terms" className={styles.items}>{t('footer.terms')}</Link>
