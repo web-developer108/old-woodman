@@ -23,7 +23,7 @@ const Facades = lazy(() => import('../pages/temporary/temporary'));
 const Gifts = lazy(() => import('../pages/temporary/temporary'));
 const Promotions = lazy(() => import('../pages/temporary/temporary'));
 const Contacts = lazy(() => import('../pages/temporary/temporary'));
-const Cart = lazy(() => import('../pages/temporary/temporary'));
+const Cart = lazy(() => import('../pages/cart/cart.tsx'));
 const FAQ = lazy(() => import('../pages/temporary/temporary'));
 const Info = lazy(() => import('../pages/temporary/temporary'));
 const Terms = lazy(() => import('../pages/terms/terms'));

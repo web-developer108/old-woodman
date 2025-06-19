@@ -1,7 +1,7 @@
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
-import styles from './privacy-policy.module.scss'
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
+import styles from './privacy-policy.module.scss'
 
 const Privacy = () => {
   const { t } = usePageTranslate()
