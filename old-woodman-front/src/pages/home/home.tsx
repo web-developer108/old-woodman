@@ -43,7 +43,7 @@ const Home = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, []);
+  }, [location.hash]);
   const contactInfo = (
     <>
       <span>{t('info-line1')}</span>
