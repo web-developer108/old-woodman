@@ -29,7 +29,7 @@ export const BurgerContent: React.FC<BurgerContentProps>  = ({onClose}) => {
       </div>
 
       <div className={styles.footerLinks}>
-        <Link to="/#faq">Частые вопросы</Link>
+        <Link to="/#faq" onClick={onClose}>{t('footer.questions')}</Link>
         <Link to="/info">{t('footer.info')}</Link>
         <Link to="/terms">{t('footer.terms')}</Link>
         <Link to="/contacts">{t('contacts')}</Link>
