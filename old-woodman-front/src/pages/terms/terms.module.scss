@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .termsContainer {
   width: 100%;
   height: auto;
@@ -15,20 +17,12 @@
     }
 
     .mainHeader {
-      font-weight: 500;
-      font-size: 48px;
-      line-height: 1;
-      letter-spacing: 0;
-      text-transform: uppercase;
+      @include mainHeader;
       width: 1180px;
       margin: 0 auto;
       vertical-align: center;
       @media (max-width: 1200px) {
-        font-size: 42px;
         width: 90%;
-      }
-      @media (max-width: 810px) {
-        font-size: 24px;
       }
     }
 
