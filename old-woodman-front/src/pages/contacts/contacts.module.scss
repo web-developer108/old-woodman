@@ -22,7 +22,7 @@
     }
   }
 
-  .contactsContent{
+  .contactsContent {
     max-width: 1180px;
     margin: 0 auto;
 
@@ -34,19 +34,76 @@
       margin: 0 12px;
     }
 
-    .mainHeader{
+    .mainHeader {
       font-size: 48px;
       margin-top: 48px;
+      margin-bottom: 36px;
+
       @media (max-width: 810px) {
         font-size: 30px;
         text-align: center;
         margin-top: 96px;
       }
     }
-    .infoContainer{
-      display: flex;
 
+    .infoContainer {
+      margin: 0 auto 56px;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-grey-color);
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 36px;
+      }
+   /*   @media (max-width: 810px) {
+        margin-bottom: 36px;
+      }*/
+      .infoWrap {
+        max-width: 385px;
+        background-color: var(--background-grey-color);
+        height: 149px;
+        border-radius: 10px;
+        padding: 36px 48px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        @media (max-width: 1200px) {
+          width: 100%;
+          max-width: 100%;
+        }
+        @media (max-width: 810px) {
+          padding: 32px 24px;
+          height: 125px;
+        }
+        h2 {
+          font-size: 18px;
+          margin-bottom: 24px;
+          @media (max-width: 810px) {
+            font-size: 14px;
+            margin-bottom: 20px;
+          }
+        }
+
+        span {
+          @include bodyTextSmall;
+        }
+      }
+    }
+
+    .buttonWrapper{
+      display: flex;
+      justify-content: left;
+      max-width: 364px;
+      margin-bottom: 112px;
+      @media (max-width: 810px) {
+        width: 100%;
+        margin: 0 auto 96px;
+        max-width: 390px;
+        justify-content: center;
+      }
     }
   }
-
 }
