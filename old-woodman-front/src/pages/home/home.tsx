@@ -36,18 +36,40 @@ const Home = () => {
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
+  const simpleBarRef = useRef<any>(null);
+console.log('render...Home...')
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#faq' && faqRef.current) {
       faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
+
+  useEffect(() => {
+    const images = simpleBarRef.current?.contentEl.querySelectorAll('img');
+    let loaded = 0;
+
+    if (images?.length) {
+      images.forEach((img) => {
+        if (img.complete) {
+          loaded++;
+        } else {
+          img.addEventListener('load', () => {
+            loaded++;
+            if (loaded === images.length) {
+              simpleBarRef.current?.recalculate();
+            }
+          });
+        }
+      });
+
+      if (loaded === images.length) {
+
+        simpleBarRef.current?.recalculate();
+      }
+    }
+  }, []);
+
   const contactInfo = (
     <>
       <span>{t('info-line1')}</span>
@@ -214,20 +236,20 @@ const Home = () => {
         <section className={styles.gallery}>
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-          {isClient && (
-            <SimpleBar className={styles.galleryWrapper} autoHide={false}>
-              <div className={styles.galleryTrack}>
-                {galleryImages.map((img, index) => (
-                  <img
-                    key={index}
-                    src={img.src}
-                    alt={img.alt}
-                    className={styles.galleryImage}
-                  />
-                ))}
-              </div>
-            </SimpleBar>
-          )}
+
+          <SimpleBar  ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
+            <div className={styles.galleryTrack}>
+              {galleryImages.map((img, index) => (
+                <img
+                  key={index}
+                  src={img.src}
+                  alt={img.alt}
+                  className={styles.galleryImage}
+                />
+              ))}
+            </div>
+          </SimpleBar>
+
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>
