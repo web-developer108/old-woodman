@@ -10,8 +10,10 @@ const Favorites = () => {
     <ToolPageLayout>
       <div className={styles.favContainer}>
         <div className={styles.titleContainer}>
-          <h1 className={styles.mainHeader}>{t('main-header')}</h1>
-          <div className={styles.label}>{t('main-header.label')}</div>
+          <div className={styles.contentWrapper}>
+            <h1 className={styles.mainHeader}>{t('main-header')}</h1>
+            <div className={styles.label}>{t('main-header.label')}</div>
+          </div>
         </div>
         <div className={styles.cartContent}>
           <Breadcrumbs current={t('main-header')}/>

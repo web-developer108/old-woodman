@@ -1,10 +1,10 @@
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import useDevice from '../../hooks/device/use-device.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import styles from './contacts.module.scss'
-import useDevice from '../../hooks/device/use-device.ts';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
+import styles from './contacts.module.scss'
 
 const Contacts = () => {
   const { t } = usePageTranslate();
