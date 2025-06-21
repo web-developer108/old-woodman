@@ -9,7 +9,7 @@ import { BurgerIcon } from '../icons/burger-icon/burger-icon.tsx';
 import { Logo } from '../logo/logo.tsx';
 import { LanguageSwitcher } from './language-switcher/language-switcher.tsx';
 import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
-import { Contacts } from '../modal-windows/contacts/contacts.tsx';
+import { ContactsModal } from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import { BurgerContent } from '../modal-windows/burger-content/burger-content.tsx';
 import { useEffect, useState } from 'react';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
@@ -66,7 +66,7 @@ export const HeaderBar = () => {
           {showElements &&
 
               <div className={styles.contactBtn}>
-                  <OvalButton text={t('connect')} onClick={() => showModal(<Contacts/>)}/>
+                  <OvalButton text={t('connect')} onClick={() => showModal(<ContactsModal/>)}/>
               </div>
           }
           <div className={styles.right}>

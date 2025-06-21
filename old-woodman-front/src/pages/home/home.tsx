@@ -22,12 +22,12 @@ import gallery2 from '@assets/images/home/gallery2.jpg'
 import gallery3 from '@assets/images/home/gallery3.jpg'
 import gallery4 from '@assets/images/home/gallery4.jpg'
 import gallery5 from '@assets/images/home/gallery5.jpg'
-import styles from './home.module.scss'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
-import { Contacts } from '../../components/modal-windows/contacts/contacts.tsx';
+import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
+import styles from './home.module.scss'
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -173,7 +173,7 @@ const Home = () => {
               <ColorButton
                 icon={<ArrowTopRightIcon/>}
                 label={t('carpentry-button')}
-                onClick={() => showModal(<Contacts/>)}
+                onClick={() => showModal(<ContactsModal/>)}
               ></ColorButton>
             </div>
             <div className={styles.carpentryInfo1}>

@@ -38,5 +38,32 @@
 
   }
 
+  .cartContent{
+    max-width: 1180px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+      margin: 0 20px;
+    }
+    @media (max-width: 810px) {
+      margin: 0 12px;
+    }
+    .faceContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 414px;
+      gap: 20px;
+      .title{
+        @include headingLarge;
+      }
+      .text{
+        @include bodyTextSmall
+      }
+    }
+
+  }
 
 }

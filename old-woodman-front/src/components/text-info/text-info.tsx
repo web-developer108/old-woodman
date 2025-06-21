@@ -2,7 +2,7 @@ import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useTranslation } from 'react-i18next';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { ArrowTopRightIcon } from '../icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
-import { Contacts } from '../modal-windows/contacts/contacts.tsx';
+import { ContactsModal } from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import styles from './text-info.module.scss';
 
 export const TextInfo = () => {
@@ -19,7 +19,7 @@ export const TextInfo = () => {
         <li className={styles.text3}>{t('text-info.text3')}</li>
       </ol>
       <div className={styles.textInfoButton}>
-        <ColorButton label={t('text-info.button')} icon={<ArrowTopRightIcon/>} onClick={() => showModal(<Contacts/>)}/>
+        <ColorButton label={t('text-info.button')} icon={<ArrowTopRightIcon/>} onClick={() => showModal(<ContactsModal/>)}/>
       </div>
     </div>
   )
