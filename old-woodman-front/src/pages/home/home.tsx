@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import SimpleBar from 'simplebar-react';
@@ -36,6 +36,11 @@ const Home = () => {
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -209,20 +214,20 @@ const Home = () => {
         <section className={styles.gallery}>
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-
-          <SimpleBar className={styles.galleryWrapper} autoHide={false}>
-            <div className={styles.galleryTrack}>
-              {galleryImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img.src}
-                  alt={img.alt}
-                  className={styles.galleryImage}
-                />
-              ))}
-            </div>
-          </SimpleBar>
-
+          {isClient && (
+            <SimpleBar className={styles.galleryWrapper} autoHide={false}>
+              <div className={styles.galleryTrack}>
+                {galleryImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.src}
+                    alt={img.alt}
+                    className={styles.galleryImage}
+                  />
+                ))}
+              </div>
+            </SimpleBar>
+          )}
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>
