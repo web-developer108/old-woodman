@@ -3,10 +3,10 @@ import { WhatsappIcon } from '../../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { AppColors } from '../../../styles.ts';
-import styles from './contacts.module.scss'
+import styles from './contacts-modal.module.scss'
 
-export const Contacts = () => {
-  const { t } = useTranslation('common')
+export const ContactsModal = () => {
+  const { t } = useTranslation('common');
 
   return (
     <div className={styles.modalContainer}>

@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { useCart } from '../../hooks/cart/cart.tsx';
@@ -9,7 +9,7 @@ import { BurgerIcon } from '../icons/burger-icon/burger-icon.tsx';
 import { Logo } from '../logo/logo.tsx';
 import { LanguageSwitcher } from './language-switcher/language-switcher.tsx';
 import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
-import { Contacts } from '../modal-windows/contacts/contacts.tsx';
+import { ContactsModal } from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import { BurgerContent } from '../modal-windows/burger-content/burger-content.tsx';
 import { useEffect, useState } from 'react';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
@@ -66,7 +66,7 @@ export const HeaderBar = () => {
           {showElements &&
 
               <div className={styles.contactBtn}>
-                  <OvalButton text={t('connect')} onClick={() => showModal(<Contacts/>)}/>
+                  <OvalButton text={t('connect')} onClick={() => showModal(<ContactsModal/>)}/>
               </div>
           }
           <div className={styles.right}>
@@ -76,10 +76,9 @@ export const HeaderBar = () => {
                         <LanguageSwitcher/>
                     </div>
 
-
                     <div className={styles.icons}>
-                        <HeartIcon/> <span>{favorites.length}</span>
-                        <CartIcon/> <span>{cartItems.length}</span>
+                        <Link to="/favorites"> <HeartIcon/> <span>{favorites.length}</span> </Link>
+                        <Link to="/cart"> <CartIcon/> <span>{cartItems.length}</span> </Link>
                     </div>
                 </>
             }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import SimpleBar from 'simplebar-react';
@@ -22,12 +22,12 @@ import gallery2 from '@assets/images/home/gallery2.jpg'
 import gallery3 from '@assets/images/home/gallery3.jpg'
 import gallery4 from '@assets/images/home/gallery4.jpg'
 import gallery5 from '@assets/images/home/gallery5.jpg'
-import styles from './home.module.scss'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
-import { Contacts } from '../../components/modal-windows/contacts/contacts.tsx';
+import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
+import styles from './home.module.scss'
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -36,6 +36,11 @@ const Home = () => {
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -173,7 +178,7 @@ const Home = () => {
               <ColorButton
                 icon={<ArrowTopRightIcon/>}
                 label={t('carpentry-button')}
-                onClick={() => showModal(<Contacts/>)}
+                onClick={() => showModal(<ContactsModal/>)}
               ></ColorButton>
             </div>
             <div className={styles.carpentryInfo1}>
@@ -209,20 +214,20 @@ const Home = () => {
         <section className={styles.gallery}>
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-
-          <SimpleBar className={styles.galleryWrapper} autoHide={false}>
-            <div className={styles.galleryTrack}>
-              {galleryImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img.src}
-                  alt={img.alt}
-                  className={styles.galleryImage}
-                />
-              ))}
-            </div>
-          </SimpleBar>
-
+          {isClient && (
+            <SimpleBar className={styles.galleryWrapper} autoHide={false}>
+              <div className={styles.galleryTrack}>
+                {galleryImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.src}
+                    alt={img.alt}
+                    className={styles.galleryImage}
+                  />
+                ))}
+              </div>
+            </SimpleBar>
+          )}
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>

@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .termsContainer {
   width: 100%;
   height: auto;
@@ -15,20 +17,12 @@
     }
 
     .mainHeader {
-      font-weight: 500;
-      font-size: 48px;
-      line-height: 1;
-      letter-spacing: 0;
-      text-transform: uppercase;
+      @include mainHeader;
       width: 1180px;
       margin: 0 auto;
       vertical-align: center;
       @media (max-width: 1200px) {
-        font-size: 36px;
         width: 90%;
-      }
-      @media (max-width: 810px) {
-        font-size: 24px;
       }
     }
 
@@ -72,15 +66,6 @@
       }
 
     }
-    %paragraph{
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 1.5;
-      letter-spacing: 0;
-      @media (max-width: 810px) {
-        font-size: 14px;
-      }
-    }
 
     .container {
       max-width: 1180px;
@@ -112,7 +97,7 @@
           margin: 0;
 
           li {
-            @extend %paragraph;
+            @include bodyTextSmall;
             position: relative;
             padding-left: 34px;
             margin-bottom: 28px;
@@ -146,7 +131,7 @@
           @extend %header
         }
         .paragraphDelivery{
-          @extend %paragraph
+          @include bodyTextSmall;
         }
       }
       .warranty {
@@ -160,7 +145,7 @@
           @extend %header
         }
         .paragraphWarranty{
-          @extend %paragraph
+          @include bodyTextSmall;
         }
       }
     }

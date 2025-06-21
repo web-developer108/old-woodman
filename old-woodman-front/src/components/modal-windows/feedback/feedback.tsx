@@ -1,4 +1,4 @@
-import styles from '../contacts/contacts.module.scss'
+import styles from '../contacts-modal/contacts-modal.module.scss'
 import { useTranslation } from 'react-i18next';
 
 export const Feedback = () => {
