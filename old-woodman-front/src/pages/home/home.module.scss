@@ -500,6 +500,8 @@
     .galleryWrapper {
       padding-bottom: 20px;
       position: relative;
+      overflow-x: auto;
+      height: 100%;
 
       .galleryTrack {
         display: grid;
