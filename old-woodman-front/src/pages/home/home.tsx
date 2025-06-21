@@ -27,8 +27,8 @@ import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
-import styles from './home.module.scss'
 import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';
+import styles from './home.module.scss'
 
 const Home = () => {
   const { t } = usePageTranslate();
