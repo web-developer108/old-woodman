@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import SimpleBar from 'simplebar-react';
@@ -37,7 +37,7 @@ const Home = () => {
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
   const simpleBarRef = useRef<any>(null);
-console.log('render...Home...')
+  console.log('render...Home...')
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#faq' && faqRef.current) {
@@ -46,7 +46,7 @@ console.log('render...Home...')
   }, []);
 
   useEffect(() => {
-    const images = simpleBarRef.current?.contentEl.querySelectorAll('img');
+    const images: NodeListOf<HTMLImageElement> | undefined = simpleBarRef.current?.contentEl.querySelectorAll('img');
     let loaded = 0;
 
     if (images?.length) {
@@ -237,7 +237,7 @@ console.log('render...Home...')
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
 
-          <SimpleBar  ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
+          <SimpleBar ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
             <div className={styles.galleryTrack}>
               {galleryImages.map((img, index) => (
                 <img
