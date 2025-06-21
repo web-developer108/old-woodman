@@ -1,4 +1,14 @@
 {
   "title": "Old Woodman | Контакты",
-  "description": "Мы находимся в городе Алматы"
+  "description": "Мы находимся в городе Алматы",
+  "main-header": "Контакты",
+  "header-1": "old woodman",
+  "header-2": "Столярная мастерская в Алматы — производим двери и мебель на заказ",
+  "section-title-1": "Адрес Мастерской",
+  "section-description-1": "г. Алматы, Наурызбай батыра, д. 4",
+  "section-title-2": "График работы",
+  "section-description-2": "с 9.30 до 17.00, ПН-ПТ",
+  "section-title-3": "Whatsapp для связи",
+  "section-description-3": "+7 (708) 182-60-04",
+  "button-label": "Посетить мастерскую"
 }

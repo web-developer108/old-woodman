@@ -19,12 +19,12 @@ const FurnitureCollectionItem = lazy(() => import('../pages/temporary/temporary'
 const Facades = lazy(() => import('../pages/temporary/temporary'));
 const Gifts = lazy(() => import('../pages/temporary/temporary'));
 const Promotions = lazy(() => import('../pages/temporary/temporary'));
-const Contacts = lazy(() => import('../pages/temporary/temporary'));
+const Contacts = lazy(() => import('../pages/contacts/contacts'));
 const Cart = lazy(() => import('../pages/cart/cart.tsx'));
 const FAQ = lazy(() => import('../pages/temporary/temporary'));
 const Info = lazy(() => import('../pages/temporary/temporary'));
 const Terms = lazy(() => import('../pages/terms/terms'));
-const Favorites = lazy(() => import('../pages/favorites/favorites.tsx'));
+const Favorites = lazy(() => import('../pages/favorites/favorites'));
 const Privacy = lazy(() => import('../pages/privacy-policy/privacy-policy'));
 const Ordered = lazy(() => import('../pages/temporary/temporary'));
 
