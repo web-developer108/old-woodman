@@ -28,6 +28,7 @@ import { Accordion } from '../../components/accordion/accordion.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import styles from './home.module.scss'
+import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -37,7 +38,7 @@ const Home = () => {
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
   const simpleBarRef = useRef<any>(null);
-  console.log('render...Home...')
+
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#faq' && faqRef.current) {
@@ -45,30 +46,7 @@ const Home = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const images: NodeListOf<HTMLImageElement> | undefined = simpleBarRef.current?.contentEl.querySelectorAll('img');
-    let loaded = 0;
-
-    if (images?.length) {
-      images.forEach((img) => {
-        if (img.complete) {
-          loaded++;
-        } else {
-          img.addEventListener('load', () => {
-            loaded++;
-            if (loaded === images.length) {
-              simpleBarRef.current?.recalculate();
-            }
-          });
-        }
-      });
-
-      if (loaded === images.length) {
-
-        simpleBarRef.current?.recalculate();
-      }
-    }
-  }, []);
+  useSimpleBarRecalc(simpleBarRef);
 
   const contactInfo = (
     <>
