@@ -1,0 +1,52 @@
+@import "../../mixins";
+
+.contactsContainer{
+  width: 100%;
+  height: auto;
+  max-width: 1180px;
+  margin: 0 auto;
+  .imageContainer {
+    height: 300px;
+    background-color: var(--background-grey-color);
+    background-image: url('../../assets/images/contacts/map.jpg');
+    background-position: center center;
+    margin: 0 20px 58px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    @media (max-width: 810px) {
+      margin: 0 12px 24px 12px;
+    }
+  }
+
+  .contactsContent{
+    max-width: 1180px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+      margin: 0 20px;
+    }
+    @media (max-width: 810px) {
+      margin: 0 12px;
+    }
+
+    .mainHeader{
+      font-size: 48px;
+      margin-top: 48px;
+      @media (max-width: 810px) {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 96px;
+      }
+    }
+    .infoContainer{
+      display: flex;
+
+    }
+  }
+
+}

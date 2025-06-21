@@ -1,24 +1,34 @@
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
-import styles from './cart.module.scss'
+import styles from './contacts.module.scss'
+import useDevice from '../../hooks/device/use-device.ts';
 
 const Contacts = () => {
-  const { t } = usePageTranslate()
+  const { t } = usePageTranslate();
+  const { isMobile } = useDevice();
   return (
     <ToolPageLayout isFullFooter={false}>
-      <div className={styles.cartContainer}>
-        <div className={styles.titleContainer}>
-          <h1 className={styles.mainHeader}>{t('main-header')}</h1>
-          <div className={styles.label}>{t('main-header.label')}</div>
-        </div>
-        <div className={styles.cartContent}>
+      <div className={styles.contactsContainer}>
+        <div className={styles.imageContainer}/>
+        <div className={styles.contactsContent}>
           <Breadcrumbs current={t('main-header')}/>
-          <div className={styles.faceContainer}>
-            <FaceIcon/>
-            <h2 className={styles.title}>  {t('empty-header').toUpperCase()} </h2>
-            <div className={styles.text}>   {t('empty-label')}</div>
+          <h1 className={styles.mainHeader}>
+            {isMobile ? (
+              t('header-2').toUpperCase()
+            ) : (
+              <>
+                {t('header-1').toUpperCase()}
+                <br/>
+                {t('header-2').toUpperCase()}
+              </>
+            )}
+          </h1>
+          <div className={styles.infoContainer}>
+            <div className={styles.infoWrap}>
+
+            </div>
+
           </div>
         </div>
       </div>
