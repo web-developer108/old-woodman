@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { useCart } from '../../hooks/cart/cart.tsx';
@@ -76,10 +76,9 @@ export const HeaderBar = () => {
                         <LanguageSwitcher/>
                     </div>
 
-
                     <div className={styles.icons}>
-                        <HeartIcon/> <span>{favorites.length}</span>
-                        <CartIcon/> <span>{cartItems.length}</span>
+                        <Link to="/favorites"> <HeartIcon/> <span>{favorites.length}</span> </Link>
+                        <Link to="/cart"> <CartIcon/> <span>{cartItems.length}</span> </Link>
                     </div>
                 </>
             }

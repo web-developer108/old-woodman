@@ -83,14 +83,20 @@
       align-items: center;
       gap: 8px;
 
-      span {
-        font-size: 14px;
-      }
-      @media (max-width: 500px) {
-        display: none;
+      a {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        gap: 6px;
+        span {
+          font-size: 16px;
+        }
+
+        @media (max-width: 500px) {
+          display: none;
+        }
       }
     }
-
     .burger {
       cursor: pointer;
     }
