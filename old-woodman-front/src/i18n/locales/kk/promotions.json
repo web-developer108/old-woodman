@@ -3,6 +3,6 @@
   "description": "Акции от Old Woodman это возможность создать в своем доме неповторимую атмосферу",
   "main-header": "Акции в Old Woodman",
   "promotions": "Акции",
-  "title-empty": "Акций нет",
-  "description-empty": "Сегодня цех перегружен,<br/>следите за новостями!"
+  "empty-header": "Акций нет",
+  "empty-label": "Сегодня цех перегружен,<br/>следите за новостями!"
 }

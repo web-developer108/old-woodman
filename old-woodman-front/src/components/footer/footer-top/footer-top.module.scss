@@ -3,7 +3,7 @@
   background-color: var(--background-grey-color);
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 514px 50%;
+  grid-template-columns: calc(50% - 590px) 1fr 50%;
   grid-template-rows: 54px 200px 171px;
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;

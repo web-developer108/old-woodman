@@ -5,10 +5,14 @@ import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
 import styles from './contacts.module.scss'
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 
 const Contacts = () => {
   const { t } = usePageTranslate();
   const { isMobile } = useDevice();
+  const {showModal} = useModal();
+
   return (
     <ToolPageLayout isFullFooter={false}>
       <div className={styles.contactsContainer}>
@@ -41,7 +45,11 @@ const Contacts = () => {
             </div>
           </div>
           <div className={styles.buttonWrapper}>
-          <ColorButton icon = {<ArrowTopRightIcon/>} label = {t('button-label')}/>
+          <ColorButton
+            icon = {<ArrowTopRightIcon/>}
+            label = {t('button-label')}
+            onClick={() => showModal(<ContactsModal/>)}
+          />
           </div>
           </div>
       </div>
