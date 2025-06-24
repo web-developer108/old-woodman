@@ -55,17 +55,17 @@
 
   .infoContent {
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 0 auto 112px;
     padding: 20px;
     @media (max-width: 1200px) {
       max-width: 100%;
-      margin: 0 20px;
+      margin: 0 20px 112px;
     }
     @media (max-width: 810px) {
-      margin: 0 12px;
+      margin: 0 12px 96px;
     }
     @media (max-width: 490px) {
-      margin: 0 12px;
+      margin: 0 12px 96px;
       padding: 0;
     }
 
@@ -153,6 +153,7 @@
         display: flex;
         align-items: center;
         column-gap: 16px;
+
         .buttonWrap {
           width: 40px;
           height: 40px;
@@ -164,10 +165,70 @@
           font-weight: 500;
         }
       }
-        .buttonText{
-          @include bodyTextSmall;
-          padding-left: 56px;
+
+      .buttonText {
+        @include bodyTextSmall;
+        padding-left: 56px;
+      }
+    }
+
+    .instructionsTitle {
+      @include headingLarge;
+
+      @media (max-width: 810px) {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+    }
+
+    .sectionImage {
+      margin-bottom: 56px;
+      display: grid;
+      column-gap: 130px;
+      grid-template-columns: 1fr 1fr;
+      @media (max-width: 810px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .instructionsWrap {
+        grid-column: 1;
+
+        h3 {
+          @include bodyText;
+          font-weight: 500;
+          margin-bottom: 24px;
+          @media (max-width: 810px) {
+            margin-bottom: 20px;
+          }
         }
+
+        span {
+          @include bodyTextSmall;
+          display: block;
+          margin-bottom: 24px;
+          @media (max-width: 810px) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .image {
+        grid-column: 2;
+        @media (max-width: 810px) {
+          grid-column: 1;
+          margin: 0 auto;
+        }
+      }
+    }
+    .finalBlock{
+      span{
+     @include bodyTextSmall;
+        display: block;
+        margin-bottom: 24px;
+        @media (max-width: 810px) {
+          margin-bottom: 20px;
+        }
+    }
     }
   }
 }
