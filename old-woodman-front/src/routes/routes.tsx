@@ -17,7 +17,7 @@ const Chairs = lazy(() => import('../pages/temporary/temporary'));
 const FurnitureCollectionItem = lazy(() => import('../pages/temporary/temporary'));
 
 const Facades = lazy(() => import('../pages/temporary/temporary'));
-const Gifts = lazy(() => import('../pages/temporary/temporary'));
+const Gifts = lazy(() => import('../pages/gifts/gifts'));
 const Promotions = lazy(() => import('../pages/promotions/promotions'));
 const Contacts = lazy(() => import('../pages/contacts/contacts'));
 const Cart = lazy(() => import('../pages/cart/cart.tsx'));

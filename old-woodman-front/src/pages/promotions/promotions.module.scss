@@ -56,8 +56,8 @@
       }
 
       .text {
-        @include mixins.bodyTextSmall;
         text-align: center;
+        @include mixins.bodyTextSmall;
       }
     }
 
