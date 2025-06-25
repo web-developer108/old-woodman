@@ -21,7 +21,6 @@
       width: 1920px;
     }
     @media (max-width: 1300px) {
-      margin: 0;
       border-radius: 0;
     }
     @media (max-width: 1200px) {
@@ -29,6 +28,7 @@
     }
     @media (max-width: 810px) {
       height: 864px;
+      margin: 0;
     }
 
     .heroContent {
@@ -66,9 +66,11 @@
           margin-bottom: 6px;
         }
       }
-      .description{
+
+      .description {
         @include mixins.bodyText;
       }
+
       .description {
         margin-bottom: 60px;
         line-height: 1.5;
@@ -103,78 +105,13 @@
       }
     }
   }
-
-  %contactInformationBase {
-    height: 56px;
-    background-color: var(--background-grey-color);
-    color: var(--text-grey-color);
-    @include mixins.bodyText;
-  }
-
-  .contactInformationDesktop {
-    @extend %contactInformationBase;
-    display: flex;
-    flex-direction: row;
-    gap: 56px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin: 12px 20px 46px;
-    @media (max-width: 1200px) {
-      margin: 10px 10px 46px;
-    }
+  .running{
+    max-width: 1880px;
+    margin: 0 20px;
     @media (max-width: 810px) {
-      display: none;
+      margin: 0;
     }
   }
-
-  .contactInformationMobile {
-    @extend %contactInformationBase;
-    overflow: hidden;
-    position: relative;
-    display: none;
-    margin: 10px 0 46px 0;
-    @media (max-width: 810px) {
-      display: block;
-      padding: 0;
-    }
-
-    .marqueeTrack {
-      display: flex;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      animation: marquee 20s linear infinite;
-      width: auto;
-      min-width: 200%;
-
-      &:hover {
-        animation-play-state: paused;
-      }
-    }
-
-    .marqueeContent {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 60%;
-      height: 100%;
-      gap: 36px;
-      flex-shrink: 0;
-      white-space: nowrap
-    }
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
   .offer {
     max-width: 1180px;
     margin: 0 auto;
@@ -406,9 +343,11 @@
           margin-bottom: 12px;
         }
       }
-      .carpentryQuote{
+
+      .carpentryQuote {
         @include mixins.bodyText;
       }
+
       .carpentryQuote {
         grid-column: 2;
         grid-row: 2;
@@ -516,10 +455,11 @@
         height: 584px;
 
         @media (max-width: 1200px) {
-        grid-template-rows: repeat(2, 182px);
+          grid-template-rows: repeat(2, 182px);
           height: 372px;
           gap: 8px;
         }
+
         .galleryImage {
           width: auto;
           border-radius: 10px;
@@ -527,6 +467,7 @@
           @media (max-width: 1200px) {
             max-height: 182px;
           }
+
           &:first-child {
             max-height: 100%;
             grid-row: span 2;
@@ -535,7 +476,6 @@
         }
       }
     }
-
 
 
     .social {
@@ -551,7 +491,8 @@
       }
     }
   }
-  .textInfo{
+
+  .textInfo {
     background-color: var(--background-grey-color);
     margin: 0 auto 156px;
     max-width: 1180px;
@@ -567,9 +508,9 @@
     }
 
 
-
   }
-  .questions{
+
+  .questions {
     margin: 0 auto 156px;
     max-width: 1180px;
   }

@@ -28,6 +28,7 @@ import { Accordion } from '../../components/accordion/accordion.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';
+import { RunningText } from '../../components/running-text/running-text.tsx';
 import styles from './home.module.scss'
 
 const Home = () => {
@@ -48,13 +49,6 @@ const Home = () => {
 
   useSimpleBarRecalc(simpleBarRef);
 
-  const contactInfo = (
-    <>
-      <span>{t('info-line1')}</span>
-      <span>{t('info-line2')}</span>
-      <span>{t('info-line3')}</span>
-    </>
-  );
   const galleryImages = [
     { src: gallery1, alt: 'Lamp' },
     { src: gallery2, alt: 'Door and sofa' },
@@ -89,7 +83,8 @@ const Home = () => {
               rel="noopener noreferrer"
               aria-label="WhatsApp"
             >
-              <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+              <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green}
+                            icon={<WhatsappIcon color={AppColors.text.light}/>}/>
             </a>
             <a
               href="https://t.me/old_woodman"
@@ -105,19 +100,10 @@ const Home = () => {
             </a>
           </div>
         </section>
-        <div className={styles.contactInformationDesktop}>
-          {contactInfo}
+        <div className={styles.running}>
+          <RunningText/>
         </div>
-        <div className={styles.contactInformationMobile}>
-          <div className={styles.marqueeTrack}>
-            <div className={styles.marqueeContent}>
-              {contactInfo}
-            </div>
-            <div className={styles.marqueeContent} aria-hidden="true">
-              {contactInfo}
-            </div>
-          </div>
-        </div>
+
         <section className={styles.offer}>
           <h2>{t(isDesktop ? 'article-title' : 'article-title-mobile').toUpperCase()}</h2>
           <div className={styles.features}>
@@ -141,7 +127,8 @@ const Home = () => {
               <div>{t('background-description1')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>}
+                            bgColor={AppColors.background.circleButton40}
                             onClick={() => {
                               navigate('/doors');
                             }}/>
@@ -153,7 +140,8 @@ const Home = () => {
               <div>{t('background-description2')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.furniture')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.furniture')} icon={<ArrowRightIcon/>}
+                            bgColor={AppColors.background.circleButton40}
                             onClick={() => navigate('/furniture')}/>
             </div>
           </div>
@@ -163,7 +151,8 @@ const Home = () => {
               <div>{t('background-description3')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.facades')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.facades')} icon={<ArrowRightIcon/>}
+                            bgColor={AppColors.background.circleButton40}
                             onClick={() => navigate('/facades')}/>
             </div>
           </div>
