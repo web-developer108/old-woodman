@@ -7,6 +7,7 @@ import { CartProvider } from './hooks/cart/cart.tsx';
 import { FavoritesProvider } from './hooks/favorites/favorites.tsx';
 import { ModalProvider } from './hooks/modal/modal.provider.tsx';
 import { ScrollToTop } from './components/scroll-to-top/scroll-to-top.tsx';
+import { FooterRefProvider } from './hooks/footer-ref/footer-ref.provider.tsx';
 import './i18n/index.ts';
 import './styles.scss';
 
@@ -17,9 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <DeviceProvider>
         <CartProvider>
           <FavoritesProvider>
-            <ModalProvider>
-              <App/>
-            </ModalProvider>
+            <FooterRefProvider>
+              <ModalProvider>
+                <App/>
+              </ModalProvider>
+            </FooterRefProvider>
           </FavoritesProvider>
         </CartProvider>
       </DeviceProvider>

@@ -9,10 +9,12 @@ import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { Feedback } from '../../modal-windows/feedback/feedback.tsx';
 import { AppColors } from '../../../styles.ts';
 import styles from './footer-top.module.scss';
+import { useFooterRef } from '../../../hooks/footer-ref/use-footer-ref.ts';
 
 export const FooterTop = () => {
   const { t } = useTranslation('common');
   const { showModal } = useModal();
+  const footerRef = useFooterRef();
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -40,7 +42,7 @@ export const FooterTop = () => {
     showModal(<Feedback/>)
   }
   return (
-    <div className={styles.footerTop}>
+    <div className={styles.footerTop} ref={footerRef}>
       <h2 className={styles.title}>{t('footer.title1')}<br/>{t('footer.title2')}</h2>
       <div className={styles.buttons}>
         <a href="https://wa.me/77081826004"

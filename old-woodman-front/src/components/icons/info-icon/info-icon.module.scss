@@ -1,0 +1,9 @@
+.infoIcon {
+  width: 84px;
+  height: 238px;
+
+  @media (max-width: 810px) {
+    width: 56px;
+    height: 160px;
+  }
+}
