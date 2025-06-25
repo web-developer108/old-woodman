@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 60% 1fr;
   grid-template-rows: 50px 67px 64px 92px 1fr;
+  position: relative;
   @media (max-width: 1240px) {
     max-width: 100%;
     margin: 0 20px;
@@ -73,4 +74,16 @@
     }
   }
 
+}
+.circleButtons {
+  position: absolute;
+  top: 498px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
