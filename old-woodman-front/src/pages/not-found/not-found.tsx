@@ -3,28 +3,28 @@ import { useTranslation } from 'react-i18next';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
+import { NotFoundIcon } from '../../components/icons/not-found-icon/not-found-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
 import { AppColors } from '../../styles.ts';
-import styles from './temporary.module.scss';
+import styles from './not-found.module.scss';
 
-const Temporary = () => {
+const NotFound = () => {
   const { t } = useTranslation('common');
   const navigate = useNavigate();
 
   return (
     <ToolPageLayout>
       <div className={styles.notFoundContainer}>
-        <h1>СТРАНИЦА В ПРОЦЕССЕ</h1>
-        <div>Извините, мы не успели, но Вы можете задать нам вопросы на WhatsApp или Telegram</div>
+        <h1>{t('not-found.title').toUpperCase()}</h1>
+        <div>{t('not-found.description')}</div>
         <div className={styles.buttonWrap}>
           <ColorButton label={t('not-found.button')} onClick={() => navigate(-1)}
                        icon={<ArrowRightIcon color={AppColors.text.main} size='small'/>}/>
         </div>
         <div className={styles.iconWrap}>
-          <FaceIcon/>
+          <NotFoundIcon/>
         </div>
       </div>
       <div className={styles.circleButtons}>
@@ -53,4 +53,4 @@ const Temporary = () => {
     </ToolPageLayout>
   )
 };
-export default Temporary;
+export default NotFound;

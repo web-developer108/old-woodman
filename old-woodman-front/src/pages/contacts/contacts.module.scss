@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .contactsContainer {
   width: 100%;
@@ -88,7 +88,7 @@
         }
 
         span {
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
         }
       }
     }

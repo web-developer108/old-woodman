@@ -20,20 +20,16 @@
     grid-template-rows: 50px 67px 20px 158px 80px 1fr;
   }
   @media (max-width: 810px) {
-    grid-template-rows: 32px 90px 20px 128px  44px 42px 56px 1fr;
+    grid-template-rows: 32px 90px 20px 108px  44px 42px 56px 1fr;
     margin: 0 12px;
     height: 438px;
   }
 
   h1 {
     @include mixins.mainHeader;
-  }
-
-  h1 {
-    line-height: 1.5;
     grid-column: 1;
     grid-row: 2;
-
+    line-height: 1.5;
     @media (max-width: 1200px) {
       text-align: center;
     }
@@ -41,13 +37,8 @@
 
   div {
     @include mixins.bodyText;
-  }
-
-  div {
     grid-column: 1;
     grid-row: 3;
-    max-width: 512px;
-
     line-height: 1.5;
     @media (max-width: 1200px) {
       grid-column: 1;
@@ -84,7 +75,6 @@
   }
 
 }
-
 .circleButtons {
   position: absolute;
   top: 498px;

@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .faqContainer {
   width: 100%;
@@ -12,7 +12,7 @@
 }
 
 .title {
-  @include headingLarge;
+  @include mixins.headingLarge;
   margin-bottom: 10px;
   @media (max-width: 1240px) {
     text-align: center;
@@ -79,7 +79,7 @@
 }
 
 .answer {
-  @include bodyTextSmall;
+  @include mixins.bodyTextSmall;
   padding: 0 20px 7px;
   line-height: 1.5;
 a{
