@@ -1,13 +1,14 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .textContainer {
   background-color: var(--background-grey-color);
   max-width: 1036px;
   margin: 0 auto;
   box-sizing: border-box;
-
   .textInfoTitle {
-    @include headingLarge;
+    @include mixins.headingLarge;
+  }
+  .textInfoTitle {
     line-height: 1.5;
     margin-bottom: 40px;
     @media (max-width: 1200px) {
@@ -46,8 +47,8 @@
     }
 
     li {
-      @include bodyTextSmall;
       max-width: 506px;
+      @include mixins.bodyTextSmall;
       @media (max-width: 1200px) {
         max-width: 100%;
       }
