@@ -34,7 +34,7 @@ const Temporary = () => {
           rel="noopener noreferrer"
           aria-label="WhatsApp"
         >
-          <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+          <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
         </a>
         <a
           href="https://wa.me/77081826004"
@@ -42,7 +42,7 @@ const Temporary = () => {
           rel="noopener noreferrer"
           aria-label="WhatsApp"
         >
-          <CircleButton bgColor={AppColors.button.blue} icon={
+          <CircleButton ariaLabel={t('common:social.aria-label.t')} bgColor={AppColors.button.blue} icon={
 
             <TelegramIcon
               arrowColor={AppColors.button.blue}

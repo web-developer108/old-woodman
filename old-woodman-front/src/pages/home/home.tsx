@@ -89,15 +89,15 @@ const Home = () => {
               rel="noopener noreferrer"
               aria-label="WhatsApp"
             >
-              <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+              <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
             </a>
             <a
-              href="https://wa.me/77081826004"
+              href="https://t.me/old_woodman"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
+              aria-label="Telegram"
             >
-              <CircleButton bgColor={AppColors.button.blue} icon={
+              <CircleButton ariaLabel={t('common:social.aria-label.t')} bgColor={AppColors.button.blue} icon={
 
                 <TelegramIcon
                   arrowColor={AppColors.button.blue}
@@ -141,7 +141,7 @@ const Home = () => {
               <div>{t('background-description1')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
                             onClick={() => {
                               navigate('/doors');
                             }}/>
@@ -153,7 +153,7 @@ const Home = () => {
               <div>{t('background-description2')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.furniture')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
                             onClick={() => navigate('/furniture')}/>
             </div>
           </div>
@@ -163,7 +163,7 @@ const Home = () => {
               <div>{t('background-description3')}</div>
             </div>
             <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
+              <CircleButton ariaLabel={t('aria-label.facades')} icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
                             onClick={() => navigate('/facades')}/>
             </div>
           </div>

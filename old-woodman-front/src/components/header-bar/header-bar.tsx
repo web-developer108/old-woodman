@@ -86,7 +86,7 @@ export const HeaderBar = () => {
 
             <div className={styles.burger} onClick={() => setMenuOpen(!isMenuOpen)}>
               {isMenuOpen
-                ? <CircleButton icon={<CloseIcon/>}/* onClick={() => setMenuOpen(false)}*/ bgColor="transparent"/>
+                ? <CircleButton ariaLabel={t('header.aria-label')} icon={<CloseIcon/>}/* onClick={() => setMenuOpen(false)}*/ bgColor="transparent"/>
                 :
                 <BurgerIcon/>}
             </div>
