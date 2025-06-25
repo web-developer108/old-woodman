@@ -27,7 +27,7 @@ const Terms = lazy(() => import('../pages/terms/terms'));
 const Favorites = lazy(() => import('../pages/favorites/favorites'));
 const Privacy = lazy(() => import('../pages/privacy-policy/privacy-policy'));
 const Ordered = lazy(() => import('../pages/temporary/temporary'));
-const NotFound = lazy(() => import('../pages/temporary/temporary'));
+const NotFound = lazy(() => import('../pages/not-found/not-found.tsx'));
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
