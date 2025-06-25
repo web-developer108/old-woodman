@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .promotionsContainer {
   width: 100%;
@@ -18,7 +18,7 @@
     }
 
     .mainHeader {
-      @include mainHeader;
+      @include mixins.mainHeader;
       line-height: 1.5;
       width: 1180px;
       margin: 0 auto;
@@ -53,11 +53,11 @@
       gap: 20px;
 
       .title {
-        @include headingLarge;
+        @include mixins.headingLarge;
       }
 
       .text {
-        @include bodyTextSmall;
+        @include mixins.bodyTextSmall;
         text-align: center;
       }
     }

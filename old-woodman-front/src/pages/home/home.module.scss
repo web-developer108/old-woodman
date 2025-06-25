@@ -1,4 +1,4 @@
-@import '../../mixins';
+@use '../../mixins' as mixins;
 
 .homePageContainer {
   max-width: 1920px;
@@ -68,7 +68,7 @@
       }
 
       .description {
-        @include bodyText;
+        @include mixins.bodyText;
         margin-bottom: 60px;
         line-height: 1.5;
         @media (max-width: 1200px) {
@@ -104,7 +104,7 @@
   }
 
   %contactInformationBase {
-    @include bodyText;
+    @include mixins.bodyText;
     height: 56px;
     background-color: var(--background-grey-color);
     color: var(--text-grey-color);
@@ -184,7 +184,7 @@
     }
 
     h2 {
-      @include headingLarge;
+      @include mixins.headingLarge;
       margin-bottom: 28px;
       @media (max-width: 1200px) {
         max-width: 540px;
@@ -213,7 +213,7 @@
         margin: 0;
 
         li {
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
           position: relative;
           padding-left: 34px;
           margin-bottom: 28px;
@@ -268,7 +268,7 @@
       }
 
       div {
-        @include bodyText;
+        @include mixins.bodyText;
       }
     }
 
@@ -392,7 +392,7 @@
       }
 
       .carpentryTitle {
-        @include headingLarge;
+        @include mixins.headingLarge;
         grid-column: 1;
         grid-row: 2 / span 3;
         max-width: 347px;
@@ -407,7 +407,7 @@
       }
 
       .carpentryQuote {
-        @include bodyText;
+        @include mixins.bodyText;
         grid-column: 2;
         grid-row: 2;
         font-family: 'Vollkorn', serif;
@@ -488,12 +488,12 @@
     }
 
     .galleryTitle {
-      @include headingLarge;
+      @include mixins.headingLarge;
       margin-bottom: 24px;
     }
 
     .galleryDescription {
-      @include bodyTextSmall;
+      @include mixins.bodyTextSmall;
       margin-bottom: 36px;
     }
 

@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .infoContainer {
   width: 100%;
@@ -32,10 +32,10 @@
       }
 
       .mainHeader {
-        @include mainHeader;
+        @include mixins.mainHeader;
         line-height: 1.5;
-
         vertical-align: center;
+
         @media (max-width: 1200px) {
           width: 90%;
         }
@@ -70,7 +70,7 @@
     }
 
     .header {
-      @include headingLarge;
+      @include mixins.headingLarge;
       margin: 48px 0;
     }
 
@@ -79,7 +79,7 @@
       margin: 0 auto;
 
       h3 {
-        @include bodyText;
+        @include mixins.bodyText;
         font-weight: 500;
         margin-bottom: 24px;
         @media (max-width: 810px) {
@@ -88,7 +88,7 @@
       }
 
       span {
-        @include bodyTextSmall;
+        @include mixins.bodyTextSmall;
         display: block;
         margin-bottom: 24px;
         @media (max-width: 810px) {
@@ -102,7 +102,7 @@
       margin: 0 auto;
 
       h3 {
-        @include bodyText;
+        @include mixins.bodyText;
         line-height: 1.5;
         font-weight: 500;
         margin-bottom: 24px;
@@ -121,7 +121,7 @@
         }
 
         li {
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
           margin-bottom: 24px;
           @media (max-width: 810px) {
             margin-bottom: 20px;
@@ -147,7 +147,6 @@
       }
       @media (max-width: 490px) {
         padding: 0 12px;
-        //margin: 24px 12px 96px;
       }
 
       .headerWrap {
@@ -161,20 +160,20 @@
         }
 
         h3 {
-          @include bodyText;
+          @include mixins.bodyText;
           line-height: 1.5;
           font-weight: 500;
         }
       }
 
       .buttonText {
-        @include bodyTextSmall;
+        @include mixins.bodyTextSmall;
         padding-left: 56px;
       }
     }
 
     .instructionsTitle {
-      @include headingLarge;
+      @include mixins.headingLarge;
 
       @media (max-width: 810px) {
         text-align: center;
@@ -195,7 +194,7 @@
         grid-column: 1;
 
         h3 {
-          @include bodyText;
+          @include mixins.bodyText;
           font-weight: 500;
           margin-bottom: 24px;
           @media (max-width: 810px) {
@@ -204,7 +203,7 @@
         }
 
         span {
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
           display: block;
           margin-bottom: 24px;
           @media (max-width: 810px) {
@@ -223,7 +222,7 @@
     }
     .finalBlock{
       span{
-     @include bodyTextSmall;
+     @include mixins.bodyTextSmall;
         display: block;
         margin-bottom: 24px;
         @media (max-width: 810px) {

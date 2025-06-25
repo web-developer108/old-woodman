@@ -1,32 +1,99 @@
-.wrapper {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  background-color: #f0f0f0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
+@use "../../mixins" as mixins;
 
-.marquee {
-  display: inline-flex;
-  gap: 60px;
-  animation: scroll-left linear infinite;
-}
+.notFoundContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 520px;
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: 50px 67px 64px 92px 1fr;
+  position: relative;
+  @media (max-width: 1240px) {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+  @media (max-width: 1200px) {
+    align-items: center;
+    justify-self: center;
+    grid-template-columns: 1fr;
 
-.marquee span {
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 48px;
-  font-weight: 500;
-  padding: 8px 0;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
+    grid-template-rows: 50px 67px 20px 158px 80px 1fr;
+  }
+  @media (max-width: 810px) {
+    grid-template-rows: 32px 90px 20px 128px  44px 42px 56px 1fr;
+    margin: 0 12px;
+    height: 438px;
   }
 
-  100% {
-    transform: translateX(-50%);
+  h1 {
+    @include mixins.mainHeader;
+  }
+
+  h1 {
+    line-height: 1.5;
+    grid-column: 1;
+    grid-row: 2;
+
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
+  }
+
+  div {
+    @include mixins.bodyText;
+  }
+
+  div {
+    grid-column: 1;
+    grid-row: 3;
+    max-width: 512px;
+
+    line-height: 1.5;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 5;
+      text-align: center;
+    }
+  }
+
+  .buttonWrap {
+    grid-column: 1;
+    grid-row: 4;
+    width: 390px;
+    align-items: flex-end;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 6;
+      justify-self: center;
+      align-self: baseline;
+      width: 100%;
+    }
+    @media (max-width: 810px) {
+      grid-row: 7;
+    }
+  }
+
+  .iconWrap {
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    @media (max-width: 1200px) {
+      grid-column: 1;
+      grid-row: 4;
+      justify-self: center;
+    }
+  }
+
+}
+
+.circleButtons {
+  position: absolute;
+  top: 498px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (max-width: 1200px) {
+    display: none;
   }
 }

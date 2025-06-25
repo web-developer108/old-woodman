@@ -1,67 +1,56 @@
-import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
-import styles from './temporary.module.scss'
-
-type Product = {
-  id: number
-  name: string
-  price: number
-  description: string
-
-}
+import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
+import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
+import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
+import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
+import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
+import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
+import { AppColors } from '../../styles.ts';
+import styles from './temporary.module.scss';
 
 const Temporary = () => {
-  const [products, setProducts] = useState<Product[]>([])
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/products`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Ошибка запроса')
-        return res.json()
-      })
-      .then((data) => {
-        if (Array.isArray(data.data)) {
-          setProducts(data.data)
-        } else {
-          console.warn('Неправильный формат данных:', data)
-        }
-      })
-      .catch((err) => {
-        console.error('Ошибка при загрузке продуктов:', err)
-      })
-  }, [])
+  const { t } = useTranslation('common');
+  const navigate = useNavigate();
 
   return (
-  <ToolPageLayout>
-      <div className={styles.wrapper} style={{ height: '500px', fontSize: '48px' }}>
-        <div
-          className={styles.marquee}
-          style={{ animationDuration: `${20}s` }}
-        >
-          <span>Страница находится в стадии разработки</span>
-          <span>Бет әзірленуде</span>
-          <span>Страница находится в стадии разработки</span>
-          <span>Бет әзірленуде</span>
-
+    <ToolPageLayout>
+      <div className={styles.notFoundContainer}>
+        <h1>СТРАНИЦА В ПРОЦЕССЕ</h1>
+        <div>Извините, мы не успели, но Вы можете задать нам вопросы на WhatsApp или Telegram</div>
+        <div className={styles.buttonWrap}>
+          <ColorButton label={t('not-found.button')} onClick={() => navigate(-1)}
+                       icon={<ArrowRightIcon color={AppColors.text.main} size='small'/>}/>
+        </div>
+        <div className={styles.iconWrap}>
+          <FaceIcon/>
         </div>
       </div>
-      <div style={{ marginTop: '2rem' }}>
-        <h2>📦 Продукты из CMS:</h2>
-        {products.length === 0 ? (
-          <p>Нет товаров</p>
-        ) : (
-          <ul>
-            {products.map((product) => (
-              <div key={product.id}>
-                <h3>{product.name}</h3>
-                <p>Цена: {product.price}</p>
-                <p>{product.description}</p>
-              </div>
-            ))}
-          </ul>
-        )}
-      </div>
-  </ToolPageLayout>
-  )
-}
+      <div className={styles.circleButtons}>
+        <a
+          href="https://wa.me/77081826004"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+        </a>
+        <a
+          href="https://wa.me/77081826004"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <CircleButton bgColor={AppColors.button.blue} icon={
 
-export default Temporary
+            <TelegramIcon
+              arrowColor={AppColors.button.blue}
+              backgroundColor={AppColors.text.light}/>}/>
+        </a>
+      </div>
+
+    </ToolPageLayout>
+  )
+};
+export default Temporary;

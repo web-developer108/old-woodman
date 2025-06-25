@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .termsContainer {
   width: 100%;
@@ -19,7 +19,7 @@
     }
 
     .mainHeader {
-      @include mainHeader;
+      @include mixins.mainHeader;
       width: 1180px;
       margin: 0 auto;
       vertical-align: center;
@@ -99,7 +99,7 @@
           margin: 0;
 
           li {
-            @include bodyTextSmall;
+            @include mixins.bodyTextSmall;
             position: relative;
             padding-left: 34px;
             margin-bottom: 28px;
@@ -133,7 +133,7 @@
           @extend %header
         }
         .paragraphDelivery{
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
         }
       }
       .warranty {
@@ -147,7 +147,7 @@
           @extend %header
         }
         .paragraphWarranty{
-          @include bodyTextSmall;
+          @include mixins.bodyTextSmall;
         }
       }
     }

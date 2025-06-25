@@ -1,4 +1,4 @@
-@import "../../mixins";
+@use "../../mixins" as mixins;
 
 .cartContainer {
   width: 100%;
@@ -27,12 +27,12 @@
       }
 
       .mainHeader {
-        @include mainHeader;
+        @include mixins.mainHeader;
         margin-bottom: 20px;
       }
 
       .label {
-        @include bodyText;
+        @include mixins.bodyText;
         width: 568px;
         @media (max-width: 1200px) {
           width: 100%;
@@ -62,11 +62,11 @@
       gap: 20px;
 
       .title {
-        @include headingLarge;
+        @include mixins.headingLarge;
       }
 
       .text {
-        @include bodyTextSmall
+        @include mixins.bodyTextSmall
       }
     }
 
