@@ -2,6 +2,7 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import styles from './gifts.module.scss'
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
+import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 
 const Gifts = () => {
   const { t } = usePageTranslate();
@@ -15,6 +16,7 @@ const Gifts = () => {
           </div>
         </div>
         <RunningText/>
+        <SectionTabs/>
       </div>
     </ToolPageLayout>
   )
