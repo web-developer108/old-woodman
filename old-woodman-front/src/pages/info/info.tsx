@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useFooterRef } from '../../hooks/footer-ref/use-footer-ref.ts';
@@ -16,11 +17,19 @@ const Info = () => {
   const { t } = usePageTranslate();
   const { isMobile } = useDevice();
   const footerRef = useFooterRef();
+  const instructionRef = useRef<HTMLHeadingElement>(null);
 
   const handleClick = () => {
     footerRef?.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  useEffect(() => {
+    if (location.pathname === '/info' && location.hash === '#instructions') {
+      // Небольшая задержка, чтобы элемент гарантированно отрендерился
+    //  setTimeout(() => {
+        instructionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      //}, 50);
+    }
+  }, [location]);
   return (
       <ToolPageLayout>
         <div className={styles.infoContainer}>
@@ -73,7 +82,7 @@ const Info = () => {
               </div>
               <div className={styles.buttonText}>{t('text-4')}</div>
             </div>
-            <h2 className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
+            <h2 id='instructions' ref={instructionRef} className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
             <section className={styles.section}>
               <h3>{t('instruction-label-1').toUpperCase()}</h3>
               <span>{t('instruction-text-1.1')}</span>

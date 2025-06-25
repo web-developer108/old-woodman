@@ -82,7 +82,7 @@
   @include bodyTextSmall;
   padding: 0 20px 7px;
   line-height: 1.5;
- /* @media (max-width: 810px) {
-    font-size: 14px;
-  }*/
+a{
+  color: var(--text-grey-color);
+}
 }
