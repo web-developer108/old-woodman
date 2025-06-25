@@ -10,7 +10,7 @@
     height: 964px;
     margin: 0 20px;
     background-color: var(--text-grey-color);
-    background-image: url('../../assets/images/home/hero-large.jpg');
+    background-image: url('../../assets/images/home/hero-large.webp');
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,7 +25,7 @@
       border-radius: 0;
     }
     @media (max-width: 1200px) {
-      background-image: url('../../assets/images/home/hero-medium.jpg');
+      background-image: url('../../assets/images/home/hero-medium.webp');
     }
     @media (max-width: 810px) {
       height: 864px;
