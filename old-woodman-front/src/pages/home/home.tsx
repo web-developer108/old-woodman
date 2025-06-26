@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
-import SimpleBar from 'simplebar-react';
-import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import useDevice from '../../hooks/device/use-device.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-import useDevice from '../../hooks/device/use-device.ts';
 import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
@@ -17,18 +17,17 @@ import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-ic
 import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
 import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
 import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
-import gallery1 from '@assets/images/home/gallery1.jpg'
-import gallery2 from '@assets/images/home/gallery2.jpg'
-import gallery3 from '@assets/images/home/gallery3.jpg'
-import gallery4 from '@assets/images/home/gallery4.jpg'
-import gallery5 from '@assets/images/home/gallery5.jpg'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
-import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
-import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
+import gallery2 from '@assets/images/home/gallery2.jpg'
+import gallery1 from '@assets/images/home/gallery1.jpg'
+import gallery3 from '@assets/images/home/gallery3.jpg'
+import gallery4 from '@assets/images/home/gallery4.jpg'
+import gallery5 from '@assets/images/home/gallery5.jpg'
 import styles from './home.module.scss'
 
 const Home = () => {
@@ -38,7 +37,6 @@ const Home = () => {
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
-  const simpleBarRef = useRef<any>(null);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -47,7 +45,6 @@ const Home = () => {
     }
   }, []);
 
-  useSimpleBarRecalc(simpleBarRef);
 
   const galleryImages = [
     { src: gallery1, alt: 'Lamp' },
@@ -204,19 +201,7 @@ const Home = () => {
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
 
-          <SimpleBar ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
-            <div className={styles.galleryTrack}>
-              {galleryImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img.src}
-                  alt={img.alt}
-                  className={styles.galleryImage}
-                />
-              ))}
-            </div>
-          </SimpleBar>
-
+          <Gallery images={galleryImages}/>
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>

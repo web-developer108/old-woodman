@@ -105,13 +105,15 @@
       }
     }
   }
-  .running{
+
+  .running {
     max-width: 1880px;
     margin: 0 20px;
     @media (max-width: 810px) {
       margin: 0;
     }
   }
+
   .offer {
     max-width: 1180px;
     margin: 0 auto;
@@ -438,45 +440,6 @@
       margin-bottom: 36px;
       @include mixins.bodyTextSmall;
     }
-
-    .galleryWrapper {
-      padding-bottom: 20px;
-      position: relative;
-      overflow-x: auto;
-      height: 100%;
-
-      .galleryTrack {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: max-content;
-        grid-template-rows: repeat(2, auto);
-        gap: 12px;
-        position: relative;
-        height: 584px;
-
-        @media (max-width: 1200px) {
-          grid-template-rows: repeat(2, 182px);
-          height: 372px;
-          gap: 8px;
-        }
-
-        .galleryImage {
-          width: auto;
-          border-radius: 10px;
-          object-fit: cover;
-          @media (max-width: 1200px) {
-            max-height: 182px;
-          }
-
-          &:first-child {
-            max-height: 100%;
-            grid-row: span 2;
-            height: 100%;
-          }
-        }
-      }
-    }
-
 
     .social {
       font-size: 18px;
