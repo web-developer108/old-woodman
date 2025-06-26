@@ -56,36 +56,41 @@
   .giftsContent {
     max-width: 1180px;
     margin: 0 auto;
+
     .article {
       max-width: 1180px;
       margin-bottom: 56px;
       @media (max-width: 810px) {
         margin-bottom: 48px;
       }
-    .infoTitle {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      @media (max-width: 810px) {
-        font-size: 14px;
-        margin-bottom: 20px;
+
+      .infoTitle {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        @media (max-width: 810px) {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
       }
-    }
+
       .columns {
         display: flex;
         column-gap: 76px;
 
         @media (max-width: 1200px) {
-         column-gap: 36px;
+          column-gap: 36px;
 
         }
         @media (max-width: 810px) {
           flex-direction: column;
         }
-        .column{
+
+        .column {
           flex: 1;
           @include mixins.bodyTextSmall;
-          span{
+
+          span {
             display: block;
             margin-bottom: 24px;
             @media (max-width: 810px) {
@@ -94,7 +99,22 @@
           }
         }
       }
-  }
+    }
+    .textInfo {
+      background-color: var(--background-grey-color);
+      margin: 112px auto 156px;
+      max-width: 1180px;
+      border-radius: 10px;
+      padding: 65px;
+      box-sizing: border-box;
+      @media (max-width: 1240px) {
+        padding: 48px 24px;
+        margin: 96px 0;
+      }
+      @media (max-width: 810px) {
+        padding: 48px 14px;
+      }
+    }
   }
 
 }

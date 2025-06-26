@@ -7,6 +7,7 @@ import clock from '@assets/images/gifts/clock.webp'
 import mirror from '@assets/images/gifts/mirror.webp'
 import styles from './gifts.module.scss'
 import { Gallery } from '../../components/gallery/gallery.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
 
 
 
@@ -29,8 +30,8 @@ const Gifts = () => {
         <RunningText/>
         <div className={styles.giftsContent}>
 
-        <Breadcrumbs current = {t('main-header')}/>
-        <SectionTabs/>
+          <Breadcrumbs current={t('main-header')}/>
+          <SectionTabs/>
           <section className={styles.article}>
             <h2 className={styles.infoTitle}>{t('info-title').toUpperCase()}</h2>
             <div className={styles.columns}>
@@ -46,7 +47,10 @@ const Gifts = () => {
             </div>
           </section>
           <Gallery images={galleryImages} layout={'two-large'}/>
-        {/*  <div>
+          <section className={styles.textInfo}>
+            <TextInfo/>
+          </section>
+          {/*  <div>
 
           </div>*/}
         </div>
