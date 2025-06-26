@@ -1,12 +1,22 @@
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
-import styles from './gifts.module.scss'
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
+import clock from '@assets/images/gifts/clock.webp'
+import mirror from '@assets/images/gifts/mirror.webp'
+import styles from './gifts.module.scss'
+import { Gallery } from '../../components/gallery/gallery.tsx';
+
+
 
 const Gifts = () => {
   const { t } = usePageTranslate();
+  const galleryImages = [
+    { src: clock, alt: 'Часы' },
+    { src:mirror, alt: 'Зеркало' },
+
+  ];
   return (
     <ToolPageLayout>
       <div className={styles.giftsContainer}>
@@ -35,9 +45,10 @@ const Gifts = () => {
               </div>
             </div>
           </section>
-          <div>
+          <Gallery images={galleryImages} layout={'two-large'}/>
+        {/*  <div>
 
-          </div>
+          </div>*/}
         </div>
       </div>
     </ToolPageLayout>

@@ -3,13 +3,14 @@
   position: relative;
   overflow-x: auto;
   height: 100%;
+
   .galleryTrack {
     display: grid;
     height: 584px;
     position: relative;
     gap: 12px;
 
-  &.layoutDefault {
+    &.layoutDefault {
 
       grid-auto-flow: column;
       grid-auto-columns: max-content;
@@ -38,10 +39,16 @@
     }
 
     &.layoutTwoLarge {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      height: auto;
-
+      grid-auto-flow: column;
+      grid-auto-columns: 584px;
+      grid-template-rows: 100%;
+      height: 584px;
+      gap: 12px;
+      @media (max-width: 810px) {
+        grid-auto-columns: 372px;
+        height: 372px;
+        gap: 8px;
+      }
       .galleryImage {
         width: 100%;
         height: auto;
