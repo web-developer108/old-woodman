@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-//import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import useDevice from '../../hooks/device/use-device.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
@@ -10,7 +9,6 @@ import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-//import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
 import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
@@ -23,18 +21,17 @@ import { Accordion } from '../../components/accordion/accordion.tsx';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { Gallery } from '../../components/gallery/gallery.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import gallery2 from '@assets/images/home/gallery2.jpg'
 import gallery1 from '@assets/images/home/gallery1.jpg'
 import gallery3 from '@assets/images/home/gallery3.jpg'
 import gallery4 from '@assets/images/home/gallery4.jpg'
 import gallery5 from '@assets/images/home/gallery5.jpg'
 import styles from './home.module.scss'
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { isDesktop } = useDevice();
-  //const navigate = useNavigate();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
@@ -119,41 +116,6 @@ const Home = () => {
           </div>
         </section>
         <section ref={navigationRef} className={styles.navigation}>
-          {/*<div className={styles.backgroundBrown}>
-            <div className={styles.bgContentWrapper}>
-              <h3>{t('background-title1').toUpperCase()}</h3>
-              <div>{t('background-description1')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>}
-                            bgColor={AppColors.background.circleButton40}
-                            onClick={() => {
-                              navigate('/doors');
-                            }}/>
-            </div>
-          </div>
-          <div className={styles.backgroundBlue}>
-            <div className={styles.bgContentWrapper}>
-              <h3>{t('background-title2').toUpperCase()}</h3>
-              <div>{t('background-description2')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.furniture')} icon={<ArrowRightIcon/>}
-                            bgColor={AppColors.background.circleButton40}
-                            onClick={() => navigate('/furniture')}/>
-            </div>
-          </div>
-          <div className={styles.backgroundYellow}>
-            <div className={styles.bgContentWrapperLast}>
-              <h3>{t('background-title3').toUpperCase()}</h3>
-              <div>{t('background-description3')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton ariaLabel={t('aria-label.facades')} icon={<ArrowRightIcon/>}
-                            bgColor={AppColors.background.circleButton40}
-                            onClick={() => navigate('/facades')}/>
-            </div>
-          </div>*/}
           <NavigationBlock isHome />
         </section>
         <section className={styles.carpentry}>

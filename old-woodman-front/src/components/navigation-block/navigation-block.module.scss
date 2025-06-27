@@ -1,8 +1,8 @@
 @use "../../mixins" as mixins;
 
 .navigation {
-  max-width: 1180px;
-  margin: 0 auto;
+ // max-width: 1180px;
+ // margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -48,7 +48,7 @@
     background-repeat: no-repeat;
     position: relative;
     border-radius: 10px;
-    margin: 0 12px;
+   // margin: 0 12px;
     @media (max-width: 810px) {
       height: 196px;
     }

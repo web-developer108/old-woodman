@@ -5,9 +5,9 @@
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 20px 156px;
   @media (max-width: 810px) {
-    padding: 0 12px; // ✅ Зазор по 12px
+    padding: 0 12px 96px;
   }
 
   .imageContainer {
@@ -113,6 +113,15 @@
       }
       @media (max-width: 810px) {
         padding: 48px 14px;
+      }
+    }
+    .navigation{
+      h2{
+        margin-bottom: 16px;
+        @include mixins.headingLarge;
+        @media (max-width: 810px) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
