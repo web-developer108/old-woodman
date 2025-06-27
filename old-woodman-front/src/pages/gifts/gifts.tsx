@@ -8,6 +8,7 @@ import mirror from '@assets/images/gifts/mirror.webp'
 import styles from './gifts.module.scss'
 import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 
 
@@ -50,6 +51,7 @@ const Gifts = () => {
           <section className={styles.textInfo}>
             <TextInfo/>
           </section>
+          <NavigationBlock/>
           {/*  <div>
 
           </div>*/}

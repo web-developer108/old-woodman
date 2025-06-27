@@ -71,5 +71,11 @@
   "button-doors": "Двери",
   "button-furniture": "Мебель",
   "button-facades": "Фасады",
-  "button-decor": "Декор"
+  "button-decor": "Декор",
+  "background-title1": "Двери из массива",
+  "background-description1": "Для тех, кто не хочет менять двери каждые 5 лет",
+  "background-title2": "Мебель из массива",
+  "background-description2": "Живая красота и сила дерева в Вашем доме",
+  "background-title3": "Фасады и панели",
+  "background-description3": "Дерево преображает пространство"
 }
