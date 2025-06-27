@@ -21,7 +21,6 @@ const Gifts = lazy(() => import('../pages/gifts/gifts'));
 const Promotions = lazy(() => import('../pages/promotions/promotions'));
 const Contacts = lazy(() => import('../pages/contacts/contacts'));
 const Cart = lazy(() => import('../pages/cart/cart.tsx'));
-const FAQ = lazy(() => import('../pages/temporary/temporary'));
 const Info = lazy(() => import('../pages/info/info'));
 const Terms = lazy(() => import('../pages/terms/terms'));
 const Favorites = lazy(() => import('../pages/favorites/favorites'));
@@ -56,7 +55,6 @@ const routes: RouteObject[] = [
   { path: '/contacts', element: <Contacts /> },
   { path: '/cart', element: <Cart /> },
   { path: '/cart/booked', element: <Ordered /> },
-  { path: '/faq', element: <FAQ /> },//пока нет такой странички
   { path: '/info', element: <Info /> },
   { path: '/terms', element: <Terms /> },
   { path: '/favorites', element: <Favorites /> },
