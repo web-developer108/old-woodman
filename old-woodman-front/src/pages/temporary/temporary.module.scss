@@ -87,11 +87,8 @@
 
 .circleButtons {
   position: absolute;
-  top: 498px;
+  top: 450px;
   right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 
   @media (max-width: 1200px) {
     display: none;
