@@ -12,11 +12,11 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
   isHome = false,
 }) => {
   const { t } = useTranslation('common');
-  const { isMobile } = useDevice();
+  const {  screenWidth} = useDevice();
   const navigate = useNavigate();
 
   return (
-    <div className={`${styles.navigation} ${!isHome && !isMobile ? styles.navigationCustom : ''}`}>
+    <div className={`${styles.navigation} ${!isHome && screenWidth >= 810 ? styles.navigationCustom : ''}`}>
       {blocks.includes('doors') && (
         <div className={styles.backgroundBrown}>
           <div className={styles.bgContentWrapper}>
