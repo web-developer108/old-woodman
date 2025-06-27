@@ -36,6 +36,11 @@
     color: var(--text-light-color);
   }
 
+  &.black {
+    background-color: var(--text-main-color);
+    color: var(--text-light-color);
+  }
+
   .icon {
     display: flex;
     align-items: center;

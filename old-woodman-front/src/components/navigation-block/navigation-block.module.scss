@@ -1,0 +1,215 @@
+@use "../../mixins" as mixins;
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+
+  %bgContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 347px;
+    height: 206px;
+    padding: 30px 0 24px 32px;
+    justify-content: space-between;
+    @media (max-width: 950px) {
+      width: 193px;
+    }
+
+    @media (max-width: 810px) {
+      height: 172px;
+      padding: 14px 0 10px 24px;
+    }
+    @media (max-width: 810px) {
+      padding: 16px 0 18px 14px;
+    }
+
+    h3 {
+      font-size: 32px;
+      @media (max-width: 810px) {
+        font-size: 24px;
+      }
+    }
+
+    div {
+      @include mixins.bodyText;
+    }
+  }
+
+  %background {
+    max-width: 1180px;
+    height: 260px;
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px;
+    @media (max-width: 810px) {
+      height: 196px;
+    }
+
+    .bgContentWrapper {
+      @extend %bgContent;
+
+      h3, div {
+        color: var(--text-light-color);
+      }
+    }
+
+    .bgContentWrapperLast {
+      @extend %bgContent;
+
+      h3, div {
+        color: var(--text-main-color);
+      }
+    }
+  }
+
+  .backgroundBrown {
+    @extend %background;
+    background-image: url('../../assets/images/home/background-brown-desktop.jpg');
+    background-color: var(--background-brown-color);
+    @media (max-width: 810px) {
+      background-image: url('../../assets/images/home/background-brown-mobile.jpg');
+    }
+    @media (max-width: 520px) {
+      background-image: url('../../assets/images/home/background-brown-small.jpg');
+      background-position: left center;
+    }
+  }
+
+  .backgroundBlue {
+    @extend %background;
+    background-image: url('../../assets/images/home/background-blue-desktop.jpg');
+    background-color: var(--background-blue-color);
+    @media (max-width: 810px) {
+      background-image: url('../../assets/images/home/background-blue-mobile.jpg');
+    }
+
+
+    @media (max-width: 520px) {
+      background-image: url('../../assets/images/home/background-blue-small.jpg');
+      background-position: left center;
+    }
+  }
+
+  .backgroundYellow {
+    @extend %background;
+    background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
+    background-color: var(--background-yellow-color);
+    @media (max-width: 810px) {
+      background-image: url('../../assets/images/home/background-yellow-mobile.jpg');
+    }
+
+
+    @media (max-width: 520px) {
+      background-image: url('../../assets/images/home/background-yellow-small.jpg');
+      background-position: left center;
+    }
+  }
+
+  .buttonContainer {
+    position: absolute;
+    top: 30px;
+    left: 390px;
+    width: 40px;
+    height: 40px;
+    @media (max-width: 950px) {
+      left: 235px;
+    }
+    @media (max-width: 810px) {
+      top: auto;
+      left: auto;
+      bottom: 10px;
+      right: 24px;
+    }
+  }
+
+  &.navigationCustom {
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 11px;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+
+    %bgContentSmall {
+      flex: 1 1 386px;
+      min-width: 240px;
+      max-width: 386px;
+      height: auto;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin: 0;
+
+    }
+
+    %bgContentWrapperSmall {
+      width: 100%;
+      height: auto;
+      padding: 30px 0 24px 17px;
+      justify-content: space-between;
+      box-sizing: border-box;
+      @media (max-width: 1120px) {
+        font-size: 24px;
+        height: 100px;
+        padding: 20px 12px;
+      }
+      h3 {
+        font-size: 36px;
+        padding-right: 30px;
+        @media (max-width: 1120px) {
+          font-size: 24px;
+
+        }
+
+      }
+      div{
+        padding-right: 80px;
+        @media (max-width: 1120px) {
+          padding-right: 40px;
+        }
+      }
+    }
+
+    .backgroundBrown {
+      @extend %bgContentSmall;
+      background-image: url('../../assets/images/home/brown-small.webp');
+
+      .bgContentWrapper {
+        @extend %bgContentWrapperSmall
+      }
+
+    }
+
+    .backgroundBlue {
+      @extend %bgContentSmall;
+      background-image: url('../../assets/images/home/blue-small.webp');
+      .bgContentWrapper {
+        @extend %bgContentWrapperSmall
+      }
+    }
+
+    .backgroundYellow {
+      @extend %bgContentSmall;
+      background-image: url('../../assets/images/home/yellow-small.webp');
+      .bgContentWrapperLast {
+        @extend %bgContentWrapperSmall
+      }
+    }
+    .buttonContainer {
+      top: 140px;
+      left: auto;
+      right: 12px;
+      @media (max-width: 1120px) {
+        font-size: 24px;
+        height: 100px;
+        top: 100px;
+      }
+    }
+  }
+}

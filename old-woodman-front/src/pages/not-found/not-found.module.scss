@@ -27,6 +27,9 @@
 
   h1 {
     @include mixins.mainHeader;
+  }
+
+  h1 {
     grid-column: 1;
     grid-row: 2;
     line-height: 1.5;
@@ -75,6 +78,7 @@
   }
 
 }
+
 .circleButtons {
   position: absolute;
   top: 498px;

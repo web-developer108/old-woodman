@@ -21,7 +21,6 @@
       width: 1920px;
     }
     @media (max-width: 1300px) {
-      margin: 0;
       border-radius: 0;
     }
     @media (max-width: 1200px) {
@@ -29,6 +28,7 @@
     }
     @media (max-width: 810px) {
       height: 864px;
+      margin: 0;
     }
 
     .heroContent {
@@ -69,6 +69,9 @@
 
       .description {
         @include mixins.bodyText;
+      }
+
+      .description {
         margin-bottom: 60px;
         line-height: 1.5;
         @media (max-width: 1200px) {
@@ -103,74 +106,11 @@
     }
   }
 
-  %contactInformationBase {
-    @include mixins.bodyText;
-    height: 56px;
-    background-color: var(--background-grey-color);
-    color: var(--text-grey-color);
-  }
-
-  .contactInformationDesktop {
-    @extend %contactInformationBase;
-    display: flex;
-    flex-direction: row;
-    gap: 56px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin: 12px 20px 46px;
-    @media (max-width: 1200px) {
-      margin: 10px 10px 46px;
-    }
+  .running {
+    max-width: 1880px;
+    margin: 0 20px;
     @media (max-width: 810px) {
-      display: none;
-    }
-  }
-
-  .contactInformationMobile {
-    @extend %contactInformationBase;
-    overflow: hidden;
-    position: relative;
-    display: none;
-    margin: 10px 0 46px 0;
-    @media (max-width: 810px) {
-      display: block;
-      padding: 0;
-    }
-
-    .marqueeTrack {
-      display: flex;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      animation: marquee 20s linear infinite;
-      width: auto;
-      min-width: 200%;
-
-      &:hover {
-        animation-play-state: paused;
-      }
-    }
-
-    .marqueeContent {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 60%;
-      height: 100%;
-      gap: 36px;
-      flex-shrink: 0;
-      white-space: nowrap
-    }
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
+      margin: 0;
     }
   }
 
@@ -184,8 +124,8 @@
     }
 
     h2 {
-      @include mixins.headingLarge;
       margin-bottom: 28px;
+      @include mixins.headingLarge;
       @media (max-width: 1200px) {
         max-width: 540px;
         padding: 0 0 36px 0;
@@ -213,11 +153,11 @@
         margin: 0;
 
         li {
-          @include mixins.bodyTextSmall;
           position: relative;
           padding-left: 34px;
           margin-bottom: 28px;
           color: var(--text-main-color);
+          @include mixins.bodyTextSmall;
 
           &::before {
             content: '✓';
@@ -236,132 +176,10 @@
   .navigation {
     max-width: 1180px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-sizing: border-box;
-
-    %bgContent {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: 347px;
-      height: 206px;
-      padding: 30px 0 24px 32px;
-      justify-content: space-between;
-      @media (max-width: 950px) {
-        width: 193px;
-      }
-      @media (max-width: 810px) {
-        height: 172px;
-        padding: 14px 0 10px 24px;
-      }
-      @media (max-width: 810px) {
-        padding: 16px 0 18px 14px;
-      }
-
-      h3 {
-        font-size: 32px;
-        @media (max-width: 810px) {
-          font-size: 24px;
-        }
-      }
-
-      div {
-        @include mixins.bodyText;
-      }
+    padding: 0 20px;
+    @media (max-width: 1200px) {
+      padding: 0 12px;
     }
-
-    %background {
-      max-width: 1180px;
-      height: 260px;
-      background-position: right center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: relative;
-      border-radius: 10px;
-      margin: 0 12px;
-      @media (max-width: 810px) {
-        height: 196px;
-      }
-
-      .bgContentWrapper {
-        @extend %bgContent;
-
-        h3, div {
-          color: var(--text-light-color);
-        }
-      }
-
-      .bgContentWrapperLast {
-        @extend %bgContent;
-
-        h3, div {
-          color: var(--text-main-color);
-        }
-      }
-    }
-
-    .backgroundBrown {
-      @extend %background;
-      background-image: url('../../assets/images/home/background-brown-desktop.jpg');
-      background-color: var(--background-brown-color);
-      @media (max-width: 810px) {
-        background-image: url('../../assets/images/home/background-brown-mobile.jpg');
-      }
-      @media (max-width: 520px) {
-        background-image: url('../../assets/images/home/background-brown-small.jpg');
-        background-position: left center;
-      }
-    }
-
-    .backgroundBlue {
-      @extend %background;
-      background-image: url('../../assets/images/home/background-blue-desktop.jpg');
-      background-color: var(--background-blue-color);
-      @media (max-width: 810px) {
-        background-image: url('../../assets/images/home/background-blue-mobile.jpg');
-      }
-
-
-      @media (max-width: 520px) {
-        background-image: url('../../assets/images/home/background-blue-small.jpg');
-        background-position: left center;
-      }
-    }
-
-    .backgroundYellow {
-      @extend %background;
-      background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
-      background-color: var(--background-yellow-color);
-      @media (max-width: 810px) {
-        background-image: url('../../assets/images/home/background-yellow-mobile.jpg');
-      }
-
-
-      @media (max-width: 520px) {
-        background-image: url('../../assets/images/home/background-yellow-small.jpg');
-        background-position: left center;
-      }
-    }
-
-    .buttonContainer {
-      position: absolute;
-      top: 30px;
-      left: 390px;
-      width: 40px;
-      height: 40px;
-      @media (max-width: 950px) {
-        left: 235px;
-      }
-      @media (max-width: 810px) {
-        top: auto;
-        left: auto;
-        bottom: 10px;
-        right: 24px;
-      }
-    }
-
   }
 
   .carpentry {
@@ -392,10 +210,10 @@
       }
 
       .carpentryTitle {
-        @include mixins.headingLarge;
         grid-column: 1;
         grid-row: 2 / span 3;
         max-width: 347px;
+        @include mixins.headingLarge;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 2;
@@ -408,6 +226,9 @@
 
       .carpentryQuote {
         @include mixins.bodyText;
+      }
+
+      .carpentryQuote {
         grid-column: 2;
         grid-row: 2;
         font-family: 'Vollkorn', serif;
@@ -417,6 +238,7 @@
         color: var(--text-grey-color);
         padding-left: 48px;
         line-height: 1.5;
+
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 3;
@@ -488,52 +310,14 @@
     }
 
     .galleryTitle {
-      @include mixins.headingLarge;
       margin-bottom: 24px;
+      @include mixins.headingLarge;
     }
 
     .galleryDescription {
-      @include mixins.bodyTextSmall;
       margin-bottom: 36px;
+      @include mixins.bodyTextSmall;
     }
-
-    .galleryWrapper {
-      padding-bottom: 20px;
-      position: relative;
-      overflow-x: auto;
-      height: 100%;
-
-      .galleryTrack {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: max-content;
-        grid-template-rows: repeat(2, auto);
-        gap: 12px;
-        position: relative;
-        height: 584px;
-
-        @media (max-width: 1200px) {
-        grid-template-rows: repeat(2, 182px);
-          height: 372px;
-          gap: 8px;
-        }
-        .galleryImage {
-          width: auto;
-          border-radius: 10px;
-          object-fit: cover;
-          @media (max-width: 1200px) {
-            max-height: 182px;
-          }
-          &:first-child {
-            max-height: 100%;
-            grid-row: span 2;
-            height: 100%;
-          }
-        }
-      }
-    }
-
-
 
     .social {
       font-size: 18px;
@@ -548,7 +332,8 @@
       }
     }
   }
-  .textInfo{
+
+  .textInfo {
     background-color: var(--background-grey-color);
     margin: 0 auto 156px;
     max-width: 1180px;
@@ -564,9 +349,9 @@
     }
 
 
-
   }
-  .questions{
+
+  .questions {
     margin: 0 auto 156px;
     max-width: 1180px;
   }

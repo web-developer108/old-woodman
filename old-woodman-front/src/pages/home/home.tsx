@@ -1,43 +1,40 @@
 import { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
-import SimpleBar from 'simplebar-react';
-import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import useDevice from '../../hooks/device/use-device.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-import useDevice from '../../hooks/device/use-device.ts';
-import { ArrowRightIcon } from '../../components/icons/arrow-right-icon/arrow-right-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
 import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
 import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
 import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
 import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
-import gallery1 from '@assets/images/home/gallery1.jpg'
-import gallery2 from '@assets/images/home/gallery2.jpg'
-import gallery3 from '@assets/images/home/gallery3.jpg'
-import gallery4 from '@assets/images/home/gallery4.jpg'
-import gallery5 from '@assets/images/home/gallery5.jpg'
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
-import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
-import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';
+import { RunningText } from '../../components/running-text/running-text.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import gallery2 from '@assets/images/home/gallery2.jpg'
+import gallery1 from '@assets/images/home/gallery1.jpg'
+import gallery3 from '@assets/images/home/gallery3.jpg'
+import gallery4 from '@assets/images/home/gallery4.jpg'
+import gallery5 from '@assets/images/home/gallery5.jpg'
 import styles from './home.module.scss'
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { isDesktop } = useDevice();
-  const navigate = useNavigate();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
-  const simpleBarRef = useRef<any>(null);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -46,15 +43,7 @@ const Home = () => {
     }
   }, []);
 
-  useSimpleBarRecalc(simpleBarRef);
 
-  const contactInfo = (
-    <>
-      <span>{t('info-line1')}</span>
-      <span>{t('info-line2')}</span>
-      <span>{t('info-line3')}</span>
-    </>
-  );
   const galleryImages = [
     { src: gallery1, alt: 'Lamp' },
     { src: gallery2, alt: 'Door and sofa' },
@@ -89,15 +78,16 @@ const Home = () => {
               rel="noopener noreferrer"
               aria-label="WhatsApp"
             >
-              <CircleButton bgColor={AppColors.button.green} icon={<WhatsappIcon color={AppColors.text.light}/>}/>
+              <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green}
+                            icon={<WhatsappIcon color={AppColors.text.light}/>}/>
             </a>
             <a
-              href="https://wa.me/77081826004"
+              href="https://t.me/old_woodman"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
+              aria-label="Telegram"
             >
-              <CircleButton bgColor={AppColors.button.blue} icon={
+              <CircleButton ariaLabel={t('common:social.aria-label.t')} bgColor={AppColors.button.blue} icon={
 
                 <TelegramIcon
                   arrowColor={AppColors.button.blue}
@@ -105,19 +95,10 @@ const Home = () => {
             </a>
           </div>
         </section>
-        <div className={styles.contactInformationDesktop}>
-          {contactInfo}
+        <div className={styles.running}>
+          <RunningText/>
         </div>
-        <div className={styles.contactInformationMobile}>
-          <div className={styles.marqueeTrack}>
-            <div className={styles.marqueeContent}>
-              {contactInfo}
-            </div>
-            <div className={styles.marqueeContent} aria-hidden="true">
-              {contactInfo}
-            </div>
-          </div>
-        </div>
+
         <section className={styles.offer}>
           <h2>{t(isDesktop ? 'article-title' : 'article-title-mobile').toUpperCase()}</h2>
           <div className={styles.features}>
@@ -135,38 +116,7 @@ const Home = () => {
           </div>
         </section>
         <section ref={navigationRef} className={styles.navigation}>
-          <div className={styles.backgroundBrown}>
-            <div className={styles.bgContentWrapper}>
-              <h3>{t('background-title1').toUpperCase()}</h3>
-              <div>{t('background-description1')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
-                            onClick={() => {
-                              navigate('/doors');
-                            }}/>
-            </div>
-          </div>
-          <div className={styles.backgroundBlue}>
-            <div className={styles.bgContentWrapper}>
-              <h3>{t('background-title2').toUpperCase()}</h3>
-              <div>{t('background-description2')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
-                            onClick={() => navigate('/furniture')}/>
-            </div>
-          </div>
-          <div className={styles.backgroundYellow}>
-            <div className={styles.bgContentWrapperLast}>
-              <h3>{t('background-title3').toUpperCase()}</h3>
-              <div>{t('background-description3')}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <CircleButton icon={<ArrowRightIcon/>} bgColor={AppColors.background.circleButton40}
-                            onClick={() => navigate('/facades')}/>
-            </div>
-          </div>
+          <NavigationBlock isHome />
         </section>
         <section className={styles.carpentry}>
           <div className={styles.carpentryContainer}>
@@ -215,19 +165,7 @@ const Home = () => {
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
 
-          <SimpleBar ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
-            <div className={styles.galleryTrack}>
-              {galleryImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img.src}
-                  alt={img.alt}
-                  className={styles.galleryImage}
-                />
-              ))}
-            </div>
-          </SimpleBar>
-
+          <Gallery images={galleryImages}/>
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>

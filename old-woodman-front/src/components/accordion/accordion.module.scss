@@ -12,8 +12,8 @@
 }
 
 .title {
-  @include mixins.headingLarge;
   margin-bottom: 10px;
+  @include mixins.headingLarge;
   @media (max-width: 1240px) {
     text-align: center;
   }
@@ -79,9 +79,8 @@
 }
 
 .answer {
-  @include mixins.bodyTextSmall;
   padding: 0 20px 7px;
-  line-height: 1.5;
+  @include mixins.bodyTextSmall;
 a{
   color: var(--text-grey-color);
 }

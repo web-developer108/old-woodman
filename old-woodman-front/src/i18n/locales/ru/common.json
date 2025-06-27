@@ -9,6 +9,7 @@
   "cart": "Корзина",
   "connect": "Связаться",
   "main": "Главная",
+  "header.aria-label": "Закрыть окно",
   "footer.title1": "Остались вопросы?",
   "footer.title2": "Задавайте — мы ответим",
   "footer.button.whatsapp": "Перейти в чат WhatsApp",
@@ -60,8 +61,21 @@
   "modal.description": "Столярная мастерская в Алматы — производим двери и мебель на заказ",
   "not-found.title": "Страница не найдена",
   "not-found.description": "Похоже страницы которую Вы искали не существует на сайте",
-  "not-found.button": "Вернуться"
-
-
-
+  "not-found.button": "Вернуться",
+  "social.aria-label.wa": "Перейти в Whatsapp",
+  "social.aria-label.t": "Перейти в Telegram",
+  "social.aria-label.i": "Перейти в Instagram",
+  "info-line1": "Производство в Алматы",
+  "info-line2": "Доставка по Казахстану",
+  "info-line3": "+7 (708) 182-60-04",
+  "button-doors": "Двери",
+  "button-furniture": "Мебель",
+  "button-facades": "Фасады",
+  "button-decor": "Декор",
+  "background-title1": "Двери из массива",
+  "background-description1": "Для тех, кто не хочет менять двери каждые 5 лет",
+  "background-title2": "Мебель из массива",
+  "background-description2": "Живая красота и сила дерева в Вашем доме",
+  "background-title3": "Фасады и панели",
+  "background-description3": "Дерево преображает пространство"
 }

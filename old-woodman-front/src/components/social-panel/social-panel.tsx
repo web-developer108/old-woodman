@@ -5,8 +5,10 @@ import { WhatsappIcon } from '../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { InstagramIcon } from '../icons/instagram-icon/instagram-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './social-panel.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const SocialPanel: React.FC = () => {
+  const { t } = useTranslation('common');
   return (
     <div className={styles.panel}>
       <a
@@ -15,7 +17,7 @@ export const SocialPanel: React.FC = () => {
         rel="noopener noreferrer"
         aria-label="Telegram"
       >
-        <CircleButton icon={<TelegramIcon/>}/>
+        <CircleButton ariaLabel={t('social.aria-label.t')} icon={<TelegramIcon/>}/>
       </a>
       <a
         href="https://wa.me/77081826004"
@@ -23,7 +25,7 @@ export const SocialPanel: React.FC = () => {
         rel="noopener noreferrer"
         aria-label="WhatsApp"
       >
-        <CircleButton icon={<WhatsappIcon color={AppColors.text.grey}/>}/>
+        <CircleButton ariaLabel={t('social.aria-label.wa')} icon={<WhatsappIcon color={AppColors.text.grey}/>}/>
       </a>
       <a
         href="https://www.instagram.com/old.woodman/"
@@ -31,7 +33,7 @@ export const SocialPanel: React.FC = () => {
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
-        <CircleButton icon={<InstagramIcon/>}/>
+        <CircleButton ariaLabel={t('social.aria-label.i')} icon={<InstagramIcon/>}/>
       </a>
     </div>
   );

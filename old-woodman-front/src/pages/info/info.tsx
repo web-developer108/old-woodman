@@ -24,12 +24,11 @@ const Info = () => {
   };
   useEffect(() => {
     if (location.pathname === '/info' && location.hash === '#instructions') {
-      // Небольшая задержка, чтобы элемент гарантированно отрендерился
-    //  setTimeout(() => {
+
         instructionRef.current?.scrollIntoView({ behavior: 'smooth' });
-      //}, 50);
+
     }
-  }, [location]);
+  }, []);
   return (
       <ToolPageLayout>
         <div className={styles.infoContainer}>
@@ -75,7 +74,7 @@ const Info = () => {
               <div className={styles.headerWrap}>
 
                 <div className={styles.buttonWrap}>
-                  <CircleButton onClick={handleClick} bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
+                  <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick} bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
                 </div>
 
                 <h3>{t('subtitle-4').toUpperCase()}</h3>
