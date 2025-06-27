@@ -19,9 +19,9 @@ import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
-import { RunningText } from '../../components/running-text/running-text.tsx';
-import { Gallery } from '../../components/gallery/gallery.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import { RunningText } from '../../components/running-text/running-text';
+import { Gallery } from '../../components/gallery/gallery';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block';
 import gallery2 from '@assets/images/home/gallery2.jpg'
 import gallery1 from '@assets/images/home/gallery1.jpg'
 import gallery3 from '@assets/images/home/gallery3.jpg'
