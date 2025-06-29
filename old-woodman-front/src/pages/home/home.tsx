@@ -19,11 +19,11 @@ import { RunningText } from '../../components/running-text/running-text';
 import { Gallery } from '../../components/gallery/gallery';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
-import gallery2 from '@assets/images/home/gallery2.jpg'
-import gallery1 from '@assets/images/home/gallery1.jpg'
-import gallery3 from '@assets/images/home/gallery3.jpg'
-import gallery4 from '@assets/images/home/gallery4.jpg'
-import gallery5 from '@assets/images/home/gallery5.jpg'
+import gallery1 from '@assets/images/home/gallery1.webp'
+import gallery2 from '@assets/images/home/gallery2.webp'
+import gallery3 from '@assets/images/home/gallery3.webp'
+import gallery4 from '@assets/images/home/gallery4.webp'
+import gallery5 from '@assets/images/home/gallery5.webp'
 import styles from './home.module.scss'
 
 const Home = () => {

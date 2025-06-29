@@ -67,43 +67,43 @@
 
   .backgroundBrown {
     @extend %background;
-    background-image: url('../../assets/images/home/background-brown-desktop.jpg');
+    background-image: url('../../assets/images/home/background-brown-desktop.webp');
     background-color: var(--background-brown-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-brown-mobile.jpg');
+      background-image: url('../../assets/images/home/background-brown-mobile.webp');
     }
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-brown-small.jpg');
+      background-image: url('../../assets/images/home/background-brown-small.webp');
       background-position: left center;
     }
   }
 
   .backgroundBlue {
     @extend %background;
-    background-image: url('../../assets/images/home/background-blue-desktop.jpg');
+    background-image: url('../../assets/images/home/background-blue-desktop.webp');
     background-color: var(--background-blue-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-blue-mobile.jpg');
+      background-image: url('../../assets/images/home/background-blue-mobile.webp');
     }
 
 
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-blue-small.jpg');
+      background-image: url('../../assets/images/home/background-blue-small.webp');
       background-position: left center;
     }
   }
 
   .backgroundYellow {
     @extend %background;
-    background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
+    background-image: url('../../assets/images/home/background-yellow-desktop.webp');
     background-color: var(--background-yellow-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-yellow-mobile.jpg');
+      background-image: url('../../assets/images/home/background-yellow-mobile.webp');
     }
 
 
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-yellow-small.jpg');
+      background-image: url('../../assets/images/home/background-yellow-small.webp');
       background-position: left center;
     }
   }
@@ -188,7 +188,7 @@
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/brown-small.webp');
       @media (max-width: 1050px) {
-        background-image: url('../../assets/images/home/background-brown-desktop.jpg');
+        background-image: url('../../assets/images/home/background-brown-desktop.webp');
       }
       .bgContentWrapper {
         @extend %bgContentWrapperSmall;
@@ -201,7 +201,7 @@
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/blue-small.webp');
       @media (max-width: 1050px) {
-        background-image: url('../../assets/images/home/background-blue-desktop.jpg');
+        background-image: url('../../assets/images/home/background-blue-desktop.webp');
       }
       .bgContentWrapper {
         @extend %bgContentWrapperSmall;
@@ -213,7 +213,7 @@
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/yellow-small.webp');
       @media (max-width: 1050px) {
-        background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
+        background-image: url('../../assets/images/home/background-yellow-desktop.webp');
       }
       .bgContentWrapperLast {
         @extend %bgContentWrapperSmall
