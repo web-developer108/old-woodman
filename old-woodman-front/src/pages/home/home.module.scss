@@ -41,6 +41,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      position: relative;
       @media (max-width: 1300px) {
         padding-top: 280px;
         padding-left: 24px;
@@ -96,9 +97,6 @@
       position: absolute;
       top: 370px;
       right: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
 
       @media (max-width: 1200px) {
         display: none;

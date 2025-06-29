@@ -6,10 +6,6 @@ import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
-import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
-import { TelegramIcon } from '../../components/icons/telegram-icon/telegram-icon.tsx';
-import { AppColors } from '../../styles.ts';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
 import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
 import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
@@ -22,11 +18,12 @@ import { ContactsModal } from '../../components/modal-windows/contacts-modal/con
 import { RunningText } from '../../components/running-text/running-text';
 import { Gallery } from '../../components/gallery/gallery';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block';
-import gallery2 from '@assets/images/home/gallery2.jpg'
-import gallery1 from '@assets/images/home/gallery1.jpg'
-import gallery3 from '@assets/images/home/gallery3.jpg'
-import gallery4 from '@assets/images/home/gallery4.jpg'
-import gallery5 from '@assets/images/home/gallery5.jpg'
+import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
+import gallery1 from '@assets/images/home/gallery1.webp'
+import gallery2 from '@assets/images/home/gallery2.webp'
+import gallery3 from '@assets/images/home/gallery3.webp'
+import gallery4 from '@assets/images/home/gallery4.webp'
+import gallery5 from '@assets/images/home/gallery5.webp'
 import styles from './home.module.scss'
 
 const Home = () => {
@@ -42,7 +39,6 @@ const Home = () => {
       faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
-
 
   const galleryImages = [
     { src: gallery1, alt: 'Lamp' },
@@ -72,28 +68,9 @@ const Home = () => {
             </div>
           </div>
           <div className={styles.circleButtons}>
-            <a
-              href="https://wa.me/77081826004"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <CircleButton ariaLabel={t('common:social.aria-label.wa')} bgColor={AppColors.button.green}
-                            icon={<WhatsappIcon color={AppColors.text.light}/>}/>
-            </a>
-            <a
-              href="https://t.me/old_woodman"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Telegram"
-            >
-              <CircleButton ariaLabel={t('common:social.aria-label.t')} bgColor={AppColors.button.blue} icon={
-
-                <TelegramIcon
-                  arrowColor={AppColors.button.blue}
-                  backgroundColor={AppColors.text.light}/>}/>
-            </a>
+            <SocialButtons/>
           </div>
+
         </section>
         <div className={styles.running}>
           <RunningText/>
@@ -116,7 +93,7 @@ const Home = () => {
           </div>
         </section>
         <section ref={navigationRef} className={styles.navigation}>
-          <NavigationBlock isHome />
+          <NavigationBlock isHome/>
         </section>
         <section className={styles.carpentry}>
           <div className={styles.carpentryContainer}>

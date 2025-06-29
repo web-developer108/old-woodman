@@ -47,7 +47,7 @@ export const HeaderBar = () => {
               <Logo/>
             </div>)
             : (
-              <Link to="/" style={{ display: 'inline-block' }}>
+              <Link to="/" aria-label={t('logo-link')} style={{ display: 'inline-block' }}>
                 <Logo/>
               </Link>
             )

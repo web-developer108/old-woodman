@@ -22,9 +22,7 @@
       height: 172px;
       padding: 14px 0 10px 24px;
     }
-    @media (max-width: 810px) {
-      padding: 16px 0 18px 14px;
-    }
+
 
     h3 {
       font-size: 32px;
@@ -69,43 +67,43 @@
 
   .backgroundBrown {
     @extend %background;
-    background-image: url('../../assets/images/home/background-brown-desktop.jpg');
+    background-image: url('../../assets/images/home/background-brown-desktop.webp');
     background-color: var(--background-brown-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-brown-mobile.jpg');
+      background-image: url('../../assets/images/home/background-brown-mobile.webp');
     }
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-brown-small.jpg');
+      background-image: url('../../assets/images/home/background-brown-small.webp');
       background-position: left center;
     }
   }
 
   .backgroundBlue {
     @extend %background;
-    background-image: url('../../assets/images/home/background-blue-desktop.jpg');
+    background-image: url('../../assets/images/home/background-blue-desktop.webp');
     background-color: var(--background-blue-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-blue-mobile.jpg');
+      background-image: url('../../assets/images/home/background-blue-mobile.webp');
     }
 
 
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-blue-small.jpg');
+      background-image: url('../../assets/images/home/background-blue-small.webp');
       background-position: left center;
     }
   }
 
   .backgroundYellow {
     @extend %background;
-    background-image: url('../../assets/images/home/background-yellow-desktop.jpg');
+    background-image: url('../../assets/images/home/background-yellow-desktop.webp');
     background-color: var(--background-yellow-color);
     @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-yellow-mobile.jpg');
+      background-image: url('../../assets/images/home/background-yellow-mobile.webp');
     }
 
 
     @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-yellow-small.jpg');
+      background-image: url('../../assets/images/home/background-yellow-small.webp');
       background-position: left center;
     }
   }
@@ -136,6 +134,9 @@
     @media (max-width: 1200px) {
       width: 100%;
     }
+    @media (max-width: 1050px) {
+      flex-direction: column;
+    }
 
     %bgContentSmall {
       flex: 1 1 386px;
@@ -145,7 +146,11 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       margin: 0;
-
+      @media (max-width: 1050px) {
+        max-width: 1010px;
+        width: 100%;
+        max-height: 260px;
+      }
     }
 
     %bgContentWrapperSmall {
@@ -173,15 +178,21 @@
         @media (max-width: 1120px) {
           padding-right: 40px;
         }
+        @media (max-width: 1050px) {
+          width: 250px;
+        }
       }
     }
 
-    .backgroundBrown {
+  .backgroundBrown  {
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/brown-small.webp');
-
+      @media (max-width: 1050px) {
+        background-image: url('../../assets/images/home/background-brown-desktop.webp');
+      }
       .bgContentWrapper {
-        @extend %bgContentWrapperSmall
+        @extend %bgContentWrapperSmall;
+
       }
 
     }
@@ -189,14 +200,21 @@
     .backgroundBlue {
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/blue-small.webp');
+      @media (max-width: 1050px) {
+        background-image: url('../../assets/images/home/background-blue-desktop.webp');
+      }
       .bgContentWrapper {
-        @extend %bgContentWrapperSmall
+        @extend %bgContentWrapperSmall;
+
       }
     }
 
     .backgroundYellow {
       @extend %bgContentSmall;
       background-image: url('../../assets/images/home/yellow-small.webp');
+      @media (max-width: 1050px) {
+        background-image: url('../../assets/images/home/background-yellow-desktop.webp');
+      }
       .bgContentWrapperLast {
         @extend %bgContentWrapperSmall
       }
@@ -209,6 +227,11 @@
         font-size: 24px;
         height: 100px;
         top: 100px;
+      }
+      @media (max-width: 1050px) {
+        left: 30px;
+        right: auto;
+        top: 200px;
       }
     }
   }
