@@ -3,20 +3,32 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
-//import { Gallery } from '../../components/gallery/gallery.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import gallery1 from '@assets/images/facades/gallery-1f.webp'
+import gallery2 from '@assets/images/facades/gallery-2f.webp'
+import gallery3 from '@assets/images/facades/gallery-3f.webp'
+import gallery4 from '@assets/images/facades/gallery-4f.webp'
+import gallery5 from '@assets/images/facades/gallery-5f.webp'
+
 import styles from './facades.module.scss';
 import useDevice from '../../hooks/device/use-device.ts';
 
 const Facades = () => {
   const { t } = usePageTranslate();
   const { isMobile } = useDevice();
-  /*  const galleryImages = [
-      { src: clock, alt: 'Часы' },
-      { src:mirror, alt: 'Зеркало' },
-
-    ];*/
+  const galleryImages = [
+    { src: gallery1, alt: 'Лампа' },
+    { src: gallery2, alt: 'Экран' },
+    { src: gallery3, alt: 'Экран в работе' },
+    { src: gallery4, alt: 'Большой экран' },
+    { src: gallery5, alt: 'Экран черный' },
+    { src: gallery2, alt: 'Экран' },
+    { src: gallery3, alt: 'Экран в работе'},
+    { src: gallery4, alt: 'Большой экран' },
+    { src: gallery5, alt: 'Экран черный' },
+  ];
   return (
     <ToolPageLayout>
       <div className={styles.facadesContainer}>
@@ -91,7 +103,7 @@ const Facades = () => {
               </div>
             </div>
           </section>
-          {/* <Gallery images={galleryImages} layout={'two-large'}/>*/}
+           <Gallery images={galleryImages} />
           <section className={styles.textInfo}>
             <TextInfo/>
           </section>
