@@ -126,10 +126,9 @@
   }
 
   &.navigationCustom {
-
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: left;
     gap: 11px;
     @media (max-width: 1200px) {
       width: 100%;

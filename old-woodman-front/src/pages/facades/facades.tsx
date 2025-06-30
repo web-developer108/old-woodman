@@ -25,7 +25,7 @@ const Facades = () => {
     { src: gallery4, alt: 'Большой экран' },
     { src: gallery5, alt: 'Экран черный' },
     { src: gallery2, alt: 'Экран' },
-    { src: gallery3, alt: 'Экран в работе'},
+    { src: gallery3, alt: 'Экран в работе' },
     { src: gallery4, alt: 'Большой экран' },
     { src: gallery5, alt: 'Экран черный' },
   ];
@@ -55,10 +55,10 @@ const Facades = () => {
                   <span>{t('info-text-1-desktop')}</span>
                 )}
                 <h2
-                  className={styles.infoTitle}>{t('info-title-2').toUpperCase() }</h2>
+                  className={styles.infoTitle}>{t('info-title-2').toUpperCase()}</h2>
                 {isMobile ? (<>
-                  <span>{t('info-text-2.1-mobile')}</span>
-                  <span>{t('info-text-2.2-mobile')}</span>
+                    <span>{t('info-text-2.1-mobile')}</span>
+                    <span>{t('info-text-2.2-mobile')}</span>
                   </>
                 ) : (
                   <>
@@ -71,7 +71,7 @@ const Facades = () => {
               </div>
               <div className={styles.column}>
                 <h2
-                  className={styles.infoTitle}>{t('info-title-3').toUpperCase() }</h2>
+                  className={styles.infoTitle}>{t('info-title-3').toUpperCase()}</h2>
                 {isMobile ? (<>
                     <span>{t('info-text-3.1-mobile')}</span>
                     <span>{t('info-text-3.2-mobile')}</span>
@@ -86,7 +86,7 @@ const Facades = () => {
                   </>
                 )}
                 <h2
-                  className={styles.infoTitle}>{t('info-title-4').toUpperCase() }</h2>
+                  className={styles.infoTitle}>{t('info-title-4').toUpperCase()}</h2>
                 {isMobile ? (<>
                     <span>{t('info-text-4.1-mobile')}</span>
                     <span>{t('info-text-4.2-mobile')}</span>
@@ -103,13 +103,13 @@ const Facades = () => {
               </div>
             </div>
           </section>
-           <Gallery images={galleryImages} />
+          <Gallery images={galleryImages}/>
           <section className={styles.textInfo}>
             <TextInfo/>
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-            <NavigationBlock/>
+            <NavigationBlock blocks={['doors', 'furniture']}/>
           </section>
         </div>
       </div>
