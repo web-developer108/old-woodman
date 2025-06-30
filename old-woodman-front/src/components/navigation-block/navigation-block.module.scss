@@ -67,7 +67,7 @@
 
   .backgroundBrown {
     @extend %background;
-    background-image: url('../../assets/images/home/background-brown-desktop.webp');
+    background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
     background-color: var(--background-brown-color);
     @media (max-width: 810px) {
       background-image: url('../../assets/images/home/background-brown-mobile.webp');
@@ -80,7 +80,7 @@
 
   .backgroundBlue {
     @extend %background;
-    background-image: url('../../assets/images/home/background-blue-desktop.webp');
+    background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
     background-color: var(--background-blue-color);
     @media (max-width: 810px) {
       background-image: url('../../assets/images/home/background-blue-mobile.webp');
@@ -95,7 +95,7 @@
 
   .backgroundYellow {
     @extend %background;
-    background-image: url('../../assets/images/home/background-yellow-desktop.webp');
+    background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
     background-color: var(--background-yellow-color);
     @media (max-width: 810px) {
       background-image: url('../../assets/images/home/background-yellow-mobile.webp');

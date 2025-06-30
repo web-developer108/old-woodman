@@ -10,7 +10,7 @@
     height: 964px;
     margin: 0 20px;
     background-color: var(--text-grey-color);
-    background-image: url('../../assets/images/home/hero-large.webp');
+    background-image: url('../../assets/images/home/hero-big-large.webp');
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,15 +20,13 @@
     @media (min-width: 1921px) {
       width: 1920px;
     }
-    @media (max-width: 1300px) {
-      border-radius: 0;
-    }
     @media (max-width: 1200px) {
       background-image: url('../../assets/images/home/hero-medium.webp');
     }
     @media (max-width: 810px) {
       height: 864px;
       margin: 0;
+      border-radius: 0;
     }
 
     .heroContent {
@@ -96,7 +94,7 @@
     .circleButtons {
       position: absolute;
       top: 370px;
-      right: 10px;
+      right: 30px;
 
       @media (max-width: 1200px) {
         display: none;
