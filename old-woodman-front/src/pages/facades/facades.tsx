@@ -1,30 +1,28 @@
-import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
-import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import { Gallery } from '../../components/gallery/gallery.tsx';
+import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
+//import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
-import clock from '@assets/images/gifts/clock.webp'
-import mirror from '@assets/images/gifts/mirror.webp'
-import styles from './gifts.module.scss'
+import styles from './facades.module.scss';
+import useDevice from '../../hooks/device/use-device.ts';
 
-
-
-const Gifts = () => {
+const Facades = () => {
   const { t } = usePageTranslate();
-  const galleryImages = [
+  const { isMobile} = useDevice();
+/*  const galleryImages = [
     { src: clock, alt: 'Часы' },
     { src:mirror, alt: 'Зеркало' },
 
-  ];
+  ];*/
   return (
     <ToolPageLayout>
-      <div className={styles.giftsContainer}>
+      <div className={styles.facadesContainer}>
         <div className={styles.imageContainer}>
           <div className={styles.imageTitleContainer}>
-            <h1 className={styles.imageTitle}>{t('main-header').toUpperCase()}</h1>
+            <h1 className={styles.imageTitle} dangerouslySetInnerHTML={{__html: isMobile ?t('main-header-mobile').toUpperCase() : t('main-header').toUpperCase()}}/>
             <div className={styles.imageLabel}>{t('main-header.label')}</div>
           </div>
         </div>
@@ -47,17 +45,17 @@ const Gifts = () => {
               </div>
             </div>
           </section>
-          <Gallery images={galleryImages} layout={'two-large'}/>
+         {/* <Gallery images={galleryImages} layout={'two-large'}/>*/}
           <section className={styles.textInfo}>
             <TextInfo/>
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock/>
+            <NavigationBlock/>
           </section>
         </div>
       </div>
     </ToolPageLayout>
   )
 }
-export default Gifts;
+export default Facades;

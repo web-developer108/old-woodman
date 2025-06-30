@@ -1,0 +1,76 @@
+@use "../../mixins" as mixins;
+
+.facadesContainer{
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px 156px;
+  @media (max-width: 810px) {
+    padding: 0 12px 96px;
+  }
+  .imageContainer {
+    height: 300px;
+    background-color: var(--background-orange-color);
+    max-width: 1880px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: var(--text-main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/facades/yellow-header-large.webp');
+    @media (max-width: 1200px) {
+      width: 100%;
+      justify-content: left;
+    }
+    @media (max-width: 1112px) {
+      background-image: url('../../assets/images/facades/yellow-header-medium.webp');
+      background-position: left center;
+    }
+    @media (max-width: 810px) {
+      background-position: right center;
+      align-items: flex-start;
+      padding-top: 20px;
+      width: 100%;
+      height: 390px;
+      background-image: url('../../assets/images/facades/yellow-header-small.webp');
+    }
+
+    .imageTitleContainer {
+      max-width: 1180px;
+      width: 100%;
+
+
+      @media (max-width: 1200px) {
+        margin-left: 4px;
+      }
+      @media (max-width: 1050px) {
+        margin-left: 0;
+      }
+
+      .imageTitle {
+        max-width: 760px;
+        @include mixins.mainHeader;
+        @media (max-width: 1450px) {
+          max-width: 600px;
+        }
+        @media (max-width: 414px) {
+          font-size: 26px;
+        }
+
+      }
+
+      .imageLabel {
+        @include mixins.bodyText;
+      }
+    }
+
+  }
+
+}
