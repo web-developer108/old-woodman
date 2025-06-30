@@ -3,12 +3,12 @@ import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import clock from '@assets/images/gifts/clock.webp'
-import mirror from '@assets/images/gifts/mirror.webp'
-import styles from './gifts.module.scss'
 import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import clock from '@assets/images/gifts/clock.webp'
+import mirror from '@assets/images/gifts/mirror.webp'
+import styles from './gifts.module.scss'
 
 
 
@@ -55,9 +55,6 @@ const Gifts = () => {
             <h2>{t('nav-title').toUpperCase()}</h2>
           <NavigationBlock/>
           </section>
-          {/*  <div>
-
-          </div>*/}
         </div>
       </div>
     </ToolPageLayout>

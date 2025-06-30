@@ -93,6 +93,10 @@
         width: 100%;
         resize: none;
         box-sizing: border-box;
+        &::placeholder {
+          color: var(--text-main-color-50);
+          opacity: 1;
+        }
         @media (max-width: 810px) {
           font-size: 14px;
         }
