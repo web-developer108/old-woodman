@@ -10,7 +10,7 @@
     height: 964px;
     margin: 0 20px;
     background-color: var(--text-grey-color);
-    background-image: url('../../assets/images/home/hero-large.webp');
+    background-image: url('../../assets/images/home/hero-big-large.webp');
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -94,7 +94,7 @@
     .circleButtons {
       position: absolute;
       top: 370px;
-      right: 10px;
+      right: 30px;
 
       @media (max-width: 1200px) {
         display: none;
