@@ -19,7 +19,7 @@ export const Gallery: React.FC<GalleryProps> = ({ images, layout = 'default' }) 
     <SimpleBar  ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
       <div className={`${styles.galleryTrack} ${layoutClass}`}>
         {images.map((img, index) => (
-          <img key={index} src={img.src} alt={img.alt} className={styles.galleryImage}/>
+          <img key={index} src={img.src} alt={img.alt} className={styles.galleryImage} loading="lazy"/>
         ))}
       </div>
     </SimpleBar>
