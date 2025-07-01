@@ -3,9 +3,9 @@ import type { NavigationBlockProps } from './navigation-block.types.ts';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { useTranslation } from 'react-i18next';
+import useDevice from '../../hooks/device/use-device.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './navigation-block.module.scss'
-import useDevice from '../../hooks/device/use-device.ts';
 
 export const NavigationBlock: React.FC<NavigationBlockProps> = ({
   blocks = ['doors', 'furniture', 'facades'],

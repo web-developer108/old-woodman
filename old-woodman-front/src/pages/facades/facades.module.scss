@@ -24,13 +24,13 @@
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../assets/images/facades/yellow-header-large.webp');
+    background-image: url('../../assets/images/facades/yellow-header-large-big.webp');
     @media (max-width: 1200px) {
       width: 100%;
       justify-content: left;
     }
     @media (max-width: 1112px) {
-      background-image: url('../../assets/images/facades/yellow-header-medium.webp');
+      background-image: url('../../assets/images/facades/yellow-header-medium-big.webp');
       background-position: left center;
     }
     @media (max-width: 810px) {
@@ -39,7 +39,7 @@
       padding-top: 20px;
       width: 100%;
       height: 390px;
-      background-image: url('../../assets/images/facades/yellow-header-small.webp');
+      background-image: url('../../assets/images/facades/yellow-header-small-big.webp');
     }
 
     .imageTitleContainer {
