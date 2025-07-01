@@ -6,8 +6,12 @@ import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import clock from '@assets/images/gifts/clock.webp'
+import mirror from '@assets/images/gifts/mirror.webp'
+/*
 import clock from '@assets/images/gifts/clock-big.webp'
 import mirror from '@assets/images/gifts/mirror-big.webp'
+*/
 import styles from './gifts.module.scss'
 
 
