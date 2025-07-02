@@ -6,18 +6,16 @@ import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
-import gallery1 from '@assets/images/facades/gallery-1f.webp'
-import gallery2 from '@assets/images/facades/gallery-2f.webp'
-import gallery3 from '@assets/images/facades/gallery-3f.webp'
-import gallery4 from '@assets/images/facades/gallery-4f.webp'
-import gallery5 from '@assets/images/facades/gallery-5f.webp'
-/*
+/*import gallery1 from '@assets/images/facades/gallery-1f.webp';
+import gallery2 from '@assets/images/facades/gallery-2f.webp';
+import gallery3 from '@assets/images/facades/gallery-3f.webp';
+import gallery4 from '@assets/images/facades/gallery-4f.webp';
+import gallery5 from '@assets/images/facades/gallery-5f.webp';*/
 import gallery1 from '@assets/images/facades/gallery-1f-big.webp'
 import gallery2 from '@assets/images/facades/gallery-2f-big.webp'
 import gallery3 from '@assets/images/facades/gallery-3f-big.webp'
 import gallery4 from '@assets/images/facades/gallery-4f-big.webp'
 import gallery5 from '@assets/images/facades/gallery-5f-big.webp'
-*/
 import useDevice from '../../hooks/device/use-device.ts';
 import styles from './facades.module.scss';
 
