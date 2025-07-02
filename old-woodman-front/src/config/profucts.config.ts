@@ -26,7 +26,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'цвет "Иней"',
               kk: 'түсі "Иней"',
             },
-            images: ['/images/doors/classica/iney.jpg'],
+            images: ['/images/doors/classica/iney.webp'],
             price: 286000,
           },
           {
@@ -39,20 +39,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Со стеклом цвет "Иней"',
               kk: 'Шынымен түсі "Иней"',
             },
-            images: ['/images/doors/classica/iney-glass.jpg'],
-            price: 286000,
-          },
-          {
-            id: 'classica-dub',
-            title: {
-              ru: 'CLASSICA',
-              kk: 'CLASSICA',
-            },
-            description: {
-              ru: 'цвет "Дуб"',
-              kk: 'түсі "Емен"',
-            },
-            images: ['/images/doors/classic/dub.jpg'],
+            images: ['/images/doors/classica/iney-glass.webp'],
             price: 286000,
           },
           {
@@ -65,7 +52,20 @@ export const productCatalog: ProductCategory[] = [
               ru: 'цвет "Бук"',
               kk: 'түсі "Бук"',
             },
-            images: ['/images/doors/classic/buk.jpg'],
+            images: ['/images/doors/classica/buk.jpg'],
+            price: 286000,
+          },
+          {
+            id: 'classica-dub',
+            title: {
+              ru: 'CLASSICA',
+              kk: 'CLASSICA',
+            },
+            description: {
+              ru: 'цвет "Дуб"',
+              kk: 'түсі "Емен"',
+            },
+            images: ['/images/doors/classica/dub.jpg'],
             price: 286000,
           },
         ],
