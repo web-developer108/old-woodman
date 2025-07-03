@@ -3,7 +3,8 @@ import type { RouteObject } from 'react-router-dom';
 
 const Home = lazy(() => import('../pages/home/home.tsx'));
 
-const DoorsOverview = lazy(() => import('../pages/temporary/temporary'));
+const DoorsOverview = lazy(() => import('../pages/doors/doors' +
+''));
 const Classic = lazy(() => import('../pages/temporary/temporary'));
 const Loft = lazy(() => import('../pages/temporary/temporary'));
 const Balcony = lazy(() => import('../pages/temporary/temporary'));

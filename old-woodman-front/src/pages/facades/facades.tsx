@@ -34,6 +34,7 @@ const Facades = () => {
     { src: gallery4, alt: 'Большой экран' },
     { src: gallery5, alt: 'Экран черный' },
   ];
+
   return (
     <ToolPageLayout>
       <div className={styles.facadesContainer}>

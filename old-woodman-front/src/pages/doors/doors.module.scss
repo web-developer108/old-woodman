@@ -1,0 +1,104 @@
+@use "../../mixins" as mixins;
+
+.doorsContainer {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px 156px;
+
+  @media (max-width: 810px) {
+    padding: 0 12px 96px;
+  }
+
+  .imageContainer {
+    display: grid;
+    grid-template-areas: "image";
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--background-brown-color);
+    max-width: 1880px;
+    margin: 0 auto;
+
+    @media (max-width: 810px) {
+      height: 390px;
+    }
+    @media (max-width: 386px) {
+      height: 336px;
+    }
+
+    .picture {
+      grid-area: image;
+      width: 100%;
+      height: inherit;
+    }
+
+    .backgroundImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+      display: block;
+
+
+      @media (max-width: 1141px) {
+        object-position: left center;
+      }
+      @media (max-width: 810px) {
+        object-position: right center;
+      }
+    }
+
+    .imageTitleContainer {
+      grid-area: image;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1180px;
+      width: 100%;
+      color: var(--text-light-color);
+      box-sizing: border-box;
+
+      @media (max-width: 1280px) {
+        margin-left: 40px;
+        max-width: 100%;
+
+      }
+
+
+      @media (max-width: 810px) {
+        align-items: flex-start;
+        justify-self: left;
+        align-self: start;
+        padding: 30px 24px 0;
+        margin-left: 0;
+      }
+
+      .imageTitle {
+        max-width: 760px;
+        font-size: 48px;
+        @media (max-width: 1500px) {
+          max-width: 600px;
+        }
+        @media (max-width: 810px) {
+          max-width: 450px;
+          font-size: 32px;
+        }
+        @media (max-width: 414px) {
+          font-size: 24px;
+        }
+      }
+
+      .imageLabel {
+        @include mixins.bodyText;
+        @media (max-width: 810px) {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
