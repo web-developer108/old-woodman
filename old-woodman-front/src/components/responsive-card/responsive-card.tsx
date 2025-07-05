@@ -1,0 +1,48 @@
+import { useState } from 'react';
+import type { ResponsiveCardProps } from './responsive-card.types.ts';
+import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
+import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
+import { AppColors } from '../../styles.ts';
+import styles from './responsive-card.module.scss';
+
+export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
+  image,
+  title,
+  description,
+  comment,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentBlock = (
+    <>
+      <h2 className={styles.title}>{title.toUpperCase()}</h2>
+      <p className={styles.description}>{description}</p>
+      <p className={styles.comment}>{comment}</p>
+    </>
+  );
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
+        <img src={image} alt={title} className={styles.image}/>
+      </div>
+      <div className={styles.content}>{contentBlock}</div>
+      {isExpanded && <div className={styles.mobileOverlay}>{contentBlock}</div>}
+      <div className={styles.mobileButton}>
+        <CircleButton
+          bgColor={AppColors.text.light}
+          icon={
+            <div
+              className={`${styles.iconWrapper} ${
+                isExpanded ? styles.rotateUp : ''
+              }`}
+            >
+              <ArrowDownIcon/>
+            </div>
+          }
+          ariaLabel={isExpanded ? 'Скрыть описание' : 'Показать описание'}
+          onClick={() => setIsExpanded((prev) => !prev)}
+        />
+      </div>
+    </div>
+  );
+};
