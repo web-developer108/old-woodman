@@ -4,6 +4,7 @@ import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './responsive-card.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   image,
@@ -11,6 +12,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   description,
   comment,
 }) => {
+  const {t} = useTranslation('common');
   const [isExpanded, setIsExpanded] = useState(false);
   const contentBlock = (
     <>
@@ -45,7 +47,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
               <ArrowDownIcon/>
             </div>
           }
-          ariaLabel={isExpanded ? 'Скрыть описание' : 'Показать описание'}
+          ariaLabel={isExpanded ? t('button.aria-label.open') : t('button.aria-label.close')}
           onClick={() => setIsExpanded((prev) => !prev)}
         />
       </div>

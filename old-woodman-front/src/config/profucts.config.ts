@@ -55,20 +55,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/doors/classica/buk.jpg'],
             price: 286000,
           },
-          {
-            id: 'classica-dub',
-            title: {
-              ru: 'CLASSICA',
-              kk: 'CLASSICA',
-            },
-            description: {
-              ru: 'цвет "Дуб"',
-              kk: 'түсі "Емен"',
-            },
-            images: ['/images/doors/classica/dub.jpg'],
-            price: 286000,
-          },
-        ],
+                 ],
       },
       // другие коллекции
     ],

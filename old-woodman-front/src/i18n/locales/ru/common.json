@@ -78,5 +78,7 @@
   "background-title2": "Мебель из массива",
   "background-description2": "Живая красота и сила дерева в Вашем доме",
   "background-title3": "Фасады и панели",
-  "background-description3": "Дерево преображает пространство"
+  "background-description3": "Дерево преображает пространство",
+  "button.aria-label.close" : "Показать описание",
+  "button.aria-label.open" : "Скрыть описание"
 }

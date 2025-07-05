@@ -7,10 +7,10 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import heroImage from '@assets/images/doors/classica/classica-hero-wide.webp';
 import styles from './doors.module.scss'
+import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
-  console.log('DoorsOverview')
 
   return (
     <ToolPageLayout>
@@ -25,6 +25,7 @@ const DoorsOverview = () => {
           }}
         />
         <RunningText/>
+        <div className={styles.doorsContent}>
         <Breadcrumbs current={t('breadcrumbs.label')}/>
         <SectionTabs/>
         <ResponsiveCard
@@ -34,6 +35,10 @@ const DoorsOverview = () => {
           comment={t('comment-text')}
 
         />
+          <div className={styles.socialButtons}>
+            <SocialButtons/>
+          </div>
+        </div>
       </div>
     </ToolPageLayout>
   )
