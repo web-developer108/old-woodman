@@ -26,7 +26,13 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
         <img src={image} alt={title} className={styles.image}/>
       </div>
       <div className={styles.content}>{contentBlock}</div>
-      {isExpanded && <div className={styles.mobileOverlay}>{contentBlock}</div>}
+      <div
+        className={`${styles.mobileOverlay} ${
+          isExpanded ? styles.visible : styles.hidden
+        }`}
+      >
+        {contentBlock}
+      </div>
       <div className={styles.mobileButton}>
         <CircleButton
           bgColor={AppColors.text.light}

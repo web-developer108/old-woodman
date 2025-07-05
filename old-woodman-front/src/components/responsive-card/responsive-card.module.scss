@@ -16,8 +16,8 @@
   @media (max-width: 810px) {
     flex-direction: column;
     padding: 0;
+    perspective: 1000px;
   }
-
 
   .imageContainer {
     width: 100%;
@@ -62,10 +62,12 @@
       margin-bottom: 12px;
       font-size: 16px;
       font-weight: 300;
+      @media (max-width: 810px) {
+        font-size: 14px;
+      }
     }
 
     .description {
-
       @media (max-width: 810px) {
         display: none;
       }
@@ -83,16 +85,21 @@
     display: none;
 
     @media (max-width: 810px) {
+      position: absolute;
+      inset: 0;
+      background-color: var(--background-grey-color);
+      padding: 31px 24px 26px;
+      z-index: 2;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      position: absolute;
-      inset: 0;
-      padding: 31px 24px 26px;
-      background-color: var(--background-grey-color);
-      z-index: 2;
-      box-sizing: border-box;
-
+      transform-origin: top center;
+      transition: transform 0.6s ease, opacity 0.4s ease;
+      backface-visibility: hidden;
+      transform: rotateX(-90deg);
+      opacity: 0;
+      pointer-events: none;
       .title {
         margin-bottom: 12px;
         @include mixins.headingLarge;
@@ -106,6 +113,17 @@
 
       .comment {
         color: var(--text-grey-color);
+      }
+      &.visible {
+        transform: rotateX(0deg);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &.hidden {
+        transform: rotateX(-90deg);
+        opacity: 0;
+        pointer-events: none;
       }
     }
   }
