@@ -22,6 +22,10 @@ export const productCatalog: ProductCategory[] = [
               kk: 'CLASSICA',
 
             },
+            titleMob: {
+              ru: 'CLASSICA, Иней',
+              kk: 'CLASSICA, Иней',
+            },
             description: {
               ru: 'цвет "Иней"',
               kk: 'түсі "Иней"',
@@ -35,6 +39,10 @@ export const productCatalog: ProductCategory[] = [
               ru: 'CLASSICA',
               kk: 'CLASSICA',
             },
+            titleMob: {
+              ru: 'CLASSICA, Иней - стекло',
+              kk: 'CLASSICA, Иней - стекло',
+            },
             description: {
               ru: 'Со стеклом цвет "Иней"',
               kk: 'Шынымен түсі "Иней"',
@@ -47,6 +55,10 @@ export const productCatalog: ProductCategory[] = [
             title: {
               ru: 'CLASSICA',
               kk: 'CLASSICA',
+            },
+            titleMob: {
+              ru: 'CLASSICA, Дуб',
+              kk: 'CLASSICA, Дуб',
             },
             description: {
               ru: 'цвет "Дуб"',

@@ -80,5 +80,13 @@
   "background-title3": "Фасады и панели",
   "background-description3": "Дерево преображает пространство",
   "button.aria-label.close" : "Показать описание",
-  "button.aria-label.open" : "Скрыть описание"
+  "button.aria-label.open" : "Скрыть описание",
+  "price-label" : "от",
+  "cart-label-in" : "В корзину",
+  "cart-label-out" : "В корзине",
+  "aria-label-in" : "Удалить из корзины",
+  "aria-label-out" : "Добавить в корзину",
+  "comment" : "*из массива сосны, при размере до 205х80 см"
+
+
 }
