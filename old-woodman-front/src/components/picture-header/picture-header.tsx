@@ -1,8 +1,10 @@
 import React from 'react';
 import type { PictureHeaderProps } from './picture-header.types.ts';
 import styles from './picture-header.module.scss'
+import { useTranslation } from 'react-i18next';
 
 export const PictureHeader: React.FC<PictureHeaderProps> = ({ title, label, images }) => {
+  const { t } = useTranslation('common');
   return (
     <div className={styles.imageContainer}>
       <picture className={styles.picture}>
@@ -12,7 +14,7 @@ export const PictureHeader: React.FC<PictureHeaderProps> = ({ title, label, imag
         <img
           className={styles.backgroundImage}
           src={images.large}
-          alt="Фон заголовка"
+          alt={t('aria-label-picture-bg')}
           fetchPriority="high"
           loading="eager"
           decoding="async"
