@@ -1,6 +1,7 @@
 import React from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
+import { useNavigate } from 'react-router-dom';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useTranslation } from 'react-i18next';
 import { productCatalog } from '../../config/products.config.ts';
@@ -14,6 +15,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   categoryId,
   collectionId,
 }) => {
+  const navigate = useNavigate();
   const { isMobile } = useDevice();
   const { i18n } = useTranslation();
   const { t } = useTranslation('common');
@@ -33,7 +35,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
         <div className={styles.cardRow}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
-              <div className={styles.imageWrapper}>
+              <div className={styles.imageWrapper} onClick={()=>navigate(`/doors/${collectionId.toLowerCase()}`)}>
                 <img
                   src={item.images[0]}
                   alt={item.title[lang]}
@@ -50,12 +52,9 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                   <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>
                 </div>
                 <CartButton productId={item.id}/>
-
               </div>
             </div>
-
           ))}
-
         </div>
       </SimpleBar>
       <div className={styles.comment}> {t('comment')}</div>

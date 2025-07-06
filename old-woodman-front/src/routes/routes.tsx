@@ -5,7 +5,7 @@ const Home = lazy(() => import('../pages/home/home.tsx'));
 
 const DoorsOverview = lazy(() => import('../pages/doors/doors' +
 ''));
-const Classic = lazy(() => import('../pages/temporary/temporary'));
+const Classica = lazy(() => import('../pages/temporary/temporary'));
 const Loft = lazy(() => import('../pages/temporary/temporary'));
 const Balcony = lazy(() => import('../pages/temporary/temporary'));
 const DoorCollectionItem = lazy(() => import('../pages/temporary/temporary'));
@@ -33,8 +33,8 @@ const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
 
   { path: '/doors', element: <DoorsOverview /> },
-  { path: '/doors/classic', element: <Classic /> },
-  { path: '/doors/classic/:id', element: <DoorCollectionItem /> },
+  { path: '/doors/classica', element: <Classica /> },
+  { path: '/doors/classica/:id', element: <DoorCollectionItem /> },
   { path: '/doors/loft', element: <Loft /> },
   { path: '/doors/loft/:id', element: <DoorCollectionItem /> },
   { path: '/doors/balcony', element: <Balcony /> },

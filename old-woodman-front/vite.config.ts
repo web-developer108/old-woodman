@@ -36,8 +36,8 @@ export default defineConfig({
         order: 'pre',
         handler(html) {
           const preload = `
-            <link rel="preload" as="image" href="/images/doors/bg-large.webp" type="image/webp">
-            <link rel="preload" as="image" href="/images/doors/bg-medium.webp" type="image/webp">
+     <!--       <link rel="preload" as="image" href="/images/doors/bg-large.webp" type="image/webp">
+            <link rel="preload" as="image" href="/images/doors/bg-medium.webp" type="image/webp">-->
             <link rel="preload" as="image" href="/images/doors/bg-small.webp" type="image/webp">
           `;
           return html.replace(
