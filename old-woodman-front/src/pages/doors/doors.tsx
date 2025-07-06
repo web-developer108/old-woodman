@@ -8,6 +8,7 @@ import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import heroImage from '@assets/images/doors/classica/classica-hero-wide.webp';
 import styles from './doors.module.scss'
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
+import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
 
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
@@ -26,17 +27,25 @@ const DoorsOverview = () => {
         />
         <RunningText/>
         <div className={styles.doorsContent}>
-        <Breadcrumbs current={t('breadcrumbs.label')}/>
-        <SectionTabs/>
-        <ResponsiveCard
-          image={heroImage}
-          title={t('title-classica')}
-          description={t('description-classica')}
-          comment={t('comment-text')}
+          <Breadcrumbs current={t('breadcrumbs.label')}/>
+          <SectionTabs/>
+          <ResponsiveCard
+            image={heroImage}
+            title={t('title-classica')}
+            description={t('description-classica')}
+            comment={t('comment-text')}
 
-        />
+          />
           <div className={styles.socialButtons}>
             <SocialButtons/>
+          </div>
+          <div className={styles.previewWrap}>
+
+          <ProductSlider
+            title={t('preview-title')}
+            categoryId='doors'
+            collectionId='classica'
+          />
           </div>
         </div>
       </div>

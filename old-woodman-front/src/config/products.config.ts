@@ -43,16 +43,16 @@ export const productCatalog: ProductCategory[] = [
             price: 286000,
           },
           {
-            id: 'classica-buk',
+            id: 'classica-dub',
             title: {
               ru: 'CLASSICA',
               kk: 'CLASSICA',
             },
             description: {
-              ru: 'цвет "Бук"',
-              kk: 'түсі "Бук"',
+              ru: 'цвет "Дуб"',
+              kk: 'түсі "Дуб"',
             },
-            images: ['/images/doors/classica/buk.jpg'],
+            images: ['/images/doors/classica/dub.webp'],
             price: 286000,
           },
                  ],
