@@ -6,6 +6,7 @@ export type LanguageText = {
 export interface ProductItem {
   id: string;
   title: LanguageText;
+  titleMob: LanguageText;
   description: LanguageText;
   images: string[];
   price: number;

@@ -78,5 +78,16 @@
   "background-title2": "Мебель из массива",
   "background-description2": "Живая красота и сила дерева в Вашем доме",
   "background-title3": "Фасады и панели",
-  "background-description3": "Дерево преображает пространство"
+  "background-description3": "Дерево преображает пространство",
+  "button.aria-label.close" : "Показать описание",
+  "button.aria-label.open" : "Скрыть описание",
+  "price-label" : "от",
+  "cart-label-in" : "В корзину",
+  "cart-label-out" : "В корзине",
+  "aria-label-in" : "Удалить из корзины",
+  "aria-label-out" : "Добавить в корзину",
+  "comment" : "*из массива сосны, при размере до 205х80 см",
+  "aria-label-like-in" : "Добавить в избранное",
+  "aria-label-like-out" : "Удалить из избранного",
+  "aria-label-picture-bg" : "Фон заголовка"
 }

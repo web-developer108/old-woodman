@@ -1,0 +1,155 @@
+@use "../../mixins" as mixins;
+
+.card {
+  display: flex;
+  background-color: var(--background-grey-color);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+
+  @media (max-width: 810px) {
+    flex-direction: column;
+    padding: 0;
+    perspective: 1000px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    aspect-ratio: 336 / 186;
+    overflow: hidden;
+
+    @media (min-width: 811px) {
+      flex: 0 0 386px;
+      height: 366px;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      @media (min-width: 811px) {
+        object-position: center 30%;
+      }
+
+      @media (max-width: 810px) {
+        object-position: center;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding-left: 32px;
+    text-align: center;
+    @media (max-width: 810px) {
+      text-align: left;
+      padding: 31px 24px 26px;
+    }
+
+    .title {
+      margin-bottom: 12px;
+      @include mixins.headingLarge;
+    }
+
+    .description, .comment {
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 300;
+      @media (max-width: 810px) {
+        font-size: 14px;
+      }
+    }
+
+    .description {
+      @media (max-width: 810px) {
+        display: none;
+      }
+    }
+
+    .comment {
+      color: var(--text-grey-color);
+    }
+  }
+
+  .mobileOverlay {
+    display: none;
+
+    @media (max-width: 810px) {
+      position: absolute;
+      inset: 0;
+      background-color: var(--background-grey-color);
+      padding: 31px 24px 26px;
+      z-index: 2;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform-origin: top center;
+      transition: transform 0.6s ease, opacity 0.4s ease;
+      backface-visibility: hidden;
+      transform: rotateX(-90deg);
+      opacity: 0;
+      pointer-events: none;
+      .title {
+        margin-bottom: 12px;
+        @include mixins.headingLarge;
+      }
+
+      .description,
+      .comment {
+        margin-bottom: 12px;
+        @include mixins.bodyTextSmall;
+      }
+
+      .comment {
+        color: var(--text-grey-color);
+      }
+      &.visible {
+        transform: rotateX(0deg);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &.hidden {
+        transform: rotateX(-90deg);
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.mobileButton {
+  display: none;
+
+  @media (max-width: 810px) {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+.iconWrapper {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.rotateUp {
+  transform: rotate(180deg);
+}
