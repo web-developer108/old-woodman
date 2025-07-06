@@ -1,10 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import type { PictureHeaderProps } from './picture-header.types.ts';
 import styles from './picture-header.module.scss'
-import { useTranslation } from 'react-i18next';
 
-export const PictureHeader: React.FC<PictureHeaderProps> = ({ title, label, images }) => {
+export const PictureHeader: React.FC<PictureHeaderProps> = ({ title, label, color = 'white', images }) => {
   const { t } = useTranslation('common');
+  const containerClass = `${styles.imageTitleContainer} ${
+    color === 'black' ? styles.darkContainer : ''
+  }`;
   return (
     <div className={styles.imageContainer}>
       <picture className={styles.picture}>
@@ -20,7 +23,7 @@ export const PictureHeader: React.FC<PictureHeaderProps> = ({ title, label, imag
           decoding="async"
         />
       </picture>
-      <div className={styles.imageTitleContainer}>
+      <div className={containerClass}>
         <h1 className={styles.imageTitle}>{title.toUpperCase()}</h1>
         <div className={styles.imageLabel}>{label}</div>
       </div>
