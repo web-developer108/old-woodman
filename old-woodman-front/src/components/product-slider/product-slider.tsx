@@ -1,11 +1,12 @@
 import React from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useTranslation } from 'react-i18next';
 import { productCatalog } from '../../config/products.config.ts';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
-import type { ProductSliderProps } from './product-slider.types.ts';
 import { CartButton } from '../buttons/cart-button/cart-button.tsx';
+import { LikeButton } from '../buttons/like-button/like-button.tsx';
+import type { ProductSliderProps } from './product-slider.types.ts';
 import styles from './product-slider.module.scss';
 
 export const ProductSlider: React.FC<ProductSliderProps> = ({
@@ -28,7 +29,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
       <h3 className={styles.heading}>
         {title.toUpperCase()} ({items.length})
       </h3>
-      <SimpleBar className={styles.scrollContainer}>
+      <SimpleBar autoHide={false} className={styles.scrollContainer}>
         <div className={styles.cardRow}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
@@ -38,6 +39,9 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                   alt={item.title[lang]}
                   className={styles.image}
                 />
+              </div>
+              <div className={styles.likeWrap}>
+                <LikeButton productId={item.id}/>
               </div>
               <div className={styles.cardContent}>
                 <div className={styles.textBlock}>
@@ -49,6 +53,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
 
               </div>
             </div>
+
           ))}
 
         </div>

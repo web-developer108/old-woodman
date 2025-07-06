@@ -14,6 +14,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "Nunito Sans", sans-serif;
+
   .icon {
     display: flex;
     align-items: center;
@@ -25,10 +26,10 @@
 
   &.inCart {
     background-color: var(--text-main-color);
-    color: white;
+    color: var(--text-light-color);
 
     svg path {
-      stroke: white;
+      stroke: var(--text-light-color);
     }
   }
 
@@ -51,10 +52,10 @@
 
     &.inCart {
       background-color: var(--text-main-color);
-      color: white;
+      color: var(--text-light-color);
 
       .icon svg path {
-        stroke: white;
+        stroke: var(--text-light-color);
       }
     }
   }
