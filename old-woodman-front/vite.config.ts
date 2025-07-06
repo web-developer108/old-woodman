@@ -30,7 +30,7 @@ export default defineConfig({
 export default defineConfig({
   plugins: [
     react(),
-    {
+   /* {
       name: 'html-preload-inject',
       transformIndexHtml: {
         order: 'pre',
@@ -46,7 +46,7 @@ export default defineConfig({
           );
         },
       },
-    },
+    },*/
   ],
   resolve: {
     alias: {
