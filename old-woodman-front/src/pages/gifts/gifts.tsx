@@ -9,6 +9,7 @@ import { NavigationBlock } from '../../components/navigation-block/navigation-bl
 import clock from '@assets/images/gifts/clock-big.webp'
 import mirror from '@assets/images/gifts/mirror-big.webp'
 import styles from './gifts.module.scss'
+import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 
 
 
@@ -22,12 +23,16 @@ const Gifts = () => {
   return (
     <ToolPageLayout>
       <div className={styles.giftsContainer}>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageTitleContainer}>
-            <h1 className={styles.imageTitle}>{t('main-header').toUpperCase()}</h1>
-            <div className={styles.imageLabel}>{t('main-header.label')}</div>
-          </div>
-        </div>
+        <PictureHeader
+          title={t('main-header')}
+          label={t('main-header.label')}
+          images={{
+            small: '/images/gifts/orange-header-small.webp',
+            medium: '/images/gifts/orange-header-medium.webp',
+            large: '/images/gifts/orange-header-large.webp',
+          }}
+        />
+
         <RunningText/>
         <div className={styles.giftsContent}>
 
@@ -53,7 +58,7 @@ const Gifts = () => {
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock/>
+            <NavigationBlock/>
           </section>
         </div>
       </div>
