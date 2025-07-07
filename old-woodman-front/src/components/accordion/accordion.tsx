@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
-import styles from './accordion.module.scss';
 import { useTranslation } from 'react-i18next';
+import styles from './accordion.module.scss';
 
 export const Accordion = () => {
   const { t } = useTranslation('common')
@@ -18,8 +18,8 @@ export const Accordion = () => {
   const toggleItem = (index: number) => {
     setOpenIndices((prev) =>
       prev.includes(index)
-        ? prev.filter((i) => i !== index) // закрыть
-        : [...prev, index]                // открыть
+        ? prev.filter((i) => i !== index)
+        : [...prev, index]
     );
   };
   return (
