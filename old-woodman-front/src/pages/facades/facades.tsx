@@ -18,7 +18,7 @@ import gallery4 from '@assets/images/facades/gallery-4f-big.webp'
 import gallery5 from '@assets/images/facades/gallery-5f-big.webp'
 import useDevice from '../../hooks/device/use-device.ts';
 import styles from './facades.module.scss';
-
+import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 
 const Facades = () => {
   const { t } = usePageTranslate();
@@ -38,13 +38,16 @@ const Facades = () => {
   return (
     <ToolPageLayout>
       <div className={styles.facadesContainer}>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageTitleContainer}>
-            <h1 className={styles.imageTitle}
-                dangerouslySetInnerHTML={{ __html: isMobile ? t('main-header-mobile').toUpperCase() : t('main-header').toUpperCase() }}/>
-            <div className={styles.imageLabel}>{t('main-header.label')}</div>
-          </div>
-        </div>
+        <PictureHeader
+          title={t('main-header')}
+          label={t('main-header.label')}
+          color='black'
+          images={{
+            small: '/images/facades/yellow-header-small.webp',
+            medium: '/images/facades/yellow-header-medium.webp',
+            large: '/images/facades/yellow-header-large.webp',
+          }}
+        />
         <RunningText/>
         <div className={styles.facadesContent}>
 
@@ -72,6 +75,7 @@ const Facades = () => {
                     <span>{t('info-text-2.2-desktop')}</span>
                     <span>{t('info-text-2.3-desktop')}</span>
                     <span>{t('info-text-2.4-desktop')}</span>
+                    <span>{t('info-text-2.5-desktop')}</span>
                   </>
                 )}
               </div>

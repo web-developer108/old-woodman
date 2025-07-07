@@ -49,7 +49,7 @@ export const FooterBottom = () => {
         <p>{t('footer.adv')}</p>
       </div>
       <div className={styles.order}>
-        <h3>{t('footer.order')}</h3>
+        <h3>{t('footer.order').toUpperCase()}</h3>
         <nav className={styles.navigation}>
           <Link to="/doors" className={styles.items}>{t('footer.doors')}</Link>
           <Link to="/furniture" className={styles.items}
@@ -60,7 +60,7 @@ export const FooterBottom = () => {
         </nav>
       </div>
       <div className={styles.helpful}>
-        <h3>{t('footer.helpful')}</h3>
+        <h3>{t('footer.helpful').toUpperCase()}</h3>
         <nav className={styles.navigation}>
           <Link to="/#faq"  onClick = {()=>goToFaq()} className={styles.items}>{t('footer.questions')}</Link>
           <Link to="/info" className={styles.items}

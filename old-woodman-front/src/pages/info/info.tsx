@@ -86,6 +86,7 @@ const Info = () => {
               <h3>{t('instruction-label-1').toUpperCase()}</h3>
               <span>{t('instruction-text-1.1')}</span>
               <span>{t('instruction-text-1.2')}</span>
+              <span>{t('instruction-text-1.3')}</span>
             </section>
             <section className={styles.section}>
               <h3>{t('instruction-label-2').toUpperCase()}</h3>
