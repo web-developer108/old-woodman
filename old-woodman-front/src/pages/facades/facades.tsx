@@ -75,6 +75,7 @@ const Facades = () => {
                     <span>{t('info-text-2.2-desktop')}</span>
                     <span>{t('info-text-2.3-desktop')}</span>
                     <span>{t('info-text-2.4-desktop')}</span>
+                    <span>{t('info-text-2.5-desktop')}</span>
                   </>
                 )}
               </div>
