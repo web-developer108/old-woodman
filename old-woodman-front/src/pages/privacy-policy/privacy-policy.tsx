@@ -55,6 +55,7 @@ const Privacy = () => {
                 <li>{t('description-4.2')}</li>
                 <li>{t('description-4.3')}</li>
                 <li>{t('description-4.4')}</li>
+                <li>{t('description-4.5')}</li>
               </ol>
             </li>
             <li>{t('title-5').toUpperCase()}
@@ -68,7 +69,7 @@ const Privacy = () => {
               <ol>
                 <li>{t('description-6.1')}</li>
                 <li>{t('description-6.2')}</li>
-                <li>{t('description-6.2')}</li>
+                <li>{t('description-6.3')}</li>
               </ol>
             </li>
             <li>{t('title-7').toUpperCase()}
