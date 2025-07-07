@@ -173,6 +173,7 @@
     }
 
     .instructionsTitle {
+      margin-bottom: 56px;
       @include mixins.headingLarge;
 
       @media (max-width: 810px) {
