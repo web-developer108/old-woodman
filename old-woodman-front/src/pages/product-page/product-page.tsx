@@ -6,7 +6,8 @@ import type { ProductCollection, ProductItem } from '../../config/config.types.t
 import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import i18n from 'i18next';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
-import styles from  './ptoduct-page.module.scss';
+import styles from './product-page.module.scss';
+import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
@@ -14,6 +15,13 @@ const ProductPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const productId = searchParams.get('productId');
   const lang = i18n.language as 'ru' | 'kk';
+
+  const category = useMemo(() => {
+    return productCatalog.find((category) =>
+      category.collections?.some((c) => c.id === collectionId)
+    );
+  }, [collectionId]);
+
   const collection:  ProductCollection | undefined = useMemo(() => {
     return productCatalog.find((category) =>
       category.collections?.some((c) => c.id === collectionId)
@@ -30,7 +38,13 @@ const ProductPage: React.FC = () => {
   return (
     <ToolPageLayout>
       <div className={styles.pageContainer}>
-
+<div className={styles.topContainer}>
+  <Breadcrumbs
+    current={collection.title[lang]}
+    categoryTitle={category?.title[lang]}
+    categoryId={category?.id}
+  />
+</div>
       <DoorsDetails
         collection={collection}
         product={selectedProduct}
