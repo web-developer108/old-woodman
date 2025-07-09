@@ -92,6 +92,7 @@
   "aria-label-picture-bg" : "Фон заголовка",
   "aria-label.door" : "Перейти в раздел Двери",
   "aria-label.furniture" : "Перейти в раздел Мебель",
-  "aria-label.facades" : "Перейти в раздел Фасады и панели"
-
+  "aria-label.facades" : "Перейти в раздел Фасады и панели",
+  "button-share.label" : "Бөлісу",
+  "button-share.copied" : "Ссылка скопирована в буфер обмена"
 }

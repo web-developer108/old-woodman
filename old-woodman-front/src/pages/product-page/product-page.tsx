@@ -8,6 +8,7 @@ import i18n from 'i18next';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import styles from './product-page.module.scss';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
+import { ShareButton } from '../../components/buttons/share-button/share-button';
 
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
@@ -44,6 +45,7 @@ const ProductPage: React.FC = () => {
     categoryTitle={category?.title[lang]}
     categoryId={category?.id}
   />
+  <ShareButton/>
 </div>
       <DoorsDetails
         collection={collection}

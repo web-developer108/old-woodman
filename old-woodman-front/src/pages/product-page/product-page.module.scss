@@ -1,8 +1,18 @@
-.pageContainer{
+.pageContainer {
   max-width: 1180px;
   margin: 0 auto;
-  .topContainer{
+
+  .topContainer {
     display: flex;
     color: var(--text-grey-color);
+    justify-content: space-between;
+    margin-top: 48px;
+    @media (max-width: 1224px) {
+      padding: 0 12px;
+    }
+    @media (max-width: 810px) {
+      margin-top: 12px;
+    }
+
   }
 }
