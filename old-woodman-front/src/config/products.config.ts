@@ -14,6 +14,10 @@ export const productCatalog: ProductCategory[] = [
           ru: 'CLASSICA',
           kk: 'CLASSICA',
         },
+        pageTitle: {
+          ru: 'Деревянные двери CLASSICA',
+          kk: 'CLASSICA ағаш есіктері',
+        },
         items: [
           {
             id: 'classica-iney',
@@ -67,7 +71,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/doors/classica/dub.webp'],
             price: 286000,
           },
-                 ],
+        ],
       },
       // другие коллекции
     ],
