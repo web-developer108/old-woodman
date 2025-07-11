@@ -5,11 +5,18 @@
   max-height: 224px;
   max-width: 540px;
   overflow: hidden;
+  @media (max-width: 810px) {
+    max-height: 189px;
+  }
 
   .simpleBar {
     height: 157px;
-    max-height: 157px;;
     position: relative;
+    @media (max-width: 810px) {
+      height: 122px;
+
+    }
+
     .scrollContainer {
       display: flex;
       gap: 12px;
@@ -24,6 +31,10 @@
         cursor: pointer;
         box-sizing: border-box;
         padding: 8px;
+        @media (max-width: 810px) {
+          width: 90px;
+          height: 90px;
+        }
 
         img {
           width: 100%;
@@ -44,6 +55,10 @@
     margin-top: 16px;
     height: 48px;
     align-items: center;
+    @media (max-width: 810px) {
+      margin-top: 0;
+      height: 24px;
+    }
     .caption {
       @include mixins.bodyText;
       text-align: left;
