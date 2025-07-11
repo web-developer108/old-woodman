@@ -32,10 +32,6 @@ export const DoorsDetails: React.FC<DoorsDetailsProps> = ({ collection, product,
         </div>
         <div className={styles.sliderContainer}>
         <ImageSlider
-          images={collection.items.map((item) => ({
-            src: item.images[0],
-            label: item.description[lang],
-          }))}
           selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
           onSelect={(index) => {
             const selected = collection.items[index];

@@ -7,14 +7,15 @@ import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { DirectionLeftIcon } from '../icons/direction-left-icon/direction-left-icon.tsx';
 import { useTranslation } from 'react-i18next';
 import { DirectionRightIcon } from '../icons/direction-right-icon/direction-right-icon.tsx';
+import { useCurrentCollectionItems } from '../../hooks/current-collection/current-collection-items.tsx'
 import { AppColors } from '../../styles.ts';
 import styles from './image-slider.module.scss'
 
 export const ImageSlider: React.FC<SliderProps> = ({
-  images,
   selectedIndex,
   onSelect,
 }) => {
+  const images = useCurrentCollectionItems();
   const { isMobile } = useDevice();
   const { t } = useTranslation('common')
   const simpleBarRef = useRef<any>(null);
@@ -79,7 +80,7 @@ export const ImageSlider: React.FC<SliderProps> = ({
               className={`${styles.card} ${selectedIndex === i ? styles.selected : ''}`}
               onClick={() => scrollToIndex(i)}
             >
-              <img src={img.src} alt={img.label} className={styles.image} />
+              <img src={img.src} alt={img.label} className={styles.image}/>
             </div>
           ))}
         </div>
@@ -95,18 +96,18 @@ export const ImageSlider: React.FC<SliderProps> = ({
             <CircleButton
               bgColor={AppColors.background.grey}
               ariaLabel={t('aria-label-left')}
-              icon={<DirectionLeftIcon />}
+              icon={<DirectionLeftIcon/>}
               onClick={handlePrev}
-              disabledColor = {AppColors.background.circleButton}
-              disabled = {selectedIndex === 0}
+              disabledColor={AppColors.background.circleButton}
+              disabled={selectedIndex === 0}
             />
             <CircleButton
               bgColor={AppColors.background.grey}
               ariaLabel={t('aria-label-right')}
-              icon={<DirectionRightIcon />}
+              icon={<DirectionRightIcon/>}
               onClick={handleNext}
-              disabledColor = {AppColors.background.circleButton}
-              disabled = {selectedIndex === images.length - 1}
+              disabledColor={AppColors.background.circleButton}
+              disabled={selectedIndex === images.length - 1}
             />
           </div>
         )}
