@@ -6,4 +6,6 @@ export type CircleButtonProps = {
   bgColor?: string;
   onClick?: () => void;
   disabled?: boolean;
+  disabledColor?: string;
+
 };

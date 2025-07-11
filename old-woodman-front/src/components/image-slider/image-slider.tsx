@@ -90,19 +90,23 @@ export const ImageSlider: React.FC<SliderProps> = ({
           <div className={styles.caption}>{images[selectedIndex]?.label}</div>
         )}
 
-        {isOverflowing && (
+        {isOverflowing && !isMobile && (
           <div className={styles.navButton}>
             <CircleButton
               bgColor={AppColors.background.grey}
               ariaLabel={t('aria-label-left')}
               icon={<DirectionLeftIcon />}
               onClick={handlePrev}
+              disabledColor = {AppColors.background.circleButton}
+              disabled = {selectedIndex === 0}
             />
             <CircleButton
               bgColor={AppColors.background.grey}
               ariaLabel={t('aria-label-right')}
               icon={<DirectionRightIcon />}
               onClick={handleNext}
+              disabledColor = {AppColors.background.circleButton}
+              disabled = {selectedIndex === images.length - 1}
             />
           </div>
         )}
