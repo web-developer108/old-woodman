@@ -41,11 +41,18 @@ export const DoorsDetails: React.FC<DoorsDetailsProps> = ({ collection, product,
         </div>
       </div>
       <div className={styles.infoBlock}>
+        <div className={styles.titleBlock}>
         <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
+          <div className={styles.price}>
+            {t('price-label')} {product.price.toLocaleString()} ₸*
+            <div className={styles.tooltipWrapper}>
+              <div className={styles.icon}>i</div>
+              <div className={styles.tooltip}>{t('info-text')}</div>
+            </div>
+          </div>
+
+        </div>
         <p className={styles.description}>{product.description[lang]}</p>
-        <p className={styles.price}>
-          {t('price-label')} {product.price.toLocaleString()} ₸*
-        </p>
 
         <div className={styles.actions}>
           <LikeButton productId={product.id}/>

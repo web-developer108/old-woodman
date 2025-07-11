@@ -1,25 +1,26 @@
+@use '../../mixins' as mixins;
+
 .page {
   max-width: 1180px;
   display: flex;
-  flex-direction: column;
   gap: 56px;
   justify-content: space-between;
   padding: 24px;
 
-  @media (min-width: 810px) {
-    flex-direction: row;
+  @media (max-width: 810px) {
+    flex-direction: column;
     gap: 36px;
+    padding: 12px;
   }
 
   .imagesWrap {
-    width: 540px;
+    width: 45%;
     flex-shrink: 1;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    @media (max-width: 1180px) {
-      width: 45%;
+    @media (min-width: 1180px) {
+      // width: 45%;
       min-width: 300px;
     }
     @media (max-width: 810px) {
@@ -63,7 +64,8 @@
         display: block;
       }
     }
-    .sliderContainer{
+
+    .sliderContainer {
       display: flex;
       width: 100%;
     }
@@ -74,15 +76,96 @@
       right: 17px;
     }
   }
+
   .infoBlock {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 55%;
+    @media (max-width: 810px) {
+      width: 100%;
+      min-width: 300px;
+    }
 
-    .title {
-      font-size: 24px;
-      font-weight: 500;
+    .titleBlock {
+
+      width: 100%;
+
+      .title {
+        @include mixins.headingLarge;
+        @media (max-width: 810px) {
+          min-width: 332px;
+          margin: 0;
+        }
+      }
+
+      .price {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Vollkorn', serif;
+        width: 100%;
+        @include mixins.headingLarge;
+
+        .tooltipWrapper {
+          position: relative;
+          display: inline-block;
+
+          &:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(8px);
+          }
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          background: var(--background-circle-button-color);
+          border-radius: 50%;
+          color: var(--text-grey-color);
+          font-size: 20px;
+          text-align: center;
+          cursor: help;
+          user-select: none;
+          font-family: "Nunito Sans", sans-serif;
+        }
+
+        .tooltip {
+          max-width: 280px;
+          width: max-content;
+          box-sizing: border-box;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          transform: translateX(-50%);
+          padding: 8px 12px;
+          background-color: var(--text-main-color);
+          color: white;
+          font-family: "Nunito Sans", sans-serif;
+          font-size: 16px;
+          border-radius: 10px;
+          white-space: pre-line;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          z-index: 1000;
+          @media (max-width: 810px) {
+            font-size: 14px;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            //margin-left: -5px;
+            border-width: 6px;
+            border-style: solid;
+            //border-color: #1c1c1c transparent transparent transparent;
+          }
+        }
+      }
     }
 
     .description {
@@ -90,10 +173,6 @@
       color: var(--text-grey-color);
     }
 
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-    }
 
     .actions {
       display: flex;
