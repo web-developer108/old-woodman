@@ -6,9 +6,10 @@ import { ImageSlider } from '../image-slider/image-slider.tsx';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import useDevice from '../../hooks/device/use-device.ts';
 import { productCatalog } from '../../config/products.config.ts';
+import { getDescriptionLines } from '../../utils/get-description-lines.ts';
 import styles from './doors-details.module.scss';
 
-export const DoorsDetails :React.FC = () => {
+export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
   const { isMobile } = useDevice();
   const { isInCart, addToCart, removeFromCart } = useCart();
@@ -29,14 +30,8 @@ export const DoorsDetails :React.FC = () => {
   const selectedProduct = productId
     ? items.find((item) => item.id === productId) || items[0]
     : items[0];
-  const text = 'Три сценария работы:\n' +
-    '            1.\tВы можете выбрать дверь или мебель из нашей галереи и посчитать у нас стоимость изготовления по вашим параметрам: размер, цвет, фурнитура.\n' +
-    '            2.\tВы можете отправить нам эскиз двери или мебели, указать размеры и желаемый цвет, а мы посчитаем стоимость производства.\n' +
-    '            3.\tВы можете описать стиль вашего интерьера, а мы предложим подходящие варианты дверей и предметов мебели и посчитаем стоимость.\n' +
-    '            3.\tВы можете описать стиль вашего интерьера, а мы предложим подходящие варианты дверей и предметов мебели и посчитаем стоимость.\n' +
-    '            3.\tВы можете описать стиль вашего интерьера, а мы предложим подходящие варианты дверей и предметов мебели и посчитаем стоимость.\n' +
-    '            3.\tВы можете описать стиль вашего интерьера, а мы предложим подходящие варианты дверей и предметов мебели и посчитаем стоимость.\n' +
-    '            3.\tВы можете описать стиль вашего интерьера, а мы предложим подходящие варианты дверей и предметов мебели и посчитаем стоимость.\n'
+
+  const descriptionLines = getDescriptionLines(collectionId!, t);
 
   useEffect(() => {
     const checkOverflow = () => {
@@ -101,14 +96,16 @@ export const DoorsDetails :React.FC = () => {
               isOverflowing && !isExpanded ? styles.showFade : ''
             ].join(' ')}
           >
-            {text}
+            {descriptionLines.map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
           </div>
 
           {isOverflowing &&
             !isExpanded &&
             (
               <button className={styles.readMoreButton} onClick={() => setIsExpanded(true)}>
-                Читать дальше
+                {t('button-read.label')}
               </button>
             )}
         </div>

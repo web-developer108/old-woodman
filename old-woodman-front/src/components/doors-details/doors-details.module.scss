@@ -242,14 +242,8 @@
     .actions {
       display: flex;
       gap: 16px;
+      flex-direction: row;
 
-      .like,
-      .cartButton {
-        padding: 12px 24px;
-        border-radius: 24px;
-        border: none;
-        cursor: pointer;
-      }
     }
   }
 }
