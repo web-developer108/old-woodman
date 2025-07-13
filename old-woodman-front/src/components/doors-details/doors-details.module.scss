@@ -20,7 +20,6 @@
     flex-direction: column;
     gap: 16px;
     @media (min-width: 1180px) {
-      // width: 45%;
       min-width: 300px;
     }
     @media (max-width: 810px) {
@@ -89,13 +88,12 @@
     }
 
     .titleBlock {
-
       width: 100%;
 
       .title {
         @include mixins.headingLarge;
         @media (max-width: 810px) {
-          min-width: 332px;
+          min-width: 330px;
           margin: 0;
         }
       }

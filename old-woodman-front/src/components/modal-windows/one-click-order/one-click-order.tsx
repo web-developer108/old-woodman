@@ -26,15 +26,17 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
           <img src={product.images[0]} alt={product.title[lang]}/>
         </div>
         <div className={styles.productName}>
-          <div>{product.title[lang]},</div>
+          <div >{product.title[lang]},</div>
           <div>{product.description[lang]}</div>
         </div>
+        <span className={styles.hiddenTitle}>{t('modal-order.quantity')}</span>
         <div className={styles.quantitySelector}>
+
           <button onClick={decrease} className={styles.button}>−</button>
           <span className={styles.value}>{quantity}</span>
           <button onClick={increase} className={styles.button}>+</button>
         </div>
-
+        <span className={styles.hiddenSum}>{t('modal-order.sum')}</span>
         <div className={styles.price}>{(product.price * quantity).toLocaleString()} ₸</div>
       </div>
       <form className={styles.form}>

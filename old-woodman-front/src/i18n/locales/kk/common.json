@@ -100,5 +100,8 @@
   "modal-order.label" : "1 рет басу арқылы тапсырыс беру",
   "modal-order.name.placeholder" : "Атыңыз",
   "modal-order.city.placeholder" : "Жеткізу қаласы",
-  "modal-order.button.label" : "Өтінімді жіберу"
+  "modal-order.button.label" : "Өтінімді жіберу",
+  "modal-order.privacy-note" : "\"Өтінімді жіберу\" түймесін басу арқылы сіз <a href='/privacy-policy'>құпиялық саясатымен танысқаныңызды және дербес деректерді өңдеуге келісім бергеніңізді растайсыз.</a>",
+  "modal-order.quantity" : "Саны",
+  "modal-order.sum" : "Аралық жиынтық"
 }

@@ -99,7 +99,9 @@
   "aria-label-right" : "Кнопка вправо",
   "modal-order.label" : "Заказать в 1 клик",
   "modal-order.name.placeholder" : "Ваше имя",
-  "modal-order.city.placeholder" : "Город для доставки",
+  "modal-order.city.placeholder" : "Город для доствки",
   "modal-order.button.label" : "Отправить заявку",
-  "modal-order.privacy-note" : "Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомились с  <a href='/privacy-policy'>политикой конфиденциальности и согласны на обработку персональных данных.</a>"
+  "modal-order.privacy-note" : "Нажимая на кнопку “Отправить заявку” Вы подтверждаете, что ознакомились с  <a href='/privacy-policy'>политикой конфиденциальности и согласны на обработку персональных данных.</a>",
+  "modal-order.quantity" : "Количество",
+  "modal-order.sum" : "Подытог"
 }
