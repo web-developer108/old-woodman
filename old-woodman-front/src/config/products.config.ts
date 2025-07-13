@@ -34,6 +34,10 @@ export const productCatalog: ProductCategory[] = [
               ru: 'цвет "Иней"',
               kk: 'түсі "Иней"',
             },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
             images: ['/images/doors/classica/iney.webp'],
             price: 286000,
           },
@@ -51,6 +55,10 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Со стеклом цвет "Иней"',
               kk: 'Шынымен түсі "Иней"',
             },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
             images: ['/images/doors/classica/iney-glass.webp'],
             price: 286000,
           },
@@ -67,6 +75,10 @@ export const productCatalog: ProductCategory[] = [
             description: {
               ru: 'цвет "Дуб"',
               kk: 'түсі "Дуб"',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
             },
             images: ['/images/doors/classica/dub.webp'],
             price: 286000,

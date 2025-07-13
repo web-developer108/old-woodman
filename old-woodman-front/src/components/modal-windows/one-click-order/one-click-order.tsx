@@ -32,6 +32,8 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
         <div className={styles.productName}>
           <div >{product.title[lang]},</div>
           <div>{product.description[lang]}</div>
+          <div className={styles.shotName}>{product.shortName[lang]}</div>
+
         </div>
         <span className={styles.hiddenTitle}>{t('modal-order.quantity')}</span>
         <div className={styles.quantitySelector}>

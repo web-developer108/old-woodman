@@ -8,6 +8,7 @@ export interface ProductItem {
   title: LanguageText;
   titleMob: LanguageText;
   description: LanguageText;
+  shortName: LanguageText;
   images: string[];
   price: number;
 }
