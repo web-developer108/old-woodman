@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
-import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useParams} from 'react-router-dom';
+//import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { productCatalog}  from '../../config/products.config.ts';
-import type { ProductCollection, ProductItem } from '../../config/config.types.ts'
+import type { ProductCollection } from '../../config/config.types.ts'
 import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import i18n from 'i18next';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
@@ -12,9 +12,9 @@ import { ShareButton } from '../../components/buttons/share-button/share-button'
 
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
-  const { t } = usePageTranslate();
-  const [searchParams] = useSearchParams();
-  const productId = searchParams.get('productId');
+//  const { t } = usePageTranslate();
+ // const [searchParams] = useSearchParams();
+ // const productId = searchParams.get('productId');
   const lang = i18n.language as 'ru' | 'kk';
 
   const category = useMemo(() => {
@@ -28,13 +28,10 @@ const ProductPage: React.FC = () => {
       category.collections?.some((c) => c.id === collectionId)
     )?.collections?.find((c) => c.id === collectionId);
   }, [collectionId]);
-  const items = collection?.items || [];
-  const selectedProduct: ProductItem = productId
-    ? items.find((item) => item.id === productId) || items[0]
-    : items[0];
-  if (!collection) {
-    return <div>Коллекция не найдена</div>;
-  }
+
+if (!collection){
+  return
+}
 
   return (
     <ToolPageLayout>
@@ -47,11 +44,7 @@ const ProductPage: React.FC = () => {
   />
   <ShareButton/>
 </div>
-      <DoorsDetails
-        collection={collection}
-        product={selectedProduct}
-        lang={lang}
-      />
+      <DoorsDetails/>
       {/* тут будет рендер всей страницы */}
       </div>
     </ToolPageLayout>

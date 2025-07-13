@@ -8,4 +8,5 @@ export type ColorButtonProps = {
   icon?: React.ReactNode;
   onClick?: () => void;
   disabled?:boolean;
+  type?: "button" | "submit" | "reset" | undefined;
 };

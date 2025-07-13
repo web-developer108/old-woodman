@@ -5,9 +5,13 @@ import { findProductById } from '../../../utils/find-product-by-id.ts';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import styles from './one-click-order.module.scss';
+import { useNavigate } from 'react-router-dom';
+import { useModal } from '../../../hooks/modal/use-modal.ts';
 
 export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation('common');
+  const {closeModal} = useModal();
   const lang = i18n.language as 'ru' | 'kk';
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState('');
@@ -39,7 +43,11 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
         <span className={styles.hiddenSum}>{t('modal-order.sum')}</span>
         <div className={styles.price}>{(product.price * quantity).toLocaleString()} ₸</div>
       </div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={(e) => {
+        e.preventDefault();
+        closeModal();
+        navigate('/cart/booked');
+      }}>
         <input
           className={styles.input}
           type="text"
@@ -60,6 +68,7 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
           required/>
         <ColorButton
           label={t('modal-order.button.label')}
+          type = 'submit'
         />
       </form>
       <div className={styles.info} dangerouslySetInnerHTML={{ __html: t('modal-order.privacy-note') }}></div>
