@@ -13,6 +13,7 @@ export const AppColors = {
   },
   background: {
     grey: '#f4f4f4',
+    lightGrey: '#f2f2f2',
     light: '#fdfdfd',
     brown: '#69423a',
     blue: '#4384c0',

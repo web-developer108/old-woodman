@@ -7,12 +7,17 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import useDevice from '../../hooks/device/use-device.ts';
 import { productCatalog } from '../../config/products.config.ts';
 import { getDescriptionLines } from '../../utils/get-description-lines.ts';
+import { ColorButton } from '../buttons/color-button/color-button.tsx';
+import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
+import { useModal } from '../../hooks/modal/use-modal.ts';
 import styles from './doors-details.module.scss';
+import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 
 export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
   const { isMobile } = useDevice();
   const { isInCart, addToCart, removeFromCart } = useCart();
+  const {showModal} = useModal()
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -32,7 +37,9 @@ export const DoorsDetails: React.FC = () => {
     : items[0];
 
   const descriptionLines = getDescriptionLines(collectionId!, t);
-
+  const handleClick = () => {
+    showModal(<OneClickModal id={selectedProduct.id} />);
+  };
   useEffect(() => {
     const checkOverflow = () => {
       const el = textRef.current;
@@ -111,15 +118,19 @@ export const DoorsDetails: React.FC = () => {
         </div>
 
         <div className={styles.actions}>
-
-          <button
+          <ColorButton
+            label = {t('button-order.label')}
+            variant='white'
+            icon={<OrderIcon/>}
+            onClick = {handleClick}
+          />
+          <ColorButton
+            label =  {isInCart(selectedProduct.id) ? t('in-cart') : t('add-to-cart')}
             onClick={() =>
               isInCart(selectedProduct.id) ? removeFromCart(selectedProduct.id) : addToCart(productId as string)
             }
-            className={styles.cartButton}
-          >
-            {isInCart(selectedProduct.id) ? t('in-cart') : t('add-to-cart')}
-          </button>
+          />
+
         </div>
       </div>
     </div>

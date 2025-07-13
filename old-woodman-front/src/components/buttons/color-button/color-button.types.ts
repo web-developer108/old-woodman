@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ColorButtonVariant = 'yellow' | 'green' | 'blue' | 'black';
+type ColorButtonVariant = 'yellow' | 'green' | 'blue' | 'black' | 'white';
 
 export type ColorButtonProps = {
   label: string;

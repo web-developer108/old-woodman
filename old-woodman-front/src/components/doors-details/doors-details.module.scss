@@ -159,10 +159,8 @@
             position: absolute;
             top: 100%;
             left: 50%;
-            //margin-left: -5px;
             border-width: 6px;
             border-style: solid;
-            //border-color: #1c1c1c transparent transparent transparent;
           }
         }
       }
@@ -195,11 +193,13 @@
           transition: opacity 0.3s ease;
           opacity: 0;
         }
+
         &.showFade::after {
           opacity: 1;
           visibility: visible;
 
         }
+
         &.expanded::after {
           opacity: 0;
           visibility: hidden;
@@ -207,10 +207,8 @@
 
         &.expanded {
           max-height: none;
-
         }
       }
-
 
       .readMoreButton {
         align-self: start;
@@ -232,6 +230,7 @@
           font-size: 14px;
           padding: 8px 12px;
         }
+
         &:hover {
           opacity: 0.8;
         }
@@ -242,8 +241,8 @@
     .actions {
       display: flex;
       gap: 16px;
-      flex-direction: row;
-
+      flex-direction: column;
+      padding-top: 36px;
     }
   }
 }

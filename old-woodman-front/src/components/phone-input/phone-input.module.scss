@@ -2,12 +2,13 @@
   padding: 18px;
   border-radius: 10px;
   border: 1px solid var(--text-main-color-25);
-  max-width: 520px;
   outline: none;
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
-
+  @media (max-width: 810px) {
+    font-size: 14px;
+  }
   &::placeholder {
     color: var(--text-main-color-50);
     opacity: 1;

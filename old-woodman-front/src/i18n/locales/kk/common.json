@@ -96,6 +96,9 @@
   "button-share.label" : "Бөлісу",
   "button-share.copied" : "Ссылка скопирована в буфер обмена",
   "aria-label-left" : "Кнопка влево",
-  "aria-label-right" : "Кнопка вправо"
-
+  "aria-label-right" : "Кнопка вправо",
+  "modal-order.label" : "1 рет басу арқылы тапсырыс беру",
+  "modal-order.name.placeholder" : "Атыңыз",
+  "modal-order.city.placeholder" : "Жеткізу қаласы",
+  "modal-order.button.label" : "Өтінімді жіберу"
 }

@@ -96,5 +96,10 @@
   "button-share.label" : "Поделиться",
   "button-share.copied" : "Ссылка скопирована в буфер обмена",
   "aria-label-left" : "Кнопка влево",
-  "aria-label-right" : "Кнопка вправо"
+  "aria-label-right" : "Кнопка вправо",
+  "modal-order.label" : "Заказать в 1 клик",
+  "modal-order.name.placeholder" : "Ваше имя",
+  "modal-order.city.placeholder" : "Город для доставки",
+  "modal-order.button.label" : "Отправить заявку",
+  "modal-order.privacy-note" : "Нажимая на кнопку “Отправить запрос” вы подтверждаете, что ознакомились с  <a href='/privacy-policy'>политикой конфиденциальности и согласны на обработку персональных данных.</a>"
 }

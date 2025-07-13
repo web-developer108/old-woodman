@@ -22,6 +22,6 @@ export interface ProductCollection {
 export interface ProductCategory {
   id: string;
   title: LanguageText;
-  collections?: ProductCollection[];
+  collections: ProductCollection[];
   items?: ProductItem[];
 }

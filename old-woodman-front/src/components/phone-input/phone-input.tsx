@@ -16,7 +16,8 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange }) => {
 
   const digitsCount = value.replace(/\D/g, '').length;
   const isInvalid = digitsCount < 11 && value !=='';
-
+console.log('digitsCount', digitsCount)
+console.log('isInvalid', isInvalid)
   return (
     <input
       className={isInvalid ? styles.error : styles.phone}
