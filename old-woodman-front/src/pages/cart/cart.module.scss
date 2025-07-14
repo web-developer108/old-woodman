@@ -3,6 +3,13 @@
 .cartContainer {
   width: 100%;
   height: auto;
+  box-sizing: border-box;
+  @media (max-width: 1240px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 1240px) {
+    padding: 0 12px;
+  }
 
   .titleContainer {
     height: 300px;
@@ -13,10 +20,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-
+    @media (max-width: 1240px) {
+      margin: 0 0 58px 0;
+    }
     @media (max-width: 810px) {
       height: 196px;
-      margin: 0 12px 24px 12px;
+      margin: 0 0 24px 0;
     }
 
     .contentWrapper {
@@ -33,10 +42,7 @@
 
       .label {
         @include mixins.bodyText;
-        width: 568px;
-        @media (max-width: 1200px) {
-          width: 100%;
-        }
+        max-width: 568px;
       }
     }
   }
@@ -44,13 +50,172 @@
   .cartContent {
     max-width: 1180px;
     margin: 0 auto;
-
+    padding-bottom: 30px;
     @media (max-width: 1200px) {
       max-width: 100%;
-      margin: 0 20px;
+      margin: 0;
     }
-    @media (max-width: 810px) {
-      margin: 0 12px;
+
+    .cartPage {
+      margin-top: 52px;
+      width: 100%;
+      display: flex;
+      gap: 40px;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+      }
+      @media (max-width: 810px) {
+        margin-top: 0;
+      }
+
+      .table {
+        width: 65%;
+        height: 100%;
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+
+        .header {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 120px 120px 120px;
+          margin-bottom: 24px;
+          @media (max-width: 810px) {
+            display: none;
+          }
+
+          span {
+            display: block;
+            justify-self: center;
+          }
+        }
+
+        .row {
+          display: grid;
+          grid-template-columns: 48px 1fr 120px 120px 120px;
+          height: 120px;
+          align-items: center;
+
+          @media (max-width: 810px) {
+            grid-template-columns: 112px 1fr 40px;
+            grid-template-rows: 112px 1fr 1fr 1fr;
+            height: auto;
+            gap: 12px;
+            margin-top: 20px;
+            border-bottom: 1px solid var(--background-circle-button-color);
+            &:last-child {
+              border-bottom: 1px solid transparent;
+            }
+          }
+
+          .deleteButton {
+            grid-column: 1;
+            @media (max-width: 810px) {
+              grid-column: 3;
+              grid-row: 1;
+              justify-self: flex-start;
+            }
+          }
+
+          .imageName {
+            grid-column: 2;
+            display: flex;
+            gap: 24px;
+            @media (max-width: 810px) {
+              grid-column: 1/span 2;
+              grid-row: 1;
+              gap: 12px;
+            }
+
+            .imageWrapper {
+              width: 112px;
+              height: 112px;
+              border-radius: 8px;
+              padding: 10px;
+              background-color: var(--background-light-grey-color);
+              box-sizing: border-box;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+
+            .productName {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              @media (max-width: 520px) {
+                grid-column: 2/span2;
+                grid-row: 1;
+              }
+
+              .title {
+                font-family: 'Vollkorn', serif;
+                font-size: 20px;
+
+                @media (max-width: 810px) {
+                  font-size: 16px;
+                }
+              }
+
+              .shotName {
+                font-size: 14px;
+                @media (max-width: 810px) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+
+          .price, .priceSum, .quantity {
+            text-align: center;
+
+            > span {
+              @include mixins.bodyText;
+              @media (min-width: 810px) {
+                display: none;
+              }
+            }
+          }
+
+          .price {
+            @media (max-width: 810px) {
+              display: flex;
+              justify-content: space-between;
+              grid-column: 2 / span 2;
+              grid-row: 2;
+            }
+          }
+
+          .quantity {
+            @media (max-width: 810px) {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              grid-column: 2 / span 2;
+              grid-row: 3;
+            }
+          }
+
+          .priceSum {
+            @media (max-width: 810px) {
+              display: flex;
+              justify-content: space-between;
+              grid-column: 2 / span 2;
+              grid-row: 4;
+            }
+          }
+        }
+      }
+
+      .summary {
+        width: 35%;
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+      }
     }
 
     .faceContainer {
@@ -69,7 +234,5 @@
         @include mixins.bodyTextSmall
       }
     }
-
   }
-
 }

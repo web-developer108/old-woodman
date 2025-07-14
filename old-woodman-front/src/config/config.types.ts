@@ -11,6 +11,7 @@ export interface ProductItem {
   shortName: LanguageText;
   images: string[];
   price: number;
+
 }
 
 export interface ProductCollection {

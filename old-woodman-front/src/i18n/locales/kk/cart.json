@@ -7,6 +7,12 @@
   "empty-label": "Ваша корзина пока пуста",
   "ordered-main-header": "Тапсырысыңызға рахмет!",
   "ordered-main-header.label": "Біз сізбен WhatsApp арқылы тапсырыс бойынша мәліметтерді нақтылау үшін хабарласамыз",
-  "ordered-button": "Вернуться"
+  "ordered-button": "Вернуться",
+  "cart.product": "Тауар",
+  "cart.price": "Бағасы",
+  "cart.quantity": "Саны",
+  "cart.total": "Аралық жиынтық",
+  "aria-label.delete-button": "Удалить из корзины"
+
 
 }

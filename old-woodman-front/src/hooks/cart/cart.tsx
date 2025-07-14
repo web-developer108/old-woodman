@@ -7,7 +7,8 @@ export type CartItem = {
 
 type CartContextType = {
   cartItems: CartItem[];
-  addToCart: (id: string, quantity?: number) => void;
+  addToCart: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
   isInCart: (id: string) => boolean;
@@ -41,15 +42,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (id: string, quantity: number = 1) => {
+  const addToCart = (id: string) => {
     setCartItems((prev) => {
       const existing = prev.find((item) => item.id === id);
       if (existing) {
         return prev.map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + quantity } : item
+          item.id === id ? { ...item, quantity: item.quantity + 1 } : item
         );
       } else {
-        return [...prev, { id, quantity }];
+        return [...prev, { id, quantity: 1 }];
       }
     });
   };
@@ -63,7 +64,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         .filter((item) => item.quantity > 0)
     );
   };
-
+  const updateQuantity = (id: string, quantity: number) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
+      )
+    );
+  };
   const clearCart = () => {
     setCartItems([]);
   };
@@ -71,7 +78,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const isInCart = (id: string) => cartItems.some((item) => item.id === id);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, isInCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, isInCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );

@@ -106,5 +106,12 @@
   "modal-order.sum" : "Аралық жиынтық",
   "modal-card.title" : "Добавлено в корзину",
   "button-order.label" : "1 рет басу арқылы тапсырыс беру",
-  "button-cart.label" : "Перейти в корзину"
+  "button-cart.label" : "Перейти в корзину",
+  "order-summary.header" : "Сіздің тапсырысыңыз",
+  "order-summary": {
+    "quantity_one": "тауар",
+    "quantity_few": "тауар",
+    "quantity_many": "тауар"
+  },
+  "order-summary.sum" : "Итого"
 }

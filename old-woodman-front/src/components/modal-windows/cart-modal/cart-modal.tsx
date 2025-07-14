@@ -15,14 +15,15 @@ export const CartModal: React.FC<OrderProps> = ({ id }) => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation('common');
   const {showModal, closeModal} = useModal();
-  const { addToCart } = useCart();
+  const { updateQuantity } = useCart();
   const lang = i18n.language as 'ru' | 'kk';
   const [quantity, setQuantity] = useState(1);
+
   const handleOneClick = () => {
     showModal(<OneClickModal id={id} />);
   };
   const handleCartClick = () => {
-      addToCart(product.id, quantity);
+    updateQuantity(product.id, quantity);
       closeModal();
     navigate('/cart');
   };
