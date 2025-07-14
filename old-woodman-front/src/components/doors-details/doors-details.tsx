@@ -10,13 +10,14 @@ import { getDescriptionLines } from '../../utils/get-description-lines.ts';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
-import styles from './doors-details.module.scss';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
+import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
+import styles from './doors-details.module.scss';
 
 export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
   const { isMobile } = useDevice();
-  const { isInCart, addToCart, removeFromCart } = useCart();
+  const { isInCart, addToCart } = useCart();
   const {showModal} = useModal()
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -37,8 +38,13 @@ export const DoorsDetails: React.FC = () => {
     : items[0];
 
   const descriptionLines = getDescriptionLines(collectionId!, t);
-  const handleClick = () => {
+
+  const handleOneClick = () => {
     showModal(<OneClickModal id={selectedProduct.id} />);
+  };
+  const handleCartClick = () => {
+    addToCart(selectedProduct.id)
+    showModal(<CartModal id={selectedProduct.id} />);
   };
   useEffect(() => {
     const checkOverflow = () => {
@@ -47,9 +53,7 @@ export const DoorsDetails: React.FC = () => {
       const maxHeight = isMobile ? 202 : 405;
 
       const overflowing = el.scrollHeight > maxHeight;
-      console.log('scrollHeight:', el.scrollHeight);
-      console.log('maxHeight:', maxHeight);
-      console.log('isMobile:', isMobile);
+
       setIsOverflowing(overflowing);
     };
 
@@ -122,13 +126,11 @@ export const DoorsDetails: React.FC = () => {
             label = {t('button-order.label')}
             variant='white'
             icon={<OrderIcon/>}
-            onClick = {handleClick}
+            onClick = {handleOneClick}
           />
           <ColorButton
-            label =  {isInCart(selectedProduct.id) ? t('in-cart') : t('add-to-cart')}
-            onClick={() =>
-              isInCart(selectedProduct.id) ? removeFromCart(selectedProduct.id) : addToCart(productId as string)
-            }
+            label =  {isInCart(selectedProduct.id) ? t('button.in-cart') : t('button.add-to-cart')}
+            onClick = {handleCartClick}
           />
 
         </div>

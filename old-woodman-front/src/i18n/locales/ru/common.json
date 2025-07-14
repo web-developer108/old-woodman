@@ -103,5 +103,8 @@
   "modal-order.button.label" : "Отправить заявку",
   "modal-order.privacy-note" : "Нажимая на кнопку “Отправить заявку” Вы подтверждаете, что ознакомились с  <a href='/privacy-policy'>политикой конфиденциальности и согласны на обработку персональных данных.</a>",
   "modal-order.quantity" : "Количество",
-  "modal-order.sum" : "Подытог"
+  "modal-order.sum" : "Подытог",
+  "modal-card.title" : "Добавлено в корзину",
+  "button-order.label" : "Заказать в 1 клик",
+  "button-cart.label" : "Перейти в корзину"
 }

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { OrderProps } from './one-click-order.types.ts';
 import { findProductById } from '../../../utils/find-product-by-id.ts';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
-import styles from './one-click-order.module.scss';
-import { useNavigate } from 'react-router-dom';
 import { useModal } from '../../../hooks/modal/use-modal.ts';
+import { ProductSummary } from '../../product-summary/product-summary.tsx';
+import styles from './one-click-order.module.scss';
 
 export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
   const navigate = useNavigate();
@@ -25,26 +26,13 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
   return (
     <div className={styles.modalContent}>
       <h2 className={styles.modalTitle}>{t('modal-order.label').toUpperCase()}</h2>
-      <div className={styles.productSummary}>
-        <div className={styles.imageWrapper}>
-          <img src={product.images[0]} alt={product.title[lang]}/>
-        </div>
-        <div className={styles.productName}>
-          <div >{product.title[lang]},</div>
-          <div>{product.description[lang]}</div>
-          <div className={styles.shotName}>{product.shortName[lang]}</div>
-
-        </div>
-        <span className={styles.hiddenTitle}>{t('modal-order.quantity')}</span>
-        <div className={styles.quantitySelector}>
-
-          <button onClick={decrease} className={styles.button}>−</button>
-          <span className={styles.value}>{quantity}</span>
-          <button onClick={increase} className={styles.button}>+</button>
-        </div>
-        <span className={styles.hiddenSum}>{t('modal-order.sum')}</span>
-        <div className={styles.price}>{(product.price * quantity).toLocaleString()} ₸</div>
-      </div>
+      <ProductSummary
+        product={product}
+        quantity={quantity}
+        lang={lang}
+        onIncrease={increase}
+        onDecrease={decrease}
+      />
       <form className={styles.form} onSubmit={(e) => {
         e.preventDefault();
         closeModal();

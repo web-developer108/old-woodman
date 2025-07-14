@@ -103,5 +103,8 @@
   "modal-order.button.label" : "Өтінімді жіберу",
   "modal-order.privacy-note" : "\"Өтінімді жіберу\" түймесін басу арқылы сіз <a href='/privacy-policy'>құпиялық саясатымен танысқаныңызды және дербес деректерді өңдеуге келісім бергеніңізді растайсыз.</a>",
   "modal-order.quantity" : "Саны",
-  "modal-order.sum" : "Аралық жиынтық"
+  "modal-order.sum" : "Аралық жиынтық",
+  "modal-card.title" : "Добавлено в корзину",
+  "button-order.label" : "1 рет басу арқылы тапсырыс беру",
+  "button-cart.label" : "Перейти в корзину"
 }
