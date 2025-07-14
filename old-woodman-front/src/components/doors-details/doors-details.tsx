@@ -13,6 +13,7 @@ import { useModal } from '../../hooks/modal/use-modal.ts';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import styles from './doors-details.module.scss';
+import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
 
 export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
@@ -50,7 +51,7 @@ export const DoorsDetails: React.FC = () => {
     const checkOverflow = () => {
       const el = textRef.current;
       if (!el) return;
-      const maxHeight = isMobile ? 202 : 405;
+      const maxHeight = isMobile ? 202 : 305;
 
       const overflowing = el.scrollHeight > maxHeight;
 
@@ -132,7 +133,7 @@ export const DoorsDetails: React.FC = () => {
             label =  {isInCart(selectedProduct.id) ? t('button.in-cart') : t('button.add-to-cart')}
             onClick = {handleCartClick}
           />
-
+          <CommonButtonsBlock/>
         </div>
       </div>
     </div>

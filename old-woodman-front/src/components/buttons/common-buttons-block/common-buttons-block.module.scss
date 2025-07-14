@@ -1,0 +1,12 @@
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .button {
+    height: 40px;
+    @media (max-width: 810px) {
+      height: 36px;
+    }
+  }
+}

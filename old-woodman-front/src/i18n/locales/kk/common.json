@@ -113,5 +113,9 @@
     "quantity_few": "тауар",
     "quantity_many": "тауар"
   },
-  "order-summary.sum" : "Итого"
+  "order-summary.sum" : "Итого",
+  "common-button-block.order" : "Тапсырыспен жасаймыз",
+  "common-button-block.price" : "Бағаның өзектілігі",
+  "common-button-block.warranty" : "Кепілдік",
+  "common-button-block.terms" : "Жұмыс шарттары"
 }

@@ -113,7 +113,11 @@
     "quantity_few": "товара",
     "quantity_many": "товаров"
   },
-  "order-summary.sum" : "Итого"
+  "order-summary.sum" : "Итого",
+  "common-button-block.order" : "Изготовим на заказ",
+  "common-button-block.price" : "Актуальность цены",
+  "common-button-block.warranty" : "Гарантия",
+  "common-button-block.terms" : "Условия работы"
 
 
 }

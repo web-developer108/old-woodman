@@ -173,7 +173,7 @@
         overflow: hidden;
         transition: max-height 0.5s ease;
         position: relative;
-        max-height: 405px;
+        max-height: 305px;
         @include mixins.bodyText;
         @media (max-width: 810px) {
           max-height: 202px;

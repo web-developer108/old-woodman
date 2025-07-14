@@ -1,5 +1,5 @@
 .button {
-  width: 100%;
+  //width: 100%;
   height: 100%;
   border-radius: 23px;
   display: flex;
@@ -11,7 +11,10 @@
   cursor: pointer;
   border: none;
   transition: background-color 0.2s ease;
-
+  font-family: "Nunito Sans", sans-serif;
+  width: auto;
+  padding: 10px 16px;
+  box-sizing: border-box;
   &:active {
     filter: brightness(0.9);
   }
