@@ -8,5 +8,17 @@
     @media (max-width: 810px) {
       height: 36px;
     }
+
+  }
+}
+.blockTitle{
+ max-width: 620px;
+  padding: 0 24px 36px;
+  h2{
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  span{
+    display: block;
   }
 }

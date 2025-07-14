@@ -5,17 +5,24 @@ import { PriceIcon } from '../../icons/price-icon/price-icon.tsx';
 import { WarrantyIcon } from '../../icons/warranty-icon/warranty-icon.tsx';
 import { TermsIcon } from '../../icons/terms-icon/terms-icon.tsx';
 import styles from './common-buttons-block.module.scss'
+import { useModal } from '../../../hooks/modal/use-modal.ts';
 
 export const CommonButtonsBlock = () => {
   const { t } = useTranslation('common');
+  const { showModal } = useModal();
   return (
     <div className={styles.buttonsContainer}>
       <div className={styles.button}>
-
         <OvalButton
           theme='light'
           text={t('common-button-block.order')}
           icon={<GearWheelIcon/>}
+          onClick={() => showModal(
+            <div className={styles.blockTitle}>
+              <h2>{t('common-button-block.order').toUpperCase()}</h2>
+              <span>{t('modal-window-title.order.label')}</span>
+            </div>
+          )}
         />
       </div>
       <div className={styles.button}>
@@ -23,6 +30,14 @@ export const CommonButtonsBlock = () => {
           theme='light'
           text={t('common-button-block.warranty')}
           icon={<WarrantyIcon/>}
+          onClick={() => showModal(
+            <div className={styles.blockTitle}>
+              <h2>{t('common-button-block.warranty').toUpperCase()}</h2>
+              <span>{t('modal-window-title.warranty.label-1')}</span>
+              <br/>
+              <span>{t('modal-window-title.warranty.label-2')}</span>
+            </div>
+          )}
         />
       </div>
       <div className={styles.button}>
@@ -30,6 +45,14 @@ export const CommonButtonsBlock = () => {
           theme='light'
           text={t('common-button-block.price')}
           icon={<PriceIcon/>}
+          onClick={() => showModal(
+            <div className={styles.blockTitle}>
+              <h2>{t('common-button-block.price').toUpperCase()}</h2>
+              <span>{t('modal-window-title.price.label-1')}</span>
+              <span>{t('modal-window-title.price.label-2')}</span>
+              <span>{t('modal-window-title.price.label-3')}</span>
+            </div>
+          )}
         />
       </div>
 
@@ -38,6 +61,15 @@ export const CommonButtonsBlock = () => {
           theme='light'
           text={t('common-button-block.terms')}
           icon={<TermsIcon/>}
+          onClick={() => showModal(
+            <div className={styles.blockTitle}>
+              <h2>{t('common-button-block.terms').toUpperCase()}</h2>
+              <span>{t('modal-window-title.terms.label-1')}</span>
+              <span>{t('modal-window-title.terms.label-2')}</span>
+              <br/>
+              <span>{t('modal-window-title.terms.label-3')}</span>
+            </div>
+          )}
         />
       </div>
     </div>
