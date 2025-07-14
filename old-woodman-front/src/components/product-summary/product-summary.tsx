@@ -1,7 +1,8 @@
 import React from 'react';
 import type { ProductSummaryProps } from './product-summary.types.ts';
 import { useTranslation } from 'react-i18next';
-import  styles from './product-summary.module.scss';
+import styles from './product-summary.module.scss';
+import { QuantitySelector } from '../quantity-selector/quantity-selector.tsx';
 
 export const ProductSummary: React.FC<ProductSummaryProps> = ({
   product,
@@ -15,7 +16,7 @@ export const ProductSummary: React.FC<ProductSummaryProps> = ({
   return (
     <div className={styles.productSummary}>
       <div className={styles.imageWrapper}>
-        <img src={product.images[0]} alt={product.title[lang]} />
+        <img src={product.images[0]} alt={product.title[lang]}/>
       </div>
 
       <div className={styles.productName}>
@@ -25,12 +26,12 @@ export const ProductSummary: React.FC<ProductSummaryProps> = ({
       </div>
 
       <span className={styles.hiddenTitle}>{t('modal-order.quantity')}</span>
-      <div className={styles.quantitySelector}>
-        <button onClick={onDecrease} className={styles.button}>−</button>
-        <span className={styles.value}>{quantity}</span>
-        <button onClick={onIncrease} className={styles.button}>+</button>
-      </div>
 
+      <QuantitySelector
+        quantity={quantity}
+        onIncrease={onIncrease}
+        onDecrease={onDecrease}
+      />
       <span className={styles.hiddenSum}>{t('modal-order.sum')}</span>
       <div className={styles.price}>{(product.price * quantity).toLocaleString()} ₸</div>
     </div>

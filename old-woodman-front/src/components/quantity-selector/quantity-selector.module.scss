@@ -1,0 +1,35 @@
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--background-circle-button-color);
+  border-radius: 9999px;
+  padding: 4px 8px;
+  height: 32px;
+  gap: 8px;
+  @media (max-width: 520px) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .value {
+    font-size: 20px;
+    padding: 0 10px;
+    border-left: 1px solid var(--background-circle-button-color);
+    border-right: 1px solid var(--background-circle-button-color);
+  }
+
+  .button {
+    background: none;
+    border: none;
+    font-size: 24px;
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+
+  }
+}
