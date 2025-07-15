@@ -12,8 +12,8 @@ import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
-import styles from './doors-details.module.scss';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
+import styles from './doors-details.module.scss';
 
 export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
@@ -69,9 +69,9 @@ export const DoorsDetails: React.FC = () => {
         <section className={styles.imagesWrap}>
           <div className={styles.imageBlock}>
             <img
+              className={styles.mainImage}
               src={selectedProduct.images[0]}
               alt={selectedProduct.title[lang]}
-              className={styles.mainImage}
             />
             <div className={styles.likeWrap}>
               <LikeButton productId={selectedProduct.id}/>

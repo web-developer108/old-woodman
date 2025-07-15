@@ -7,7 +7,8 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
-import heroImage from '@assets/images/doors/classica/classica-hero-wide.webp';
+import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
+import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import styles from './doors.module.scss'
 
 const DoorsOverview = () => {
@@ -30,7 +31,7 @@ const DoorsOverview = () => {
           <Breadcrumbs current={t('breadcrumbs.label')}/>
           <SectionTabs/>
           <ResponsiveCard
-            image={heroImage}
+            image={heroImageClassica}
             title={t('title-classica')}
             description={t('description-classica')}
             comment={t('comment-text')}
@@ -40,12 +41,24 @@ const DoorsOverview = () => {
             <SocialButtons/>
           </div>
           <div className={styles.previewWrap}>
-
-          <ProductSlider
-            title={t('preview-title')}
-            categoryId='doors'
-            collectionId='classica'
+            <ProductSlider
+              title={t('preview-title')}
+              categoryId='doors'
+              collectionId='classica'
+            />
+          </div>
+          <ResponsiveCard
+            image={heroImageLoft}
+            title={t('title-loft')}
+            description={t('description-loft')}
+            comment={t('comment-text')}
           />
+          <div className={styles.previewWrap}>
+            <ProductSlider
+              title={t('preview-title')}
+              categoryId='doors'
+              collectionId='loft'
+            />
           </div>
         </div>
       </div>
