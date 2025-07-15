@@ -12,8 +12,8 @@
     padding: 0 12px 96px;
   }
   .socialButtons{
-    position: absolute;
-    top: 375px;
+    position: fixed;
+    top: 175px;
     right: 20px;
     @media (max-width: 1200px) {
       display: none;
