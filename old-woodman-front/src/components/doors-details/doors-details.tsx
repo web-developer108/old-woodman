@@ -19,7 +19,7 @@ export const DoorsDetails: React.FC = () => {
   const { t, i18n } = useTranslation('doors');
   const { isMobile } = useDevice();
   const { isInCart, addToCart } = useCart();
-  const {showModal} = useModal()
+  const { showModal } = useModal()
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -41,11 +41,11 @@ export const DoorsDetails: React.FC = () => {
   const descriptionLines = getDescriptionLines(collectionId!, t);
 
   const handleOneClick = () => {
-    showModal(<OneClickModal id={selectedProduct.id} />);
+    showModal(<OneClickModal id={selectedProduct.id}/>);
   };
   const handleCartClick = () => {
     addToCart(selectedProduct.id)
-    showModal(<CartModal id={selectedProduct.id} />);
+    showModal(<CartModal id={selectedProduct.id}/>);
   };
   useEffect(() => {
     const checkOverflow = () => {
@@ -64,78 +64,103 @@ export const DoorsDetails: React.FC = () => {
   }, [isMobile]);
   if (!collection || !selectedProduct) return null;
   return (
-    <div className={styles.page}>
-      <div className={styles.imagesWrap}>
-        <div className={styles.imageBlock}>
-          <img
-            src={selectedProduct.images[0]}
-            alt={selectedProduct.title[lang]}
-            className={styles.mainImage}
-          />
-          <div className={styles.likeWrap}>
-            <LikeButton productId={selectedProduct.id}/>
-          </div>
-
-        </div>
-        <div className={styles.sliderContainer}>
-          <ImageSlider
-            selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
-            onSelect={(index) => {
-              const selected = collection.items[index];
-              navigate(`/doors/${collection.id}?productId=${selected.id}`);
-            }}
-          />
-        </div>
-      </div>
-      <div className={styles.infoBlock}>
-        <div className={styles.titleBlock}>
-          <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
-          <div className={styles.price}>
-            {t('price-label')} {selectedProduct.price.toLocaleString()} ₸*
-            <div className={styles.tooltipWrapper}>
-              <div className={styles.icon}>i</div>
-              <div className={styles.tooltip}>{t('info-text')}</div>
+    <>
+      <div className={styles.page}>
+        <section className={styles.imagesWrap}>
+          <div className={styles.imageBlock}>
+            <img
+              src={selectedProduct.images[0]}
+              alt={selectedProduct.title[lang]}
+              className={styles.mainImage}
+            />
+            <div className={styles.likeWrap}>
+              <LikeButton productId={selectedProduct.id}/>
             </div>
+
+          </div>
+          <div className={styles.sliderContainer}>
+            <ImageSlider
+              selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
+              onSelect={(index) => {
+                const selected = collection.items[index];
+                navigate(`/doors/${collection.id}?productId=${selected.id}`);
+              }}
+            />
+          </div>
+        </section>
+        <section className={styles.infoBlock}>
+          <div className={styles.titleBlock}>
+            <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
+            <div className={styles.price}>
+              {t('price-label')} {selectedProduct.price.toLocaleString()} ₸*
+              <div className={styles.tooltipWrapper}>
+                <div className={styles.icon}>i</div>
+                <div className={styles.tooltip}>{t('info-text')}</div>
+              </div>
+            </div>
+
+          </div>
+          <div className={styles.descriptionContainer}>
+            <div
+              ref={textRef}
+              className={[
+                styles.textBlock,
+                isExpanded ? styles.expanded : '',
+                isOverflowing && !isExpanded ? styles.showFade : ''
+              ].join(' ')}
+            >
+              {descriptionLines.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
+
+            {isOverflowing &&
+              !isExpanded &&
+              (
+                <button className={styles.readMoreButton} onClick={() => setIsExpanded(true)}>
+                  {t('button-read.label')}
+                </button>
+              )}
           </div>
 
-        </div>
-        <div className={styles.descriptionContainer}>
-          <div
-            ref={textRef}
-            className={[
-              styles.textBlock,
-              isExpanded ? styles.expanded : '',
-              isOverflowing && !isExpanded ? styles.showFade : ''
-            ].join(' ')}
-          >
-            {descriptionLines.map((line, i) => (
-              <p key={i}>{line}</p>
-            ))}
+          <div className={styles.actions}>
+            <ColorButton
+              label={t('button-order.label')}
+              variant='white'
+              icon={<OrderIcon/>}
+              onClick={handleOneClick}
+            />
+            <ColorButton
+              label={isInCart(selectedProduct.id) ? t('button.in-cart') : t('button.add-to-cart')}
+              onClick={handleCartClick}
+            />
+            <CommonButtonsBlock/>
           </div>
+        </section>
 
-          {isOverflowing &&
-            !isExpanded &&
-            (
-              <button className={styles.readMoreButton} onClick={() => setIsExpanded(true)}>
-                {t('button-read.label')}
-              </button>
-            )}
-        </div>
 
-        <div className={styles.actions}>
-          <ColorButton
-            label = {t('button-order.label')}
-            variant='white'
-            icon={<OrderIcon/>}
-            onClick = {handleOneClick}
-          />
-          <ColorButton
-            label =  {isInCart(selectedProduct.id) ? t('button.in-cart') : t('button.add-to-cart')}
-            onClick = {handleCartClick}
-          />
-          <CommonButtonsBlock/>
-        </div>
       </div>
-    </div>
-  );
+      <section className={styles.article}>
+        <div className={styles.columns}>
+          <div className={styles.column}>
+            <h2>{t('parameter-header.period').toUpperCase()}</h2>
+            <span>{t('parameter-header.period.text')}</span>
+            <h2>{t('parameter-header.price').toUpperCase()}</h2>
+            <span>{t('parameter-header.price.text-1')}</span>
+            <span>{t('parameter-header.price.text-2')}</span>
+          </div>
+          <div className={styles.column}>
+            <h2>{t('parameter-header.materials').toUpperCase()}</h2>
+            <span>{t('parameter-header.materials.text')}</span>
+            <h2>{t('parameter-header.sizes').toUpperCase()}</h2>
+            <span>{t('parameter-header.sizes.text-1')}</span>
+            <span>{t('parameter-header.sizes.text-2')}</span>
+            <h2>{t('parameter-header.color').toUpperCase()}</h2>
+            <span>{t('parameter-header.color.text')}</span>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+    ;
 };

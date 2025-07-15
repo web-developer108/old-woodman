@@ -243,4 +243,52 @@
       padding-top: 36px;
     }
   }
+
+}
+
+.article {
+  max-width: 1180px;
+  margin: 0 auto;
+  margin-bottom: 56px;
+  padding: 24px;
+  @media (max-width: 810px) {
+    padding: 12px;
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 76px;
+
+    @media (max-width: 810px) {
+      flex-direction: column;
+      row-gap: 0;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 0;
+      @include mixins.bodyTextSmall;
+
+      h2 {
+        margin-bottom: 24px;
+        font-size: 18px;
+
+        @media (max-width: 810px) {
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+      }
+
+      span {
+        display: block;
+        margin-bottom: 24px;
+        @media (max-width: 810px) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+
 }
