@@ -25,6 +25,12 @@
     background-color: var(--button-main-color);
     color: var(--text-main-color);
   }
+  &.white {
+    background-color: var(--text-light-color);
+    color: var(--text-main-color);
+    border: 1px solid var(--background-circle-button-color);
+    flex-flow: row-reverse;
+  }
 
   &.blue {
     background-color: var(--button-blue-color);

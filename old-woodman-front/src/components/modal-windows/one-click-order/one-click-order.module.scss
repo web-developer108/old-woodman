@@ -1,0 +1,75 @@
+.modalContent {
+  width: 620px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  @media (max-width: 810px) {
+    width: 100%;
+    height: auto;
+
+  }
+
+
+  .modalTitle {
+    font-size: 24px;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 12px;
+    @media (max-width: 810px) {
+      font-size: 20px;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .input {
+      border: 1px solid var(--text-main-color-25);
+      border-radius: 10px;
+      padding: 18px;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-main-color-50);
+      height: 56px;
+      box-sizing: border-box;
+      @media (max-width: 810px) {
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: var(--text-main-color-50);
+        opacity: 1;
+      }
+    }
+
+    .submit {
+      background-color: #ffb800;
+      border: none;
+      padding: 12px;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-grey-color);
+
+    a {
+      color: var(--text-grey-color);
+    }
+  }
+}

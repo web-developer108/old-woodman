@@ -1,0 +1,58 @@
+@use "../../mixins" as mixins;
+
+.orderedContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 520px;
+  display: flex;
+  padding-top: 56px;
+  @media (max-width: 1240px) {
+    padding: 56px 20px 0;
+  }
+  @media (max-width: 810px) {
+    flex-direction: column;
+  }
+
+  .contentWrapper {
+    width: 60%;
+    @media (max-width: 810px) {
+      width: 100%;
+    }
+
+    .mainHeader {
+      @include mixins.mainHeader;
+      margin-bottom: 20px;
+      @media (max-width: 810px) {
+        text-align: center;
+      }
+    }
+
+    .label {
+      @include mixins.bodyText;
+      @media (max-width: 810px) {
+        text-align: center;
+      }
+    }
+
+    .buttonContainer {
+      max-width: 390px;
+      margin-top: 36px;
+      @media (max-width: 810px) {
+        margin: 24px auto;
+
+      }
+    }
+  }
+
+
+  .faceContainer {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    @media (max-width: 810px) {
+      width: 100%;
+    }
+  }
+
+
+}

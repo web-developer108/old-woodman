@@ -1,0 +1,81 @@
+@use '../../mixins' as mixins;
+
+.sliderWrapper {
+  width: 100%;
+  max-height: 224px;
+  max-width: 540px;
+  overflow: hidden;
+  @media (max-width: 810px) {
+    max-height: 189px;
+  }
+
+  .simpleBar {
+    height: 157px;
+    position: relative;
+    @media (max-width: 810px) {
+      height: 122px;
+
+    }
+
+    .scrollContainer {
+      display: flex;
+      gap: 12px;
+
+      .card {
+        flex: 0 0 auto;
+        width: 125px;
+        height: 125px;
+        border-radius: 10px;
+        border: 1px solid var(--background-circle-button-color);
+        background-color: var(--background-light-color);
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 8px;
+        @media (max-width: 810px) {
+          width: 90px;
+          height: 90px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .selected {
+        border: 1.5px solid var(--text-grey-color);
+      }
+    }
+  }
+
+  .textWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    height: 48px;
+    align-items: center;
+    @media (max-width: 810px) {
+      margin-top: 0;
+      height: 24px;
+    }
+    .caption {
+      @include mixins.bodyText;
+      text-align: left;
+      font-size: 14px;
+      color: var(--text-grey-color);
+
+    }
+
+    .navButton {
+      width: 104px;
+      height: 48px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      column-gap: 8px;
+
+    }
+  }
+
+}

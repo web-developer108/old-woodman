@@ -5,10 +5,10 @@ import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
-import heroImage from '@assets/images/doors/classica/classica-hero-wide.webp';
-import styles from './doors.module.scss'
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import heroImage from '@assets/images/doors/classica/classica-hero-wide.webp';
+import styles from './doors.module.scss'
 
 const DoorsOverview = () => {
   const { t } = usePageTranslate();

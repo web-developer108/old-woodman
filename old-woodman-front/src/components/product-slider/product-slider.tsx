@@ -26,6 +26,10 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
     ?.collections?.find((col) => col.id === collectionId)
     ?.items || [];
 
+  const handleCardClick = (productId: string) => {
+    navigate(`/doors/${collectionId}?productId=${productId}`);
+  };
+
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.heading}>
@@ -35,7 +39,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
         <div className={styles.cardRow}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
-              <div className={styles.imageWrapper} onClick={()=>navigate(`/doors/${collectionId.toLowerCase()}`)}>
+              <div className={styles.imageWrapper} onClick={() => handleCardClick(item.id)}>
                 <img
                   src={item.images[0]}
                   alt={item.title[lang]}

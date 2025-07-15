@@ -7,7 +7,8 @@ export const ColorButton: React.FC<ColorButtonProps> = ({
   variant = 'yellow',
   icon,
   onClick,
-  disabled = false
+  disabled = false,
+  type = 'button'
 }) => {
   const buttonClass = `${styles.button} ${styles[variant]}`;
 
@@ -15,6 +16,7 @@ export const ColorButton: React.FC<ColorButtonProps> = ({
     <button className={buttonClass}
             onClick={onClick}
             disabled={disabled}
+            type={type}
     >
       <span className={styles.label}>{label}</span>
       {icon && <span className={styles.icon}>{icon}</span>}

@@ -5,10 +5,13 @@ const Home = lazy(() => import('../pages/home/home.tsx'));
 
 const DoorsOverview = lazy(() => import('../pages/doors/doors' +
 ''));
-const Classica = lazy(() => import('../pages/temporary/temporary'));
-const Loft = lazy(() => import('../pages/temporary/temporary'));
+//const Classica = lazy(() => import('../pages/temporary/temporary'));
+const ProductPage = lazy(() => import('../pages/product-page/product-page.tsx'));
+//const Loft = lazy(() => import('../pages/temporary/temporary'));
 const Balcony = lazy(() => import('../pages/temporary/temporary'));
+/*
 const DoorCollectionItem = lazy(() => import('../pages/temporary/temporary'));
+*/
 
 const FurnitureOverview = lazy(() => import('../pages/temporary/temporary'));
 const Consoles = lazy(() => import('../pages/temporary/temporary'));
@@ -26,20 +29,22 @@ const Info = lazy(() => import('../pages/info/info'));
 const Terms = lazy(() => import('../pages/terms/terms'));
 const Favorites = lazy(() => import('../pages/favorites/favorites'));
 const Privacy = lazy(() => import('../pages/privacy-policy/privacy-policy'));
-const Ordered = lazy(() => import('../pages/temporary/temporary'));
-const NotFound = lazy(() => import('../pages/not-found/not-found.tsx'));
+const Ordered = lazy(() => import('../pages/ordered/ordered'));
+const NotFound = lazy(() => import('../pages/not-found/not-found'));
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
 
   { path: '/doors', element: <DoorsOverview /> },
-  { path: '/doors/classica', element: <Classica /> },
-  { path: '/doors/classica/:id', element: <DoorCollectionItem /> },
-  { path: '/doors/loft', element: <Loft /> },
-  { path: '/doors/loft/:id', element: <DoorCollectionItem /> },
+  //{ path: '/doors/classica', element: <Classica /> },
+  { path: '/doors/:collectionId', element: <ProductPage /> },
+  /*{ path: '/doors/classica/:id', element: <DoorCollectionItem /> },*/
+ /* { path: '/doors/loft', element: <Loft /> },*/
+  /*{ path: '/doors/loft/:id', element: <DoorCollectionItem /> },
+  */
   { path: '/doors/balcony', element: <Balcony /> },
-  { path: '/doors/balcony/:id', element: <DoorCollectionItem /> },
-
+  /*{ path: '/doors/balcony/:id', element: <DoorCollectionItem /> },
+*/
   { path: '/furniture', element: <FurnitureOverview /> },
   { path: '/furniture/consoles', element: <Consoles /> },
   { path: '/furniture/consoles/:id', element: <FurnitureCollectionItem /> },

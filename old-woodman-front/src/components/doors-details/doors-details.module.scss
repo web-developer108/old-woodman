@@ -1,0 +1,294 @@
+@use '../../mixins' as mixins;
+
+.page {
+  max-width: 1180px;
+  display: flex;
+  gap: 56px;
+  justify-content: space-between;
+  padding: 24px;
+
+  @media (max-width: 810px) {
+    flex-direction: column;
+    gap: 36px;
+    padding: 12px;
+  }
+
+  .imagesWrap {
+    width: 45%;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (min-width: 1180px) {
+      min-width: 300px;
+    }
+    @media (max-width: 810px) {
+      width: 100%;
+      max-width: 100%;
+      align-items: center;
+    }
+
+    .imageBlock {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--background-grey-color);
+      border-radius: 10px;
+      padding: 34px 74px;
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 540px;
+      height: 540px;
+
+      @media (max-width: 810px) {
+        height: 540px;
+        max-width: 100%;
+        padding: 24px;
+      }
+
+      @media (max-width: 564px) {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        padding: 16px;
+      }
+
+      .mainImage {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+    }
+
+    .sliderContainer {
+      display: flex;
+      width: 100%;
+    }
+
+    .likeWrap {
+      position: absolute;
+      top: 14px;
+      right: 17px;
+    }
+  }
+
+  .infoBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 55%;
+    @media (max-width: 810px) {
+      width: 100%;
+      min-width: 300px;
+    }
+
+    .titleBlock {
+      width: 100%;
+
+      .title {
+        @include mixins.headingLarge;
+        @media (max-width: 810px) {
+          min-width: 330px;
+          margin: 0;
+        }
+      }
+
+      .price {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Vollkorn', serif;
+        width: 100%;
+        @include mixins.headingLarge;
+
+        .tooltipWrapper {
+          position: relative;
+          display: inline-block;
+
+          &:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(8px);
+          }
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          background: var(--background-circle-button-color);
+          border-radius: 50%;
+          color: var(--text-grey-color);
+          font-size: 20px;
+          text-align: center;
+          cursor: help;
+          user-select: none;
+          font-family: "Nunito Sans", sans-serif;
+        }
+
+        .tooltip {
+          max-width: 280px;
+          width: max-content;
+          box-sizing: border-box;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          transform: translateX(-50%);
+          padding: 8px 12px;
+          background-color: var(--text-main-color);
+          color: white;
+          font-family: "Nunito Sans", sans-serif;
+          font-size: 16px;
+          border-radius: 10px;
+          white-space: pre-line;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          z-index: 1000;
+          @media (max-width: 810px) {
+            font-size: 14px;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            border-width: 6px;
+            border-style: solid;
+          }
+        }
+      }
+    }
+
+    .descriptionContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .textBlock {
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        position: relative;
+        max-height: 305px;
+        @include mixins.bodyText;
+        @media (max-width: 810px) {
+          max-height: 202px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          opacity: 0;
+        }
+
+        &.showFade::after {
+          opacity: 1;
+          visibility: visible;
+
+        }
+
+        &.expanded::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &.expanded {
+          max-height: none;
+        }
+      }
+
+      .readMoreButton {
+        align-self: start;
+        color: var(--text-grey-color);
+        background: var(--background-circle-button-color);
+        border: 1px solid var(--background-circle-button-color);
+        border-radius: 20px;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: "Nunito Sans", sans-serif;
+        transition: opacity 0.3s ease;
+        width: 155px;
+        height: 40px;
+
+        @media (max-width: 810px) {
+          width: 132px;
+          height: 36px;
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+      padding-top: 36px;
+    }
+  }
+
+}
+
+.article {
+  max-width: 1180px;
+  margin: 0 auto;
+  margin-bottom: 56px;
+  padding: 24px;
+  @media (max-width: 810px) {
+    padding: 12px;
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 76px;
+
+    @media (max-width: 810px) {
+      flex-direction: column;
+      row-gap: 0;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 0;
+      @include mixins.bodyTextSmall;
+
+      h2 {
+        margin-bottom: 24px;
+        font-size: 18px;
+
+        @media (max-width: 810px) {
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+      }
+
+      span {
+        display: block;
+        margin-bottom: 24px;
+        @media (max-width: 810px) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+
+}

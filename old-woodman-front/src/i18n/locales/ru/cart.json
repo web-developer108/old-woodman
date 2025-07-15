@@ -4,6 +4,15 @@
   "main-header": "Корзина",
   "main-header.label": "Изображения дверей, мебели и других изделий примерные. Двери и мебель будут произведены индивидуально для Вас.",
   "empty-header": "Товаров нет",
-  "empty-label": "Ваша корзина пока пуста"
+  "empty-label": "Ваша корзина пока пуста",
+  "ordered-main-header": "Благодарим за заказ!",
+  "ordered-main-header.label": "Мы свяжемся с Вами в WhatsApp для уточнения деталей по заказу",
+  "ordered-button": "Вернуться",
+  "cart.product": "Товар",
+  "cart.price": "Цена",
+  "cart.quantity": "Количество",
+  "cart.total": "Подытог",
+  "aria-label.delete-button": "Удалить из корзины"
+
 
 }

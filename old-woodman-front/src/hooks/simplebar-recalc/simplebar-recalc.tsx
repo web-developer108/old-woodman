@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 export const useSimpleBarRecalc = (ref: React.RefObject<any>) => {
   useEffect(() => {
     const images = ref.current?.contentEl?.querySelectorAll('img') as NodeListOf<HTMLImageElement> | undefined;
-
     if (!images || images.length === 0) return;
 
     let loaded = 0;

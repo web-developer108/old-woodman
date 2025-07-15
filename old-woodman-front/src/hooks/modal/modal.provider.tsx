@@ -3,8 +3,8 @@ import { type ReactNode, useState } from 'react';
 import useDevice from '../device/use-device.ts';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { CloseIcon } from '../../components/icons/close-icon/close-icon.tsx';
-import styles from './modal.module.scss'
 import { useTranslation } from 'react-i18next';
+import styles from './modal.module.scss'
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
  const {t} = useTranslation('common')
