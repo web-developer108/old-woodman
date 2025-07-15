@@ -13,6 +13,22 @@
     @media (max-width: 810px) {
       margin-top: 12px;
     }
+  }
 
+  .textInfo {
+    background-color: var(--background-grey-color);
+    margin: 0 auto 156px;
+    max-width: 1180px;
+    border-radius: 10px;
+    padding: 65px;
+    box-sizing: border-box;
+    @media (max-width: 1240px) {
+      padding: 48px 24px;
+      margin: 0 24px 96px 24px;
+    }
+    @media (max-width: 810px) {
+      padding: 48px 14px;
+      margin: 0 12px 96px 12px;
+    }
   }
 }
