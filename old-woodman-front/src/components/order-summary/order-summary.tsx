@@ -5,13 +5,15 @@ import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import styles from './order-summary.module.scss'
+import { useNavigate } from 'react-router-dom';
 
 export const OrderSummary: React.FC<{
   products: (ProductItem & { quantity: number })  [];
   total: number;
 }> = ({ products, total }) => {
   const { t, i18n } = useTranslation('common');
-  const { cartItems } = useCart();
+  const navigate = useNavigate();
+  const { cartItems, clearCart } = useCart();
   const lang = i18n.language as 'ru' | 'kk';
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -37,7 +39,11 @@ export const OrderSummary: React.FC<{
         <span>{t('order-summary.sum')}</span>
         <span>{total.toLocaleString()} ₸</span>
       </div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={(e) => {
+        e.preventDefault();
+        clearCart();
+        navigate('/cart/booked');
+      }}>
         <input
           className={styles.input}
           type="text"
