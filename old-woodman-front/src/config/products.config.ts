@@ -85,6 +85,62 @@ export const productCatalog: ProductCategory[] = [
           },
         ],
       },
+      {
+        id: 'loft',
+        title: {
+          ru: 'LOFT',
+          kk: 'LOFT',
+        },
+        pageTitle: {
+          ru: 'Деревянные двери LOFT',
+          kk: 'LOFT ағаш есіктері',
+        },
+        items: [
+          {
+            id: 'loft-teak',
+            title: {
+              ru: 'LOFT',
+              kk: 'LOFT',
+
+            },
+            titleMob: {
+              ru: 'LOFT, Тик',
+              kk: 'LOFT, Тик',
+            },
+            description: {
+              ru: 'цвет "Тик"',
+              kk: 'түсі "Тик"',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/loft/teak.webp'],
+            price: 286000,
+          },
+          {
+            id: 'loft-teak-duo',
+            title: {
+              ru: 'LOFT',
+              kk: 'LOFT',
+            },
+            titleMob: {
+              ru: 'LOFT, Тик, Дуо',
+              kk: 'LOFT, Тик, Дуо',
+            },
+            description: {
+              ru: 'Цвет "Тик", Дуо',
+              kk: 'Цвет "Тик", Дуо',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/loft/teak-duo.webp'],
+            price: 540000,
+          },
+        ],
+      },
       // другие коллекции
     ],
   },

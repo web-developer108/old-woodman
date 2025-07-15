@@ -9,14 +9,14 @@ export const SocialButtons = ()=>{
   const {t} = useTranslation('common')
   return (
     <div className={styles.circleButtons}>
-      <a
+      <a className={styles.whatsapp}
         href="https://wa.me/77081826004"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
       >
         <CircleButton ariaLabel={t('social.aria-label.wa')} bgColor={AppColors.button.green}
-                      icon={<WhatsappIcon color={AppColors.text.light} size = '32'/>}/>
+                      icon={<WhatsappIcon color={AppColors.text.light} size = '30'/>}/>
       </a>
       <a
         href="https://t.me/old_woodman"
@@ -28,7 +28,7 @@ export const SocialButtons = ()=>{
 
           <TelegramIcon
             arrowColor={AppColors.button.blue}
-            size = '32'
+            size = '31'
             backgroundColor={AppColors.text.light}/>}/>
       </a>
     </div>
