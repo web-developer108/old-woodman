@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: oldwoodman-front
+        working-directory: old-woodman-front
 
     steps:
       - name: Checkout repository
