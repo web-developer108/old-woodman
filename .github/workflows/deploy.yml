@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: old-woodman-front
+        working-directory: ./old-woodman-front
 
     steps:
       - name: Checkout repository
@@ -26,16 +26,23 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-          mkdir ../deploy-tmp
-          cp -R dist/* ../deploy-tmp/
-          
-          cd ..
+
+          # Проверка, что dist существует
+          if [ ! -d old-woodman-front/dist ]; then
+            echo "❌ Папка dist не найдена. Сборка не сработала."
+            exit 1
+          fi
+
+          # Создаём временную директорию и копируем туда dist
+          mkdir deploy-tmp
+          cp -R old-woodman-front/dist/* deploy-tmp/
+
+          # Переходим на orphan-ветку и очищаем всё
           git checkout --orphan deploy
-          rm -rf *
+          git rm -rf . > /dev/null || true
           cp -R deploy-tmp/* .
           rm -rf deploy-tmp
-          
+
           git add .
           git commit -m "Deploy production build"
           git push -f origin deploy
