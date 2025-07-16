@@ -23,21 +23,19 @@ jobs:
         run: npm run build
 
       - name: Deploy dist to deploy branch
+        working-directory: ./ # ⚠️ ВАЖНО: выйти обратно в корень проекта
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-          # Проверка, что dist существует
-          if [ ! -d dist ]; then
-            echo "❌ Папка dist не найдена. Сборка не сработала."
+          if [ ! -d old-woodman-front/dist ]; then
+            echo "❌ dist не найдена. Сборка не сработала"
             exit 1
           fi
 
-          # Создаём временную директорию и копируем туда dist
           mkdir deploy-tmp
           cp -R old-woodman-front/dist/* deploy-tmp/
 
-          # Переходим на orphan-ветку и очищаем всё
           git checkout --orphan deploy
           git rm -rf . > /dev/null || true
           cp -R deploy-tmp/* .
