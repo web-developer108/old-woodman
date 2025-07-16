@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "actions@github.com"
 
           # Проверка, что dist существует
-          if [ ! -d old-woodman-front/dist ]; then
+          if [ ! -d dist ]; then
             echo "❌ Папка dist не найдена. Сборка не сработала."
             exit 1
           fi
