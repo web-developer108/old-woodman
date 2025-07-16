@@ -28,7 +28,7 @@ export const SocialButtons = ()=>{
 
           <TelegramIcon
             arrowColor={AppColors.button.blue}
-            size = '31'
+            size = '32'
             backgroundColor={AppColors.text.light}/>}/>
       </a>
     </div>

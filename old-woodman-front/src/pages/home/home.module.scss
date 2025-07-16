@@ -92,10 +92,10 @@
     }
 
     .circleButtons {
-      position: absolute;
+      position: fixed;
       top: 370px;
       right: 30px;
-
+      z-index: 20;
       @media (max-width: 1200px) {
         display: none;
       }
