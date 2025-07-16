@@ -39,10 +39,10 @@
   }
 
   div {
-    @include mixins.bodyText;
     grid-column: 1;
     grid-row: 3;
     line-height: 1.5;
+    @include mixins.bodyText;
     @media (max-width: 1200px) {
       grid-column: 1;
       grid-row: 5;
@@ -80,8 +80,8 @@
 }
 
 .circleButtons {
-  position: absolute;
-  top: 450px;
+  position: fixed;
+  top: 200px;
   right: 30px;
 
   @media (max-width: 1200px) {
