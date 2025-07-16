@@ -23,7 +23,7 @@ jobs:
         run: npm run build
 
       - name: Deploy dist to deploy branch
-        working-directory: ./ # ⚠️ ВАЖНО: выйти обратно в корень проекта
+        working-directory: ./
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
@@ -43,4 +43,4 @@ jobs:
 
           git add .
           git commit -m "Deploy production build"
-          git push -f origin deploy
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:deploy
