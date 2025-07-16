@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import 'simplebar-react/dist/simplebar.min.css';
-import useDevice from '../../hooks/device/use-device.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
@@ -28,7 +27,6 @@ import styles from './home.module.scss'
 
 const Home = () => {
   const { t } = usePageTranslate();
-  const { isDesktop } = useDevice();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
@@ -77,18 +75,18 @@ const Home = () => {
         </div>
 
         <section className={styles.offer}>
-          <h2>{t(isDesktop ? 'article-title' : 'article-title-mobile').toUpperCase()}</h2>
+          <h2>{t('article-title').toUpperCase()}</h2>
           <div className={styles.features}>
             <ul className={styles.checklist}>
-              <li> {t(isDesktop ? 'article-text1' : 'article-text1-mobile')}</li>
-              <li> {t(isDesktop ? 'article-text2' : 'article-text2-mobile')}</li>
-              <li> {t(isDesktop ? 'article-text3' : 'article-text3-mobile')}</li>
+              <li> {t('article-text1')}</li>
+              <li> {t('article-text2')}</li>
+              <li> {t('article-text3')}</li>
             </ul>
             <ul className={styles.checklist}>
-              <li> {t(isDesktop ? 'article-text4' : 'article-text4-mobile')}</li>
-              <li> {t(isDesktop ? 'article-text5' : 'article-text5-mobile')}</li>
-              <li> {t(isDesktop ? 'article-text6' : 'article-text6-mobile')}</li>
-              {!isDesktop && <li> {t('article-text7-mobile')}</li>}
+              <li> {t('article-text4')}</li>
+              <li> {t('article-text5')}</li>
+              <li> {t('article-text6')}</li>
+
             </ul>
           </div>
         </section>
