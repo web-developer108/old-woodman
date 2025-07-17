@@ -34,8 +34,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
                   bgColor='transparent'
                 />
               </div>
-            </div>
+
             {modalContent}
+            </div>
           </div>
         </div>
       )}
