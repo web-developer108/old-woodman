@@ -33,7 +33,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.heading}>
-        {title.toUpperCase()} ({items.length})
+        {title.toUpperCase()}
       </h3>
       <SimpleBar autoHide={false} className={styles.scrollContainer}>
         <div className={styles.cardRow}>
