@@ -1,5 +1,5 @@
-import styles from '../contacts-modal/contacts-modal.module.scss'
 import { useTranslation } from 'react-i18next';
+import styles from '../contacts-modal/contacts-modal.module.scss'
 
 export const Feedback = () => {
   const { t } = useTranslation('common')

@@ -20,8 +20,8 @@
     }
 
     .mainHeader {
-      @include mixins.mainHeader;
       margin-bottom: 20px;
+      @include mixins.mainHeader;
       @media (max-width: 810px) {
         text-align: center;
       }

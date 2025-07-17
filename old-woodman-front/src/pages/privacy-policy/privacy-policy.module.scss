@@ -19,12 +19,12 @@
     }
 
     .mainHeader {
-      @include mixins.mainHeader;
       line-height: 1.5;
       width: 1180px;
       margin: 0 auto;
       padding: 57px 0;
       vertical-align: center;
+      @include mixins.mainHeader;
       @media (max-width: 1300px) {
         width: 95%;
       }
@@ -35,7 +35,6 @@
         }
       }
     }
-
   }
 
   .policyContent {
@@ -71,17 +70,17 @@
         }
 
         > div {
-          @include mixins.bodyTextSmall;
           font-family: Nunito Sans, serif;
+          @include mixins.bodyTextSmall;
         }
 
         ol {
-          @include mixins.bodyTextSmall;
           counter-reset: subsection;
           list-style: none;
           padding-left: 56px;
           margin-top: 5px;
           font-family: Nunito Sans, sans-serif;
+          @include mixins.bodyTextSmall;
           >li{
             margin-bottom: 20px;
           }

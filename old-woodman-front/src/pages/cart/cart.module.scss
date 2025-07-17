@@ -36,13 +36,13 @@
       }
 
       .mainHeader {
-        @include mixins.mainHeader;
         margin-bottom: 20px;
+        @include mixins.mainHeader;
       }
 
       .label {
-        @include mixins.bodyText;
         max-width: 568px;
+        @include mixins.bodyText;
       }
     }
   }
