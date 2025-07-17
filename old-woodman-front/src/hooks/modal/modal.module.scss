@@ -21,6 +21,7 @@
   height: auto;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
+
 .drawer {
   position: fixed;
   bottom: 0;
@@ -29,12 +30,17 @@
   background-color: var(--text-light-color);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  padding:  66px 20px;
+  padding: 66px 20px;
   max-height: 90vh;
-  overflow-y: auto;
+  min-width: 325px;
   overflow-x: hidden;
   animation: slideUp 0.3s ease-out;
+
+  .drawerInner {
+    position: relative;
+  }
 }
+
 .close {
   position: absolute;
   top: 12px;

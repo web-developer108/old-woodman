@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './modal.module.scss'
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
- const {t} = useTranslation('common')
+  const { t } = useTranslation('common')
   const { isMobile } = useDevice();
   const [modalContent, setModalContent] = useState<ReactNode | null>(null);
 
@@ -25,13 +25,15 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
             }
             onClick={(e) => e.stopPropagation()}
           >
-            <div   className={styles.close} >
+            <div className={styles.drawerInner}>
+              <div className={styles.close}>
                 <CircleButton
-                  ariaLabel = {t('header.aria-label')}
+                  ariaLabel={t('header.aria-label')}
                   icon={<CloseIcon/>}
                   onClick={closeModal}
                   bgColor='transparent'
                 />
+              </div>
             </div>
             {modalContent}
           </div>
