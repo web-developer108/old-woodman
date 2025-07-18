@@ -9,6 +9,7 @@ import { SocialButtons } from '../../components/buttons/social-buttons/social-bu
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
+import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
 import styles from './doors.module.scss'
 
 const DoorsOverview = () => {
@@ -58,6 +59,19 @@ const DoorsOverview = () => {
               title={t('preview-title')}
               categoryId='doors'
               collectionId='loft'
+            />
+          </div>
+          <ResponsiveCard
+            image={heroImageDeco}
+            title={t('title-deco')}
+            description={t('description-deco')}
+            comment={t('comment-text')}
+          />
+          <div className={styles.previewWrap}>
+            <ProductSlider
+              title={t('preview-title')}
+              categoryId='doors'
+              collectionId='deco'
             />
           </div>
         </div>
