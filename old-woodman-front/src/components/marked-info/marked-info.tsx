@@ -1,3 +1,4 @@
+import React from 'react';
 import type { MarkedInfoProps } from './marked-info.types.ts';
 import styles from './marked-info.module.scss';
 

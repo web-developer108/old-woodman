@@ -68,7 +68,12 @@
 
     }
   }
-
+  .quantitySelector{
+    @media (max-width: 520px) {
+      grid-row: 2;
+      grid-column: 3;
+    }
+  }
   .hiddenSum {
     display: none;
     @media (max-width: 520px) {

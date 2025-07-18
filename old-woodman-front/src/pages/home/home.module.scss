@@ -229,12 +229,12 @@
         grid-row: 2;
         font-family: 'Vollkorn', serif;
         display: block;
-        max-width: 340px;
+        max-width: 380px;
         margin-bottom: 24px;
         color: var(--text-grey-color);
         padding-left: 48px;
         line-height: 1.5;
-
+        box-sizing: content-box;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 3;

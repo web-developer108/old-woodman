@@ -1,8 +1,8 @@
 import React from 'react';
 import type { ProductSummaryProps } from './product-summary.types.ts';
 import { useTranslation } from 'react-i18next';
-import styles from './product-summary.module.scss';
 import { QuantitySelector } from '../quantity-selector/quantity-selector.tsx';
+import styles from './product-summary.module.scss';
 
 export const ProductSummary: React.FC<ProductSummaryProps> = ({
   product,
@@ -26,12 +26,13 @@ export const ProductSummary: React.FC<ProductSummaryProps> = ({
       </div>
 
       <span className={styles.hiddenTitle}>{t('modal-order.quantity')}</span>
-
-      <QuantitySelector
-        quantity={quantity}
-        onIncrease={onIncrease}
-        onDecrease={onDecrease}
-      />
+      <div className={styles.quantitySelector}>
+        <QuantitySelector
+          quantity={quantity}
+          onIncrease={onIncrease}
+          onDecrease={onDecrease}
+        />
+      </div>
       <span className={styles.hiddenSum}>{t('modal-order.sum')}</span>
       <div className={styles.price}>{(product.price * quantity).toLocaleString()} ₸</div>
     </div>

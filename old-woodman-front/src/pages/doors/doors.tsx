@@ -10,6 +10,7 @@ import { ProductSlider } from '../../components/product-slider/product-slider.ts
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
+import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
 import styles from './doors.module.scss'
 
 const DoorsOverview = () => {
@@ -72,6 +73,19 @@ const DoorsOverview = () => {
               title={t('preview-title')}
               categoryId='doors'
               collectionId='deco'
+            />
+          </div>
+          <ResponsiveCard
+            image={heroImageRustic}
+            title={t('title-rustic')}
+            description={t('description-rustic')}
+            comment={t('comment-text')}
+          />
+          <div className={styles.previewWrap}>
+            <ProductSlider
+              title={t('preview-title')}
+              categoryId='doors'
+              collectionId='rustic'
             />
           </div>
         </div>

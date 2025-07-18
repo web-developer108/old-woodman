@@ -140,7 +140,8 @@ export const productCatalog: ProductCategory[] = [
             price: 540000,
           },
         ],
-      },{
+      },
+      {
         id: 'deco',
         title: {
           ru: 'DECO',
@@ -195,6 +196,62 @@ export const productCatalog: ProductCategory[] = [
             price: 540000,
           },
 
+        ],
+      },
+      {
+        id: 'rustic',
+        title: {
+          ru: 'RUSTIC',
+          kk: 'RUSTIC',
+        },
+        pageTitle: {
+          ru: 'Деревянная дверь RUSTIC',
+          kk: 'RUSTIC АҒАШ ЕСІГІ',
+        },
+        items: [
+          {
+            id: 'rustic-arched',
+            title: {
+              ru: 'RUSTIC',
+              kk: 'RUSTIC',
+
+            },
+            titleMob: {
+              ru: 'RUSTIC, оригинальная',
+              kk: 'RUSTIC, оригинальная',
+            },
+            description: {
+              ru: 'оригинальная',
+              kk: 'оригинальная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/rustic/rustic-arched.webp'],
+            price: 286000,
+          },
+          {
+            id: 'rustic-simple',
+            title: {
+              ru: 'RUSTIC',
+              kk: 'RUSTIC',
+            },
+            titleMob: {
+              ru: 'RUSTIC, простая',
+              kk: 'RUSTIC, простая',
+            },
+            description: {
+              ru: 'простая',
+              kk: 'простая',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/rustic/rustic-simple.webp'],
+            price: 286000,
+          },
         ],
       },
       // другие коллекции
