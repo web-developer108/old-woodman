@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://old-woodman.vercel.app/sitemap.xml
+Sitemap: https://oldwoodman.kz/sitemap.xml
