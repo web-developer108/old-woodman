@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useCart } from '../../hooks/cart/cart.tsx';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { HandsIcon } from '../../components/icons/hands-icon/hands-icon.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
@@ -9,7 +11,11 @@ import styles from './ordered.module.scss'
 
 const Ordered = () => {
   const { t } = useTranslation('cart');
+  const {clearCart} = useCart();
   const navigate = useNavigate();
+  useEffect(() => {
+    clearCart();
+  }, []);
   return (
     <ToolPageLayout>
       <div className={styles.orderedContainer}>
