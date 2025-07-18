@@ -195,7 +195,6 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/doors/deco/deco-duo.webp'],
             price: 540000,
           },
-
         ],
       },
       {
@@ -251,6 +250,125 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/rustic/rustic-simple.webp'],
             price: 286000,
+          },
+        ],
+      },
+      {
+        id: 'cabinet',
+        title: {
+          ru: 'CABINET',
+          kk: 'CABINET',
+        },
+        pageTitle: {
+          ru: 'Деревянные двери CABINET',
+          kk: 'Деревянные двери CABINET',
+        },
+        items: [
+          {
+            id: 'cabinet-scandinavia',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+
+            },
+            titleMob: {
+              ru: 'CABINET, Скандинавия',
+              kk: 'CABINET, Скандинавия',
+            },
+            description: {
+              ru: 'Скандинавия',
+              kk: 'Скандинавия',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/scandinavia.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-europe',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Европа',
+              kk: 'CABINET, Европа',
+            },
+            description: {
+              ru: 'Европа',
+              kk: 'Европа',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/europe.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-ethiopia',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Эфиопия',
+              kk: 'CABINET, Эфиопия',
+            },
+            description: {
+              ru: 'Эфиопия',
+              kk: 'Эфиопия',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/ethiopia.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-versailles',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Версаль',
+              kk: 'CABINET, Версаль',
+            },
+            description: {
+              ru: 'Версаль',
+              kk: 'Версаль',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/versailles.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-versailles-duo',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Версаль, Дуо',
+              kk: 'CABINET, Версаль, Дуо',
+            },
+            description: {
+              ru: 'Версаль Дуо',
+              kk: 'Версаль Дуо',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/versailles-duo.webp'],
+            price: 540000,
           },
         ],
       },
