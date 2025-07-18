@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 import type { ProductItem } from '../../config/config.types.ts';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
@@ -13,11 +14,43 @@ export const OrderSummary: React.FC<{
 }> = ({ products, total }) => {
   const { t, i18n } = useTranslation('common');
   const navigate = useNavigate();
-  const { cartItems} = useCart();
+  const { cartItems } = useCart();
   const lang = i18n.language as 'ru' | 'kk';
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
+  const orderDetails = products.map((p) => (
+    `${p.title[lang]}, ${p.description[lang]} — ${p.quantity} шт. = ${(p.price * p.quantity).toLocaleString()} ₸`
+  )).join('\n');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const templateParams = {
+      user_name: name,
+      user_phone: phone,
+      order_details: orderDetails,
+      user_city: city,
+      total_price: `${total.toLocaleString()} ₸`,
+    };
+
+    emailjs.send(
+      'service_86eog8m',
+      'template_45a1bjo',
+      templateParams,
+      'ants2gildzCOiXvR5'
+    )
+      .then(() => {
+        setName('');
+        setPhone('');
+        setCity('');
+      })
+      .catch((error) => {
+        console.error('Ошибка отправки:', error);
+      });
+    navigate('/cart/booked');
+  }
+
   return (
     <div className={styles.summary}>
       <div className={styles.headerWrap}>
@@ -39,10 +72,7 @@ export const OrderSummary: React.FC<{
         <span>{t('order-summary.sum')}</span>
         <span>{total.toLocaleString()} ₸</span>
       </div>
-      <form className={styles.form} onSubmit={(e) => {
-        e.preventDefault();
-        navigate('/cart/booked');
-      }}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="text"
