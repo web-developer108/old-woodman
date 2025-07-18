@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 import { useModal } from '../../../hooks/modal/use-modal.ts';
@@ -8,8 +8,8 @@ import { WhatsappIcon } from '../../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { Feedback } from '../../modal-windows/feedback/feedback.tsx';
 import { AppColors } from '../../../styles.ts';
-import styles from './footer-top.module.scss';
 import { useFooterRef } from '../../../hooks/footer-ref/use-footer-ref.ts';
+import styles from './footer-top.module.scss';
 
 export const FooterTop = () => {
   const { t } = useTranslation('common');
@@ -22,15 +22,18 @@ export const FooterTop = () => {
     e.preventDefault();
 
     const templateParams = {
-      message,
-      phone,
+      user_name: "Получен вопрос",
+      user_phone: phone,
+      order_details: message,
+      user_city: "Неизвестно",
+      total_price: "Неизвестно",
     };
 
     emailjs.send(
-      'service_nriv0ws',//поменять на настройки заказчика
-      'template_sedebd8',//поменять на настройки заказчика
+      'service_86eog8m',
+      'template_45a1bjo',
       templateParams,
-      'RwBMdTUy5fFSOOCk-'//поменять на настройки заказчика
+      'ants2gildzCOiXvR5'
     )
       .then(() => {
         setMessage('');
