@@ -16,7 +16,7 @@ const Contacts = () => {
       <div className={styles.contactsContainer}>
         <div className={styles.imageContainer}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d726.3051652931532!2d76.9343846333706!3d43.267752778710715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f5b52677009%3A0xd71d02035c540587!2z0KTQvtGC0L7RgdGC0YPQtNC40Y8gRml4YWdl!5e0!3m2!1sru!2sde!4v1752770600030!5m2!1sru!2sde"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.52071230775834!2d76.93486923378899!3d43.26778674175085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f46af665e7b%3A0x618d1a246ccf8f25!2soldwoodman!5e0!3m2!1sru!2sde!4v1752832639007!5m2!1sru!2sde"
             width="100%"
             height="100%"
             style={{ border: 0 }}
