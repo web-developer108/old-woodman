@@ -92,8 +92,8 @@ export const productCatalog: ProductCategory[] = [
           kk: 'LOFT',
         },
         pageTitle: {
-          ru: 'Деревянные двери LOFT',
-          kk: 'LOFT ағаш есіктері',
+          ru: 'Комбинированные двери LOFT',
+          kk: 'LOFT ҚҰРАМДАСТЫРЫЛҒАН ЕСІГІ',
         },
         items: [
           {
