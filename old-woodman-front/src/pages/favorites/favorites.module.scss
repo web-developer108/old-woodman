@@ -27,13 +27,13 @@
       }
 
       .mainHeader {
-        @include mixins.mainHeader;
         margin-bottom: 20px;
+        @include mixins.mainHeader;
       }
 
       .label {
-        @include mixins.bodyText;
         width: 568px;
+        @include mixins.bodyText;
         @media (max-width: 1200px) {
           width: 100%;
         }

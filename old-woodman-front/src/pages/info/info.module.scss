@@ -32,9 +32,9 @@
       }
 
       .mainHeader {
-        @include mixins.mainHeader;
         line-height: 1.5;
         vertical-align: center;
+        @include mixins.mainHeader;
 
         @media (max-width: 1200px) {
           width: 90%;
@@ -70,8 +70,8 @@
     }
 
     .header {
-      @include mixins.headingLarge;
       margin: 48px 0;
+      @include mixins.headingLarge;
     }
 
     .section {
@@ -79,18 +79,18 @@
       margin: 0 auto;
 
       h3 {
-        @include mixins.bodyText;
         font-weight: 500;
         margin-bottom: 24px;
+        @include mixins.bodyText;
         @media (max-width: 810px) {
           margin-bottom: 20px;
         }
       }
 
       span {
-        @include mixins.bodyTextSmall;
         display: block;
         margin-bottom: 24px;
+        @include mixins.bodyTextSmall;
         @media (max-width: 810px) {
           margin-bottom: 20px;
         }
@@ -102,11 +102,11 @@
       margin: 0 auto;
 
       h3 {
-        @include mixins.bodyText;
         line-height: 1.5;
         font-weight: 500;
         margin-bottom: 24px;
         max-width: 520px;
+        @include mixins.bodyText;
         @media (max-width: 810px) {
           margin-bottom: 20px;
           max-width: 100%;
@@ -121,8 +121,8 @@
         }
 
         li {
-          @include mixins.bodyTextSmall;
           margin-bottom: 24px;
+          @include mixins.bodyTextSmall;
           @media (max-width: 810px) {
             margin-bottom: 20px;
           }
@@ -160,15 +160,15 @@
         }
 
         h3 {
-          @include mixins.bodyText;
           line-height: 1.5;
           font-weight: 500;
+          @include mixins.bodyText;
         }
       }
 
       .buttonText {
-        @include mixins.bodyTextSmall;
         padding-left: 56px;
+        @include mixins.bodyTextSmall;
       }
     }
 
@@ -191,22 +191,23 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
       }
+
       .instructionsWrap {
         grid-column: 1;
 
         h3 {
-          @include mixins.bodyText;
           font-weight: 500;
           margin-bottom: 24px;
+          @include mixins.bodyText;
           @media (max-width: 810px) {
             margin-bottom: 20px;
           }
         }
 
         span {
-          @include mixins.bodyTextSmall;
           display: block;
           margin-bottom: 24px;
+          @include mixins.bodyTextSmall;
           @media (max-width: 810px) {
             margin-bottom: 20px;
           }
@@ -221,15 +222,16 @@
         }
       }
     }
-    .finalBlock{
-      span{
-     @include mixins.bodyTextSmall;
+
+    .finalBlock {
+      span {
         display: block;
         margin-bottom: 24px;
+        @include mixins.bodyTextSmall;
         @media (max-width: 810px) {
           margin-bottom: 20px;
         }
-    }
+      }
     }
   }
 }

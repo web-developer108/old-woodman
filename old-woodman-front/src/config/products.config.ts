@@ -92,8 +92,8 @@ export const productCatalog: ProductCategory[] = [
           kk: 'LOFT',
         },
         pageTitle: {
-          ru: 'Деревянные двери LOFT',
-          kk: 'LOFT ағаш есіктері',
+          ru: 'Комбинированные двери LOFT',
+          kk: 'LOFT ҚҰРАМДАСТЫРЫЛҒАН ЕСІГІ',
         },
         items: [
           {
@@ -139,6 +139,62 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/doors/loft/teak-duo.webp'],
             price: 540000,
           },
+        ],
+      },{
+        id: 'deco',
+        title: {
+          ru: 'DECO',
+          kk: 'DECO',
+        },
+        pageTitle: {
+          ru: 'Деревянная дверь DECO',
+          kk: 'DECO АҒАШ ЕСІГІ',
+        },
+        items: [
+          {
+            id: 'deco-oak',
+            title: {
+              ru: 'DECO',
+              kk: 'DECO',
+
+            },
+            titleMob: {
+              ru: 'DECO, Дуб',
+              kk: 'DECO, Дуб',
+            },
+            description: {
+              ru: 'цвет "Дуб"',
+              kk: 'түсі "Дуб"',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/deco/deco.webp'],
+            price: 286000,
+          },
+          {
+            id: 'deco-oak-duo',
+            title: {
+              ru: 'DECO',
+              kk: 'DECO',
+            },
+            titleMob: {
+              ru: 'DECO, Дуб, Дуо',
+              kk: 'DECO, Дуб, Дуо',
+            },
+            description: {
+              ru: 'Цвет "Дуб", Дуо',
+              kk: 'Цвет "Дуб", Дуо',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/deco/deco-duo.webp'],
+            price: 540000,
+          },
+
         ],
       },
       // другие коллекции

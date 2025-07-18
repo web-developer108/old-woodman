@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { ProductItem } from '../../config/config.types.ts';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import styles from './order-summary.module.scss'
-import { useNavigate } from 'react-router-dom';
 
 export const OrderSummary: React.FC<{
   products: (ProductItem & { quantity: number })  [];
@@ -13,7 +13,7 @@ export const OrderSummary: React.FC<{
 }> = ({ products, total }) => {
   const { t, i18n } = useTranslation('common');
   const navigate = useNavigate();
-  const { cartItems, clearCart } = useCart();
+  const { cartItems} = useCart();
   const lang = i18n.language as 'ru' | 'kk';
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -41,7 +41,6 @@ export const OrderSummary: React.FC<{
       </div>
       <form className={styles.form} onSubmit={(e) => {
         e.preventDefault();
-        clearCart();
         navigate('/cart/booked');
       }}>
         <input

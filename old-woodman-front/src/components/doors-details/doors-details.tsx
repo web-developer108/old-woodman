@@ -112,6 +112,7 @@ export const DoorsDetails: React.FC = () => {
               {descriptionLines.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
+              <p >{t('common.description')}</p>
             </div>
 
             {isOverflowing &&

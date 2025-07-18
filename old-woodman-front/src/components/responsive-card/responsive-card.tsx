@@ -3,8 +3,8 @@ import type { ResponsiveCardProps } from './responsive-card.types.ts';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
 import { AppColors } from '../../styles.ts';
-import styles from './responsive-card.module.scss';
 import { useTranslation } from 'react-i18next';
+import styles from './responsive-card.module.scss';
 
 export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   image,

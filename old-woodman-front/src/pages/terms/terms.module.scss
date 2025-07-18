@@ -19,10 +19,10 @@
     }
 
     .mainHeader {
-      @include mixins.mainHeader;
       width: 1180px;
       margin: 0 auto;
       vertical-align: center;
+      @include mixins.mainHeader;
       @media (max-width: 1300px) {
         width: 95%;
       }
@@ -99,11 +99,11 @@
           margin: 0;
 
           li {
-            @include mixins.bodyTextSmall;
             position: relative;
             padding-left: 34px;
             margin-bottom: 28px;
             color: var(--text-main-color);
+            @include mixins.bodyTextSmall;
 
             &::before {
               content: '✓';

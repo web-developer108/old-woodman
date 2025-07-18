@@ -60,10 +60,10 @@
       height: 24px;
     }
     .caption {
-      @include mixins.bodyText;
       text-align: left;
       font-size: 14px;
       color: var(--text-grey-color);
+      @include mixins.bodyText;
 
     }
 
