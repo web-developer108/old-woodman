@@ -1,3 +1,4 @@
+import React from 'react';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
 import { PictureHeader } from '../../components/picture-header/picture-header';
@@ -16,6 +17,16 @@ import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.we
 import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
 import styles from './doors.module.scss'
 
+const doorCollections = [
+  { id: 'classica', image: heroImageClassica },
+  { id: 'loft', image: heroImageLoft },
+  { id: 'deco', image: heroImageDeco },
+  { id: 'cabinet', image: heroImageCabinet },
+  { id: 'rustic', image: heroImageRustic },
+  { id: 'exclusive', image: heroImageExclusive },
+  { id: 'balcony', image: heroImageBalcony },
+];
+
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
 
@@ -32,105 +43,32 @@ const DoorsOverview = () => {
           }}
         />
         <RunningText/>
-        <div className={styles.doorsContent}>
+        <section className={styles.doorsContent}>
           <Breadcrumbs current={t('breadcrumbs.label')}/>
           <SectionTabs/>
-          <ResponsiveCard
-            image={heroImageClassica}
-            title={t('title-classica')}
-            description={t('description-classica')}
-            comment={t('comment-text')}
-
-          />
           <div className={styles.socialButtons}>
             <SocialButtons/>
           </div>
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='classica'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageLoft}
-            title={t('title-loft')}
-            description={t('description-loft')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='loft'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageDeco}
-            title={t('title-deco')}
-            description={t('description-deco')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='deco'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageCabinet}
-            title={t('title-cabinet')}
-            description={t('description-cabinet')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='cabinet'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageRustic}
-            title={t('title-rustic')}
-            description={t('description-rustic')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='rustic'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageExclusive}
-            title={t('title-exclusive')}
-            description={t('description-exclusive')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='exclusive'
-            />
-          </div>
-          <ResponsiveCard
-            image={heroImageBalcony}
-            title={t('title-balcony')}
-            description={t('description-balcony')}
-            comment={t('comment-text')}
-          />
-          <div className={styles.previewWrap}>
-            <ProductSlider
-              title={t('preview-title')}
-              categoryId='doors'
-              collectionId='balcony'
-            />
-          </div>
-        </div>
+
+          {doorCollections.map(({ id, image }) => (
+            <React.Fragment key={id}>
+              <ResponsiveCard
+                image={image}
+                title={t(`title-${id}`)}
+                description={t(`description-${id}`)}
+                comment={t('comment-text')}
+              />
+              <div className={styles.previewWrap}>
+                <ProductSlider
+                  title={t('preview-title')}
+                  categoryId="doors"
+                  collectionId={id}
+                />
+              </div>
+            </React.Fragment>
+          ))}
+        </section>
+
       </div>
     </ToolPageLayout>
   )
