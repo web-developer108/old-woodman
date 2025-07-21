@@ -372,6 +372,62 @@ export const productCatalog: ProductCategory[] = [
           },
         ],
       },
+      {
+        id: 'exclusive',
+        title: {
+          ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ',
+          kk: 'ЭКСКЛЮЗИВ ЕСІКТЕР',
+        },
+        pageTitle: {
+          ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ ИЗ МАССИВА',
+          kk: 'МАССИВТЕН ЭКСКЛЮЗИВ АҒАШ ЕСІКТЕРІ',
+        },
+        items: [
+          {
+            id: 'exclusive-folding',
+            title: {
+              ru: 'Exclusive',
+              kk: 'Exclusive',
+
+            },
+            titleMob: {
+              ru: 'Exclusive. стильная',
+              kk: 'Exclusive',
+            },
+            description: {
+              ru: 'Стильная',
+              kk: 'Стильная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/exclusive/exclusive-big.webp'],
+            price: 800000,
+          },
+          {
+            id: 'exclusive-strict',
+            title: {
+              ru: 'Exclusive',
+              kk: 'Exclusive',
+            },
+            titleMob: {
+              ru: 'Exclusive, строгая',
+              kk: 'Exclusive, строгая',
+            },
+            description: {
+              ru: 'Строгая',
+              kk: 'Строгая',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/exclusive/exclusive-small.webp'],
+            price: 300000,
+          },
+        ],
+      },
       // другие коллекции
     ],
   },

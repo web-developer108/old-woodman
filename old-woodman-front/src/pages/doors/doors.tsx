@@ -12,6 +12,7 @@ import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
 import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
 import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
+import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
 import styles from './doors.module.scss'
 
 const DoorsOverview = () => {
@@ -100,6 +101,19 @@ const DoorsOverview = () => {
               title={t('preview-title')}
               categoryId='doors'
               collectionId='rustic'
+            />
+          </div>
+          <ResponsiveCard
+            image={heroImageExclusive}
+            title={t('title-exclusive')}
+            description={t('description-exclusive')}
+            comment={t('comment-text')}
+          />
+          <div className={styles.previewWrap}>
+            <ProductSlider
+              title={t('preview-title')}
+              categoryId='doors'
+              collectionId='exclusive'
             />
           </div>
         </div>
