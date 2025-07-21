@@ -1,3 +1,5 @@
+@use "../../mixins" as mixins;
+
 .doorsContainer {
   max-width: 1920px;
   width: 100%;
@@ -9,7 +11,8 @@
   @media (max-width: 810px) {
     padding: 0 12px 96px;
   }
-  .socialButtons{
+
+  .socialButtons {
     position: fixed;
     top: 175px;
     right: 20px;
@@ -18,10 +21,138 @@
       display: none;
     }
   }
-.doorsContent{
-  max-width: 1180px;
-  margin: 0 auto;
 
-}
+  .doorsContent {
+    max-width: 1180px;
+    margin: 0 auto;
 
+  }
+
+  .article {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .articleTitle {
+      @include mixins.headingLarge;
+    }
+
+    .articleLabel {
+      display: block;
+      margin-bottom: 48px;
+      @include mixins.bodyTextSmall;
+    }
+
+    .gallery {
+      margin-bottom: 48px;
+    }
+
+    .columns {
+      display: flex;
+      gap: 76px;
+      margin-bottom: 48px;
+      @media (max-width: 810px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .column {
+        flex: 1;
+
+        .columnTitle {
+          color: var(--text-grey-color);
+          margin-bottom: 20px;
+          margin-top: 20px;
+          @include mixins.bodyTextSmall;
+        }
+
+        .columnText, .columnTextLast {
+          display: block;
+          color: var(--text-grey-color);
+          @include mixins.bodyTextSmall;
+        }
+
+        .columnTextLast {
+          margin-top: 20px;
+        }
+
+      }
+    }
+
+    .checkColumns {
+      display: flex;
+      gap: 76px;
+      margin-bottom: 48px;
+      @media (max-width: 810px) {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 28px;
+      }
+
+      .checklist {
+        flex: 1;
+        list-style: none;
+        padding: 0;
+        margin-top: 24px;
+        margin-bottom: 0;
+
+        li {
+          position: relative;
+          padding-left: 34px;
+          margin-bottom: 28px;
+          color: var(--text-main-color);
+          @include mixins.bodyTextSmall;
+
+          &::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--text-grey-color);
+            font-size: 18px;
+            line-height: 1.5;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: 0;
+          }
+
+          @media (max-width: 810px) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    .description {
+      margin-bottom: 112px;
+      @include mixins.bodyTextSmall;
+      @media (max-width: 1200px) {
+        margin-bottom: 96px;
+      }
+    }
+  }
+
+  .textInfo {
+    background-color: var(--background-grey-color);
+    margin-bottom: 156px;
+    max-width: 1180px;
+    border-radius: 10px;
+    padding: 65px;
+    box-sizing: border-box;
+    @media (max-width: 1240px) {
+      padding: 48px 14px;
+      margin-bottom: 96px;
+    }
+
+  }
+
+  .navigation {
+    h2 {
+      margin-bottom: 16px;
+      @include mixins.headingLarge;
+      @media (max-width: 810px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

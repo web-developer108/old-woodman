@@ -140,7 +140,8 @@ export const productCatalog: ProductCategory[] = [
             price: 540000,
           },
         ],
-      },{
+      },
+      {
         id: 'deco',
         title: {
           ru: 'DECO',
@@ -194,7 +195,272 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/doors/deco/deco-duo.webp'],
             price: 540000,
           },
+        ],
+      },
+      {
+        id: 'rustic',
+        title: {
+          ru: 'RUSTIC',
+          kk: 'RUSTIC',
+        },
+        pageTitle: {
+          ru: 'Деревянная дверь RUSTIC',
+          kk: 'RUSTIC АҒАШ ЕСІГІ',
+        },
+        items: [
+          {
+            id: 'rustic-arched',
+            title: {
+              ru: 'RUSTIC',
+              kk: 'RUSTIC',
 
+            },
+            titleMob: {
+              ru: 'RUSTIC, оригинальная',
+              kk: 'RUSTIC, оригинальная',
+            },
+            description: {
+              ru: 'оригинальная',
+              kk: 'оригинальная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/rustic/rustic-arched.webp'],
+            price: 286000,
+          },
+          {
+            id: 'rustic-simple',
+            title: {
+              ru: 'RUSTIC',
+              kk: 'RUSTIC',
+            },
+            titleMob: {
+              ru: 'RUSTIC, простая',
+              kk: 'RUSTIC, простая',
+            },
+            description: {
+              ru: 'простая',
+              kk: 'простая',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/rustic/rustic-simple.webp'],
+            price: 286000,
+          },
+        ],
+      },
+      {
+        id: 'cabinet',
+        title: {
+          ru: 'CABINET',
+          kk: 'CABINET',
+        },
+        pageTitle: {
+          ru: 'Деревянные двери CABINET',
+          kk: 'Деревянные двери CABINET',
+        },
+        items: [
+          {
+            id: 'cabinet-scandinavia',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+
+            },
+            titleMob: {
+              ru: 'CABINET, Скандинавия',
+              kk: 'CABINET, Скандинавия',
+            },
+            description: {
+              ru: 'Скандинавия',
+              kk: 'Скандинавия',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/scandinavia.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-europe',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Европа',
+              kk: 'CABINET, Европа',
+            },
+            description: {
+              ru: 'Европа',
+              kk: 'Европа',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/europe.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-ethiopia',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Эфиопия',
+              kk: 'CABINET, Эфиопия',
+            },
+            description: {
+              ru: 'Эфиопия',
+              kk: 'Эфиопия',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/ethiopia.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-versailles',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Версаль',
+              kk: 'CABINET, Версаль',
+            },
+            description: {
+              ru: 'Версаль',
+              kk: 'Версаль',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/versailles.webp'],
+            price: 286000,
+          },
+          {
+            id: 'cabinet-versailles-duo',
+            title: {
+              ru: 'CABINET',
+              kk: 'CABINET',
+            },
+            titleMob: {
+              ru: 'CABINET, Версаль, Дуо',
+              kk: 'CABINET, Версаль, Дуо',
+            },
+            description: {
+              ru: 'Версаль Дуо',
+              kk: 'Версаль Дуо',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/cabinet/versailles-duo.webp'],
+            price: 540000,
+          },
+        ],
+      },
+      {
+        id: 'exclusive',
+        title: {
+          ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ',
+          kk: 'ЭКСКЛЮЗИВ ЕСІКТЕР',
+        },
+        pageTitle: {
+          ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ ИЗ МАССИВА',
+          kk: 'МАССИВТЕН ЭКСКЛЮЗИВ АҒАШ ЕСІКТЕРІ',
+        },
+        items: [
+          {
+            id: 'exclusive-folding',
+            title: {
+              ru: 'Exclusive',
+              kk: 'Exclusive',
+
+            },
+            titleMob: {
+              ru: 'Exclusive, стильная',
+              kk: 'Exclusive, стильная',
+            },
+            description: {
+              ru: 'Стильная',
+              kk: 'Стильная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/exclusive/exclusive-big.webp'],
+            price: 800000,
+          },
+          {
+            id: 'exclusive-strict',
+            title: {
+              ru: 'Exclusive',
+              kk: 'Exclusive',
+            },
+            titleMob: {
+              ru: 'Exclusive, строгая',
+              kk: 'Exclusive, строгая',
+            },
+            description: {
+              ru: 'Строгая',
+              kk: 'Строгая',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/exclusive/exclusive-small.webp'],
+            price: 300000,
+          },
+        ],
+      },
+      {
+        id: 'balcony',
+        title: {
+          ru: 'БАЛКОННАЯ ДВЕРЬ',
+          kk: 'БАЛКОН ЕСІГІ',
+        },
+        pageTitle: {
+          ru: 'ДЕРЕВЯННАЯ БАЛКОННАЯ ДВЕРЬ ',
+          kk: 'АҒАШ БАЛКОН ЕСІГІ',
+        },
+        items: [
+          {
+            id: 'balcony-dark',
+            title: {
+              ru: 'Balcony',
+              kk: 'Balcony',
+
+            },
+            titleMob: {
+              ru: 'Balcony, темная',
+              kk: 'Balcony, темная',
+            },
+            description: {
+              ru: 'Темная',
+              kk: 'Темная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/balcony/balcony-dark.webp'],
+            price: 286000,
+          },
         ],
       },
       // другие коллекции

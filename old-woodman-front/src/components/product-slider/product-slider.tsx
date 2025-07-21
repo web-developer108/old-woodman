@@ -27,7 +27,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
     ?.items || [];
 
   const handleCardClick = (productId: string) => {
-    navigate(`/doors/${collectionId}?productId=${productId}`);
+    navigate(`/doors/${collectionId}?productId=${productId}`, { replace: false });
   };
 
   return (

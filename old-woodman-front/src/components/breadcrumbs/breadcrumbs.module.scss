@@ -7,13 +7,24 @@
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--text-grey-color);
+
   @media (max-width: 810px) {
     font-size: 14px;
   }
+    @media (max-width: 500px) {
+    max-width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
 
 .breadcrumbLink {
   text-decoration: none;
   color: var(--text-grey-color);
+
 }
 
 .breadcrumbLink:hover {

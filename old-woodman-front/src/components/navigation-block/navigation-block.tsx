@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { NavigationBlockProps } from './navigation-block.types.ts';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
