@@ -3,7 +3,6 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import i18n from 'i18next';
 //import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { productCatalog } from '../../config/products.config.ts';
-import type { ProductCollection } from '../../config/config.types.ts'
 import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
@@ -26,11 +25,9 @@ const ProductPage: React.FC = () => {
     );
   }, [collectionId]);
 
-  const collection: ProductCollection | undefined = useMemo(() => {
-    return productCatalog.find((category) =>
-      category.collections?.some((c) => c.id === collectionId)
-    )?.collections?.find((c) => c.id === collectionId);
-  }, [collectionId]);
+  const collection = useMemo(() => {
+    return category?.collections?.find((c) => c.id === collectionId);
+  }, [category, collectionId]);
 
   useEffect(() => {
     if (!productId) {

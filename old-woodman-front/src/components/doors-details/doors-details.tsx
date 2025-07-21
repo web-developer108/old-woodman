@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
@@ -33,12 +33,15 @@ export const DoorsDetails: React.FC = () => {
     ?.collections?.find((col) => col.id === collectionId);
 
   const items = collection?.items || [];
+  console.log(' DoorsDetails')
 
-  const selectedProduct = productId
-    ? items.find((item) => item.id === productId) || items[0]
-    : items[0];
+  const selectedProduct = useMemo(() => {
+    return productId
+      ? items.find((item) => item.id === productId) || items[0]
+      : items[0];
+  }, [productId, items]);
 
-  const descriptionLines = getDescriptionLines(collectionId!, t);
+  const descriptionLines = useMemo(() => getDescriptionLines(collectionId!, t), [collectionId, t]);
 
   const handleOneClick = () => {
     showModal(<OneClickModal id={selectedProduct.id}/>);
@@ -55,13 +58,14 @@ export const DoorsDetails: React.FC = () => {
 
       const overflowing = el.scrollHeight > maxHeight;
 
-      setIsOverflowing(overflowing);
+      setIsOverflowing((prev) => prev !== overflowing ? overflowing : prev);
     };
 
     checkOverflow();
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
   }, [isMobile]);
+
   if (!collection || !selectedProduct) return null;
   return (
     <>
@@ -112,7 +116,7 @@ export const DoorsDetails: React.FC = () => {
               {descriptionLines.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
-              <p >{t('common.description')}</p>
+              <p>{t('common.description')}</p>
             </div>
 
             {isOverflowing &&
@@ -138,8 +142,6 @@ export const DoorsDetails: React.FC = () => {
             <CommonButtonsBlock/>
           </div>
         </section>
-
-
       </div>
       <section className={styles.article}>
         <div className={styles.columns}>
@@ -162,6 +164,5 @@ export const DoorsDetails: React.FC = () => {
         </div>
       </section>
     </>
-  )
-    ;
+  );
 };
