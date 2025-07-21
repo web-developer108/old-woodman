@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import i18n from 'i18next';
 //import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { productCatalog } from '../../config/products.config.ts';
@@ -14,8 +14,10 @@ import styles from './product-page.module.scss';
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
 //  const { t } = usePageTranslate();
-  // const [searchParams] = useSearchParams();
-  // const productId = searchParams.get('productId');
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const productId = searchParams.get('productId');
+
   const lang = i18n.language as 'ru' | 'kk';
 
   const category = useMemo(() => {
@@ -29,6 +31,13 @@ const ProductPage: React.FC = () => {
       category.collections?.some((c) => c.id === collectionId)
     )?.collections?.find((c) => c.id === collectionId);
   }, [collectionId]);
+
+  useEffect(() => {
+    if (!productId) {
+
+      navigate('/doors', { replace: true });
+    }
+  }, [productId]);
 
   if (!collection) {
     return
