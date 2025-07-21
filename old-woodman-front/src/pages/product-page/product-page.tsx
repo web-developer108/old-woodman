@@ -39,10 +39,18 @@ const ProductPage: React.FC = () => {
     }
   }, [productId]);
 
-  if (!collection) {
+  const DetailsComponent = useMemo(() => {
+    switch (category?.id) {
+      case 'furniture':
+        return DoorsDetails;//поменять
+      default:
+        return DoorsDetails;
+    }
+  }, [category?.id]);
+
+  if (!collection || !category) {
     return
   }
-
   return (
     <ToolPageLayout>
       <div className={styles.pageContainer}>
@@ -54,7 +62,7 @@ const ProductPage: React.FC = () => {
           />
           <ShareButton/>
         </div>
-        <DoorsDetails/>
+        <DetailsComponent/>
         <section className={styles.textInfo}>
           <TextInfo/>
         </section>
