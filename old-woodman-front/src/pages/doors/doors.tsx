@@ -68,7 +68,24 @@ const DoorsOverview = () => {
             </React.Fragment>
           ))}
         </section>
+        <section className={styles.article}>
+          <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
+          <span className={styles.articleLabel}>{t('article-header.label')} </span>
+          <div className={styles.columns}>
+            <div className={styles.column}>
+              <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
+              <span className={styles.columnText}>{t('article-title-1.label')}</span>
+              <h3 className={styles.columnTitle}>{t('article-title-2').toUpperCase()}</h3>
+              <span className={styles.columnText}>{t('article-title-2.label')}</span>
+            </div>
+            <div className={styles.column}>
+              <h3 className={styles.columnTitle}>{t('article-title-3').toUpperCase()}</h3>
+              <span className={styles.columnText}>{t('article-title-3.label-1')}</span>
+              <span className={styles.columnTextLast}>{t('article-title-3.label-2')}</span>
+            </div>
+          </div>
 
+        </section>
       </div>
     </ToolPageLayout>
   )

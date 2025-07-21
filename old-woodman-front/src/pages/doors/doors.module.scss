@@ -1,3 +1,5 @@
+@use "../../mixins" as mixins;
+
 .doorsContainer {
   max-width: 1920px;
   width: 100%;
@@ -9,7 +11,8 @@
   @media (max-width: 810px) {
     padding: 0 12px 96px;
   }
-  .socialButtons{
+
+  .socialButtons {
     position: fixed;
     top: 175px;
     right: 20px;
@@ -18,10 +21,50 @@
       display: none;
     }
   }
-.doorsContent{
-  max-width: 1180px;
-  margin: 0 auto;
 
-}
+  .doorsContent {
+    max-width: 1180px;
+    margin: 0 auto;
 
+  }
+
+  .article {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .articleTitle {
+      @include mixins.headingLarge;
+    }
+
+    .articleLabel {
+      display: block;
+      margin-bottom: 48px;
+      @include mixins.bodyTextSmall;
+    }
+    .columns{
+      display: flex;
+      gap: 76px;
+      @media (max-width: 810px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .column{
+        flex: 1;
+        .columnTitle{
+          color: var(--text-grey-color);
+          margin-bottom: 20px;
+          margin-top: 20px;
+          @include mixins.bodyText;
+        }
+        .columnText, .columnTextLast {
+          display: block;
+          color: var(--text-grey-color);
+          @include mixins.bodyText;
+        }
+        .columnTextLast{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }
