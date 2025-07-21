@@ -22,6 +22,8 @@ import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
 
 import styles from './doors.module.scss'
 import { Gallery } from '../../components/gallery/gallery.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },
@@ -40,7 +42,6 @@ const DoorsOverview = () => {
     { src: gallery2, alt: 'Доски' },
     { src: gallery3, alt: 'Инструмент' },
     { src: gallery4, alt: 'Мастерская' },
-
 
   ];
   return (
@@ -112,9 +113,15 @@ const DoorsOverview = () => {
               <li>{t('article2-text-5')}</li>
             </ul>
           </div>
-        <div className={styles.description}> {t('article2-description')}</div>
+          <div className={styles.description}> {t('article2-description')}</div>
         </section>
-
+        <section className={styles.textInfo}>
+          <TextInfo/>
+        </section>
+        <section className={styles.navigation}>
+          <h2>{t('nav-title').toUpperCase()}</h2>
+          <NavigationBlock isHome={false} blocks={['furniture', 'facades']}/>
+        </section>
       </div>
     </ToolPageLayout>
   )
