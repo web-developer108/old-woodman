@@ -44,6 +44,7 @@
     .columns{
       display: flex;
       gap: 76px;
+      margin-bottom: 48px;
       @media (max-width: 810px) {
         flex-direction: column;
         gap: 20px;

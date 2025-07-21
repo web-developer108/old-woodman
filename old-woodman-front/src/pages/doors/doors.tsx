@@ -15,7 +15,13 @@ import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
 import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
 import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
 import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
+import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
+import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
+import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
+import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
+
 import styles from './doors.module.scss'
+import { Gallery } from '../../components/gallery/gallery.tsx';
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },
@@ -29,7 +35,14 @@ const doorCollections = [
 
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
+  const galleryImages = [
+    { src: gallery1, alt: 'Большая дверь' },
+    { src: gallery2, alt: 'Доски' },
+    { src: gallery3, alt: 'Инструмент' },
+    { src: gallery4, alt: 'Мастерская' },
 
+
+  ];
   return (
     <ToolPageLayout>
       <div className={styles.doorsContainer}>
@@ -84,8 +97,9 @@ const DoorsOverview = () => {
               <span className={styles.columnTextLast}>{t('article-title-3.label-2')}</span>
             </div>
           </div>
-
+          <Gallery images={galleryImages} layout='complex'/>
         </section>
+
       </div>
     </ToolPageLayout>
   )
