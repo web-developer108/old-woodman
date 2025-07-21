@@ -97,7 +97,22 @@ const DoorsOverview = () => {
               <span className={styles.columnTextLast}>{t('article-title-3.label-2')}</span>
             </div>
           </div>
-          <Gallery images={galleryImages} layout='complex'/>
+          <div className={styles.gallery}>
+            <Gallery images={galleryImages} layout='complex'/>
+          </div>
+          <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
+          <div className={styles.checkColumns}>
+            <ul className={styles.checklist}>
+              <li>{t('article2-text-1')}</li>
+              <li>{t('article2-text-2')}</li>
+              <li>{t('article2-text-3')}</li>
+            </ul>
+            <ul className={styles.checklist}>
+              <li>{t('article2-text-4')}</li>
+              <li>{t('article2-text-5')}</li>
+            </ul>
+          </div>
+        <div className={styles.description}> {t('article2-description')}</div>
         </section>
 
       </div>
