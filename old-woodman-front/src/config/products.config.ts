@@ -391,8 +391,8 @@ export const productCatalog: ProductCategory[] = [
 
             },
             titleMob: {
-              ru: 'Exclusive. стильная',
-              kk: 'Exclusive',
+              ru: 'Exclusive, стильная',
+              kk: 'Exclusive, стильная',
             },
             description: {
               ru: 'Стильная',
@@ -425,6 +425,41 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/exclusive/exclusive-small.webp'],
             price: 300000,
+          },
+        ],
+      },
+      {
+        id: 'balcony',
+        title: {
+          ru: 'БАЛКОННАЯ ДВЕРЬ',
+          kk: 'БАЛКОН ЕСІГІ',
+        },
+        pageTitle: {
+          ru: 'ДЕРЕВЯННАЯ БАЛКОННАЯ ДВЕРЬ ',
+          kk: 'АҒАШ БАЛКОН ЕСІГІ',
+        },
+        items: [
+          {
+            id: 'balcony-dark',
+            title: {
+              ru: 'Balcony',
+              kk: 'Balcony',
+
+            },
+            titleMob: {
+              ru: 'Balcony, темная',
+              kk: 'Balcony, темная',
+            },
+            description: {
+              ru: 'Темная',
+              kk: 'Темная',
+            },
+            shortName: {
+              ru: 'Дверь',
+              kk: 'Есік',
+            },
+            images: ['/images/doors/balcony/balcony-dark.webp'],
+            price: 286000,
           },
         ],
       },
