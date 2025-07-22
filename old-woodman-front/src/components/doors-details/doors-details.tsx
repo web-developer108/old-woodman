@@ -43,8 +43,7 @@ export const DoorsDetails: React.FC = () => {
     .find((cat) => cat.id === 'doors')
     ?.collections?.find((col) => col.id === collectionId);
 
-  const items = collection?.items || [];
-
+  const items = useMemo(() => collection?.items || [], [collection]);
   const selectedProduct = useMemo(() => {
     return productId
       ? items.find((item) => item.id === productId) || items[0]
@@ -62,12 +61,12 @@ export const DoorsDetails: React.FC = () => {
   };
   const doorCollections = [
     { id: 'classica', src: heroImageClassica },
-    { id: 'loft', src: heroImageLoft },
-    { id: 'deco', src: heroImageDeco },
-    { id: 'cabinet', src: heroImageCabinet },
-    { id: 'rustic', src: heroImageRustic },
-    { id: 'exclusive', src: heroImageExclusive },
-    { id: 'balcony', src: heroImageBalcony },
+    { id: 'loft', src: heroImageLoft},
+    { id: 'deco', src: heroImageDeco},
+    { id: 'cabinet', src: heroImageCabinet},
+    { id: 'rustic', src: heroImageRustic},
+    { id: 'exclusive', src: heroImageExclusive},
+    { id: 'balcony', src: heroImageBalcony},
   ];
   const filteredCollections = doorCollections.filter(
     (item) => item.id !== collection?.id
@@ -87,7 +86,10 @@ export const DoorsDetails: React.FC = () => {
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
   }, [isMobile]);
-
+  const collectionTitleMap = useMemo(() => {
+    const collections = productCatalog.find((cat) => cat.id === 'doors')?.collections ?? [];
+    return new Map(collections.map((col) => [col.id, col.title[lang]]));
+  }, [lang]);
   if (!collection || !selectedProduct) return null;
   return (
     <>
@@ -190,7 +192,13 @@ export const DoorsDetails: React.FC = () => {
           <div className={styles.track}>
             {
               filteredCollections.map((img, index) => (
+                <div className={styles.infoImage}>
+
                 <img key={index} src={img.src} alt={img.id} className={styles.image} loading="lazy"/>
+                  <div className={styles.infoText}>
+                    <span>{collectionTitleMap.get(img.id)}</span>
+                  </div>
+                </div>
               ))
             }
           </div>

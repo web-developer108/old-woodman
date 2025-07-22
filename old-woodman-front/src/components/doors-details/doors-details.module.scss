@@ -322,14 +322,19 @@
       grid-template-columns: auto;
       gap: 10px;
       min-width: max-content;
-      .image {
-        width: 386px;
-        height: 386px;
-        border-radius: 10px;
-        object-fit: cover;
-        @media (max-width: 810px) {
-          width: 316px;
-          height: 316px;
+      .infoImage {
+        .image {
+          width: 386px;
+          height: 386px;
+          border-radius: 10px;
+          object-fit: cover;
+          @media (max-width: 810px) {
+            width: 316px;
+            height: 316px;
+          }
+        }
+        .infoText{
+
         }
       }
     }
