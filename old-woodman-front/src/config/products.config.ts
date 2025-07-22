@@ -403,7 +403,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-big.webp'],
-            price: 800000,
+            price: 0,
           },
           {
             id: 'exclusive-strict',
@@ -424,7 +424,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-small.webp'],
-            price: 300000,
+            price: 0,
           },
         ],
       },

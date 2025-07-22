@@ -8,6 +8,9 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
@@ -21,9 +24,6 @@ import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
 
 import styles from './doors.module.scss'
-import { Gallery } from '../../components/gallery/gallery.tsx';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },

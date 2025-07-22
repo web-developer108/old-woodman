@@ -108,7 +108,6 @@ export const DoorsDetails: React.FC = () => {
     simpleBarRef.current?.recalculate();
   }, [filteredCollections]);
 
-;
 
   if (!collection || !selectedProduct) return null;
 

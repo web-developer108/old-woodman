@@ -15,18 +15,18 @@ import styles from './cart-modal.module.scss';
 export const CartModal: React.FC<OrderProps> = ({ id }) => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation('common');
-  const {showModal, closeModal} = useModal();
+  const { showModal, closeModal } = useModal();
   const { updateQuantity } = useCart();
   const lang = i18n.language as 'ru' | 'kk';
   const [quantity, setQuantity] = useState(1);
- const { getProductDetailsById } = useProductCatalog();
+  const { getProductDetailsById } = useProductCatalog();
 
   const handleOneClick = () => {
-    showModal(<OneClickModal id={id} />);
+    showModal(<OneClickModal id={id}/>);
   };
   const handleCartClick = () => {
     updateQuantity(productData!.product.id, quantity);
-      closeModal();
+    closeModal();
     navigate('/cart');
   };
   const productData = getProductDetailsById(id);
@@ -43,17 +43,17 @@ export const CartModal: React.FC<OrderProps> = ({ id }) => {
         onDecrease={decrease}
       />
       <div className={styles.buttonsContainer}>
-      <ColorButton
-      label = {t('button-order.label')}
-      variant = 'white'
-      icon ={<OrderIcon/>}
-      onClick = {handleOneClick}
-      />
-      <ColorButton
-      label = {t('button-cart.label')}
-      variant = 'black'
-      onClick = {handleCartClick}
-      />
+        <ColorButton
+          label={t('button-order.label')}
+          variant='white'
+          icon={<OrderIcon/>}
+          onClick={handleOneClick}
+        />
+        <ColorButton
+          label={t('button-cart.label')}
+          variant='black'
+          onClick={handleCartClick}
+        />
       </div>
 
     </div>

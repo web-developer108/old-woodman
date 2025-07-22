@@ -12,14 +12,18 @@
     padding: 0 10px;
     border-left: 1px solid var(--background-circle-button-color);
     border-right: 1px solid var(--background-circle-button-color);
-   display: block;
+    display: block;
+    @media (max-width: 810px) {
+      font-size: 16px;
+    }
+
   }
 
   .button {
     background: none;
     border: none;
     font-size: 24px;
-
+    color: var(--text-main-color);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -28,6 +32,10 @@
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
-
+    @media (max-width: 810px) {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
   }
 }

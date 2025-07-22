@@ -22,6 +22,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   const { getCollectionById } = useProductCatalog();
   const collection = getCollectionById(collectionId);
   const items = collection?.items || [];
+   const exclusive = collection?.id === 'exclusive';
 
   const handleCardClick = (productId: string) => {
     navigate(`/doors/${collectionId}?productId=${productId}`, { replace: false });
@@ -50,9 +51,9 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                 <div className={styles.textBlock}>
                   <p className={styles.title}>{isMobile ? item.titleMob[lang] : item.title[lang]}</p>
                   <p className={styles.description}>{item.description[lang]}</p>
-                  <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>
+                  {!exclusive&&<p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>}
                 </div>
-                <CartButton productId={item.id}/>
+                {!exclusive&& <CartButton productId={item.id}/>}
               </div>
             </div>
           ))}
