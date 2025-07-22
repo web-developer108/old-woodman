@@ -4,7 +4,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { useProductCatalog } from '../../hooks/catalog/product-catalog.ts';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';

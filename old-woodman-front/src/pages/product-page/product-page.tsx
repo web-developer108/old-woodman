@@ -2,22 +2,23 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import i18n from 'i18next';
 //import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
-import { productCatalog } from '../../config/products.config.ts';
 import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { ShareButton } from '../../components/buttons/share-button/share-button';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import styles from './product-page.module.scss';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
+  const { getCollectionById, getCategoryByCollectionId } = useProductCatalog();
 //  const { t } = usePageTranslate();
 
 
   const lang = i18n.language as 'ru' | 'kk';
 
-  const category = useMemo(() => {
+/*  const category = useMemo(() => {
     return productCatalog.find((category) =>
       category.collections?.some((c) => c.id === collectionId)
     );
@@ -25,12 +26,14 @@ const ProductPage: React.FC = () => {
 
   const collection = useMemo(() => {
     return category?.collections?.find((c) => c.id === collectionId);
-  }, [category, collectionId]);
-
-
+  }, [category, collectionId]);*/
+  const category = getCategoryByCollectionId(collectionId!);
+  const collection = getCollectionById(collectionId!);
 
   const DetailsComponent = useMemo(() => {
+
     switch (category?.id) {
+
       case 'furniture':
         return DoorsDetails;//поменять
       default:

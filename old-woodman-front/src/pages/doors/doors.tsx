@@ -83,7 +83,6 @@ const DoorsOverview = () => {
               <div className={styles.previewWrap}>
                 <ProductSlider
                   title={t('preview-title')}
-                  categoryId="doors"
                   collectionId={id}
                 />
               </div>

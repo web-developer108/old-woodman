@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import { useModal } from '../../../hooks/modal/use-modal.ts';
-import type { OrderProps } from './one-click-order.types.ts';
-import { findProductById } from '../../../utils/find-product-by-id.ts';
+import { useProductCatalog } from '../../../hooks/catalog/use-product-catalog.ts';
 import { PhoneInput } from '../../phone-input/phone-input.tsx';
 import { ColorButton } from '../../buttons/color-button/color-button.tsx';
 import { ProductSummary } from '../../product-summary/product-summary.tsx';
+import type { OrderProps } from './one-click-order.types.ts';
+import type { Product } from '../../product-summary/product-summary.types.ts';
 import styles from './one-click-order.module.scss';
 
 export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation('common');
   const { closeModal } = useModal();
-  const lang = i18n.language as 'ru' | 'kk';
+  const { getProductDetailsById } = useProductCatalog();
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
-  const data = findProductById(id);
-  if (!data) return null;
-  const { product } = data;
+  const lang = i18n.language as 'ru' | 'kk';
+
+  const productData = getProductDetailsById(id);
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
   const orderDetails =
-    `${product.title[lang]}, ${product.description[lang]} — ${quantity} шт. = ${(product.price * quantity).toLocaleString()} ₸`;
+    `${productData?.product.title[lang]}, ${productData?.product.description[lang]} — ${quantity} шт. = ${((productData?.product.price || 0) * quantity).toLocaleString()} ₸`;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -34,7 +35,7 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
       user_phone: phone,
       order_details: orderDetails,
       user_city: city,
-      total_price: `${(product.price * quantity).toLocaleString()} ₸`,
+      total_price: `${((productData?.product.price || 0) * quantity).toLocaleString()} ₸`,
     };
 
     emailjs.send(
@@ -59,7 +60,7 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
     <div className={styles.modalContent}>
       <h2 className={styles.modalTitle}>{t('modal-order.label').toUpperCase()}</h2>
       <ProductSummary
-        product={product}
+        product={productData?.product as Product}
         quantity={quantity}
         lang={lang}
         onIncrease={increase}
