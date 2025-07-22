@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { useSimpleBarRecalc } from '../../hooks/simplebar-recalc/simplebar-recalc.tsx';

@@ -1,44 +1,64 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../../hooks/cart/cart.tsx';
-import { LikeButton } from '../buttons/like-button/like-button.tsx';
-import { ImageSlider } from '../image-slider/image-slider.tsx';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useProductCatalog } from '../../hooks/catalog/product-catalog.ts';
 import useDevice from '../../hooks/device/use-device.ts';
-import { productCatalog } from '../../config/products.config.ts';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
+import { ImageSlider } from '../image-slider/image-slider.tsx';
+import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { getDescriptionLines } from '../../utils/get-description-lines.ts';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
-import { useModal } from '../../hooks/modal/use-modal.ts';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
-import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
+import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
+import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
+import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
+import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
+import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
+import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
+import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
+import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
+import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
+import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
+import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
 export const DoorsDetails: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { t, i18n } = useTranslation('doors');
   const { isMobile } = useDevice();
   const { isInCart, addToCart } = useCart();
   const { showModal } = useModal()
-  const navigate = useNavigate();
+  const { collectionId } = useParams();
+  const [searchParams] = useSearchParams();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const { collectionId } = useParams();
-  const [searchParams] = useSearchParams();
-  const productId = searchParams.get('productId');
+  const simpleBarRef = useRef<any>(null);
+
+
+  const {
+    getCollectionById,
+    getCollectionTitleById,
+    getProductById,
+  } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
-  const collection = productCatalog
-    .find((cat) => cat.id === 'doors')
-    ?.collections?.find((col) => col.id === collectionId);
+  const productId = searchParams.get('productId');
+  const collection = getCollectionById(collectionId!);
 
-  const items = collection?.items || [];
+  const items = useMemo(() => collection?.items || [], [collection]);
 
-  const selectedProduct = productId
-    ? items.find((item) => item.id === productId) || items[0]
-    : items[0];
+  const selectedProduct = useMemo(() => {
+    return productId ? getProductById(productId) || items[0] : items[0];
+  }, [productId, getProductById, items]);
 
-  const descriptionLines = getDescriptionLines(collectionId!, t);
+  const descriptionLines = useMemo(() => getDescriptionLines(collectionId!, t), [collectionId, t]);
 
   const handleOneClick = () => {
     showModal(<OneClickModal id={selectedProduct.id}/>);
@@ -47,22 +67,51 @@ export const DoorsDetails: React.FC = () => {
     addToCart(selectedProduct.id)
     showModal(<CartModal id={selectedProduct.id}/>);
   };
+  const doorCollections = useMemo(() => [
+    { id: 'classica', src: heroImageClassica },
+    { id: 'loft', src: heroImageLoft },
+    { id: 'deco', src: heroImageDeco },
+    { id: 'cabinet', src: heroImageCabinet },
+    { id: 'rustic', src: heroImageRustic },
+    { id: 'exclusive', src: heroImageExclusive },
+    { id: 'balcony', src: heroImageBalcony },
+  ], []);
+
+  const filteredCollections = useMemo(() => {
+    return doorCollections.filter((item) => item.id !== collection?.id);
+  }, [doorCollections, collection?.id]);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      simpleBarRef.current?.recalculate();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [location.pathname, location.hash]);
+
   useEffect(() => {
     const checkOverflow = () => {
       const el = textRef.current;
       if (!el) return;
       const maxHeight = isMobile ? 202 : 305;
-
       const overflowing = el.scrollHeight > maxHeight;
-
-      setIsOverflowing(overflowing);
+      setIsOverflowing((prev) => prev !== overflowing ? overflowing : prev);
     };
 
     checkOverflow();
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
   }, [isMobile]);
+
+  useEffect(() => {
+    simpleBarRef.current?.recalculate();
+  }, [filteredCollections]);
+
+;
+
   if (!collection || !selectedProduct) return null;
+
   return (
     <>
       <div className={styles.page}>
@@ -112,7 +161,7 @@ export const DoorsDetails: React.FC = () => {
               {descriptionLines.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
-              <p >{t('common.description')}</p>
+              <p>{t('common.description')}</p>
             </div>
 
             {isOverflowing &&
@@ -138,10 +187,8 @@ export const DoorsDetails: React.FC = () => {
             <CommonButtonsBlock/>
           </div>
         </section>
-
-
       </div>
-      <section className={styles.article}>
+      <section className={styles.article} >
         <div className={styles.columns}>
           <div className={styles.column}>
             <h2>{t('parameter-header.period').toUpperCase()}</h2>
@@ -161,7 +208,31 @@ export const DoorsDetails: React.FC = () => {
           </div>
         </div>
       </section>
+      <section className={styles.slider}>
+        <h2 className={styles.sliderTitle}>{t('doors-title').toUpperCase()}</h2>
+        <SimpleBar ref={simpleBarRef} className={styles.wrapper} autoHide={false}>
+          <div className={styles.track}>
+            {
+              filteredCollections.map((img, index) => (
+                <div className={styles.infoImage} key={index}>
+
+                  <img key={index} src={img.src} alt={img.id} className={styles.image} loading="lazy"/>
+                  <div className={styles.infoText}>
+                    <span>{getCollectionTitleById(img.id)}</span>
+                    {isMobile ?
+                      <CircleButton onClick={() => navigate(`/doors/${img.id}`)}
+                                    bgColor={AppColors.background.grey} ariaLabel={t('button-transition.label')}
+                                    icon={<ArrowRightIcon color={AppColors.text.main}/>}/>
+                      :
+                      <OvalButton text={t('doors-transition.button')}
+                                  onClick={() => navigate(`/doors/${img.id}`)}/>}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </SimpleBar>
+      </section>
     </>
-  )
-    ;
+  );
 };

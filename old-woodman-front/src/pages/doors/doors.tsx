@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
 import { PictureHeader } from '../../components/picture-header/picture-header';
@@ -37,6 +37,8 @@ const doorCollections = [
 
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
+  const infoRef = useRef<HTMLDivElement>(null);
+
   const galleryImages = [
     { src: gallery1, alt: 'Большая дверь' },
     { src: gallery2, alt: 'Доски' },
@@ -44,6 +46,12 @@ const DoorsOverview = () => {
     { src: gallery4, alt: 'Мастерская' },
 
   ];
+  useLayoutEffect(() => {
+    if (location.pathname.startsWith('/doors/') && location.hash === '#info') {
+      console.log('SCROLLING TO INFO');
+      infoRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
   return (
     <ToolPageLayout>
       <div className={styles.doorsContainer}>
@@ -102,7 +110,7 @@ const DoorsOverview = () => {
             <Gallery images={galleryImages} layout='complex'/>
           </div>
           <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
-          <div className={styles.checkColumns}>
+          <div  id = 'info' ref = {infoRef} className={styles.checkColumns}>
             <ul className={styles.checklist}>
               <li>{t('article2-text-1')}</li>
               <li>{t('article2-text-2')}</li>

@@ -254,8 +254,7 @@
 
 .article {
   max-width: 1180px;
-  margin: 0 auto;
-  margin-bottom: 56px;
+  margin: 0 auto 56px;
   padding: 24px;
   @media (max-width: 810px) {
     padding: 12px;
@@ -297,4 +296,72 @@
   }
 
 
+}
+
+.slider {
+
+  padding: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  @media (max-width: 810px) {
+    padding: 12px;
+  }
+  .sliderTitle{
+    margin-bottom: 24px;
+    @include mixins.headingLarge;
+  }
+  .wrapper {
+    padding-bottom: 20px;
+    position: relative;
+    height: 100%;
+    max-width: 1180px;
+
+    .track {
+      display: grid;
+      grid-auto-flow: column;
+      padding-bottom: 20px;
+      position: relative;
+      overflow-x: auto;
+      height: 100%;
+      grid-auto-columns: max-content;
+      grid-template-columns: auto;
+      gap: 10px;
+      min-width: max-content;
+      width: fit-content;
+
+      .infoImage {
+        .image {
+          width: 386px;
+          height: 386px;
+          border-radius: 10px;
+          object-fit: cover;
+          @media (max-width: 810px) {
+            width: 316px;
+            height: 316px;
+          }
+        }
+
+        .infoText {
+          font-family: 'Vollkorn', serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.5;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 6px;
+          span {
+            display: block;
+          }
+          button{
+            @media (max-width: 810px) {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
