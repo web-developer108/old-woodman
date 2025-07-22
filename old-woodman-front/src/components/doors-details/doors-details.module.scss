@@ -299,18 +299,24 @@
 }
 
 .slider {
-  display: flex;
+
   padding: 24px;
   max-width: 1180px;
   margin: 0 auto;
+  overflow-x: hidden;
   @media (max-width: 810px) {
     padding: 12px;
+  }
+  .sliderTitle{
+    margin-bottom: 24px;
+    @include mixins.headingLarge;
   }
   .wrapper {
     padding-bottom: 20px;
     position: relative;
-   overflow-x: auto;
     height: 100%;
+    max-width: 1180px;
+
     .track {
       display: grid;
       grid-auto-flow: column;
@@ -322,6 +328,8 @@
       grid-template-columns: auto;
       gap: 10px;
       min-width: max-content;
+      width: fit-content;
+
       .infoImage {
         .image {
           width: 386px;
@@ -333,8 +341,25 @@
             height: 316px;
           }
         }
-        .infoText{
 
+        .infoText {
+          font-family: 'Vollkorn', serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.5;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 6px;
+          span {
+            display: block;
+          }
+          button{
+            @media (max-width: 810px) {
+              width: 40px;
+              height: 40px;
+            }
+          }
         }
       }
     }
