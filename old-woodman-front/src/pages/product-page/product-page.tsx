@@ -8,6 +8,7 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { ShareButton } from '../../components/buttons/share-button/share-button';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { FurnituresDetails } from '../../components/furnitures-details/furnitures-details.tsx';
 import styles from './product-page.module.scss';
 
 const ProductPage: React.FC = () => {
@@ -17,16 +18,6 @@ const ProductPage: React.FC = () => {
 
 
   const lang = i18n.language as 'ru' | 'kk';
-
-/*  const category = useMemo(() => {
-    return productCatalog.find((category) =>
-      category.collections?.some((c) => c.id === collectionId)
-    );
-  }, [collectionId]);
-
-  const collection = useMemo(() => {
-    return category?.collections?.find((c) => c.id === collectionId);
-  }, [category, collectionId]);*/
   const category = getCategoryByCollectionId(collectionId!);
   const collection = getCollectionById(collectionId!);
 
@@ -35,7 +26,7 @@ const ProductPage: React.FC = () => {
     switch (category?.id) {
 
       case 'furniture':
-        return DoorsDetails;//поменять
+        return FurnituresDetails;
       default:
         return DoorsDetails;
     }

@@ -6,7 +6,7 @@ const Home = lazy(() => import('../pages/home/home.tsx'));
 const DoorsOverview = lazy(() => import('../pages/doors/doors'));
 const ProductPage = lazy(() => import('../pages/product-page/product-page.tsx'));
 
-const FurnitureOverview = lazy(() => import('../pages/temporary/temporary'));
+const FurnitureOverview = lazy(() => import('../pages/furniture/furniture'));
 
 const Facades = lazy(() => import('../pages/facades/facades'));
 const Gifts = lazy(() => import('../pages/gifts/gifts'));
