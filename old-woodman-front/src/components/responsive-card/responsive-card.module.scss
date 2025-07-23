@@ -85,7 +85,6 @@
         font-weight: 300;
 
         @media (max-width: 810px) {
-          // font-size: 14px;
           display: none;
         }
 
@@ -122,7 +121,9 @@
         transition: opacity 0.3s ease;
         width: 155px;
         height: 40px;
-
+        @media (max-width: 810px) {
+          display: none;
+        }
       }
     }
   }

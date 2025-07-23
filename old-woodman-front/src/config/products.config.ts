@@ -491,7 +491,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Консоль',
               kk: 'Консоль',
             },
-            images: ['/images/furniture/condoles/provance'],
+            images: ['/images/furniture/consoles/provance.webp'],
             price: 286000,
           },
           {
@@ -505,7 +505,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Консоль приставная',
               kk: 'Консоль приставная',
             },
-            images: ['/images/furniture/condoles/iberia'],
+            images: ['/images/furniture/consoles/iberia.webp'],
             price: 286000,
           },
           {
@@ -519,7 +519,21 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Консоль навеснаяя',
               kk: 'Консоль навеснаяя',
             },
-            images: ['/images/furniture/condoles/mona'],
+            images: ['/images/furniture/consoles/mona.webp'],
+            price: 286000,
+          },
+          {
+            id: 'console-country',
+            title: {
+              ru: 'Country',
+              kk: 'Country',
+
+            },
+            shortName: {
+              ru: 'Тумба',
+              kk: 'Тумба',
+            },
+            images: ['/images/furniture/consoles/country.webp'],
             price: 286000,
           },
         ],
