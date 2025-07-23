@@ -479,7 +479,50 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Консоли и тумбы',
           kk: 'Консольдар мен тумбалар',
         },
-        items: [],
+        items: [
+          {
+            id: 'console-provance',
+            title: {
+              ru: 'Provance',
+              kk: 'Provance',
+
+            },
+            shortName: {
+              ru: 'Консоль',
+              kk: 'Консоль',
+            },
+            images: ['/images/furniture/condoles/provance'],
+            price: 286000,
+          },
+          {
+            id: 'console-iberia',
+            title: {
+              ru: 'Iberia',
+              kk: 'Iberia',
+
+            },
+            shortName: {
+              ru: 'Консоль приставная',
+              kk: 'Консоль приставная',
+            },
+            images: ['/images/furniture/condoles/iberia'],
+            price: 286000,
+          },
+          {
+            id: 'console-mona',
+            title: {
+              ru: 'Mona',
+              kk: 'Mona',
+
+            },
+            shortName: {
+              ru: 'Консоль навеснаяя',
+              kk: 'Консоль навеснаяя',
+            },
+            images: ['/images/furniture/condoles/mona'],
+            price: 286000,
+          },
+        ],
       },
       {
         id: 'wardrobes',

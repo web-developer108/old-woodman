@@ -3,12 +3,27 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
-import styles from '../doors/doors.module.scss';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
+import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
+import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
+import styles from '../doors/doors.module.scss';
 
- const FurnitureOverview: React.FC = () => {
+
+
+
+const furnitureCollections = [
+  { id: 'consoles', image: heroImageConsoles },
+ /* { id: 'loft', image: heroImageLoft },
+  { id: 'deco', image: heroImageDeco },
+  { id: 'cabinet', image: heroImageCabinet },
+  { id: 'rustic', image: heroImageRustic },
+  { id: 'exclusive', image: heroImageExclusive },
+  { id: 'balcony', image: heroImageBalcony },*/
+];
+
+const FurnitureOverview: React.FC = () => {
    const { t } = usePageTranslate();
 
    return(
@@ -30,7 +45,22 @@ import { SocialButtons } from '../../components/buttons/social-buttons/social-bu
           <div className={styles.socialButtons}>
             <SocialButtons/>
           </div>
-
+          {furnitureCollections.map(({ id, image }) => (
+            <React.Fragment key={id}>
+              <ResponsiveCard
+                image={image}
+                title={t(`title-${id}`)}
+                description={t(`description-${id}`)}
+                comment={t('comment-text')}
+              />
+              <div className={styles.previewWrap}>
+               {/* <ProductSlider
+                  title={t('preview-title')}
+                  collectionId={id}
+                />*/}
+              </div>
+            </React.Fragment>
+          ))}
         </section>
       </div>
     </ToolPageLayout>
