@@ -487,6 +487,10 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Provance',
 
             },
+            pageHeader: {
+              ru: 'Консоль из массива Provance',
+              kk: 'Provance табиғи ағаш консольі',
+            },
             shortName: {
               ru: 'Консоль',
               kk: 'Консоль',
@@ -500,6 +504,10 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Iberia',
               kk: 'Iberia',
 
+            },
+            pageHeader: {
+              ru: 'Консоль для ванной ',
+              kk: 'Ваннаға арналған консоль',
             },
             shortName: {
               ru: 'Консоль приставная',
@@ -515,6 +523,10 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Mona',
 
             },
+            pageHeader: {
+              ru: 'Консоль в прихожую Mona',
+              kk: 'Mona кіреберіс консольі',
+            },
             shortName: {
               ru: 'Консоль навеснаяя',
               kk: 'Консоль навеснаяя',
@@ -528,6 +540,10 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Country',
               kk: 'Country',
 
+            },
+            pageHeader: {
+              ru: 'Деревянная тумбочка для спальни',
+              kk: 'Жатын бөлмеге арналған ағаш тумба',
             },
             shortName: {
               ru: 'Тумба',

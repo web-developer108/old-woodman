@@ -15,7 +15,7 @@ export const getDescriptionLines = (prefix: string, t: TFunction): string[] => {
   return lines;
 };
 
-export const getFurnituresDescriptionLines = (id: string, t: TFunction): string[] => {
+export const getFurnitureDescriptionLines = (id: string, t: TFunction): string[] => {
   const lines: string[] = [];
   let index = 1;
   while (true) {

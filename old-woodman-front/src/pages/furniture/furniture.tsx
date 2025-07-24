@@ -9,7 +9,7 @@ import { SocialButtons } from '../../components/buttons/social-buttons/social-bu
 import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import styles from '../doors/doors.module.scss';
-import { getFurnituresDescriptionLines } from '../../utils/get-description-lines.ts';
+import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 
 
@@ -52,7 +52,7 @@ const FurnitureOverview: React.FC = () => {
               <ResponsiveCard
                 image={image}
                 title={t(`title-${id}`)}
-                description={getFurnituresDescriptionLines(id, t)}
+                description={getFurnitureDescriptionLines(id, t)}
                 comment={t(`comment-text-${id}`)}
               />
               <div className={styles.previewWrap}>
