@@ -533,7 +533,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Тумба',
               kk: 'Тумба',
             },
-            images: ['/images/furniture/consoles/country.webp'],
+            images: ['/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp'],
             price: 286000,
           },
         ],

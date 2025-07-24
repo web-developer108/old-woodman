@@ -19,7 +19,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
   const items = collection?.items || [];
 
   const handleCardClick = (productId: string) => {
-    navigate(`/furniture/${collectionId}?productId=${productId}`, { replace: false });
+    navigate(`/furniture/${collectionId}/${productId}`, { replace: false });
   };
 
   return (
@@ -59,7 +59,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
         <div className={styles.cardContent}>
           <div className={styles.textBlock}>
             <p className={styles.title}>{t('plug-title')}</p>
-            <p className={styles.description}>{t('plug-label')}</p>
+            <p className={styles.price}>{t('plug-label')}</p>
 
           </div>
 

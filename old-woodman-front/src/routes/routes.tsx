@@ -26,7 +26,7 @@ const routes: RouteObject[] = [
   { path: '/doors', element: <DoorsOverview/> },
   { path: '/doors/:collectionId', element: <ProductPage/> },
   { path: '/furniture', element: <FurnitureOverview/> },
-  { path: '/furniture/:collectionId', element: <ProductPage/> },
+  { path: '/furniture/:collectionId/:id', element: <ProductPage/> },
 
   { path: '/facades', element: <Facades/> },
   { path: '/gifts', element: <Gifts/> },
