@@ -521,7 +521,6 @@ export const productCatalog: ProductCategory[] = [
             title: {
               ru: 'Mona',
               kk: 'Mona',
-
             },
             pageHeader: {
               ru: 'Консоль в прихожую Mona',

@@ -3,6 +3,7 @@ import type { ProductSummaryProps } from './product-summary.types.ts';
 import { useTranslation } from 'react-i18next';
 import { QuantitySelector } from '../quantity-selector/quantity-selector.tsx';
 import styles from './product-summary.module.scss';
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 export const ProductSummary: React.FC<ProductSummaryProps> = ({
   product,
@@ -12,7 +13,7 @@ export const ProductSummary: React.FC<ProductSummaryProps> = ({
   onDecrease,
 }) => {
   const { t } = useTranslation('common');
-
+  const category = useCurrentCategory();
   return (
     <div className={styles.productSummary}>
       <div className={styles.imageWrapper}>
@@ -21,7 +22,7 @@ export const ProductSummary: React.FC<ProductSummaryProps> = ({
 
       <div className={styles.productName}>
         <div>{product.title[lang]},</div>
-        <div>{product.description[lang]}</div>
+       { category === 'doors' && <div>{product.description[lang] || product.shortName[lang] }</div>}
         <div className={styles.shotName}>{product.shortName[lang]}</div>
       </div>
 

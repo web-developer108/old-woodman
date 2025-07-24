@@ -12,6 +12,7 @@ import { OrderSummary } from '../../components/order-summary/order-summary.tsx';
 import type { ProductItem } from '../../config/config.types.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './cart.module.scss'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 const Cart = () => {
   const { t } = usePageTranslate();
@@ -19,6 +20,7 @@ const Cart = () => {
   const { i18n } = useTranslation('common');
   const { getProductDetailsById } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
+  const category = useCurrentCategory();
 
   const emptyCart = cartItems.length === 0;
   const products = cartItems
@@ -68,7 +70,7 @@ const Cart = () => {
                         </div>
                         <div className={styles.productName}>
                           <div className={styles.title}>{product.title[lang]}</div>
-                          <div className={styles.title}>{product.description[lang]}</div>
+                          {category === 'doors' && <div className={styles.title}>{product.description![lang]}</div>}
                           <div className={styles.shortName}>{product.shortName?.[lang]}</div>
                         </div>
                       </div>

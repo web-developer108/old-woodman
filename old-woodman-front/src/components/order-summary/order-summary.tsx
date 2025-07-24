@@ -7,6 +7,7 @@ import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import styles from './order-summary.module.scss'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 export const OrderSummary: React.FC<{
   products: (ProductItem & { quantity: number })  [];
@@ -19,8 +20,11 @@ export const OrderSummary: React.FC<{
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState('');
+  const category = useCurrentCategory();
+
+
   const orderDetails = products.map((p) => (
-    `${p.title[lang]}, ${p.description[lang]} — ${p.quantity} шт. = ${(p.price * p.quantity).toLocaleString()} ₸`
+    `${p.title[lang]}, ${p.description?.[lang] || p.shortName[lang]} — ${p.quantity} шт. = ${(p.price * p.quantity).toLocaleString()} ₸`
   )).join('\n');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -62,7 +66,8 @@ export const OrderSummary: React.FC<{
           <div key={p.id} className={styles.item}>
             <div>
               <div>{p.title[lang]}</div>
-              <div>{p.description[lang]}</div>
+              {category === 'doors' && <div>{p.description?.[lang]}</div>}
+              {category === 'furniture' && <div>{p.shortName?.[lang]}</div>}
             </div>
             <div>{(p.price * p.quantity).toLocaleString()} ₸</div>
           </div>
