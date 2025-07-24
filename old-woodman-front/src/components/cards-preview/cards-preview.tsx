@@ -47,6 +47,24 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
             </div>
           </div>
         ))}
+      <div className={styles.card}>
+        <div className={styles.imageWrapper}>
+          <img
+            src="/images/furniture/plug.svg"
+            alt={t("plug-alt")}
+            className={styles.image}
+          />
+
+        </div>
+        <div className={styles.cardContent}>
+          <div className={styles.textBlock}>
+            <p className={styles.title}>{t('plug-title')}</p>
+            <p className={styles.description}>{t('plug-label')}</p>
+
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 };
