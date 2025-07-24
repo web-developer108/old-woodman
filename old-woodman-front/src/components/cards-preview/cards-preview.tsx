@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useDevice from '../../hooks/device/use-device.ts';
 import { useTranslation } from 'react-i18next';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { CartButton } from '../buttons/cart-button/cart-button.tsx';
 import type { CardsPreviewProps } from './cards-preview.types.ts';
@@ -13,7 +11,6 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
   collectionId,
 }) => {
   const navigate = useNavigate();
-  const { isMobile } = useDevice();
   const { i18n } = useTranslation();
   const { t } = useTranslation('common');
   const lang = i18n.language as 'ru' | 'kk';
@@ -50,8 +47,6 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
             </div>
           </div>
         ))}
-
-
     </div>
   );
 };

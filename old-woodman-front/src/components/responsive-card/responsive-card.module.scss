@@ -17,6 +17,7 @@
     flex-direction: column;
     padding: 0;
     perspective: 1000px;
+    height: auto;
   }
 
   .imageContainer {
@@ -147,18 +148,23 @@
       transform: rotateX(-90deg);
       opacity: 0;
       pointer-events: none;
-      .title {
-        margin-bottom: 12px;
-        @include mixins.headingLarge;
+
+
+      .contentMob {
+        display: flex;
+        flex-direction: column;
+        .title {
+          margin-bottom: 12px;
+          @include mixins.headingLarge;
+        }
+
+        .description,
+        .comment {
+          margin-bottom: 12px;
+          @include mixins.bodyTextSmall;
+        }
+
       }
-
-      .description,
-      .comment {
-        margin-bottom: 12px;
-        @include mixins.bodyTextSmall;
-      }
-
-
       &.visible {
         transform: rotateX(0deg);
         opacity: 1;

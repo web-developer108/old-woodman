@@ -32,36 +32,34 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
         <img src={image} alt={title} className={styles.image}/>
       </div>
 
-    {/*  {!isMobile && (*/}
-        <div className={styles.content}>
-          <h2 className={styles.title}>{title.toUpperCase()}</h2>
-          <div className={styles.descriptionWrapper}>
-            <p
-              className={`${styles.description} ${isExpanded ? styles.expanded : ''}`}
-              ref={descriptionRef}
-            >
-              {Array.isArray(description)
-                ? description.map((line, idx) => (
-                  <span key={idx}>
+      <div className={styles.content}>
+        <h2 className={styles.title}>{title.toUpperCase()}</h2>
+        <div className={styles.descriptionWrapper}>
+          <p
+            className={`${styles.description} ${isExpanded ? styles.expanded : ''}`}
+            ref={descriptionRef}
+          >
+            {Array.isArray(description)
+              ? description.map((line, idx) => (
+                <span key={idx}>
           {line}
-                    <br/>
+                  <br/>
         </span>
-                ))
-                : description}
-            </p>
-            {!isExpanded && isOverflowing && <div className={styles.fadeOverlay}/>}
-            {isOverflowing && !isExpanded && (
-              <button
-                className={styles.readMore}
-                onClick={() => setIsExpanded(true)}
-              >
-                {t('button-read.label')}
-              </button>
-            )}
-          </div>
-          <p className={styles.comment}>{comment}</p>
+              ))
+              : description}
+          </p>
+          {!isExpanded && isOverflowing && <div className={styles.fadeOverlay}/>}
+          {isOverflowing && !isExpanded && (
+            <button
+              className={styles.readMore}
+              onClick={() => setIsExpanded(true)}
+            >
+              {t('button-read.label')}
+            </button>
+          )}
         </div>
-  {/*    )}*/}
+        <p className={styles.comment}>{comment}</p>
+      </div>
 
       {isMobile && (
         <>
@@ -70,7 +68,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
               isExpanded ? styles.visible : styles.hidden
             }`}
           >
-            <div className={styles.content}>
+            <div className={styles.contentMob}>
               <h2 className={styles.title}>{title.toUpperCase()}</h2>
               <p className={styles.description}>{Array.isArray(description)
                 ? description.map((line, idx) => (
