@@ -19,6 +19,8 @@ import gallery2 from '@assets/images/furniture/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/furniture/gallery/gallery-4.webp';
 import styles from '../doors/doors.module.scss';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 const furnitureCollections = [
   { id: 'consoles', image: heroImageConsoles },
@@ -85,7 +87,7 @@ const FurnitureOverview: React.FC = () => {
             </div>
           </div>
           <div className={styles.gallery}>
-               <Gallery images={galleryImages} layout='complex'/>
+            <Gallery images={galleryImages} layout='complex'/>
           </div>
           <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
           <div className={styles.descriptionFurnitureTop}> {t('article2-description-1')}</div>
@@ -103,6 +105,13 @@ const FurnitureOverview: React.FC = () => {
           <div className={styles.descriptionFurnitureBottom}> {t('article2-description-2')}</div>
           <div className={styles.descriptionFurnitureBottom}> {t('article2-description-3')}</div>
           <div className={styles.descriptionFurnitureBottom}> {t('article2-description-4')}</div>
+        </section>
+        <section className={styles.textInfo}>
+          <TextInfo/>
+        </section>
+        <section className={styles.navigation}>
+          <h2>{t('nav-title').toUpperCase()}</h2>
+          <NavigationBlock isHome={false} blocks={['doors', 'facades']}/>
         </section>
       </div>
     </ToolPageLayout>
