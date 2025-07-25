@@ -1,4 +1,8 @@
+import type { ProductItem } from '../../config/config.types.ts';
+
 export interface ProductSliderProps {
   title: string;
-  collectionId: string;
+  items: ProductItem[];
+  handleCardClick: (productId: string) => void;
+
 }

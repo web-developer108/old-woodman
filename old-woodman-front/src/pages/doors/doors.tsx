@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
 import { PictureHeader } from '../../components/picture-header/picture-header';
@@ -24,6 +25,7 @@ import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
 
 import styles from './doors.module.scss'
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },
@@ -38,7 +40,8 @@ const doorCollections = [
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
   const infoRef = useRef<HTMLDivElement>(null);
-
+  const { getCollectionById } = useProductCatalog();
+  const navigate = useNavigate();
   const galleryImages = [
     { src: gallery1, alt: 'Большая дверь' },
     { src: gallery2, alt: 'Доски' },
@@ -72,22 +75,31 @@ const DoorsOverview = () => {
             <SocialButtons/>
           </div>
 
-          {doorCollections.map(({ id, image }) => (
-            <React.Fragment key={id}>
-              <ResponsiveCard
-                image={image}
-                title={t(`title-${id}`)}
-                description={t(`description-${id}`)}
-                comment={t('comment-text')}
-              />
-              <div className={styles.previewWrap}>
-                <ProductSlider
-                  title={t('preview-title')}
-                  collectionId={id}
-                />
-              </div>
-            </React.Fragment>
-          ))}
+          {doorCollections.map(({ id, image }) => {
+              const collection = getCollectionById(id);
+              const items = collection?.items || [];
+              console.log('items', items)
+              return (
+                <React.Fragment key={id}>
+                  <ResponsiveCard
+                    image={image}
+                    title={t(`title-${id}`)}
+                    description={t(`description-${id}`)}
+                    comment={t('comment-text')}
+                  />
+                  <div className={styles.previewWrap}>
+                    <ProductSlider
+                      title={t('preview-title')}
+                      items={items}
+                      handleCardClick={(productId) => {
+                        navigate(`/doors/${id}?productId=${productId}`);
+                      }}
+                    />
+                  </div>
+                </React.Fragment>
+              )
+            }
+          )}
         </section>
         <section className={styles.article}>
           <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
@@ -109,7 +121,7 @@ const DoorsOverview = () => {
             <Gallery images={galleryImages} layout='complex'/>
           </div>
           <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
-          <div  id = 'info' ref = {infoRef} className={styles.checkColumns}>
+          <div id='info' ref={infoRef} className={styles.checkColumns}>
             <ul className={styles.checklist}>
               <li>{t('article2-text-1')}</li>
               <li>{t('article2-text-2')}</li>

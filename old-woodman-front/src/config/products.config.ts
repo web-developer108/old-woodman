@@ -497,6 +497,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/provance.webp'],
             price: 286000,
+            time:10,
           },
           {
             id: 'console-iberia',
@@ -515,6 +516,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/iberia.webp'],
             price: 286000,
+            time:10,
           },
           {
             id: 'console-mona',
@@ -532,6 +534,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/mona.webp'],
             price: 286000,
+            time:10,
           },
           {
             id: 'console-country',
@@ -550,6 +553,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp'],
             price: 286000,
+            time:10,
           },
         ],
       },
