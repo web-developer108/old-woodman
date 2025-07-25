@@ -7,29 +7,26 @@ import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
+import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
+import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
+import heroImageBeds from '@assets/images/furniture/beds-hero.webp';
+import heroImageChairs from '@assets/images/furniture/chairs-hero.webp';
 import styles from '../doors/doors.module.scss';
-import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
-import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
-
-
-
 
 const furnitureCollections = [
   { id: 'consoles', image: heroImageConsoles },
- { id: 'wardrobes', image: heroImageWardrobes },
-  /*  { id: 'deco', image: heroImageDeco },
-   { id: 'cabinet', image: heroImageCabinet },
-   { id: 'rustic', image: heroImageRustic },
-   { id: 'exclusive', image: heroImageExclusive },
-   { id: 'balcony', image: heroImageBalcony },*/
+  { id: 'wardrobes', image: heroImageWardrobes },
+  { id: 'beds', image: heroImageBeds },
+  { id: 'chairs', image: heroImageChairs },
+
 ];
 
 const FurnitureOverview: React.FC = () => {
-   const { t } = usePageTranslate();
+  const { t } = usePageTranslate();
 
-   return(
+  return (
     <ToolPageLayout>
       <div className={styles.doorsContainer}>
         <PictureHeader
@@ -66,7 +63,7 @@ const FurnitureOverview: React.FC = () => {
         </section>
       </div>
     </ToolPageLayout>
-   )
- }
+  )
+}
 
 export default FurnitureOverview;

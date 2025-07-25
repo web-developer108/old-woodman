@@ -571,8 +571,8 @@ export const productCatalog: ProductCategory[] = [
 
             },
             pageHeader: {
-              ru: 'Полка для книг SIAM ',
-              kk: 'Кітап сөресі SIAM',
+              ru: 'Полка для книг Siam ',
+              kk: 'Siam кітап сөресі',
             },
             shortName: {
               ru: 'Полка навесная',
@@ -590,8 +590,8 @@ export const productCatalog: ProductCategory[] = [
 
             },
             pageHeader: {
-              ru: 'Полка навесная LINE',
-              kk: 'Полка навесная LINE',
+              ru: 'Полка навесная Line',
+              kk: 'Полка навесная Line',
             },
             shortName: {
               ru: 'Полка навесная',
@@ -609,8 +609,8 @@ export const productCatalog: ProductCategory[] = [
 
             },
             pageHeader: {
-              ru: 'Шкаф навесной RETRO',
-              kk: 'Шкаф навесной RETRO',
+              ru: 'Шкаф навесной Retro',
+              kk: 'Шкаф навесной Retro',
             },
             shortName: {
               ru: 'Шкаф навесной',
@@ -648,15 +648,55 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Кровати',
           kk: 'Кереуеттер',
         },
-        items: [],
+        items: [
+          {
+            id: 'tatami',
+            title: {
+              ru: 'Tatami',
+              kk: 'Tatami',
+
+            },
+            pageHeader: {
+              ru: 'Деревянная кровать в японском стиле',
+              kk: 'Жапон стиліндегі ағаш төсек',
+            },
+            shortName: {
+              ru: 'Кровать',
+              kk: 'Кровать',
+            },
+            images: ['/images/furniture/beds/tatami.webp'],
+            price: 200000,
+            time: 20,
+          },
+        ],
       },
       {
-        id: 'armchairs',
+        id: 'chairs',
         title: {
           ru: 'Кресла',
           kk: 'Креслолар',
         },
-        items: [],
+        items: [
+          {
+            id: 'alma-ata',
+            title: {
+              ru: 'Alma-Ata',
+              kk: 'Alma-Ata',
+
+            },
+            pageHeader: {
+              ru: 'Кресло Alma-Ata',
+              kk: 'Алма-Ата креслосы',
+            },
+            shortName: {
+              ru: 'Кресло',
+              kk: 'Кресло',
+            },
+            images: ['/images/furniture/chairs/alma-ata.webp'],
+            price: 200000,
+            time: 20,
+          },
+        ],
       },
     ],
   },

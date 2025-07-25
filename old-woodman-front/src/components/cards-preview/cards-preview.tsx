@@ -48,7 +48,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
           </div>
         ))}
       <div className={styles.card}>
-        <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapper} style={{cursor: 'default'}}>
           <img
             src="/images/furniture/plug.svg"
             alt={t("plug-alt")}
