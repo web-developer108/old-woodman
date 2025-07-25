@@ -124,9 +124,17 @@
       }
     }
 
+    .description, .descriptionFurnitureTop, .descriptionFurnitureBottom {
+      @include mixins.bodyTextSmall;
+    }
+    .descriptionFurnitureTop{
+      margin-top: 36px;
+    }
+    .descriptionFurnitureBottom{
+      margin-bottom: 24px;
+    }
     .description {
       margin-bottom: 112px;
-      @include mixins.bodyTextSmall;
       @media (max-width: 1200px) {
         margin-bottom: 96px;
       }
