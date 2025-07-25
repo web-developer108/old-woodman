@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
 import { PictureHeader } from '../../components/picture-header/picture-header';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
@@ -23,9 +24,8 @@ import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
-
 import styles from './doors.module.scss'
-import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
+
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },
@@ -78,7 +78,6 @@ const DoorsOverview = () => {
           {doorCollections.map(({ id, image }) => {
               const collection = getCollectionById(id);
               const items = collection?.items || [];
-              console.log('items', items)
               return (
                 <React.Fragment key={id}>
                   <ResponsiveCard

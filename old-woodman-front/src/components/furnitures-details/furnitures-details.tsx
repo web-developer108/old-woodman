@@ -1,31 +1,23 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ToolPageLayout } from '../tool-page-layout/tool-page-layout.tsx';
-import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-import styles from '../doors-details/doors-details.module.scss';
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { ImageSlider } from '../image-slider/image-slider.tsx';
-import { useCurrentCollectionItems } from '../../hooks/current-collection/current-collection-items.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
 import { getDescriptionLines } from '../../utils/get-description-lines.ts';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
-import SimpleBar from 'simplebar-react';
-import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
-import { AppColors } from '../../styles.ts';
-import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
-import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
+import styles from '../doors-details/doors-details.module.scss';
 
 export const FurnituresDetails: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const { t, i18n } = useTranslation('furniture');
   const { isMobile } = useDevice();
   const { isInCart, addToCart } = useCart();
@@ -35,20 +27,17 @@ export const FurnituresDetails: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const simpleBarRef = useRef<any>(null);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const {
     getCollectionById,
-    getCollectionTitleById,
-    getProductDetailsById,
     getItemById,
     getProductById,
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
   const item = getItemById(collectionId!, productId!);
   const images = item!.images;
-  const descriptionLines = useMemo(() => getDescriptionLines( productId!, t), [ productId, t]);
+  const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
   const handleOneClick = () => {
     showModal(<OneClickModal id={productId!}/>);
   };
@@ -84,7 +73,7 @@ export const FurnituresDetails: React.FC = () => {
   if (!product) return <div>Product not found</div>;
   const items = getCollectionById(collectionId!);
   const filteredCollections = items?.items.filter(item => item.id !== productId)
-  console.log('filteredCollections', filteredCollections)
+
   return (
     <>
       <div className={styles.page}>
@@ -173,14 +162,20 @@ export const FurnituresDetails: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className={styles.slider}>
+      {filteredCollections && filteredCollections.length > 1 &&
+          <section className={styles.slider}>
 
-                <ProductSlider
-                title ='dsdss'
-                collectionId = {collectionId!}
-                />
+              <ProductSlider
+                  title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
+                  items={filteredCollections!}
+                  handleCardClick={(productId) => {
+                    navigate(`/furniture/${collectionId}/${productId}`);
+                  }}
 
-      </section>
+              />
+
+          </section>
+      }
     </>
   )
 }

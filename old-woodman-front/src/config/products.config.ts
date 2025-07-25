@@ -481,7 +481,7 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'console-provance',
+            id: 'provance',
             title: {
               ru: 'Provance',
               kk: 'Provance',
@@ -497,10 +497,10 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/provance.webp'],
             price: 286000,
-            time:10,
+            time: 10,
           },
           {
-            id: 'console-iberia',
+            id: 'iberia',
             title: {
               ru: 'Iberia',
               kk: 'Iberia',
@@ -516,10 +516,10 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/iberia.webp'],
             price: 286000,
-            time:10,
+            time: 10,
           },
           {
-            id: 'console-mona',
+            id: 'mona',
             title: {
               ru: 'Mona',
               kk: 'Mona',
@@ -534,14 +534,13 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/mona.webp'],
             price: 286000,
-            time:10,
+            time: 10,
           },
           {
-            id: 'console-country',
+            id: 'country',
             title: {
               ru: 'Country',
               kk: 'Country',
-
             },
             pageHeader: {
               ru: 'Деревянная тумбочка для спальни',
@@ -553,7 +552,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp'],
             price: 286000,
-            time:10,
+            time: 10,
           },
         ],
       },
@@ -563,7 +562,85 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Шкафы и полки',
           kk: 'Шкафтар мен сөрелер',
         },
-        items: [],
+        items: [
+          {
+            id: 'siam',
+            title: {
+              ru: 'Siam',
+              kk: 'Siam',
+
+            },
+            pageHeader: {
+              ru: 'Полка для книг SIAM ',
+              kk: 'Кітап сөресі SIAM',
+            },
+            shortName: {
+              ru: 'Полка навесная',
+              kk: 'Полка навесная',
+            },
+            images: ['/images/furniture/wardrobes/siam-1.webp'],
+            price: 239000,
+            time: 10,
+          },
+          {
+            id: 'line',
+            title: {
+              ru: 'Line',
+              kk: 'Line',
+
+            },
+            pageHeader: {
+              ru: 'Полка навесная LINE',
+              kk: 'Полка навесная LINE',
+            },
+            shortName: {
+              ru: 'Полка навесная',
+              kk: 'Полка навесная',
+            },
+            images: ['/images/furniture/wardrobes/line.webp'],
+            price: 239000,
+            time: 10,
+          },
+          {
+            id: 'retro',
+            title: {
+              ru: 'Retro',
+              kk: 'Retro',
+
+            },
+            pageHeader: {
+              ru: 'Шкаф навесной RETRO',
+              kk: 'Шкаф навесной RETRO',
+            },
+            shortName: {
+              ru: 'Шкаф навесной',
+              kk: 'Шкаф навесной',
+            },
+            images: ['/images/furniture/wardrobes/retro.webp'],
+            price: 300000,
+            time: 20,
+          },
+          {
+            id: 'duo',
+            title: {
+              ru: 'Duo',
+              kk: 'Duo',
+
+            },
+            pageHeader: {
+              ru: 'Деревянный шкаф DUO',
+              kk: 'Деревянный шкаф DUO',
+            },
+            shortName: {
+              ru: 'Шкаф',
+              kk: 'Шкаф',
+            },
+            images: ['/images/furniture/wardrobes/duo.webp'],
+            price: 439000,
+            time: 20,
+          },
+
+        ],
       },
       {
         id: 'beds',
