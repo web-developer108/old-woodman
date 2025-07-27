@@ -38,9 +38,7 @@ export const FurnituresDetails: React.FC = () => {
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
   const item = getItemById(collectionId!, productId!);
-  console.log('collectionId', collectionId)
-  console.log('productId', productId)
-  console.log('item', item)
+
   const images = item!.images;
   const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
   const handleOneClick = () => {
@@ -175,6 +173,7 @@ export const FurnituresDetails: React.FC = () => {
               <ProductSlider
                   title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
                   items={filteredCollections}
+                  headingSize = 'large'
                   handleCardClick={(productId) => {
                     navigate(`/furniture/${collectionId}/${productId}`);
                   }}
@@ -189,6 +188,7 @@ export const FurnituresDetails: React.FC = () => {
         <ProductSlider
           title={t('random-title').toUpperCase()}
           items={randomCollection}
+          headingSize = 'large'
           handleCardClick={(productId) => {
             const productDetails = getProductDetailsById(productId);
             if (!productDetails) return;

@@ -18,6 +18,8 @@ import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
+import { ProductSlider } from '../product-slider/product-slider.tsx';
+import { getRandomProducts } from '../../utils/get-random-item.ts';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
@@ -47,6 +49,7 @@ export const DoorsDetails: React.FC = () => {
     getCollectionById,
     getCollectionTitleById,
     getProductById,
+    getProductDetailsById
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
   const productId = searchParams.get('productId');
@@ -110,6 +113,7 @@ export const DoorsDetails: React.FC = () => {
 
 
   if (!collection || !selectedProduct) return null;
+  const randomCollection = getRandomProducts({ count: 5, excludeProductId: productId!, onlyCategoryId: 'furniture' })
 
   return (
     <>
@@ -187,7 +191,7 @@ export const DoorsDetails: React.FC = () => {
           </div>
         </section>
       </div>
-      <section className={styles.article} >
+      <section className={styles.article}>
         <div className={styles.columns}>
           <div className={styles.column}>
             <h2>{t('parameter-header.period').toUpperCase()}</h2>
@@ -231,6 +235,23 @@ export const DoorsDetails: React.FC = () => {
             }
           </div>
         </SimpleBar>
+      </section>
+      <section className={styles.slider}>
+
+        <ProductSlider
+          title={t('random-title').toUpperCase()}
+          items={randomCollection}
+          headingSize = 'large'
+          handleCardClick={(productId) => {
+            const productDetails = getProductDetailsById(productId);
+            if (!productDetails) return;
+
+            const { collection } = productDetails;
+            navigate(`/furniture/${collection.id}/${productId}`);
+          }}
+
+        />
+
       </section>
     </>
   );

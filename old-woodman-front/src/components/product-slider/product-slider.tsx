@@ -13,6 +13,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   title,
   items,
   handleCardClick,
+  headingSize = 'small'
 }) => {
   const { isMobile } = useDevice();
   const { i18n, t } = useTranslation('common');
@@ -22,7 +23,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <h3 className={styles.heading}>
+      <h3 className={`${styles.heading} ${styles[headingSize]}`}>
         {title.toUpperCase()}
       </h3>
       <SimpleBar autoHide={false} className={styles.scrollContainer}>
