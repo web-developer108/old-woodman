@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
 import { useCart } from '../../hooks/cart/cart.tsx';
-import { findProductById } from '../../utils/find-product-by-id.ts';
 import { QuantitySelector } from '../../components/quantity-selector/quantity-selector.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
 import { CloseIcon } from '../../components/icons/close-icon/close-icon.tsx';
@@ -12,17 +12,20 @@ import { OrderSummary } from '../../components/order-summary/order-summary.tsx';
 import type { ProductItem } from '../../config/config.types.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './cart.module.scss'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 const Cart = () => {
   const { t } = usePageTranslate();
   const { cartItems, removeFromCart, updateQuantity } = useCart();
   const { i18n } = useTranslation('common');
+  const { getProductDetailsById } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
+  const category = useCurrentCategory();
 
   const emptyCart = cartItems.length === 0;
   const products = cartItems
     .map((item) => {
-      const data = findProductById(item.id);
+      const data = getProductDetailsById(item.id);
       if (!data) return null;
       return { ...data.product, quantity: item.quantity };
     })
@@ -67,7 +70,7 @@ const Cart = () => {
                         </div>
                         <div className={styles.productName}>
                           <div className={styles.title}>{product.title[lang]}</div>
-                          <div className={styles.title}>{product.description[lang]}</div>
+                          {category === 'doors' && <div className={styles.title}>{product.description![lang]}</div>}
                           <div className={styles.shortName}>{product.shortName?.[lang]}</div>
                         </div>
                       </div>

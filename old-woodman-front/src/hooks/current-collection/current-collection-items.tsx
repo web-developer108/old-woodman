@@ -6,16 +6,31 @@ export const useCurrentCollectionItems = () => {
   const { pathname } = useLocation();
   const { i18n } = useTranslation();
   const lang = i18n.language as 'ru' | 'kk';
-
-  const collectionId = pathname.split('/').filter(Boolean).pop();
+  const segments = pathname.split('/').filter(Boolean);
+  const categoryId = segments[0];
+  const collectionId = segments[1] ?? '';
+  const productId = segments[2];
 
   for (const category of productCatalog) {
-    const collection = category.collections?.find(col => col.id === collectionId);
-    if (collection) {
-      return collection.items.map(item => ({
-        src: item.images[0],
-        label: item.description[lang],
-      }));
+    if (category.id === categoryId) {
+      const collection = category.collections?.find(col => col.id === collectionId);
+      if (!collection) return [];
+
+      if (categoryId === 'doors') {
+        return collection.items.map(item => ({
+          src: item.images[0],
+          label: item.description?.[lang],
+        }));
+      }
+
+      if (categoryId === 'furniture') {
+        const product = collection.items.find(item => item.id === productId);
+        if (!product) return [];
+        return product.images.map(image => ({
+          src: image,
+          label: product.description?.[lang],
+        }));
+      }
     }
   }
 

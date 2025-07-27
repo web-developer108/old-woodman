@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
 import { PictureHeader } from '../../components/picture-header/picture-header';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
@@ -8,6 +10,9 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
@@ -19,11 +24,8 @@ import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
-
 import styles from './doors.module.scss'
-import { Gallery } from '../../components/gallery/gallery.tsx';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+
 
 const doorCollections = [
   { id: 'classica', image: heroImageClassica },
@@ -38,7 +40,8 @@ const doorCollections = [
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
   const infoRef = useRef<HTMLDivElement>(null);
-
+  const { getCollectionById } = useProductCatalog();
+  const navigate = useNavigate();
   const galleryImages = [
     { src: gallery1, alt: 'Большая дверь' },
     { src: gallery2, alt: 'Доски' },
@@ -72,23 +75,30 @@ const DoorsOverview = () => {
             <SocialButtons/>
           </div>
 
-          {doorCollections.map(({ id, image }) => (
-            <React.Fragment key={id}>
-              <ResponsiveCard
-                image={image}
-                title={t(`title-${id}`)}
-                description={t(`description-${id}`)}
-                comment={t('comment-text')}
-              />
-              <div className={styles.previewWrap}>
-                <ProductSlider
-                  title={t('preview-title')}
-                  categoryId="doors"
-                  collectionId={id}
-                />
-              </div>
-            </React.Fragment>
-          ))}
+          {doorCollections.map(({ id, image }) => {
+              const collection = getCollectionById(id);
+              const items = collection?.items || [];
+              return (
+                <React.Fragment key={id}>
+                  <ResponsiveCard
+                    image={image}
+                    title={t(`title-${id}`)}
+                    description={t(`description-${id}`)}
+                    comment={t('comment-text')}
+                  />
+                  <div className={styles.previewWrap}>
+                    <ProductSlider
+                      title={t('preview-title')}
+                      items={items}
+                      handleCardClick={(productId) => {
+                        navigate(`/doors/${id}?productId=${productId}`);
+                      }}
+                    />
+                  </div>
+                </React.Fragment>
+              )
+            }
+          )}
         </section>
         <section className={styles.article}>
           <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
@@ -110,7 +120,7 @@ const DoorsOverview = () => {
             <Gallery images={galleryImages} layout='complex'/>
           </div>
           <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
-          <div  id = 'info' ref = {infoRef} className={styles.checkColumns}>
+          <div id='info' ref={infoRef} className={styles.checkColumns}>
             <ul className={styles.checklist}>
               <li>{t('article2-text-1')}</li>
               <li>{t('article2-text-2')}</li>

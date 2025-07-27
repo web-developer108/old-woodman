@@ -6,12 +6,18 @@ export type LanguageText = {
 export interface ProductItem {
   id: string;
   title: LanguageText;
-  titleMob: LanguageText;
-  description: LanguageText;
+  titleMob?: LanguageText;
+  description?: LanguageText;
+  pageHeader?: LanguageText;
   shortName: LanguageText;
   images: string[];
   price: number;
-
+  time?:number;
+  sizes?: {
+    width: number;
+    height: number;
+    depth: number;
+  };
 }
 
 export interface ProductCollection {

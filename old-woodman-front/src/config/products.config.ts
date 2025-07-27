@@ -403,7 +403,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-big.webp'],
-            price: 800000,
+            price: 0,
           },
           {
             id: 'exclusive-strict',
@@ -424,7 +424,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-small.webp'],
-            price: 300000,
+            price: 0,
           },
         ],
       },
@@ -479,7 +479,82 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Консоли и тумбы',
           kk: 'Консольдар мен тумбалар',
         },
-        items: [],
+        items: [
+          {
+            id: 'provance',
+            title: {
+              ru: 'Provance',
+              kk: 'Provance',
+
+            },
+            pageHeader: {
+              ru: 'Консоль из массива Provance',
+              kk: 'Provance табиғи ағаш консольі',
+            },
+            shortName: {
+              ru: 'Консоль',
+              kk: 'Консоль',
+            },
+            images: ['/images/furniture/consoles/provance.webp'],
+            price: 286000,
+            time: 10,
+          },
+          {
+            id: 'iberia',
+            title: {
+              ru: 'Iberia',
+              kk: 'Iberia',
+
+            },
+            pageHeader: {
+              ru: 'Консоль для ванной ',
+              kk: 'Ваннаға арналған консоль',
+            },
+            shortName: {
+              ru: 'Консоль приставная',
+              kk: 'Консоль приставная',
+            },
+            images: ['/images/furniture/consoles/iberia.webp'],
+            price: 286000,
+            time: 10,
+          },
+          {
+            id: 'mona',
+            title: {
+              ru: 'Mona',
+              kk: 'Mona',
+            },
+            pageHeader: {
+              ru: 'Консоль в прихожую Mona',
+              kk: 'Mona кіреберіс консольі',
+            },
+            shortName: {
+              ru: 'Консоль навеснаяя',
+              kk: 'Консоль навеснаяя',
+            },
+            images: ['/images/furniture/consoles/mona.webp'],
+            price: 286000,
+            time: 10,
+          },
+          {
+            id: 'country',
+            title: {
+              ru: 'Country',
+              kk: 'Country',
+            },
+            pageHeader: {
+              ru: 'Деревянная тумбочка для спальни',
+              kk: 'Жатын бөлмеге арналған ағаш тумба',
+            },
+            shortName: {
+              ru: 'Тумба',
+              kk: 'Тумба',
+            },
+            images: ['/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp'],
+            price: 286000,
+            time: 10,
+          },
+        ],
       },
       {
         id: 'wardrobes',
@@ -487,7 +562,66 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Шкафы и полки',
           kk: 'Шкафтар мен сөрелер',
         },
-        items: [],
+        items: [
+          {
+            id: 'siam',
+            title: {
+              ru: 'Siam',
+              kk: 'Siam',
+
+            },
+            pageHeader: {
+              ru: 'Полка для книг Siam ',
+              kk: 'Siam кітап сөресі',
+            },
+            shortName: {
+              ru: 'Полка навесная',
+              kk: 'Полка навесная',
+            },
+            images: ['/images/furniture/wardrobes/siam-1.webp'],
+            price: 239000,
+            time: 10,
+          },
+          {
+            id: 'mini',
+            title: {
+              ru: 'Mini',
+              kk: 'Mini',
+
+            },
+            pageHeader: {
+              ru: 'Полка навесная Mini',
+              kk: 'Полка навесная Mini',
+            },
+            shortName: {
+              ru: 'Полка настенная',
+              kk: 'Полка настенная',
+            },
+            images: ['/images/furniture/wardrobes/mini.webp'],
+            price: 239000,
+            time: 10,
+          },
+          {
+            id: 'retro',
+            title: {
+              ru: 'Retro',
+              kk: 'Retro',
+
+            },
+            pageHeader: {
+              ru: 'Шкаф навесной Retro',
+              kk: 'Шкаф навесной Retro',
+            },
+            shortName: {
+              ru: 'Витрина',
+              kk: 'Витрина',
+            },
+            images: ['/images/furniture/wardrobes/retro.webp'],
+            price: 300000,
+            time: 20,
+          },
+
+        ],
       },
       {
         id: 'beds',
@@ -495,15 +629,55 @@ export const productCatalog: ProductCategory[] = [
           ru: 'Кровати',
           kk: 'Кереуеттер',
         },
-        items: [],
+        items: [
+          {
+            id: 'tatami',
+            title: {
+              ru: 'Tatami',
+              kk: 'Tatami',
+
+            },
+            pageHeader: {
+              ru: 'Деревянная кровать в японском стиле',
+              kk: 'Жапон стиліндегі ағаш төсек',
+            },
+            shortName: {
+              ru: 'Кровать',
+              kk: 'Кровать',
+            },
+            images: ['/images/furniture/beds/tatami.webp'],
+            price: 200000,
+            time: 20,
+          },
+        ],
       },
       {
-        id: 'armchairs',
+        id: 'chairs',
         title: {
           ru: 'Кресла',
           kk: 'Креслолар',
         },
-        items: [],
+        items: [
+          {
+            id: 'alma-ata',
+            title: {
+              ru: 'Alma-Ata',
+              kk: 'Alma-Ata',
+
+            },
+            pageHeader: {
+              ru: 'Кресло Alma-Ata',
+              kk: 'Алма-Ата креслосы',
+            },
+            shortName: {
+              ru: 'Кресло',
+              kk: 'Кресло',
+            },
+            images: ['/images/furniture/chairs/alma-ata.webp'],
+            price: 200000,
+            time: 20,
+          },
+        ],
       },
     ],
   },
