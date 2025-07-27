@@ -13,7 +13,11 @@ export interface ProductItem {
   images: string[];
   price: number;
   time?:number;
-
+  sizes?: {
+    width: number;
+    height: number;
+    depth: number;
+  };
 }
 
 export interface ProductCollection {

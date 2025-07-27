@@ -14,8 +14,8 @@ import { getDescriptionLines } from '../../utils/get-description-lines.ts';
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
-import styles from '../doors-details/doors-details.module.scss';
 import { getRandomProducts } from '../../utils/get-random-item.ts';
+import styles from '../doors-details/doors-details.module.scss';
 
 export const FurnituresDetails: React.FC = () => {
   const navigate = useNavigate();
@@ -34,9 +34,13 @@ export const FurnituresDetails: React.FC = () => {
     getCollectionById,
     getItemById,
     getProductById,
+    getProductDetailsById
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
   const item = getItemById(collectionId!, productId!);
+  console.log('collectionId', collectionId)
+  console.log('productId', productId)
+  console.log('item', item)
   const images = item!.images;
   const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
   const handleOneClick = () => {
@@ -46,6 +50,7 @@ export const FurnituresDetails: React.FC = () => {
     addToCart(productId!)
     showModal(<CartModal id={productId!}/>);
   };
+
   useEffect(() => {
     if (!productId || !images?.length) return;
     const index = images.findIndex((img) =>
@@ -185,7 +190,11 @@ export const FurnituresDetails: React.FC = () => {
           title={t('random-title').toUpperCase()}
           items={randomCollection}
           handleCardClick={(productId) => {
-            navigate(`/furniture/${collectionId}/${productId}`);
+            const productDetails = getProductDetailsById(productId);
+            if (!productDetails) return;
+
+            const { collection } = productDetails;
+            navigate(`/furniture/${collection.id}/${productId}`);
           }}
 
         />
