@@ -15,6 +15,7 @@ import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
 import styles from '../doors-details/doors-details.module.scss';
+import { getRandomProducts } from '../../utils/get-random-item.ts';
 
 export const FurnituresDetails: React.FC = () => {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ export const FurnituresDetails: React.FC = () => {
   if (!product) return <div>Product not found</div>;
   const items = getCollectionById(collectionId!);
   const filteredCollections = items?.items.filter(item => item.id !== productId)
+  const randomCollection = getRandomProducts({ count: 5, excludeProductId: productId, onlyCategoryId: 'furniture' })
 
   return (
     <>
@@ -167,7 +169,7 @@ export const FurnituresDetails: React.FC = () => {
 
               <ProductSlider
                   title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
-                  items={filteredCollections!}
+                  items={filteredCollections}
                   handleCardClick={(productId) => {
                     navigate(`/furniture/${collectionId}/${productId}`);
                   }}
@@ -176,6 +178,20 @@ export const FurnituresDetails: React.FC = () => {
 
           </section>
       }
+
+      <section className={styles.slider}>
+
+        <ProductSlider
+          title={t('random-title').toUpperCase()}
+          items={randomCollection}
+          handleCardClick={(productId) => {
+            navigate(`/furniture/${collectionId}/${productId}`);
+          }}
+
+        />
+
+      </section>
+
     </>
   )
 }
