@@ -5,6 +5,7 @@ const Home = lazy(() => import('../pages/home/home.tsx'));
 
 const DoorsOverview = lazy(() => import('../pages/doors/doors'));
 const ProductPage = lazy(() => import('../pages/product-page/product-page.tsx'));
+const Redirect = lazy(() => import('../components/redirect/redirect'));
 
 const FurnitureOverview = lazy(() => import('../pages/furniture/furniture'));
 
@@ -26,6 +27,7 @@ const routes: RouteObject[] = [
   { path: '/doors', element: <DoorsOverview/> },
   { path: '/doors/:collectionId', element: <ProductPage/> },
   { path: '/furniture', element: <FurnitureOverview/> },
+  { path: '/furniture/:collectionId', element: <Redirect/> },
   { path: '/furniture/:collectionId/:id', element: <ProductPage/> },
 
   { path: '/facades', element: <Facades/> },

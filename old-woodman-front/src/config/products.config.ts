@@ -583,21 +583,21 @@ export const productCatalog: ProductCategory[] = [
             time: 10,
           },
           {
-            id: 'line',
+            id: 'mini',
             title: {
-              ru: 'Line',
-              kk: 'Line',
+              ru: 'Mini',
+              kk: 'Mini',
 
             },
             pageHeader: {
-              ru: 'Полка навесная Line',
-              kk: 'Полка навесная Line',
+              ru: 'Полка навесная Mini',
+              kk: 'Полка навесная Mini',
             },
             shortName: {
-              ru: 'Полка навесная',
-              kk: 'Полка навесная',
+              ru: 'Полка настенная',
+              kk: 'Полка настенная',
             },
-            images: ['/images/furniture/wardrobes/line.webp'],
+            images: ['/images/furniture/wardrobes/mini.webp'],
             price: 239000,
             time: 10,
           },
@@ -613,30 +613,11 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Шкаф навесной Retro',
             },
             shortName: {
-              ru: 'Шкаф навесной',
-              kk: 'Шкаф навесной',
+              ru: 'Витрина',
+              kk: 'Витрина',
             },
             images: ['/images/furniture/wardrobes/retro.webp'],
             price: 300000,
-            time: 20,
-          },
-          {
-            id: 'duo',
-            title: {
-              ru: 'Duo',
-              kk: 'Duo',
-
-            },
-            pageHeader: {
-              ru: 'Деревянный шкаф DUO',
-              kk: 'Деревянный шкаф DUO',
-            },
-            shortName: {
-              ru: 'Шкаф',
-              kk: 'Шкаф',
-            },
-            images: ['/images/furniture/wardrobes/duo.webp'],
-            price: 439000,
             time: 20,
           },
 
