@@ -16,6 +16,6 @@ const Redirect: React.FC = () => {
     return <NotFound/>;
   }
 
-  return <Navigate to={`/${category}/${collectionId}/${firstItemId}`} replace />;
+  return <Navigate to={`/${category}/${collectionId}/${firstItemId}`} replace/>;
 };
 export default Redirect;
