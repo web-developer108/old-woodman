@@ -11,13 +11,11 @@ import mirror from '@assets/images/gifts/mirror-big.webp'
 import styles from './gifts.module.scss'
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 
-
-
 const Gifts = () => {
   const { t } = usePageTranslate();
   const galleryImages = [
-    { src: clock, alt: 'Часы' },
-    { src:mirror, alt: 'Зеркало' },
+    { src: clock, alt: 'Эксклюзивные часы из древесины карагача' },
+    { src: mirror, alt: 'Зеркало в деревянной раме в современном интерьере' },
 
   ];
   return (

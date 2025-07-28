@@ -17,15 +17,11 @@ import styles from './facades.module.scss';
 const Facades = () => {
   const { t } = usePageTranslate();
   const galleryImages = [
-    { src: gallery1, alt: 'Лампа' },
-    { src: gallery2, alt: 'Экран' },
-    { src: gallery3, alt: 'Экран в работе' },
-    { src: gallery4, alt: 'Большой экран' },
-    { src: gallery5, alt: 'Экран черный' },
-    { src: gallery2, alt: 'Экран' },
-    { src: gallery3, alt: 'Экран в работе' },
-    { src: gallery4, alt: 'Большой экран' },
-    { src: gallery5, alt: 'Экран черный' },
+    { src: gallery1, alt: 'Деревянные стеновые панели для кафе в Алматы' },
+    { src: gallery2, alt: 'Деревянные стеновые панели с готической резьбой и принтом ' },
+    { src: gallery3, alt: 'Светлые деревянные мебельные фасады из массива в столярном цеху в Алматы' },
+    { src: gallery4, alt: 'Деревянные стеновые панели с готической резьбой в интерьере кафе в Алматы' },
+    { src: gallery5, alt: 'Тёмные деревянные мебельные фасады из массива в столярном цеху в Алматы' },
   ];
 
   return (

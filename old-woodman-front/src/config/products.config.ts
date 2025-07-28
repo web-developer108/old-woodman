@@ -40,6 +40,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/classica/iney.webp'],
             price: 286000,
+            alt:'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, покрытие белое масло'
           },
           {
             id: 'classica-iney-glass',
@@ -61,6 +62,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/classica/iney-glass.webp'],
             price: 286000,
+            alt:'Межкомнатная белая деревянная дверь со стеклом из массивана заказ в Алматы, покрытие белое масло',
           },
           {
             id: 'classica-dub',
@@ -82,6 +84,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/classica/dub.webp'],
             price: 286000,
+            alt:'Межкомнатная деревянная дверь из массива на заказ в Алматы, покрытие маслом цвета дуб'
           },
         ],
       },
@@ -117,6 +120,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/loft/teak.webp'],
             price: 286000,
+            alt: 'межкомнатная деревянная дверь в стиле LOFT на белом фоне'
           },
           {
             id: 'loft-teak-duo',
@@ -138,6 +142,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/loft/teak-duo.webp'],
             price: 540000,
+            alt: 'межкомнатная двойная деревянная дверь в стиле LOFT на белом фоне'
           },
         ],
       },
@@ -173,6 +178,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/deco/deco.webp'],
             price: 286000,
+            alt: 'Деревянная дверь с рельефной филёнкой из массива, цвет покрытия "золотисный дуб"'
           },
           {
             id: 'deco-oak-duo',
@@ -194,6 +200,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/deco/deco-duo.webp'],
             price: 540000,
+            alt: 'Двойная деревянная дверь с рельефной филёнкой из массива, цвет покрытия "золотисный дуб"'
           },
         ],
       },
@@ -229,6 +236,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/rustic/rustic-arched.webp'],
             price: 286000,
+            alt: 'Деревянная дверь из досок полукруглой формы с декоративной дверкой на белом фоне, цвет "злотой дуб" в Алматы'
           },
           {
             id: 'rustic-simple',
@@ -250,6 +258,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/rustic/rustic-simple.webp'],
             price: 286000,
+            alt: 'Деревянная дверь из досок в этническом стиле на белом фоне, цвет "злотой дуб" в Алматы'
           },
         ],
       },
@@ -285,6 +294,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/cabinet/scandinavia.webp'],
             price: 286000,
+            alt: 'Фрезированная деревянная межкомнатная дверь из карельской сосны в скандинавском стиле'
           },
           {
             id: 'cabinet-europe',
@@ -306,6 +316,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/cabinet/europe.webp'],
             price: 286000,
+            alt: 'Межкомнатная  дверь из массива дуба или других элитных пород'
           },
           {
             id: 'cabinet-ethiopia',
@@ -327,6 +338,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/cabinet/ethiopia.webp'],
             price: 286000,
+            alt: 'Фрезированная межкомнатная дверь из массива сосны, цвет морёный дуб'
           },
           {
             id: 'cabinet-versailles',
@@ -348,6 +360,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/cabinet/versailles.webp'],
             price: 286000,
+            alt: 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
           },
           {
             id: 'cabinet-versailles-duo',
@@ -369,6 +382,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/cabinet/versailles-duo.webp'],
             price: 540000,
+            alt: 'Межкомнатная белая двойная деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
           },
         ],
       },
@@ -404,6 +418,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/exclusive/exclusive-big.webp'],
             price: 0,
+            alt: 'Эксклюзивная деревянная дверь с открыванием "книжка" на белом фоне'
           },
           {
             id: 'exclusive-strict',
@@ -425,6 +440,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/exclusive/exclusive-small.webp'],
             price: 0,
+            alt: 'Эксклюзивная деревянная дверь полукруглой формы из массива на белом фоне, цвет дуб'
           },
         ],
       },
@@ -460,6 +476,7 @@ export const productCatalog: ProductCategory[] = [
             },
             images: ['/images/doors/balcony/balcony-dark.webp'],
             price: 286000,
+            alt: 'Деревянная балконная дверь со стеклопакетом из массива сосны, цвет "тик"'
           },
         ],
       },
@@ -498,6 +515,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/consoles/provance.webp'],
             price: 286000,
             time: 10,
+            alt:'Деревянная  консоль в стиле прованс на заказ в Алматы'
           },
           {
             id: 'iberia',
@@ -517,6 +535,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/consoles/iberia.webp'],
             price: 286000,
             time: 10,
+            alt:'Деревянная  консоль для ванной с керамической столешницей на белом фоне в Алматы'
           },
           {
             id: 'mona',
@@ -535,6 +554,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/consoles/mona.webp'],
             price: 286000,
             time: 10,
+            alt: 'Деревянная подвесная консоль в стиле минимализм'
           },
           {
             id: 'country',
@@ -553,6 +573,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp', '/images/furniture/consoles/country.webp'],
             price: 286000,
             time: 10,
+            alt:'Деревянная тумбочка на высоких ножках с одним ящиком в стиле Country '
           },
         ],
       },
@@ -581,6 +602,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/wardrobes/siam-1.webp'],
             price: 239000,
             time: 10,
+            alt: 'Навесная деревянная полка для книг из бука в стиле  мид сентури'
           },
           {
             id: 'mini',
@@ -600,6 +622,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/wardrobes/mini.webp'],
             price: 239000,
             time: 10,
+            alt: 'Деревянная полка для гостинной, кухни, над комодом'
           },
           {
             id: 'retro',
@@ -619,6 +642,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/wardrobes/retro.webp'],
             price: 300000,
             time: 20,
+            alt: 'Деревяная витрина для посуды в ретро стиле для кухни или гостинной'
           },
 
         ],
@@ -648,6 +672,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/beds/tatami.webp'],
             price: 200000,
             time: 20,
+            alt: 'Японская деревянная двуспальная кровать c держателем под матрас из досок '
           },
         ],
       },
@@ -676,6 +701,7 @@ export const productCatalog: ProductCategory[] = [
             images: ['/images/furniture/chairs/alma-ata.webp'],
             price: 200000,
             time: 20,
+            alt: 'Серое деревянное кресло в стиле ретро из бука'
           },
         ],
       },

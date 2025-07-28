@@ -32,7 +32,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
             <div className={styles.imageWrapper} onClick={() => handleCardClick(item.id)}>
               <img
                 src={item.images[0]}
-                alt={item.title[lang]}
+                alt={item.alt}
                 className={styles.image}
               />
             </div>

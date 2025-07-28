@@ -3,4 +3,5 @@ export interface ResponsiveCardProps {
   title: string;
   description: string | string[];
   comment?: string;
+  alt?:string;
 }

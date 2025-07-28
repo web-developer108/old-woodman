@@ -13,6 +13,7 @@ export interface ProductItem {
   images: string[];
   price: number;
   time?:number;
+  alt:string;
   sizes?: {
     width: number;
     height: number;
