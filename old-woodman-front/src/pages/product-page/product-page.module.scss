@@ -1,6 +1,13 @@
 .pageContainer {
   max-width: 1180px;
   margin: 0 auto;
+  @media (max-width: 1220px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 810px) {
+    padding: 0 12px;
+    margin-top: 12px;
+  }
 
   .topContainer {
     display: flex;
@@ -8,12 +15,6 @@
     justify-content: space-between;
     margin-top: 48px;
     align-items: center;
-    @media (max-width: 1224px) {
-      padding: 0 12px;
-    }
-    @media (max-width: 810px) {
-      margin-top: 12px;
-    }
   }
 
   .textInfo {
@@ -24,12 +25,12 @@
     padding: 65px;
     box-sizing: border-box;
     @media (max-width: 1240px) {
-      padding: 48px 24px;
-      margin: 0 24px 96px 24px;
+      padding: 48px 0;
+      margin: 0 0 112px 0;
     }
     @media (max-width: 810px) {
-      padding: 48px 14px;
-      margin: 0 12px 96px 12px;
+      padding: 48px 0;
+      margin: 0 0 96px 0;
     }
   }
 }

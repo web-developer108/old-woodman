@@ -26,15 +26,30 @@ import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
 import styles from './doors.module.scss'
 
-
 const doorCollections = [
-  { id: 'classica', image: heroImageClassica },
-  { id: 'loft', image: heroImageLoft },
-  { id: 'deco', image: heroImageDeco },
-  { id: 'cabinet', image: heroImageCabinet },
-  { id: 'rustic', image: heroImageRustic },
-  { id: 'exclusive', image: heroImageExclusive },
-  { id: 'balcony', image: heroImageBalcony },
+  {
+    id: 'classica',
+    image: heroImageClassica,
+    alt: 'Белая деревянная дверь со стеклом в интерьере кухни, деревянный кухонный гарнитур на заказ в Алматы'
+  },
+  { id: 'loft', image: heroImageLoft, alt: 'Межкомнатная двойная деревянная дверь в интерьере в стиле LOFT' },
+  {
+    id: 'deco',
+    image: heroImageDeco,
+    alt: 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
+  },
+  {
+    id: 'cabinet',
+    image: heroImageCabinet,
+    alt: 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
+  },
+  { id: 'rustic', image: heroImageRustic, alt: 'Деревянная дверь в этническом стиле из досок в каменной стене' },
+  {
+    id: 'exclusive',
+    image: heroImageExclusive,
+    alt: 'Эксклюзивная деревянная дверь с открыванием "книжка" в интерьере в стиле шато'
+  },
+  { id: 'balcony', image: heroImageBalcony, alt: 'Деревянная балконная дверь на фасаде здания' },
 ];
 
 const DoorsOverview = () => {
@@ -43,7 +58,7 @@ const DoorsOverview = () => {
   const { getCollectionById } = useProductCatalog();
   const navigate = useNavigate();
   const galleryImages = [
-    { src: gallery1, alt: 'Большая дверь' },
+    { src: gallery1, alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля' },
     { src: gallery2, alt: 'Доски' },
     { src: gallery3, alt: 'Инструмент' },
     { src: gallery4, alt: 'Мастерская' },
@@ -75,7 +90,7 @@ const DoorsOverview = () => {
             <SocialButtons/>
           </div>
 
-          {doorCollections.map(({ id, image }) => {
+          {doorCollections.map(({ id, image, alt }) => {
               const collection = getCollectionById(id);
               const items = collection?.items || [];
               return (
@@ -85,13 +100,14 @@ const DoorsOverview = () => {
                     title={t(`title-${id}`)}
                     description={t(`description-${id}`)}
                     comment={t('comment-text')}
+                    alt = {alt}
                   />
                   <div className={styles.previewWrap}>
                     <ProductSlider
                       title={t('preview-title')}
                       items={items}
                       handleCardClick={(productId) => {
-                        navigate(`/doors/${id}?productId=${productId}`);
+                        navigate(`/doors/${id}/${productId}`);
                       }}
                     />
                   </div>

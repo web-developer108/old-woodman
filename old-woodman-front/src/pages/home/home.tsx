@@ -39,15 +39,11 @@ const Home = () => {
   }, []);
 
   const galleryImages = [
-    { src: gallery1, alt: 'Lamp' },
-    { src: gallery2, alt: 'Door and sofa' },
-    { src: gallery3, alt: 'Sofa' },
-    { src: gallery4, alt: 'Door' },
-    { src: gallery5, alt: 'Interior' },
-    { src: gallery2, alt: 'Door and sofa' },
-    { src: gallery3, alt: 'Sofa' },
-    { src: gallery4, alt: 'Door' },
-    { src: gallery5, alt: 'Interior' },
+    { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
+    { src: gallery2, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
+    { src: gallery3, alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки' },
+    { src: gallery4, alt: 'Элемент деревянной двери со стеклопакетом для балкона ' },
+    { src: gallery5, alt: 'Деревяная классическая дверь из массива сосны в интерьере кабинета' },
   ];
 
   return (

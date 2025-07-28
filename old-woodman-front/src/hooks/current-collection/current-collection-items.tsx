@@ -20,6 +20,7 @@ export const useCurrentCollectionItems = () => {
         return collection.items.map(item => ({
           src: item.images[0],
           label: item.description?.[lang],
+          alt: item.alt,
         }));
       }
 
@@ -29,6 +30,7 @@ export const useCurrentCollectionItems = () => {
         return product.images.map(image => ({
           src: image,
           label: product.description?.[lang],
+          alt: product.alt,
         }));
       }
     }

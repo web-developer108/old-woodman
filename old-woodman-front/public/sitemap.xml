@@ -2,13 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url><loc>https://oldwoodman.kz/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
     <url><loc>https://oldwoodman.kz/doors</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://oldwoodman.kz/doors/classic</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/classica</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/classica/classica-iney</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/classica/classica-iney-glass</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/classica/classica-dub</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/loft</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://oldwoodman.kz/doors/cabinet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/loft/loft-teak</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/loft/loft-teak-duo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/deco</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/deco/deco-oak</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/deco/deco-oak-duo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/rustic</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/rustic/rustic-arched</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/rustic/rustic-simpled</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-scandinavia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-europe</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-ethiopia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-versailles</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-versailles-duo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/exclisive</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/exclisive/exclusive-folding</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/exclisive/exclusive-strict</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/balcony</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/balcony/balcony-dark</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture/consoles</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture/consoles/provance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

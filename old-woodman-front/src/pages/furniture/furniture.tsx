@@ -23,20 +23,28 @@ import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 
 const furnitureCollections = [
-  { id: 'consoles', image: heroImageConsoles },
-  { id: 'wardrobes', image: heroImageWardrobes },
-  { id: 'beds', image: heroImageBeds },
-  { id: 'chairs', image: heroImageChairs },
+  {
+    id: 'consoles',
+    image: heroImageConsoles,
+    alt: 'Деревянная подвесная консоль в интерьере с постером Медео в Алматы'
+  },
+  {
+    id: 'wardrobes',
+    image: heroImageWardrobes,
+    alt: 'Шкаф дубовый в современном интерьере с фасадами с рельефной филёнкой'
+  },
+  { id: 'beds', image: heroImageBeds, alt: 'Деревянная двуспальная кровать в современной интерьере' },
+  { id: 'chairs', image: heroImageChairs, alt: 'Деревянное кресло в стиле ретро в  современном интерьере' },
 
 ];
 
 const FurnitureOverview: React.FC = () => {
   const { t } = usePageTranslate();
   const galleryImages = [
-    { src: gallery1, alt: 'Большая дверь' },
-    { src: gallery2, alt: 'Доски' },
-    { src: gallery3, alt: 'Инструмент' },
-    { src: gallery4, alt: 'Мастерская' },
+    { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
+    { src: gallery2, alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы' },
+    { src: gallery3, alt: 'Деревянная консоль в стиле Прованс с лампой и книгой' },
+    { src: gallery4, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной' },
 
   ];
   return (
@@ -58,13 +66,14 @@ const FurnitureOverview: React.FC = () => {
           <div className={styles.socialButtons}>
             <SocialButtons/>
           </div>
-          {furnitureCollections.map(({ id, image }) => (
+          {furnitureCollections.map(({ id, image, alt }) => (
             <React.Fragment key={id}>
               <ResponsiveCard
                 image={image}
                 title={t(`title-${id}`)}
                 description={getFurnitureDescriptionLines(id, t)}
                 comment={t(`comment-text-${id}`)}
+                alt={alt}
               />
               <div className={styles.previewWrap}>
                 <CardsPreview

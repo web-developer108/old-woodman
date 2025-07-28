@@ -23,9 +23,9 @@ const NotFound = lazy(() => import('../pages/not-found/not-found'));
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home/> },
-
   { path: '/doors', element: <DoorsOverview/> },
-  { path: '/doors/:collectionId', element: <ProductPage/> },
+  { path: '/doors/:collectionId', element: <Redirect/> },
+  { path: '/doors/:collectionId/:id', element: <ProductPage/> },
   { path: '/furniture', element: <FurnitureOverview/> },
   { path: '/furniture/:collectionId', element: <Redirect/> },
   { path: '/furniture/:collectionId/:id', element: <ProductPage/> },

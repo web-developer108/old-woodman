@@ -80,7 +80,7 @@ export const ImageSlider: React.FC<SliderProps> = ({
               className={`${styles.card} ${selectedIndex === i ? styles.selected : ''}`}
               onClick={() => scrollToIndex(i)}
             >
-              <img src={img.src} alt={img.label} className={styles.image}/>
+              <img src={img.src} alt={img.alt} className={styles.image}/>
             </div>
           ))}
         </div>

@@ -33,7 +33,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
               <div className={styles.imageWrapper} onClick={() => handleCardClick(item.id)}>
                 <img
                   src={item.images[0]}
-                  alt={item.title[lang]}
+                  alt={item.alt}
                   className={styles.image}
                 />
               </div>

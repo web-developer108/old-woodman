@@ -12,6 +12,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   title,
   description,
   comment,
+  alt
 }) => {
   const { t } = useTranslation('common');
   const { isMobile, screenWidth } = useDevice();
@@ -29,7 +30,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} className={styles.image}/>
+        <img src={image} alt={alt} className={styles.image}/>
       </div>
 
       <div className={styles.content}>
