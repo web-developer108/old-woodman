@@ -37,12 +37,11 @@ export const DoorsDetails: React.FC = () => {
   const { isMobile } = useDevice();
   const { isInCart, addToCart } = useCart();
   const { showModal } = useModal()
-  const {id: productId, collectionId } = useParams();
+  const { id: productId, collectionId } = useParams();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
   const simpleBarRef = useRef<any>(null);
-
 
   const {
     getCollectionById,
@@ -51,7 +50,6 @@ export const DoorsDetails: React.FC = () => {
     getProductDetailsById
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
-
 
   const collection = getCollectionById(collectionId!);
 
@@ -84,7 +82,6 @@ export const DoorsDetails: React.FC = () => {
     return doorCollections.filter((item) => item.id !== collection?.id);
   }, [doorCollections, collection?.id]);
 
-
   useEffect(() => {
     const handleResize = () => {
       simpleBarRef.current?.recalculate();
@@ -111,9 +108,15 @@ export const DoorsDetails: React.FC = () => {
     simpleBarRef.current?.recalculate();
   }, [filteredCollections]);
 
+  const randomCollection = useMemo(() => {
+    return getRandomProducts({
+      count: 5,
+      excludeProductId: productId,
+      onlyCategoryId: 'furniture',
+    });
+  }, [productId]);
 
   if (!collection || !selectedProduct) return null;
-  const randomCollection = getRandomProducts({ count: 5, excludeProductId: productId!, onlyCategoryId: 'furniture' })
 
   return (
     <>
@@ -135,7 +138,6 @@ export const DoorsDetails: React.FC = () => {
               selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
               onSelect={(index) => {
                 const selected = collection.items[index];
-                /*navigate(`/doors/${collection.id}?productId=${selected.id}`);*/
                 navigate(`/doors/${collection.id}/${selected.id}`);
               }}
             />
@@ -242,7 +244,7 @@ export const DoorsDetails: React.FC = () => {
         <ProductSlider
           title={t('random-title').toUpperCase()}
           items={randomCollection}
-          headingSize = 'large'
+          headingSize='large'
           handleCardClick={(productId) => {
             const productDetails = getProductDetailsById(productId);
             if (!productDetails) return;

@@ -5,12 +5,12 @@
   display: flex;
   gap: 56px;
   justify-content: space-between;
-  padding: 24px;
+  padding: 24px 0;
 
   @media (max-width: 810px) {
     flex-direction: column;
     gap: 36px;
-    padding: 12px;
+    padding: 12px 0;
   }
 
   .imagesWrap {
@@ -255,9 +255,9 @@
 .article {
   max-width: 1180px;
   margin: 0 auto 56px;
-  padding: 24px;
+  padding: 24px 0;
   @media (max-width: 810px) {
-    padding: 12px;
+    padding: 12px 0;
   }
 
   .columns {
@@ -292,6 +292,10 @@
           margin-bottom: 20px;
         }
       }
+
+      .sizeSpan {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -305,12 +309,14 @@
   margin: 0 auto;
   overflow-x: hidden;
   @media (max-width: 810px) {
-    padding: 12px;
+    padding: 12px 0;
   }
-  .sliderTitle{
+
+  .sliderTitle {
     margin-bottom: 24px;
     @include mixins.headingLarge;
   }
+
   .wrapper {
     padding-bottom: 20px;
     position: relative;
@@ -351,10 +357,12 @@
           justify-content: space-between;
           align-items: center;
           padding: 10px 6px;
+
           span {
             display: block;
           }
-          button{
+
+          button {
             @media (max-width: 810px) {
               width: 40px;
               height: 40px;
