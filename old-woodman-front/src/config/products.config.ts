@@ -400,17 +400,17 @@ export const productCatalog: ProductCategory[] = [
           {
             id: 'exclusive-folding',
             title: {
-              ru: 'Exclusive',
-              kk: 'Exclusive',
+              ru: 'Эксклюзивная',
+              kk: 'Эксклюзив',
 
             },
             titleMob: {
-              ru: 'Exclusive, стильная',
-              kk: 'Exclusive, стильная',
+              ru: 'Эксклюзивная, ШАТО',
+              kk: 'Эксклюзивная, ШАТО',
             },
             description: {
-              ru: 'Стильная',
-              kk: 'Стильная',
+              ru: 'Дверь ШАТО',
+              kk: 'Дверь ШАТО',
             },
             shortName: {
               ru: 'Дверь',
@@ -423,16 +423,16 @@ export const productCatalog: ProductCategory[] = [
           {
             id: 'exclusive-strict',
             title: {
-              ru: 'Exclusive',
-              kk: 'Exclusive',
+              ru: 'Эксклюзивная',
+              kk: 'Эксклюзив',
             },
             titleMob: {
-              ru: 'Exclusive, строгая',
-              kk: 'Exclusive, строгая',
+              ru: 'Эксклюзивная, ARCH',
+              kk: 'Эксклюзивная, ARCH',
             },
             description: {
-              ru: 'Строгая',
-              kk: 'Строгая',
+              ru: 'Дверь ARCH',
+              kk: 'Дверь ARCH',
             },
             shortName: {
               ru: 'Дверь',
