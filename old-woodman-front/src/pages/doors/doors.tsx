@@ -91,7 +91,8 @@ const DoorsOverview = () => {
                       title={t('preview-title')}
                       items={items}
                       handleCardClick={(productId) => {
-                        navigate(`/doors/${id}?productId=${productId}`);
+                        /*navigate(`/doors/${id}?productId=${productId}`);*/
+                        navigate(`/doors/${id}/${productId}`);
                       }}
                     />
                   </div>

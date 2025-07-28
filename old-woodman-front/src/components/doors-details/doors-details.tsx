@@ -3,7 +3,7 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../../hooks/cart/cart.tsx';
-import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import useDevice from '../../hooks/device/use-device.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
@@ -37,8 +37,7 @@ export const DoorsDetails: React.FC = () => {
   const { isMobile } = useDevice();
   const { isInCart, addToCart } = useCart();
   const { showModal } = useModal()
-  const { collectionId } = useParams();
-  const [searchParams] = useSearchParams();
+  const {id: productId, collectionId } = useParams();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
@@ -52,7 +51,8 @@ export const DoorsDetails: React.FC = () => {
     getProductDetailsById
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
-  const productId = searchParams.get('productId');
+
+
   const collection = getCollectionById(collectionId!);
 
   const items = useMemo(() => collection?.items || [], [collection]);
@@ -135,7 +135,8 @@ export const DoorsDetails: React.FC = () => {
               selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
               onSelect={(index) => {
                 const selected = collection.items[index];
-                navigate(`/doors/${collection.id}?productId=${selected.id}`);
+                /*navigate(`/doors/${collection.id}?productId=${selected.id}`);*/
+                navigate(`/doors/${collection.id}/${selected.id}`);
               }}
             />
           </div>

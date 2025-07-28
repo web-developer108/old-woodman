@@ -6,6 +6,7 @@ import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { CartButton } from '../buttons/cart-button/cart-button.tsx';
 import type { CardsPreviewProps } from './cards-preview.types.ts';
 import styles from '../cards-preview/cards-preview.module.scss'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 export const CardsPreview: React.FC<CardsPreviewProps> = ({
   collectionId,
@@ -17,9 +18,10 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
   const { getCollectionById } = useProductCatalog();
   const collection = getCollectionById(collectionId);
   const items = collection?.items || [];
+  const category = useCurrentCategory();
 
   const handleCardClick = (productId: string) => {
-    navigate(`/furniture/${collectionId}/${productId}`, { replace: false });
+    navigate(`/${category}/${collectionId}/${productId}`, { replace: false });
   };
 
   return (

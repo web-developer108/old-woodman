@@ -14,8 +14,6 @@ import styles from './product-page.module.scss';
 const ProductPage: React.FC = () => {
   const { collectionId } = useParams();
   const { getCollectionById, getCategoryByCollectionId } = useProductCatalog();
-//  const { t } = usePageTranslate();
-
 
   const lang = i18n.language as 'ru' | 'kk';
   const category = getCategoryByCollectionId(collectionId!);
