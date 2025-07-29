@@ -10,16 +10,8 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
   handleCardClick,
   showPlug = true,
 }) => {
-//  const navigate = useNavigate();
   const { t, i18n } = useTranslation('common');
   const lang = i18n.language as 'ru' | 'kk';
-
-
-
-
-/*  const handleCardClick = (productId: string) => {
-    navigate(`/${category}/${collectionId}/${productId}`, { replace: false });
-  };*/
 
   return (
     <div className={styles.cardsContainer}>
