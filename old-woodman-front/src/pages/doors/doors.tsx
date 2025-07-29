@@ -66,7 +66,6 @@ const DoorsOverview = () => {
 
   useLayoutEffect(() => {
     if (location.pathname.startsWith('/doors/') && location.hash === '#info') {
-      console.log('SCROLLING TO INFO');
       infoRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
