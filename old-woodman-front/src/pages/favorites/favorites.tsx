@@ -1,19 +1,21 @@
+import { useMemo } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
-import styles from './favorites.module.scss'
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-import type { ProductItem } from '../../config/config.types.ts';
-import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import { getRandomProducts } from '../../utils/get-random-item.ts';
+import type { ProductItem } from '../../config/config.types.ts';
+import styles from './favorites.module.scss'
 
 const Favorites = () => {
   const { t } = usePageTranslate();
   const navigate = useNavigate();
-  const {favorites, toggleFavorite} = useFavorites();
+  const {favorites} = useFavorites();
   const { getProductById, getProductDetailsById } = useProductCatalog();
   const noFavorites = favorites.length === 0;
   const favoriteItems: ProductItem[] = useMemo(() => {
@@ -21,6 +23,12 @@ const Favorites = () => {
       .map((fav) => getProductById(fav.id))
       .filter((item): item is ProductItem => !!item);
   }, [favorites, getProductById]);
+  const randomCollection = useMemo(() => {
+    return getRandomProducts({
+      count: 5,
+      excludeProductId: favorites.map((item) => item.id),
+    });
+  }, [favorites]);
   return (
     <ToolPageLayout>
       <div className={styles.favContainer}>
@@ -49,6 +57,17 @@ const Favorites = () => {
                     if (!details) return;
                     const { category, collection } = details;
                     navigate(`/${category.id}/${collection.id}/${productId}`);
+                  }}
+                />
+                <ProductSlider
+                  title={t('random-title').toUpperCase()}
+                  items={randomCollection}
+                  headingSize = 'large'
+                  handleCardClick={(productId) => {
+                    const productDetails = getProductDetailsById(productId);
+                    if (!productDetails) return;
+                    const { collection } = productDetails;
+                    navigate(`/furniture/${collection.id}/${productId}`);
                   }}
                 />
               </div>
