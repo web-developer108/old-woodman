@@ -11,8 +11,8 @@ import { CloseIcon } from '../../components/icons/close-icon/close-icon.tsx';
 import { OrderSummary } from '../../components/order-summary/order-summary.tsx';
 import type { ProductItem } from '../../config/config.types.ts';
 import { AppColors } from '../../styles.ts';
-import styles from './cart.module.scss'
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import styles from './cart.module.scss'
 
 const Cart = () => {
   const { t } = usePageTranslate();

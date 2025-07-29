@@ -69,7 +69,13 @@
         @include mixins.bodyTextSmall
       }
     }
-
+    .favoritesWrap{
+      padding-top: 24px;
+      .randomHeader{
+        margin-bottom: 24px;
+       @include mixins.headingLarge;
+      }
+    }
   }
 
 }

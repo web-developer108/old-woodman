@@ -1,11 +1,34 @@
+import { useMemo } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
+import { useFavorites } from '../../hooks/favorites/favorites.tsx';
+import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
+import { useNavigate } from 'react-router-dom';
+import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import { getRandomProducts } from '../../utils/get-random-item.ts';
+import type { ProductItem } from '../../config/config.types.ts';
 import styles from './favorites.module.scss'
 
 const Favorites = () => {
-  const { t } = usePageTranslate()
+  const { t } = usePageTranslate();
+  const navigate = useNavigate();
+  const {favorites} = useFavorites();
+  const { getProductById, getProductDetailsById } = useProductCatalog();
+  const noFavorites = favorites.length === 0;
+  const favoriteItems: ProductItem[] = useMemo(() => {
+    return favorites
+      .map((fav) => getProductById(fav.id))
+      .filter((item): item is ProductItem => !!item);
+  }, [favorites, getProductById]);
+  const randomCollection = useMemo(() => {
+    return getRandomProducts({
+      count: 5,
+      excludeProductId: favorites.map((item) => item.id),
+    });
+  }, [favorites]);
   return (
     <ToolPageLayout>
       <div className={styles.favContainer}>
@@ -17,11 +40,39 @@ const Favorites = () => {
         </div>
         <div className={styles.cartContent}>
           <Breadcrumbs current={t('main-header')}/>
+          {noFavorites ?(
           <div className={styles.faceContainer}>
             <FaceIcon/>
             <h2 className={styles.title}>  {t('empty-header').toUpperCase()} </h2>
             <div className={styles.text}>   {t('empty-label')}</div>
-          </div>
+          </div>)
+            :
+            (
+              <div className={styles.favoritesWrap}>
+                <CardsPreview
+                  items={favoriteItems}
+                  showPlug = {false}
+                  handleCardClick={(productId) => {
+                    const details = getProductDetailsById(productId);
+                    if (!details) return;
+                    const { category, collection } = details;
+                    navigate(`/${category.id}/${collection.id}/${productId}`);
+                  }}
+                />
+                <ProductSlider
+                  title={t('random-title').toUpperCase()}
+                  items={randomCollection}
+                  headingSize = 'large'
+                  handleCardClick={(productId) => {
+                    const productDetails = getProductDetailsById(productId);
+                    if (!productDetails) return;
+                    const { collection } = productDetails;
+                    navigate(`/furniture/${collection.id}/${productId}`);
+                  }}
+                />
+              </div>
+            )
+          }
         </div>
       </div>
     </ToolPageLayout>

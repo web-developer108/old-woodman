@@ -21,6 +21,8 @@ import gallery4 from '@assets/images/furniture/gallery/gallery-4.webp';
 import styles from '../doors/doors.module.scss';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
+import { useNavigate } from 'react-router-dom';
 
 const furnitureCollections = [
   {
@@ -37,16 +39,18 @@ const furnitureCollections = [
   { id: 'chairs', image: heroImageChairs, alt: 'Деревянное кресло в стиле ретро в  современном интерьере' },
 
 ];
+const galleryImages = [
+  { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
+  { src: gallery2, alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы' },
+  { src: gallery3, alt: 'Деревянная консоль в стиле Прованс с лампой и книгой' },
+  { src: gallery4, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной' },
 
+];
 const FurnitureOverview: React.FC = () => {
   const { t } = usePageTranslate();
-  const galleryImages = [
-    { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
-    { src: gallery2, alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы' },
-    { src: gallery3, alt: 'Деревянная консоль в стиле Прованс с лампой и книгой' },
-    { src: gallery4, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной' },
+  const navigate = useNavigate();
+  const { getCollectionById } = useProductCatalog();
 
-  ];
   return (
     <ToolPageLayout>
       <div className={styles.doorsContainer}>
@@ -66,7 +70,15 @@ const FurnitureOverview: React.FC = () => {
           <div className={styles.socialButtons}>
             <SocialButtons/>
           </div>
-          {furnitureCollections.map(({ id, image, alt }) => (
+
+
+          {furnitureCollections.map(({ id, image, alt }) => {
+            const collection = getCollectionById(id);
+            const items = collection?.items || [];
+            const handleCardClick = (productId: string) => {
+              navigate(`/furniture/${id}/${productId}`);
+            };
+            return (
             <React.Fragment key={id}>
               <ResponsiveCard
                 image={image}
@@ -77,11 +89,13 @@ const FurnitureOverview: React.FC = () => {
               />
               <div className={styles.previewWrap}>
                 <CardsPreview
-                  collectionId={id}
+                  items={items}
+                  handleCardClick={handleCardClick}
                 />
               </div>
             </React.Fragment>
-          ))}
+          );
+          })}
         </section>
         <section className={styles.article}>
           <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>

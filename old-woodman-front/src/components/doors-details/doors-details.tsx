@@ -109,10 +109,14 @@ export const DoorsDetails: React.FC = () => {
   }, [filteredCollections]);
 
   const randomCollection = useMemo(() => {
+    if (!productId) {
+      return [];
+    }
+    const details = getProductDetailsById(productId);
+    const excludeIds = details?.collection?.items.map((item) => item.id) ?? [];
     return getRandomProducts({
       count: 5,
-      excludeProductId: productId,
-      onlyCategoryId: 'furniture',
+      excludeProductId: excludeIds,
     });
   }, [productId]);
 

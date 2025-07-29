@@ -4,12 +4,12 @@ import type { ProductItem } from '../config/config.types.ts';
 
 interface GetRandomProductsOptions {
   count?: number;
-  excludeProductId?: string;
+  excludeProductId?: string[];
   onlyCategoryId?: 'doors' | 'furniture';
 }
 export const getRandomProducts = ({
   count = 4,
-  excludeProductId,
+  excludeProductId = [],
   onlyCategoryId,
 }: GetRandomProductsOptions = {}): ProductItem[] => {
   const allItems: ProductItem[] = [];
@@ -19,7 +19,7 @@ export const getRandomProducts = ({
 
     for (const collection of category.collections) {
       for (const item of collection.items) {
-        if (excludeProductId && item.id === excludeProductId) continue;
+        if (excludeProductId.includes(item.id))  continue;
         allItems.push(item);
       }
     }
