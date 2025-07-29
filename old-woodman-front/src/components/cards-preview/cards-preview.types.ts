@@ -1,3 +1,7 @@
+import type { ProductItem } from '../../config/config.types.ts';
+
 export interface CardsPreviewProps {
-  collectionId: string;
+  items: ProductItem[];
+  handleCardClick: (productId: string) => void;
+  showPlug?: boolean;
 }

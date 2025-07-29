@@ -51,19 +51,19 @@ const doorCollections = [
   },
   { id: 'balcony', image: heroImageBalcony, alt: 'Деревянная балконная дверь на фасаде здания' },
 ];
+const galleryImages = [
+  { src: gallery1, alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля' },
+  { src: gallery2, alt: 'Доски' },
+  { src: gallery3, alt: 'Инструмент' },
+  { src: gallery4, alt: 'Мастерская' },
 
+];
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
   const infoRef = useRef<HTMLDivElement>(null);
   const { getCollectionById } = useProductCatalog();
   const navigate = useNavigate();
-  const galleryImages = [
-    { src: gallery1, alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля' },
-    { src: gallery2, alt: 'Доски' },
-    { src: gallery3, alt: 'Инструмент' },
-    { src: gallery4, alt: 'Мастерская' },
 
-  ];
   useLayoutEffect(() => {
     if (location.pathname.startsWith('/doors/') && location.hash === '#info') {
       console.log('SCROLLING TO INFO');

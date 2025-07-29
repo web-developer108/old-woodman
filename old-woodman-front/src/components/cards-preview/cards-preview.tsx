@@ -1,28 +1,25 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { CartButton } from '../buttons/cart-button/cart-button.tsx';
 import type { CardsPreviewProps } from './cards-preview.types.ts';
 import styles from '../cards-preview/cards-preview.module.scss'
-import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 export const CardsPreview: React.FC<CardsPreviewProps> = ({
-  collectionId,
+  items,
+  handleCardClick,
+  showPlug = true,
 }) => {
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
-  const { t } = useTranslation('common');
+//  const navigate = useNavigate();
+  const { t, i18n } = useTranslation('common');
   const lang = i18n.language as 'ru' | 'kk';
-  const { getCollectionById } = useProductCatalog();
-  const collection = getCollectionById(collectionId);
-  const items = collection?.items || [];
-  const category = useCurrentCategory();
 
-  const handleCardClick = (productId: string) => {
+
+
+
+/*  const handleCardClick = (productId: string) => {
     navigate(`/${category}/${collectionId}/${productId}`, { replace: false });
-  };
+  };*/
 
   return (
     <div className={styles.cardsContainer}>
@@ -49,6 +46,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
             </div>
           </div>
         ))}
+      {showPlug && (
       <div className={styles.card}>
         <div className={styles.imageWrapper} style={{cursor: 'default'}}>
           <img
@@ -67,6 +65,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
 
         </div>
       </div>
+        )}
     </div>
   );
 };
