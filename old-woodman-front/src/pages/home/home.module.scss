@@ -9,86 +9,124 @@
     max-width: 1880px;
     height: 964px;
     margin: 0 20px;
-    background-color: var(--text-grey-color);
-    background-image: url('../../assets/images/home/hero-big-large.webp');
-    background-position: right center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgba(33, 32, 35);
     position: relative;
     border-radius: 10px;
     min-width: 320px;
+    overflow: hidden;
     @media (min-width: 1921px) {
       width: 1920px;
     }
-    @media (max-width: 1200px) {
-      background-image: url('../../assets/images/home/hero-medium-big.webp');
-    }
     @media (max-width: 810px) {
-      height: 864px;
+      height: 786px;
       margin: 0;
       border-radius: 0;
     }
 
-    .heroContent {
-      max-width: 551px;
-      color: var(--text-light-color);
-      padding-top: 306px;
-      padding-left: 156px;
-      letter-spacing: 0;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      position: relative;
-      box-sizing: content-box;
-      @media (max-width: 1300px) {
-        padding-top: 280px;
-        padding-left: 24px;
-        text-align: left;
+    .imageWrapper {
+      display: grid;
+      width: 100%;
+      height: 964px;
+      overflow: hidden;
+      grid-template-columns: 1fr 752px;
+
+      @media (max-width: 1400px) {
+        grid-template-columns: 1fr 600px;
       }
-      @media (max-width: 1200px) {
-        max-width: 410px;
+
+      @media (max-width: 900px) {
+        grid-template-columns: 1fr 550px;
       }
+
       @media (max-width: 810px) {
-        max-width: 336px;
-        padding: 532px 0 0 0;
-        width: 336px;
-        margin: 0 auto;
-        box-sizing: border-box;
+        grid-template-columns: 1fr 450px;
+        height: 786px;
+      }
+      @media (max-width: 700px) {
+        grid-template-columns: 1fr;
       }
 
-      .title {
-        font-size: 48px;
-        margin-bottom: 20px;
-        @media (max-width: 1200px) {
-          font-size: 32px;
-          line-height: 1.25;
-          margin-bottom: 6px;
-        }
-      }
+      .heroContent {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 3;
+        max-width: 600px;
+        min-width: 576px;
+        color: var(--text-light-color);
+        letter-spacing: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        @media (max-width: 1240px) {
+          padding-left: 20px;
 
-      .description {
-        @include mixins.bodyText;
-      }
-
-      .description {
-        margin-bottom: 60px;
-        line-height: 1.5;
-        @media (max-width: 1200px) {
-          line-height: 1.4;
-          margin-bottom: 24px;
-        }
-      }
-
-      .buttonWrapper {
-        padding: 0 82px;
-        @media (max-width: 1300px) {
-          padding: 0 164px 0 0;
         }
         @media (max-width: 1200px) {
-          padding: 0;
+          min-width: 0;
+          text-align: left;
+          grid-column: 1 /span 2;
         }
 
+        @media (max-width: 700px) {
+          max-width: 386px;
+          width: 336px;
+          justify-self: center;
+
+        }
+
+        .title {
+          font-size: 48px;
+          margin-bottom: 20px;
+          @media (max-width: 1200px) {
+            font-size: 32px;
+            line-height: 1.25;
+            margin-bottom: 6px;
+            max-width: 460px;
+          }
+          @media (max-width: 700px) {
+            margin-top: 350px;
+          }
+        }
+
+
+        .description {
+          margin-bottom: 60px;
+          line-height: 1.5;
+          @include mixins.bodyText;
+          @media (max-width: 1200px) {
+            line-height: 1.4;
+            margin-bottom: 24px;
+
+          }
+        }
+
+        .buttonWrapper {
+          padding: 0 82px;
+          @media (max-width: 1200px) {
+            padding: 0;
+            max-width: 386px;
+          }
+
+        }
+      }
+
+    }
+
+    .heroImage {
+      grid-column: 2;
+      grid-row: 1;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+
+      @media (max-width: 700px) {
+        grid-column: 1;
+        object-position: center center;
+        min-width: 359px;
       }
     }
 
@@ -97,7 +135,7 @@
       top: 370px;
       right: 30px;
       z-index: 20;
-      @media (max-width: 1200px) {
+      @media (max-width: 810px) {
         display: none;
       }
     }
@@ -171,6 +209,7 @@
   }
 
   .navigation {
+    scroll-margin-top: 150px;
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;

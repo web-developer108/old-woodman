@@ -23,7 +23,16 @@ import gallery2 from '@assets/images/home/gallery2.webp'
 import gallery3 from '@assets/images/home/gallery3.webp'
 import gallery4 from '@assets/images/home/gallery4.webp'
 import gallery5 from '@assets/images/home/gallery5.webp'
+import heroImage from '@assets/images/home/hero-mini.webp'
 import styles from './home.module.scss'
+
+const galleryImages = [
+  { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
+  { src: gallery2, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
+  { src: gallery3, alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки' },
+  { src: gallery4, alt: 'Элемент деревянной двери со стеклопакетом для балкона ' },
+  { src: gallery5, alt: 'Деревяная классическая дверь из массива сосны в интерьере кабинета' },
+];
 
 const Home = () => {
   const { t } = usePageTranslate();
@@ -38,33 +47,27 @@ const Home = () => {
     }
   }, []);
 
-  const galleryImages = [
-    { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
-    { src: gallery2, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
-    { src: gallery3, alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки' },
-    { src: gallery4, alt: 'Элемент деревянной двери со стеклопакетом для балкона ' },
-    { src: gallery5, alt: 'Деревяная классическая дверь из массива сосны в интерьере кабинета' },
-  ];
-
   return (
     <ToolPageLayout>
       <div className={styles.homePageContainer}>
         <section className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
-            <div className={styles.description}>{t('hero.description')}</div>
-            <div className={styles.buttonWrapper}>
-              <ColorButton label={t('hero.button')}
-                           icon={<ArrowBottomIcon/>}
-                           onClick={() => {
-                             navigationRef.current?.scrollIntoView({ behavior: 'smooth' });
-                           }}/>
+          <div className={styles.imageWrapper}>
+            <img src={heroImage} alt="Hero" className={styles.heroImage}/>
+            <div className={styles.heroContent}>
+              <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
+              <div className={styles.description}>{t('hero.description')}</div>
+              <div className={styles.buttonWrapper}>
+                <ColorButton label={t('hero.button')}
+                             icon={<ArrowBottomIcon/>}
+                             onClick={() => {
+                               navigationRef.current?.scrollIntoView({ behavior: 'smooth' });
+                             }}/>
+              </div>
             </div>
           </div>
           <div className={styles.circleButtons}>
             <SocialButtons/>
           </div>
-
         </section>
         <div className={styles.running}>
           <RunningText/>
@@ -130,12 +133,10 @@ const Home = () => {
             </div>
 
           </div>
-
         </section>
         <section className={styles.gallery}>
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-
           <Gallery images={galleryImages}/>
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
@@ -146,7 +147,6 @@ const Home = () => {
         <section ref={faqRef} id="faq" className={styles.questions}>
           <Accordion/>
         </section>
-
       </div>
     </ToolPageLayout>
   )
