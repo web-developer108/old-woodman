@@ -39,7 +39,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/classica/iney.webp'],
-            price: 286000,
+            price: 330000,
             alt: 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, покрытие белое масло'
           },
           {
@@ -61,7 +61,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/classica/iney-glass.webp'],
-            price: 286000,
+            price: 330000,
             alt: 'Межкомнатная белая деревянная дверь со стеклом из массивана заказ в Алматы, покрытие белое масло',
           },
           {
@@ -83,7 +83,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/classica/dub.webp'],
-            price: 286000,
+            price: 330000,
             alt: 'Межкомнатная деревянная дверь из массива на заказ в Алматы, покрытие маслом цвета дуб'
           },
         ],
@@ -119,7 +119,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/loft/teak.webp'],
-            price: 286000,
+            price: 190000,
             alt: 'межкомнатная деревянная дверь в стиле LOFT на белом фоне'
           },
           {
@@ -129,11 +129,11 @@ export const productCatalog: ProductCategory[] = [
               kk: 'LOFT',
             },
             titleMob: {
-              ru: 'LOFT, Тик, Дуо',
+              ru: 'LOFT, Тик, двойная',
               kk: 'LOFT, Тик, Дуо',
             },
             description: {
-              ru: 'Цвет "Тик", Дуо',
+              ru: 'Цвет "Тик", двойная',
               kk: 'Цвет "Тик", Дуо',
             },
             shortName: {
@@ -141,7 +141,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/loft/teak-duo.webp'],
-            price: 540000,
+            price: 315000,
             alt: 'межкомнатная двойная деревянная дверь в стиле LOFT на белом фоне'
           },
         ],
@@ -177,7 +177,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/deco/deco.webp'],
-            price: 286000,
+            price: 369000,
             alt: 'Деревянная дверь с рельефной филёнкой из массива, цвет покрытия "золотисный дуб"'
           },
           {
@@ -187,11 +187,11 @@ export const productCatalog: ProductCategory[] = [
               kk: 'DECO',
             },
             titleMob: {
-              ru: 'DECO, Дуб, Дуо',
+              ru: 'DECO, Дуб, двойная',
               kk: 'DECO, Дуб, Дуо',
             },
             description: {
-              ru: 'Цвет "Дуб", Дуо',
+              ru: 'Цвет "Дуб", двойная',
               kk: 'Цвет "Дуб", Дуо',
             },
             shortName: {
@@ -199,7 +199,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/deco/deco-duo.webp'],
-            price: 540000,
+            price: 580000,
             alt: 'Двойная деревянная дверь с рельефной филёнкой из массива, цвет покрытия "золотисный дуб"'
           },
         ],
@@ -216,48 +216,48 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'rustic-arched',
+            id: 'rustic-ethno',
             title: {
               ru: 'RUSTIC',
               kk: 'RUSTIC',
 
             },
             titleMob: {
-              ru: 'RUSTIC, оригинальная',
-              kk: 'RUSTIC, оригинальная',
+              ru: 'RUSTIC, этно',
+              kk: 'RUSTIC, этно',
             },
             description: {
-              ru: 'оригинальная',
-              kk: 'оригинальная',
+              ru: 'этно',
+              kk: 'этно',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/rustic/rustic-arched.webp'],
-            price: 286000,
+            price: 310000,
             alt: 'Деревянная дверь из досок полукруглой формы с декоративной дверкой на белом фоне, цвет "злотой дуб" в Алматы'
           },
           {
-            id: 'rustic-simple',
+            id: 'rustic-ethno2',
             title: {
               ru: 'RUSTIC',
               kk: 'RUSTIC',
             },
             titleMob: {
-              ru: 'RUSTIC, простая',
-              kk: 'RUSTIC, простая',
+              ru: 'RUSTIC, этно 2',
+              kk: 'RUSTIC, этно 2',
             },
             description: {
-              ru: 'простая',
-              kk: 'простая',
+              ru: 'этно 2',
+              kk: 'этно 2',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/rustic/rustic-simple.webp'],
-            price: 286000,
+            price: 310000,
             alt: 'Деревянная дверь из досок в этническом стиле на белом фоне, цвет "злотой дуб" в Алматы'
           },
         ],
@@ -274,114 +274,114 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'cabinet-scandinavia',
+            id: 'cabinet-scandi',
             title: {
               ru: 'CABINET',
               kk: 'CABINET',
 
             },
             titleMob: {
-              ru: 'CABINET, Скандинавия',
-              kk: 'CABINET, Скандинавия',
+              ru: 'CABINET, Scandi',
+              kk: 'CABINET, Scandi',
             },
             description: {
-              ru: 'Скандинавия',
-              kk: 'Скандинавия',
+              ru: 'Scandi',
+              kk: 'Scandi',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/cabinet/scandinavia.webp'],
-            price: 286000,
+            price: 330000,
             alt: 'Фрезированная деревянная межкомнатная дверь из карельской сосны в скандинавском стиле'
           },
           {
-            id: 'cabinet-europe',
+            id: 'cabinet-chester',
             title: {
               ru: 'CABINET',
               kk: 'CABINET',
             },
             titleMob: {
-              ru: 'CABINET, Европа',
-              kk: 'CABINET, Европа',
+              ru: 'CABINET, Chester',
+              kk: 'CABINET, Chester',
             },
             description: {
-              ru: 'Европа',
-              kk: 'Европа',
+              ru: 'Chester',
+              kk: 'Chester',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/cabinet/europe.webp'],
-            price: 286000,
+            price: 750000,
             alt: 'Межкомнатная  дверь из массива дуба или других элитных пород'
           },
           {
-            id: 'cabinet-ethiopia',
+            id: 'cabinet-hanoi',
             title: {
               ru: 'CABINET',
               kk: 'CABINET',
             },
             titleMob: {
-              ru: 'CABINET, Эфиопия',
-              kk: 'CABINET, Эфиопия',
+              ru: 'CABINET, Hanoi',
+              kk: 'CABINET, Hanoi',
             },
             description: {
-              ru: 'Эфиопия',
-              kk: 'Эфиопия',
+              ru: 'Hanoi',
+              kk: 'Hanoi',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/cabinet/ethiopia.webp'],
-            price: 286000,
+            price: 330000,
             alt: 'Фрезированная межкомнатная дверь из массива сосны, цвет морёный дуб'
           },
           {
-            id: 'cabinet-versailles',
+            id: 'cabinet-paris',
             title: {
               ru: 'CABINET',
               kk: 'CABINET',
             },
             titleMob: {
-              ru: 'CABINET, Версаль',
-              kk: 'CABINET, Версаль',
+              ru: 'CABINET, Paris',
+              kk: 'CABINET, Paris',
             },
             description: {
-              ru: 'Версаль',
-              kk: 'Версаль',
+              ru: 'Paris',
+              kk: 'Paris',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/cabinet/versailles.webp'],
-            price: 286000,
+            price: 349000,
             alt: 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
           },
           {
-            id: 'cabinet-versailles-duo',
+            id: 'cabinet-paris-duo',
             title: {
               ru: 'CABINET',
               kk: 'CABINET',
             },
             titleMob: {
-              ru: 'CABINET, Версаль, Дуо',
-              kk: 'CABINET, Версаль, Дуо',
+              ru: 'CABINET, Paris, двойная',
+              kk: 'CABINET, Paris, Дуо',
             },
             description: {
-              ru: 'Версаль Дуо',
-              kk: 'Версаль Дуо',
+              ru: 'Paris  двойная',
+              kk: 'Paris Дуо',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/cabinet/versailles-duo.webp'],
-            price: 540000,
+            price: 558000,
             alt: 'Межкомнатная белая двойная деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
           },
         ],
@@ -398,30 +398,30 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'exclusive-folding',
+            id: 'exclusive-shato',
             title: {
               ru: 'Эксклюзивная',
               kk: 'Эксклюзив',
 
             },
             titleMob: {
-              ru: 'Эксклюзивная, ШАТО',
-              kk: 'Эксклюзивная, ШАТО',
+              ru: 'Эксклюзивная, Shato',
+              kk: 'Эксклюзивная, Shato',
             },
             description: {
-              ru: 'Дверь ШАТО',
-              kk: 'Дверь ШАТО',
+              ru: 'Дверь Shato',
+              kk: 'Дверь Shato',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-big.webp'],
-            price: 0,
+            price: 880000,
             alt: 'Эксклюзивная деревянная дверь с открыванием "книжка" на белом фоне'
           },
           {
-            id: 'exclusive-strict',
+            id: 'exclusive-arch',
             title: {
               ru: 'Эксклюзивная',
               kk: 'Эксклюзив',
@@ -439,7 +439,7 @@ export const productCatalog: ProductCategory[] = [
               kk: 'Есік',
             },
             images: ['/images/doors/exclusive/exclusive-small.webp'],
-            price: 0,
+            price: 580000,
             alt: 'Эксклюзивная деревянная дверь полукруглой формы из массива на белом фоне, цвет дуб'
           },
         ],
@@ -535,7 +535,7 @@ export const productCatalog: ProductCategory[] = [
             },
             shortName: {
               ru: 'Консоль для ванной',
-              kk: 'Kонсоль',
+              kk: 'Консоль',
             },
             images: ['/images/furniture/consoles/iberia.webp'],
             price: 180000,
