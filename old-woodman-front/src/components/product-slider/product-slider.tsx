@@ -20,7 +20,6 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   const lang = i18n.language as 'ru' | 'kk';
   const category = useCurrentCategory()
 
-
   return (
     <div className={styles.wrapper}>
       <h3 className={`${styles.heading} ${styles[headingSize]}`}>
@@ -45,10 +44,10 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                   <p className={styles.title}>{isMobile && item.titleMob ? item.titleMob[lang] : item.title[lang]}</p>
                   <p
                     className={styles.description}>{item.description ? item.description[lang] : item.shortName[lang]}</p>
-                  {!item.id.includes('exclusive') &&
-                      <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>}
+
+                  <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>
                 </div>
-                {!item.id.includes('exclusive') && <CartButton productId={item.id}/>}
+                <CartButton productId={item.id}/>
               </div>
             </div>
           ))}
