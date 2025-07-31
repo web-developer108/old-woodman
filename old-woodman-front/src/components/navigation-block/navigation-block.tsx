@@ -5,6 +5,8 @@ import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
+import door1 from '@assets/images/home/door-1.webp';
+import door2 from '@assets/images/home/door-2.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './navigation-block.module.scss'
 
@@ -19,11 +21,10 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
   return (
     <div className={`${styles.navigation} ${!isHome && screenWidth >= 810 ? styles.navigationCustom : ''}`}>
       {blocks.includes('doors') && (
-        <div className={styles.backgroundBrown}>
-          <div className={styles.bgContentWrapper}>
-            <h3>{t('background-title1').toUpperCase()}</h3>
-            <div>{t('background-description1')}</div>
-          </div>
+        <div className={`${styles.background} ${styles.brown}`}>
+            <h3 className={`${styles.bgTitle} ${styles.light}`}>{t('background-title1').toUpperCase()}</h3>
+            <div className={`${styles.bgDescription} ${styles.light}`} >{t('background-description1')}</div>
+
           <div className={styles.buttonContainer}>
             <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>}
                           bgColor={AppColors.background.circleButton40}
@@ -31,9 +32,11 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
                             navigate('/doors');
                           }}/>
           </div>
+          <img className={styles.imageSmall} src={door1} alt="Дверь"/>
+          <img className={styles.imageBig} src={door2} alt="Дверь"/>
         </div>
       )}
-      {blocks.includes('furniture') && (
+     {/* {blocks.includes('furniture') && (
         <div className={styles.backgroundBlue}>
           <div className={styles.bgContentWrapper}>
             <h3>{t('background-title2').toUpperCase()}</h3>
@@ -58,7 +61,7 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
                           onClick={() => navigate('/facades')}/>
           </div>
         </div>
-      )}
+      )}*/}
     </div>
   );
 };
