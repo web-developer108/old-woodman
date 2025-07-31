@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 8px;
   box-sizing: border-box;
+
   .background {
     display: grid;
     grid-template-columns: 32px 347px 16px 1fr 146px 10px 240px 10px;
@@ -110,125 +111,237 @@
       }
     }
   }
-/*  %bgContent {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 347px;
-    height: 206px;
-    padding: 30px 0 24px 32px;
-    justify-content: space-between;
-    @media (max-width: 950px) {
-      width: 193px;
-    }
 
-    @media (max-width: 810px) {
-      height: 172px;
-      padding: 14px 0 10px 24px;
-    }
+  /*  %bgContent {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 347px;
+      height: 206px;
+      padding: 30px 0 24px 32px;
+      justify-content: space-between;
+      @media (max-width: 950px) {
+        width: 193px;
+      }
 
-
-    h3 {
-      font-size: 32px;
       @media (max-width: 810px) {
-        font-size: 24px;
+        height: 172px;
+        padding: 14px 0 10px 24px;
+      }
+
+
+      h3 {
+        font-size: 32px;
+        @media (max-width: 810px) {
+          font-size: 24px;
+        }
+      }
+
+      div {
+        @include mixins.bodyText;
       }
     }
 
-    div {
-      @include mixins.bodyText;
-    }
-  }
+    %background {
+      max-width: 1180px;
+      height: 260px;
+      background-position: right center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      border-radius: 10px;
+      @media (max-width: 810px) {
+        height: 196px;
+      }
 
-  %background {
-    max-width: 1180px;
-    height: 260px;
-    background-position: right center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    border-radius: 10px;
-    @media (max-width: 810px) {
-      height: 196px;
-    }
+      .bgContentWrapper {
+        @extend %bgContent;
 
-    .bgContentWrapper {
-      @extend %bgContent;
+        h3, div {
+          color: var(--text-light-color);
+        }
+      }
 
-      h3, div {
-        color: var(--text-light-color);
+      .bgContentWrapperLast {
+        @extend %bgContent;
+
+        h3, div {
+          color: var(--text-main-color);
+        }
       }
     }
 
-    .bgContentWrapperLast {
-      @extend %bgContent;
+    .backgroundBrown {
+      @extend %background;
+      background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
+      background-color: var(--background-brown-color);
+      @media (max-width: 810px) {
+        background-image: url('../../assets/images/home/background-brown-mobile-big.webp');
+      }
+      @media (max-width: 520px) {
+        background-image: url('../../assets/images/home/background-brown-small-big.webp');
+        background-position: left center;
+      }
+    }
 
-      h3, div {
-        color: var(--text-main-color);
+    .backgroundBlue {
+      @extend %background;
+      background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
+      background-color: var(--background-blue-color);
+      @media (max-width: 810px) {
+        background-image: url('../../assets/images/home/background-blue-mobile-big.webp');
+      }
+
+
+      @media (max-width: 520px) {
+        background-image: url('../../assets/images/home/background-blue-small-big.webp');
+        background-position: left center;
+      }
+    }
+
+    .backgroundYellow {
+      @extend %background;
+      background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
+      background-color: var(--background-yellow-color);
+      @media (max-width: 810px) {
+        background-image: url('../../assets/images/home/background-yellow-mobile-big.webp');
+      }
+
+
+      @media (max-width: 520px) {
+        background-image: url('../../assets/images/home/background-yellow-small-big.webp');
+        background-position: left center;
+      }
+    }
+
+    .buttonContainer {
+      position: absolute;
+      top: 30px;
+      left: 390px;
+      width: 40px;
+      height: 40px;
+      @media (max-width: 950px) {
+        left: 235px;
+      }
+      @media (max-width: 810px) {
+        top: auto;
+        left: auto;
+        bottom: 10px;
+        right: 24px;
+      }
+    }
+
+    &.navigationCustom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: left;
+      gap: 11px;
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
+      @media (max-width: 1050px) {
+        flex-direction: column;
+      }
+
+      %bgContentSmall {
+        flex: 1 1 386px;
+        min-width: 240px;
+        max-width: 386px;
+        height: auto;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin: 0;
+        @media (max-width: 1050px) {
+          max-width: 1010px;
+          width: 100%;
+          max-height: 260px;
+        }
+      }
+
+      %bgContentWrapperSmall {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 24px 17px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        @media (max-width: 1120px) {
+          font-size: 24px;
+          height: 100px;
+          padding: 20px 12px;
+        }
+        h3 {
+          font-size: 36px;
+          padding-right: 30px;
+          @media (max-width: 1120px) {
+            font-size: 24px;
+
+          }
+
+        }
+        div{
+          padding-right: 80px;
+          @media (max-width: 1120px) {
+            padding-right: 40px;
+          }
+          @media (max-width: 1050px) {
+            width: 250px;
+          }
+        }
+      }
+
+    .backgroundBrown  {
+        @extend %bgContentSmall;
+        background-image: url('../../assets/images/home/brown-small-big.webp');
+        @media (max-width: 1050px) {
+          background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
+        }
+        .bgContentWrapper {
+          @extend %bgContentWrapperSmall;
+
+        }
+
+      }
+
+      .backgroundBlue {
+        @extend %bgContentSmall;
+        background-image: url('../../assets/images/home/blue-small-big.webp');
+        @media (max-width: 1050px) {
+          background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
+        }
+        .bgContentWrapper {
+          @extend %bgContentWrapperSmall;
+
+        }
+      }
+
+      .backgroundYellow {
+        @extend %bgContentSmall;
+        background-image: url('../../assets/images/home/yellow-small-big.webp');
+        @media (max-width: 1050px) {
+          background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
+        }
+        .bgContentWrapperLast {
+          @extend %bgContentWrapperSmall
+        }
+      }
+      .buttonContainer {
+        top: 140px;
+        left: auto;
+        right: 12px;
+        @media (max-width: 1120px) {
+          font-size: 24px;
+          height: 100px;
+          top: 100px;
+        }
+        @media (max-width: 1050px) {
+          left: 30px;
+          right: auto;
+          top: 200px;
+        }
       }
     }
   }
-
-  .backgroundBrown {
-    @extend %background;
-    background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
-    background-color: var(--background-brown-color);
-    @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-brown-mobile-big.webp');
-    }
-    @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-brown-small-big.webp');
-      background-position: left center;
-    }
-  }
-
-  .backgroundBlue {
-    @extend %background;
-    background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
-    background-color: var(--background-blue-color);
-    @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-blue-mobile-big.webp');
-    }
-
-
-    @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-blue-small-big.webp');
-      background-position: left center;
-    }
-  }
-
-  .backgroundYellow {
-    @extend %background;
-    background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
-    background-color: var(--background-yellow-color);
-    @media (max-width: 810px) {
-      background-image: url('../../assets/images/home/background-yellow-mobile-big.webp');
-    }
-
-
-    @media (max-width: 520px) {
-      background-image: url('../../assets/images/home/background-yellow-small-big.webp');
-      background-position: left center;
-    }
-  }
-
-  .buttonContainer {
-    position: absolute;
-    top: 30px;
-    left: 390px;
-    width: 40px;
-    height: 40px;
-    @media (max-width: 950px) {
-      left: 235px;
-    }
-    @media (max-width: 810px) {
-      top: auto;
-      left: auto;
-      bottom: 10px;
-      right: 24px;
-    }
-  }
-
+  */
   &.navigationCustom {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -241,7 +354,7 @@
       flex-direction: column;
     }
 
-    %bgContentSmall {
+    .background {
       flex: 1 1 386px;
       min-width: 240px;
       max-width: 386px;
@@ -249,6 +362,45 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       margin: 0;
+      display: grid;
+      grid-template-columns: 24px 58px 108px 6px 116px 60px 12px;
+      grid-template-rows: 29px 100px 54px 17px 176px 10px;
+
+      .bgTitle {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+      }
+
+      .bgDescription {
+        grid-column: 2 / span 4;
+        grid-row: 3;
+      }
+
+
+      .buttonContainer {
+        grid-column: 6;
+        grid-row: 3;
+      }
+
+      .imageSmall {
+        grid-column: 3;
+        grid-row: 5;
+        width: 108px;
+        height: 176px;
+      }
+
+      .imageBig {
+        grid-column: 5;
+        grid-row: 5;
+        width: 176px;
+        height:176px;
+      }
+
+
+
+
+
+
       @media (max-width: 1050px) {
         max-width: 1010px;
         width: 100%;
@@ -256,7 +408,7 @@
       }
     }
 
-    %bgContentWrapperSmall {
+   /* .background {
       width: 100%;
       height: auto;
       padding: 30px 0 24px 17px;
@@ -267,6 +419,7 @@
         height: 100px;
         padding: 20px 12px;
       }
+
       h3 {
         font-size: 36px;
         padding-right: 30px;
@@ -276,7 +429,8 @@
         }
 
       }
-      div{
+
+      div {
         padding-right: 80px;
         @media (max-width: 1120px) {
           padding-right: 40px;
@@ -286,42 +440,46 @@
         }
       }
     }
-
-  .backgroundBrown  {
-      @extend %bgContentSmall;
+*/
+    .backgroundBrown {
+     // @extend %bgContentSmall;
       background-image: url('../../assets/images/home/brown-small-big.webp');
       @media (max-width: 1050px) {
         background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
       }
+
       .bgContentWrapper {
-        @extend %bgContentWrapperSmall;
+        //@extend %bgContentWrapperSmall;
 
       }
 
     }
 
     .backgroundBlue {
-      @extend %bgContentSmall;
+    //  @extend %bgContentSmall;
       background-image: url('../../assets/images/home/blue-small-big.webp');
       @media (max-width: 1050px) {
         background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
       }
+
       .bgContentWrapper {
-        @extend %bgContentWrapperSmall;
+    //    @extend %bgContentWrapperSmall;
 
       }
     }
 
     .backgroundYellow {
-      @extend %bgContentSmall;
+  //    @extend %bgContentSmall;
       background-image: url('../../assets/images/home/yellow-small-big.webp');
       @media (max-width: 1050px) {
         background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
       }
+
       .bgContentWrapperLast {
-        @extend %bgContentWrapperSmall
+      //  @extend %bgContentWrapperSmall
       }
     }
+
     .buttonContainer {
       top: 140px;
       left: auto;
@@ -338,113 +496,4 @@
       }
     }
   }
-}
-.navigationCustom {
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: left;
-  gap: 11px;
-  @media (max-width: 1200px) {
-    width: 100%;
-  }
-  @media (max-width: 1050px) {
-    flex-direction: column;
-  }
-
-  %bgContentSmall {
-    flex: 1 1 386px;
-    min-width: 240px;
-    max-width: 386px;
-    height: auto;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    margin: 0;
-    @media (max-width: 1050px) {
-      max-width: 1010px;
-      width: 100%;
-      max-height: 260px;
-    }
-  }
-
-  %bgContentWrapperSmall {
-    width: 100%;
-    height: auto;
-    padding: 30px 0 24px 17px;
-    justify-content: space-between;
-    box-sizing: border-box;
-    @media (max-width: 1120px) {
-      font-size: 24px;
-      height: 100px;
-      padding: 20px 12px;
-    }
-    h3 {
-      font-size: 36px;
-      padding-right: 30px;
-      @media (max-width: 1120px) {
-        font-size: 24px;
-
-      }
-
-    }
-    div{
-      padding-right: 80px;
-      @media (max-width: 1120px) {
-        padding-right: 40px;
-      }
-      @media (max-width: 1050px) {
-        width: 250px;
-      }
-    }
-  }
-
-  .backgroundBrown  {
-    @extend %bgContentSmall;
-    background-image: url('../../assets/images/home/brown-small-big.webp');
-    @media (max-width: 1050px) {
-      background-image: url('../../assets/images/home/bg-brown-desktop-big.webp');
-    }
-    .bgContentWrapper {
-      @extend %bgContentWrapperSmall;
-
-    }
-
-  }
-
-  .backgroundBlue {
-    @extend %bgContentSmall;
-    background-image: url('../../assets/images/home/blue-small-big.webp');
-    @media (max-width: 1050px) {
-      background-image: url('../../assets/images/home/bg-blue-desktop-big.webp');
-    }
-    .bgContentWrapper {
-      @extend %bgContentWrapperSmall;
-
-    }
-  }
-
-  .backgroundYellow {
-    @extend %bgContentSmall;
-    background-image: url('../../assets/images/home/yellow-small-big.webp');
-    @media (max-width: 1050px) {
-      background-image: url('../../assets/images/home/bg-yellow-desktop-big.webp');
-    }
-    .bgContentWrapperLast {
-      @extend %bgContentWrapperSmall
-    }
-  }
-  .buttonContainer {
-    top: 140px;
-    left: auto;
-    right: 12px;
-    @media (max-width: 1120px) {
-      font-size: 24px;
-      height: 100px;
-      top: 100px;
-    }
-    @media (max-width: 1050px) {
-      left: 30px;
-      right: auto;
-      top: 200px;
-    }
-  }*/
 }

@@ -18,8 +18,9 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
   const {  screenWidth} = useDevice();
   const navigate = useNavigate();
 
+
   return (
-    <div className={`${styles.navigation} ${!isHome && screenWidth >= 810 ? styles.navigationCustom : ''}`}>
+    <div className={`${styles.navigation}  ${!isHome && screenWidth >= 1200 ? styles.navigationCustom : ''}`}>
       {blocks.includes('doors') && (
         <div className={`${styles.background} ${styles.brown}`}>
             <h3 className={`${styles.bgTitle} ${styles.light}`}>{t('background-title1').toUpperCase()}</h3>
