@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
 import door1 from '@assets/images/home/door-1.webp';
 import door2 from '@assets/images/home/door-2.webp';
+import shelf from '@assets/images/home/furniture-1.webp';
+import console from '@assets/images/home/furniture-2.webp';
+
 import { AppColors } from '../../styles.ts';
 import styles from './navigation-block.module.scss'
 
@@ -37,7 +40,24 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
           <img className={styles.imageBig} src={door2} alt="Дверь"/>
         </div>
       )}
-     {/* {blocks.includes('furniture') && (
+      {blocks.includes('furniture') && (
+        <div className={`${styles.background} ${styles.blue}`}>
+          <h3 className={`${styles.bgTitle} ${styles.light}`}>{t('background-title2').toUpperCase()}</h3>
+          <div className={`${styles.bgDescription} ${styles.light}`}>{t('background-description2')}</div>
+
+          <div className={styles.buttonContainer}>
+            <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>}
+                          bgColor={AppColors.background.circleButton40}
+                          onClick={() => {
+                            navigate('/doors');
+                          }}/>
+          </div>
+          <img className={styles.imageBig} src={shelf} alt="Полка"/>
+          <img className={styles.imageSmall} src={console} alt="Консоль"/>
+        </div>
+
+      )}
+      {/* {blocks.includes('furniture') && (
         <div className={styles.backgroundBlue}>
           <div className={styles.bgContentWrapper}>
             <h3>{t('background-title2').toUpperCase()}</h3>
