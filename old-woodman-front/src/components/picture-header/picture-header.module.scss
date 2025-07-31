@@ -9,69 +9,87 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-
+  grid-template-columns: 1fr 470px;
+  grid-template-rows: 300px;
   max-width: 1880px;
   margin: 0 auto;
 
-  @media (max-width: 810px) {
+  @media (max-width: 900px) {
     height: 390px;
+    grid-template-columns: 1fr 315px;
+    grid-template-rows: 1fr 206px;
   }
   @media (max-width: 386px) {
     height: 336px;
   }
 
-  .picture {
-    grid-area: image;
-    width: 100%;
-    height: inherit;
-  }
+
 
   .backgroundImage {
+    grid-area: image;
+    grid-column: 1 / span 2;
+    grid-row: 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center;
+    //object-position: right center;
     display: block;
+    @media (max-width: 900px) {
+
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+
+    }
 
 
-    @media (max-width: 1141px) {
-      object-position: left center;
-    }
-    @media (max-width: 810px) {
-      object-position: right center;
-    }
   }
 
   .imageTitleContainer {
-    grid-area: image;
+    grid-column: 1;
+    grid-row: 1;
+  //  grid-area: image;
     z-index: 1;
     display: flex;
     flex-direction: column;
     max-width: 1180px;
     width: 100%;
     color: var(--text-light-color);
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 1280px) {
       margin-left: 40px;
-      max-width: 100%;
+      max-width: 700px;
+      align-items: flex-start;
+    }
+    @media (max-width: 1054px) {
+      max-width: 350px;
+    }
+    @media (max-width: 900px) {
+      justify-self: left;
+      grid-column: 1 / span 2;
+      grid-row: 1 ;
 
     }
 
-
-    @media (max-width: 810px) {
+    /*@media (max-width: 810px) {
       align-items: flex-start;
       justify-self: left;
       align-self: start;
       padding: 30px 24px 0;
       margin-left: 0;
-    }
+    }*/
 
     .imageTitle {
       max-width: 760px;
       font-size: 48px;
-      @media (max-width: 1500px) {
-        max-width: 600px;
+
+      @media (max-width: 1280px) {
+
+      }
+      @media (max-width: 1054px) {
+     //   max-width: 400px;
+        font-size: 32px;
       }
       @media (max-width: 810px) {
         max-width: 450px;
@@ -84,12 +102,35 @@
 
     .imageLabel {
       @include mixins.bodyText;
+      @media (max-width: 1300px) {
+       // text-align: left;
+    //    max-width: 600px;
+      }
       @media (max-width: 810px) {
         max-width: 250px;
       }
     }
   }
-
+  .imagesWrap{
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    padding: 10px 10px 10px 0;
+    gap: 10px;
+    @media (max-width: 900px) {
+     // padding: 0 10px 6px 0;
+      padding: 0 10px 0 0  ;
+      gap: 6px;
+      grid-column:  2;
+      grid-row:  2;
+      width: 315px;
+      height: 186px;
+      justify-self: right;
+      img{
+        object-fit: contain;
+      }
+    }
+  }
   & .darkContainer{
     color: var(--text-main-color);
   }

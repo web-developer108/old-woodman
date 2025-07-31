@@ -24,6 +24,9 @@ import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/doors/gallery/gallery-4.webp';
+import bg from '@assets/images/home/bg-brown.webp';
+import small from '@assets/images/home/door-1.webp';
+import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
 
 const doorCollections = [
@@ -75,11 +78,9 @@ const DoorsOverview = () => {
         <PictureHeader
           title={t('main-header')}
           label={t('main-header.label')}
-          images={{
-            small: '/images/doors/bg-small.webp',
-            medium: '/images/doors/bg-medium.webp',
-            large: '/images/doors/bg-large.webp',
-          }}
+          imageBg={bg}
+          imageSmall = {small}
+          imageBig = {big}
         />
         <RunningText/>
         <section className={styles.doorsContent}>
