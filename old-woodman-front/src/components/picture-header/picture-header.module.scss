@@ -12,6 +12,7 @@
   grid-template-rows: 300px;
   max-width: 1880px;
   margin: 0 auto;
+  min-width: 325px;
   @media (max-width: 920px) {
     height: 390px;
     grid-template-columns: 1fr 315px;
@@ -43,7 +44,7 @@
     color: var(--text-light-color);
     justify-content: center;
     align-items: center;
-
+    padding-left: 20px;
     @media (max-width: 1280px) {
       padding-left: 30px;
       max-width: 700px;
@@ -84,6 +85,10 @@
       }
       @media (max-width: 920px) {
         font-size: 14px;
+        max-width: 330px;
+      }
+      @media (max-width: 414px) {
+
         max-width: 250px;
       }
     }

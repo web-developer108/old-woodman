@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
@@ -10,6 +12,8 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import { Gallery } from '../../components/gallery/gallery.tsx';
 import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
 import heroImageBeds from '@assets/images/furniture/beds-hero.webp';
@@ -18,11 +22,11 @@ import gallery1 from '@assets/images/furniture/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/furniture/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/furniture/gallery/gallery-4.webp';
+import bg from '@assets/images/home/bg-blue.webp';
+import small from '@assets/images/home/furniture-2.webp';
+import big from '@assets/images/home/furniture-1.webp';
+
 import styles from '../doors/doors.module.scss';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
-import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-import { useNavigate } from 'react-router-dom';
 
 const furnitureCollections = [
   {
@@ -57,11 +61,10 @@ const FurnitureOverview: React.FC = () => {
         <PictureHeader
           title={t('main-header')}
           label={t('main-header.label')}
-          images={{
-            small: '/images/furniture/blue-header-small.webp',
-            medium: '/images/furniture/blue-header-medium.webp',
-            large: '/images/furniture/blue-header-large.webp',
-          }}
+          imageBg={bg}
+          imageSmall = {small}
+          imageBig = {big}
+          reverseImages = {true}
         />
         <RunningText/>
         <section className={styles.doorsContent}>
