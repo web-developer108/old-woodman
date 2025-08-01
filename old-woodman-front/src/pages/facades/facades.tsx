@@ -12,6 +12,9 @@ import gallery2 from '@assets/images/facades/gallery-2f-big.webp'
 import gallery3 from '@assets/images/facades/gallery-3f-big.webp'
 import gallery4 from '@assets/images/facades/gallery-4f-big.webp'
 import gallery5 from '@assets/images/facades/gallery-5f-big.webp'
+import bg from '@assets/images/home/bg-yellow.webp';
+import small from '@assets/images/home/facade-1.webp';
+import big from '@assets/images/home/facade-2.webp';
 import styles from './facades.module.scss';
 
 const Facades = () => {
@@ -31,11 +34,9 @@ const Facades = () => {
           title={t('main-header')}
           label={t('main-header.label')}
           color='black'
-          images={{
-            small: '/images/facades/yellow-header-small.webp',
-            medium: '/images/facades/yellow-header-medium.webp',
-            large: '/images/facades/yellow-header-large.webp',
-          }}
+          imageBg={bg}
+          imageSmall = {small}
+          imageBig = {big}
         />
         <RunningText/>
         <div className={styles.facadesContent}>
