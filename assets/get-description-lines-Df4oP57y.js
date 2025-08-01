@@ -1,0 +1,1 @@
+const o=(i,r)=>{const e=[];let t=1;for(;;){const n=`${i}.description-${t}`,s=r(n);if(s===n)break;e.push(s),t++}return e},c=(i,r)=>{const e=[];let t=1;for(;;){const n=`description-${i}-${t}`,s=r(n);if(s===n)break;e.push(s),t++}return e};export{c as a,o as g};
