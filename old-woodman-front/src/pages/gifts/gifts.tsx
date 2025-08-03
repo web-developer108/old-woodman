@@ -14,13 +14,15 @@ import small from '@assets/images/home/gift-1.webp';
 import big from '@assets/images/home/gift-2.webp';
 import styles from './gifts.module.scss'
 
+const galleryImages = [
+  { src: clock, alt: 'Эксклюзивные часы из древесины карагача' },
+  { src: mirror, alt: 'Зеркало в деревянной раме в современном интерьере' },
+
+];
+
 const Gifts = () => {
   const { t } = usePageTranslate();
-  const galleryImages = [
-    { src: clock, alt: 'Эксклюзивные часы из древесины карагача' },
-    { src: mirror, alt: 'Зеркало в деревянной раме в современном интерьере' },
 
-  ];
   return (
     <ToolPageLayout>
       <div className={styles.giftsContainer}>

@@ -19,6 +19,8 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (!isMobile && descriptionRef.current) {
@@ -26,9 +28,37 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
       setIsOverflowing(el.scrollHeight > el.offsetHeight);
     }
   }, [isMobile, description, screenWidth]);
+  useLayoutEffect(() => {
+    const overlayEl = overlayRef.current;
+    const cardEl = cardRef.current;
+
+    if (isMobile && isExpanded && overlayEl && cardEl) {
+
+      overlayEl.classList.remove(styles.visible, styles.hidden);
+      overlayEl.style.transform = 'none';
+      overlayEl.style.opacity = '1';
+      overlayEl.style.pointerEvents = 'auto';
+
+      const realHeight = overlayEl.scrollHeight + 100;
+
+      if ((realHeight - 100) > 382) {
+        cardEl.style.minHeight = `${realHeight}px`;
+      } else {
+        cardEl.style.minHeight = '';
+      }
+
+      overlayEl.style.transform = '';
+      overlayEl.style.opacity = '';
+      overlayEl.style.pointerEvents = '';
+      overlayEl.classList.add(styles.visible);
+
+    } else if (cardEl) {
+      cardEl.style.minHeight = '';
+    }
+  }, [isExpanded, isMobile, description, screenWidth]);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} ref={cardRef}>
       <div className={styles.imageContainer}>
         <img src={image} alt={alt} className={styles.image}/>
       </div>
@@ -65,6 +95,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
       {isMobile && (
         <>
           <div
+            ref={overlayRef}
             className={`${styles.mobileOverlay} ${
               isExpanded ? styles.visible : styles.hidden
             }`}
@@ -102,6 +133,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                   : t('button.aria-label.close')
               }
               onClick={() => setIsExpanded((prev) => !prev)}
+
             />
           </div>
         </>
