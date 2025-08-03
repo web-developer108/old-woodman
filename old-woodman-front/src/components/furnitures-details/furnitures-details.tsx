@@ -115,7 +115,17 @@ export const FurnituresDetails: React.FC = () => {
           <div className={styles.titleBlock}>
             <h1 className={styles.title}>{product.pageHeader?.[lang]}</h1>
             <div className={styles.price}>
-              {t('price-label')} {product.price.toLocaleString()} ₸*
+              {lang === 'ru'
+                ? (
+                  <>
+                    {t('price-label')} {product.price.toLocaleString()} ₸*
+                  </>
+                )
+                : (
+                  <>
+                    {product.price.toLocaleString()} ₸* {t('price-label')}
+                  </>
+                )}
               <div className={styles.tooltipWrapper}>
                 <div className={styles.icon}>i</div>
                 <div className={styles.tooltip}>{t('info-text')}</div>

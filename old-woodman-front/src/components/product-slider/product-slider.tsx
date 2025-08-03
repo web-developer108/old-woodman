@@ -45,7 +45,19 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                   <p
                     className={styles.description}>{item.description ? item.description[lang] : item.shortName[lang]}</p>
 
-                  <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>
+                  <p className={styles.price}>
+                    {lang === 'ru'
+                      ? (
+                        <>
+                          {t('price-label')} {item.price.toLocaleString()} ₸*
+                        </>
+                      )
+                      : (
+                        <>
+                          {item.price.toLocaleString()} ₸* {t('price-label')}
+                        </>
+                      )}
+                  </p>
                 </div>
                 <CartButton productId={item.id}/>
               </div>

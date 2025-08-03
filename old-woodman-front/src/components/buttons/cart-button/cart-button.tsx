@@ -7,7 +7,7 @@ import type { CartButtonProps } from './cart-button.types.ts';
 import styles from './cart-button.module.scss';
 
 export const CartButton: React.FC<CartButtonProps> = ({ productId }) => {
-  const {t} = useTranslation('common')
+  const { t } = useTranslation('common')
   const { isInCart, addToCart, removeFromCart } = useCart();
   const inCart = isInCart(productId);
 
@@ -25,7 +25,7 @@ export const CartButton: React.FC<CartButtonProps> = ({ productId }) => {
       aria-label={inCart ? t('aria-label-in') : t('aria-label-out')}
     >
       <span className={styles.icon}>
-       {inCart ?  <CloseIcon/>:<PlusIcon />}
+       {inCart ? <CloseIcon/> : <PlusIcon/>}
       </span>
       <span className={styles.text}>
         {inCart ? t('cart-label-out') : t('cart-label-in')}

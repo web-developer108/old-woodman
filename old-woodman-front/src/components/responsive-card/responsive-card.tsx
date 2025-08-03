@@ -22,6 +22,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   const overlayRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+
   useLayoutEffect(() => {
     if (!isMobile && descriptionRef.current) {
       const el = descriptionRef.current;
