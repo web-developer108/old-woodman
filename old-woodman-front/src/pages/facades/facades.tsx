@@ -35,8 +35,14 @@ const Facades = () => {
           label={t('main-header.label')}
           color='black'
           imageBg={bg}
-          imageSmall = {small}
-          imageBig = {big}
+          imageSmall={{
+            src: small,
+            alt: 'Декоративная стеновая панель с готической росписью'
+          }}
+          imageBig={{
+            src: big,
+            alt: 'Деревянный мебельный фасад из массива сосны '
+          }}
         />
         <RunningText/>
         <div className={styles.facadesContent}>
