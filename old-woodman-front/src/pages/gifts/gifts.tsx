@@ -30,8 +30,14 @@ const Gifts = () => {
           title={t('main-header')}
           label={t('main-header.label')}
           imageBg={bg}
-          imageSmall = {small}
-          imageBig = {big}
+          imageSmall={{
+            src: small,
+            alt: 'Деревянный светильник эксклюзивный подарок алматы'
+          }}
+          imageBig={{
+            src: big,
+            alt: 'Пепельница из дуба эксклюзивный подарок алматы'
+          }}
         />
 
         <RunningText/>

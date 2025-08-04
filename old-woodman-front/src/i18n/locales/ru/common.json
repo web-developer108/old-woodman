@@ -129,7 +129,8 @@
   "button-read.label" : "Читать дальше",
   "plug-alt" : "Пустая картинка",
   "plug-title" : "На заказ",
-  "plug-label" : "Индивидуальный проект"
+  "plug-label" : "Индивидуальный проект",
+  "aria-label-picture-bg": "Фон заголовка"
 
 
 

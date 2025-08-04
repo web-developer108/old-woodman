@@ -79,8 +79,14 @@ const DoorsOverview = () => {
           title={t('main-header')}
           label={t('main-header.label')}
           imageBg={bg}
-          imageSmall = {small}
-          imageBig = {big}
+          imageSmall={{
+            src: small,
+            alt: 'Деревянная дверь со стеклопакетом на коричневом фоне'
+          }}
+          imageBig={{
+            src: big,
+            alt: 'Белая классическа дверь с наличником на коричневом фоне'
+          }}
         />
         <RunningText/>
         <section className={styles.doorsContent}>
@@ -100,7 +106,7 @@ const DoorsOverview = () => {
                     title={t(`title-${id}`)}
                     description={t(`description-${id}`)}
                     comment={t('comment-text')}
-                    alt = {alt}
+                    alt={alt}
                   />
                   <div className={styles.previewWrap}>
                     <ProductSlider

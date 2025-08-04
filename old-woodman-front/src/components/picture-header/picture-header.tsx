@@ -35,15 +35,14 @@ export const PictureHeader: React.FC<PictureHeaderProps> = ({
       <div className={`${styles.imagesWrap} ${reverseImages ? styles.reversed : ''}`}>
         <img
           className={styles.backgroundImage}
-          src={imageSmall}
-          alt={t('aria-label-picture-bg')}
+          src={imageSmall.src}
+          alt={imageSmall.alt}
 
         />
         <img
           className={styles.backgroundImage}
-          src={imageBig}
-          alt={t('aria-label-picture-bg')}
-
+          src={imageBig.src}
+          alt={imageBig.alt}
         />
       </div>
     </div>

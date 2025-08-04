@@ -62,8 +62,14 @@ const FurnitureOverview: React.FC = () => {
           title={t('main-header')}
           label={t('main-header.label')}
           imageBg={bg}
-          imageSmall = {small}
-          imageBig = {big}
+          imageSmall={{
+            src: small,
+            alt: 'Деревянная консоль с винтажной окраской, на голубом фоне'
+          }}
+          imageBig={{
+            src: big,
+            alt: 'Книжная полка из бука, двойная, на голубом фоне'
+          }}
           reverseImages = {true}
         />
         <RunningText/>
