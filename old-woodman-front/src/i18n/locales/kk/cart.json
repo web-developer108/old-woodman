@@ -3,16 +3,16 @@
   "description": "Ваши товары",
   "main-header": "Себет",
   "main-header.label": "Есіктердің, жиһаздың және басқа бұйымдардың суреттері үлгі ретінде берілген. Есіктер мен жиһаз Сіз үшін жеке дайындалады.",
-  "empty-header": "Товаров нет",
-  "empty-label": "Ваша корзина пока пуста",
+  "empty-header": "Тауарлар жоқ",
+  "empty-label": "Сіздің себетіңіз бос",
   "ordered-main-header": "Тапсырысыңызға рахмет!",
   "ordered-main-header.label": "Біз сізбен WhatsApp арқылы тапсырыс бойынша мәліметтерді нақтылау үшін хабарласамыз",
-  "ordered-button": "Вернуться",
+  "ordered-button": "Кері қайту",
   "cart.product": "Тауар",
   "cart.price": "Бағасы",
   "cart.quantity": "Саны",
   "cart.total": "Аралық жиынтық",
-  "aria-label.delete-button": "Удалить из корзины"
+  "aria-label.delete-button": "Себеттен жою"
 
 
 }

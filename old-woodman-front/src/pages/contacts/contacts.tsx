@@ -28,7 +28,7 @@ const Contacts = () => {
         <div className={styles.contactsContent}>
           <Breadcrumbs current={t('main-header')}/>
           <h1 className={styles.mainHeader}>
-            {t('header-1').toUpperCase()}
+           OLD WOODMAN
             <br/>
             {t('header-2').toUpperCase()}
           </h1>

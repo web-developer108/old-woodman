@@ -30,6 +30,8 @@ import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
+
+
 export const DoorsDetails: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -151,7 +153,17 @@ export const DoorsDetails: React.FC = () => {
           <div className={styles.titleBlock}>
             <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
             <div className={styles.price}>
-              {t('price-label')} {selectedProduct.price.toLocaleString()} ₸*
+              {lang === 'ru'
+                ? (
+                  <>
+                    {t('price-label')} {selectedProduct.price.toLocaleString()} ₸*
+                  </>
+                )
+                : (
+                  <>
+                    {selectedProduct.price.toLocaleString()} ₸* {t('price-label')}
+                  </>
+                )}
               <div className={styles.tooltipWrapper}>
                 <div className={styles.icon}>i</div>
                 <div className={styles.tooltip}>{t('info-text')}</div>
