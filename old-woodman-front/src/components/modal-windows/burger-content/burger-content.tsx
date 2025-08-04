@@ -37,10 +37,10 @@ export const BurgerContent: React.FC<BurgerContentProps> = ({ onClose }) => {
         <Link to="/promotions">{t('promotions').toUpperCase()}</Link>
       </div>
       <div className={styles.footerLinks}>
-        <Link to="/#faq" onClick={onClose}>{t('footer.questions')}</Link>
-        <Link to="/info" onClick={onClose}>{t('footer.info')}</Link>
-        <Link to="/terms" onClick={onClose}>{t('footer.terms')}</Link>
-        <Link to="/contacts" onClick={onClose}>{t('contacts')}</Link>
+        <Link to="/#faq">{t('footer.questions')}</Link>
+        <Link to="/info">{t('footer.info')}</Link>
+        <Link to="/terms">{t('footer.terms')}</Link>
+        <Link to="/contacts">{t('contacts')}</Link>
       </div>
       <div className={styles.social}>
         <SocialPanel/>
