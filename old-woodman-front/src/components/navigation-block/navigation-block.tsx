@@ -36,8 +36,8 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
                             navigate('/doors');
                           }}/>
           </div>
-          <img className={styles.imageSmall} src={door1} alt="Деревянная дверь со стеклопакетом на коричневом фоне"/>
-          <img className={styles.imageBig} src={door2} alt="Белая классическа дверь с наличником на коричневом фоне"/>
+          <img className={styles.imageSmall} src={door1} loading={'lazy'} alt="Деревянная дверь со стеклопакетом на коричневом фоне"/>
+          <img className={styles.imageBig} src={door2} loading={'lazy'} alt="Белая классическа дверь с наличником на коричневом фоне"/>
         </div>
       )}
       {blocks.includes('furniture') && (
@@ -52,8 +52,9 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
                             navigate('/furniture');
                           }}/>
           </div>
-          <img className={styles.imageBig} src={shelf} alt="Книжная полка из бука, двойная, на голубом фоне"/>
-          <img className={styles.imageSmall} src={console} alt="Деревянная консоль с винтажной окраской, на голубом фоне"/>
+          <img className={styles.imageBig} src={shelf} loading={'lazy'} alt="Книжная полка из бука, двойная, на голубом фоне"/>
+          <img className={styles.imageSmall} src={console} loading={'lazy'}
+               alt="Деревянная консоль с винтажной окраской, на голубом фоне"/>
         </div>
 
       )}
@@ -69,8 +70,8 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
                             navigate('/facades');
                           }}/>
           </div>
-          <img className={styles.imageSmall} src={facade1} alt="Декоративная стеновая панель с готической росписью"/>
-          <img className={styles.imageBig} src={facade2} alt="Деревянный мебельный фасад из массива соны "/>
+          <img className={styles.imageSmall} src={facade1} loading={'lazy'} alt="Декоративная стеновая панель с готической росписью"/>
+          <img className={styles.imageBig} src={facade2} loading={'lazy'} alt="Деревянный мебельный фасад из массива соны "/>
         </div>
       )}
     </div>

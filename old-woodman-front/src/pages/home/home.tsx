@@ -52,7 +52,11 @@ const Home = () => {
       <div className={styles.homePageContainer}>
         <section className={styles.hero}>
           <div className={styles.imageWrapper}>
-            <img src={heroImage} alt="Hero" className={styles.heroImage}/>
+
+            <img src={heroImage}
+                 className={styles.heroImage}
+                 alt="Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере"
+            />
             <div className={styles.heroContent}>
               <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
               <div className={styles.description}>{t('hero.description')}</div>
