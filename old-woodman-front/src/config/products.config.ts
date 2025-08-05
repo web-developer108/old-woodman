@@ -689,15 +689,15 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'tatami',
+            id: 'tatami-hard',
             title: {
-              ru: 'Tatami',
-              kk: 'Tatami',
+              ru: 'Tatami Hard',
+              kk: 'Tatami Hard',
 
             },
             pageHeader: {
-              ru: 'Деревянная кровать в японском стиле',
-              kk: 'Жапон стиліндегі ағаш төсек',
+              ru: 'Деревянная кровать в японском стиле Tatami Hard',
+              kk: 'Жапон стиліндегі ағаш төсек Tatami Hard',
             },
             shortName: {
               ru: 'Кровать',
@@ -709,6 +709,31 @@ export const productCatalog: ProductCategory[] = [
             alt: 'Японская деревянная двуспальная кровать c держателем под матрас из досок ',
             sizes: {
               width:220,
+              height: 21,
+              depth: 200,
+            }
+          },
+          {
+            id: 'tatami-light',
+            title: {
+              ru: 'Tatami Light',
+              kk: 'Tatami Light',
+
+            },
+            pageHeader: {
+              ru: 'Деревянная кровать в японском стиле Tatami Light ',
+              kk: 'Жапон стиліндегі ағаш төсек Tatami Light ',
+            },
+            shortName: {
+              ru: 'Кровать',
+              kk: 'Кровать',
+            },
+            images: ['/images/furniture/beds/tatami-light.webp'],
+            price: 490000,
+            time: 10,
+            alt: 'Японская деревянная двуспальная кровать c держателем под матрас из досок ',
+            sizes: {
+              width:180,
               height: 21,
               depth: 200,
             }
