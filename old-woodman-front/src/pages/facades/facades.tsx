@@ -7,11 +7,11 @@ import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
-import gallery1 from '@assets/images/facades/gallery-1f-big.webp'
-import gallery2 from '@assets/images/facades/gallery-2f-big.webp'
-import gallery3 from '@assets/images/facades/gallery-3f-big.webp'
-import gallery4 from '@assets/images/facades/gallery-4f-big.webp'
-import gallery5 from '@assets/images/facades/gallery-5f-big.webp'
+import gallery1 from '@assets/images/facades/gallery-1f.webp'
+import gallery2 from '@assets/images/facades/gallery-2f.webp'
+import gallery3 from '@assets/images/facades/gallery-3f.webp'
+import gallery4 from '@assets/images/facades/gallery-4f.webp'
+import gallery5 from '@assets/images/facades/gallery-5f.webp'
 import bg from '@assets/images/home/bg-yellow.webp';
 import small from '@assets/images/home/facade-1.webp';
 import big from '@assets/images/home/facade-2.webp';

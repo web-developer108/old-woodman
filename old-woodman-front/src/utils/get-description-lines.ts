@@ -21,7 +21,7 @@ export const getFurnitureDescriptionLines = (id: string, t: TFunction): string[]
   while (true) {
     const key = `description-${id}-${index}`;
     const translation = t(key);
-    if (translation === key) break; // строка не найдена
+    if (translation === key) break;
     lines.push(translation);
     index++;
   }

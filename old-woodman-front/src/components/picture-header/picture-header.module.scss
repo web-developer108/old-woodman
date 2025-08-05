@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     max-width: 1180px;
-    width: 100%;
+    width: auto;
     color: var(--text-light-color);
     justify-content: center;
     align-items: center;
@@ -80,6 +80,8 @@
 
     .imageLabel {
       font-size: 18px;
+      align-self: flex-start;
+      text-align: left;
       @media (max-width: 1054px) {
         font-size: 16px;
       }
@@ -122,9 +124,7 @@
       width: 315px;
       height: 186px;
       justify-self: right;
-      img {
-        object-fit: contain;
-      }
+
     }
   }
 

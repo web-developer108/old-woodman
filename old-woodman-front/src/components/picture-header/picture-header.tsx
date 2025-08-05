@@ -27,7 +27,6 @@ export const PictureHeader: React.FC<PictureHeaderProps> = ({
 
   return (
     <div className={styles.imageContainer}>
-
       <img
         ref={imageRef}
         className={styles.backgroundImage}
@@ -45,20 +44,17 @@ export const PictureHeader: React.FC<PictureHeaderProps> = ({
         <div className={styles.imageLabel}>{label}</div>
       </div>
       <div
-      //  className={`${styles.imagesWrap} ${reverseImages ? styles.reversed : ''}`}
         className={`${styles.imagesWrap} ${reverseImages ? styles.reversed : ''} ${
           showImages ? styles.animateIn : ''
         }`}
       >
 
         <img
-          className={styles.backgroundImage}
           src={imageSmall.src}
           alt={imageSmall.alt}
 
         />
         <img
-          className={styles.backgroundImage}
           src={imageBig.src}
           alt={imageBig.alt}
         />
