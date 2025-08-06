@@ -26,6 +26,7 @@ export const HeaderBar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
@@ -38,6 +39,17 @@ export const HeaderBar = () => {
 
   const showElements = !isMobile || !isMenuOpen
 
+  const handleBurgerOpen = () => {
+    setIsClosing(false);
+    setMenuOpen(true);
+  };
+
+  const handleBurgerClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+    }, 400);
+  };
   return (
     <>
       <header className={styles.header}>
@@ -63,12 +75,11 @@ export const HeaderBar = () => {
                      className={({ isActive }) => getNavLinkClass(isActive)}>{t('promotions')}</NavLink>
             <NavLink to="/contacts" className={({ isActive }) => getNavLinkClass(isActive)}>{t('contacts')}</NavLink>
           </div>
-          {showElements &&
 
               <div className={styles.contactBtn}>
                   <OvalButton text={t('connect')} onClick={() => showModal(<ContactsModal/>)}/>
               </div>
-          }
+
           <div className={styles.right}>
             {showElements &&
                 <>
@@ -84,16 +95,19 @@ export const HeaderBar = () => {
             }
 
 
-            <div className={styles.burger} onClick={() => setMenuOpen(!isMenuOpen)}>
+            <div className={styles.burger} onClick={isMenuOpen ? handleBurgerClose : handleBurgerOpen}>
               {isMenuOpen
-                ? <CircleButton ariaLabel={t('header.aria-label')} icon={<CloseIcon/>}/* onClick={() => setMenuOpen(false)}*/ bgColor="transparent"/>
-                :
-                <BurgerIcon/>}
+                ? <CircleButton ariaLabel={t('header.aria-label')} icon={<CloseIcon/>} bgColor="transparent"/>
+                : <BurgerIcon/>}
             </div>
+
           </div>
         </div>
       </header>
-      {isMenuOpen && <BurgerContent onClose={() => setMenuOpen(false)}/>}
+      {isMenuOpen && (
+        <BurgerContent onClose={handleBurgerClose} isClosing={isClosing}/>
+      )}
+
     </>
   )
 }
