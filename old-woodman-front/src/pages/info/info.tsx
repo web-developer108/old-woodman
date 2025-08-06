@@ -16,6 +16,7 @@ const Info = () => {
   const { t } = usePageTranslate();
   const footerRef = useFooterRef();
   const instructionRef = useRef<HTMLHeadingElement>(null);
+  const doorsRef = useRef<HTMLHeadingElement>(null);
 
   const handleClick = () => {
     footerRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -26,10 +27,16 @@ const Info = () => {
       instructionRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     }
+    if (location.pathname.startsWith('/info') && location.hash === '#doors') {
+      doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+
   }, []);
+
+
   return (
     <ToolPageLayout>
-      <div className={styles.infoContainer}>
+      <div id = 'doors' ref={doorsRef}  className={styles.infoContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.titleWrapper}>
             <h1 className={styles.mainHeader}

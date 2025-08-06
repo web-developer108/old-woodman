@@ -1,5 +1,30 @@
 @use '../../../mixins' as mixins;
 
+.overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--text-main-color-50);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  @media (max-width: 500px) {
+    top: 126px;
+  }
+
+  &.overlayFadeIn {
+    opacity: 1;
+  }
+
+  &.overlayFadeOut {
+    opacity: 0;
+  }
+}
+
 .burgerMenu {
   position: fixed;
   top: 80px;
@@ -8,14 +33,24 @@
   bottom: 0;
   background-color: var(--text-light-color);
   z-index: 999;
-  padding: 201px 20px 40px;
+  padding: 50px 20px 40px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.4s ease;
 
-  @media (max-width: 810px) {
-    padding-top: 96px;
+  &.animateIn {
+    transform: translateX(0);
+    opacity: 1;
   }
+
+  &.animateOut {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
   @media (max-width: 500px) {
     top: 126px;
   }
