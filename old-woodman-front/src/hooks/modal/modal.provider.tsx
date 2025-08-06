@@ -10,9 +10,20 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation('common')
   const { isMobile } = useDevice();
   const [modalContent, setModalContent] = useState<ReactNode | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
 
-  const showModal = (content: ReactNode) => setModalContent(content);
-  const closeModal = () => setModalContent(null);
+  const showModal = (content: ReactNode) => {
+    setModalContent(content);
+    setIsClosing(false);
+  };
+  const closeModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setModalContent(null);
+      setIsClosing(false);
+    }, 300);
+  };
+
 
   return (
     <ModalContext.Provider value={{ showModal, closeModal }}>
@@ -20,12 +31,12 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
       {modalContent && (
         <div className={styles.overlay} onClick={closeModal}>
           <div
-            className={
-              isMobile ? styles.drawer : styles.modal
-            }
+            className={`${isMobile ? styles.drawer : styles.modal} ${
+              isClosing ? styles.animateOut : styles.animateIn
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className={styles.drawerInner}>
+            <div className={isMobile ? styles.drawerInner : ''}>
               <div className={styles.close}>
                 <CircleButton
                   ariaLabel={t('header.aria-label')}
@@ -35,7 +46,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
                 />
               </div>
 
-            {modalContent}
+              {modalContent}
             </div>
           </div>
         </div>
