@@ -48,29 +48,36 @@ export const BurgerContent: React.FC<BurgerContentProps> = ({ onClose, isClosing
 
   return (
     <div
-      className={`${styles.burgerMenu} ${isClosing
-        ? styles.animateOut :
-        mounted
-          ? styles.animateIn : ''}`}
+      className={`${styles.overlay} ${isClosing ? styles.overlayFadeOut : styles.overlayFadeIn}`}
+      onClick={onClose}
     >
+      <div
+        className={`${styles.burgerMenu} ${isClosing
+          ? styles.animateOut :
+          mounted
+            ? styles.animateIn : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
 
-      <div className={styles.navigation}>
-        <Link to="/doors" onClick={() => handleLinkClick('/doors')}>{t('footer.doors').toUpperCase()}</Link>
-        <Link to="/furniture" onClick={() => handleLinkClick('/furniture')}>{t('footer.furniture').toUpperCase()}</Link>
-        <Link to="/facades" onClick={() => handleLinkClick('/facades')}>{t('facades-panels').toUpperCase()}</Link>
-        <Link to="/gifts" onClick={() => handleLinkClick('/gifts')}>{t('gifts-decor').toUpperCase()}</Link>
-        <Link to="/favorites" onClick={() => handleLinkClick('/favorites')}>{t('favorites').toUpperCase()}</Link>
-        <Link to="/cart" onClick={() => handleLinkClick('/cart')}>{t('cart').toUpperCase()}</Link>
-        <Link to="/promotions" onClick={() => handleLinkClick('/promotions')}>{t('promotions').toUpperCase()}</Link>
-      </div>
-      <div className={styles.footerLinks}>
-        <Link to="/#faq" onClick={() => handleLinkClick('/#faq')}>{t('footer.questions')}</Link>
-        <Link to="/info" onClick={() => handleLinkClick('/info')}>{t('footer.info')}</Link>
-        <Link to="/terms" onClick={() => handleLinkClick('/terms')}>{t('footer.terms')}</Link>
-        <Link to="/contacts" onClick={() => handleLinkClick('/contacts')}>{t('contacts')}</Link>
-      </div>
-      <div className={styles.social}>
-        <SocialPanel/>
+        <div className={styles.navigation}>
+          <Link to="/doors" onClick={() => handleLinkClick('/doors')}>{t('footer.doors').toUpperCase()}</Link>
+          <Link to="/furniture"
+                onClick={() => handleLinkClick('/furniture')}>{t('footer.furniture').toUpperCase()}</Link>
+          <Link to="/facades" onClick={() => handleLinkClick('/facades')}>{t('facades-panels').toUpperCase()}</Link>
+          <Link to="/gifts" onClick={() => handleLinkClick('/gifts')}>{t('gifts-decor').toUpperCase()}</Link>
+          <Link to="/favorites" onClick={() => handleLinkClick('/favorites')}>{t('favorites').toUpperCase()}</Link>
+          <Link to="/cart" onClick={() => handleLinkClick('/cart')}>{t('cart').toUpperCase()}</Link>
+          <Link to="/promotions" onClick={() => handleLinkClick('/promotions')}>{t('promotions').toUpperCase()}</Link>
+        </div>
+        <div className={styles.footerLinks}>
+          <Link to="/#faq" onClick={() => handleLinkClick('/#faq')}>{t('footer.questions')}</Link>
+          <Link to="/info" onClick={() => handleLinkClick('/info')}>{t('footer.info')}</Link>
+          <Link to="/terms" onClick={() => handleLinkClick('/terms')}>{t('footer.terms')}</Link>
+          <Link to="/contacts" onClick={() => handleLinkClick('/contacts')}>{t('contacts')}</Link>
+        </div>
+        <div className={styles.social}>
+          <SocialPanel/>
+        </div>
       </div>
     </div>
   );
