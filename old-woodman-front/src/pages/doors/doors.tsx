@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
@@ -63,15 +63,9 @@ const galleryImages = [
 ];
 const DoorsOverview = () => {
   const { t } = usePageTranslate();
-  const infoRef = useRef<HTMLDivElement>(null);
   const { getCollectionById } = useProductCatalog();
   const navigate = useNavigate();
 
-  useLayoutEffect(() => {
-    if (location.pathname.startsWith('/doors/') && location.hash === '#info') {
-      infoRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
   return (
     <ToolPageLayout>
       <div className={styles.doorsContainer}>
@@ -142,7 +136,7 @@ const DoorsOverview = () => {
             <Gallery images={galleryImages} layout='complex'/>
           </div>
           <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
-          <div id='info' ref={infoRef} className={styles.checkColumns}>
+          <div id='info' className={styles.checkColumns}>
             <ul className={styles.checklist}>
               <li>{t('article2-text-1')}</li>
               <li>{t('article2-text-2')}</li>
