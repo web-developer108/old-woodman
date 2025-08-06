@@ -26,7 +26,13 @@ const Info = () => {
       instructionRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     }
+   /* if (location.pathname.startsWith('/doors/') && location.hash === '#info') {
+      infoRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }*/
+
   }, []);
+
+
   return (
     <ToolPageLayout>
       <div className={styles.infoContainer}>

@@ -31,8 +31,8 @@ export const Accordion = () => {
             <button onClick={() => toggleItem(index)} className={styles.question}>
               {item.question}
               <span className={`${styles.arrow} ${openIndices.includes(index) ? styles.rotate : ''}`}>
-        <ArrowDownIcon/>
-      </span>
+                <ArrowDownIcon/>
+               </span>
             </button>
             {openIndices.includes(index) && (
               <div className={styles.answer}>
