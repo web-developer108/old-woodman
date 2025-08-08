@@ -151,7 +151,7 @@ export const DoorsDetails: React.FC = () => {
         </section>
         <section className={styles.infoBlock}>
           <div className={styles.titleBlock}>
-            <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
+            <h1 className={styles.title}>{t(`title-${productId}`)}</h1>
             <div className={styles.price}>
               {lang === 'ru'
                 ? (
@@ -172,7 +172,7 @@ export const DoorsDetails: React.FC = () => {
 
           </div>
           <div className={styles.descriptionContainer}>
-            <div
+          <div
               ref={textRef}
               className={[
                 styles.textBlock,
