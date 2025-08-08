@@ -61,7 +61,7 @@ export const DoorsDetails: React.FC = () => {
     return productId ? getProductById(productId) || items[0] : items[0];
   }, [productId, getProductById, items]);
 
-  const descriptionLines = useMemo(() => getDescriptionLines(collectionId!, t), [collectionId, t]);
+  const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
 
   const handleOneClick = () => {
     showModal(<OneClickModal id={selectedProduct.id}/>);
