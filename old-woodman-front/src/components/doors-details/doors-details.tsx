@@ -61,7 +61,7 @@ export const DoorsDetails: React.FC = () => {
     return productId ? getProductById(productId) || items[0] : items[0];
   }, [productId, getProductById, items]);
 
-  const descriptionLines = useMemo(() => getDescriptionLines(collectionId!, t), [collectionId, t]);
+  const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
 
   const handleOneClick = () => {
     showModal(<OneClickModal id={selectedProduct.id}/>);
@@ -151,7 +151,7 @@ export const DoorsDetails: React.FC = () => {
         </section>
         <section className={styles.infoBlock}>
           <div className={styles.titleBlock}>
-            <h1 className={styles.title}>{collection.pageTitle?.[lang]}</h1>
+            <h1 className={styles.title}>{t(`title-${productId}`)}</h1>
             <div className={styles.price}>
               {lang === 'ru'
                 ? (
@@ -172,7 +172,7 @@ export const DoorsDetails: React.FC = () => {
 
           </div>
           <div className={styles.descriptionContainer}>
-            <div
+          <div
               ref={textRef}
               className={[
                 styles.textBlock,
