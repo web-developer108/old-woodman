@@ -24,6 +24,7 @@ import gallery3 from '@assets/images/home/gallery3.webp'
 import gallery4 from '@assets/images/home/gallery4.webp'
 import gallery5 from '@assets/images/home/gallery5.webp'
 import heroImage from '@assets/images/home/hero-mini.webp'
+import overlay from '@assets/images/home/overlay.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [
@@ -53,6 +54,10 @@ const Home = () => {
         <section className={styles.hero}>
           <div className={styles.imageWrapper}>
 
+            <img src={overlay}
+                 className={styles.overlay}
+                 alt="Интерьер"
+            />
             <img src={heroImage}
                  className={styles.heroImage}
                  alt="Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере"
