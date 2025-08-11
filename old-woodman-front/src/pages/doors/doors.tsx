@@ -122,7 +122,7 @@ const DoorsOverview = () => {
             <div className={styles.loadMoreWrapper}>
              <OvalButton
                text = {t('button-show-more.label')}
-               onClick={() => setVisibleCount((prev) => prev + 1)}
+               onClick={() => setVisibleCount((prev) => prev + 2)}
              />
 
             </div>

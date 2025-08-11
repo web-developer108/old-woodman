@@ -24,7 +24,7 @@ import gallery3 from '@assets/images/home/gallery3.webp'
 import gallery4 from '@assets/images/home/gallery4.webp'
 import gallery5 from '@assets/images/home/gallery5.webp'
 import heroImage from '@assets/images/home/hero-mini.webp'
-import overlay from '@assets/images/home/overlay.webp'
+import overlay from '@assets/images/home/overlay-small.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [
