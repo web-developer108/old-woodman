@@ -125,6 +125,7 @@
   "doors-title": "Другие двери",
   "doors-transition.button": "Перейти",
   "button-transition.label": "Перейти в раздел",
-  "random-title" : "Вам может понравиться"
+  "random-title" : "Вам может понравиться",
+  "button-show-more.label": "Ещё двери"
 
 }

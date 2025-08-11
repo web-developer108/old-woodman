@@ -21,7 +21,23 @@
       display: none;
     }
   }
-
+  .loadMoreWrapper{
+    margin: 0 auto;
+    width: 386px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 156px;
+    @media (max-width: 810px) {
+      padding-bottom: 96px;
+      width: 326px;
+    }
+    button{
+      padding: 17px 152px;
+      @media (max-width: 810px) {
+        padding: 17px 127px;
+      }
+    }
+  }
   .doorsContent {
     max-width: 1180px;
     margin: 0 auto;
