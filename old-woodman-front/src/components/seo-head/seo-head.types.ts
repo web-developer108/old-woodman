@@ -6,5 +6,5 @@ export type MetaTag = {
 
 export type SeoHeadProps = {
   meta?: MetaTag[];
-  includeDefaults?: boolean;
+
 };

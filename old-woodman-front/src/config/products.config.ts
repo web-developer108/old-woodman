@@ -456,26 +456,26 @@ export const productCatalog: ProductCategory[] = [
         },
         items: [
           {
-            id: 'balcony-dark',
+            id: 'balcony-teak',
             title: {
               ru: 'Balcony',
               kk: 'Balcony',
 
             },
             titleMob: {
-              ru: 'Balcony, темная',
-              kk: 'Balcony, темная',
+              ru: 'Balcony, цвет "Тик"',
+              kk: 'Balcony, цвет "Тик"',
             },
             description: {
-              ru: 'Темная',
-              kk: 'Темная',
+              ru: 'цвет "Тик"',
+              kk: 'цвет "Тик"',
             },
             shortName: {
               ru: 'Дверь',
               kk: 'Есік',
             },
             images: ['/images/doors/balcony/balcony-dark.webp'],
-            price: 286000,
+            price: 340000,
             alt: 'Деревянная балконная дверь со стеклопакетом из массива сосны, цвет "тик"'
           },
         ],
