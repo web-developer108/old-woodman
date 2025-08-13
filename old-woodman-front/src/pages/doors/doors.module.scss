@@ -1,6 +1,6 @@
 @use "../../mixins" as mixins;
 
-.doorsContainer {
+.mainContainer {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
@@ -21,7 +21,8 @@
       display: none;
     }
   }
-  .loadMoreWrapper{
+
+  .loadMoreWrapper {
     margin: 0 auto;
     width: 386px;
     display: flex;
@@ -31,14 +32,16 @@
       padding-bottom: 96px;
       width: 326px;
     }
-    button{
+
+    button {
       padding: 17px 152px;
       @media (max-width: 810px) {
         padding: 17px 127px;
       }
     }
   }
-  .doorsContent {
+
+  .pageContent {
     max-width: 1180px;
     margin: 0 auto;
 
@@ -49,6 +52,10 @@
     margin: 0 auto;
 
     .articleTitle {
+      &.noLabel {
+        margin-bottom: 48px;
+      }
+
       @include mixins.headingLarge;
     }
 
@@ -143,12 +150,15 @@
     .description, .descriptionFurnitureTop, .descriptionFurnitureBottom {
       @include mixins.bodyTextSmall;
     }
-    .descriptionFurnitureTop{
+
+    .descriptionFurnitureTop {
       margin-top: 36px;
     }
-    .descriptionFurnitureBottom{
+
+    .descriptionFurnitureBottom {
       margin-bottom: 24px;
     }
+
     .description {
       margin-bottom: 112px;
       @media (max-width: 1200px) {
@@ -174,6 +184,7 @@
   .navigation {
     max-width: 1180px;
     margin: 0 auto;
+
     h2 {
       margin-bottom: 16px;
       @include mixins.headingLarge;

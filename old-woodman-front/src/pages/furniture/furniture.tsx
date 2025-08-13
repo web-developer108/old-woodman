@@ -57,7 +57,7 @@ const FurnitureOverview: React.FC = () => {
 
   return (
     <ToolPageLayout>
-      <div className={styles.doorsContainer}>
+      <div className={styles.mainContainer}>
         <PictureHeader
           title={t('main-header')}
           label={t('main-header.label')}
@@ -73,7 +73,7 @@ const FurnitureOverview: React.FC = () => {
           reverseImages = {true}
         />
         <RunningText/>
-        <section className={styles.doorsContent}>
+        <section className={styles.pageContent}>
           <Breadcrumbs current={t('breadcrumbs.label')}/>
           <SectionTabs/>
           <div className={styles.socialButtons}>
@@ -107,8 +107,7 @@ const FurnitureOverview: React.FC = () => {
           })}
         </section>
         <section className={styles.article}>
-          <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
-          <span className={styles.articleLabel}>{t('article-header.label')} </span>
+          <h2 className={`${styles.articleTitle} ${styles.noLabel}`}>{t('article-header').toUpperCase()}</h2>
           <div className={styles.columns}>
             <div className={styles.column}>
               <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
