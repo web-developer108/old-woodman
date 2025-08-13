@@ -23,16 +23,20 @@ import gallery2 from '@assets/images/home/gallery2.webp'
 import gallery3 from '@assets/images/home/gallery3.webp'
 import gallery4 from '@assets/images/home/gallery4.webp'
 import gallery5 from '@assets/images/home/gallery5.webp'
+import gallery6 from '@assets/images/home/gallery6.webp'
+import gallery7 from '@assets/images/home/gallery7.webp'
 import heroImage from '@assets/images/home/hero-mini.webp'
 import overlay from '@assets/images/home/overlay-small1.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [
   { src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
-  { src: gallery2, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
+  { src: gallery2, alt: 'Добавить alt' },
   { src: gallery3, alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки' },
   { src: gallery4, alt: 'Элемент деревянной двери со стеклопакетом для балкона ' },
-  { src: gallery5, alt: 'Деревяная классическая дверь из массива сосны в интерьере кабинета' },
+  { src: gallery5, alt: 'Добавить alt' },
+  { src: gallery6, alt: 'Добавить alt' },
+  { src: gallery7, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
 ];
 
 const Home = () => {

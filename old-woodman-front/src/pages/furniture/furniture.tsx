@@ -22,6 +22,8 @@ import gallery1 from '@assets/images/furniture/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/furniture/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/furniture/gallery/gallery-4.webp';
+import gallery5 from '@assets/images/furniture/gallery/gallery-5.webp';
+import gallery6 from '@assets/images/furniture/gallery/gallery-6.webp';
 import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
@@ -48,6 +50,8 @@ const galleryImages = [
   { src: gallery2, alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы' },
   { src: gallery3, alt: 'Деревянная консоль в стиле Прованс с лампой и книгой' },
   { src: gallery4, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной' },
+  { src: gallery5, alt: 'Добавить alt' },
+  { src: gallery6, alt: 'Добавить alt' },
 
 ];
 const FurnitureOverview: React.FC = () => {
@@ -57,7 +61,7 @@ const FurnitureOverview: React.FC = () => {
 
   return (
     <ToolPageLayout>
-      <div className={styles.doorsContainer}>
+      <div className={styles.mainContainer}>
         <PictureHeader
           title={t('main-header')}
           label={t('main-header.label')}
@@ -73,7 +77,7 @@ const FurnitureOverview: React.FC = () => {
           reverseImages = {true}
         />
         <RunningText/>
-        <section className={styles.doorsContent}>
+        <section className={styles.pageContent}>
           <Breadcrumbs current={t('breadcrumbs.label')}/>
           <SectionTabs/>
           <div className={styles.socialButtons}>
@@ -107,8 +111,7 @@ const FurnitureOverview: React.FC = () => {
           })}
         </section>
         <section className={styles.article}>
-          <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
-          <span className={styles.articleLabel}>{t('article-header.label')} </span>
+          <h2 className={`${styles.articleTitle} ${styles.noLabel}`}>{t('article-header').toUpperCase()}</h2>
           <div className={styles.columns}>
             <div className={styles.column}>
               <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
@@ -143,7 +146,7 @@ const FurnitureOverview: React.FC = () => {
         </section>
         <section className={styles.navigation}>
           <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock isHome={false} blocks={['doors', 'facades']}/>
+          <NavigationBlock isHome={false} blocks={['doors', 'facades', 'gifts']}/>
         </section>
       </div>
     </ToolPageLayout>

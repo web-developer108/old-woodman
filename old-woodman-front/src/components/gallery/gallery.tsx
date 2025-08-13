@@ -9,9 +9,7 @@ export const Gallery: React.FC<GalleryProps> = ({ images, layout = 'default' }) 
   const simpleBarRef = useRef<any>(null);
   useSimpleBarRecalc(simpleBarRef);
   const layoutClass =
-    layout === 'two-large'
-      ? styles.layoutTwoLarge
-      : layout === 'complex'
+    layout === 'complex'
         ? styles.layoutComplex
         : styles.layoutDefault;
   return (

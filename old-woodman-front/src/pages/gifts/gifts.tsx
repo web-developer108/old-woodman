@@ -7,17 +7,20 @@ import { Gallery } from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
-import clock from '@assets/images/gifts/clock-big.webp'
-import mirror from '@assets/images/gifts/mirror-big.webp'
+import gallery1 from '@assets/images/gifts/gallery-1.webp'
+import gallery2 from '@assets/images/gifts/gallery-2.webp'
+import gallery3 from '@assets/images/gifts/gallery-3.webp'
+import gallery4 from '@assets/images/gifts/gallery-4.webp'
 import bg from '@assets/images/home/bg-orange.webp';
 import small from '@assets/images/home/gift-1.webp';
 import big from '@assets/images/home/gift-2.webp';
 import styles from './gifts.module.scss'
 
 const galleryImages = [
-  { src: clock, alt: 'Эксклюзивные часы из древесины карагача' },
-  { src: mirror, alt: 'Зеркало в деревянной раме в современном интерьере' },
-
+  { src: gallery1, alt: 'зеркало в деревянной раме в современном интерьере' },
+  { src: gallery2, alt: 'Добавить alt' },
+  { src: gallery3, alt: 'Добавить alt' },
+  { src: gallery4, alt: 'Добавить alt' },
 ];
 
 const Gifts = () => {
@@ -59,13 +62,15 @@ const Gifts = () => {
               </div>
             </div>
           </section>
-          <Gallery images={galleryImages} layout={'two-large'}/>
+          <Gallery images={galleryImages}/>
           <section className={styles.textInfo}>
             <TextInfo/>
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-            <NavigationBlock/>
+            <NavigationBlock
+            blocks={['doors', 'furniture', 'facades']}
+            />
           </section>
         </div>
       </div>

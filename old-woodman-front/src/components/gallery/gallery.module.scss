@@ -45,87 +45,52 @@
       }
     }
 
-    &.layoutTwoLarge {
+    &.layoutComplex {
+      display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 584px;
-      grid-template-rows: 100%;
-      height: 584px;
+      grid-auto-columns: 286px;
+      grid-template-columns: 584px auto;
+      grid-template-rows: 286px 286px;
       gap: 12px;
+      height: auto;
+
       @media (max-width: 810px) {
-        grid-auto-columns: 372px;
-        height: 372px;
+        grid-template-columns: 372px auto;
+        grid-auto-columns: 182px;
+        grid-template-rows: 182px 182px;
         gap: 8px;
       }
 
       .galleryImage {
         width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-    }
-
-    &.layoutComplex {
-      grid-auto-columns: max-content;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas:
-    "big side1 side1"
-    "big side2 side3";
-      gap: 12px;
-      height: auto;
-      @media (max-width: 810px) {
-        grid-template-rows: repeat(2, 182px);
-        height: 372px;
-        gap: 8px;
-      }
-
-      .galleryImage:nth-child(1) {
-        grid-area: big;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
-        @media (max-width: 810px) {
-         width: 372px;
+      }
 
+      .galleryImage:nth-child(1) {
+        grid-row: span 2;
+        width: 584px;
+        height: 584px;
+        @media (max-width: 810px) {
+          width: 372px;
+          height: 372px;
         }
       }
 
       .galleryImage:nth-child(2) {
-        grid-area: side1;
-        width: 584px;
-        height: 100%;
-        @media (max-width: 810px) {
-          width: 376px;
-
-        }
-      }
-
-      .galleryImage:nth-child(3) {
-        grid-area: side2;
-        width: 286px;
-        height: 286px;
-        @media (max-width: 810px) {
-          width: 182px;
-          height: 182px;
-        }
-      }
-
-      .galleryImage:nth-child(4) {
-        grid-area: side3;
-        width: 286px;
-        height: 286px;
-        @media (max-width: 810px) {
-          width: 182px;
-          height: 182px;
-        }
-      }
-
-      .galleryImage:nth-child(n+4) {
         grid-column: span 2;
+        width: 584px;
+        height: 286px;
+        @media (max-width: 810px) {
+          width: 372px;
+          height: 182px;
+        }
+      }
+
+      .galleryImage:nth-child(n+3) {
         width: 286px;
         height: 286px;
-        border-radius: 10px;
-        object-fit: cover;
         @media (max-width: 810px) {
           width: 182px;
           height: 182px;

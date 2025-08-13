@@ -70,7 +70,7 @@ const DoorsOverview = () => {
 
   return (
     <ToolPageLayout>
-      <div className={styles.doorsContainer}>
+      <div className={styles.mainContainer}>
         <PictureHeader
           title={t('main-header')}
           label={t('main-header.label')}
@@ -85,7 +85,7 @@ const DoorsOverview = () => {
           }}
         />
         <RunningText/>
-        <section className={styles.doorsContent}>
+        <section className={styles.pageContent}>
           <Breadcrumbs current={t('breadcrumbs.label')}/>
           <SectionTabs/>
           <div className={styles.socialButtons}>
@@ -166,7 +166,7 @@ const DoorsOverview = () => {
         </section>
         <section className={styles.navigation}>
           <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock isHome={false} blocks={['furniture', 'facades']}/>
+          <NavigationBlock isHome={false} blocks={['furniture', 'facades', 'gifts']}/>
         </section>
       </div>
     </ToolPageLayout>
