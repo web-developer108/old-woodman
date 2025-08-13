@@ -159,7 +159,7 @@
 
   .textInfo {
     background-color: var(--background-grey-color);
-    margin-bottom: 156px;
+    margin: 96px auto 156px;
     max-width: 1180px;
     border-radius: 10px;
     padding: 65px;
@@ -172,6 +172,8 @@
   }
 
   .navigation {
+    max-width: 1180px;
+    margin: 0 auto;
     h2 {
       margin-bottom: 16px;
       @include mixins.headingLarge;

@@ -11,11 +11,13 @@ import facade1 from '@assets/images/home/facade-1.webp';
 import facade2 from '@assets/images/home/facade-2.webp';
 import shelf from '@assets/images/home/furniture-1.webp';
 import console from '@assets/images/home/furniture-2.webp';
+import gift1 from '@assets/images/home/gift-1.webp';
+import gift2 from '@assets/images/home/gift-2.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './navigation-block.module.scss'
 
 export const NavigationBlock: React.FC<NavigationBlockProps> = ({
-  blocks = ['doors', 'furniture', 'facades'],
+  blocks = ['doors', 'furniture', 'facades', 'gifts'],
   isHome = false,
 }) => {
   const { t } = useTranslation('common');
@@ -72,6 +74,22 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
           </div>
           <img className={styles.imageSmall} src={facade1} loading={'lazy'} alt="Декоративная стеновая панель с готической росписью"/>
           <img className={styles.imageBig} src={facade2} loading={'lazy'} alt="Деревянный мебельный фасад из массива соны "/>
+        </div>
+      )}
+      {blocks.includes('gifts') && (
+        <div className={`${styles.background} ${styles.orange}`}>
+          <h3 className={`${styles.bgTitle} ${styles.light}`}>{t('background-title4').toUpperCase()}</h3>
+          <div className={`${styles.bgDescription} ${styles.light}`}>{t('background-description4')}</div>
+
+          <div className={styles.buttonContainer}>
+            <CircleButton ariaLabel={t('aria-label.door')} icon={<ArrowRightIcon/>}
+                          bgColor={AppColors.background.circleButton40}
+                          onClick={() => {
+                            navigate('/gifts');
+                          }}/>
+          </div>
+          <img className={styles.imageSmall} src={gift1} loading={'lazy'} alt="Деревянный светильник эксклюзивный подарок алматы"/>
+          <img className={styles.imageBig} src={gift2} loading={'lazy'} alt="Эксклюзивные часы из древесины карагача"/>
         </div>
       )}
     </div>

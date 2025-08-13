@@ -65,7 +65,9 @@ const Gifts = () => {
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-            <NavigationBlock/>
+            <NavigationBlock
+            blocks={['doors', 'furniture', 'facades']}
+            />
           </section>
         </div>
       </div>

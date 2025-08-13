@@ -143,7 +143,7 @@ const FurnitureOverview: React.FC = () => {
         </section>
         <section className={styles.navigation}>
           <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock isHome={false} blocks={['doors', 'facades']}/>
+          <NavigationBlock isHome={false} blocks={['doors', 'facades', 'gifts']}/>
         </section>
       </div>
     </ToolPageLayout>

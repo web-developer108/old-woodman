@@ -86,7 +86,7 @@ const Facades = () => {
           </section>
           <section className={styles.navigation}>
             <h2>{t('nav-title').toUpperCase()}</h2>
-            <NavigationBlock blocks={['doors', 'furniture']}/>
+            <NavigationBlock blocks={['doors', 'furniture', 'gifts']}/>
           </section>
         </div>
       </div>

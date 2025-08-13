@@ -166,7 +166,7 @@ const DoorsOverview = () => {
         </section>
         <section className={styles.navigation}>
           <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock isHome={false} blocks={['furniture', 'facades']}/>
+          <NavigationBlock isHome={false} blocks={['furniture', 'facades', 'gifts']}/>
         </section>
       </div>
     </ToolPageLayout>

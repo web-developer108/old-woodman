@@ -1,4 +1,4 @@
-export type BlockType = 'doors' | 'furniture' | 'facades';
+export type BlockType = 'doors' | 'furniture' | 'facades' | 'gifts';
 
 
 export interface NavigationBlockProps {
