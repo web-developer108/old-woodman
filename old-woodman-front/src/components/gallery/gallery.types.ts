@@ -1,4 +1,4 @@
-export type GalleryLayout = 'default' | 'two-large' | 'complex';
+export type GalleryLayout = 'default' | 'complex';
 
 export interface GalleryImage {
   src: string;
