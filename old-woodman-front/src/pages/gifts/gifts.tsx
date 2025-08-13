@@ -17,10 +17,10 @@ import big from '@assets/images/home/gift-2.webp';
 import styles from './gifts.module.scss'
 
 const galleryImages = [
-  { src: gallery1, alt: 'зеркало в деревянной раме в современном интерьере' },
-  { src: gallery2, alt: 'Добавить alt' },
-  { src: gallery3, alt: 'Добавить alt' },
-  { src: gallery4, alt: 'Добавить alt' },
+  { src: gallery1, alt: 'Зеркало в деревянной раме в современном интерьере' },
+  { src: gallery2, alt: 'Подарок светильник из дерева ручной работы' },
+  { src: gallery3, alt: 'Подарок часы из дерева ручной работы' },
+  { src: gallery4, alt: 'Подарок пепельница из массива дуба ручной работы' },
 ];
 
 const Gifts = () => {
