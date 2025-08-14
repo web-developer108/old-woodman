@@ -132,7 +132,7 @@ export const DoorsDetails: React.FC = () => {
             <img
               className={styles.mainImage}
               src={selectedProduct.images[0]}
-              alt={selectedProduct.title[lang]}
+              alt={selectedProduct.alt}
             />
             <div className={styles.likeWrap}>
               <LikeButton productId={selectedProduct.id}/>
