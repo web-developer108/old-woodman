@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import i18n from 'i18next';
-//import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';

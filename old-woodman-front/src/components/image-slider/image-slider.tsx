@@ -10,6 +10,8 @@ import { DirectionRightIcon } from '../icons/direction-right-icon/direction-righ
 import { useCurrentCollectionItems } from '../../hooks/current-collection/current-collection-items.tsx'
 import { AppColors } from '../../styles.ts';
 import styles from './image-slider.module.scss'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+
 
 export const ImageSlider: React.FC<SliderProps> = ({
   selectedIndex,
@@ -17,7 +19,8 @@ export const ImageSlider: React.FC<SliderProps> = ({
 }) => {
   const images = useCurrentCollectionItems();
   const { isMobile } = useDevice();
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('common');
+  const category = useCurrentCategory();
   const simpleBarRef = useRef<any>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -77,7 +80,11 @@ export const ImageSlider: React.FC<SliderProps> = ({
               ref={(el) => {
                 itemRefs.current[i] = el;
               }}
-              className={`${styles.card} ${selectedIndex === i ? styles.selected : ''}`}
+              className={`
+        ${styles.card} 
+        ${selectedIndex === i ? styles.selected : ''} 
+        ${i > 0 && category === 'furniture' ? styles.full : ''}
+      `}
               onClick={() => scrollToIndex(i)}
             >
               <img src={img.src} alt={img.alt} className={styles.image}/>

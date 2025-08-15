@@ -512,7 +512,7 @@ export const productCatalog: ProductCategory[] = [
               ru: 'Консоль',
               kk: 'Консоль',
             },
-            images: ['/images/furniture/consoles/provance.webp'],
+            images: ['/images/furniture/consoles/provance.webp', '/images/furniture/consoles/provance-add1.webp'],
             price: 329000,
             time: 10,
             alt: 'Деревянная  консоль в стиле прованс на заказ в Алматы',
