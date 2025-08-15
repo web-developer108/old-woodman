@@ -16,6 +16,7 @@ import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
 import { getRandomProducts } from '../../utils/get-random-item.ts';
 import styles from '../doors-details/doors-details.module.scss';
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 export const FurnituresDetails: React.FC = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export const FurnituresDetails: React.FC = () => {
     getProductById,
     getProductDetailsById
   } = useProductCatalog();
+  const category = useCurrentCategory();
   const lang = i18n.language as 'ru' | 'kk';
   const item = getItemById(collectionId!, productId!);
 
@@ -94,7 +96,8 @@ export const FurnituresDetails: React.FC = () => {
     <>
       <div className={styles.page}>
         <section className={styles.imagesWrap}>
-          <div className={styles.imageBlock}>
+          <div className={`${styles.imageBlock} ${selectedIndex !== 0 && category === 'furniture' ? styles.full : ''}`}>
+
             <img
               className={styles.mainImage}
               src={product.images[selectedIndex]}
@@ -187,8 +190,10 @@ export const FurnituresDetails: React.FC = () => {
             <span>{t('parameter-header.materials.text')}</span>
 
             <h2>{t('parameter-header.sizes').toUpperCase()}</h2>
-            <span className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${product.sizes?.height} см`}</span>
-            <span className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${product.sizes?.width} см`}</span>
+            <span
+              className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${product.sizes?.height} см`}</span>
+            <span
+              className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${product.sizes?.width} см`}</span>
             <span className={styles.sizeSpan}><b>{t('parameter-header.sizes.depth')}</b>{`: ${product.sizes?.depth} см`}</span>
           </div>
         </div>
@@ -198,7 +203,7 @@ export const FurnituresDetails: React.FC = () => {
               <ProductSlider
                   title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
                   items={filteredCollections}
-                  headingSize = 'large'
+                  headingSize='large'
                   handleCardClick={(productId) => {
                     navigate(`/furniture/${collectionId}/${productId}`);
                   }}
@@ -212,7 +217,7 @@ export const FurnituresDetails: React.FC = () => {
         <ProductSlider
           title={t('random-title').toUpperCase()}
           items={randomCollection}
-          headingSize = 'large'
+          headingSize='large'
           handleCardClick={(productId) => {
             const productDetails = getProductDetailsById(productId);
             if (!productDetails) return;

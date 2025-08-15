@@ -66,6 +66,17 @@
 
         }
       }
+
+      &.full {
+        padding: 0;
+
+        .mainImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
     }
 
     .sliderContainer {
