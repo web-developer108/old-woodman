@@ -13,6 +13,7 @@ import ruHome from './locales/ru/home.json';
 import ruInfo from './locales/ru/info.json';
 import ruPolicy from './locales/ru/privacy-policy.json';
 import ruPromotions from './locales/ru/promotions.json';
+import ruSeo from './locales/ru/seo.json';
 import ruTerms from './locales/ru/terms.json';
 import kkCart from './locales/kk/cart.json';
 import kkCommon from './locales/kk/common.json';
@@ -26,6 +27,7 @@ import kkHome from './locales/kk/home.json';
 import kkInfo from './locales/kk/info.json';
 import kkPolicy from './locales/kk/privacy-policy.json';
 import kkPromotions from './locales/kk/promotions.json';
+import kkSeo from './locales/kk/seo.json';
 import kkTerms from './locales/kk/terms.json';
 
 i18n
@@ -57,7 +59,9 @@ i18n
         info: ruInfo,
         'privacy-policy': ruPolicy,
         promotions: ruPromotions,
+        seo: ruSeo,
         terms: ruTerms,
+
       },
       kk: {
         cart: kkCart,
@@ -72,9 +76,10 @@ i18n
         info: kkInfo,
         'privacy-policy': kkPolicy,
         promotions: kkPromotions,
+        seo: kkSeo,
         terms: kkTerms,
       },
     },
   });
 
-export default i18n;
+//export default i18n;

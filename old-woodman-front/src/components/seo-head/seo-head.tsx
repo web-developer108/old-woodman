@@ -1,29 +1,34 @@
 import React, { useEffect, useMemo } from 'react';
-import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
-import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 import { useLocation } from 'react-router-dom';
+import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
+import { useTranslation } from 'react-i18next';
 
-/*
-const defaultMeta: MetaTag[] = [
-  { name: 'description', content: 'Мебель на заказ от Old Woodman — стиль и качество' },
-  { property: 'og:title', content: 'Old Woodman' },
-];
-*/
 
-function getSeoIdFromPath(pathname: string) {
+/*function getSeoIdFromPath(pathname: string) {
   const parts = pathname.split('/').filter(Boolean);
   const [, collectionId, productId] = parts;
   return productId || collectionId || '';
+}*/
+function getSeoIdFromPath(pathname: string) {
+  const parts = pathname.split('/').filter(Boolean);
+  if (parts.length === 0) return 'home';
+  return parts[parts.length - 1];
 }
 
-
 export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [] }) => {
-  const { t, i18n } = usePageTranslate();
+  const { t, i18n } = useTranslation('seo');
   const { pathname } = useLocation();
   const lang = i18n.language as 'ru' | 'kk';
-  let title: string;
-  let description: string;
-  const isCatalogPath = pathname.startsWith('/doors') || pathname.startsWith('/furniture');
+
+  const seoId = getSeoIdFromPath(pathname);
+
+  const fallbackTitle = t('title.home');
+  const fallbackDesc  = t('description.home');
+  const title = t(`title.${seoId}`, { defaultValue: fallbackTitle });
+  const description = t(`description.${seoId}`, { defaultValue: fallbackDesc });
+  const canonicalUrl = `https://oldwoodman.kz${pathname}`;
+
+ /* const isCatalogPath = pathname.startsWith('/doors') || pathname.startsWith('/furniture');
 
   if (isCatalogPath) {
     const seoId = getSeoIdFromPath(pathname);
@@ -41,7 +46,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [] }) => {
   }
 
   const canonicalUrl = `https://oldwoodman.kz${pathname}`;
-
+*/
   const mergedMeta: MetaTag[] = useMemo(
     () => [
       { name: 'description', content: description },

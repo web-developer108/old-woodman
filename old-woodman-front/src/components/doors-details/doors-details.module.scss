@@ -15,7 +15,6 @@
 
   .imagesWrap {
     width: 45%;
-    flex-shrink: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -64,6 +63,17 @@
         @media (max-width: 564px) {
           height: 360px;
 
+        }
+      }
+
+      &.full {
+        padding: 0;
+
+        .mainImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
         }
       }
     }
@@ -168,6 +178,7 @@
           }
         }
       }
+
     }
 
     .descriptionContainer {
@@ -250,6 +261,37 @@
     }
   }
 
+  &.furniture {
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .imagesWrap {
+
+      @media (max-width: 1024px) {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+      }
+
+      .imageBlock {
+        @media (max-width: 1024px) {
+          width: 100%;
+          min-width: 300px;
+          max-width: 700px;
+        }
+      }
+    }
+
+    .infoBlock {
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+    }
+  }
+
 }
 
 .article {
@@ -298,8 +340,6 @@
       }
     }
   }
-
-
 }
 
 .slider {

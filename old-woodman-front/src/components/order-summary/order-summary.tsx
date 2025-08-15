@@ -6,8 +6,8 @@ import type { ProductItem } from '../../config/config.types.ts';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
-import styles from './order-summary.module.scss'
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import styles from './order-summary.module.scss'
 
 export const OrderSummary: React.FC<{
   products: (ProductItem & { quantity: number })  [];
