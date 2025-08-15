@@ -198,7 +198,7 @@ export const FurnituresDetails: React.FC = () => {
           </div>
         </div>
       </section>
-      {filteredCollections && filteredCollections.length > 1 &&
+      {filteredCollections && filteredCollections.length >= 1 &&
           <section className={styles.slider}>
               <ProductSlider
                   title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
