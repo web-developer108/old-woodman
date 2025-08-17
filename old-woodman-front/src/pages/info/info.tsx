@@ -9,6 +9,7 @@ import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
+import gallery1d from '@assets/images/info/gallery-d-1.webp'
 import { AppColors } from '../../styles.ts';
 import styles from '../info/info.module.scss';
 
@@ -50,6 +51,8 @@ const Info = () => {
         <div className={styles.infoContent}>
           <Breadcrumbs current={t('info')}/>
           <h2 className={styles.header}>{t('header-1').toUpperCase()}</h2>
+         <div className={styles.article}>
+           <div className={styles.articleText}>
           <section className={styles.section}>
             <h3>{t('subtitle-1').toUpperCase()}</h3>
             <span>{t('text-1.1')}</span>
@@ -64,6 +67,11 @@ const Info = () => {
             <span>{t('text-2.3')}</span>
             <span>{t('text-2.4')}</span>
           </section>
+           </div>
+           <div className={styles.articleImage}>
+
+           </div>
+         </div>
           <section className={styles.list}>
             <h3>{t('subtitle-3').toUpperCase()}</h3>
             <ol>
