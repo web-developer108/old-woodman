@@ -7,7 +7,6 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
@@ -20,6 +19,7 @@ import { AppColors } from '../../styles.ts';
 import styles from '../info/info.module.scss';
 import { DoorIcon } from '../../components/icons/door-icon/door-icon.tsx';
 import useDevice from '../../hooks/device/use-device.ts';
+import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
 
 const galleryDoorsImages = [
   { src: gallery1d, alt: 'Двери' },
@@ -125,7 +125,7 @@ const Info = () => {
 
               <div className={styles.buttonWrap}>
                 <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick}
-                              bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
+                              bgColor={AppColors.button.green} icon={<WhatsappIcon/>}/>
               </div>
 
               <h3>{t('subtitle-4').toUpperCase()}</h3>
