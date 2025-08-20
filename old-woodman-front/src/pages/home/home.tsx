@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
@@ -25,13 +25,13 @@ import gallery4 from '@assets/images/home/gallery4.webp'
 import gallery5 from '@assets/images/home/gallery5.webp'
 import gallery6 from '@assets/images/home/gallery6.webp'
 import gallery7 from '@assets/images/home/gallery7.webp'
-import hero1 from '@assets/images/home/hero-mini.webp'
-import hero2 from '@assets/images/home/hero2.webp'
-import hero3 from '@assets/images/home/hero3.webp'
-import hero4 from '@assets/images/home/hero4.webp'
-import hero5 from '@assets/images/home/hero5.webp'
-import hero6 from '@assets/images/home/hero6.webp'
-import overlay from '@assets/images/home/overlay-small1.webp'
+//import hero1 from '@assets/images/home/hero-mini.webp'
+//import hero2 from '@assets/images/home/hero2.webp'
+//import hero3 from '@assets/images/home/hero3.webp'
+//import hero4 from '@assets/images/home/hero4.webp'
+//import hero5 from '@assets/images/home/hero5.webp'
+//import hero6 from '@assets/images/home/hero6.webp'
+import heroOne from '@assets/images/home/hero-one.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [
@@ -43,7 +43,7 @@ const galleryImages = [
   { src: gallery6, alt: 'Низкая деревянная кровать  в японском стиле' },
   { src: gallery7, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной' },
 ];
-const heroImages = [
+/*const heroImages = [
   { src: hero1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
   { src: hero2, alt: 'Добавить alt' },
   { src: hero3, alt: 'Добавить alt' },
@@ -51,20 +51,20 @@ const heroImages = [
   { src: hero5, alt: 'Добавить alt' },
   { src: hero6, alt: 'Добавить alt' },
 
-];
+];*/
 
 const Home = () => {
   const { t } = usePageTranslate();
   const { showModal } = useModal();
   const navigationRef = useRef<HTMLElement | null>(null);
   const faqRef = useRef<HTMLElement | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const extendedImages = [
+  //const [currentIndex, setCurrentIndex] = useState(1);
+  //const [transitionEnabled, setTransitionEnabled] = useState(true);
+/*  const extendedImages = [
     heroImages[heroImages.length - 1],
     ...heroImages,
     heroImages[0],
-  ];
+  ];*/
   useEffect(() => {
     const hash = window.location.hash;
     if (hash === '#faq' && faqRef.current) {
@@ -72,15 +72,15 @@ const Home = () => {
     }
   }, []);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => prev + 1);
       setTransitionEnabled(true);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, []);*/
 
-  const handleTransitionEnd = () => {
+ /* const handleTransitionEnd = () => {
     if (currentIndex === extendedImages.length - 1) {
       setTransitionEnabled(false);
       setCurrentIndex(1);
@@ -91,12 +91,12 @@ const Home = () => {
       setTransitionEnabled(true);
     }
   };
-
+*/
   return (
     <ToolPageLayout>
       <div className={styles.homePageContainer}>
         <section className={styles.hero}>
-          <div className={styles.imageWrapper}>
+          {/* <div className={styles.imageWrapper}>
             <img src={overlay} className={styles.overlay} alt="Интерьер"/>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
@@ -128,6 +128,22 @@ const Home = () => {
                     alt={src.alt}
                   />
                 ))}
+              </div>
+            </div>
+          </div>*/}
+          <div className={styles.imageWrapper}>
+            <img src={heroOne} className={styles.heroImage} alt="Интерьер"/>
+            <div className={styles.heroContent}>
+              <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
+              <div className={styles.description}>{t('hero.description')}</div>
+              <div className={styles.buttonWrapper}>
+                <ColorButton
+                  label={t('hero.button')}
+                  icon={<ArrowBottomIcon/>}
+                  onClick={() =>
+                    navigationRef.current?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                />
               </div>
             </div>
           </div>

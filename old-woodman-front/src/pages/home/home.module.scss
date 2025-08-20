@@ -7,9 +7,8 @@
 
   .hero {
     max-width: 1880px;
-    height: 964px;
+    height: 700px;
     margin: 0 20px;
-    background-color: rgba(29, 29, 29, 1);
     position: relative;
     border-radius: 10px;
     min-width: 320px;
@@ -18,12 +17,12 @@
       width: 1920px;
     }
     @media (max-width: 600px) {
-      height: 786px;
+      height: 667px;
       margin: 0;
       border-radius: 0;
     }
 
-    .imageWrapper {
+    /*.imageWrapper {
       display: grid;
       width: 100%;
       height: 964px;
@@ -167,6 +166,100 @@
               object-position: center center;
             }
           }
+        }
+      }
+    }
+
+*/
+    .imageWrapper {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media (max-width: 810px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 367px;
+      }
+
+      .heroImage {
+        grid-column: 1  / span 2;
+        grid-row: 1;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        @media (max-width: 810px) {
+          grid-column: 1;
+          grid-row: 1  / span 2;
+          height: 667px;
+        }
+      }
+
+      .heroContent {
+        height: 700px;
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 600px;
+        min-width: 576px;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        color: var(--text-light-color);
+        letter-spacing: 0;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        justify-self: center;
+        @media (max-width: 1200px) {
+          padding-left: 24px;
+          justify-self: left;
+          text-align: left;
+        }
+
+
+        @media (max-width: 810px) {
+          min-width: 320px;
+          justify-self: left;
+          padding: 0 20px;
+          height: 367px;
+          grid-column: 1;
+          grid-row: 2;
+        }
+        @media (max-width: 500px) {
+          padding: 0 14px;
+        }
+
+        .title {
+          font-size: 48px;
+          margin-bottom: 20px;
+
+
+          @media (max-width: 1200px) {
+            font-size: 32px;
+            line-height: 1.25;
+            margin-bottom: 6px;
+
+          }
+          @media (max-width: 810px) {
+            max-width: 386px;
+          }
+        }
+
+        .description {
+          margin-bottom: 60px;
+          line-height: 1.5;
+
+          @media (max-width: 1200px) {
+            line-height: 1.4;
+            margin-bottom: 24px;
+          }
+        }
+
+        .buttonWrapper {
+          padding: 0 82px;
+          @media (max-width: 1200px) {
+            padding: 0;
+            max-width: 386px;
+          }
+
         }
       }
     }
