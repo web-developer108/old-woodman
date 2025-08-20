@@ -57,7 +57,7 @@
     max-width: 1180px;
     margin: 0 auto 112px;
     padding: 20px;
-    @media (max-width: 1240px) {
+    @media (max-width: 1200px) {
       max-width: 100%;
       margin: 0 20px 112px;
     }
@@ -72,174 +72,6 @@
     .header {
       margin: 48px 0;
       @include mixins.headingLarge;
-    }
-
-    .article {
-      max-width: 1180px;
-      display: flex;
-      gap: 100px;
-      margin-bottom: 40px;
-      @media (max-width: 1024px) {
-        gap: 40px;
-      }
-      @media (max-width: 900px) {
-        flex-direction: column;
-      }
-
-      .articleText {
-        width: calc(100% - 386px);
-        @media (max-width: 900px) {
-          width: 100%;
-        }
-
-        .text {
-          h3 {
-            font-weight: 500;
-            margin-bottom: 24px;
-            @include mixins.bodyText;
-            @media (max-width: 810px) {
-              margin-bottom: 20px;
-            }
-          }
-
-          span {
-            display: block;
-            margin-bottom: 24px;
-            @include mixins.bodyTextSmall;
-            @media (max-width: 810px) {
-              margin-bottom: 20px;
-            }
-          }
-        }
-
-        .listDoors {
-          h3 {
-            font-weight: 500;
-            margin-bottom: 24px;
-            @include mixins.bodyText;
-            @media (max-width: 810px) {
-              margin-bottom: 20px;
-            }
-          }
-
-          .listText {
-            margin-bottom: 24px;
-            @include mixins.bodyTextSmall;
-            @media (max-width: 810px) {
-              margin-bottom: 20px;
-            }
-          }
-        }
-
-        .iconText {
-          display: flex;
-          gap: 20px;
-          align-items: center;
-
-          svg {
-            flex-shrink: 0;
-
-          }
-
-          span {
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 1.5;
-            @media (max-width: 810px) {
-              font-size: 14px;
-            }
-          }
-        }
-      }
-
-      .articleImage {
-        width: 386px;
-        display: grid;
-        grid-template-columns: 189px 8px 189px;
-        grid-template-rows: 60px 386px 8px 189px 8px 189px 8px 386px;
-        @media (max-width: 900px) {
-          display: none;
-        }
-
-        .upperImg {
-          grid-column: 1 / span 3;
-          grid-row: 2;
-        }
-
-        .middleSmall {
-          grid-column: 1;
-          grid-row: 4;
-        }
-
-        .middleSmallBottom {
-          grid-column: 1;
-          grid-row: 6;
-        }
-
-        .middleBig {
-          grid-column: 3;
-          grid-row: 4 / span 3;
-        }
-
-        .bottomImg {
-          grid-column: 1 / span 3;
-          grid-row: 8;
-        }
-      }
-    }
-
-    .galleryWrapper {
-      padding-bottom: 20px;
-      position: relative;
-      overflow-x: auto;
-      height: 100%;
-
-      .slider {
-        display: grid;
-        position: relative;
-        grid-template-columns: 372px 182px 182px 372px;
-        grid-template-rows: 182px 182px;
-        gap: 8px;
-
-        .galleryImage {
-          &:first-child {
-            object-fit: contain;
-            width: 372px;
-            height: 372px;
-            grid-column: 1;
-            grid-row: 1 / span 2;
-          }
-
-          &:nth-child(2) {
-            width: 182px;
-            height: 182px;
-            grid-column: 2;
-            grid-row: 1;
-          }
-
-          &:nth-child(3) {
-            width: 182px;
-            height: 182px;
-            grid-column: 2;
-            grid-row: 2;
-          }
-
-          &:nth-child(4) {
-            width: 182px;
-            height: 372px;
-            grid-column: 3;
-            grid-row: 1 / span 2;
-          }
-
-          &:nth-child(5) {
-            width: 372px;
-            height: 372px;
-            grid-column: 4;
-            grid-row: 1 / span 2;
-          }
-        }
-      }
-
     }
 
     .section {
@@ -300,7 +132,6 @@
 
     .grey {
       background-color: var(--background-grey-color);
-      background-image: url('../../assets/images/home/bg-yellow.webp');
       max-width: 1180px;
       margin: 56px auto 112px;
       height: 124px;
@@ -310,7 +141,6 @@
       justify-content: center;
       box-sizing: border-box;
       cursor: pointer;
-      border-radius: 10px;
       @media (max-width: 810px) {
         height: 112px;
         margin: 24px auto 96px;

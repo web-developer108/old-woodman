@@ -1,46 +1,26 @@
-import  { useEffect, useRef } from 'react';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
+import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useFooterRef } from '../../hooks/footer-ref/use-footer-ref.ts';
-import useDevice from '../../hooks/device/use-device.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
-import { DoorIcon } from '../../components/icons/door-icon/door-icon.tsx';
+import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
-import gallery1d from '@assets/images/info/gallery/gallery-d-1.webp'
-import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
-import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
-import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
-import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
 import { AppColors } from '../../styles.ts';
 import styles from '../info/info.module.scss';
 
-const galleryDoorsImages = [
-  { src: gallery1d, alt: 'Двери' },
-  { src: gallery2d, alt: 'Двери' },
-  { src: gallery3d, alt: 'Двери' },
-  { src: gallery4d, alt: 'Двери' },
-  { src: gallery5d, alt: 'Двери' },
-
-];
 const Info = () => {
   const { t } = usePageTranslate();
-  const { screenWidth} = useDevice();
   const footerRef = useFooterRef();
   const instructionRef = useRef<HTMLHeadingElement>(null);
   const doorsRef = useRef<HTMLHeadingElement>(null);
-  const simpleBarRef = useRef<any>(null);
 
   const handleClick = () => {
     footerRef?.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
   useEffect(() => {
     if (location.pathname === '/info' && location.hash === '#instructions') {
 
@@ -53,9 +33,10 @@ const Info = () => {
 
   }, []);
 
+
   return (
     <ToolPageLayout>
-      <div id='doors' ref={doorsRef} className={styles.infoContainer}>
+      <div id = 'doors' ref={doorsRef}  className={styles.infoContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.titleWrapper}>
             <h1 className={styles.mainHeader}
@@ -69,46 +50,20 @@ const Info = () => {
         <div className={styles.infoContent}>
           <Breadcrumbs current={t('info')}/>
           <h2 className={styles.header}>{t('header-1').toUpperCase()}</h2>
-          <div className={styles.article}>
-            <div className={styles.articleText}>
-              <div className={styles.text}>
-                <h3>{t('subtitle-1').toUpperCase()}</h3>
-                <span>{`${t('text-1.1')} ${t('text-1.2')} ${t('text-1.3')} `}</span>
-                {/*<span>{t('text-1.2')}</span>
-                <span>{t('text-1.3')}</span>*/}
-                <span>{t('text-1.4')}</span>
-              </div>
-              <section className={styles.listDoors}>
-                <h3>{t('subtitle-2').toUpperCase()}</h3>
-                <ul className={styles.listText}>
-
-                <li>{t('text-2.1')}</li>
-                <li>{t('text-2.2')}</li>
-                <li>{t('text-2.3')}</li>
-                </ul>
-
-              </section>
-              <div className={styles.iconText}>
-                <DoorIcon/>
-              <span>  {t('text-2.4')}</span>
-              </div>
-            </div>
-            <div className={styles.articleImage}>
-              <img className={styles.upperImg} src={gallery1d} alt="Дверь1"/>
-              <img className={styles.middleSmall} src={gallery2d} alt="Дверь1"/>
-              <img className={styles.middleSmallBottom} src={gallery3d} alt="Дверь1"/>
-              <img className={styles.middleBig} src={gallery4d} alt="Дверь1"/>
-              <img className={styles.bottomImg} src={gallery5d} alt="Дверь1"/>
-            </div>
-            {screenWidth<901 &&  <SimpleBar  ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
-              <div className={styles.slider}>
-                {galleryDoorsImages.map((img, index) => (
-                  <img key={index} src={img.src} alt={img.alt} className={styles.galleryImage} loading="lazy"/>
-                ))}
-              </div>
-            </SimpleBar>
-            }
-          </div>
+          <section className={styles.section}>
+            <h3>{t('subtitle-1').toUpperCase()}</h3>
+            <span>{t('text-1.1')}</span>
+            <span>{t('text-1.2')}</span>
+            <span>{t('text-1.3')}</span>
+            <span>{t('text-1.4')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-2').toUpperCase()}</h3>
+            <span>{t('text-2.1')}</span>
+            <span>{t('text-2.2')}</span>
+            <span>{t('text-2.3')}</span>
+            <span>{t('text-2.4')}</span>
+          </section>
           <section className={styles.list}>
             <h3>{t('subtitle-3').toUpperCase()}</h3>
             <ol>
@@ -125,7 +80,7 @@ const Info = () => {
 
               <div className={styles.buttonWrap}>
                 <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick}
-                              bgColor={AppColors.button.green} icon={<WhatsappIcon/>}/>
+                              bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
               </div>
 
               <h3>{t('subtitle-4').toUpperCase()}</h3>
