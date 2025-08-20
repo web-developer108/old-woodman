@@ -3,11 +3,13 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useFooterRef } from '../../hooks/footer-ref/use-footer-ref.ts';
+import useDevice from '../../hooks/device/use-device.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
 import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
+import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
+import { DoorIcon } from '../../components/icons/door-icon/door-icon.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
@@ -18,8 +20,6 @@ import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
 import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
 import { AppColors } from '../../styles.ts';
 import styles from '../info/info.module.scss';
-import { DoorIcon } from '../../components/icons/door-icon/door-icon.tsx';
-import useDevice from '../../hooks/device/use-device.ts';
 
 const galleryDoorsImages = [
   { src: gallery1d, alt: 'Двери' },
@@ -125,7 +125,7 @@ const Info = () => {
 
               <div className={styles.buttonWrap}>
                 <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick}
-                              bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
+                              bgColor={AppColors.button.green} icon={<WhatsappIcon/>}/>
               </div>
 
               <h3>{t('subtitle-4').toUpperCase()}</h3>
