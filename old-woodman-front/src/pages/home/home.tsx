@@ -31,7 +31,7 @@ import gallery7 from '@assets/images/home/gallery7.webp'
 //import hero4 from '@assets/images/home/hero4.webp'
 //import hero5 from '@assets/images/home/hero5.webp'
 //import hero6 from '@assets/images/home/hero6.webp'
-import heroOne from '@assets/images/home/hero-one.webp'
+import heroOne from '@assets/images/home/hero-one1.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [
