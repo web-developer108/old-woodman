@@ -12,6 +12,22 @@ import doorDepth from '@assets/images/info/door-depth.svg'
 import { AppColors } from '../../styles.ts';
 import styles from '../info/info.module.scss';
 
+import gallery1d from '@assets/images/info/gallery/gallery-d-1.webp'
+import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
+import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
+import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
+import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
+import { Gallery } from '../../components/gallery/gallery.tsx';
+
+
+const galleryDoorsImages = [
+  { src: gallery1d, alt: 'Двери' },
+  { src: gallery2d, alt: 'Двери' },
+  { src: gallery3d, alt: 'Двери' },
+  { src: gallery4d, alt: 'Двери' },
+  { src: gallery5d, alt: 'Двери' },
+
+];
 const Info = () => {
   const { t } = usePageTranslate();
   const footerRef = useFooterRef();
@@ -55,7 +71,6 @@ const Info = () => {
             <span>{t('text-1.1')}</span>
             <span>{t('text-1.2')}</span>
             <span>{t('text-1.3')}</span>
-            <span>{t('text-1.4')}</span>
           </section>
           <section className={styles.section}>
             <h3>{t('subtitle-2').toUpperCase()}</h3>
@@ -67,14 +82,18 @@ const Info = () => {
           <section className={styles.list}>
             <h3>{t('subtitle-3').toUpperCase()}</h3>
             <ol>
-              <li>{t('text-3.1')}</li>
-              <li>{t('text-3.2')}</li>
-              <li>{t('text-3.3')}</li>
-              <li>{t('text-3.4')}</li>
-              <li>{t('text-3.5')}</li>
+              <li><span className={styles.bold}>{t('text-3.1.1')}</span> {t('text-3.1.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.2.1')}</span> {t('text-3.2.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.3.1')}</span> {t('text-3.3.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.4.1')}</span> {t('text-3.4.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.5.1')}</span> {t('text-3.5.2')}</li>
+
             </ol>
           </section>
 
+          <Gallery
+            images ={galleryDoorsImages}
+          />
           <div className={styles.grey} onClick={handleClick}>
             <div className={styles.headerWrap}>
 
