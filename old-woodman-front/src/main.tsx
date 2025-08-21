@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import DeviceProvider from './hooks/device/device.provider.tsx';
+import { GTMProvider } from './hooks/gtm/gtm-provider.tsx';
 import { CartProvider } from './hooks/cart/cart.tsx';
 import { FavoritesProvider } from './hooks/favorites/favorites.tsx';
 import { ModalProvider } from './hooks/modal/modal.provider.tsx';
@@ -14,6 +15,7 @@ import './styles.scss';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <GTMProvider gtmId="GTM-W4Q26KB9">
       <ScrollToTop/>
       <DeviceProvider>
         <CartProvider>
@@ -26,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           </FavoritesProvider>
         </CartProvider>
       </DeviceProvider>
+      </GTMProvider>
     </BrowserRouter>
   </React.StrictMode>
 )
