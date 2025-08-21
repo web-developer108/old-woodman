@@ -1,15 +1,10 @@
-import  { useEffect, useRef } from 'react';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
+import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
-import { useFooterRef } from '../../hooks/footer-ref/use-footer-ref.ts';
-import useDevice from '../../hooks/device/use-device.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
-import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { WhatsappIcon } from '../../components/icons/whatsapp-icon/whatsapp-icon.tsx';
-import { DoorIcon } from '../../components/icons/door-icon/door-icon.tsx';
+import { InfoButton } from '../../components/buttons/info-button/info-button.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
@@ -18,9 +13,14 @@ import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
 import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
 import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
 import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
-import { AppColors } from '../../styles.ts';
+import gallery1f from '@assets/images/info/gallery/gallery-f-1.webp'
+import gallery2f from '@assets/images/info/gallery/gallery-f-2.webp'
+import gallery3f from '@assets/images/info/gallery/gallery-f-3.webp'
+import gallery4f from '@assets/images/info/gallery/gallery-f-4.webp'
+import gallery5f from '@assets/images/info/gallery/gallery-f-5.webp'
 import styles from '../info/info.module.scss';
 
+//TODO поменять alt
 const galleryDoorsImages = [
   { src: gallery1d, alt: 'Двери' },
   { src: gallery2d, alt: 'Двери' },
@@ -29,17 +29,20 @@ const galleryDoorsImages = [
   { src: gallery5d, alt: 'Двери' },
 
 ];
+
+const galleryFurnitureImages = [
+  { src: gallery1f, alt: 'Двери' },
+  { src: gallery2f, alt: 'Двери' },
+  { src: gallery3f, alt: 'Двери' },
+  { src: gallery4f, alt: 'Двери' },
+  { src: gallery5f, alt: 'Двери' },
+
+];
 const Info = () => {
   const { t } = usePageTranslate();
-  const { screenWidth} = useDevice();
-  const footerRef = useFooterRef();
   const instructionRef = useRef<HTMLHeadingElement>(null);
   const doorsRef = useRef<HTMLHeadingElement>(null);
-  const simpleBarRef = useRef<any>(null);
-
-  const handleClick = () => {
-    footerRef?.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const furnitureRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (location.pathname === '/info' && location.hash === '#instructions') {
@@ -50,12 +53,15 @@ const Info = () => {
     if (location.pathname.startsWith('/info') && location.hash === '#doors') {
       doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
+    if (location.pathname.startsWith('/info') && location.hash === '#furniture') {
+      furnitureRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
 
   }, []);
 
   return (
     <ToolPageLayout>
-      <div id='doors' ref={doorsRef} className={styles.infoContainer}>
+      <div className={styles.infoContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.titleWrapper}>
             <h1 className={styles.mainHeader}
@@ -68,82 +74,83 @@ const Info = () => {
         </div>
         <div className={styles.infoContent}>
           <Breadcrumbs current={t('info')}/>
-          <h2 className={styles.header}>{t('header-1').toUpperCase()}</h2>
-          <div className={styles.article}>
-            <div className={styles.articleText}>
-              <div className={styles.text}>
-                <h3>{t('subtitle-1').toUpperCase()}</h3>
-                <span>{`${t('text-1.1')} ${t('text-1.2')} ${t('text-1.3')} `}</span>
-                {/*<span>{t('text-1.2')}</span>
-                <span>{t('text-1.3')}</span>*/}
-                <span>{t('text-1.4')}</span>
-              </div>
-              <section className={styles.listDoors}>
-                <h3>{t('subtitle-2').toUpperCase()}</h3>
-                <ul className={styles.listText}>
-
-                <li>{t('text-2.1')}</li>
-                <li>{t('text-2.2')}</li>
-                <li>{t('text-2.3')}</li>
-                </ul>
-
-              </section>
-              <div className={styles.iconText}>
-                <DoorIcon/>
-              <span>  {t('text-2.4')}</span>
-              </div>
-            </div>
-            <div className={styles.articleImage}>
-              <img className={styles.upperImg} src={gallery1d} alt="Дверь1"/>
-              <img className={styles.middleSmall} src={gallery2d} alt="Дверь1"/>
-              <img className={styles.middleSmallBottom} src={gallery3d} alt="Дверь1"/>
-              <img className={styles.middleBig} src={gallery4d} alt="Дверь1"/>
-              <img className={styles.bottomImg} src={gallery5d} alt="Дверь1"/>
-            </div>
-            {screenWidth<901 &&  <SimpleBar  ref={simpleBarRef} className={styles.galleryWrapper} autoHide={false}>
-              <div className={styles.slider}>
-                {galleryDoorsImages.map((img, index) => (
-                  <img key={index} src={img.src} alt={img.alt} className={styles.galleryImage} loading="lazy"/>
-                ))}
-              </div>
-            </SimpleBar>
-            }
-          </div>
+          <h2 id='doors' ref={doorsRef} className={styles.header}>{t('header-1').toUpperCase()}</h2>
+          <section className={styles.section}>
+            <h3>{t('subtitle-1').toUpperCase()}</h3>
+            <span>{t('text-1.1')}</span>
+            <span>{t('text-1.2')}</span>
+            <span>{t('text-1.3')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-2').toUpperCase()}</h3>
+            <span>{t('text-2.1')}</span>
+            <span>{t('text-2.2')}</span>
+            <span>{t('text-2.3')}</span>
+            <span>{t('text-2.4')}</span>
+          </section>
           <section className={styles.list}>
             <h3>{t('subtitle-3').toUpperCase()}</h3>
             <ol>
-              <li>{t('text-3.1')}</li>
-              <li>{t('text-3.2')}</li>
-              <li>{t('text-3.3')}</li>
-              <li>{t('text-3.4')}</li>
-              <li>{t('text-3.5')}</li>
+              <li><span className={styles.bold}>{t('text-3.1.1')}</span> {t('text-3.1.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.2.1')}</span> {t('text-3.2.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.3.1')}</span> {t('text-3.3.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.4.1')}</span> {t('text-3.4.2')}</li>
+              <li><span className={styles.bold}>{t('text-3.5.1')}</span> {t('text-3.5.2')}</li>
+
             </ol>
           </section>
 
-          <div className={styles.grey} onClick={handleClick}>
-            <div className={styles.headerWrap}>
+          <Gallery
+            images={galleryDoorsImages}
+          />
 
-              <div className={styles.buttonWrap}>
-                <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick}
-                              bgColor={AppColors.button.green} icon={<WhatsappIcon/>}/>
-              </div>
-
-              <h3>{t('subtitle-4').toUpperCase()}</h3>
-            </div>
-            <div className={styles.buttonText}>{t('text-4')}</div>
-          </div>
+          <InfoButton
+            title={t('subtitle-4').toUpperCase()}
+            label={t('text-4')}
+          />
+          <h2 id='furniture' ref={furnitureRef} className={styles.header}>{t('header-2f').toUpperCase()}</h2>
+          <section className={styles.section}>
+            <h3>{t('subtitle-2f').toUpperCase()}</h3>
+            <span>{t('text-2f.1')}</span>
+            <span>{t('text-2f.2')}</span>
+            <span>{t('text-2f.3')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-3f').toUpperCase()}</h3>
+            <span>{t('text-3f.1')}</span>
+            <span>{t('text-3f.2')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-4f').toUpperCase()}</h3>
+            <span>{t('text-4f.1')}</span>
+            <span>{t('text-4f.2')}</span>
+            <span>{t('text-4f.3')}</span>
+          </section>
+          <Gallery
+            images={galleryFurnitureImages}
+          />
+          <InfoButton
+            title={t('subtitle-5').toUpperCase()}
+            label={t('text-5')}
+          />
           <h2 id='instructions' ref={instructionRef}
-              className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
+              className={styles.header}>{t('instruction').toUpperCase()}</h2>
           <section className={styles.section}>
             <h3>{t('instruction-label-1').toUpperCase()}</h3>
             <span>{t('instruction-text-1.1')}</span>
             <span>{t('instruction-text-1.2')}</span>
-            <span>{t('instruction-text-1.3')}</span>
           </section>
+          <div className={styles.warning}>
+            <span><b className={styles.block}>{t('instruction-warning')}</b>
+              {t('instruction-warning-text-1')}</span>
+            <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
+            <span className={styles.block}>{t('instruction-warning-text-3')}</span>
+          </div>
           <section className={styles.section}>
             <h3>{t('instruction-label-2').toUpperCase()}</h3>
             <span>{t('instruction-text-2')}</span>
           </section>
+
           <section className={styles.sectionImage}>
             <div className={styles.instructionsWrap}>
               <h3>{t('instruction-label-3').toUpperCase()}</h3>
@@ -169,12 +176,17 @@ const Info = () => {
             </div>
             <img className={styles.image} src={doorDepth} alt="Ширина проёма"/>
           </section>
-          <div className={styles.finalBlock}>
-            <span><b className={styles.warning}>{t('instruction-warning')}</b>
+          <div className={styles.warning}>
+            <span><b className={styles.block}>{t('instruction-warning')}</b>
               {t('instruction-warning-text-1')}</span>
-            <span className={styles.block}>{t('instruction-warning-text-2')}</span>
+            <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
+            <span>{t('instruction-warning-text-3')}</span>
           </div>
         </div>
+        <InfoButton
+          title={t('subtitle-6').toUpperCase()}
+          label={t('text-5')}
+        />
       </div>
     </ToolPageLayout>
   )
