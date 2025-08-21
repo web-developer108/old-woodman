@@ -119,13 +119,18 @@ const Info = () => {
             label={t('text-5')}
           />
           <h2 id='instructions' ref={instructionRef}
-              className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
+              className={styles.header}>{t('instruction').toUpperCase()}</h2>
           <section className={styles.section}>
             <h3>{t('instruction-label-1').toUpperCase()}</h3>
             <span>{t('instruction-text-1.1')}</span>
             <span>{t('instruction-text-1.2')}</span>
-            <span>{t('instruction-text-1.3')}</span>
           </section>
+          <div className={styles.warning}>
+            <span><b className={styles.block}>{t('instruction-warning')}</b>
+              {t('instruction-warning-text-1')}</span>
+            <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
+            <span className={styles.block}>{t('instruction-warning-text-3')}</span>
+          </div>
           <section className={styles.section}>
             <h3>{t('instruction-label-2').toUpperCase()}</h3>
             <span>{t('instruction-text-2')}</span>
@@ -156,10 +161,11 @@ const Info = () => {
             </div>
             <img className={styles.image} src={doorDepth} alt="Ширина проёма"/>
           </section>
-          <div className={styles.finalBlock}>
-            <span><b className={styles.warning}>{t('instruction-warning')}</b>
+          <div className={styles.warning}>
+            <span><b className={styles.block}>{t('instruction-warning')}</b>
               {t('instruction-warning-text-1')}</span>
-            <span className={styles.block}>{t('instruction-warning-text-2')}</span>
+            <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
+            <span >{t('instruction-warning-text-3')}</span>
           </div>
         </div>
         <InfoButton

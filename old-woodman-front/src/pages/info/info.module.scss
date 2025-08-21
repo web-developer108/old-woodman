@@ -138,59 +138,6 @@
       }
     }
 
-    .grey {
-      background-color: var(--background-grey-color);
-      max-width: 1180px;
-      margin: 56px auto 112px;
-      height: 124px;
-      padding: 26px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-sizing: border-box;
-      cursor: pointer;
-      @media (max-width: 810px) {
-        height: 112px;
-        margin: 24px auto 96px;
-      }
-      @media (max-width: 490px) {
-        padding: 0 12px;
-      }
-
-      .headerWrap {
-        display: flex;
-        align-items: center;
-        column-gap: 16px;
-
-        .buttonWrap {
-          width: 40px;
-          height: 40px;
-        }
-
-        h3 {
-          line-height: 1.5;
-          font-weight: 500;
-          @include mixins.bodyText;
-        }
-      }
-
-      .buttonText {
-        padding-left: 56px;
-        @include mixins.bodyTextSmall;
-      }
-    }
-
-    .instructionsTitle {
-      scroll-margin-top: 100px;
-      margin-bottom: 56px;
-      @include mixins.headingLarge;
-
-      @media (max-width: 810px) {
-        text-align: center;
-        margin-bottom: 48px;
-      }
-    }
-
     .sectionImage {
       margin-bottom: 56px;
       display: grid;
@@ -215,11 +162,9 @@
 
         span {
           display: block;
-          margin-bottom: 24px;
+          margin-bottom: 15px;
           @include mixins.bodyTextSmall;
-          @media (max-width: 810px) {
-            margin-bottom: 20px;
-          }
+
         }
       }
 
@@ -232,14 +177,24 @@
       }
     }
 
-    .finalBlock {
+    .warning {
+      background-color: var(--background-grey-color);
+      padding: 36px 46px;
+      margin-bottom: 55px;
+      @media (max-width: 810px) {
+        padding: 30px 15px;
+        margin-bottom: 55px;
+      }
       span {
         display: block;
-        margin-bottom: 24px;
+        margin-bottom: 15px;
         @include mixins.bodyTextSmall;
-        @media (max-width: 810px) {
-          margin-bottom: 20px;
-        }
+       .block{
+         font-family: 'Vollkorn', serif;
+       }
+      }
+      .warningText{
+        color: #724136;
       }
     }
   }
