@@ -13,14 +13,29 @@ import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
 import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
 import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
 import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
+import gallery1f from '@assets/images/info/gallery/gallery-f-1.webp'
+import gallery2f from '@assets/images/info/gallery/gallery-f-2.webp'
+import gallery3f from '@assets/images/info/gallery/gallery-f-3.webp'
+import gallery4f from '@assets/images/info/gallery/gallery-f-4.webp'
+import gallery5f from '@assets/images/info/gallery/gallery-f-5.webp'
 import styles from '../info/info.module.scss';
 
+//TODO поменять alt
 const galleryDoorsImages = [
   { src: gallery1d, alt: 'Двери' },
   { src: gallery2d, alt: 'Двери' },
   { src: gallery3d, alt: 'Двери' },
   { src: gallery4d, alt: 'Двери' },
   { src: gallery5d, alt: 'Двери' },
+
+];
+
+const galleryFurnitureImages = [
+  { src: gallery1f, alt: 'Двери' },
+  { src: gallery2f, alt: 'Двери' },
+  { src: gallery3f, alt: 'Двери' },
+  { src: gallery4f, alt: 'Двери' },
+  { src: gallery5f, alt: 'Двери' },
 
 ];
 const Info = () => {
@@ -112,7 +127,7 @@ const Info = () => {
             <span>{t('text-4f.3')}</span>
           </section>
           <Gallery
-            images={galleryDoorsImages}
+            images={galleryFurnitureImages}
           />
           <InfoButton
             title={t('subtitle-5').toUpperCase()}
@@ -165,7 +180,7 @@ const Info = () => {
             <span><b className={styles.block}>{t('instruction-warning')}</b>
               {t('instruction-warning-text-1')}</span>
             <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
-            <span >{t('instruction-warning-text-3')}</span>
+            <span>{t('instruction-warning-text-3')}</span>
           </div>
         </div>
         <InfoButton

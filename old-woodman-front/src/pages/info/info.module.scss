@@ -23,11 +23,9 @@
       padding: 0 24px;
       align-items: center;
       @media (max-width: 810px) {
-
         padding: 24px;
       }
       @media (max-width: 380px) {
-
         padding: 12px;
       }
 
@@ -50,7 +48,6 @@
         }
       }
     }
-
   }
 
   .infoContent {
@@ -185,15 +182,18 @@
         padding: 30px 15px;
         margin-bottom: 55px;
       }
+
       span {
         display: block;
         margin-bottom: 15px;
         @include mixins.bodyTextSmall;
-       .block{
-         font-family: 'Vollkorn', serif;
-       }
+
+        .block {
+          font-family: 'Vollkorn', serif;
+        }
       }
-      .warningText{
+
+      .warningText {
         color: #724136;
       }
     }
