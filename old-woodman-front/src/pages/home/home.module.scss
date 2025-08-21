@@ -173,6 +173,7 @@
 */
     .imageWrapper {
       height: calc(100vh - 210px);
+      max-height: 700px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       @media (max-width: 810px) {
@@ -188,7 +189,7 @@
       //  object-position: center center;
         object-position: 0 -100px;
         height: calc(100vh - 210px);
-
+        max-height: 700px;
         @media (max-width: 1200px) {
           object-fit: cover;
           object-position: center center;
@@ -215,7 +216,7 @@
         justify-content: center;
         position: relative;
         justify-self: center;
-
+        max-height: 700px;
         @media (max-width: 1200px) {
           padding: 0 24px 24px;
 
