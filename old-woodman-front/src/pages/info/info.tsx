@@ -39,7 +39,7 @@ const Info = () => {
       doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
     if (location.pathname.startsWith('/info') && location.hash === '#furniture') {
-      doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
+      furnitureRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
 
   }, []);
