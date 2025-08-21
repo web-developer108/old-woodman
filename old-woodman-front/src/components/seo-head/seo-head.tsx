@@ -1,14 +1,8 @@
 import React, { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 import { useTranslation } from 'react-i18next';
+import type { MetaTag, SeoHeadProps } from './seo-head.types.ts';
 
-
-/*function getSeoIdFromPath(pathname: string) {
-  const parts = pathname.split('/').filter(Boolean);
-  const [, collectionId, productId] = parts;
-  return productId || collectionId || '';
-}*/
 function getSeoIdFromPath(pathname: string) {
   const parts = pathname.split('/').filter(Boolean);
   if (parts.length === 0) return 'home';
@@ -28,25 +22,6 @@ export const SeoHead: React.FC<SeoHeadProps> = ({ meta = [] }) => {
   const description = t(`description.${seoId}`, { defaultValue: fallbackDesc });
   const canonicalUrl = `https://oldwoodman.kz${pathname}`;
 
- /* const isCatalogPath = pathname.startsWith('/doors') || pathname.startsWith('/furniture');
-
-  if (isCatalogPath) {
-    const seoId = getSeoIdFromPath(pathname);
-    if (seoId) {
-
-      title = t(`title.${seoId}`, { defaultValue: t('title') });
-      description = t(`description.${seoId}`, { defaultValue: t('description') });
-    } else {
-      title = t('title');
-      description = t('description');
-    }
-  } else {
-    title = t('title');
-    description = t('description');
-  }
-
-  const canonicalUrl = `https://oldwoodman.kz${pathname}`;
-*/
   const mergedMeta: MetaTag[] = useMemo(
     () => [
       { name: 'description', content: description },
