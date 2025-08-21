@@ -1,23 +1,19 @@
 import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
-import { useFooterRef } from '../../hooks/footer-ref/use-footer-ref.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
-import { CircleButton } from '../../components/buttons/circle-button/circle-button.tsx';
-import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
+import { InfoButton } from '../../components/buttons/info-button/info-button.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
-import { AppColors } from '../../styles.ts';
-import styles from '../info/info.module.scss';
-
 import gallery1d from '@assets/images/info/gallery/gallery-d-1.webp'
 import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
 import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
 import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
 import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
-import { Gallery } from '../../components/gallery/gallery.tsx';
+import styles from '../info/info.module.scss';
 
 
 const galleryDoorsImages = [
@@ -30,13 +26,9 @@ const galleryDoorsImages = [
 ];
 const Info = () => {
   const { t } = usePageTranslate();
-  const footerRef = useFooterRef();
   const instructionRef = useRef<HTMLHeadingElement>(null);
   const doorsRef = useRef<HTMLHeadingElement>(null);
 
-  const handleClick = () => {
-    footerRef?.current?.scrollIntoView({ behavior: 'smooth' });
-  };
   useEffect(() => {
     if (location.pathname === '/info' && location.hash === '#instructions') {
 
@@ -94,18 +86,11 @@ const Info = () => {
           <Gallery
             images ={galleryDoorsImages}
           />
-          <div className={styles.grey} onClick={handleClick}>
-            <div className={styles.headerWrap}>
 
-              <div className={styles.buttonWrap}>
-                <CircleButton ariaLabel={t('arrow.aria-label')} onClick={handleClick}
-                              bgColor={AppColors.background.circleButton} icon={<ArrowBottomIcon/>}/>
-              </div>
-
-              <h3>{t('subtitle-4').toUpperCase()}</h3>
-            </div>
-            <div className={styles.buttonText}>{t('text-4')}</div>
-          </div>
+          <InfoButton
+          title = {t('subtitle-4').toUpperCase()}
+          label = {t('text-4')}
+          />
           <h2 id='instructions' ref={instructionRef}
               className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
           <section className={styles.section}>

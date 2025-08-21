@@ -1,0 +1,59 @@
+@use "../../../mixins" as mixins;
+.buttonContainer {
+  background-color: var(--background-grey-color);
+  max-width: 1180px;
+  margin: 65px auto 150px;
+  height: 124px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  gap: 20px;
+  //text-align: center;
+  align-items: center;
+
+  @media (max-width: 810px) {
+    flex-direction: column;
+    justify-content: center;
+    margin: 55px auto;
+    height: auto;
+    padding: 20px 14px;
+    gap: 15px;
+  }
+
+  .headerWrap {
+    width: 50%;
+    text-align: center;
+    @media (max-width: 810px) {
+      width: 100%;
+    }
+    .buttonTitle{
+      font-weight: 500;
+      line-height: 1.25;
+      text-align: left;
+      padding-bottom: 8px;
+      @include mixins.bodyText;
+      @media (max-width: 810px) {
+        text-align: center;
+        padding-bottom: 4px;
+      }
+    }
+    .buttonText{
+      text-align: left;
+      @include mixins.bodyTextSmall;
+      @media (max-width: 810px) {
+        text-align: center;
+      }
+
+    }
+  }
+
+  .buttonWrap {
+    width: 50%;
+    max-width: 520px;
+    @media (max-width: 810px) {
+      width: 100%;
+     // min-width: 320px;
+    }
+  }
+}
