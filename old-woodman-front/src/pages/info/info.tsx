@@ -15,7 +15,6 @@ import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
 import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
 import styles from '../info/info.module.scss';
 
-
 const galleryDoorsImages = [
   { src: gallery1d, alt: 'Двери' },
   { src: gallery2d, alt: 'Двери' },
@@ -28,6 +27,7 @@ const Info = () => {
   const { t } = usePageTranslate();
   const instructionRef = useRef<HTMLHeadingElement>(null);
   const doorsRef = useRef<HTMLHeadingElement>(null);
+  const furnitureRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     if (location.pathname === '/info' && location.hash === '#instructions') {
@@ -38,13 +38,15 @@ const Info = () => {
     if (location.pathname.startsWith('/info') && location.hash === '#doors') {
       doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
+    if (location.pathname.startsWith('/info') && location.hash === '#furniture') {
+      doorsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
 
   }, []);
 
-
   return (
     <ToolPageLayout>
-      <div id = 'doors' ref={doorsRef}  className={styles.infoContainer}>
+      <div className={styles.infoContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.titleWrapper}>
             <h1 className={styles.mainHeader}
@@ -57,7 +59,7 @@ const Info = () => {
         </div>
         <div className={styles.infoContent}>
           <Breadcrumbs current={t('info')}/>
-          <h2 className={styles.header}>{t('header-1').toUpperCase()}</h2>
+          <h2 id='doors' ref={doorsRef} className={styles.header}>{t('header-1').toUpperCase()}</h2>
           <section className={styles.section}>
             <h3>{t('subtitle-1').toUpperCase()}</h3>
             <span>{t('text-1.1')}</span>
@@ -84,12 +86,37 @@ const Info = () => {
           </section>
 
           <Gallery
-            images ={galleryDoorsImages}
+            images={galleryDoorsImages}
           />
 
           <InfoButton
-          title = {t('subtitle-4').toUpperCase()}
-          label = {t('text-4')}
+            title={t('subtitle-4').toUpperCase()}
+            label={t('text-4')}
+          />
+          <h2 id='furniture' ref={furnitureRef} className={styles.header}>{t('header-2f').toUpperCase()}</h2>
+          <section className={styles.section}>
+            <h3>{t('subtitle-2f').toUpperCase()}</h3>
+            <span>{t('text-2f.1')}</span>
+            <span>{t('text-2f.2')}</span>
+            <span>{t('text-2f.3')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-3f').toUpperCase()}</h3>
+            <span>{t('text-3f.1')}</span>
+            <span>{t('text-3f.2')}</span>
+          </section>
+          <section className={styles.section}>
+            <h3>{t('subtitle-4f').toUpperCase()}</h3>
+            <span>{t('text-4f.1')}</span>
+            <span>{t('text-4f.2')}</span>
+            <span>{t('text-4f.3')}</span>
+          </section>
+          <Gallery
+            images={galleryDoorsImages}
+          />
+          <InfoButton
+            title={t('subtitle-5').toUpperCase()}
+            label={t('text-5')}
           />
           <h2 id='instructions' ref={instructionRef}
               className={styles.instructionsTitle}>{t('instruction').toUpperCase()}</h2>
@@ -103,6 +130,7 @@ const Info = () => {
             <h3>{t('instruction-label-2').toUpperCase()}</h3>
             <span>{t('instruction-text-2')}</span>
           </section>
+
           <section className={styles.sectionImage}>
             <div className={styles.instructionsWrap}>
               <h3>{t('instruction-label-3').toUpperCase()}</h3>
@@ -134,6 +162,10 @@ const Info = () => {
             <span className={styles.block}>{t('instruction-warning-text-2')}</span>
           </div>
         </div>
+        <InfoButton
+          title={t('subtitle-6').toUpperCase()}
+          label={t('text-5')}
+        />
       </div>
     </ToolPageLayout>
   )
