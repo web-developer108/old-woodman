@@ -17,6 +17,7 @@ import { ProductSlider } from '../product-slider/product-slider.tsx';
 import { getRandomProducts } from '../../utils/get-random-item.ts';
 import styles from '../doors-details/doors-details.module.scss';
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import {formatSize} from "../../utils/format-size.ts";
 
 export const FurnituresDetails: React.FC = () => {
   const navigate = useNavigate();
@@ -191,10 +192,10 @@ export const FurnituresDetails: React.FC = () => {
 
             <h2>{t('parameter-header.sizes').toUpperCase()}</h2>
             <span
-              className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${product.sizes?.height} см`}</span>
+              className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${formatSize(product.sizes?.height)}`}</span>
             <span
-              className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${product.sizes?.width} см`}</span>
-            <span className={styles.sizeSpan}><b>{t('parameter-header.sizes.depth')}</b>{`: ${product.sizes?.depth} см`}</span>
+              className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${formatSize(product.sizes?.width)}`}</span>
+            <span className={styles.sizeSpan}><b>{t('parameter-header.sizes.depth')}</b>{`: ${formatSize(product.sizes?.depth)}`}</span>
           </div>
         </div>
       </section>
