@@ -15,9 +15,9 @@ export interface ProductItem {
   time?:number;
   alt:string;
   sizes?: {
-    width: number;
-    height: number;
-    depth: number;
+    width: number | number [];
+    height: number | number [] ;
+    depth: number | number [];
   };
 }
 

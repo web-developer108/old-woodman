@@ -595,6 +595,30 @@ export const productCatalog: ProductCategory[] = [
               depth: 40,
             }
           },
+            {
+                id: 'pine',
+                title: {
+                    ru: 'Pine',
+                    kk: 'Pine',
+                },
+                pageHeader: {
+                    ru: 'Деревянная тумба под раковину PINE',
+                    kk: 'Деревянная тумба под раковину PINE',
+                },
+                shortName: {
+                    ru: 'Деревянная тумба под раковину',
+                    kk: 'Деревянная тумба под раковину',
+                },
+                images: ['/images/furniture/consoles/pino.webp', '/images/furniture/consoles/pino-add1.webp', '/images/furniture/consoles/pino-add2.webp'],
+                price: 328000,
+                time: 10,
+                alt: 'Деревянная тумбочка на высоких ножках с одним ящиком в стиле Country',
+                sizes: {
+                    width:150,
+                    height: 80,
+                    depth: 50,
+                }
+            },
         ],
       },
       {
