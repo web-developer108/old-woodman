@@ -612,7 +612,7 @@ export const productCatalog: ProductCategory[] = [
                 images: ['/images/furniture/consoles/pino.webp', '/images/furniture/consoles/pino-add1.webp', '/images/furniture/consoles/pino-add2.webp'],
                 price: 328000,
                 time: 10,
-                alt: 'Деревянная тумбочка на высоких ножках с одним ящиком в стиле Country',
+                alt: 'Деревянная тумба под раковину PINE',
                 sizes: {
                     width:150,
                     height: 80,
@@ -794,6 +794,65 @@ export const productCatalog: ProductCategory[] = [
               width: 150,
               height: 150,
               depth: 150,
+            }
+          },
+        ],
+      },
+        {
+        id: 'tables',
+        title: {
+          ru: 'Столы и комплекты',
+          kk: 'Столы и комплекты',
+        },
+        items: [
+          {
+            id: 'zhetysu',
+            title: {
+              ru: 'Zhetysu',
+              kk: 'Zhetysu',
+
+            },
+            pageHeader: {
+              ru: 'Обеденный раздвижной стол ZHETYSU',
+              kk: 'Обеденный раздвижной стол ZHETYSU',
+            },
+            shortName: {
+              ru: 'Обеденный раздвижной стол',
+              kk: 'Обеденный раздвижной стол',
+            },
+            images: ['/images/furniture/chairs/alma-ata.webp', '/images/furniture/tables/zhetysu-add1.webp', '/images/furniture/tables/zhetysu-add2.webp', '/images/furniture/tables/zhetysu-add3.webp'],
+            price: 286000,
+            time: 10,
+            alt: 'Обеденный раздвижной стол ZHETYSU',
+            sizes: {
+              width: 120,
+              height: 80,
+              depth: 120,
+            }
+          },
+            {
+            id: 'larch',
+            title: {
+              ru: 'Larch',
+              kk: 'Larch',
+
+            },
+            pageHeader: {
+              ru: 'Обеденный раздвижной стол ZHETYSU',
+              kk: 'Обеденный раздвижной стол ZHETYSU',
+            },
+            shortName: {
+              ru: 'Обеденный раздвижной стол',
+              kk: 'Обеденный раздвижной стол',
+            },
+            images: ['/images/furniture/chairs/alma-ata.webp', '/images/furniture/tables/zhetysu-add1.webp', '/images/furniture/tables/zhetysu-add2.webp', '/images/furniture/tables/zhetysu-add3.webp'],
+            price: 286000,
+            time: 10,
+            alt: 'Обеденный раздвижной стол ZHETYSU',
+            sizes: {
+              width: 120,
+              height: 80,
+              depth: 120,
             }
           },
         ],

@@ -132,7 +132,7 @@ const Home = () => {
             </div>
           </div>*/}
           <div className={styles.imageWrapper}>
-            <img src={heroOne} className={styles.heroImage} alt="Интерьер"/>
+            <img src={heroOne} className={styles.heroImage} alt="Элемент деревянного мебельного фасада для классического платяного шкафа из дуба с готической резьбой"/>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
               <div className={styles.description}>{t('hero.description')}</div>
