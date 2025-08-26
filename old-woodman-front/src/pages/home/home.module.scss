@@ -184,10 +184,10 @@
         grid-column: 1  / span 2;
         grid-row: 1;
         width: 100%;
-       // object-fit: none;
-        object-fit: cover;
-        object-position: center center;
-       // object-position: 0 -100px;
+        object-fit: none;
+       // object-fit: cover;
+        //object-position: center center;
+        object-position: 0 0;
         height: calc(100vh - 210px);
         max-height: 700px;
         @media (max-width: 1200px) {
