@@ -537,7 +537,7 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Консоль для ванной',
                             kk: 'Консоль',
                         },
-                        images: ['/images/furniture/consoles/iberia.webp', '/images/furniture/consoles/iberia-add1.webp', '/images/furniture/consoles/iberia-add.webp', '/images/furniture/consoles/iberia-add3.webp'],
+                        images: ['/images/furniture/consoles/iberia.webp', '/images/furniture/consoles/iberia-add1.webp', '/images/furniture/consoles/iberia-add2.webp', '/images/furniture/consoles/iberia-add3.webp'],
                         price: 180000,
                         time: 10,
                         alt: 'Деревянная  консоль для ванной с керамической столешницей на белом фоне в Алматы',
