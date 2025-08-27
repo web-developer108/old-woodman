@@ -8,9 +8,9 @@ import { DirectionLeftIcon } from '../icons/direction-left-icon/direction-left-i
 import { useTranslation } from 'react-i18next';
 import { DirectionRightIcon } from '../icons/direction-right-icon/direction-right-icon.tsx';
 import { useCurrentCollectionItems } from '../../hooks/current-collection/current-collection-items.tsx'
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './image-slider.module.scss'
-import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
 
 
 export const ImageSlider: React.FC<SliderProps> = ({
@@ -88,6 +88,7 @@ export const ImageSlider: React.FC<SliderProps> = ({
               onClick={() => scrollToIndex(i)}
             >
               <img src={img.src} alt={img.alt} className={styles.image}/>
+
             </div>
           ))}
         </div>

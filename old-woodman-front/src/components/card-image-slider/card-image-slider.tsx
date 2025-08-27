@@ -19,7 +19,6 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
-    // свайп обработчики
     const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
         startXRef.current = e.touches[0].clientX;
     };
@@ -34,7 +33,7 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
             } else {
                 next();
             }
-            startXRef.current = null; // сбрасываем
+            startXRef.current = null;
         }
     };
 
@@ -53,7 +52,6 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
         >
             <img src={images[currentIndex]} alt={alt} className={styles.image} />
 
-            {/* стрелки для десктопа */}
             {isHover && window.innerWidth > 810 && images.length > 1 && (
                 <>
                     <button className={`${styles.arrow} ${styles.prev}`} onClick={(e) => {
@@ -63,7 +61,7 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
                         &#10094;
                     </button>
                     <button className={`${styles.arrow} ${styles.next}`}  onClick={(e) => {
-                        e.stopPropagation(); // останавливаем всплытие
+                        e.stopPropagation();
                         next();
                     }}>
                         &#10095;
@@ -71,7 +69,6 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
                 </>
             )}
 
-            {/* точки */}
             <div className={styles.dots}>
                 {images.map((_, i) => (
                     <span
