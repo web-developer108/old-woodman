@@ -612,7 +612,7 @@ export const productCatalog: ProductCategory[] = [
                         images: ['/images/furniture/consoles/pino.webp', '/images/furniture/consoles/pino-add1.webp', '/images/furniture/consoles/pino-add2.webp'],
                         price: 328000,
                         time: 10,
-                        alt: 'Деревянная тумба под раковину PINE',
+                        alt: 'Тумба под раковину из натуральной сосны в санузел отеля, кафе, ресторана',
                         sizes: {
                             width: 150,
                             height: 80,
@@ -661,8 +661,8 @@ export const productCatalog: ProductCategory[] = [
 
                         },
                         pageHeader: {
-                            ru: 'Полка навесная Mini',
-                            kk: 'Полка навесная Mini',
+                            ru: 'Полка Mini',
+                            kk: 'Полка Mini',
                         },
                         shortName: {
                             ru: 'Полка настенная',
@@ -686,8 +686,8 @@ export const productCatalog: ProductCategory[] = [
 
                         },
                         pageHeader: {
-                            ru: 'Витрина навесная Retro',
-                            kk: 'Витрина навесная Retro',
+                            ru: 'Деревянная витрина Retro ',
+                            kk: 'Деревянная витрина Retro ',
                         },
                         shortName: {
                             ru: 'Витрина',
@@ -701,6 +701,31 @@ export const productCatalog: ProductCategory[] = [
                             width: 73,
                             height: 75,
                             depth: 29,
+                        }
+                    },
+                    {
+                        id: 'deco-cabinet',
+                        title: {
+                            ru: 'Deco Cabinet',
+                            kk: 'Deco Cabinet',
+
+                        },
+                        pageHeader: {
+                            ru: 'Шкаф для одежды Deco Cabinet',
+                            kk: 'Шкаф для одежды Deco Cabinet',
+                        },
+                        shortName: {
+                            ru: 'Шкаф',
+                            kk: 'Шкаф',
+                        },
+                        images: ['/images/furniture/wardrobes/duo.webp', '/images/furniture/wardrobes/duo-add1.webp'],
+                        price: 630000,
+                        time: 20,
+                        alt: 'Шкаф для одежды Deco Cabinet',
+                        sizes: {
+                            width: 120,
+                            height: 210,
+                            depth: 60,
                         }
                     },
                 ],
@@ -821,16 +846,16 @@ export const productCatalog: ProductCategory[] = [
                             kk: 'Обеденный стол',
                         },
                         images: ['/images/furniture/tables/zhetysu.webp', '/images/furniture/tables/zhetysu-add1.webp', '/images/furniture/tables/zhetysu-add2.webp', '/images/furniture/tables/zhetysu-add3.webp'],
-                        price: 286000,
+                        price: 630000,
                         time: 10,
-                        alt: 'Обеденный раздвижной стол ZHETYSU',
+                        alt: 'Деревянный разборный стол из массива натурального дерева в собранном положении 120х120х76 см',
                         material:{
                             ru: 'карагача',
                             kk: 'карағаш',
                         },
                         sizes: {
                             width: 120,
-                            height: 80,
+                            height: 76,
                             depth: 120,
                         }
                     },
@@ -852,7 +877,7 @@ export const productCatalog: ProductCategory[] = [
                         images: ['/images/furniture/tables/larch.webp', '/images/furniture/tables/larch-add1.webp', '/images/furniture/tables/larch-add2.webp', '/images/furniture/tables/larch-add3.webp'],
                         price: 560000,
                         time: 10,
-                        alt: 'Барный стол и табуреты для террасы LARCH',
+                        alt: 'Барный стол и четыре табурета для террасы из влагостойкой древесины лиственницы, производство на заказ',
                         material:{
                             ru: 'лиственницы',
                             kk: 'балқарағай',

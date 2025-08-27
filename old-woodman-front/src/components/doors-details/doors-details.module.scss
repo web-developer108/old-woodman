@@ -60,6 +60,7 @@
         max-height: 100%;
         object-fit: contain;
         display: block;
+
         @media (max-width: 564px) {
           height: 360px;
 
@@ -74,6 +75,7 @@
           height: 100%;
           object-fit: cover;
           border-radius: 10px;
+
         }
       }
     }
