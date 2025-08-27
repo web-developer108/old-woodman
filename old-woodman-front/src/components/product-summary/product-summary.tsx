@@ -1,9 +1,9 @@
 import React from 'react';
-import type { ProductSummaryProps } from './product-summary.types.ts';
 import { useTranslation } from 'react-i18next';
-import { QuantitySelector } from '../quantity-selector/quantity-selector.tsx';
-import styles from './product-summary.module.scss';
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import { QuantitySelector } from '../quantity-selector/quantity-selector.tsx';
+import type { ProductSummaryProps } from './product-summary.types.ts';
+import styles from './product-summary.module.scss';
 
 export const ProductSummary: React.FC<ProductSummaryProps> = ({
   product,

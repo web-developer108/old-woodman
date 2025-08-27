@@ -2,6 +2,10 @@ export type LanguageText = {
   ru: string;
   kk: string;
 };
+export type LanguageTextArray = {
+  ru: string[];
+  kk: string[];
+};
 
 export interface ProductItem {
   id: string;
@@ -14,10 +18,12 @@ export interface ProductItem {
   price: number;
   time?:number;
   alt:string;
+  material?: LanguageText;
+  set?: LanguageTextArray;
   sizes?: {
-    width: number;
-    height: number;
-    depth: number;
+    width: number | number [];
+    height: number | number [] ;
+    depth: number | number [];
   };
 }
 
