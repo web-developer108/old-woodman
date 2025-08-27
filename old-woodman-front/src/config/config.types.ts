@@ -18,6 +18,7 @@ export interface ProductItem {
   price: number;
   time?:number;
   alt:string;
+  material?: LanguageText;
   set?: LanguageTextArray;
   sizes?: {
     width: number | number [];

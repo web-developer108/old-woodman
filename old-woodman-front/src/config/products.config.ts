@@ -693,7 +693,7 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Витрина',
                             kk: 'Витрина',
                         },
-                        images: ['/images/furniture/wardrobes/retro.webp', '/images/furniture/wardrobes/retro-add1.webp', '/images/furniture/wardrobes/retro-add2.webp'],
+                        images: ['/images/furniture/wardrobes/retro.webp', '/images/furniture/wardrobes/retro-add1.webp', '/images/furniture/wardrobes/retro-add2.webp', '/images/furniture/wardrobes/retro-add3.webp'],
                         price: 192000,
                         time: 20,
                         alt: 'Деревяная витрина для посуды в ретро стиле для кухни или гостинной',
@@ -824,6 +824,10 @@ export const productCatalog: ProductCategory[] = [
                         price: 286000,
                         time: 10,
                         alt: 'Обеденный раздвижной стол ZHETYSU',
+                        material:{
+                            ru: 'карагача',
+                            kk: 'карағаш',
+                        },
                         sizes: {
                             width: 120,
                             height: 80,
@@ -849,6 +853,10 @@ export const productCatalog: ProductCategory[] = [
                         price: 560000,
                         time: 10,
                         alt: 'Барный стол и табуреты для террасы LARCH',
+                        material:{
+                            ru: 'лиственницы',
+                            kk: 'балқарағай',
+                        },
                         set: {
                             ru: ['Стол', 'Табурет'],
                             kk: ['Үстел', 'Нәжіс']

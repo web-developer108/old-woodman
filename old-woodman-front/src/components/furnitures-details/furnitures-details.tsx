@@ -16,7 +16,7 @@ import {OneClickModal} from '../modal-windows/one-click-order/one-click-order.ts
 import {CartModal} from '../modal-windows/cart-modal/cart-modal.tsx';
 import {ProductSlider} from '../product-slider/product-slider.tsx';
 import {getRandomProducts} from '../../utils/get-random-item.ts';
-import {formatSet, formatSize} from "../../utils/format-size.ts";
+import {formatSet, formatData, formatMaterialsText} from "../../utils/format-data.ts";
 import styles from '../doors-details/doors-details.module.scss';
 
 export const FurnituresDetails: React.FC = () => {
@@ -189,21 +189,21 @@ export const FurnituresDetails: React.FC = () => {
                     </div>
                     <div className={styles.column}>
                         <h2>{t('parameter-header.materials').toUpperCase()}</h2>
-                        <span>{t('parameter-header.materials.text')}</span>
+                        <span>{formatMaterialsText(product, i18n.language as 'ru' | 'kk')}</span>
 
                         <h2>{t('parameter-header.sizes').toUpperCase()}
                             {product.set && (
                                 <span className={styles.setDescription}>
-       : {formatSet(product.set, i18n.language as 'ru' | 'kk').toUpperCase()}
+                                    : {formatSet(product.set, i18n.language as 'ru' | 'kk').toUpperCase()}
                                  </span>
                             )}</h2>
 
                         <span
-                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${formatSize(product.sizes?.height)}`}</span>
+                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.height')}</b>{`: ${formatData(product.sizes?.height)}`}</span>
                         <span
-                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${formatSize(product.sizes?.width)}`}</span>
+                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.length')}</b>{`: ${formatData(product.sizes?.width)}`}</span>
                         <span
-                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.depth')}</b>{`: ${formatSize(product.sizes?.depth)}`}</span>
+                            className={styles.sizeSpan}><b>{t('parameter-header.sizes.depth')}</b>{`: ${formatData(product.sizes?.depth)}`}</span>
                     </div>
                 </div>
             </section>
