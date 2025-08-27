@@ -845,7 +845,7 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Комплект для террасы',
                             kk: 'Комплект для террасы',
                         },
-                        images: ['/images/furniture/chairs/alma-ata.webp', '/images/furniture/tables/zhetysu-add1.webp', '/images/furniture/tables/zhetysu-add2.webp', '/images/furniture/tables/zhetysu-add3.webp'],
+                        images: ['/images/furniture/tables/larch.webp', '/images/furniture/tables/larch-add1.webp', '/images/furniture/tables/larch-add2.webp', '/images/furniture/tables/larch-add3.webp'],
                         price: 560000,
                         time: 10,
                         alt: 'Барный стол и табуреты для террасы LARCH',
