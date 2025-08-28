@@ -185,8 +185,6 @@
         grid-row: 1;
         width: 100%;
         object-fit: none;
-       // object-fit: cover;
-        //object-position: center center;
         object-position: 0 0;
         height: calc(100vh - 210px);
         max-height: 700px;
@@ -217,13 +215,13 @@
         position: relative;
         justify-self: center;
         max-height: 700px;
-        @media (max-width: 1200px) {
-          padding: 0 24px 24px;
+        padding-left: 12px;
 
+        @media (max-width: 1024px) {
+          padding: 0 24px 24px;
           justify-self: left;
           text-align: left;
         }
-
 
         @media (max-width: 810px) {
           min-width: 320px;
@@ -240,33 +238,37 @@
 
         .title {
           font-size: 48px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
 
-
-          @media (max-width: 1200px) {
-            font-size: 32px;
+          @media (max-width: 1024px) {
+            font-size: 38px;
             line-height: 1.25;
-            margin-bottom: 6px;
-
           }
           @media (max-width: 810px) {
+            font-size: 30px;
             max-width: 386px;
+            margin-bottom: 6px;
           }
         }
 
         .description {
-          margin-bottom: 60px;
+          margin-bottom: 79px;
           line-height: 1.5;
-
-          @media (max-width: 1200px) {
+          font-size: 20px;
+          @media (max-width: 1024px) {
             line-height: 1.4;
+            font-size: 18px;
+            margin-bottom: 64px;
+          }
+          @media (max-width: 810px) {
+            font-size: 14px;
             margin-bottom: 24px;
           }
         }
 
         .buttonWrapper {
           padding: 0 82px;
-          @media (max-width: 1200px) {
+          @media (max-width: 1024px) {
             padding: 0;
             max-width: 386px;
           }
