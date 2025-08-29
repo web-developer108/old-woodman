@@ -9,8 +9,6 @@ export const FooterBottom = () => {
   const { t } = useTranslation('common');
   const navigate = useNavigate();
 
-  const currentYear = new Date().getFullYear();
-
   const goToFaq = () => {
     if (location.pathname === '/') {
       const faqElement = document.getElementById('faq');
@@ -45,7 +43,7 @@ export const FooterBottom = () => {
         </a>
       </div>
       <div className={styles.copyright}>
-        <p>{`©Old Woodman. 2023—${currentYear}`}</p>
+        <p>©Old Woodman</p>
         <p>{t('footer.adv')}</p>
       </div>
       <div className={styles.order}>

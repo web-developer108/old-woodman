@@ -46,7 +46,7 @@ export const FooterTop = () => {
   }
   return (
     <div className={styles.footerTop} ref={footerRef}>
-      <h2 className={styles.title}>{t('footer.title1')}<br/>{t('footer.title2')}</h2>
+      <h2 className={styles.title}>{t('footer.title1').toUpperCase()}<br/>{t('footer.title2').toUpperCase()}</h2>
       <div className={styles.buttons}>
         <a href="https://wa.me/77081826004"
            target="_blank"
