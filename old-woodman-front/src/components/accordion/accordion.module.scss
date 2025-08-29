@@ -36,10 +36,6 @@
         background-color: var(--background-grey-color);
         width: 100%;
         padding: 24px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 1;
-        font-family: "Nunito Sans", sans-serif;
         height: 80px;
         border-radius: 10px;
         border: none;
@@ -50,8 +46,9 @@
         align-items: center;
         cursor: pointer;
         box-shadow: none;
+        font-family: "Manrope", sans-serif;
+        @include mixins.bodyText;
         @media (max-width: 810px) {
-          font-size: 16px;
           height: 64px;
           padding: 22px 20px;
         }

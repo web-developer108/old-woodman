@@ -401,7 +401,6 @@
         grid-column: 1;
         grid-row: 2 / span 3;
         max-width: 347px;
-        font-weight: 500;
         @include mixins.headingLarge;
         @media (max-width: 1200px) {
           grid-column: 1;
@@ -499,9 +498,8 @@
 
     .galleryTitle {
       margin-bottom: 24px;
-      font-weight: 500;
       @include mixins.headingLarge;
-      @media (max-width: 900px) {
+      @media (max-width: 1200px) {
        text-align: center;
       }
     }
@@ -509,7 +507,7 @@
     .galleryDescription {
       margin-bottom: 36px;
       @include mixins.bodyTextSmall;
-      @media (max-width: 900px) {
+      @media (max-width: 1200px) {
         max-width: 648px;
         margin: 0 auto 36px;
         text-align: center;
@@ -518,6 +516,7 @@
 
     .social {
       font-size: 18px;
+      font-weight: 500;
       text-align: center;
       color: var(--text-grey-color);
       margin-top: 35px;
