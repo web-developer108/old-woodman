@@ -217,7 +217,7 @@ const Home = () => {
         <section className={styles.gallery}>
           <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
           <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-          <Gallery images={galleryImages}/>
+          <Gallery images={galleryImages} layout = {'repeatingBlock'}/>
           <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
           <SocialPanel/>
         </section>

@@ -1,4 +1,4 @@
-export type GalleryLayout = 'default' | 'complex';
+export type GalleryLayout = 'default' | 'complex'| 'repeatingBlock';
 
 export interface GalleryImage {
   src: string;
