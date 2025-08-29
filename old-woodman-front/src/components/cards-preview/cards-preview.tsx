@@ -2,18 +2,17 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {LikeButton} from '../buttons/like-button/like-button.tsx';
 import {CartButton} from '../buttons/cart-button/cart-button.tsx';
+import {CardImageSlider} from "../card-image-slider/card-image-slider.tsx";
 import type {CardsPreviewProps} from './cards-preview.types.ts';
 import styles from '../cards-preview/cards-preview.module.scss'
-import {CardImageSlider} from "../card-image-slider/card-image-slider.tsx";
 
 export const CardsPreview: React.FC<CardsPreviewProps> = ({
                                                               items,
                                                               handleCardClick,
                                                               showPlug = true,
                                                           }) => {
-    const {t, i18n} = useTranslation('common');
+   const {t, i18n} = useTranslation('common');
     const lang = i18n.language as 'ru' | 'kk';
-    console.log('CardsPreview')
     return (
         <div className={styles.cardsContainer}>
 
