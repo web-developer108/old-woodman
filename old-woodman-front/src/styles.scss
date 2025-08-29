@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: 'Nunito Sans';
   src: url("assets/fonts/NunitoSans-all.woff2") format('woff2');
   font-weight: 300 600;
@@ -28,6 +28,56 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap
+}*/
+
+@font-face {
+  font-family: 'Lora';
+  src: url('assets/fonts/Lora-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('assets/fonts/Lora-MediumItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('assets/fonts/Lora-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('assets/fonts/Manrope-Light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('assets/fonts/Manrope-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('assets/fonts/Manrope-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('assets/fonts/Manrope-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap
 }
 
 :root {
@@ -53,8 +103,17 @@
 
 }
 
-body {
+/*body {
   font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main-color);
+  background-color: var(--text-light-color);
+  margin: 0;
+  min-width: 335px;
+}*/
+body {
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: var(--text-main-color);
@@ -67,9 +126,14 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
+/*h1, h2, h3, h4 {
   font-family: 'Vollkorn', serif;
   font-weight: 500;
+  margin: 0;
+}*/
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
   margin: 0;
 }
 

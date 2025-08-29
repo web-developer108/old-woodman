@@ -4,7 +4,7 @@
   background-color: var(--background-grey-color);
   max-width: 1036px;
   margin: 0 auto;
-  box-sizing: border-box;
+
   .textInfoTitle {
     @include mixins.headingLarge;
   }
@@ -37,6 +37,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    row-gap: 24px;
     column-gap: 112px;
     max-height: 200px;
     @media (max-width: 1200px) {

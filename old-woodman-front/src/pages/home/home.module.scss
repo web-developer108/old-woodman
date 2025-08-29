@@ -178,15 +178,13 @@
       grid-template-columns: 1fr 1fr;
       @media (max-width: 810px) {
         grid-template-columns: 1fr;
-         }
+      }
 
       .heroImage {
         grid-column: 1  / span 2;
         grid-row: 1;
         width: 100%;
         object-fit: none;
-       // object-fit: cover;
-        //object-position: center center;
         object-position: 0 0;
         height: calc(100vh - 210px);
         max-height: 700px;
@@ -196,7 +194,7 @@
         }
         @media (max-width: 810px) {
           grid-column: 1;
-          grid-row: 1 ;
+          grid-row: 1;
 
         }
       }
@@ -217,13 +215,13 @@
         position: relative;
         justify-self: center;
         max-height: 700px;
-        @media (max-width: 1200px) {
-          padding: 0 24px 24px;
+        padding-left: 12px;
 
+        @media (max-width: 1024px) {
+          padding: 0 24px 24px;
           justify-self: left;
           text-align: left;
         }
-
 
         @media (max-width: 810px) {
           min-width: 320px;
@@ -240,33 +238,37 @@
 
         .title {
           font-size: 48px;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
 
-
-          @media (max-width: 1200px) {
-            font-size: 32px;
+          @media (max-width: 1024px) {
+            font-size: 38px;
             line-height: 1.25;
-            margin-bottom: 6px;
-
           }
           @media (max-width: 810px) {
+            font-size: 30px;
             max-width: 386px;
+            margin-bottom: 6px;
           }
         }
 
         .description {
-          margin-bottom: 60px;
+          margin-bottom: 79px;
           line-height: 1.5;
-
-          @media (max-width: 1200px) {
+          font-size: 20px;
+          @media (max-width: 1024px) {
             line-height: 1.4;
+            font-size: 18px;
+            margin-bottom: 64px;
+          }
+          @media (max-width: 810px) {
+            font-size: 14px;
             margin-bottom: 24px;
           }
         }
 
         .buttonWrapper {
           padding: 0 82px;
-          @media (max-width: 1200px) {
+          @media (max-width: 1024px) {
             padding: 0;
             max-width: 386px;
           }
@@ -297,10 +299,13 @@
   .offer {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 0 156px 20px;
+    padding: 0 20px 165px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1024px) {
       padding-bottom: 96px;
+    }
+    @media (max-width: 900px) {
+      padding: 0 12px 96px;
     }
 
     h2 {
@@ -314,9 +319,6 @@
       }
       @media (max-width: 860px) {
         max-width: 390px;
-      }
-      @media (max-width: 810px) {
-        font-size: 24px;
       }
     }
 
@@ -337,9 +339,12 @@
         li {
           position: relative;
           padding-left: 34px;
-          margin-bottom: 28px;
+          margin-bottom: 24px;
           color: var(--text-main-color);
           @include mixins.bodyTextSmall;
+          @media (max-width: 810px) {
+            margin-bottom: 20px;
+          }
 
           &::before {
             content: '✓';
@@ -360,7 +365,7 @@
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
-    @media (max-width: 1200px) {
+    @media (max-width: 900px) {
       padding: 0 12px;
     }
   }
@@ -485,25 +490,33 @@
   .gallery {
     max-width: 1180px;
     margin: 0 auto 156px;
-    @media (max-width: 1240px) {
-      padding: 0 24px;
-    }
-    @media (max-width: 810px) {
-      padding: 0 14px;
+    padding: 0 20px;
+
+    @media (max-width: 900px) {
+      padding: 0 12px;
     }
 
     .galleryTitle {
       margin-bottom: 24px;
       @include mixins.headingLarge;
+      @media (max-width: 1200px) {
+       text-align: center;
+      }
     }
 
     .galleryDescription {
       margin-bottom: 36px;
       @include mixins.bodyTextSmall;
+      @media (max-width: 1200px) {
+        max-width: 648px;
+        margin: 0 auto 36px;
+        text-align: center;
+      }
     }
 
     .social {
       font-size: 18px;
+      font-weight: 500;
       text-align: center;
       color: var(--text-grey-color);
       margin-top: 35px;

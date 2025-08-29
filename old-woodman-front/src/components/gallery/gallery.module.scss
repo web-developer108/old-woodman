@@ -26,7 +26,9 @@
         width: 286px;
         height: 286px;
         border-radius: 10px;
-        object-fit: cover;background-color: var(--background-circle-button-color);
+        object-fit: cover;
+        background-color: var(--background-circle-button-color);
+
         @media (max-width: 810px) {
           width: 182px;
           height: 182px;
@@ -94,6 +96,50 @@
         @media (max-width: 810px) {
           width: 182px;
           height: 182px;
+        }
+      }
+    }
+
+    &.layoutRepeatingBlock {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      gap: 12px;
+      height: auto;
+
+      .galleryBlock {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        grid-template-rows: repeat(2, max-content);
+        gap: 12px;
+
+        @media (max-width: 810px) {
+          grid-template-columns: 372px repeat(2, 182px);
+          grid-template-rows: repeat(2, 182px);
+          gap: 8px;
+        }
+
+        .galleryImage {
+          width: 286px;
+          height: 286px;
+          border-radius: 10px;
+          object-fit: cover;
+
+          @media (max-width: 810px) {
+            width: 182px;
+            height: 182px;
+          }
+
+          &:first-child {
+            width: 584px;
+            height: 584px;
+            grid-row: span 2;
+
+            @media (max-width: 810px) {
+              width: 372px;
+              height: 372px;
+            }
+          }
         }
       }
     }

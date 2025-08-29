@@ -13,6 +13,7 @@
     height: 260px;
     border-radius: 10px;
     background-size: cover;
+    min-width: 320px;
 
     &.brown {
       background-image: url('../../assets/images/home/bg-brown.webp');
@@ -30,7 +31,7 @@
 
     &.blue {
       background-image: url('../../assets/images/home/bg-blue.webp');
-      grid-template-columns: 32px 347px 16px 1fr 240px 10px 146px 10px;
+      grid-template-columns: 32px 357px 16px 1fr 240px 10px 146px 10px;
 
       @media (max-width: 900px) {
         grid-template-columns: 24px 193px 1fr 124px 6px 76px 24px;
@@ -79,6 +80,7 @@
       grid-column: 2;
       grid-row: 3;
       font-size: 32px;
+      font-weight: 500;
     }
 
     .bgDescription {
@@ -115,7 +117,7 @@
     @media (max-width: 900px) {
       height: 196px;
       grid-template-columns: 24px 193px 1fr 76px 6px 124px 24px;
-      grid-template-rows: 14px 66px 58px 8px 40px 10px;
+      grid-template-rows: 14px 66px 58px 8px 19px 21px 10px;
 
       .bgTitle {
         grid-column: 2;
@@ -124,7 +126,7 @@
       }
       .bgDescription {
         grid-column: 2;
-        grid-row: 5;
+        grid-row: 4;
         font-size: 14px;
       }
       .buttonContainer {
@@ -159,10 +161,11 @@
       }
       .buttonContainer {
         grid-column: 5;
-
       }
       .bgDescription {
-        grid-column: 2/span 3;
+        grid-column: 2/span 2;
+        grid-row: 6;
+        align-self: end;
 
       }
     }
