@@ -178,7 +178,7 @@
       grid-template-columns: 1fr 1fr;
       @media (max-width: 810px) {
         grid-template-columns: 1fr;
-         }
+      }
 
       .heroImage {
         grid-column: 1  / span 2;
@@ -194,7 +194,7 @@
         }
         @media (max-width: 810px) {
           grid-column: 1;
-          grid-row: 1 ;
+          grid-row: 1;
 
         }
       }
@@ -299,10 +299,13 @@
   .offer {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 0 165px 20px;
+    padding: 0 20px 165px;
 
     @media (max-width: 1024px) {
       padding-bottom: 96px;
+    }
+    @media (max-width: 900px) {
+      padding: 0 12px 96px;
     }
 
     h2 {
@@ -342,6 +345,7 @@
           @media (max-width: 810px) {
             margin-bottom: 20px;
           }
+
           &::before {
             content: '✓';
             position: absolute;
@@ -361,7 +365,7 @@
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
-    @media (max-width: 1200px) {
+    @media (max-width: 900px) {
       padding: 0 12px;
     }
   }
@@ -397,6 +401,7 @@
         grid-column: 1;
         grid-row: 2 / span 3;
         max-width: 347px;
+        font-weight: 500;
         @include mixins.headingLarge;
         @media (max-width: 1200px) {
           grid-column: 1;
@@ -486,21 +491,29 @@
   .gallery {
     max-width: 1180px;
     margin: 0 auto 156px;
-    @media (max-width: 1240px) {
-      padding: 0 24px;
-    }
-    @media (max-width: 810px) {
-      padding: 0 14px;
+    padding: 0 20px;
+
+    @media (max-width: 900px) {
+      padding: 0 12px;
     }
 
     .galleryTitle {
       margin-bottom: 24px;
+      font-weight: 500;
       @include mixins.headingLarge;
+      @media (max-width: 900px) {
+       text-align: center;
+      }
     }
 
     .galleryDescription {
       margin-bottom: 36px;
       @include mixins.bodyTextSmall;
+      @media (max-width: 900px) {
+        max-width: 648px;
+        margin: 0 auto 36px;
+        text-align: center;
+      }
     }
 
     .social {
