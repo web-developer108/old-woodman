@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-    useTranslation
-} from 'react-i18next';
-import {
-    LikeButton
-} from '../buttons/like-button/like-button.tsx';
-import {
-    CartButton
-} from '../buttons/cart-button/cart-button.tsx';
-import {
-    CardImageSlider
-} from "../card-image-slider/card-image-slider.tsx";
-import type {
-    CardsPreviewProps
-} from './cards-preview.types.ts';
+import { useTranslation } from 'react-i18next';
+import { LikeButton } from '../buttons/like-button/like-button.tsx';
+import { CartButton } from '../buttons/cart-button/cart-button.tsx';
+import { CardImageSlider } from "../card-image-slider/card-image-slider.tsx";
+import type { CardsPreviewProps } from './cards-preview.types.ts';
 import styles from '../cards-preview/cards-preview.module.scss'
 
 export const CardsPreview: React.FC<CardsPreviewProps> = ({
