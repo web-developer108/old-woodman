@@ -81,13 +81,24 @@ const Home = () => {
         ...heroImages,
         heroImages[0],
       ];*/
+
     useEffect(() => {
         const hash = window.location.hash;
         if (hash === '#faq' && faqRef.current) {
             faqRef.current.scrollIntoView({behavior: 'smooth'});
         }
     }, []);
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = heroOne;
+        document.head.appendChild(link);
 
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, []);
     /* useEffect(() => {
        const interval = setInterval(() => {
          setCurrentIndex(prev => prev + 1);
