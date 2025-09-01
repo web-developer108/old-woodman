@@ -57,7 +57,7 @@
         counter-increment: main-section;
         counter-reset: subsection;
         margin-bottom: 15px;
-        font-family: Vollkorn, serif;
+        font-family: Lora, serif;
         font-weight: 500;
         font-size: 36px;
         line-height: 150%;
@@ -70,7 +70,7 @@
         }
 
         > div {
-          font-family: Nunito Sans, serif;
+          font-family: Manrope, serif;
           @include mixins.bodyTextSmall;
         }
 
@@ -79,7 +79,7 @@
           list-style: none;
           padding-left: 56px;
           margin-top: 5px;
-          font-family: Nunito Sans, sans-serif;
+          font-family: Manrope, sans-serif;
           @include mixins.bodyTextSmall;
           >li{
             margin-bottom: 20px;
