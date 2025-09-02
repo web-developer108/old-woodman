@@ -89,6 +89,130 @@ export const productCatalog: ProductCategory[] = [
                 ],
             },
             {
+                id: 'cabinet',
+                title: {
+                    ru: 'CABINET',
+                    kk: 'CABINET',
+                },
+                pageTitle: {
+                    ru: 'Деревянные двери CABINET',
+                    kk: 'Деревянные двери CABINET',
+                },
+                items: [
+                    {
+                        id: 'cabinet-scandi',
+                        title: {
+                            ru: 'CABINET',
+                            kk: 'CABINET',
+
+                        },
+                        titleMob: {
+                            ru: 'CABINET, Scandi',
+                            kk: 'CABINET, Scandi',
+                        },
+                        description: {
+                            ru: 'Scandi',
+                            kk: 'Scandi',
+                        },
+                        shortName: {
+                            ru: 'Дверь',
+                            kk: 'Есік',
+                        },
+                        images: ['/images/doors/cabinet/scandinavia.webp'],
+                        price: 330000,
+                        alt: 'Фрезированная деревянная межкомнатная дверь из карельской сосны в скандинавском стиле'
+                    },
+                    {
+                        id: 'cabinet-chester',
+                        title: {
+                            ru: 'CABINET',
+                            kk: 'CABINET',
+                        },
+                        titleMob: {
+                            ru: 'CABINET, Chester',
+                            kk: 'CABINET, Chester',
+                        },
+                        description: {
+                            ru: 'Chester',
+                            kk: 'Chester',
+                        },
+                        shortName: {
+                            ru: 'Дверь',
+                            kk: 'Есік',
+                        },
+                        images: ['/images/doors/cabinet/europe.webp'],
+                        price: 750000,
+                        alt: 'Межкомнатная  дверь из массива дуба или других элитных пород'
+                    },
+                    {
+                        id: 'cabinet-hanoi',
+                        title: {
+                            ru: 'CABINET',
+                            kk: 'CABINET',
+                        },
+                        titleMob: {
+                            ru: 'CABINET, Hanoi',
+                            kk: 'CABINET, Hanoi',
+                        },
+                        description: {
+                            ru: 'Hanoi',
+                            kk: 'Hanoi',
+                        },
+                        shortName: {
+                            ru: 'Дверь',
+                            kk: 'Есік',
+                        },
+                        images: ['/images/doors/cabinet/ethiopia.webp'],
+                        price: 330000,
+                        alt: 'Фрезированная межкомнатная дверь из массива сосны, цвет морёный дуб'
+                    },
+                    {
+                        id: 'cabinet-paris',
+                        title: {
+                            ru: 'CABINET',
+                            kk: 'CABINET',
+                        },
+                        titleMob: {
+                            ru: 'CABINET, Paris',
+                            kk: 'CABINET, Paris',
+                        },
+                        description: {
+                            ru: 'Paris',
+                            kk: 'Paris',
+                        },
+                        shortName: {
+                            ru: 'Дверь',
+                            kk: 'Есік',
+                        },
+                        images: ['/images/doors/cabinet/versailles.webp'],
+                        price: 349000,
+                        alt: 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
+                    },
+                    {
+                        id: 'cabinet-paris-duo',
+                        title: {
+                            ru: 'CABINET',
+                            kk: 'CABINET',
+                        },
+                        titleMob: {
+                            ru: 'CABINET, Paris, двойная',
+                            kk: 'CABINET, Paris, Дуо',
+                        },
+                        description: {
+                            ru: 'Paris  двойная',
+                            kk: 'Paris Дуо',
+                        },
+                        shortName: {
+                            ru: 'Дверь',
+                            kk: 'Есік',
+                        },
+                        images: ['/images/doors/cabinet/versailles-duo.webp'],
+                        price: 558000,
+                        alt: 'Межкомнатная белая двойная деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
+                    },
+                ],
+            },
+            {
                 id: 'loft',
                 title: {
                     ru: 'LOFT',
@@ -262,130 +386,7 @@ export const productCatalog: ProductCategory[] = [
                     },
                 ],
             },
-            {
-                id: 'cabinet',
-                title: {
-                    ru: 'CABINET',
-                    kk: 'CABINET',
-                },
-                pageTitle: {
-                    ru: 'Деревянные двери CABINET',
-                    kk: 'Деревянные двери CABINET',
-                },
-                items: [
-                    {
-                        id: 'cabinet-scandi',
-                        title: {
-                            ru: 'CABINET',
-                            kk: 'CABINET',
 
-                        },
-                        titleMob: {
-                            ru: 'CABINET, Scandi',
-                            kk: 'CABINET, Scandi',
-                        },
-                        description: {
-                            ru: 'Scandi',
-                            kk: 'Scandi',
-                        },
-                        shortName: {
-                            ru: 'Дверь',
-                            kk: 'Есік',
-                        },
-                        images: ['/images/doors/cabinet/scandinavia.webp'],
-                        price: 330000,
-                        alt: 'Фрезированная деревянная межкомнатная дверь из карельской сосны в скандинавском стиле'
-                    },
-                    {
-                        id: 'cabinet-chester',
-                        title: {
-                            ru: 'CABINET',
-                            kk: 'CABINET',
-                        },
-                        titleMob: {
-                            ru: 'CABINET, Chester',
-                            kk: 'CABINET, Chester',
-                        },
-                        description: {
-                            ru: 'Chester',
-                            kk: 'Chester',
-                        },
-                        shortName: {
-                            ru: 'Дверь',
-                            kk: 'Есік',
-                        },
-                        images: ['/images/doors/cabinet/europe.webp'],
-                        price: 750000,
-                        alt: 'Межкомнатная  дверь из массива дуба или других элитных пород'
-                    },
-                    {
-                        id: 'cabinet-hanoi',
-                        title: {
-                            ru: 'CABINET',
-                            kk: 'CABINET',
-                        },
-                        titleMob: {
-                            ru: 'CABINET, Hanoi',
-                            kk: 'CABINET, Hanoi',
-                        },
-                        description: {
-                            ru: 'Hanoi',
-                            kk: 'Hanoi',
-                        },
-                        shortName: {
-                            ru: 'Дверь',
-                            kk: 'Есік',
-                        },
-                        images: ['/images/doors/cabinet/ethiopia.webp'],
-                        price: 330000,
-                        alt: 'Фрезированная межкомнатная дверь из массива сосны, цвет морёный дуб'
-                    },
-                    {
-                        id: 'cabinet-paris',
-                        title: {
-                            ru: 'CABINET',
-                            kk: 'CABINET',
-                        },
-                        titleMob: {
-                            ru: 'CABINET, Paris',
-                            kk: 'CABINET, Paris',
-                        },
-                        description: {
-                            ru: 'Paris',
-                            kk: 'Paris',
-                        },
-                        shortName: {
-                            ru: 'Дверь',
-                            kk: 'Есік',
-                        },
-                        images: ['/images/doors/cabinet/versailles.webp'],
-                        price: 349000,
-                        alt: 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
-                    },
-                    {
-                        id: 'cabinet-paris-duo',
-                        title: {
-                            ru: 'CABINET',
-                            kk: 'CABINET',
-                        },
-                        titleMob: {
-                            ru: 'CABINET, Paris, двойная',
-                            kk: 'CABINET, Paris, Дуо',
-                        },
-                        description: {
-                            ru: 'Paris  двойная',
-                            kk: 'Paris Дуо',
-                        },
-                        shortName: {
-                            ru: 'Дверь',
-                            kk: 'Есік',
-                        },
-                        images: ['/images/doors/cabinet/versailles-duo.webp'],
-                        price: 558000,
-                        alt: 'Межкомнатная белая двойная деревянная дверь из массива на заказ в Алматы, акриловое покрытие'
-                    },
-                ],
-            },
             {
                 id: 'exclusive',
                 title: {
