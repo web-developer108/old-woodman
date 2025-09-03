@@ -221,6 +221,7 @@ const Home = () => {
                                     <div>{t('carpentry-text1.1')}</div>
                                     <div>{t('carpentry-text1.2')}</div>
                                     <div>{t('carpentry-text1.3')}</div>
+                                    <div>{t('carpentry-text1.4')}</div>
                                 </>
                                 }
                             </MarkedInfo>
