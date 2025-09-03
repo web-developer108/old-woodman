@@ -28,7 +28,6 @@ import gallery6 from '@assets/images/furniture/gallery/gallery-6.webp';
 import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
-
 import styles from '../doors/doors.module.scss';
 
 const furnitureCollections = [{
