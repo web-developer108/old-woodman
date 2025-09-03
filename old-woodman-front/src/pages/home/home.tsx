@@ -1,23 +1,23 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import 'simplebar-react/dist/simplebar.min.css';
-import {usePageTranslate} from '../../hooks/page-translate/page-translate.ts';
-import {useModal} from '../../hooks/modal/use-modal.ts';
-import {ToolPageLayout} from '../../components/tool-page-layout/tool-page-layout.tsx';
-import {ColorButton} from '../../components/buttons/color-button/color-button.tsx';
-import {ArrowBottomIcon} from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
-import {ArrowTopRightIcon} from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
-import {MarkLeafIcon} from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
-import {MarkedInfo} from '../../components/marked-info/marked-info.tsx';
-import {MarkSquareIcon} from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
-import {MarkCheckIcon} from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
-import {SocialPanel} from '../../components/social-panel/social-panel.tsx';
-import {TextInfo} from '../../components/text-info/text-info.tsx';
-import {Accordion} from '../../components/accordion/accordion.tsx';
-import {ContactsModal} from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
-import {RunningText} from '../../components/running-text/running-text';
-import {Gallery} from '../../components/gallery/gallery';
-import {NavigationBlock} from '../../components/navigation-block/navigation-block';
-import {SocialButtons} from '../../components/buttons/social-buttons/social-buttons.tsx';
+import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
+import { ArrowBottomIcon } from '../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx';
+import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
+import { MarkLeafIcon } from '../../components/icons/mark-leaf-icon/mark-leaf-icon.tsx';
+import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
+import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
+import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
+import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { Accordion } from '../../components/accordion/accordion.tsx';
+import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
+import { RunningText } from '../../components/running-text/running-text';
+import { Gallery } from '../../components/gallery/gallery';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block';
+import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import gallery1 from '@assets/images/home/gallery1.webp';
 import gallery2 from '@assets/images/home/gallery2.webp';
 import gallery4 from '@assets/images/home/gallery4.webp';
@@ -39,26 +39,55 @@ import gallery15 from '@assets/images/home/gallery15.webp';
 //import hero4 from '@assets/images/home/hero4.webp';
 //import hero5 from '@assets/images/home/hero5.webp';
 //import hero6 from '@assets/images/home/hero6.webp';
-import heroOne from '@assets/images/home/hero-one.webp'
+import heroOne from '@assets/images/home/hero-one2.webp'
 import styles from './home.module.scss'
 
-const galleryImages = [
-    {src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'},
-    {src: gallery2, alt: 'Белая двустворчатая деревянная дверь в интерьере гостиной'},
-    {src: gallery4, alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки'},
-    {src: gallery3, alt: 'Элемент деревянной двери со стеклопакетом для балкона '},
-    {src: gallery5, alt: 'Дубовые шкафы с резьбой в интерьере'},
-    {src: gallery6, alt: 'Набор мебели для террасы: барный стол и четыре табурета в интерьере в итальянском стиле'},
-    {src: gallery7, alt: 'Низкая деревянная кровать  в японском стиле'},
-    {src: gallery8, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'},
-    {src: gallery9, alt: 'Тумба под раковину рукомойник для саузла отеля или кафе на заказ'},
-    {src: gallery10, alt: 'Подстолье деревянного стола из массива карагача с красивым рисунком и фактурой натурального дерева'},
-    {src: gallery11, alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля'},
-    {src: gallery12, alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной'},
-    {src: gallery13, alt: 'Фрагмент деревянной рамы для зеркала'},
-    {src: gallery14, alt: 'Барный табурет на четырёх ножках из массива листвнницы, ручная работа'},
-    {src: gallery15, alt: 'Обеденный разброный стол из массива карагача в нтерьере современной кухни'},
-];
+const galleryImages = [{
+    src: gallery1,
+    alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'
+}, {
+    src: gallery2,
+    alt: 'Белая двустворчатая деревянная дверь в интерьере гостиной'
+}, {
+    src: gallery4,
+    alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки'
+}, {
+    src: gallery3,
+    alt: 'Элемент деревянной двери со стеклопакетом для балкона '
+}, {
+    src: gallery5,
+    alt: 'Дубовые шкафы с резьбой в интерьере'
+}, {
+    src: gallery6,
+    alt: 'Набор мебели для террасы: барный стол и четыре табурета в интерьере в итальянском стиле'
+}, {
+    src: gallery7,
+    alt: 'Низкая деревянная кровать  в японском стиле'
+}, {
+    src: gallery8,
+    alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
+}, {
+    src: gallery9,
+    alt: 'Тумба под раковину рукомойник для саузла отеля или кафе на заказ'
+}, {
+    src: gallery10,
+    alt: 'Подстолье деревянного стола из массива карагача с красивым рисунком и фактурой натурального дерева'
+}, {
+    src: gallery11,
+    alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля'
+}, {
+    src: gallery12,
+    alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной'
+}, {
+    src: gallery13,
+    alt: 'Фрагмент деревянной рамы для зеркала'
+}, {
+    src: gallery14,
+    alt: 'Барный табурет на четырёх ножках из массива листвнницы, ручная работа'
+}, {
+    src: gallery15,
+    alt: 'Обеденный разброный стол из массива карагача в нтерьере современной кухни'
+},];
 /*const heroImages = [
   { src: hero1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
   { src: hero2, alt: 'Добавить alt' },
@@ -119,8 +148,7 @@ const Home = () => {
        }
      };
    */
-    return (
-        <ToolPageLayout>
+    return (<ToolPageLayout>
             <div className={styles.homePageContainer}>
                 <section className={styles.hero}>
                     {/* <div className={styles.imageWrapper}>
@@ -168,9 +196,7 @@ const Home = () => {
                                 <ColorButton
                                     label={t('hero.button')}
                                     icon={<ArrowBottomIcon/>}
-                                    onClick={() =>
-                                        navigationRef.current?.scrollIntoView({behavior: 'smooth'})
-                                    }
+                                    onClick={() => navigationRef.current?.scrollIntoView({behavior: 'smooth'})}
                                 />
                             </div>
                         </div>
@@ -222,22 +248,17 @@ const Home = () => {
                                     <div>{t('carpentry-text1.2')}</div>
                                     <div>{t('carpentry-text1.3')}</div>
                                     <div>{t('carpentry-text1.4')}</div>
-                                </>
-                                }
+                                </>}
                             </MarkedInfo>
                         </div>
                         <div className={styles.carpentryInfo2}>
                             <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
-                                {
-                                    <div>{t('carpentry-text2')}</div>
-                                }
+                                {<div>{t('carpentry-text2')}</div>}
                             </MarkedInfo>
                         </div>
                         <div className={styles.carpentryInfo3}>
                             <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
-                                {
-                                    <div>{t('carpentry-text3')}</div>
-                                }
+                                {<div>{t('carpentry-text3')}</div>}
                             </MarkedInfo>
                         </div>
 
@@ -257,7 +278,6 @@ const Home = () => {
                     <Accordion/>
                 </section>
             </div>
-        </ToolPageLayout>
-    )
+        </ToolPageLayout>)
 }
 export default Home
