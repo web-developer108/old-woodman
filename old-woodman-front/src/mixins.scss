@@ -9,16 +9,16 @@
 }
 
 @mixin mainHeader{
-  font-weight: 500;
   font-size: 48px;
   line-height: 1.5;
   letter-spacing: 0;
   text-transform: uppercase;
   @media (max-width: 1200px) {
-    font-size: 42px;
+    font-size: 38px;
+    line-height: 1.25;
   }
   @media (max-width: 810px) {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 
