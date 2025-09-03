@@ -30,147 +30,155 @@ import small from '@assets/images/home/door-1.webp';
 import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
 
-const doorCollections = [
-  {
-    id: 'classica',
+const doorCollections = [{
+    id   : 'classica',
     image: heroImageClassica,
-    alt: 'Белая деревянная дверь со стеклом в интерьере кухни, деревянный кухонный гарнитур на заказ в Алматы'
-  },
-  { id: 'loft', image: heroImageLoft, alt: 'Межкомнатная двойная деревянная дверь в интерьере в стиле LOFT' },
-  {
-    id: 'deco',
-    image: heroImageDeco,
-    alt: 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
-  },
-  {
-    id: 'cabinet',
+    alt  : 'Белая деревянная дверь со стеклом в интерьере кухни, деревянный кухонный гарнитур на заказ в Алматы'
+}, {
+    id   : 'cabinet',
     image: heroImageCabinet,
-    alt: 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
-  },
-  { id: 'rustic', image: heroImageRustic, alt: 'Деревянная дверь в этническом стиле из досок в каменной стене' },
-  {
-    id: 'exclusive',
+    alt  : 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
+}, {
+    id   : 'exclusive',
     image: heroImageExclusive,
-    alt: 'Эксклюзивная деревянная дверь с открыванием "книжка" в интерьере в стиле шато'
-  },
-  { id: 'balcony', image: heroImageBalcony, alt: 'Деревянная балконная дверь на фасаде здания' },
-];
-const galleryImages = [
-  { src: gallery1, alt: 'Столярный инструмент для изготовления двери деревянной в столярной мастерской' },
-  { src: gallery2, alt: 'Процесс производства двери деревянной из массива в столярной мастерской' },
-  { src: gallery3, alt: 'Столярный рубанок и стружка на верстаке в столярной мастерской' },
-  { src: gallery4, alt: 'Деревянные заготовки для производства двери деревянной на верстаке в столярной мастерской' },
+    alt  : 'Эксклюзивная деревянная дверь с открыванием "книжка" в интерьере в стиле шато'
+}, {
+    id   : 'rustic',
+    image: heroImageRustic,
+    alt  : 'Деревянная дверь в этническом стиле из досок в каменной стене'
+}, {
+    id   : 'balcony',
+    image: heroImageBalcony,
+    alt  : 'Деревянная балконная дверь на фасаде здания'
+}, {
+    id   : 'loft',
+    image: heroImageLoft,
+    alt  : 'Межкомнатная двойная деревянная дверь в интерьере в стиле LOFT'
+}, {
+    id   : 'deco',
+    image: heroImageDeco,
+    alt  : 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
+},];
+const galleryImages = [{
+    src: gallery1,
+    alt: 'Столярный инструмент для изготовления двери деревянной в столярной мастерской'
+}, {
+    src: gallery2,
+    alt: 'Процесс производства двери деревянной из массива в столярной мастерской'
+}, {
+    src: gallery3,
+    alt: 'Столярный рубанок и стружка на верстаке в столярной мастерской'
+}, {
+    src: gallery4,
+    alt: 'Деревянные заготовки для производства двери деревянной на верстаке в столярной мастерской'
+},
 
 ];
 const DoorsOverview = () => {
-  const { t } = usePageTranslate();
-  const { getCollectionById } = useProductCatalog();
-  const navigate = useNavigate();
-  const [visibleCount, setVisibleCount] = useState(2);
+    const {t} = usePageTranslate();
+    const {getCollectionById} = useProductCatalog();
+    const navigate = useNavigate();
+    const [visibleCount, setVisibleCount] = useState(2);
 
-  return (
-    <ToolPageLayout>
-      <div className={styles.mainContainer}>
-        <PictureHeader
-          title={t('main-header')}
-          label={t('main-header.label')}
-          imageBg={bg}
-          imageSmall={{
-            src: small,
-            alt: 'Деревянная дверь со стеклопакетом на коричневом фоне'
-          }}
-          imageBig={{
-            src: big,
-            alt: 'Белая классическа дверь с наличником на коричневом фоне'
-          }}
-        />
-        <RunningText/>
-        <section className={styles.pageContent}>
-          <Breadcrumbs current={t('breadcrumbs.label')}/>
-          <SectionTabs/>
-          <div className={styles.socialButtons}>
-            <SocialButtons/>
-          </div>
+    return (<ToolPageLayout>
+        <div className={styles.mainContainer}>
+            <PictureHeader
+                title={t('main-header')}
+                label={t('main-header.label')}
+                imageBg={bg}
+                imageSmall={{
+                    src: small,
+                    alt: 'Деревянная дверь со стеклопакетом на коричневом фоне'
+                }}
+                imageBig={{
+                    src: big,
+                    alt: 'Белая классическа дверь с наличником на коричневом фоне'
+                }}
+            />
+            <RunningText/>
+            <section className={styles.pageContent}>
+                <Breadcrumbs current={t('breadcrumbs.label')}/>
+                <SectionTabs/>
+                <div className={styles.socialButtons}>
+                    <SocialButtons/>
+                </div>
 
-          {doorCollections.slice(0, visibleCount).map(({ id, image, alt }) => {
-              const collection = getCollectionById(id);
-              const items = collection?.items || [];
-              return (
-                <React.Fragment key={id}>
-                  <ResponsiveCard
-                    image={image}
-                    title={t(`title-${id}`)}
-                    description={t(`description-${id}`)}
-                    comment={t('comment-text')}
-                    alt={alt}
-                  />
-                  <div className={styles.previewWrap}>
-                    <ProductSlider
-                      title={t('preview-title')}
-                      items={items}
-                      handleCardClick={(productId) => {
-                        navigate(`/doors/${id}/${productId}`);
-                      }}
+                {doorCollections.slice(0, visibleCount).map(({
+                    id,
+                    image,
+                    alt
+                }) => {
+                    const collection = getCollectionById(id);
+                    const items = collection?.items || [];
+                    return (<React.Fragment key={id}>
+                        <ResponsiveCard
+                            image={image}
+                            title={t(`title-${id}`)}
+                            description={t(`description-${id}`)}
+                            comment={t('comment-text')}
+                            alt={alt}
+                        />
+                        <div className={styles.previewWrap}>
+                            <ProductSlider
+                                title={t('preview-title')}
+                                items={items}
+                                handleCardClick={(productId) => {
+                                    navigate(`/doors/${id}/${productId}`);
+                                }}
+                            />
+                        </div>
+                    </React.Fragment>)
+                })}
+                {visibleCount < doorCollections.length && (<div className={styles.loadMoreWrapper}>
+                    <OvalButton
+                        text={t('button-show-more.label')}
+                        onClick={() => setVisibleCount((prev) => prev + 2)}
                     />
-                  </div>
-                </React.Fragment>
-              )
-            }
 
-          )}
-          {visibleCount < doorCollections.length && (
-            <div className={styles.loadMoreWrapper}>
-             <OvalButton
-               text = {t('button-show-more.label')}
-               onClick={() => setVisibleCount((prev) => prev + 2)}
-             />
-
-            </div>
-          )}
-        </section>
-        <section className={styles.article}>
-          <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
-          <span className={styles.articleLabel}>{t('article-header.label')} </span>
-          <div className={styles.columns}>
-            <div className={styles.column}>
-              <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
-              <span className={styles.columnText}>{t('article-title-1.label')}</span>
-              <h3 className={styles.columnTitle}>{t('article-title-2').toUpperCase()}</h3>
-              <span className={styles.columnText}>{t('article-title-2.label')}</span>
-            </div>
-            <div className={styles.column}>
-              <h3 className={styles.columnTitle}>{t('article-title-3').toUpperCase()}</h3>
-              <span className={styles.columnText}>{t('article-title-3.label-1')}</span>
-              <span className={styles.columnTextLast}>{t('article-title-3.label-2')}</span>
-            </div>
-          </div>
-          <div className={styles.gallery}>
-            <Gallery images={galleryImages} layout='complex'/>
-          </div>
-          <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
-          <div id='info' className={styles.checkColumns}>
-            <ul className={styles.checklist}>
-              <li>{t('article2-text-1')}</li>
-              <li>{t('article2-text-2')}</li>
-              <li>{t('article2-text-3')}</li>
-            </ul>
-            <ul className={styles.checklist}>
-              <li>{t('article2-text-4')}</li>
-              <li>{t('article2-text-5')}</li>
-            </ul>
-          </div>
-          <div className={styles.description}> {t('article2-description')}</div>
-        </section>
-        <section className={styles.textInfo}>
-          <TextInfo/>
-        </section>
-        <section className={styles.navigation}>
-          <h2>{t('nav-title').toUpperCase()}</h2>
-          <NavigationBlock isHome={false} blocks={['furniture', 'facades', 'gifts']}/>
-        </section>
-      </div>
-    </ToolPageLayout>
-  )
+                </div>)}
+            </section>
+            <section className={styles.article}>
+                <h2 className={styles.articleTitle}>{t('article-header').toUpperCase()}</h2>
+                <span className={styles.articleLabel}>{t('article-header.label')} </span>
+                <div className={styles.columns}>
+                    <div className={styles.column}>
+                        <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
+                        <span className={styles.columnText}>{t('article-title-1.label')}</span>
+                        <h3 className={styles.columnTitle}>{t('article-title-2').toUpperCase()}</h3>
+                        <span className={styles.columnText}>{t('article-title-2.label')}</span>
+                    </div>
+                    <div className={styles.column}>
+                        <h3 className={styles.columnTitle}>{t('article-title-3').toUpperCase()}</h3>
+                        <span className={styles.columnText}>{t('article-title-3.label-1')}</span>
+                        <span className={styles.columnTextLast}>{t('article-title-3.label-2')}</span>
+                    </div>
+                </div>
+                <div className={styles.gallery}>
+                    <Gallery images={galleryImages} layout='complex'/>
+                </div>
+                <h2 className={styles.articleTitle}>{t('article2-header').toUpperCase()}</h2>
+                <div id='info' className={styles.checkColumns}>
+                    <ul className={styles.checklist}>
+                        <li>{t('article2-text-1')}</li>
+                        <li>{t('article2-text-2')}</li>
+                        <li>{t('article2-text-3')}</li>
+                    </ul>
+                    <ul className={styles.checklist}>
+                        <li>{t('article2-text-4')}</li>
+                        <li>{t('article2-text-5')}</li>
+                    </ul>
+                </div>
+                <div className={styles.description}> {t('article2-description')}</div>
+            </section>
+            <section className={styles.textInfo}>
+                <TextInfo/>
+            </section>
+            <section className={styles.navigation}>
+                <h2>{t('nav-title').toUpperCase()}</h2>
+                <NavigationBlock isHome={false} blocks={['furniture', 'facades', 'gifts']}/>
+            </section>
+        </div>
+    </ToolPageLayout>)
 }
 
 export default DoorsOverview

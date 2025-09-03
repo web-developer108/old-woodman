@@ -1,19 +1,19 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
-import {ToolPageLayout} from '../../components/tool-page-layout/tool-page-layout.tsx';
-import {usePageTranslate} from '../../hooks/page-translate/page-translate.ts';
-import {useProductCatalog} from '../../hooks/catalog/use-product-catalog.ts';
-import {PictureHeader} from '../../components/picture-header/picture-header.tsx';
-import {RunningText} from '../../components/running-text/running-text.tsx';
-import {Breadcrumbs} from '../../components/breadcrumbs/breadcrumbs.tsx';
-import {SectionTabs} from '../../components/section-tabs/section-tabs.tsx';
-import {SocialButtons} from '../../components/buttons/social-buttons/social-buttons.tsx';
-import {ResponsiveCard} from '../../components/responsive-card/responsive-card.tsx';
-import {CardsPreview} from '../../components/cards-preview/cards-preview.tsx';
-import {Gallery} from '../../components/gallery/gallery.tsx';
-import {getFurnitureDescriptionLines} from '../../utils/get-description-lines.ts';
-import {TextInfo} from '../../components/text-info/text-info.tsx';
-import {NavigationBlock} from '../../components/navigation-block/navigation-block.tsx';
+import { useNavigate } from 'react-router-dom';
+import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
+import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
+import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
+import { RunningText } from '../../components/running-text/running-text.tsx';
+import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
+import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
+import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
+import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
+import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
+import { Gallery } from '../../components/gallery/gallery.tsx';
+import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
+import { TextInfo } from '../../components/text-info/text-info.tsx';
+import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
 import heroImageBeds from '@assets/images/furniture/beds-hero.webp';
@@ -28,32 +28,50 @@ import gallery6 from '@assets/images/furniture/gallery/gallery-6.webp';
 import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
-
 import styles from '../doors/doors.module.scss';
 
-const furnitureCollections = [
-    {
-        id: 'consoles',
-        image: heroImageConsoles,
-        alt: 'Деревянная подвесная консоль в интерьере с постером Медео в Алматы'
-    },
-    {
-        id: 'wardrobes',
-        image: heroImageWardrobes,
-        alt: 'Шкаф дубовый в современном интерьере с фасадами с рельефной филёнкой'
-    },
-    {id: 'beds', image: heroImageBeds, alt: 'Деревянная двуспальная кровать в современной интерьере'},
-    {id: 'chairs', image: heroImageChairs, alt: 'Деревянное кресло в стиле ретро в  современном интерьере'},
-    {id: 'tables', image: heroImageTables, alt: 'Деревянное кресло в стиле ретро в  современном интерьере'},
+const furnitureCollections = [{
+    id   : 'consoles',
+    image: heroImageConsoles,
+    alt  : 'Деревянная подвесная консоль в интерьере с постером Медео в Алматы'
+}, {
+    id   : 'wardrobes',
+    image: heroImageWardrobes,
+    alt  : 'Шкаф дубовый в современном интерьере с фасадами с рельефной филёнкой'
+}, {
+    id   : 'beds',
+    image: heroImageBeds,
+    alt  : 'Деревянная двуспальная кровать в современной интерьере'
+}, {
+    id   : 'tables',
+    image: heroImageTables,
+    alt  : 'Деревянное кресло в стиле ретро в  современном интерьере'
+}, {
+    id   : 'chairs',
+    image: heroImageChairs,
+    alt  : 'Деревянное кресло в стиле ретро в  современном интерьере'
+},
 
 ];
-const galleryImages = [
-    {src: gallery1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'},
-    {src: gallery2, alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы'},
-    {src: gallery3, alt: 'консоль с керамической столешницей для ванной'},
-    {src: gallery4, alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'},
-    {src: gallery5, alt: 'Деревянная консоль в стиле Прованс с лампой и книгой'},
-    {src: gallery6, alt: 'Серое кресло в стиле мид сенчури'},
+const galleryImages = [{
+    src: gallery1,
+    alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'
+}, {
+    src: gallery2,
+    alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы'
+}, {
+    src: gallery3,
+    alt: 'консоль с керамической столешницей для ванной'
+}, {
+    src: gallery4,
+    alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
+}, {
+    src: gallery5,
+    alt: 'Деревянная консоль в стиле Прованс с лампой и книгой'
+}, {
+    src: gallery6,
+    alt: 'Серое кресло в стиле мид сенчури'
+},
 
 ];
 const FurnitureOverview: React.FC = () => {
@@ -61,8 +79,7 @@ const FurnitureOverview: React.FC = () => {
     const navigate = useNavigate();
     const {getCollectionById} = useProductCatalog();
 
-    return (
-        <ToolPageLayout>
+    return (<ToolPageLayout>
             <div className={styles.mainContainer}>
                 <PictureHeader
                     title={t('main-header')}
@@ -87,14 +104,17 @@ const FurnitureOverview: React.FC = () => {
                     </div>
 
 
-                    {furnitureCollections.map(({id, image, alt}) => {
+                    {furnitureCollections.map(({
+                        id,
+                        image,
+                        alt
+                    }) => {
                         const collection = getCollectionById(id);
                         const items = collection?.items || [];
                         const handleCardClick = (productId: string) => {
                             navigate(`/furniture/${id}/${productId}`);
                         };
-                        return (
-                            <React.Fragment key={id}>
+                        return (<React.Fragment key={id}>
                                 <ResponsiveCard
                                     image={image}
                                     title={t(`title-${id}`)}
@@ -108,8 +128,7 @@ const FurnitureOverview: React.FC = () => {
                                         handleCardClick={handleCardClick}
                                     />
                                 </div>
-                            </React.Fragment>
-                        );
+                            </React.Fragment>);
                     })}
                 </section>
                 <section className={styles.article}>
@@ -151,8 +170,7 @@ const FurnitureOverview: React.FC = () => {
                     <NavigationBlock isHome={false} blocks={['doors', 'facades', 'gifts']}/>
                 </section>
             </div>
-        </ToolPageLayout>
-    )
+        </ToolPageLayout>)
 }
 
 export default FurnitureOverview;
