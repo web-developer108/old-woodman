@@ -162,6 +162,11 @@
       grid-column: 3 / span 2;
       grid-row: 6;
     }
+    @media (max-width: 500px) {
+      grid-column: 3;
+      grid-row: 6;
+    }
+
   }
 
   .social {
