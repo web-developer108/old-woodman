@@ -98,7 +98,7 @@ export const FurnituresDetails: React.FC = () => {
             <div className={`${styles.page} ${styles.furniture} `}>
                 <section className={styles.imagesWrap}>
                     <div
-                        className={`${styles.imageBlock} ${/*selectedIndex !== 0 && */category === 'furniture' ? styles.full : ''}`}>
+                        className={`${styles.imageBlock} ${category === 'furniture' ? styles.full : ''}`}>
 
                         <img
                             className={styles.mainImage}
