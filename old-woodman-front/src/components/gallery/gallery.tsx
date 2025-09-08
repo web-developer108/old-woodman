@@ -5,7 +5,7 @@ import {useSimpleBarRecalc} from '../../hooks/simplebar-recalc/simplebar-recalc.
 import type {GalleryImage, GalleryProps} from './gallery.types.ts';
 import styles from './gallery.module.scss'
 
-export const Gallery: React.FC<GalleryProps> = ({images, layout = 'default'}) => {
+const Gallery: React.FC<GalleryProps> = ({images, layout = 'default'}) => {
     const simpleBarRef = useRef<any>(null);
     useSimpleBarRecalc(simpleBarRef);
 
@@ -57,3 +57,5 @@ export const Gallery: React.FC<GalleryProps> = ({images, layout = 'default'}) =>
 
     );
 };
+
+export default Gallery;

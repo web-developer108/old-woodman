@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
@@ -15,7 +15,7 @@ import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import { RunningText } from '../../components/running-text/running-text';
-import { Gallery } from '../../components/gallery/gallery';
+//import { Gallery } from '../../components/gallery/gallery';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import gallery1 from '@assets/images/home/gallery1.webp';
@@ -110,6 +110,8 @@ const Home = () => {
         ...heroImages,
         heroImages[0],
       ];*/
+
+    const Gallery = lazy(() => import('../../components/gallery/gallery'));
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -267,7 +269,9 @@ const Home = () => {
                 <section className={styles.gallery}>
                     <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
                     <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-                    <Gallery images={galleryImages} layout={'repeatingBlock'}/>
+                    <Suspense fallback={null}>
+                        <Gallery images={galleryImages} layout="repeatingBlock" />
+                    </Suspense>
                     <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
                     <SocialPanel/>
                 </section>

@@ -13,8 +13,13 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
         t, i18n
     } = useTranslation('common');
     const lang = i18n.language as 'ru' | 'kk';
+
+    const isOneItem = items.length === 1 && !showPlug;
+    const containerClass = `${styles.cardsContainer} ${isOneItem ? styles.oneItem : ''}`;
+
+
     return (<div
-        className={styles.cardsContainer}>
+        className={containerClass}>
 
         {items.map((item) => (<div
             key={item.id}
@@ -51,7 +56,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
                 <img
                     src="/images/furniture/plug.svg"
                     alt={t("plug-alt")}
-                    className={styles.image}
+                    className={styles.plug}
                 />
 
             </div>

@@ -3,7 +3,7 @@ import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import { Gallery } from '../../components/gallery/gallery.tsx';
+import  Gallery  from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
