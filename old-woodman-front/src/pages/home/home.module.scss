@@ -384,23 +384,23 @@
     }
 
     .carpentryContainer {
-      max-width: 1180px;
-      width: 1120px;
+      width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 70px 54px 24px 72px 48px 232px 56px 262px 68px;
-      column-gap: 95px;
+      grid-template-columns: 449px 1fr;
+      grid-template-rows: 77px 54px 24px 56px 72px 261px 43px 233px 68px;
+      column-gap: 127px;
       @media (max-width: 1200px) {
         grid-template-columns: 1fr;
         grid-template-rows: 72px max-content max-content 72px  max-content 48px  max-content 48px max-content 48px 56px 72px;
         max-width: 100%;
+        width: 100%;
       }
 
       .carpentryTitle {
         grid-column: 1;
         grid-row: 2 / span 3;
-        max-width: 347px;
+        max-width: 380px;
         @include mixins.headingLarge;
         @media (max-width: 1200px) {
           grid-column: 1;
@@ -412,9 +412,6 @@
         }
       }
 
-      .carpentryQuote {
-        @include mixins.bodyText;
-      }
 
       .carpentryQuote {
         grid-column: 2;
@@ -424,9 +421,10 @@
         max-width: 380px;
         margin-bottom: 24px;
         color: var(--text-grey-color);
-        padding-left: 48px;
         line-height: 1.5;
         box-sizing: content-box;
+        justify-self: end;
+        @include mixins.bodyText;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 3;
@@ -440,7 +438,8 @@
         grid-column: 2;
         grid-row: 4;
         max-width: 386px;
-        padding-left: 48px;
+        justify-self: end;
+        width: 386px;
         @media (max-width: 1200px) {
           grid-column: 1;
           grid-row: 11;
