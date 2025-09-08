@@ -3,7 +3,7 @@
 .infoContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 59px 1fr;
   grid-template-rows: 24px 1fr;
   color: var(--text-grey-color);
   @include mixins.bodyTextSmall;

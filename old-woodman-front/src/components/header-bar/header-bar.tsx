@@ -9,7 +9,7 @@ import { BurgerIcon } from '../icons/burger-icon/burger-icon.tsx';
 import { Logo } from '../logo/logo.tsx';
 import { LanguageSwitcher } from './language-switcher/language-switcher.tsx';
 import { OvalButton } from '../buttons/oval-button/oval-button.tsx';
-import { ContactsModal } from '../modal-windows/contacts-modal/contacts-modal.tsx';
+import ContactsModal from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import { BurgerContent } from '../modal-windows/burger-content/burger-content.tsx';
 import { useEffect, useState } from 'react';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
