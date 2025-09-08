@@ -4,7 +4,7 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
 import { InfoButton } from '../../components/buttons/info-button/info-button.tsx';
-import { Gallery } from '../../components/gallery/gallery.tsx';
+import  Gallery  from '../../components/gallery/gallery.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'

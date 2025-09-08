@@ -10,7 +10,7 @@ import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ResponsiveCard } from '../../components/responsive-card/responsive-card.tsx';
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
-import { Gallery } from '../../components/gallery/gallery.tsx';
+import  Gallery  from '../../components/gallery/gallery.tsx';
 import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
 import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
