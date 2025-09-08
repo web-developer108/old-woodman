@@ -46,7 +46,12 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-
+    .plug {
+      @media (max-width: 500px) {
+        width: 86px;
+        height: 86px;
+      }
+    }
     img {
       max-height: 100%;
       max-width: 100%;
@@ -55,7 +60,9 @@
       object-fit: contain;
       object-position: center;
       display: block;
+
     }
+
   }
 
   .cardContent {
