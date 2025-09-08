@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useModal } from '../../../hooks/modal/use-modal.ts';
 import { ColorButton } from '../color-button/color-button.tsx';
@@ -11,7 +11,7 @@ const InfoButton: React.FC<InfoButtonProps> = ({
 }) => {
     const {t} = useTranslation('common');
     const {showModal} = useModal();
-    const ContactsModal = React.lazy(() => import('../../modal-windows/contacts-modal/contacts-modal.tsx'));
+    const ContactsModal = React.lazy(() => import('../../modal-windows/contacts-modal/contacts-modal'));
     return (<div className={styles.buttonContainer}>
         <div className={styles.headerWrap}>
             <h3 className={styles.buttonTitle}>{title}</h3>
