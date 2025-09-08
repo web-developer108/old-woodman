@@ -269,7 +269,6 @@ const Home = () => {
                 <section className={styles.gallery}>
                     <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
                     <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-                    {/*<Gallery images={galleryImages} layout={'repeatingBlock'}/>*/}
                     <Suspense fallback={null}>
                         <Gallery images={galleryImages} layout="repeatingBlock" />
                     </Suspense>
