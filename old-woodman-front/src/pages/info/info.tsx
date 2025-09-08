@@ -3,7 +3,6 @@ import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
-import { InfoButton } from '../../components/buttons/info-button/info-button.tsx';
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
@@ -19,7 +18,6 @@ import gallery4f from '@assets/images/info/gallery/gallery-f-4.webp'
 import gallery5f from '@assets/images/info/gallery/gallery-f-5.webp'
 import styles from '../info/info.module.scss';
 
-//TODO поменять alt
 const galleryDoorsImages = [{
     src: gallery1d,
     alt: 'Фрагмент деревянной двери из массива с декоративными резными элементами демонстрирует преимущества дверей из массива'
@@ -64,7 +62,7 @@ const Info = () => {
     const furnitureRef = useRef<HTMLHeadingElement>(null);
 
     const Gallery = lazy(() => import('../../components/gallery/gallery'));
-
+    const InfoButton = lazy(() => import('../../components/buttons/info-button/info-button'));
     useEffect(() => {
         if (location.pathname === '/info' && location.hash === '#instructions') {
 
@@ -124,10 +122,12 @@ const Info = () => {
                         images={galleryDoorsImages}
                     />
                 </Suspense>
-                <InfoButton
-                    title={t('subtitle-4').toUpperCase()}
-                    label={t('text-4')}
-                />
+                <Suspense fallback={null}>
+                    <InfoButton
+                        title={t('subtitle-4').toUpperCase()}
+                        label={t('text-4')}
+                    />
+                </Suspense>
                 <h2 id='furniture' ref={furnitureRef} className={styles.header}>{t('header-2f').toUpperCase()}</h2>
                 <section className={styles.section}>
                     <h3>{t('subtitle-2f').toUpperCase()}</h3>
@@ -151,10 +151,12 @@ const Info = () => {
                         images={galleryFurnitureImages}
                     />
                 </Suspense>
-                <InfoButton
-                    title={t('subtitle-5').toUpperCase()}
-                    label={t('text-5')}
-                />
+                <Suspense fallback={null}>
+                    <InfoButton
+                        title={t('subtitle-5').toUpperCase()}
+                        label={t('text-5')}
+                    />
+                </Suspense>
                 <h2 id='instructions' ref={instructionRef}
                     className={styles.header}>{t('instruction').toUpperCase()}</h2>
                 <section className={styles.section}>
@@ -196,7 +198,7 @@ const Info = () => {
                         <span>{t('instruction-text-5.2')}</span>
                         <span>{t('instruction-text-5.3')}</span>
                     </div>
-                    <img className={styles.image} src={doorDepth} alt="Глубина проёма"/>
+                    <img className={styles.image} src={doorDepth} alt="Глубина проёма" loading="lazy"/>
                 </section>
                 <div className={styles.warning}>
             <span><b className={styles.block}>{t('instruction-warning')}</b>
@@ -205,11 +207,13 @@ const Info = () => {
                     <span>{t('instruction-warning-text-3')}</span>
                 </div>
             </div>
-            <InfoButton
-                title={t('subtitle-6').toUpperCase()}
-                label={t('text-5')}
-            />
+            <Suspense fallback={null}>
+                <InfoButton
+                    title={t('subtitle-6').toUpperCase()}
+                    label={t('text-5')}
+                />
+            </Suspense>
         </div>
     </ToolPageLayout>)
 }
-export default Info
+export default Info;

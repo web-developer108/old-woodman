@@ -2,7 +2,7 @@ import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useTranslation } from 'react-i18next';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { ArrowTopRightIcon } from '../icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
-import { ContactsModal } from '../modal-windows/contacts-modal/contacts-modal.tsx';
+import ContactsModal from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import styles from './text-info.module.scss';
 
 export const TextInfo = () => {

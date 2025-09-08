@@ -5,7 +5,7 @@ import { TelegramIcon } from '../../icons/telegram-icon/telegram-icon.tsx';
 import { AppColors } from '../../../styles.ts';
 import styles from './contacts-modal.module.scss'
 
-export const ContactsModal = () => {
+const ContactsModal = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -34,3 +34,4 @@ export const ContactsModal = () => {
     </div>
   )
 }
+export default ContactsModal;

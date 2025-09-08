@@ -4,7 +4,7 @@ import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layo
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { ColorButton } from '../../components/buttons/color-button/color-button.tsx';
 import { ArrowTopRightIcon } from '../../components/icons/arrow-top-right-icon/arrow-top-right-icon.tsx';
-import { ContactsModal } from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
+import ContactsModal from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import styles from './contacts.module.scss';
 
 const Contacts = () => {
