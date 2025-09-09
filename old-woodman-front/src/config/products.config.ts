@@ -722,7 +722,7 @@ export const productCatalog: ProductCategory[] = [
                         images: ['/images/furniture/wardrobes/duo.webp', '/images/furniture/wardrobes/duo-add1.webp'],
                         price: 630000,
                         time: 20,
-                        alt: 'Шкаф для одежды Deco Cabinet',
+                        alt: 'Деревянный шкаф для спальни или детской 120х60х210 см из натурального дерева с рельефными деревянными фасадами',
                         sizes: {
                             width: 120,
                             height: 210,
@@ -771,8 +771,8 @@ export const productCatalog: ProductCategory[] = [
 
                         },
                         pageHeader: {
-                            ru: 'Деревянная кровать в японском стиле Tatami Light ',
-                            kk: 'Жапон стиліндегі ағаш төсек Tatami Light ',
+                            ru: 'Деревянная кровать в японском стиле Tatami Light',
+                            kk: 'Жапон стиліндегі ағаш төсек Tatami Light',
                         },
                         shortName: {
                             ru: 'Кровать',
@@ -782,6 +782,31 @@ export const productCatalog: ProductCategory[] = [
                         price: 490000,
                         time: 10,
                         alt: 'Японская деревянная двуспальная кровать c держателем под матрас из досок ',
+                        sizes: {
+                            width: 180,
+                            height: 21,
+                            depth: 200,
+                        }
+                    },
+                    {
+                        id: 'asia',
+                        title: {
+                            ru: 'Asia',
+                            kk: 'Asia',
+
+                        },
+                        pageHeader: {
+                            ru: 'Тахта раздвижная Asia',
+                            kk: 'Тахта раздвижная Asia',
+                        },
+                        shortName: {
+                            ru: 'Тахта раздвижная',
+                            kk: 'Тахта раздвижная',
+                        },
+                        images: ['/images/furniture/beds/asia.webp', '/images/furniture/beds/asia-add1.webp', '/images/furniture/beds/asia-add2.webp', '/images/furniture/beds/asia-add3.webp'],
+                        price: 432000,
+                        time: 10,
+                        alt: 'Тахта раздвижная Asia',
                         sizes: {
                             width: 180,
                             height: 21,
