@@ -806,7 +806,7 @@ export const productCatalog: ProductCategory[] = [
                         images: ['/images/furniture/beds/asia.webp', '/images/furniture/beds/asia-add1.webp', '/images/furniture/beds/asia-add2.webp'],
                         price: 432000,
                         time: 10,
-                        alt: 'Тахта раздвижная Asia',
+                        alt: 'Деревянная раздвижная кровать трансформер в собранном виде',
                         sizes: {
                             width: 200,
                             height: 32,
