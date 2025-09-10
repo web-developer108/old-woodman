@@ -803,14 +803,14 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Тахта раздвижная',
                             kk: 'Тахта раздвижная',
                         },
-                        images: ['/images/furniture/beds/asia.webp', '/images/furniture/beds/asia-add1.webp', '/images/furniture/beds/asia-add2.webp', '/images/furniture/beds/asia-add3.webp'],
+                        images: ['/images/furniture/beds/asia.webp', '/images/furniture/beds/asia-add1.webp', '/images/furniture/beds/asia-add2.webp'],
                         price: 432000,
                         time: 10,
                         alt: 'Тахта раздвижная Asia',
                         sizes: {
-                            width: 180,
-                            height: 21,
-                            depth: 200,
+                            width: 200,
+                            height: 32,
+                            depth: 180,
                         }
                     },
                 ],
