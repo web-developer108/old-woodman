@@ -16,7 +16,7 @@ import gift2 from '@assets/images/home/gift-2.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './navigation-block.module.scss'
 
-export const NavigationBlock: React.FC<NavigationBlockProps> = ({
+const NavigationBlock: React.FC<NavigationBlockProps> = ({
     blocks = ['doors', 'furniture', 'facades', 'gifts'],
     isHome = false,
 }) => {
@@ -98,3 +98,4 @@ export const NavigationBlock: React.FC<NavigationBlockProps> = ({
         </div>)}
     </div>);
 };
+export default NavigationBlock;
