@@ -79,6 +79,10 @@
         padding: 0 20px 7px;
         @include mixins.bodyTextSmall;
 
+        ul {
+          list-style-type: disc;
+        }
+
         a {
           color: var(--text-grey-color);
         }

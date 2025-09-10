@@ -13,7 +13,7 @@ import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
 import heroImageBeds from '@assets/images/furniture/beds-hero.webp';
@@ -45,7 +45,7 @@ const furnitureCollections = [{
 }, {
     id   : 'tables',
     image: heroImageTables,
-    alt  : 'Деревянное кресло в стиле ретро в  современном интерьере'
+    alt  : 'Деревянный раздвижной стол из массива карагача для гостиной или столовой в интерьере квартиры в Алматы'
 }, {
     id   : 'chairs',
     image: heroImageChairs,
@@ -55,13 +55,13 @@ const furnitureCollections = [{
 ];
 const galleryImages = [{
     src: gallery1,
-    alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'
+    alt: 'Деревянная двуспальная кровать в современной интерьере'
 }, {
     src: gallery2,
     alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы'
 }, {
     src: gallery3,
-    alt: 'консоль с керамической столешницей для ванной'
+    alt: 'Тумба под раковину из натуральной сосны в санузел отеля, кафе, ресторана'
 }, {
     src: gallery4,
     alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
@@ -70,7 +70,7 @@ const galleryImages = [{
     alt: 'Деревянная консоль в стиле Прованс с лампой и книгой'
 }, {
     src: gallery6,
-    alt: 'Серое кресло в стиле мид сенчури'
+    alt: 'Серое кресло в стиле мид сенчури'//заменить
 },
 
 ];

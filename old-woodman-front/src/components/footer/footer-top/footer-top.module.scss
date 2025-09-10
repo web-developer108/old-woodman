@@ -7,7 +7,7 @@
   grid-template-rows: 54px 200px 171px;
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 48px 66px 24px max-content 62px 170px;
+    grid-template-rows: 48px  max-content 24px max-content 62px 170px;
     padding: 0 10px;
   }
 

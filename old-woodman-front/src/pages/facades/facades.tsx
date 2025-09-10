@@ -5,7 +5,7 @@ import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import { TextInfo } from '../../components/text-info/text-info.tsx';
-import { NavigationBlock } from '../../components/navigation-block/navigation-block.tsx';
+import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import gallery1 from '@assets/images/facades/gallery-1f.webp'
 import gallery2 from '@assets/images/facades/gallery-2f.webp'
