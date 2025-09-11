@@ -3,7 +3,7 @@ import { ArrowDownIcon } from '../icons/arrow-down-icon/arrow-down-icon.tsx';
 import { useTranslation } from 'react-i18next';
 import styles from './accordion.module.scss';
 
-export const Accordion = () => {
+const Accordion = () => {
   const { t } = useTranslation('common')
   const [openIndices, setOpenIndices] = useState<number[]>([]);
 
@@ -45,3 +45,4 @@ export const Accordion = () => {
     </div>
   );
 };
+export default Accordion;

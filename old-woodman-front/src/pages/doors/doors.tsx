@@ -12,7 +12,7 @@ import { SocialButtons } from '../../components/buttons/social-buttons/social-bu
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
+import TextInfo from '../../components/text-info/text-info.tsx';
 import { OvalButton } from '../../components/buttons/oval-button/oval-button.tsx';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';

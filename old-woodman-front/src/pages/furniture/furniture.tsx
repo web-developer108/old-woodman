@@ -12,7 +12,7 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import { getFurnitureDescriptionLines } from '../../utils/get-description-lines.ts';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
+import TextInfo from '../../components/text-info/text-info.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
