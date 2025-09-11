@@ -6,7 +6,7 @@ import { DoorsDetails } from '../../components/doors-details/doors-details.tsx';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { ShareButton } from '../../components/buttons/share-button/share-button';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
+import TextInfo from '../../components/text-info/text-info.tsx';
 import { FurnituresDetails } from '../../components/furnitures-details/furnitures-details.tsx';
 import styles from './product-page.module.scss';
 

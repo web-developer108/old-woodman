@@ -4,6 +4,7 @@ import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
+import TextInfo from '../../components/text-info/text-info.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import gallery1 from '@assets/images/gifts/gallery-1.webp'
 import gallery2 from '@assets/images/gifts/gallery-2.webp'
@@ -94,9 +95,7 @@ const Gifts = () => {
                     <Gallery images={galleryImages}/>
                 </Suspense>
                 <section className={styles.textInfo}>
-                    <Suspense fallback={null}>
-                        <TextInfo/>
-                    </Suspense>
+                    <TextInfo/>
                 </section>
                 <section className={styles.navigation}>
                     <h2>{t('nav-title').toUpperCase()}</h2>

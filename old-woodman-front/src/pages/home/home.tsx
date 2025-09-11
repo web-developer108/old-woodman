@@ -11,7 +11,8 @@ import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
 import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
 import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
-
+import TextInfo from '../../components/text-info/text-info.tsx';
+import { Accordion } from '../../components/accordion/accordion.tsx';
 import ContactsModal from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import { RunningText } from '../../components/running-text/running-text';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
@@ -97,8 +98,7 @@ const galleryImages = [{
 
 const NavigationBlock = lazy(() => import('../../components/navigation-block/navigation-block'));
 const Gallery = lazy(() => import('../../components/gallery/gallery'));
-const TextInfo = lazy(() => import('../../components/text-info/text-info'));
-const Accordion = lazy(() => import('../../components/accordion/accordion.tsx'));
+
 
 const Home = () => {
     const {t} = usePageTranslate();
@@ -279,14 +279,10 @@ const Home = () => {
                 <SocialPanel/>
             </section>
             <section className={styles.textInfo}>
-                <Suspense fallback={null}>
-                    <TextInfo/>
-                </Suspense>
+                <TextInfo/>
             </section>
             <section ref={faqRef} id="faq" className={styles.questions}>
-                <Suspense fallback={null}>
-                    <Accordion/>
-                </Suspense>
+                <Accordion/>
             </section>
         </div>
     </ToolPageLayout>)
