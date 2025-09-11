@@ -34,8 +34,6 @@ const galleryImages = [{
 },];
 const NavigationBlock = lazy(() => import('../../components/navigation-block/navigation-block'));
 const Gallery = lazy(() => import('../../components/gallery/gallery'));
-const TextInfo = lazy(() => import('../../components/text-info/text-info'));
-
 
 const Gifts = () => {
     const {t} = usePageTranslate();
