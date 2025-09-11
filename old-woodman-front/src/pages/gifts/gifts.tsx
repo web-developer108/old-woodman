@@ -42,7 +42,7 @@ const Gifts = () => {
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
-        link.href = '/images/home/bg-orange.webp';
+        link.href = bg;
         link.setAttribute('fetchpriority', 'high');
         document.head.appendChild(link);
 
