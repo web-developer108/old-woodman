@@ -11,11 +11,10 @@ import { MarkedInfo } from '../../components/marked-info/marked-info.tsx';
 import { MarkSquareIcon } from '../../components/icons/mark-square-icon/mark-square-icon.tsx';
 import { MarkCheckIcon } from '../../components/icons/mark-check-icon/mark-check-icon.tsx';
 import { SocialPanel } from '../../components/social-panel/social-panel.tsx';
-import { TextInfo } from '../../components/text-info/text-info.tsx';
+import TextInfo from '../../components/text-info/text-info.tsx';
 import { Accordion } from '../../components/accordion/accordion.tsx';
 import ContactsModal from '../../components/modal-windows/contacts-modal/contacts-modal.tsx';
 import { RunningText } from '../../components/running-text/running-text';
-import NavigationBlock from '../../components/navigation-block/navigation-block';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import gallery1 from '@assets/images/home/gallery1.webp';
 import gallery2 from '@assets/images/home/gallery2.webp';
@@ -38,7 +37,7 @@ import gallery15 from '@assets/images/home/gallery15.webp';
 //import hero4 from '@assets/images/home/hero4.webp';
 //import hero5 from '@assets/images/home/hero5.webp';
 //import hero6 from '@assets/images/home/hero6.webp';
-import heroOne from '@assets/images/home/hero-one2.webp'
+import heroOne from '@assets/images/home/hero-one.webp'
 import styles from './home.module.scss'
 
 const galleryImages = [{
@@ -97,6 +96,10 @@ const galleryImages = [{
 
 ];*/
 
+const NavigationBlock = lazy(() => import('../../components/navigation-block/navigation-block'));
+const Gallery = lazy(() => import('../../components/gallery/gallery'));
+
+
 const Home = () => {
     const {t} = usePageTranslate();
     const {showModal} = useModal();
@@ -110,7 +113,6 @@ const Home = () => {
         heroImages[0],
       ];*/
 
-    const Gallery = lazy(() => import('../../components/gallery/gallery'));
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -150,9 +152,9 @@ const Home = () => {
      };
    */
     return (<ToolPageLayout>
-            <div className={styles.homePageContainer}>
-                <section className={styles.hero}>
-                    {/* <div className={styles.imageWrapper}>
+        <div className={styles.homePageContainer}>
+            <section className={styles.hero}>
+                {/* <div className={styles.imageWrapper}>
             <img src={overlay} className={styles.overlay} alt="Интерьер"/>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
@@ -187,100 +189,102 @@ const Home = () => {
               </div>
             </div>
           </div>*/}
-                    <div className={styles.imageWrapper}>
-                        <img src={heroOne} className={styles.heroImage}
-                             alt="Элемент деревянного мебельного фасада для классического платяного шкафа из дуба с готической резьбой"/>
-                        <div className={styles.heroContent}>
-                            <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
-                            <div className={styles.description}>{t('hero.description')}</div>
-                            <div className={styles.buttonWrapper}>
-                                <ColorButton
-                                    label={t('hero.button')}
-                                    icon={<ArrowBottomIcon/>}
-                                    onClick={() => navigationRef.current?.scrollIntoView({behavior: 'smooth'})}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.circleButtons}>
-                        <SocialButtons/>
-                    </div>
-                </section>
-                <div className={styles.running}>
-                    <RunningText/>
-                </div>
-
-                <section className={styles.offer}>
-                    <h2>{t('article-title').toUpperCase()}</h2>
-                    <div className={styles.features}>
-                        <ul className={styles.checklist}>
-                            <li> {t('article-text1')}</li>
-                            <li> {t('article-text2')}</li>
-                            <li> {t('article-text3')}</li>
-                        </ul>
-                        <ul className={styles.checklist}>
-                            <li> {t('article-text4')}</li>
-                            <li> {t('article-text5')}</li>
-                            <li> {t('article-text6')}</li>
-
-                        </ul>
-                    </div>
-                </section>
-                <section ref={navigationRef} className={styles.navigation}>
-                    <NavigationBlock isHome/>
-                </section>
-                <section className={styles.carpentry}>
-                    <div className={styles.carpentryContainer}>
-                        <h2 className={styles.carpentryTitle}>{t('carpentry-title').toUpperCase()} </h2>
-                        <div className={styles.carpentryQuote}>
-                            <span><i>{t('carpentry-italic')}</i></span>
-                        </div>
-                        <div className={styles.carpentryButton}>
+                <div className={styles.imageWrapper}>
+                    <img src={heroOne} className={styles.heroImage}
+                         alt="Элемент деревянного мебельного фасада для классического платяного шкафа из дуба с готической резьбой"/>
+                    <div className={styles.heroContent}>
+                        <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
+                        <div className={styles.description}>{t('hero.description')}</div>
+                        <div className={styles.buttonWrapper}>
                             <ColorButton
-                                icon={<ArrowTopRightIcon/>}
-                                label={t('carpentry-button')}
-                                onClick={() => showModal(<ContactsModal/>)}
-                            ></ColorButton>
+                                label={t('hero.button')}
+                                icon={<ArrowBottomIcon/>}
+                                onClick={() => navigationRef.current?.scrollIntoView({behavior: 'smooth'})}
+                            />
                         </div>
-                        <div className={styles.carpentryInfo1}>
-                            <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
-                                {<>
-                                    <div>{t('carpentry-text1.1')}</div>
-                                    <div>{t('carpentry-text1.2')}</div>
-                                    <div>{t('carpentry-text1.3')}</div>
-                                    <div>{t('carpentry-text1.4')}</div>
-                                </>}
-                            </MarkedInfo>
-                        </div>
-                        <div className={styles.carpentryInfo2}>
-                            <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
-                                {<div>{t('carpentry-text2')}</div>}
-                            </MarkedInfo>
-                        </div>
-                        <div className={styles.carpentryInfo3}>
-                            <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
-                                {<div>{t('carpentry-text3')}</div>}
-                            </MarkedInfo>
-                        </div>
-
                     </div>
-                </section>
-                <section className={styles.gallery}>
-                    <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
-                    <div className={styles.galleryDescription}>{t('gallery-description')}</div>
-                    <Suspense fallback={null}>
-                        <Gallery images={galleryImages} layout="repeatingBlock" />
-                    </Suspense>
-                    <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
-                    <SocialPanel/>
-                </section>
-                <section className={styles.textInfo}>
-                    <TextInfo/>
-                </section>
-                <section ref={faqRef} id="faq" className={styles.questions}>
-                    <Accordion/>
-                </section>
+                </div>
+                <div className={styles.circleButtons}>
+                    <SocialButtons/>
+                </div>
+            </section>
+            <div className={styles.running}>
+                <RunningText/>
             </div>
-        </ToolPageLayout>)
+
+            <section className={styles.offer}>
+                <h2>{t('article-title').toUpperCase()}</h2>
+                <div className={styles.features}>
+                    <ul className={styles.checklist}>
+                        <li> {t('article-text1')}</li>
+                        <li> {t('article-text2')}</li>
+                        <li> {t('article-text3')}</li>
+                    </ul>
+                    <ul className={styles.checklist}>
+                        <li> {t('article-text4')}</li>
+                        <li> {t('article-text5')}</li>
+                        <li> {t('article-text6')}</li>
+
+                    </ul>
+                </div>
+            </section>
+            <section ref={navigationRef} className={styles.navigation}>
+                <Suspense fallback={null}>
+                    <NavigationBlock isHome/>
+                </Suspense>
+            </section>
+            <section className={styles.carpentry}>
+                <div className={styles.carpentryContainer}>
+                    <h2 className={styles.carpentryTitle}>{t('carpentry-title').toUpperCase()} </h2>
+                    <div className={styles.carpentryQuote}>
+                        <span><i>{t('carpentry-italic')}</i></span>
+                    </div>
+                    <div className={styles.carpentryButton}>
+                        <ColorButton
+                            icon={<ArrowTopRightIcon/>}
+                            label={t('carpentry-button')}
+                            onClick={() => showModal(<ContactsModal/>)}
+                        ></ColorButton>
+                    </div>
+                    <div className={styles.carpentryInfo1}>
+                        <MarkedInfo icon={<MarkSquareIcon/>} title={t('carpentry-title1').toUpperCase()}>
+                            {<>
+                                <div>{t('carpentry-text1.1')}</div>
+                                <div>{t('carpentry-text1.2')}</div>
+                                <div>{t('carpentry-text1.3')}</div>
+                                <div>{t('carpentry-text1.4')}</div>
+                            </>}
+                        </MarkedInfo>
+                    </div>
+                    <div className={styles.carpentryInfo2}>
+                        <MarkedInfo icon={<MarkCheckIcon/>} title={t('carpentry-title2').toUpperCase()}>
+                            {<div>{t('carpentry-text2')}</div>}
+                        </MarkedInfo>
+                    </div>
+                    <div className={styles.carpentryInfo3}>
+                        <MarkedInfo icon={<MarkLeafIcon/>} title={t('carpentry-title3').toUpperCase()}>
+                            {<div>{t('carpentry-text3')}</div>}
+                        </MarkedInfo>
+                    </div>
+
+                </div>
+            </section>
+            <section className={styles.gallery}>
+                <h2 className={styles.galleryTitle}>{t('gallery-title').toUpperCase()}</h2>
+                <div className={styles.galleryDescription}>{t('gallery-description')}</div>
+                <Suspense fallback={null}>
+                    <Gallery images={galleryImages} layout="repeatingBlock"/>
+                </Suspense>
+                <h3 className={styles.social}>{t('gallery-social').toUpperCase()}</h3>
+                <SocialPanel/>
+            </section>
+            <section className={styles.textInfo}>
+                <TextInfo/>
+            </section>
+            <section ref={faqRef} id="faq" className={styles.questions}>
+                <Accordion/>
+            </section>
+        </div>
+    </ToolPageLayout>)
 }
 export default Home

@@ -5,7 +5,7 @@ import { ArrowTopRightIcon } from '../icons/arrow-top-right-icon/arrow-top-right
 import ContactsModal from '../modal-windows/contacts-modal/contacts-modal.tsx';
 import styles from './text-info.module.scss';
 
-export const TextInfo = () => {
+const TextInfo = () => {
   const { t } = useTranslation('common');
   const { showModal } = useModal();
 
@@ -24,3 +24,4 @@ export const TextInfo = () => {
     </div>
   )
 }
+export default TextInfo;
