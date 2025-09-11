@@ -124,6 +124,24 @@
       justify-self: right;
 
     }
+    .imageSmall{
+      width: 170px;
+      height: 280px;
+      @media (max-width: 920px) {
+        width: 113px;
+        height: 186px;
+
+      }
+    }
+
+    .imageBig{
+      width: 280px;
+      height: 280px;
+      @media (max-width: 920px) {
+        width: 186px;
+        height: 186px;
+      }
+    }
   }
 
   & .darkContainer {
