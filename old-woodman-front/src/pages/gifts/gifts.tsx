@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { RunningText } from '../../components/running-text/running-text.tsx';
@@ -37,6 +37,22 @@ const Gifts = () => {
     const {t} = usePageTranslate();
     const Gallery = lazy(() => import('../../components/gallery/gallery'));
     const NavigationBlock = lazy(() => import('../../components/navigation-block/navigation-block'));
+
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = '/images/home/bg-orange.webp';
+        link.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(link);
+
+        return () => {
+            if (document.head.contains(link)) {
+                document.head.removeChild(link);
+            }
+        };
+    }, []);
+
 
     return (<ToolPageLayout>
         <div className={styles.giftsContainer}>
