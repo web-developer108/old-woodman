@@ -1,0 +1,1 @@
+import{p as r}from"./use-product-catalog-DEwojO4_.js";const l=({count:e=4,excludeProductId:i=[],onlyCategoryId:n}={})=>{const t=[];for(const o of r)if(!(n&&o.id!==n))for(const c of o.collections)for(const s of c.items)i.includes(s.id)||t.push(s);for(let o=t.length-1;o>0;o--){const c=Math.floor(Math.random()*(o+1));[t[o],t[c]]=[t[c],t[o]]}return t.slice(0,e)};export{l as g};
