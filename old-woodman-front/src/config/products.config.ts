@@ -411,7 +411,7 @@ export const productCatalog: ProductCategory[] = [
                         },
                         description: {
                             ru: 'Дверь Shato',
-                            kk: 'Дверь Shato',
+                            kk: 'Есік Shato',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -433,7 +433,7 @@ export const productCatalog: ProductCategory[] = [
                         },
                         description: {
                             ru: 'Дверь ARCH',
-                            kk: 'Дверь ARCH',
+                            kk: 'Есік ARCH',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -465,11 +465,11 @@ export const productCatalog: ProductCategory[] = [
                         },
                         titleMob: {
                             ru: 'Balcony, цвет "Тик"',
-                            kk: 'Balcony, цвет "Тик"',
+                            kk: 'Balcony, түсі "Тик"',
                         },
                         description: {
                             ru: 'цвет "Тик"',
-                            kk: 'цвет "Тик"',
+                            kk: 'түсі "Тик"',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -481,7 +481,7 @@ export const productCatalog: ProductCategory[] = [
                     },
                 ],
             },
-            // другие коллекции
+
         ],
     },
     {
@@ -607,8 +607,8 @@ export const productCatalog: ProductCategory[] = [
                             kk: 'Деревянная тумба под раковину PINE',
                         },
                         shortName: {
-                            ru: 'Деревянная тумба под раковину',
-                            kk: 'Деревянная тумба под раковину',
+                            ru: 'Тумба под раковину',
+                            kk: 'Тумба под раковину',
                         },
                         images: ['/images/furniture/consoles/pino.webp', '/images/furniture/consoles/pino-add1.webp', '/images/furniture/consoles/pino-add2.webp'],
                         price: 328000,
@@ -687,8 +687,8 @@ export const productCatalog: ProductCategory[] = [
 
                         },
                         pageHeader: {
-                            ru: 'Деревянная витрина Retro ',
-                            kk: 'Деревянная витрина Retro ',
+                            ru: 'Деревянная витрина Retro',
+                            kk: 'Деревянная витрина Retro',
                         },
                         shortName: {
                             ru: 'Витрина',

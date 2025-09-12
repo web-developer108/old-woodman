@@ -144,7 +144,7 @@ export const DoorsDetails: React.FC = () => {
               selectedIndex={items.findIndex((i) => i.id === selectedProduct.id)}
               onSelect={(index) => {
                 const selected = collection.items[index];
-                navigate(`/doors/${collection.id}/${selected.id}`);
+                navigate(`/doors/${collection.id}/${selected.id}`, { replace: true });
               }}
             />
           </div>
