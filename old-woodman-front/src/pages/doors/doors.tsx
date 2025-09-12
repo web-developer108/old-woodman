@@ -13,6 +13,8 @@ import { ProductSlider } from '../../components/product-slider/product-slider.ts
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
+import { ColorButton } from "../../components/buttons/color-button/color-button.tsx";
+import { ArrowBottomIcon } from "../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx";
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
@@ -28,9 +30,6 @@ import bg from '@assets/images/home/bg-brown.webp';
 import small from '@assets/images/home/door-1.webp';
 import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
-import { ColorButton } from "../../components/buttons/color-button/color-button.tsx";
-import { ArrowDownIcon } from "../../components/icons/arrow-down-icon/arrow-down-icon.tsx";
-import { ArrowBottomIcon } from "../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx";
 
 const doorCollections = [{
     id   : 'classica',
