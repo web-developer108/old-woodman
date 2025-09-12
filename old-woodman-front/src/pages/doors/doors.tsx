@@ -13,7 +13,6 @@ import { ProductSlider } from '../../components/product-slider/product-slider.ts
 import  Gallery  from '../../components/gallery/gallery.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
-import { OvalButton } from '../../components/buttons/oval-button/oval-button.tsx';
 import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
 import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
 import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
@@ -29,6 +28,7 @@ import bg from '@assets/images/home/bg-brown.webp';
 import small from '@assets/images/home/door-1.webp';
 import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
+import { ColorButton } from "../../components/buttons/color-button/color-button.tsx";
 
 const doorCollections = [{
     id   : 'classica',
@@ -78,7 +78,7 @@ const DoorsOverview = () => {
     const {t} = usePageTranslate();
     const {getCollectionById} = useProductCatalog();
     const navigate = useNavigate();
-    const [visibleCount, setVisibleCount] = useState(2);
+    const [visibleCount, setVisibleCount] = useState(3);
 
     return (<ToolPageLayout>
         <div className={styles.mainContainer}>
@@ -130,9 +130,9 @@ const DoorsOverview = () => {
                     </React.Fragment>)
                 })}
                 {visibleCount < doorCollections.length && (<div className={styles.loadMoreWrapper}>
-                    <OvalButton
-                        text={t('button-show-more.label')}
-                        onClick={() => setVisibleCount((prev) => prev + 2)}
+                    <ColorButton
+                        label={t('button-show-more.label')}
+                        onClick={() => setVisibleCount((prev) => prev + 3)}
                     />
 
                 </div>)}
