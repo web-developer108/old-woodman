@@ -25,6 +25,8 @@ import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
 import gallery4 from '@assets/images/furniture/gallery/gallery-4.webp';
 import gallery5 from '@assets/images/furniture/gallery/gallery-5.webp';
 import gallery6 from '@assets/images/furniture/gallery/gallery-6.webp';
+import gallery7 from '@assets/images/furniture/gallery/gallery-7.webp';
+import gallery8 from '@assets/images/furniture/gallery/gallery-8.webp';
 import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
@@ -61,16 +63,27 @@ const galleryImages = [{
     alt: 'Деревянная подвесная консоль из массива в интерьере с постером Медео в Алматы'
 }, {
     src: gallery3,
+    //поменять
     alt: 'Тумба под раковину из натуральной сосны в санузел отеля, кафе, ресторана'
 }, {
     src: gallery4,
+    //поменять
     alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
 }, {
     src: gallery5,
+    //поменять
     alt: 'Деревянная консоль в стиле Прованс с лампой и книгой'
 }, {
     src: gallery6,
-    alt: 'Серое кресло в стиле мид сенчури'//заменить
+    //заменить
+    alt: 'Серое кресло в стиле мид сенчури'
+},{
+    src: gallery7,
+    //заменить
+    alt: 'Серое кресло в стиле мид сенчури'
+},{
+    src: gallery8,
+    alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
 },
 
 ];
