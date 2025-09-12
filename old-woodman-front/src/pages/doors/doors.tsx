@@ -29,6 +29,8 @@ import small from '@assets/images/home/door-1.webp';
 import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
 import { ColorButton } from "../../components/buttons/color-button/color-button.tsx";
+import { ArrowDownIcon } from "../../components/icons/arrow-down-icon/arrow-down-icon.tsx";
+import { ArrowBottomIcon } from "../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx";
 
 const doorCollections = [{
     id   : 'classica',
@@ -132,6 +134,7 @@ const DoorsOverview = () => {
                 {visibleCount < doorCollections.length && (<div className={styles.loadMoreWrapper}>
                     <ColorButton
                         label={t('button-show-more.label')}
+                        icon = {<ArrowBottomIcon/>}
                         onClick={() => setVisibleCount((prev) => prev + 3)}
                     />
 
