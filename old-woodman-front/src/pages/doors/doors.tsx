@@ -134,7 +134,7 @@ const DoorsOverview = () => {
                     <ColorButton
                         label={t('button-show-more.label')}
                         icon = {<ArrowBottomIcon/>}
-                        onClick={() => setVisibleCount((prev) => prev + 3)}
+                        onClick={() => setVisibleCount((prev) => doorCollections.length)}
                     />
 
                 </div>)}
