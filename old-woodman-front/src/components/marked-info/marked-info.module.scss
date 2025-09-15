@@ -4,7 +4,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 59px 1fr;
-  grid-template-rows: 24px 1fr;
+  grid-template-rows: max-content 1fr;
 
   @include mixins.bodyTextSmall;
   @media (max-width: 810px) {
