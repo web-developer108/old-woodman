@@ -25,7 +25,7 @@
     font-size: 16px;
     text-decoration: none;
     transition: all 0.3s ease;
-    @media (min-width: 810px) {
+    @media (max-width: 810px) {
       font-size: 14px;
     }
 

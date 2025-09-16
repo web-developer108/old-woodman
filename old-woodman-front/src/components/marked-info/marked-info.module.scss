@@ -4,10 +4,12 @@
   width: 100%;
   display: grid;
   grid-template-columns: 59px 1fr;
-  grid-template-rows: 24px 1fr;
-  color: var(--text-grey-color);
-  @include mixins.bodyTextSmall;
+  grid-template-rows: max-content 1fr;
 
+  @include mixins.bodyTextSmall;
+  @media (max-width: 810px) {
+    grid-template-columns: 44px 1fr;
+  }
   .icon {
     grid-column: 1;
     grid-row: 1;
@@ -15,6 +17,7 @@
   }
 
   .title {
+    color: var(--text-grey-color);
     grid-column: 2;
     grid-row: 1;
     font-size: 18px;
@@ -27,7 +30,7 @@
     grid-column: 2;
     grid-row: 2;
     font-weight: 300;
-
+    color: var(--text-main-color);
 
     > div {
       margin-top: 24px;

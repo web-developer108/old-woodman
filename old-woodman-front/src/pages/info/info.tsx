@@ -63,6 +63,7 @@ const Info = () => {
 
     const Gallery = lazy(() => import('../../components/gallery/gallery'));
     const InfoButton = lazy(() => import('../../components/buttons/info-button/info-button'));
+
     useEffect(() => {
         if (location.pathname === '/info' && location.hash === '#instructions') {
 
@@ -206,13 +207,14 @@ const Info = () => {
                     <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
                     <span>{t('instruction-warning-text-3')}</span>
                 </div>
+                <Suspense fallback={null}>
+                    <InfoButton
+                        title={t('subtitle-6').toUpperCase()}
+                        label={t('text-5')}
+                    />
+                </Suspense>
             </div>
-            <Suspense fallback={null}>
-                <InfoButton
-                    title={t('subtitle-6').toUpperCase()}
-                    label={t('text-5')}
-                />
-            </Suspense>
+
         </div>
     </ToolPageLayout>)
 }

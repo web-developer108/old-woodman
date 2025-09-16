@@ -53,8 +53,7 @@
   .infoContent {
     max-width: 1180px;
     margin: 0 auto 112px;
-    padding: 20px;
-    @media (max-width: 1200px) {
+    @media (max-width: 1240px) {
       max-width: 100%;
       margin: 0 20px 112px;
     }
@@ -134,7 +133,6 @@
         }
       }
     }
-
     .sectionImage {
       margin-bottom: 56px;
       display: grid;

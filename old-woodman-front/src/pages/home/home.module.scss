@@ -390,11 +390,13 @@
       grid-template-columns: 449px 1fr;
       grid-template-rows: 77px 54px 24px 56px 72px 261px 43px 233px 68px;
       column-gap: 127px;
+      padding: 0 20px;
       @media (max-width: 1200px) {
         grid-template-columns: 1fr;
         grid-template-rows: 72px max-content max-content 72px  max-content 48px  max-content 48px max-content 48px 56px 72px;
         max-width: 100%;
         width: 100%;
+        padding: 0;
       }
 
       .carpentryTitle {
@@ -431,6 +433,7 @@
           max-width: 100%;
           text-align: center;
           margin-bottom: 0;
+          justify-self: center;
         }
       }
 
@@ -455,6 +458,7 @@
       }
 
       .carpentryInfo1 {
+
         grid-column: 1;
         grid-row: 6/span 3;
         @media (max-width: 1200px) {
@@ -499,7 +503,7 @@
       margin-bottom: 24px;
       @include mixins.headingLarge;
       @media (max-width: 1200px) {
-       text-align: center;
+        text-align: center;
       }
     }
 
