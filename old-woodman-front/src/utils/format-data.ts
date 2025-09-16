@@ -1,4 +1,4 @@
-import type {LanguageTextArray, ProductItem} from "../config/config.types.ts";
+import type { LanguageTextArray, ProductItem } from "../config/config.types.ts";
 
 export function formatData(value: number | number[] | undefined) {
     if (value === undefined) return '';
@@ -7,6 +7,7 @@ export function formatData(value: number | number[] | undefined) {
     }
     return `${value}см`;
 }
+
 export function formatSet(set?: LanguageTextArray, lang: 'ru' | 'kk' = 'ru') {
     if (!set) return '';
     const arr = set[lang];
@@ -15,7 +16,7 @@ export function formatSet(set?: LanguageTextArray, lang: 'ru' | 'kk' = 'ru') {
 }
 
 const defaultOtherMaterials: LanguageTextArray = {
-    ru: ['бука, ясеня, дуба'],
+    ru: ['бука', 'ясеня', 'дуба'],
     kk: ['шегіршін, қайың, кемен']
 };
 
@@ -26,22 +27,15 @@ export function formatMaterialsText(product: ProductItem, lang: 'ru' | 'kk') {
     const others = [...defaultOtherMaterials[lang]];
 
     const pine = lang === 'ru' ? 'сосны' : 'қарағай';
-    if (mainMaterial !== pine && !others.includes(pine)) {
-        others.push(pine);
-    }
 
     const index = others.indexOf(mainMaterial);
     if (index >= 0) {
-        others[index] = pine;
+        others.splice(index, 1);
     }
+    if (mainMaterial !== pine && !others.includes(pine)) {
+        others.push(pine);
+    }
+    const othersText = others.length > 0 ? lang === 'ru' ? `, возможно производство из ${others.join(', ')} или других пород` : `, сондай-ақ ${others.join(', ')} немесе басқа ағаш түрлерінен жасауға болады` : '';
 
-    const othersText = others.length > 0
-        ? lang === 'ru'
-            ? `, возможно производство из ${others.join(', ')} или других пород.`
-            : `, сондай-ақ ${others.join(', ')} немесе басқа ағаш түрлерінен жасауға болады`
-        : '';
-
-    return lang === 'ru'
-        ? `Изделие на фото изготовлено из натурального массива ${mainMaterial}${othersText}.`
-        : `Суреттегі бұйым табиғи ${mainMaterial}${othersText} массивінен жасалған,`;
+    return lang === 'ru' ? `Изделие на фото изготовлено из натурального массива ${mainMaterial}${othersText}.` : `Суреттегі бұйым табиғи ${mainMaterial}${othersText} массивінен жасалған,`;
 }

@@ -723,6 +723,10 @@ export const productCatalog: ProductCategory[] = [{
             price     : 2500000,
             time      : 20,
             alt       : 'Шкаф дубовый Luther',
+            material  : {
+                ru: 'дуба',
+                kk: 'емен',
+            },
             sizes     : {
                 width : 160,
                 height: 245,
