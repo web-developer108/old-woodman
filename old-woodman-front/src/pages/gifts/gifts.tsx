@@ -6,6 +6,8 @@ import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
+import { MarkGifts } from "../../components/icons/mark-gifts/mark-gifts.tsx";
+import { MarkedInfo } from "../../components/marked-info/marked-info.tsx";
 import gallery1 from '@assets/images/gifts/gallery-1.webp'
 import gallery2 from '@assets/images/gifts/gallery-2.webp'
 import gallery3 from '@assets/images/gifts/gallery-3.webp'
@@ -15,8 +17,6 @@ import bg from '@assets/images/home/bg-orange.webp';
 import small from '@assets/images/home/gift-1.webp';
 import big from '@assets/images/home/gift-2.webp';
 import styles from './gifts.module.scss'
-import { MarkGifts } from "../../components/icons/mark-gifts/mark-gifts.tsx";
-import { MarkedInfo } from "../../components/marked-info/marked-info.tsx";
 
 const galleryImages = [{
     src: gallery1,

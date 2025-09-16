@@ -97,6 +97,13 @@
         .columnTextLast {
           margin-top: 20px;
         }
+        &.second{
+          margin-top: 62px;
+          @media (max-width: 810px) {
+            margin-top: 0;
+          }
+
+        }
 
       }
     }

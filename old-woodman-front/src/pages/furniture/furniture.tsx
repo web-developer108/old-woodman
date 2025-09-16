@@ -146,7 +146,7 @@ const FurnitureOverview: React.FC = () => {
                             <h3 className={styles.columnTitle}>{t('article-title-1').toUpperCase()}</h3>
                             <span className={styles.columnText}>{t('article-title-1.label')}</span>
                         </div>
-                        <div className={styles.column}>
+                        <div className={`${styles.column} ${styles.second}`}>
                             <span className={styles.columnText}>{t('article-title-2.label')}</span>
                         </div>
                     </div>
