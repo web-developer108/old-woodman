@@ -15,6 +15,8 @@ import bg from '@assets/images/home/bg-orange.webp';
 import small from '@assets/images/home/gift-1.webp';
 import big from '@assets/images/home/gift-2.webp';
 import styles from './gifts.module.scss'
+import { MarkGifts } from "../../components/icons/mark-gifts/mark-gifts.tsx";
+import { MarkedInfo } from "../../components/marked-info/marked-info.tsx";
 
 const galleryImages = [{
     src: gallery1,
@@ -76,14 +78,25 @@ const Gifts = () => {
                 <Breadcrumbs current={t('main-header')}/>
                 <SectionTabs/>
                 <section className={styles.article}>
-                    <h2 className={styles.infoTitle}>{t('info-title').toUpperCase()}</h2>
                     <div className={styles.columns}>
                         <div className={styles.column}>
+                            <MarkedInfo
+                                icon={<MarkGifts/>}
+                                title={t('info-title').toUpperCase()}
+                            >
+                                {<>
+                                    <div>{t('info-text-1')}</div>
+                                    <div>{t('info-text-2')}</div>
+                                    <div>{t('info-text-3')}</div>
+                                </>}
+                            </MarkedInfo>
+                            {/* <h2 className={styles.infoTitle}><span><MarkGifts/></span>{t('info-title').toUpperCase()}</h2>
+
                             <span>{t('info-text-1')}</span>
                             <span>{t('info-text-2')}</span>
-                            <span>{t('info-text-3')}</span>
+                            <span>{t('info-text-3')}</span>*/}
                         </div>
-                        <div className={styles.column}>
+                        <div className={`${styles.column} ${styles.second}`}>
                             <span>{t('info-text-4')}</span>
                             <span>{t('info-text-5')}</span>
                         </div>
