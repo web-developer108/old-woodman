@@ -1,8 +1,10 @@
-import { lazy, Suspense, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
+import Gallery from "../../components/gallery/gallery.tsx";
+import InfoButton from "../../components/buttons/info-button/info-button.tsx";
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
@@ -61,14 +63,10 @@ const Info = () => {
     const doorsRef = useRef<HTMLHeadingElement>(null);
     const furnitureRef = useRef<HTMLHeadingElement>(null);
 
-    const Gallery = lazy(() => import('../../components/gallery/gallery'));
-    const InfoButton = lazy(() => import('../../components/buttons/info-button/info-button'));
-
     useEffect(() => {
         if (location.pathname === '/info' && location.hash === '#instructions') {
 
             instructionRef.current?.scrollIntoView({behavior: 'smooth'});
-
         }
         if (location.pathname.startsWith('/info') && location.hash === '#doors') {
             doorsRef.current?.scrollIntoView({behavior: 'smooth'});
@@ -78,6 +76,7 @@ const Info = () => {
         }
 
     }, []);
+
 
     return (<ToolPageLayout>
         <div className={styles.infoContainer}>
@@ -118,17 +117,17 @@ const Info = () => {
 
                     </ol>
                 </section>
-                <Suspense fallback={null}>
-                    <Gallery
-                        images={galleryDoorsImages}
-                    />
-                </Suspense>
-                <Suspense fallback={null}>
-                    <InfoButton
-                        title={t('subtitle-4').toUpperCase()}
-                        label={t('text-4')}
-                    />
-                </Suspense>
+
+                <Gallery
+                    images={galleryDoorsImages}
+                />
+
+
+                <InfoButton
+                    title={t('subtitle-4').toUpperCase()}
+                    label={t('text-4')}
+                />
+
                 <h2 id='furniture' ref={furnitureRef} className={styles.header}>{t('header-2f').toUpperCase()}</h2>
                 <section className={styles.section}>
                     <h3>{t('subtitle-2f').toUpperCase()}</h3>
@@ -147,17 +146,13 @@ const Info = () => {
                     <span>{t('text-4f.2')}</span>
                     <span>{t('text-4f.3')}</span>
                 </section>
-                <Suspense fallback={null}>
-                    <Gallery
-                        images={galleryFurnitureImages}
-                    />
-                </Suspense>
-                <Suspense fallback={null}>
-                    <InfoButton
-                        title={t('subtitle-5').toUpperCase()}
-                        label={t('text-5')}
-                    />
-                </Suspense>
+                <Gallery
+                    images={galleryFurnitureImages}
+                />
+                <InfoButton
+                    title={t('subtitle-5').toUpperCase()}
+                    label={t('text-5')}
+                />
                 <h2 id='instructions' ref={instructionRef}
                     className={styles.header}>{t('instruction').toUpperCase()}</h2>
                 <section className={styles.section}>
@@ -175,7 +170,6 @@ const Info = () => {
                     <h3>{t('instruction-label-2').toUpperCase()}</h3>
                     <span>{t('instruction-text-2')}</span>
                 </section>
-
                 <section className={styles.sectionImage}>
                     <div className={styles.instructionsWrap}>
                         <h3>{t('instruction-label-3').toUpperCase()}</h3>
@@ -207,12 +201,10 @@ const Info = () => {
                     <span className={styles.warningText}>{t('instruction-warning-text-2')}</span>
                     <span>{t('instruction-warning-text-3')}</span>
                 </div>
-                <Suspense fallback={null}>
-                    <InfoButton
-                        title={t('subtitle-6').toUpperCase()}
-                        label={t('text-5')}
-                    />
-                </Suspense>
+                <InfoButton
+                    title={t('subtitle-6').toUpperCase()}
+                    label={t('text-5')}/>
+
             </div>
 
         </div>

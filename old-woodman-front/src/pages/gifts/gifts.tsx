@@ -59,7 +59,7 @@ const Gifts = () => {
     return (<ToolPageLayout>
         <div className={styles.giftsContainer}>
             <PictureHeader
-                title={t('main-header')}
+                title={t('main-header.long')}
                 label={t('main-header.label')}
                 imageBg={bg}
                 imageSmall={{
@@ -90,11 +90,6 @@ const Gifts = () => {
                                     <div>{t('info-text-3')}</div>
                                 </>}
                             </MarkedInfo>
-                            {/* <h2 className={styles.infoTitle}><span><MarkGifts/></span>{t('info-title').toUpperCase()}</h2>
-
-                            <span>{t('info-text-1')}</span>
-                            <span>{t('info-text-2')}</span>
-                            <span>{t('info-text-3')}</span>*/}
                         </div>
                         <div className={`${styles.column} ${styles.second}`}>
                             <span>{t('info-text-4')}</span>

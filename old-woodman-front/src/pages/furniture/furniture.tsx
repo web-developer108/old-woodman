@@ -16,6 +16,7 @@ import TextInfo from '../../components/text-info/text-info.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import heroImageConsoles from '@assets/images/furniture/consoles-hero.webp';
 import heroImageWardrobes from '@assets/images/furniture/wardrobes-hero.webp';
+import heroImageExcl from '@assets/images/furniture/excl-fur.webp';
 import heroImageBeds from '@assets/images/furniture/beds-hero.webp';
 import heroImageChairs from '@assets/images/furniture/chairs-hero.webp';
 import heroImageTables from '@assets/images/furniture/tables-hero.webp';
@@ -40,6 +41,11 @@ const furnitureCollections = [{
     id   : 'wardrobes',
     image: heroImageWardrobes,
     alt  : 'Шкаф дубовый в современном интерьере с фасадами с рельефной филёнкой'
+}, {
+    id   : 'exclusive-furniture',
+    image: heroImageExcl,
+    //сменить альт
+    alt  : 'Деревянная двуспальная кровать в современной интерьере'
 }, {
     id   : 'beds',
     image: heroImageBeds,
