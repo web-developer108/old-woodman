@@ -699,6 +699,38 @@ export const productCatalog: ProductCategory[] = [{
         },],
     },
         {
+        id   : 'exclusive-furniture',
+        title: {
+            ru: 'Эксклюзивная мебель',
+            kk: 'Эксклюзив жиһазы',
+        },
+        items: [{
+            id        : 'luther',
+            title     : {
+                ru: 'Luther',
+                kk: 'Luther',
+
+            },
+            pageHeader: {
+                ru: 'Шкаф дубовый Luther',
+                kk: 'Шкаф дубовый Luther',
+            },
+            shortName : {
+                ru: 'Шкаф дубовый',
+                kk: 'Шкаф дубовый',
+            },
+            images    : ['/images/furniture/exclusive-fur/luther.webp', '/images/furniture/exclusive-fur/luther-add1.webp', '/images/furniture/exclusive-fur/luther-add2.webp', '/images/furniture/exclusive-fur/luther-add3.webp'],
+            price     : 2500000,
+            time      : 20,
+            alt       : 'Шкаф дубовый Luther',
+            sizes     : {
+                width : 160,
+                height: 245,
+                depth : 60,
+            }
+        },],
+    },
+        {
         id   : 'beds',
         title: {
             ru: 'Кровати',

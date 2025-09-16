@@ -25,7 +25,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
 
 
     useLayoutEffect(() => {
-        if (!isMobile && descriptionRef.current) {
+        if (descriptionRef.current) {
             const el = descriptionRef.current;
             setIsOverflowing(el.scrollHeight > el.offsetHeight);
         }
