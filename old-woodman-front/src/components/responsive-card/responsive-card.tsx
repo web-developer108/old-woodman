@@ -53,7 +53,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                             ))
                             : description}
                     </p>
-                    {!isExpanded && isOverflowing && <div className={styles.fadeOverlay}/>}
+                    {!isExpanded && (isMobile || isOverflowing) && <div className={styles.fadeOverlay}/>}
 
                     {!isExpanded && !isMobile && isOverflowing && (
                         <button className={styles.readMore} onClick={() => setIsExpanded(true)}>

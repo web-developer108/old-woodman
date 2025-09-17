@@ -257,6 +257,40 @@ export const productCatalog: ProductCategory[] = [{
         },],
     },
         {
+            id       : 'nova',
+            title    : {
+                ru: 'NOVA',
+                kk: 'NOVA',
+            },
+            pageTitle: {
+                ru: 'Деревянные двери NOVA',
+                kk: 'NOVA ағаш есіктері',
+            },
+            items    : [{
+                id         : 'nova-iney',
+                title      : {
+                    ru: 'NOVA',
+                    kk: 'NOVA',
+
+                },
+                titleMob   : {
+                    ru: 'NOVA, Иней',
+                    kk: 'NOVA, Қырау',
+                },
+                description: {
+                    ru: 'цвет "Иней"',
+                    kk: 'түсі "Қырау"',
+                },
+                shortName  : {
+                    ru: 'Дверь',
+                    kk: 'Есік',
+                },
+                images     : ['/images/doors/nova/nova.webp'],
+                price      : 250000,
+                alt        : 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, покрытие белое масло'
+            },],
+        },
+        {
             id       : 'rustic',
             title    : {
                 ru: 'RUSTIC',

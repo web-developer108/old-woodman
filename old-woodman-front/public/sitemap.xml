@@ -21,11 +21,13 @@
     <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-hanoi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-paris</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/cabinet/cabinet-paris-duo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://oldwoodman.kz/doors/exclisive</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://oldwoodman.kz/doors/exclisive/exclusive-shato</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://oldwoodman.kz/doors/exclisive/exclusive-arch</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/exclusive</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/exclusive/exclusive-shato</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/exclusive/exclusive-arch</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/balcony</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/doors/balcony/balcony-teak</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/nova</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://oldwoodman.kz/doors/nova/nova-iney</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture/consoles</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://oldwoodman.kz/furniture/consoles/provance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
