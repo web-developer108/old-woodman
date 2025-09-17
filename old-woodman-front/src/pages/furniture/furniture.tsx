@@ -44,8 +44,7 @@ const furnitureCollections = [{
 }, {
     id   : 'exclusive-furniture',
     image: heroImageExcl,
-    //сменить альт
-    alt  : 'Деревянная двуспальная кровать в современной интерьере'
+    alt  : 'Дубовый платяной шкаф с готической резьбой из натурального дерева в современном интерьере'
 }, {
     id   : 'beds',
     image: heroImageBeds,

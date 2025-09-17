@@ -287,7 +287,7 @@ export const productCatalog: ProductCategory[] = [{
                 },
                 images     : ['/images/doors/nova/nova.webp'],
                 price      : 250000,
-                alt        : 'Межкомнатная белая деревянная дверь из массива на заказ в Алматы, покрытие белое масло'
+                alt        : 'Деревянная дверь из массива для современного минималистичного интерьера'
             },],
         },
         {
@@ -756,7 +756,7 @@ export const productCatalog: ProductCategory[] = [{
             images    : ['/images/furniture/exclusive-fur/luther.webp', '/images/furniture/exclusive-fur/luther-add1.webp', '/images/furniture/exclusive-fur/luther-add2.webp', '/images/furniture/exclusive-fur/luther-add3.webp'],
             price     : 2500000,
             time      : 20,
-            alt       : 'Шкаф дубовый Luther',
+            alt       : 'Деревянный шкаф с резьбой в спальню на заказ',
             material  : {
                 ru: 'дуба',
                 kk: 'емен',
