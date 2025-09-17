@@ -35,13 +35,15 @@
 
   .imageContainer {
     width: 100%;
-    aspect-ratio: 336 / 186;
+    aspect-ratio: 300 / 186;
     overflow: hidden;
 
     @media (min-width: 811px) {
       flex: 0 0 386px;
       height: 366px;
     }
+
+
 
     .image {
       width: 100%;

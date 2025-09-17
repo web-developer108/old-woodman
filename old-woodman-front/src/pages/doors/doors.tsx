@@ -22,6 +22,7 @@ import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
 import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
 import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
 import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
+import heroImageNova from '@assets/images/doors/nova/nova-hero.webp';
 import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
@@ -43,6 +44,10 @@ const doorCollections = [{
     id   : 'exclusive',
     image: heroImageExclusive,
     alt  : 'Эксклюзивная деревянная дверь с открыванием "книжка" в интерьере в стиле шато'
+},{
+    id   : 'nova',
+    image: heroImageNova,
+    alt  : 'Лаконичная деревянная дверь из массива в современном минималистичном интерьере'
 }, {
     id   : 'rustic',
     image: heroImageRustic,

@@ -30,7 +30,6 @@ export interface ProductItem {
 export interface ProductCollection {
   id: string;
   title: LanguageText;
-  pageTitle?: LanguageText;
   items: ProductItem[];
 }
 
