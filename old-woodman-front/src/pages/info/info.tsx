@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useGalleryFromWp} from '../../hooks/gallery-from-wp/gallery-from-wp.ts'
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { InfoIcon } from '../../components/icons/info-icon/info-icon.tsx';
@@ -8,11 +9,11 @@ import InfoButton from "../../components/buttons/info-button/info-button.tsx";
 import doorWidth from '@assets/images/info/door-width.svg'
 import doorHeight from '@assets/images/info/door-height.svg'
 import doorDepth from '@assets/images/info/door-depth.svg'
-import gallery1d from '@assets/images/info/gallery/gallery-d-1.webp'
-import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
-import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
-import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
-import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
+//import gallery1d from '@assets/images/info/gallery/gallery-d-1.webp'
+//import gallery2d from '@assets/images/info/gallery/gallery-d-2.webp'
+//import gallery3d from '@assets/images/info/gallery/gallery-d-3.webp'
+//import gallery4d from '@assets/images/info/gallery/gallery-d-4.webp'
+//import gallery5d from '@assets/images/info/gallery/gallery-d-5.webp'
 import gallery1f from '@assets/images/info/gallery/gallery-f-1.webp'
 import gallery2f from '@assets/images/info/gallery/gallery-f-2.webp'
 import gallery3f from '@assets/images/info/gallery/gallery-f-3.webp'
@@ -20,6 +21,7 @@ import gallery4f from '@assets/images/info/gallery/gallery-f-4.webp'
 import gallery5f from '@assets/images/info/gallery/gallery-f-5.webp'
 import styles from '../info/info.module.scss';
 
+/*
 const galleryDoorsImages = [{
     src: gallery1d,
     alt: 'Фрагмент деревянной двери из массива с декоративными резными элементами демонстрирует преимущества дверей из массива'
@@ -38,6 +40,7 @@ const galleryDoorsImages = [{
 },
 
 ];
+*/
 
 const galleryFurnitureImages = [{
     src: gallery1f,
@@ -62,6 +65,8 @@ const Info = () => {
     const instructionRef = useRef<HTMLHeadingElement>(null);
     const doorsRef = useRef<HTMLHeadingElement>(null);
     const furnitureRef = useRef<HTMLHeadingElement>(null);
+
+    const galleryDoorsImages = useGalleryFromWp('gallery-info-doors');
 
     useEffect(() => {
         if (location.pathname === '/info' && location.hash === '#instructions') {
