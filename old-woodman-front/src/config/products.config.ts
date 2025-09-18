@@ -200,8 +200,8 @@ export const productCatalog: ProductCategory[] = [
             }, {
                 id: 'exclusive',
                 title: {
-                    ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ',
-                    kk: 'ЭКСКЛЮЗИВ ЕСІКТЕР',
+                    ru: 'Эксклюзивные двери',
+                    kk: 'Эксклюзив есіктер',
                 },
                 items: [
                     {
@@ -336,8 +336,8 @@ export const productCatalog: ProductCategory[] = [
             }, {
                 id: 'balcony',
                 title: {
-                    ru: 'БАЛКОННАЯ ДВЕРЬ',
-                    kk: 'БАЛКОН ЕСІГІ',
+                    ru: 'Балконная дверь',
+                    kk: 'Бплкон есігі',
                 },
                 items: [
                     {
@@ -713,7 +713,7 @@ export const productCatalog: ProductCategory[] = [
                 id: 'exclusive-furniture',
                 title: {
                     ru: 'Эксклюзивная мебель',
-                    kk: 'Эксклюзив жиһазы',
+                    kk: 'Эксклюзивті жиһаз',
                 },
                 items: [
                     {
@@ -725,11 +725,11 @@ export const productCatalog: ProductCategory[] = [
                         },
                         pageHeader: {
                             ru: 'Шкаф дубовый Luther',
-                            kk: 'Шкаф дубовый Luther',
+                            kk: 'Luther емен шкафы',
                         },
                         shortName: {
                             ru: 'Шкаф дубовый',
-                            kk: 'Шкаф дубовый',
+                            kk: 'Емен шкафы',
                         },
                         images: ['/images/furniture/exclusive-fur/luther.webp', '/images/furniture/exclusive-fur/luther-add1.webp', '/images/furniture/exclusive-fur/luther-add2.webp', '/images/furniture/exclusive-fur/luther-add3.webp'],
                         price: 2500000,
