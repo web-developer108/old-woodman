@@ -200,8 +200,8 @@ export const productCatalog: ProductCategory[] = [
             }, {
                 id: 'exclusive',
                 title: {
-                    ru: 'ЭКСКЛЮЗИВНЫЕ ДВЕРИ',
-                    kk: 'ЭКСКЛЮЗИВ ЕСІКТЕР',
+                    ru: 'Эксклюзивные двери',
+                    kk: 'Эксклюзив есіктер',
                 },
                 items: [
                     {
@@ -336,8 +336,8 @@ export const productCatalog: ProductCategory[] = [
             }, {
                 id: 'balcony',
                 title: {
-                    ru: 'БАЛКОННАЯ ДВЕРЬ',
-                    kk: 'БАЛКОН ЕСІГІ',
+                    ru: 'Балконная дверь',
+                    kk: 'Бплкон есігі',
                 },
                 items: [
                     {
