@@ -5,6 +5,9 @@
   gap: 4px;
   cursor: pointer;
   line-height: 1.25;
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 
   span {
     color: var(--text-main-color);

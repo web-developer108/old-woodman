@@ -14,12 +14,18 @@
   width: auto;
   padding: 10px 16px;
   box-sizing: border-box;
+
   &:active {
     filter: brightness(0.9);
   }
 
   &.light {
     background-color: var(--background-grey-color);
+    color: var(--text-main-color);
+  }
+
+  &.yellow {
+    background-color: var(--button-main-color);
     color: var(--text-main-color);
   }
 
