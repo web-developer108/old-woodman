@@ -33,6 +33,7 @@ export interface ProductCollection {
     heroImage?: string;
     heroAlt?: string;
     heroDescription?: LanguageTextArray;
+    heroComment?: LanguageText;
     items: ProductItem[];
 }
 
