@@ -25,16 +25,17 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
 
 
     useLayoutEffect(() => {
-        if (descriptionRef.current) {
+        if (descriptionRef.current)
+        {
             const el = descriptionRef.current;
             setIsOverflowing(el.scrollHeight > el.offsetHeight);
         }
     }, [isMobile, description, screenWidth]);
 
     return (
-        <div className={styles.card} >
+        <div className={styles.card}>
             <div className={styles.imageContainer}>
-                <img src={image} alt={alt} className={styles.image} />
+                <img src={image} alt={alt} className={styles.image}/>
             </div>
             <div className={styles.content}>
                 <h2 className={styles.title}>{title.toUpperCase()}</h2>
@@ -44,14 +45,15 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                         ref={descriptionRef}
                         className={`${styles.description} ${isExpanded ? styles.expanded : ''}`}
                     >
-                        {Array.isArray(description)
-                            ? description.map((line, idx) => (
+                        {
+                            description.map((line,
+                                idx) => (
                                 <span key={idx}>
               {line}
-                                    <br />
+                                    <br/>
             </span>
                             ))
-                            : description}
+                        }
                     </p>
                     {!isExpanded && (isMobile || isOverflowing) && <div className={styles.fadeOverlay}/>}
 
@@ -70,11 +72,11 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                     isExpanded ? (
                         <span className={styles.readMoreCircle}>
                         <CircleButton
-                        icon = {<ArrowDownIcon/>}
-                        //убрать t('button.aria-label.open')
-                        bgColor={AppColors.text.light}
-                        ariaLabel = { t('button.aria-label.close')}
-                        onClick={() => setIsExpanded(false)}
+                            icon={<ArrowDownIcon/>}
+                            //убрать t('button.aria-label.open')
+                            bgColor={AppColors.text.light}
+                            ariaLabel={t('button.aria-label.close')}
+                            onClick={() => setIsExpanded(false)}
                         />
                             </span>
 

@@ -153,7 +153,7 @@ const DoorsOverview = () => {
                             <ResponsiveCard
                                 image={heroImage ?? ''}
                                 title={title[lang] ?? ''}
-                                description={(heroDescription?.[lang]?.[0]) ?? ''}
+                                description={(heroDescription?.[lang]) ?? []}
                                 comment={t('comment-text')}
                                 alt={heroAlt ?? ''}
                             />
