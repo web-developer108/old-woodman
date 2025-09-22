@@ -10,19 +10,11 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
-import  Gallery  from '../../components/gallery/gallery.tsx';
+import Gallery from '../../components/gallery/gallery.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
 import { ColorButton } from "../../components/buttons/color-button/color-button.tsx";
 import { ArrowBottomIcon } from "../../components/icons/arrow-bottom-icon/arrow-bottom-icon.tsx";
-import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
-import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
-import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
-import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
-import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
-import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
-import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
-import heroImageNova from '@assets/images/doors/nova/nova-hero.webp';
 import gallery1 from '@assets/images/doors/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/doors/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/doors/gallery/gallery-3.webp';
@@ -32,56 +24,24 @@ import small from '@assets/images/home/door-1.webp';
 import big from '@assets/images/home/door-2.webp';
 import styles from './doors.module.scss'
 
-const doorCollections = [{
-    id   : 'classica',
-    image: heroImageClassica,
-    alt  : 'Белая деревянная дверь со стеклом в интерьере кухни, деревянный кухонный гарнитур на заказ в Алматы'
-}, {
-    id   : 'cabinet',
-    image: heroImageCabinet,
-    alt  : 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
-}, {
-    id   : 'exclusive',
-    image: heroImageExclusive,
-    alt  : 'Эксклюзивная деревянная дверь с открыванием "книжка" в интерьере в стиле шато'
-},{
-    id   : 'nova',
-    image: heroImageNova,
-    alt  : 'Лаконичная деревянная дверь из массива в современном минималистичном интерьере'
-}, {
-    id   : 'rustic',
-    image: heroImageRustic,
-    alt  : 'Деревянная дверь в этническом стиле из досок в каменной стене'
-}, {
-    id   : 'balcony',
-    image: heroImageBalcony,
-    alt  : 'Деревянная балконная дверь на фасаде здания'
-}, {
-    id   : 'loft',
-    image: heroImageLoft,
-    alt  : 'Межкомнатная двойная деревянная дверь в интерьере в стиле LOFT'
-}, {
-    id   : 'deco',
-    image: heroImageDeco,
-    alt  : 'Премиальная межкомнатная  дубовая деревянная дверь из массива в интерьере английский кабинет'
-},];
-const galleryImages = [{
-    src: gallery1,
-    alt: 'Столярный инструмент для изготовления двери деревянной в столярной мастерской'
-}, {
-    src: gallery2,
-    alt: 'Процесс производства двери деревянной из массива в столярной мастерской'
-}, {
-    src: gallery3,
-    alt: 'Столярный рубанок и стружка на верстаке в столярной мастерской'
-}, {
-    src: gallery4,
-    alt: 'Деревянные заготовки для производства двери деревянной на верстаке в столярной мастерской'
-},
+const galleryImages = [
+    {
+        src: gallery1,
+        alt: 'Столярный инструмент для изготовления двери деревянной в столярной мастерской'
+    }, {
+        src: gallery2,
+        alt: 'Процесс производства двери деревянной из массива в столярной мастерской'
+    }, {
+        src: gallery3,
+        alt: 'Столярный рубанок и стружка на верстаке в столярной мастерской'
+    }, {
+        src: gallery4,
+        alt: 'Деревянные заготовки для производства двери деревянной на верстаке в столярной мастерской'
+    },
 
 ];
 const DoorsOverview = () => {
-    const {t, i18n } = usePageTranslate();
+    const {t, i18n} = usePageTranslate();
     const lang = i18n.language as 'ru' | 'kk';
     const {getCollectionsByCategoryId} = useProductCatalog();
     const navigate = useNavigate();
@@ -112,32 +72,6 @@ const DoorsOverview = () => {
                     <SocialButtons/>
                 </div>
 
-                {/*{doorCollections.slice(0, visibleCount).map(({
-                    id,
-                    image,
-                    alt
-                }) => {
-                    const collection = getCollectionById(id);
-                    const items = collection?.items || [];
-                    return (<React.Fragment key={id}>
-                        <ResponsiveCard
-                            image={image}
-                            title={t(`title-${id}`)}
-                            description={t(`description-${id}`)}
-                            comment={t('comment-text')}
-                            alt={alt}
-                        />
-                        <div className={styles.previewWrap}>
-                            <ProductSlider
-                                title={t('preview-title')}
-                                items={items}
-                                handleCardClick={(productId) => {
-                                    navigate(`/doors/${id}/${productId}`);
-                                }}
-                            />
-                        </div>
-                    </React.Fragment>)
-                })}*/}
                 {visibleCollections.map((collection) => {
                     const {
                         id,
@@ -173,7 +107,7 @@ const DoorsOverview = () => {
                 {visibleCount < collections.length && (<div className={styles.loadMoreWrapper}>
                     <ColorButton
                         label={t('button-show-more.label')}
-                        icon = {<ArrowBottomIcon/>}
+                        icon={<ArrowBottomIcon/>}
                         onClick={() => setVisibleCount(collections.length)}
                     />
 
