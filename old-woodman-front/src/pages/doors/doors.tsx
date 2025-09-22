@@ -81,10 +81,13 @@ const galleryImages = [{
 
 ];
 const DoorsOverview = () => {
-    const {t} = usePageTranslate();
-    const {getCollectionById} = useProductCatalog();
+    const {t, i18n } = usePageTranslate();
+    const lang = i18n.language as 'ru' | 'kk';
+    const {getCollectionById, getCollectionsByCategoryId} = useProductCatalog();
     const navigate = useNavigate();
     const [visibleCount, setVisibleCount] = useState(3);
+    const collections = getCollectionsByCategoryId('doors');
+    const visibleCollections = collections.slice(0, visibleCount);
 
     return (<ToolPageLayout>
         <div className={styles.mainContainer}>
@@ -109,7 +112,7 @@ const DoorsOverview = () => {
                     <SocialButtons/>
                 </div>
 
-                {doorCollections.slice(0, visibleCount).map(({
+                {/*{doorCollections.slice(0, visibleCount).map(({
                     id,
                     image,
                     alt
@@ -134,12 +137,44 @@ const DoorsOverview = () => {
                             />
                         </div>
                     </React.Fragment>)
+                })}*/}
+                {visibleCollections.map((collection) => {
+                    const {
+                        id,
+                        heroImage,
+                        heroAlt,
+                        heroDescription,
+                        title,
+                        items = [],
+                    } = collection;
+
+                    return (
+                        <React.Fragment key={id}>
+                            <ResponsiveCard
+                                image={heroImage ?? ''}
+                                title={title[lang] ?? ''}
+                                description={(heroDescription?.[lang]?.[0]) ?? ''}
+                                comment={t('comment-text')}
+                                alt={heroAlt ?? ''}
+                            />
+                            <div className={styles.previewWrap}>
+                                <ProductSlider
+                                    title={t('preview-title')}
+                                    items={items}
+                                    handleCardClick={(productId) => {
+                                        navigate(`/doors/${id}/${productId}`);
+                                    }}
+                                />
+                            </div>
+                        </React.Fragment>
+                    );
                 })}
-                {visibleCount < doorCollections.length && (<div className={styles.loadMoreWrapper}>
+
+                {visibleCount < collections.length && (<div className={styles.loadMoreWrapper}>
                     <ColorButton
                         label={t('button-show-more.label')}
                         icon = {<ArrowBottomIcon/>}
-                        onClick={() => setVisibleCount(doorCollections.length)}
+                        onClick={() => setVisibleCount(collections.length)}
                     />
 
                 </div>)}
