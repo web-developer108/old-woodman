@@ -83,7 +83,7 @@ const galleryImages = [{
 const DoorsOverview = () => {
     const {t, i18n } = usePageTranslate();
     const lang = i18n.language as 'ru' | 'kk';
-    const {getCollectionById, getCollectionsByCategoryId} = useProductCatalog();
+    const {getCollectionsByCategoryId} = useProductCatalog();
     const navigate = useNavigate();
     const [visibleCount, setVisibleCount] = useState(3);
     const collections = getCollectionsByCategoryId('doors');
