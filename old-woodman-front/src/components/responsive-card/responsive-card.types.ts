@@ -1,7 +1,7 @@
 export interface ResponsiveCardProps {
   image: string;
   title: string;
-  description: string | string[];
+  description: string[];
   comment?: string;
   alt?:string;
 }

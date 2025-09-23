@@ -1,41 +1,45 @@
 export type LanguageText = {
-  ru: string;
-  kk: string;
+    ru: string;
+    kk: string;
 };
 export type LanguageTextArray = {
-  ru: string[];
-  kk: string[];
+    ru: string[];
+    kk: string[];
 };
 
 export interface ProductItem {
-  id: string;
-  title: LanguageText;
-  titleMob?: LanguageText;
-  description?: LanguageText;
-  pageHeader?: LanguageText;
-  shortName: LanguageText;
-  images: string[];
-  price: number;
-  time?:number;
-  alt:string;
-  material?: LanguageText;
-  set?: LanguageTextArray;
-  sizes?: {
-    width: number | number [];
-    height: number | number [] ;
-    depth: number | number [];
-  };
+    id: string;
+    title: LanguageText;
+    titleMob?: LanguageText;
+    description?: LanguageText;
+    pageHeader?: LanguageText;
+    shortName: LanguageText;
+    images: string[];
+    price: number;
+    time?: number;
+    alt: string;
+    material?: LanguageText;
+    set?: LanguageTextArray;
+    sizes?: {
+        width: number | number [];
+        height: number | number [];
+        depth: number | number [];
+    };
 }
 
 export interface ProductCollection {
-  id: string;
-  title: LanguageText;
-  items: ProductItem[];
+    id: string;
+    title: LanguageText;
+    heroImage?: string;
+    heroAlt?: string;
+    heroDescription?: LanguageTextArray;
+    heroComment?: LanguageText;
+    items: ProductItem[];
 }
 
 export interface ProductCategory {
-  id: string;
-  title: LanguageText;
-  collections: ProductCollection[];
-  items?: ProductItem[];
+    id: string;
+    title: LanguageText;
+    collections: ProductCollection[];
+    items?: ProductItem[];
 }
