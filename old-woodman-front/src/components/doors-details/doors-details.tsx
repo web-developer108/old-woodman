@@ -30,8 +30,6 @@ import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
-
-
 export const DoorsDetails: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();

@@ -36,6 +36,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'цвет "Иней"',
                             kk: 'түсі "Қырау"',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные CLASSICA Иней',
+                            kk: 'CLASSICA ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -57,6 +61,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Со стеклом цвет "Иней"',
                             kk: 'Шынымен түсі "Қырау"',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные CLASSICA Иней со стеклом',
+                            kk: 'CLASSICA ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -77,6 +85,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'цвет "Дуб"',
                             kk: 'түсі "Дуб"',
+                        },
+                        pageHeader: {
+                            ru: 'Двери деревянные CLASSICA Дуб',
+                            kk: 'CLASSICA ағаш есіктері',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -115,6 +127,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Scandi',
                             kk: 'Scandi',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные CABINET Scandi',
+                            kk: 'CABINET ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -135,6 +151,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'Chester',
                             kk: 'Chester',
+                        },
+                        pageHeader: {
+                            ru: 'Двери деревянные CABINET Chester',
+                            kk: 'CABINET ағаш есіктері',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -157,6 +177,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Hanoi',
                             kk: 'Hanoi',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные CABINET Hanoi',
+                            kk: 'CABINET ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -178,6 +202,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Paris',
                             kk: 'Paris',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные CABINET Paris',
+                            kk: 'CABINET ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -198,6 +226,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'Paris  двойная',
                             kk: 'Paris  қосарлы',
+                        },
+                        pageHeader: {
+                            ru: 'Двери деревянные CABINET Paris двупольные',
+                            kk: 'CABINET ағаш есіктері',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -236,6 +268,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'Дверь Shato',
                             kk: 'Есік Shato',
                         },
+                        pageHeader: {
+                            ru: 'Эксклюзивные двери ШАТО',
+                            kk: 'ЭКСКЛЮЗИВ  ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -256,6 +292,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'Дверь ARCH',
                             kk: 'Есік ARCH',
+                        },
+                        pageHeader: {
+                            ru: 'Эксклюзивные двери ARCH',
+                            kk: 'ЭКСКЛЮЗИВ  ағаш есіктері',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -294,6 +334,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'цвет "Иней"',
                             kk: 'түсі "Қырау"',
                         },
+                        pageHeader: {
+                            ru: 'Двери деревянные NOVA Иней',
+                            kk: 'NOVA «Иней» ағаш есіктері',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -331,6 +375,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'этно',
                             kk: 'этно',
                         },
+                        pageHeader: {
+                            ru: 'Дверь деревянная RUSTIC ЭТНО',
+                            kk: 'RUSTIC ағаш есіг',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -351,6 +399,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'этно 2',
                             kk: 'этно 2',
+                        },
+                        pageHeader: {
+                            ru: 'Дверь деревянная RUSTIC ЭТНО ',
+                            kk: 'RUSTIC ағаш есіг',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -390,6 +442,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'цвет "Тик"',
                             kk: 'түсі "Тик"',
                         },
+                        pageHeader: {
+                            ru: 'Дверь деревянная балконная цвет Тик',
+                            kk: 'Ағаш балкон есігі',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -428,6 +484,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'цвет "Тик"',
                             kk: 'түсі "Тик"',
                         },
+                        pageHeader: {
+                            ru: 'Комбинированная дверь LOFT',
+                            kk: 'LOFT кұрамдастырылған есігі',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -448,6 +508,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'Цвет "Тик", двойная',
                             kk: 'Цвет "Тик", қосарлы',
+                        },
+                        pageHeader: {
+                            ru: 'Комбинированная дверь LOFT двупольная',
+                            kk: 'LOFT кұрамдастырылған есігі',
                         },
                         shortName: {
                             ru: 'Дверь',
@@ -486,6 +550,10 @@ export const productCatalog: ProductCategory[] = [
                             ru: 'цвет "Дуб"',
                             kk: 'түсі "Дуб"',
                         },
+                        pageHeader: {
+                            ru: 'Дверь деревянная DECO',
+                            kk: 'DECO ағаш есігі',
+                        },
                         shortName: {
                             ru: 'Дверь',
                             kk: 'Есік',
@@ -506,6 +574,10 @@ export const productCatalog: ProductCategory[] = [
                         description: {
                             ru: 'Цвет "Дуб", двойная',
                             kk: 'Цвет "Дуб", қосарлы',
+                        },
+                        pageHeader: {
+                            ru: 'Дверь деревянная DECO двупольная',
+                            kk: 'DECO ағаш есігі',
                         },
                         shortName: {
                             ru: 'Дверь',
