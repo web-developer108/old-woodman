@@ -68,6 +68,7 @@ export const DoorsDetails: React.FC = () => {
     addToCart(selectedProduct.id)
     showModal(<CartModal id={selectedProduct.id}/>);
   };
+  //изменить логику, брать из конфига
   const doorCollections = useMemo(() => [
     { id: 'classica', src: heroImageClassica },
     { id: 'loft', src: heroImageLoft },
@@ -102,7 +103,7 @@ export const DoorsDetails: React.FC = () => {
     checkOverflow();
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
-  }, [isMobile]);
+  }, [isMobile, lang]);
 
   useEffect(() => {
     simpleBarRef.current?.recalculate();
