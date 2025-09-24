@@ -20,13 +20,6 @@ import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
 import { getRandomProducts } from '../../utils/get-random-item.ts';
-import heroImageClassica from '@assets/images/doors/classica/classica-hero-wide.webp';
-import heroImageLoft from '@assets/images/doors/loft/loft-hero.webp';
-import heroImageDeco from '@assets/images/doors/deco/deco-hero.webp';
-import heroImageCabinet from '@assets/images/doors/cabinet/cabinet-hero.webp';
-import heroImageRustic from '@assets/images/doors/rustic/rustic-hero.webp';
-import heroImageExclusive from '@assets/images/doors/exclusive/exclusive-hero.webp';
-import heroImageBalcony from '@assets/images/doors/balcony/balcony-hero.webp';
 import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
@@ -47,7 +40,8 @@ export const DoorsDetails: React.FC = () => {
     getCollectionById,
     getCollectionTitleById,
     getProductById,
-    getProductDetailsById
+    getProductDetailsById,
+      getCollectionsByCategoryId
   } = useProductCatalog();
   const lang = i18n.language as 'ru' | 'kk';
 
@@ -68,22 +62,15 @@ export const DoorsDetails: React.FC = () => {
     addToCart(selectedProduct.id)
     showModal(<CartModal id={selectedProduct.id}/>);
   };
-  //изменить логику, брать из конфига
-  const doorCollections = useMemo(() => [
-    { id: 'classica', src: heroImageClassica },
-    { id: 'loft', src: heroImageLoft },
-    { id: 'deco', src: heroImageDeco },
-    { id: 'cabinet', src: heroImageCabinet },
-    { id: 'rustic', src: heroImageRustic },
-    { id: 'exclusive', src: heroImageExclusive },
-    { id: 'balcony', src: heroImageBalcony },
-  ], []);
 
-  const filteredCollections = useMemo(() => {
-    return doorCollections.filter((item) => item.id !== collection?.id);
-  }, [doorCollections, collection?.id]);
+    const doorCollections = getCollectionsByCategoryId('doors');
+    const filteredCollections = useMemo(() =>
+            doorCollections.filter(c => c.id !== collection?.id),
+        [doorCollections, collection?.id]
+    );
 
-  useEffect(() => {
+
+    useEffect(() => {
     const handleResize = () => {
       simpleBarRef.current?.recalculate();
     };
@@ -234,19 +221,19 @@ export const DoorsDetails: React.FC = () => {
         <SimpleBar ref={simpleBarRef} className={styles.wrapper} autoHide={false}>
           <div className={styles.track}>
             {
-              filteredCollections.map((img, index) => (
+              filteredCollections.map((item, index) => (
                 <div className={styles.infoImage} key={index}>
 
-                  <img key={index} src={img.src} alt={img.id} className={styles.image} loading="lazy"/>
+                  <img key={index} src={item.heroImage} alt={item.heroAlt} className={styles.image} loading="lazy"/>
                   <div className={styles.infoText}>
-                    <span>{getCollectionTitleById(img.id)}</span>
+                    <span>{getCollectionTitleById(item.id)}</span>
                     {isMobile ?
-                      <CircleButton onClick={() => navigate(`/doors/${img.id}`)}
+                      <CircleButton onClick={() => navigate(`/doors/${item.id}`)}
                                     bgColor={AppColors.background.grey} ariaLabel={t('button-transition.label')}
                                     icon={<ArrowRightIcon color={AppColors.text.main}/>}/>
                       :
                       <OvalButton text={t('doors-transition.button')}
-                                  onClick={() => navigate(`/doors/${img.id}`)}/>}
+                                  onClick={() => navigate(`/doors/${item.id}`)}/>}
                   </div>
                 </div>
               ))
