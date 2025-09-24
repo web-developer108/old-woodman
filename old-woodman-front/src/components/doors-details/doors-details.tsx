@@ -95,6 +95,10 @@ export const DoorsDetails: React.FC = () => {
     }, [isMobile, lang]);
 
     useEffect(() => {
+        setIsExpanded(false);
+    }, [productId, lang]);
+
+    useEffect(() => {
         simpleBarRef.current?.recalculate();
     }, [filteredCollections]);
 

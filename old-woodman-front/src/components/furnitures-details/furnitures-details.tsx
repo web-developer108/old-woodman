@@ -1,22 +1,21 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
-import {useCart} from '../../hooks/cart/cart.tsx';
-import {useModal} from '../../hooks/modal/use-modal.ts';
-import {useProductCatalog} from '../../hooks/catalog/use-product-catalog.ts';
-import {useCurrentCategory} from '../../hooks/current-category/current-category.ts';
-import {LikeButton} from '../buttons/like-button/like-button.tsx';
-import {ImageSlider} from '../image-slider/image-slider.tsx';
-import {ColorButton} from '../buttons/color-button/color-button.tsx';
-import {OrderIcon} from '../icons/order-icon/order-icon.tsx';
-import {CommonButtonsBlock} from '../buttons/common-buttons-block/common-buttons-block.tsx';
-import {getDescriptionLines} from '../../utils/get-description-lines.ts';
-import {OneClickModal} from '../modal-windows/one-click-order/one-click-order.tsx';
-import {CartModal} from '../modal-windows/cart-modal/cart-modal.tsx';
-import {ProductSlider} from '../product-slider/product-slider.tsx';
-import {getRandomProducts} from '../../utils/get-random-item.ts';
-import {formatSet, formatData, formatMaterialsText} from "../../utils/format-data.ts";
+import { useCart } from '../../hooks/cart/cart.tsx';
+import { useModal } from '../../hooks/modal/use-modal.ts';
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
+import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import { LikeButton } from '../buttons/like-button/like-button.tsx';
+import { ImageSlider } from '../image-slider/image-slider.tsx';
+import { ColorButton } from '../buttons/color-button/color-button.tsx';
+import { OrderIcon } from '../icons/order-icon/order-icon.tsx';
+import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
+import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
+import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
+import { ProductSlider } from '../product-slider/product-slider.tsx';
+import { getRandomProducts } from '../../utils/get-random-item.ts';
+import { formatSet, formatData, formatMaterialsText } from "../../utils/format-data.ts";
 import styles from '../doors-details/doors-details.module.scss';
 
 export const FurnituresDetails: React.FC = () => {
@@ -43,7 +42,7 @@ export const FurnituresDetails: React.FC = () => {
     const item = getItemById(collectionId!, productId!);
 
     const images = item!.images;
-    const descriptionLines = useMemo(() => getDescriptionLines(productId!, t), [productId, t]);
+
     const handleOneClick = () => {
         showModal(<OneClickModal id={productId!}/>);
     };
@@ -51,8 +50,10 @@ export const FurnituresDetails: React.FC = () => {
         addToCart(productId!)
         showModal(<CartModal id={productId!}/>);
     };
+
     const randomCollection = useMemo(() => {
-        if (!productId) {
+        if (!productId)
+        {
             return [];
         }
         const details = getProductDetailsById(productId);
@@ -68,7 +69,8 @@ export const FurnituresDetails: React.FC = () => {
         const index = images.findIndex((img) =>
             img.includes(productId)
         );
-        if (index !== -1) {
+        if (index !== -1)
+        {
             setSelectedIndex(index);
         }
     }, [productId, images]);
@@ -84,14 +86,21 @@ export const FurnituresDetails: React.FC = () => {
 
         checkOverflow();
         window.addEventListener('resize', checkOverflow);
+
         return () => window.removeEventListener('resize', checkOverflow);
     }, [isMobile]);
 
-    if (!productId) return <div>Product not found</div>;
+    useEffect(() => {
+        setIsExpanded(false);
+    }, [productId, lang]);
+
+    if (!productId ) return null;
     const product = getProductById(productId)
-    if (!product) return <div>Product not found</div>;
+    if (!product) return null;
     const items = getCollectionById(collectionId!);
     const filteredCollections = items?.items.filter(item => item.id !== productId)
+    const productText = product.text?.[lang] ?? [];
+
 
     return (
         <>
@@ -147,7 +156,8 @@ export const FurnituresDetails: React.FC = () => {
                                 isOverflowing && !isExpanded ? styles.showFade : ''
                             ].join(' ')}
                         >
-                            {descriptionLines.map((line, i) => (
+                            {productText.map((line,
+                                i) => (
                                 <p key={i}>{line}</p>
                             ))}
 
@@ -210,14 +220,10 @@ export const FurnituresDetails: React.FC = () => {
             {filteredCollections && filteredCollections.length >= 1 &&
                 <section className={styles.slider}>
                     <ProductSlider
-                        title={`${t('slider-header.same')} ${t(`title-${collectionId}`)}`.toUpperCase()}
+                        title={`${t('slider-header.same')}  ${items.title[lang]}`.toUpperCase()}
                         items={filteredCollections}
                         headingSize='large'
-                        handleCardClick={(productId) => {
-
-                            navigate(`/furniture/${collectionId}/${productId}`);
-
-                        }}
+                        handleCardClick={(productId) => navigate(`/furniture/${collectionId}/${productId}`)}
 
                     />
 
