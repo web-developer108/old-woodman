@@ -214,7 +214,9 @@ export const FurnituresDetails: React.FC = () => {
                         items={filteredCollections}
                         headingSize='large'
                         handleCardClick={(productId) => {
+
                             navigate(`/furniture/${collectionId}/${productId}`);
+
                         }}
 
                     />
@@ -230,8 +232,8 @@ export const FurnituresDetails: React.FC = () => {
                     handleCardClick={(productId) => {
                         const productDetails = getProductDetailsById(productId);
                         if (!productDetails) return;
-                        const {collection} = productDetails;
-                        navigate(`/furniture/${collection.id}/${productId}`);
+                        const {collection, category} = productDetails;
+                        navigate(`/${category.id}/${collection.id}/${productId}`);
                     }}
                 />
             </section>

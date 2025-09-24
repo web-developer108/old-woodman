@@ -42,6 +42,8 @@ export const DoorsDetails: React.FC = () => {
         getProductDetailsById,
         getCollectionsByCategoryId
     } = useProductCatalog();
+
+
     const lang = i18n.language as 'ru' | 'kk';
 
     const collection = getCollectionById(collectionId!);
@@ -51,6 +53,7 @@ export const DoorsDetails: React.FC = () => {
     const selectedProduct = useMemo(() => {
         return productId ? getProductById(productId) || items[0] : items[0];
     }, [productId, getProductById, items]);
+
     const productText = selectedProduct.text?.[lang] ?? [];
 
     const handleOneClick = () => {
@@ -230,7 +233,7 @@ export const DoorsDetails: React.FC = () => {
                                 index) => (
                                 <div className={styles.infoImage} key={index}>
 
-                                    <img key={index} src={item.heroImage} alt={item.heroAlt} className={styles.image}
+                                    <img src={item.heroImage} alt={item.heroAlt} className={styles.image}
                                          loading="lazy"/>
                                     <div className={styles.infoText}>
                                         <span>{getCollectionTitleById(item.id)}</span>
@@ -258,9 +261,8 @@ export const DoorsDetails: React.FC = () => {
                     handleCardClick={(productId) => {
                         const productDetails = getProductDetailsById(productId);
                         if (!productDetails) return;
-
-                        const {collection} = productDetails;
-                        navigate(`/furniture/${collection.id}/${productId}`);
+                        const {collection, category} = productDetails;
+                        navigate(`/${category.id}/${collection.id}/${productId}`);
                     }}
 
                 />
