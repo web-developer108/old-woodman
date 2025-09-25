@@ -98,6 +98,7 @@ export const FurnituresDetails: React.FC = () => {
     const product = getProductById(productId)
     if (!product) return null;
     const items = getCollectionById(collectionId!);
+    if (!items) return null;
     const filteredCollections = items?.items.filter(item => item.id !== productId)
     const productText = product.text?.[lang] ?? [];
 
