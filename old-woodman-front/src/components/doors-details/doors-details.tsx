@@ -92,7 +92,7 @@ export const DoorsDetails: React.FC = () => {
         checkOverflow();
         window.addEventListener('resize', checkOverflow);
         return () => window.removeEventListener('resize', checkOverflow);
-    }, [isMobile, lang]);
+    }, [isMobile, productId, lang]);
 
     useEffect(() => {
         setIsExpanded(false);

@@ -31,12 +31,6 @@ import gallery12 from '@assets/images/home/gallery12.webp';
 import gallery13 from '@assets/images/home/gallery13.webp';
 import gallery14 from '@assets/images/home/gallery14.webp';
 import gallery15 from '@assets/images/home/gallery15.webp';
-//import hero1 from '@assets/images/home/hero-one.webp';
-//import hero2 from '@assets/images/home/hero2.webp';
-//import hero3 from '@assets/images/home/hero3.webp';
-//import hero4 from '@assets/images/home/hero4.webp';
-//import hero5 from '@assets/images/home/hero5.webp';
-//import hero6 from '@assets/images/home/hero6.webp';
 import heroOne from '@assets/images/home/hero-one.webp'
 import styles from './home.module.scss'
 

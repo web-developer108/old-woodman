@@ -72,7 +72,7 @@
   "parameter-header.price" : "Стоимость *",
   "parameter-header.price.text" : "Указана примерная стоимость, точная зависит от размера и породы древесины.",
   "parameter-header.color" : "Цвет",
-  "parameter-header.color.text" : "Цвет и тип покрытия на Ваш выбор",
+  "parameter-header.color.text" : "Цвет и тип покрытия на Ваш выбор.",
   "parameter-header.materials" : "Материалы",
   "parameter-header.sizes" : "Размеры",
   "parameter-header.sizes.height" : "Высота",

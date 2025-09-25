@@ -88,7 +88,7 @@ export const FurnituresDetails: React.FC = () => {
         window.addEventListener('resize', checkOverflow);
 
         return () => window.removeEventListener('resize', checkOverflow);
-    }, [isMobile]);
+    }, [isMobile, productId, lang]);
 
     useEffect(() => {
         setIsExpanded(false);
