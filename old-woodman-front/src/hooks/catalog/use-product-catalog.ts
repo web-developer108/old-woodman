@@ -46,10 +46,6 @@ export const useProductCatalog = () => {
         itemId: string) =>
         collectionsMap.get(collectionId)?.collection.items?.find((item) => item.id === itemId);
 
-    const getItemTitleById = (collectionId: string,
-        itemId: string): string =>
-        getItemById(collectionId, itemId)?.title?.[lang] ?? '';
-
     const getProductById = (itemId: string): ProductItem | undefined =>
         productsMap.get(itemId);
 
@@ -83,7 +79,6 @@ export const useProductCatalog = () => {
         getCollectionById,
         getCollectionTitleById,
         getItemById,
-        getItemTitleById,
         getProductById,
         getCategoryByCollectionId,
         getProductDetailsById,
