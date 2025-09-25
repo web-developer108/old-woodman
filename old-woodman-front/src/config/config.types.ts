@@ -13,6 +13,7 @@ export interface ProductItem {
     titleMob?: LanguageText;
     description?: LanguageText;
     pageHeader?: LanguageText;
+    text?: LanguageTextArray;
     shortName: LanguageText;
     images: string[];
     price: number;
