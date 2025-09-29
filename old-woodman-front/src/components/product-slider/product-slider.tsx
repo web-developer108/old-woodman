@@ -40,7 +40,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
                                 <LikeButton productId={item.id}/>
                             </div>
                             <div className={styles.cardContent}>
-                                <div className={styles.textBlock}>
+                                <div className={styles.textBlock} onClick={() => handleCardClick(item.id)}>
                                     <p className={styles.title}>{isMobile && item.titleMob ? item.titleMob[lang] : item.title[lang]}</p>
                                     <p
                                         className={styles.description}>{item.description ? item.description[lang] : item.shortName[lang]}</p>
