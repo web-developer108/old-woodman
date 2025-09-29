@@ -1,7 +1,7 @@
 import { productCatalog } from '../config/products.config.ts';
 import type { ProductItem } from '../config/config.types.ts';
 
-const itemIds = ['asia', 'country', 'zhetysu', 'larch', 'provance', 'deco-cabinet', 'nova-iney', 'classica-dub', 'cabinet-paris', 'balcony-teak'];
+const itemIds = ['asia', 'country', 'zhetisu', 'larch', 'provance', 'deco-cabinet', 'nova-iney', 'classica-dub', 'cabinet-paris', 'balcony-teak'];
 
 interface GetRandomProductsOptions {
     count?: number;
