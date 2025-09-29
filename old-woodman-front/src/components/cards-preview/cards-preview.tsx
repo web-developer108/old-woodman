@@ -39,7 +39,7 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
             <div
                 className={styles.cardContent}>
                 <div
-                    className={styles.textBlock}>
+                    className={styles.textBlock} onClick={() => handleCardClick(item.id)} >
                     <p className={styles.title}>{item.title[lang]}</p>
                     <p className={styles.description}>{item.shortName[lang]}</p>
                     <p className={styles.price}>{t('price-label')} {item.price.toLocaleString()} ₸*</p>
