@@ -1,5 +1,5 @@
-import type { ProductItem } from '../config/config.types.ts'
-import type { WpProductItem } from "./wp.types.ts";
+import type { ProductCollection, ProductItem } from '../config/config.types.ts'
+import type { WpProductCollection, WpProductItem } from "../types/wp.types.ts";
 
 
 export function mapWpToProductItem(wpItem: WpProductItem): ProductItem {
@@ -67,4 +67,27 @@ export function mapWpToProductItem(wpItem: WpProductItem): ProductItem {
                 .map(Number),
         },
     };
+}
+
+
+export function mapWpToProductCollection(wpItem: WpProductCollection): ProductCollection {
+    const acf = wpItem.acf || {}
+
+    return {
+        id: acf.ID,
+        title: { ru: acf.title?.title_ru || '', kk: acf.title?.title_kk || '' },
+        heroImage: acf.hero_image || '',
+        heroAlt: acf.hero_alt || '',
+        heroDescription: {
+            ru: acf.hero_description?.hero_description_ru?.split(/\r?\n/) || [],
+            kk: acf.hero_description?.hero_description_kk?.split(/\r?\n/) || [],
+        },
+        heroComment: {
+            ru: acf.hero_comment?.hero_comment_ru || '',
+            kk: acf.hero_comment?.hero_comment_kk || '',
+        },
+        items: [], // позже заполним из списка продуктов
+        // 👇 можно добавить необязательное свойство для фронта
+        order: Number(acf.order ?? wpItem.menu_order ?? 0),
+    }
 }

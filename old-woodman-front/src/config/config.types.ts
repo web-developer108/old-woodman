@@ -36,6 +36,7 @@ export interface ProductCollection {
     heroDescription?: LanguageTextArray;
     heroComment?: LanguageText;
     items: ProductItem[];
+    order?: number;
 }
 
 export interface ProductCategory {

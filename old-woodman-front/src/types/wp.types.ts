@@ -60,3 +60,32 @@ export interface WpProductItem {
         collection_id?: string;
     };
 }
+
+export interface WpProductCollection {
+    id: number;
+    slug: string;
+    status: 'publish' | 'draft' | 'pending';
+    type: 'collection';
+    title: { rendered: string };
+    menu_order?: number;
+
+    acf: {
+        ID: string;
+        title: {
+            title_ru: string;
+            title_kk: string;
+        };
+        hero_image?: string;
+        hero_alt?: string;
+        hero_description?: {
+            hero_description_ru?: string;
+            hero_description_kk?: string;
+        };
+        hero_comment?: {
+            hero_comment_ru?: string;
+            hero_comment_kk?: string;
+        };
+        category_id?: string;
+        order?: string | number;
+    };
+}
