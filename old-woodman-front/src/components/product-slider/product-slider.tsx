@@ -27,8 +27,8 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
             </h3>
             <SimpleBar autoHide={false} className={styles.scrollContainer}>
                 <div className={styles.cardRow}>
-                    {items.map((item) => (
-                        <div key={item.id} className={styles.card}>
+                    {items.map((item, index) => (
+                        <div key={index} className={styles.card}>
                             <div className={styles.imageWrapper} onClick={() => handleCardClick(item.id)}>
                                 <img
                                     src={item.images[0]}

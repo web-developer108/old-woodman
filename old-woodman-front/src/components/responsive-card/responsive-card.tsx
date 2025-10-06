@@ -14,6 +14,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     comment,
     alt
 }) => {
+
     const {t} = useTranslation('common');
     const {
         isMobile,

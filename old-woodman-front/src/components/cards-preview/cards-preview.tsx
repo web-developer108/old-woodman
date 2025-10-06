@@ -21,8 +21,8 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
     return (<div
         className={containerClass}>
 
-        {items.map((item) => (<div
-            key={item.id}
+        {items.map((item,index) => (<div
+            key={index}
             className={styles.card}>
             <div
                 className={styles.imageWrapper}
