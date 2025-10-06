@@ -5,7 +5,7 @@ import type { WpCollectionResponse, WpProductResponse } from "../types/wp.types.
 export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
     const acf = wpItem.acf;
     return {
-        id: acf.id,
+        id: wpItem.title?.rendered,
         title: {
             ru: acf.title.title_ru,
             kk: acf.title.title_kk,

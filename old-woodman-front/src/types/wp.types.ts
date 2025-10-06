@@ -7,7 +7,7 @@ export interface WpProductItem {
     type: 'product';
     title: { rendered: string };
     acf: {
-        ID: string;
+        id: string;
         title: {
             title_ru: string;
             title_kk: string;
@@ -72,7 +72,7 @@ export interface WpProductCollection {
     menu_order?: number;
 
     acf: {
-        ID: string;
+        id: string;
         title: {
             title_ru: string;
             title_kk: string;
@@ -142,7 +142,14 @@ export interface WpCollectionACF {
     order?: string | number;
 }
 
-export type WpProductResponse = WpApiResponse<WpProductACF>;
+export interface WpProductResponse {
+    slug: string;
+    title: {
+        rendered: string;
+    };
+    acf: WpProductACF;
+}
+
 export type WpCollectionResponse = WpApiResponse<WpCollectionACF>;
 
 export interface UseProductCatalogReturn {

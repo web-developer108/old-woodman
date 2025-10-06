@@ -40,7 +40,10 @@ export const FurnituresDetails: React.FC = () => {
     const category = useCurrentCategory();
     const lang = i18n.language as 'ru' | 'kk';
     const item = getItemById(collectionId!, productId!);
-
+    if (!item) {
+        console.warn('[FurnituresDetails] item not found', { collectionId, productId });
+        return null;
+    }
     const images = item!.images;
 
     const handleOneClick = () => {
