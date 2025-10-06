@@ -105,7 +105,10 @@
         @media (max-width: 810px) {
           max-height: 72px;
         }
-
+        span{
+          display: block;
+          white-space: pre-line;
+        }
         &.expanded {
           max-height: none;
         }

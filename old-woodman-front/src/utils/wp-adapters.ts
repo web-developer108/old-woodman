@@ -1,9 +1,21 @@
 import type { ProductCollection, ProductItem } from '../config/config.types.ts'
-import type { WpCollectionResponse, WpProductResponse } from "../types/wp.types.ts";
+import type { WpCollectionResponse, WpProductResponse,WpProductACF } from "../types/wp.types.ts";
 
+const collectSizes = (prefix: 'width' | 'height' | 'depth', acf: WpProductACF): number[] => {
+    return (Object.keys(acf) as (keyof WpProductACF)[])
+        .filter((key): key is keyof WpProductACF =>
+           key.startsWith(`${prefix}_`)
+        )
+        .map((key) => {
+            const value = acf[key];
+            return typeof value === 'string' && value.trim() !== '' ? Number(value) : NaN;
+        })
+        .filter((v): v is number => !isNaN(v));
+};
 
 export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
     const acf = wpItem.acf;
+
     return {
         id: wpItem.title?.rendered,
         title: {
@@ -46,13 +58,19 @@ export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
             kk: acf.material?.material_kk || '',
         },
         set: {
-            ru: Object.values(acf.set || {}).filter(Boolean).slice(0, 4),
-            kk: Object.values(acf.set || {}).filter(Boolean).slice(4, 8),
+            ru: Object.entries(acf.set || {})
+                .filter(([key, value]) => key.startsWith('set_ru_item_') && value.trim() !== '')
+                .map(([, value]) => value.trim()),
+
+            kk: Object.entries(acf.set || {})
+                .filter(([key, value]) => key.startsWith('set_kk_item_') && value.trim() !== '')
+                .map(([, value]) => value.trim()),
         },
+
         sizes: {
-            width: Number(acf.width_1) || 0,
-            height: Number(acf.height_1) || 0,
-            depth: Number(acf.depth_1) || 0,
+            width: collectSizes('width', acf),
+            height: collectSizes('height', acf),
+            depth: collectSizes('depth', acf),
         },
         categoryId: acf.category_id,
         collectionId: acf.collection_id,

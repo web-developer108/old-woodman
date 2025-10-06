@@ -40,12 +40,8 @@ export const FurnituresDetails: React.FC = () => {
     const category = useCurrentCategory();
     const lang = i18n.language as 'ru' | 'kk';
     const item = getItemById(collectionId!, productId!);
-    if (!item) {
-        console.warn('[FurnituresDetails] item not found', { collectionId, productId });
-        return null;
-    }
-    const images = item!.images;
-
+    const product = item ?? getProductById(productId!);
+    const images = product?.images ?? [];
     const handleOneClick = () => {
         showModal(<OneClickModal id={productId!}/>);
     };
@@ -98,10 +94,13 @@ export const FurnituresDetails: React.FC = () => {
     }, [productId, lang]);
 
     if (!productId ) return null;
-    const product = getProductById(productId)
+   // const product = getProductById(productId)
     if (!product) return null;
     const items = getCollectionById(collectionId!);
-    if (!items) return null;
+    if (!item) {
+        console.warn('[FurnituresDetails] item not found', { collectionId, productId });
+        return null;
+    }
     const filteredCollections = items?.items.filter(item => item.id !== productId)
     const productText = product.text?.[lang] ?? [];
 
@@ -224,7 +223,7 @@ export const FurnituresDetails: React.FC = () => {
             {filteredCollections && filteredCollections.length >= 1 &&
                 <section className={styles.slider}>
                     <ProductSlider
-                        title={`${t('slider-header.same')}  ${items.title[lang]}`.toUpperCase()}
+                        title={`${t('slider-header.same')}  ${items?.title[lang]}`.toUpperCase()}
                         items={filteredCollections}
                         headingSize='large'
                         handleCardClick={(productId) => navigate(`/furniture/${collectionId}/${productId}`)}

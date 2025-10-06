@@ -1,19 +1,27 @@
 import type { LanguageTextArray, ProductItem } from "../config/config.types.ts";
 
-export function formatData(value: number | number[] | undefined) {
-    if (value === undefined) return '';
-    if (Array.isArray(value)) {
-        return value.map(v => `${v}см`).join(' / ');
-    }
-    return `${value}см`;
+export function formatData(value?: number | string | (number | string)[]): string {
+    if (!value) return '';
+    const values = Array.isArray(value) ? value : [value];
+
+    const formatted = values
+        .filter(Boolean)
+        .map((v) => `${v}см`);
+
+    return formatted.join(' / ');
 }
 
-export function formatSet(set?: LanguageTextArray, lang: 'ru' | 'kk' = 'ru') {
-    if (!set) return '';
-    const arr = set[lang];
-    if (!arr || arr.length === 0) return '';
-    return arr.join(' / ');
+
+export function formatSet(
+    set: { ru: string[]; kk: string[] },
+    lang: 'ru' | 'kk'
+): string {
+    if (!set || !set[lang]) return '';
+    const values = set[lang].filter((v) => v.trim() !== '');
+    return values.join(' / ');
 }
+
+
 
 const defaultOtherMaterials: LanguageTextArray = {
     ru: ['бука', 'ясеня', 'дуба'],
