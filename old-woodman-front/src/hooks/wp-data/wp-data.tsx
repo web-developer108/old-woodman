@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import type { WpProductResponse, WpCollectionResponse } from '@/types/wp-types'; // или твой путь
+import type { WpProductResponse, WpCollectionResponse } from '../../types/wp.types.ts'
 
 interface ProductDataContextValue {
     products: WpProductResponse[];
@@ -23,15 +23,6 @@ export const ProductDataProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
     useEffect(() => {
         const loadAll = async () => {
-            console.log('🔍 Fetching WP data...');
-            try {
-                const test = await fetch('https://oldwoodman.kz/cms/wp-json/wp/v2/products?per_page=1');
-                console.log('🔗 Test response:', test.status, test.statusText);
-                const json = await test.json();
-                console.log('📦 Test data sample:', json[0]);
-            } catch (e) {
-                console.error('❌ Test fetch failed:', e);
-            }
             try {
                 const [prodRes, collRes] = await Promise.all([
                     fetch('https://oldwoodman.kz/cms/wp-json/wp/v2/products?per_page=100'),
@@ -46,9 +37,6 @@ export const ProductDataProvider: React.FC<{ children: React.ReactNode }> = ({ c
                     prodRes.json(),
                     collRes.json(),
                 ]);
-
-                console.log('✅ WP products:', prodJson);
-                console.log('✅ WP collections:', collJson);
 
                 setProducts(prodJson);
                 setCollections(collJson);
@@ -69,7 +57,7 @@ export const ProductDataProvider: React.FC<{ children: React.ReactNode }> = ({ c
             }
         };
 
-        loadAll();
+        loadAll().catch((err) => console.error('WP load error:', err));
     }, []);
 
     return (

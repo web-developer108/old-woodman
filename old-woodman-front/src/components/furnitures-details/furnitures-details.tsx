@@ -61,7 +61,7 @@ export const FurnituresDetails: React.FC = () => {
             count: 5,
             excludeProductId: excludeIds,
         });
-    }, [productId]);
+    }, [getProductDetailsById, productId]);
 
     useEffect(() => {
         if (!productId || !images?.length) return;
