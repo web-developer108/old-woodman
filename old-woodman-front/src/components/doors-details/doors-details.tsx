@@ -144,7 +144,7 @@ export const DoorsDetails: React.FC = () => {
                     <div className={styles.imageBlock}>
                         <img
                             className={styles.mainImage}
-                            src={selectedProduct.images[0]}
+                            src={selectedProduct.images?.[0]}
                             alt={selectedProduct.alt}
                         />
                         <div className={styles.likeWrap}>
