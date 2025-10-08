@@ -74,3 +74,13 @@ export interface UseProductCatalogReturn {
         | null;
     getCollectionsByCategoryId: (categoryId: string) => ProductCollection[];
 }
+
+export interface WpPopularACF {
+    popular_items: string;
+}
+
+export interface WpPopularResponse {
+    id: number;
+    slug: string;
+    acf: WpPopularACF;
+}
