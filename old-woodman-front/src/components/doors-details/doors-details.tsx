@@ -34,7 +34,7 @@ export const DoorsDetails: React.FC = () => {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const textRef = useRef<HTMLDivElement>(null);
     const simpleBarRef = useRef<any>(null);
-
+    console.log('[DoorsDetails:params]', { collectionId, productId });
     const {
         getCollectionById,
         getCollectionTitleById,
@@ -46,30 +46,25 @@ export const DoorsDetails: React.FC = () => {
 
     const lang = i18n.language as 'ru' | 'kk';
 
-    const collection = getCollectionById(collectionId!);
+   // const collection = getCollectionById(collectionId!);
+    const collection = getCollectionById(collectionId ?? '');
 
-    const items = useMemo(() => collection?.items || [], [collection]);
-
+    console.log('[DoorsDetails:collection]', {
+        collectionId,
+        hasCollection: !!collection,
+        itemsCount: collection?.items.length ?? 0,
+    });
+    const items = useMemo(() => collection?.items ?? [], [collection]);
+    console.log('[DoorsDetails:items]', items.map(i => i.id));
     const selectedProduct = useMemo(() => {
-        return productId ? getProductById(productId) || items[0] : items[0];
+        return productId ? getProductById(productId) ?? items[0] : items[0];
     }, [productId, getProductById, items]);
+    console.log('[DoorsDetails:product]', {
+        requestedId: productId,
+        found: !!selectedProduct,
+        resolvedId: selectedProduct?.id,
+    });
 
-    const productText = selectedProduct.text?.[lang] ?? [];
-
-    const handleOneClick = () => {
-        showModal(<OneClickModal id={selectedProduct.id}/>);
-    };
-    const handleCartClick = () => {
-        addToCart(selectedProduct.id)
-        showModal(<CartModal id={selectedProduct.id}/>);
-    };
-
-    const doorCollections = getCollectionsByCategoryId('doors');
-    const filteredCollections = useMemo(
-        () =>
-            doorCollections.filter(c => c.id !== collection?.id),
-        [doorCollections, collection?.id]
-    );
 
 
     useEffect(() => {
@@ -98,11 +93,32 @@ export const DoorsDetails: React.FC = () => {
         setIsExpanded(false);
     }, [productId, lang]);
 
-    useEffect(() => {
+ /*   useEffect(() => {
         simpleBarRef.current?.recalculate();
-    }, [filteredCollections]);
+    }, [filteredCollections]);*/
 
-    const randomCollection = useMemo(() => {
+
+
+    if (!collection || !selectedProduct) return null;
+    const productText = selectedProduct.text?.[lang] ?? [];
+
+    const handleOneClick = () => {
+        showModal(<OneClickModal id={selectedProduct.id}/>);
+    };
+    const handleCartClick = () => {
+        addToCart(selectedProduct.id)
+        showModal(<CartModal id={selectedProduct.id}/>);
+    };
+
+    const doorCollections = getCollectionsByCategoryId('doors');
+  /*  const filteredCollections = useMemo(
+        () =>
+            doorCollections.filter(c => c.id !== collection?.id),
+        [doorCollections, collection?.id]
+    );*/
+
+    const filteredCollections = doorCollections.filter((c) => c.id !== collection.id);
+/*    const randomCollection = useMemo(() => {
         if (!productId)
         {
             return [];
@@ -113,9 +129,13 @@ export const DoorsDetails: React.FC = () => {
             count: 5,
             excludeProductId: excludeIds,
         });
-    }, [productId]);
-
-    if (!collection || !selectedProduct) return null;
+    }, [productId]);*/
+    const randomCollection = (() => {
+        if (!productId) return [];
+        const details = getProductDetailsById(productId);
+        const excludeIds = details?.collection?.items.map((i) => i.id) ?? [];
+        return getRandomProducts({ count: 5, excludeProductId: excludeIds });
+    })();
 
     return (
         <>

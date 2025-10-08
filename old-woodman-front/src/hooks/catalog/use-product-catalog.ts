@@ -166,9 +166,13 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
         productsMap.get(itemId);
 
     const getCategoryByCollectionId = (collectionId: string): ProductCategory | undefined => {
-        const categoryId = collectionsMap.get(collectionId)?.categoryId;
-        if (!categoryId) return undefined;
+        const collection = collections.find(col => col.id === collectionId);
+        if (!collection) return undefined;
 
+        // у коллекции уже есть categoryId — берём его
+        const categoryId = collection.categoryId;
+
+        // возвращаем объект категории на основе categoryId
         const titleMap: Record<string, LanguageText> = {
             doors: { ru: 'Двери', kk: 'Есіктер' },
             furniture: { ru: 'Мебель', kk: 'Жиһаз' },
@@ -176,11 +180,17 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
             gifts: { ru: 'Подарки', kk: 'Сыйлықтар' },
         };
 
+        if (!categoryId || !titleMap[categoryId]) return undefined;
+
         return {
             id: categoryId,
-            title: titleMap[categoryId] ?? { ru: categoryId, kk: categoryId },
-            collections: collections.filter((col) => col.categoryId === categoryId),
+            title: titleMap[categoryId],
+            collections: collections.filter(col => col.categoryId === categoryId),
         };
+    };
+    const getCategoryIdByCollectionId = (collectionId: string): string | undefined => {
+        const collection = collections.find(col => col.id === collectionId);
+        return collection?.categoryId;
     };
 
     const getProductDetailsById = (productId: string) => {
@@ -208,5 +218,6 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
         getCategoryByCollectionId,
         getProductDetailsById,
         getCollectionsByCategoryId,
+        getCategoryIdByCollectionId
     };
 };
