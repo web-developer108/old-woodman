@@ -6,6 +6,7 @@ import { useCart } from '../../hooks/cart/cart.tsx';
 import { useModal } from '../../hooks/modal/use-modal.ts';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import { useRandomProducts } from "../../hooks/random-products/random-products.tsx";
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
 import { ImageSlider } from '../image-slider/image-slider.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
@@ -14,7 +15,6 @@ import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-butto
 import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.tsx';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
-import { getRandomProducts } from '../../utils/get-random-item.ts';
 import { formatSet, formatData, formatMaterialsText } from "../../utils/format-data.ts";
 import styles from '../doors-details/doors-details.module.scss';
 
@@ -39,32 +39,30 @@ export const FurnituresDetails: React.FC = () => {
     } = useProductCatalog();
     const category = useCurrentCategory();
     const lang = i18n.language as 'ru' | 'kk';
-    const item = getItemById(collectionId!, productId!);
-    const product = item ?? getProductById(productId!);
-    const images = product?.images ?? [];
-    const handleOneClick = () => {
-        showModal(<OneClickModal id={productId!}/>);
-    };
-    const handleCartClick = () => {
-        addToCart(productId!)
-        showModal(<CartModal id={productId!}/>);
-    };
 
-    const randomCollection = useMemo(() => {
-        if (!productId)
-        {
-            return [];
-        }
-        const details = getProductDetailsById(productId);
-        const excludeIds = details?.collection?.items.map((item) => item.id) ?? [];
-        return getRandomProducts({
-            count: 5,
-            excludeProductId: excludeIds,
-        });
-    }, [getProductDetailsById, productId]);
+    const item = getItemById(collectionId ?? '', productId ?? '');
+    const product = item ?? getProductById(productId ?? '');
+    const images = useMemo(() => product?.images ?? [], [product]);
+    const details = getProductDetailsById(productId);
+    const excludeIds = useMemo(
+        () => details?.collection?.items.map((i) => i.id) ?? [],
+        [details]
+    );
+    const newRandom = useRandomProducts({
+        count: 5,
+        excludeProductId: excludeIds,
+    });
+
+    const randomCollectionRef = useRef<ProductItem[]>(newRandom);
 
     useEffect(() => {
-        if (!productId || !images?.length) return;
+        randomCollectionRef.current = newRandom;
+    }, [productId]);
+
+    const randomCollection = randomCollectionRef.current;
+
+    useEffect(() => {
+        if (!productId || images.length === 0) return;
         const index = images.findIndex((img) =>
             img.includes(productId)
         );
@@ -93,17 +91,21 @@ export const FurnituresDetails: React.FC = () => {
         setIsExpanded(false);
     }, [productId, lang]);
 
-    if (!productId ) return null;
-   // const product = getProductById(productId)
-    if (!product) return null;
-    const items = getCollectionById(collectionId!);
-    if (!item) {
-        console.warn('[FurnituresDetails] item not found', { collectionId, productId });
-        return null;
-    }
-    const filteredCollections = items?.items.filter(item => item.id !== productId)
+    if (!productId || !product) return null;
+
+    const collection = getCollectionById(collectionId ?? '');
+
+    const filteredCollections = collection?.items.filter(item => item.id !== productId)
     const productText = product.text?.[lang] ?? [];
 
+    const handleOneClick = () => {
+        showModal(<OneClickModal id={productId}/>);
+    };
+
+    const handleCartClick = () => {
+        addToCart(productId)
+        showModal(<CartModal id={productId}/>);
+    };
 
     return (
         <>
@@ -223,7 +225,7 @@ export const FurnituresDetails: React.FC = () => {
             {filteredCollections && filteredCollections.length >= 1 &&
                 <section className={styles.slider}>
                     <ProductSlider
-                        title={`${t('slider-header.same')}  ${items?.title[lang]}`.toUpperCase()}
+                        title={`${t('slider-header.same')}  ${collection?.title[lang]}`.toUpperCase()}
                         items={filteredCollections}
                         headingSize='large'
                         handleCardClick={(productId) => navigate(`/furniture/${collectionId}/${productId}`)}

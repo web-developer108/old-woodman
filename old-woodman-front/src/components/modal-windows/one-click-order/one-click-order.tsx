@@ -72,7 +72,7 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
         onIncrease={increase}
         onDecrease={decrease}
       />
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form  id={'form'} className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="text"

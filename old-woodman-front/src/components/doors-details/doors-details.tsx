@@ -5,8 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-import useDevice from '../../hooks/device/use-device.ts';
 import { useModal } from '../../hooks/modal/use-modal.ts';
+import { useRandomProducts } from "../../hooks/random-products/random-products.tsx";
+import useDevice from '../../hooks/device/use-device.ts';
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ImageSlider } from '../image-slider/image-slider.tsx';
 import { LikeButton } from '../buttons/like-button/like-button.tsx';
@@ -18,7 +19,6 @@ import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
-import { getRandomProducts } from '../../utils/get-random-item.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
@@ -34,7 +34,7 @@ export const DoorsDetails: React.FC = () => {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const textRef = useRef<HTMLDivElement>(null);
     const simpleBarRef = useRef<any>(null);
-    console.log('[DoorsDetails:params]', { collectionId, productId });
+
     const {
         getCollectionById,
         getCollectionTitleById,
@@ -46,25 +46,32 @@ export const DoorsDetails: React.FC = () => {
 
     const lang = i18n.language as 'ru' | 'kk';
 
-   // const collection = getCollectionById(collectionId!);
     const collection = getCollectionById(collectionId ?? '');
 
-    console.log('[DoorsDetails:collection]', {
-        collectionId,
-        hasCollection: !!collection,
-        itemsCount: collection?.items.length ?? 0,
-    });
     const items = useMemo(() => collection?.items ?? [], [collection]);
-    console.log('[DoorsDetails:items]', items.map(i => i.id));
+
     const selectedProduct = useMemo(() => {
         return productId ? getProductById(productId) ?? items[0] : items[0];
     }, [productId, getProductById, items]);
-    console.log('[DoorsDetails:product]', {
-        requestedId: productId,
-        found: !!selectedProduct,
-        resolvedId: selectedProduct?.id,
+
+    const details = getProductDetailsById(productId);
+    const excludeIds = useMemo(
+        () => details?.collection?.items.map((i) => i.id) ?? [],
+        [details]
+    );
+
+    const newRandom = useRandomProducts({
+        count: 5,
+        excludeProductId: excludeIds,
     });
 
+    const randomCollectionRef = useRef<ProductItem[]>(newRandom);
+
+    useEffect(() => {
+        randomCollectionRef.current = newRandom;
+    }, [productId]);
+
+    const randomCollection = randomCollectionRef.current;
 
 
     useEffect(() => {
@@ -93,11 +100,6 @@ export const DoorsDetails: React.FC = () => {
         setIsExpanded(false);
     }, [productId, lang]);
 
- /*   useEffect(() => {
-        simpleBarRef.current?.recalculate();
-    }, [filteredCollections]);*/
-
-
 
     if (!collection || !selectedProduct) return null;
     const productText = selectedProduct.text?.[lang] ?? [];
@@ -111,31 +113,8 @@ export const DoorsDetails: React.FC = () => {
     };
 
     const doorCollections = getCollectionsByCategoryId('doors');
-  /*  const filteredCollections = useMemo(
-        () =>
-            doorCollections.filter(c => c.id !== collection?.id),
-        [doorCollections, collection?.id]
-    );*/
 
     const filteredCollections = doorCollections.filter((c) => c.id !== collection.id);
-/*    const randomCollection = useMemo(() => {
-        if (!productId)
-        {
-            return [];
-        }
-        const details = getProductDetailsById(productId);
-        const excludeIds = details?.collection?.items.map((item) => item.id) ?? [];
-        return getRandomProducts({
-            count: 5,
-            excludeProductId: excludeIds,
-        });
-    }, [productId]);*/
-    const randomCollection = (() => {
-        if (!productId) return [];
-        const details = getProductDetailsById(productId);
-        const excludeIds = details?.collection?.items.map((i) => i.id) ?? [];
-        return getRandomProducts({ count: 5, excludeProductId: excludeIds });
-    })();
 
     return (
         <>

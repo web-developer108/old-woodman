@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
-import type { ProductItem } from '../../config/config.types.ts';
 import { useCart } from '../../hooks/cart/cart.tsx';
 import { PhoneInput } from '../phone-input/phone-input.tsx';
 import { ColorButton } from '../buttons/color-button/color-button.tsx';
 import { useCurrentCategory } from '../../hooks/current-category/current-category.ts';
+import type { ProductItem } from '../../config/config.types.ts';
 import styles from './order-summary.module.scss'
 
 export const OrderSummary: React.FC<{
@@ -65,7 +65,7 @@ export const OrderSummary: React.FC<{
         {products.map((p) => (
           <div key={p.id} className={styles.item}>
             <div>
-              <div>{p.title[lang]}</div>
+              <div>{(p.title[lang])}</div>
               {category === 'doors' && <div>{p.description?.[lang]}</div>}
               {category === 'furniture' && <div>{p.shortName?.[lang]}</div>}
             </div>
@@ -77,7 +77,7 @@ export const OrderSummary: React.FC<{
         <span>{t('order-summary.sum')}</span>
         <span>{total.toLocaleString()} ₸</span>
       </div>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form id={'form'} className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="text"

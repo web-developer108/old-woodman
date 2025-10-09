@@ -11,10 +11,6 @@ interface GTMProviderProps {
 export const GTMProvider: React.FC<GTMProviderProps> = ({ children }) => {
   const location = useLocation();
 
-  /*useEffect(() => {
-    initGTM(gtmId);
-  }, [gtmId]);
-*/
   useEffect(() => {
     pushGTMEvent({
       event: 'pageview',

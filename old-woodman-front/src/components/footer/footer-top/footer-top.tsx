@@ -68,7 +68,7 @@ export const FooterTop = () => {
 
       <div className={styles.formContainer}>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form id={'form'} onSubmit={handleSubmit} className={styles.form}>
           <textarea
             className={styles.message}
             placeholder={t('footer.placeholder.message')}
