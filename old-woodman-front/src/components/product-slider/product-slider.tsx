@@ -18,7 +18,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
     const {isMobile} = useDevice();
     const {i18n, t} = useTranslation('common');
     const lang = i18n.language as 'ru' | 'kk';
-    const category = useCurrentCategory()
+    const category = useCurrentCategory();
 
     return (
         <div className={styles.wrapper}>
