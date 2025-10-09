@@ -25,6 +25,7 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange }) => {
       onChange={handleChange}
       placeholder={t('footer.placeholder.phone')}
       required
+      name="phone"
     />
 
   );

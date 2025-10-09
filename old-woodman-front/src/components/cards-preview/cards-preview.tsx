@@ -29,7 +29,8 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
                 onClick={() => handleCardClick(item.id)}>
                 <CardImageSlider
                     images={item.images}
-                    alt={item.alt}/>
+                    alt={item.alt}
+                    categoryId={item.categoryId}/>
             </div>
             <div
                 className={styles.likeWrap}>

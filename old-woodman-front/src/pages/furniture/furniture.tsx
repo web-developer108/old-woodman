@@ -88,7 +88,6 @@ const FurnitureOverview: React.FC = () => {
 
                 {collections.map((collection) => {
                     const {id, heroImage, heroAlt, heroDescription, heroComment, title, items = []} = collection;
-                    console.log(`[FurnitureOverview] collection: ${id}`, items);
                     return (
                         <React.Fragment key={id}>
                             <ResponsiveCard
