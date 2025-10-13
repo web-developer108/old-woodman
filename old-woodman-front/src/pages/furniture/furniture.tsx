@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useProductData } from "../../hooks/wp-data/wp-data.tsx";
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
@@ -25,6 +26,7 @@ import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
 import styles from '../doors/doors.module.scss';
+import { Loader } from "../../components/loader/loader.tsx";
 
 const galleryImages = [
     {
@@ -59,6 +61,7 @@ const FurnitureOverview: React.FC = () => {
     const lang = i18n.language as 'ru' | 'kk';
     const navigate = useNavigate();
     const {getCollectionsByCategoryId} = useProductCatalog();
+    const { isLoaded } = useProductData();
 
     const collections = getCollectionsByCategoryId('furniture');
 
@@ -85,6 +88,10 @@ const FurnitureOverview: React.FC = () => {
                 <div className={styles.socialButtons}>
                     <SocialButtons/>
                 </div>
+
+                {!isLoaded &&
+                    <Loader/>
+                }
 
                 {collections.map((collection) => {
                     const {id, heroImage, heroAlt, heroDescription, heroComment, title, items = []} = collection;
