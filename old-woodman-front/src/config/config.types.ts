@@ -28,6 +28,7 @@ export interface ProductItem {
     };
     collectionId?: string;
     categoryId?: string;
+    order?: number;
 }
 
 export interface ProductCollection {

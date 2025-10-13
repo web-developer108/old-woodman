@@ -12,7 +12,7 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
 
     const products: ProductItem[] = useMemo(() => {
         if (!wpProducts?.length) return [];
-        return wpProducts.map(mapWpToProductItem);
+        return wpProducts.map(mapWpToProductItem).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));;
     }, [wpProducts]);
 
     const collections: ProductCollection[] = useMemo(() => {

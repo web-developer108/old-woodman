@@ -178,6 +178,7 @@ export const DoorsDetails: React.FC = () => {
                             {productText.map((line,
                                 i) => (
                                 <p key={i}>{line}</p>
+
                             ))}
 
                             <p>{t('common.description')}</p>

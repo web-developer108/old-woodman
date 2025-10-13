@@ -15,7 +15,13 @@ const collectSizes = (prefix: 'width' | 'height' | 'depth', acf: WpProductACF): 
 
 export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
     const acf = wpItem.acf;
-
+    const splitText = (text?: string): string[] =>
+        text
+            ? text
+                .split(/\r?\n+/)
+                .map((line) => line.trim())
+                .filter(Boolean)
+            : [];
     return {
         id: wpItem.title?.rendered,
         title: {
@@ -35,8 +41,8 @@ export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
             kk: acf.page_header?.page_header_kk || '',
         },
         text: {
-            ru: acf.text?.ru ? [acf.text.ru] : [],
-            kk: acf.text?.kk ? [acf.text.kk] : [],
+            ru: splitText(acf.text?.ru),
+            kk: splitText(acf.text?.kk),
         },
         shortName: {
             ru: acf.short_name.short_name_ru,
@@ -74,6 +80,7 @@ export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
         },
         categoryId: acf.category_id,
         collectionId: acf.collection_id,
+        order: Number(acf.order) || 1,
     };
 };
 

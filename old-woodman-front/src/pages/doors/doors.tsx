@@ -48,7 +48,6 @@ const DoorsOverview = () => {
     const [visibleCount, setVisibleCount] = useState(3);
     const collections = getCollectionsByCategoryId('doors');
     const visibleCollections = collections.slice(0, visibleCount);
-
     return (<ToolPageLayout>
         <div className={styles.mainContainer}>
             <PictureHeader
