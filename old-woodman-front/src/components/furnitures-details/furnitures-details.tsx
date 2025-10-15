@@ -118,6 +118,7 @@ export const FurnituresDetails: React.FC = () => {
                             className={styles.mainImage}
                             src={product.images[selectedIndex]}
                             alt={product.alt}
+                            fetchPriority="high"
                         />
                         <div className={styles.likeWrap}>
                             <LikeButton productId={product.id}/>
