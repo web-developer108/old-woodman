@@ -1,3 +1,4 @@
+import React from "react";
 import { AppColors } from '../../styles.ts';
 import styles from './logo.module.scss';
 

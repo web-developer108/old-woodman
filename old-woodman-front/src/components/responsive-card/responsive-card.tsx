@@ -74,7 +74,6 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                         <span className={styles.readMoreCircle}>
                         <CircleButton
                             icon={<ArrowDownIcon/>}
-                            //убрать t('button.aria-label.open')
                             bgColor={AppColors.text.light}
                             ariaLabel={t('button.aria-label.close')}
                             onClick={() => setIsExpanded(false)}

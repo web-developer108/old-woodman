@@ -1,8 +1,8 @@
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
-import styles from '../promotions/promotions.module.scss';
 import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
+import styles from '../promotions/promotions.module.scss';
 
 const Promotions = () => {
   const { t } = usePageTranslate()

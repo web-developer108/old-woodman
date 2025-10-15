@@ -34,61 +34,55 @@ import gallery15 from '@assets/images/home/gallery15.webp';
 import heroOne from '@assets/images/home/hero-one.webp'
 import styles from './home.module.scss'
 
-const galleryImages = [{
-    src: gallery1,
-    alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'
-}, {
-    src: gallery2,
-    alt: 'Белая двустворчатая деревянная дверь в интерьере гостиной'
-}, {
-    src: gallery4,
-    alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки'
-}, {
-    src: gallery3,
-    alt: 'Элемент деревянной двери со стеклопакетом для балкона '
-}, {
-    src: gallery5,
-    alt: 'Дубовые шкафы с резьбой в интерьере'
-}, {
-    src: gallery6,
-    alt: 'Набор мебели для террасы: барный стол и четыре табурета в интерьере в итальянском стиле'
-}, {
-    src: gallery7,
-    alt: 'Низкая деревянная кровать  в японском стиле'
-}, {
-    src: gallery8,
-    alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
-}, {
-    src: gallery9,
-    alt: 'Тумба под раковину рукомойник для саузла отеля или кафе на заказ'
-}, {
-    src: gallery10,
-    alt: 'Подстолье деревянного стола из массива карагача с красивым рисунком и фактурой натурального дерева'
-}, {
-    src: gallery11,
-    alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля'
-}, {
-    src: gallery12,
-    alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной'
-}, {
-    src: gallery13,
-    alt: 'Фрагмент деревянной рамы для зеркала'
-}, {
-    src: gallery14,
-    alt: 'Барный табурет на четырёх ножках из массива листвнницы, ручная работа'
-}, {
-    src: gallery15,
-    alt: 'Обеденный разброный стол из массива карагача в нтерьере современной кухни'
-},];
-/*const heroImages = [
-  { src: hero1, alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере' },
-  { src: hero2, alt: 'Добавить alt' },
-  { src: hero3, alt: 'Добавить alt' },
-  { src: hero4, alt: 'Добавить alt' },
-  { src: hero5, alt: 'Добавить alt' },
-  { src: hero6, alt: 'Добавить alt' },
+const galleryImages = [
+    {
+        src: gallery1,
+        alt: 'Деревянная тумбочка на высоких ножках в стиле минимализм в классическом интерьере'
+    }, {
+        src: gallery2,
+        alt: 'Белая двустворчатая деревянная дверь в интерьере гостиной'
+    }, {
+        src: gallery4,
+        alt: 'Элемент подлокотника кресла из бука на фоне бирюзовой обивки'
+    }, {
+        src: gallery3,
+        alt: 'Элемент деревянной двери со стеклопакетом для балкона '
+    }, {
+        src: gallery5,
+        alt: 'Дубовые шкафы с резьбой в интерьере'
+    }, {
+        src: gallery6,
+        alt: 'Набор мебели для террасы: барный стол и четыре табурета в интерьере в итальянском стиле'
+    }, {
+        src: gallery7,
+        alt: 'Низкая деревянная кровать  в японском стиле'
+    }, {
+        src: gallery8,
+        alt: 'Винтажное новое кресло из массива с буковыми подлокотниками бирюзового цвета для гостиной'
+    }, {
+        src: gallery9,
+        alt: 'Тумба под раковину рукомойник для саузла отеля или кафе на заказ'
+    }, {
+        src: gallery10,
+        alt: 'Подстолье деревянного стола из массива карагача с красивым рисунком и фактурой натурального дерева'
+    }, {
+        src: gallery11,
+        alt: 'Эксклюзивная деревянная дверь в стиле шато в интерьере загородного отеля'
+    }, {
+        src: gallery12,
+        alt: 'Деревяная классическая дверь из массива сосны в интерьере гостиной'
+    }, {
+        src: gallery13,
+        alt: 'Фрагмент деревянной рамы для зеркала'
+    }, {
+        src: gallery14,
+        alt: 'Барный табурет на четырёх ножках из массива листвнницы, ручная работа'
+    }, {
+        src: gallery15,
+        alt: 'Обеденный разброный стол из массива карагача в нтерьере современной кухни'
+    },
+];
 
-];*/
 
 const NavigationBlock = lazy(() => import('../../components/navigation-block/navigation-block'));
 const Gallery = lazy(() => import('../../components/gallery/gallery'));
@@ -99,18 +93,12 @@ const Home = () => {
     const {showModal} = useModal();
     const navigationRef = useRef<HTMLElement | null>(null);
     const faqRef = useRef<HTMLElement | null>(null);
-    //const [currentIndex, setCurrentIndex] = useState(1);
-    //const [transitionEnabled, setTransitionEnabled] = useState(true);
-    /*  const extendedImages = [
-        heroImages[heroImages.length - 1],
-        ...heroImages,
-        heroImages[0],
-      ];*/
 
 
     useEffect(() => {
         const hash = window.location.hash;
-        if (hash === '#faq' && faqRef.current) {
+        if (hash === '#faq' && faqRef.current)
+        {
             faqRef.current.scrollIntoView({behavior: 'smooth'});
         }
     }, []);
@@ -125,64 +113,10 @@ const Home = () => {
             document.head.removeChild(link);
         };
     }, []);
-    /* useEffect(() => {
-       const interval = setInterval(() => {
-         setCurrentIndex(prev => prev + 1);
-         setTransitionEnabled(true);
-       }, 3000);
-       return () => clearInterval(interval);
-     }, []);*/
 
-    /* const handleTransitionEnd = () => {
-       if (currentIndex === extendedImages.length - 1) {
-         setTransitionEnabled(false);
-         setCurrentIndex(1);
-       } else if (currentIndex === 0) {
-         setTransitionEnabled(false);
-         setCurrentIndex(heroImages.length);
-       } else {
-         setTransitionEnabled(true);
-       }
-     };
-   */
     return (<ToolPageLayout>
         <div className={styles.homePageContainer}>
             <section className={styles.hero}>
-                {/* <div className={styles.imageWrapper}>
-            <img src={overlay} className={styles.overlay} alt="Интерьер"/>
-            <div className={styles.heroContent}>
-              <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
-              <div className={styles.description}>{t('hero.description')}</div>
-              <div className={styles.buttonWrapper}>
-                <ColorButton
-                  label={t('hero.button')}
-                  icon={<ArrowBottomIcon/>}
-                  onClick={() =>
-                    navigationRef.current?.scrollIntoView({ behavior: 'smooth' })
-                  }
-                />
-              </div>
-            </div>
-            <div className={styles.sliderTrackWrapper}>
-              <div
-                className={styles.sliderTrack}
-                style={{
-                  transform: `translateX(-${currentIndex * 100}%)`,
-                  transition: transitionEnabled ? 'transform 1s ease' : 'none',
-                }}
-                onTransitionEnd={handleTransitionEnd}
-              >
-                {extendedImages.map((src, index) => (
-                  <img
-                    key={index}
-                    src={src.src}
-                    className={styles.heroImage}
-                    alt={src.alt}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>*/}
                 <div className={styles.imageWrapper}>
                     <img src={heroOne} className={styles.heroImage}
                          alt="Элемент деревянного мебельного фасада для классического платяного шкафа из дуба с готической резьбой"/>

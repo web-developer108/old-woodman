@@ -12,7 +12,7 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
 
     const products: ProductItem[] = useMemo(() => {
         if (!wpProducts?.length) return [];
-        return wpProducts.map(mapWpToProductItem).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));;
+        return wpProducts.map(mapWpToProductItem).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     }, [wpProducts]);
 
     const collections: ProductCollection[] = useMemo(() => {
@@ -74,8 +74,6 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
         };
     };
 
-    const getCategoryIdByCollectionId = (collectionId: string): string | undefined =>
-        collectionsMap.get(collectionId)?.categoryId;
 
     const getProductDetailsById = (productId: string) => {
         const product = productsMap.get(productId);
@@ -100,6 +98,6 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
         getCategoryByCollectionId,
         getProductDetailsById,
         getCollectionsByCategoryId,
-        getCategoryIdByCollectionId,
+
     };
 };

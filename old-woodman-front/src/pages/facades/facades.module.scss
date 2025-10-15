@@ -34,16 +34,9 @@
       .columnFirst {
         grid-column: 1;
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
         row-gap: 70px;
 
-        @media (max-width: 1200px) {
-         // row-gap: px;
-
-        }
-        @media (max-width: 810px) {
-          //flex-direction: column;
-        }
       }
 
       .columnSecond {
@@ -55,6 +48,7 @@
         @media (max-width: 1200px) {
           grid-column: 1;
         }
+
         .infoTitle {
           font-size: 18px;
           line-height: 1.5;

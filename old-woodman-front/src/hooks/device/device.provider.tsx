@@ -16,7 +16,7 @@ const DeviceProvider = (props: React.PropsWithChildren) => {
       );
     };
 
-    updateSize(); // инициализируем сразу
+    updateSize();
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
   }, []);

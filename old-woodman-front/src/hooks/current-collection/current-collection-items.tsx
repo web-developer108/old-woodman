@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useProductCatalog } from "../catalog/use-product-catalog.ts";
-//import { productCatalog } from '../../config/products.config.ts';
 
 export const useCurrentCollectionItems = () => {
     const {pathname} = useLocation();
@@ -23,8 +22,6 @@ export const useCurrentCollectionItems = () => {
             alt: item.alt ?? '',
         }));
     }
-
-    // 🟢 если категория = мебель → показываем изображения одного продукта
     if (categoryId === 'furniture') {
         const product = getProductById(productId ?? '');
         if (!product) return [];
@@ -36,6 +33,5 @@ export const useCurrentCollectionItems = () => {
         }));
     }
 
-    // 🔸 fallback
     return [];
 };

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export const useSimpleBarRecalc = (ref: React.RefObject<any>) => {
   useEffect(() => {

@@ -14,6 +14,7 @@ import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import Gallery from '../../components/gallery/gallery.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
+import { Loader } from "../../components/loader/loader.tsx";
 import gallery1 from '@assets/images/furniture/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/furniture/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
@@ -26,7 +27,6 @@ import bg from '@assets/images/home/bg-blue.webp';
 import small from '@assets/images/home/furniture-2.webp';
 import big from '@assets/images/home/furniture-1.webp';
 import styles from '../doors/doors.module.scss';
-import { Loader } from "../../components/loader/loader.tsx";
 
 const galleryImages = [
     {
