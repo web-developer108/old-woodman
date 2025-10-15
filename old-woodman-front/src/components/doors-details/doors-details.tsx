@@ -19,7 +19,7 @@ import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { ArrowRightIcon } from '../icons/arrow-right-icon/arrow-right-icon.tsx';
 import { CommonButtonsBlock } from '../buttons/common-buttons-block/common-buttons-block.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
-import {ProductItem} from '../../config/config.types.ts';
+import type { ProductItem } from '../../config/config.types.ts';
 import { AppColors } from '../../styles.ts';
 import styles from './doors-details.module.scss';
 
@@ -30,7 +30,10 @@ export const DoorsDetails: React.FC = () => {
     const {isMobile} = useDevice();
     const {isInCart, addToCart} = useCart();
     const {showModal} = useModal()
-    const { id: productId, collectionId } = useParams<{ id: string; collectionId: string }>();
+    const {id: productId, collectionId} = useParams<{
+        id: string;
+        collectionId: string
+    }>();
     const [isExpanded, setIsExpanded] = useState(false);
     const [isOverflowing, setIsOverflowing] = useState(false);
     const textRef = useRef<HTMLDivElement>(null);
@@ -52,7 +55,8 @@ export const DoorsDetails: React.FC = () => {
     const items = useMemo(() => collection?.items ?? [], [collection]);
 
     const selectedProduct = useMemo(() => {
-        return productId ? getProductById(productId) ?? items[0] : items[0];
+        if (!productId) return items[0];
+        return getProductById(productId) ?? items[0];
     }, [productId, getProductById, items]);
 
     const details = getProductDetailsById(productId);

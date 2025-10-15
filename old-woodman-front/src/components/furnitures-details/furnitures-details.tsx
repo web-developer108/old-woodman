@@ -16,7 +16,7 @@ import { OneClickModal } from '../modal-windows/one-click-order/one-click-order.
 import { CartModal } from '../modal-windows/cart-modal/cart-modal.tsx';
 import { ProductSlider } from '../product-slider/product-slider.tsx';
 import { formatSet, formatData, formatMaterialsText } from "../../utils/format-data.ts";
-import {ProductItem} from '../../config/config.types.ts';
+import type { ProductItem } from '../../config/config.types.ts';
 import styles from '../doors-details/doors-details.module.scss';
 
 export const FurnituresDetails: React.FC = () => {
@@ -26,7 +26,9 @@ export const FurnituresDetails: React.FC = () => {
     const {isInCart, addToCart} = useCart();
     const {showModal} = useModal()
     const {collectionId} = useParams();
-    const {id: productId} = useParams<{id:string}>();
+    const {id: productId} = useParams<{
+        id: string
+    }>();
     const [isExpanded, setIsExpanded] = useState(false);
     const [isOverflowing, setIsOverflowing] = useState(false);
     const textRef = useRef<HTMLDivElement>(null);
@@ -41,8 +43,11 @@ export const FurnituresDetails: React.FC = () => {
     const category = useCurrentCategory();
     const lang = i18n.language as 'ru' | 'kk';
 
-    const item = getItemById(collectionId ?? '', productId ?? '');
-    const product = item ?? getProductById(productId ?? '');
+    const item = collectionId && productId
+        ? getItemById(collectionId, productId)
+        : null;
+
+    const product = item ?? (productId ? getProductById(productId) : null);
     const images = useMemo(() => product?.images ?? [], [product]);
     const details = getProductDetailsById(productId);
     const excludeIds = useMemo(
