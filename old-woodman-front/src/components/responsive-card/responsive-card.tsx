@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
@@ -25,7 +25,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     const descriptionRef = useRef<HTMLParagraphElement>(null);
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (descriptionRef.current)
         {
             const el = descriptionRef.current;
