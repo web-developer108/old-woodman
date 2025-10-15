@@ -49,7 +49,7 @@ export const FurnituresDetails: React.FC = () => {
 
     const product = item ?? (productId ? getProductById(productId) : null);
     const images = useMemo(() => product?.images ?? [], [product]);
-    const details = getProductDetailsById(productId);
+    const details = getProductDetailsById(productId!);
     const excludeIds = useMemo(
         () => details?.collection?.items.map((i) => i.id) ?? [],
         [details]

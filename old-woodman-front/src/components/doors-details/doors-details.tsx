@@ -59,7 +59,7 @@ export const DoorsDetails: React.FC = () => {
         return getProductById(productId) ?? items[0];
     }, [productId, getProductById, items]);
 
-    const details = getProductDetailsById(productId);
+    const details = getProductDetailsById(productId!);
     const excludeIds = useMemo(
         () => details?.collection?.items.map((i) => i.id) ?? [],
         [details]
