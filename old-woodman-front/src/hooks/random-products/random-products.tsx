@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useProductCatalog } from '../catalog/use-product-catalog.ts'
 import { useProductData } from '../wp-data/wp-data.tsx';
-import type { ProductItem } from '../config/config.types';
+import type { ProductItem } from '../../config/config.types.ts';
 
 interface UseRandomProductsOptions {
     count?: number;

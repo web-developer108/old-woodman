@@ -31,6 +31,7 @@ export interface WpProductACF {
     depth_1?: string;
     category_id: string;
     collection_id: string;
+    order?: number;
 }
 export interface WpCollectionACF {
     id: string;
@@ -75,3 +76,12 @@ export interface UseProductCatalogReturn {
     getCollectionsByCategoryId: (categoryId: string) => ProductCollection[];
 }
 
+export interface WpPopularACF {
+    popular_items: string;
+}
+
+export interface WpPopularResponse {
+    id: number;
+    slug: string;
+    acf: WpPopularACF;
+}

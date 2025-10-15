@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import type { WpProductResponse, WpCollectionResponse } from '../../types/wp.types.ts'
+import type { WpProductResponse, WpCollectionResponse, WpPopularResponse  } from '../../types/wp.types.ts'
 
 interface ProductDataContextValue {
     products: WpProductResponse[];

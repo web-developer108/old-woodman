@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import type { LanguageText } from "../../config/config.types.ts";
 import type { BreadcrumbsProps } from './breadcrumbs.types.ts';
 import styles from './breadcrumbs.module.scss'
 

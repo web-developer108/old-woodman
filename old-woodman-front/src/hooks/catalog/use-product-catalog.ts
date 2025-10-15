@@ -78,7 +78,7 @@ export const useProductCatalog = (): UseProductCatalogReturn => {
     const getProductDetailsById = (productId: string) => {
         const product = productsMap.get(productId);
         if (!product) return null;
-
+        if (!product.collectionId) return null;
         const collection = collectionsMap.get(product.collectionId);
         const category = collection ? getCategoryByCollectionId(collection.id) : undefined;
         if (!collection || !category) return null;
