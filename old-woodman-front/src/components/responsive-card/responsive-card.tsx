@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useDevice from '../../hooks/device/use-device.ts';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
@@ -14,6 +14,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     comment,
     alt
 }) => {
+
     const {t} = useTranslation('common');
     const {
         isMobile,
@@ -24,7 +25,7 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     const descriptionRef = useRef<HTMLParagraphElement>(null);
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (descriptionRef.current)
         {
             const el = descriptionRef.current;
@@ -73,7 +74,6 @@ export const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
                         <span className={styles.readMoreCircle}>
                         <CircleButton
                             icon={<ArrowDownIcon/>}
-                            //убрать t('button.aria-label.open')
                             bgColor={AppColors.text.light}
                             ariaLabel={t('button.aria-label.close')}
                             onClick={() => setIsExpanded(false)}

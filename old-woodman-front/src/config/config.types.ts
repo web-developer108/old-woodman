@@ -26,6 +26,9 @@ export interface ProductItem {
         height: number | number [];
         depth: number | number [];
     };
+    collectionId?: string;
+    categoryId?: string;
+    order?: number;
 }
 
 export interface ProductCollection {
@@ -36,6 +39,8 @@ export interface ProductCollection {
     heroDescription?: LanguageTextArray;
     heroComment?: LanguageText;
     items: ProductItem[];
+    order?: number;
+    categoryId?: string;
 }
 
 export interface ProductCategory {

@@ -9,26 +9,29 @@ import { FavoritesProvider } from './hooks/favorites/favorites.tsx';
 import { ModalProvider } from './hooks/modal/modal.provider.tsx';
 import { ScrollToTop } from './components/scroll-to-top/scroll-to-top.tsx';
 import { FooterRefProvider } from './hooks/footer-ref/footer-ref.provider.tsx';
+import { ProductDataProvider } from './hooks/wp-data/wp-data.tsx'
 import './i18n/index.ts';
 import './styles.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <GTMProvider gtmId="GTM-W4Q26KB9">
-      <ScrollToTop/>
-      <DeviceProvider>
-        <CartProvider>
-          <FavoritesProvider>
-            <FooterRefProvider>
-              <ModalProvider>
-                <App/>
-              </ModalProvider>
-            </FooterRefProvider>
-          </FavoritesProvider>
-        </CartProvider>
-      </DeviceProvider>
-      </GTMProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <GTMProvider gtmId="GTM-W4Q26KB9">
+                <ScrollToTop/>
+                <DeviceProvider>
+                    <ProductDataProvider>
+                        <CartProvider>
+                            <FavoritesProvider>
+                                <FooterRefProvider>
+                                    <ModalProvider>
+                                        <App/>
+                                    </ModalProvider>
+                                </FooterRefProvider>
+                            </FavoritesProvider>
+                        </CartProvider>
+                    </ProductDataProvider>
+                </DeviceProvider>
+            </GTMProvider>
+        </BrowserRouter>
+    </React.StrictMode>
 )

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
+import { useModal } from '../../../hooks/modal/use-modal.ts';
 import { OvalButton } from '../oval-button/oval-button.tsx';
 import { GearWheelIcon } from '../../icons/gear-wheel-icon/gear-wheel-icon.tsx';
 import { PriceIcon } from '../../icons/price-icon/price-icon.tsx';
 import { WarrantyIcon } from '../../icons/warranty-icon/warranty-icon.tsx';
 import { TermsIcon } from '../../icons/terms-icon/terms-icon.tsx';
 import styles from './common-buttons-block.module.scss'
-import { useModal } from '../../../hooks/modal/use-modal.ts';
 
 export const CommonButtonsBlock = () => {
   const { t } = useTranslation('common');

@@ -26,9 +26,6 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
   const increase = () => setQuantity((q) => q + 1);
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
-  /*const orderDetails =
-    `${productData?.product.title[lang]}, ${productData?.product.description![lang]} — ${quantity} шт. = ${((productData?.product.price || 0) * quantity).toLocaleString()} ₸`;
-  */
   const orderDetails = `${productData?.product.title[lang]}, 
   ${productData?.product.description?.[lang] || productData?.product.shortName} — 
   ${quantity} шт. = ${((productData?.product.price || 0) * quantity).toLocaleString()} ₸`;
@@ -72,7 +69,7 @@ export const OneClickModal: React.FC<OrderProps> = ({ id }) => {
         onIncrease={increase}
         onDecrease={decrease}
       />
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form  id={'form'} className={styles.form} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="text"

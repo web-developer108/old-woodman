@@ -14,112 +14,116 @@ import styles from './image-slider.module.scss'
 
 
 export const ImageSlider: React.FC<SliderProps> = ({
-  selectedIndex,
-  onSelect,
+    selectedIndex,
+    onSelect,
 }) => {
-  const images = useCurrentCollectionItems();
-  const { isMobile } = useDevice();
-  const { t } = useTranslation('common');
-  const category = useCurrentCategory();
-  const simpleBarRef = useRef<any>(null);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [isOverflowing, setIsOverflowing] = useState(false);
+    const images = useCurrentCollectionItems();
+    const {isMobile} = useDevice();
+    const {t} = useTranslation('common');
+    const category = useCurrentCategory();
+    const simpleBarRef = useRef<any>(null);
+    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [isOverflowing, setIsOverflowing] = useState(false);
 
-  const getScrollElement = () => simpleBarRef.current?.getScrollElement?.() as HTMLDivElement | null;
-  const checkOverflow = useCallback(() => {
-    const el = getScrollElement();
-    if (el) {
-      setIsOverflowing(el.scrollWidth > el.clientWidth);
-    }
-  }, []);
-  useEffect(() => {
-    if (
-      selectedIndex !== undefined &&
-      selectedIndex >= 0 &&
-      selectedIndex < images.length
-    ) {
-      scrollToIndex(selectedIndex);
-    }
-  }, [selectedIndex, images.length]);
-  useEffect(() => {
-    checkOverflow();
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
-  }, [images, checkOverflow]);
+    const getScrollElement = () => simpleBarRef.current?.getScrollElement?.() as HTMLDivElement | null;
+    const checkOverflow = useCallback(() => {
+        const el = getScrollElement();
+        if (el)
+        {
+            setIsOverflowing(el.scrollWidth > el.clientWidth);
+        }
+    }, []);
+    useEffect(() => {
+        if (
+            selectedIndex !== undefined &&
+            selectedIndex >= 0 &&
+            selectedIndex < images.length
+        )
+        {
+            scrollToIndex(selectedIndex);
+        }
+    }, [selectedIndex, images.length]);
+    useEffect(() => {
+        checkOverflow();
+        window.addEventListener('resize', checkOverflow);
+        return () => window.removeEventListener('resize', checkOverflow);
+    }, [images, checkOverflow]);
 
-  const scrollToIndex = (index: number) => {
-    const target = itemRefs.current[index];
-    const scrollEl = simpleBarRef.current?.getScrollElement?.();
+    const scrollToIndex = (index: number) => {
+        const target = itemRefs.current[index];
+        const scrollEl = simpleBarRef.current?.getScrollElement?.();
 
-    if (target && scrollEl) {
-      const { left: targetLeft, width: targetWidth } = target.getBoundingClientRect();
-      const { left: scrollLeft, width: scrollWidth } = scrollEl.getBoundingClientRect();
-      const offset = targetLeft - scrollLeft - (scrollWidth - targetWidth) / 2;
+        if (target && scrollEl)
+        {
+            const {left: targetLeft, width: targetWidth} = target.getBoundingClientRect();
+            const {left: scrollLeft, width: scrollWidth} = scrollEl.getBoundingClientRect();
+            const offset = targetLeft - scrollLeft - (scrollWidth - targetWidth) / 2;
 
-      scrollEl.scrollBy({ left: offset, behavior: 'smooth' });
-      onSelect?.(index);
-    }
-  };
+            scrollEl.scrollBy({left: offset, behavior: 'smooth'});
+            onSelect?.(index);
+        }
+    };
 
-  const handlePrev = () => {
-    if (selectedIndex === undefined || selectedIndex <= 0) return;
-    scrollToIndex(selectedIndex - 1);
-  };
+    const handlePrev = () => {
+        if (selectedIndex === undefined || selectedIndex <= 0) return;
+        scrollToIndex(selectedIndex - 1);
+    };
 
-  const handleNext = () => {
-    if (selectedIndex === undefined || selectedIndex >= images.length - 1) return;
-    scrollToIndex(selectedIndex + 1);
-  };
-  return (
-    <div className={styles.sliderWrapper}>
-      <SimpleBar autoHide={false} className={styles.simpleBar} ref={simpleBarRef}>
-        <div className={styles.scrollContainer}>
-          {images.map((img, i) => (
-            <div
-              key={i}
-              ref={(el) => {
-                itemRefs.current[i] = el;
-              }}
-              className={`
+    const handleNext = () => {
+        if (selectedIndex === undefined || selectedIndex >= images.length - 1) return;
+        scrollToIndex(selectedIndex + 1);
+    };
+    return (
+        <div className={styles.sliderWrapper}>
+            <SimpleBar autoHide={false} className={styles.simpleBar} ref={simpleBarRef}>
+                <div className={styles.scrollContainer}>
+                    {images.map((img,
+                        i) => (
+                        <div
+                            key={i}
+                            ref={(el) => {
+                                itemRefs.current[i] = el;
+                            }}
+                            className={`
         ${styles.card} 
         ${selectedIndex === i ? styles.selected : ''} 
         ${i > 0 && category === 'furniture' ? styles.full : ''}
       `}
-              onClick={() => scrollToIndex(i)}
-            >
-              <img src={img.src} alt={img.alt} className={styles.image}/>
+                            onClick={() => scrollToIndex(i)}
+                        >
+                            <img src={img.src} alt={img.alt} className={styles.image}/>
 
+                        </div>
+                    ))}
+                </div>
+            </SimpleBar>
+
+            <div className={styles.textWrap}>
+                {selectedIndex !== undefined && (
+                    <div className={styles.caption}>{images[selectedIndex]?.label}</div>
+                )}
+
+                {isOverflowing && !isMobile && (
+                    <div className={styles.navButton}>
+                        <CircleButton
+                            bgColor={AppColors.background.grey}
+                            ariaLabel={t('aria-label-left')}
+                            icon={<DirectionLeftIcon/>}
+                            onClick={handlePrev}
+                            disabledColor={AppColors.background.circleButton}
+                            disabled={selectedIndex === 0}
+                        />
+                        <CircleButton
+                            bgColor={AppColors.background.grey}
+                            ariaLabel={t('aria-label-right')}
+                            icon={<DirectionRightIcon/>}
+                            onClick={handleNext}
+                            disabledColor={AppColors.background.circleButton}
+                            disabled={selectedIndex === images.length - 1}
+                        />
+                    </div>
+                )}
             </div>
-          ))}
         </div>
-      </SimpleBar>
-
-      <div className={styles.textWrap}>
-        {selectedIndex !== undefined && (
-          <div className={styles.caption}>{images[selectedIndex]?.label}</div>
-        )}
-
-        {isOverflowing && !isMobile && (
-          <div className={styles.navButton}>
-            <CircleButton
-              bgColor={AppColors.background.grey}
-              ariaLabel={t('aria-label-left')}
-              icon={<DirectionLeftIcon/>}
-              onClick={handlePrev}
-              disabledColor={AppColors.background.circleButton}
-              disabled={selectedIndex === 0}
-            />
-            <CircleButton
-              bgColor={AppColors.background.grey}
-              ariaLabel={t('aria-label-right')}
-              icon={<DirectionRightIcon/>}
-              onClick={handleNext}
-              disabledColor={AppColors.background.circleButton}
-              disabled={selectedIndex === images.length - 1}
-            />
-          </div>
-        )}
-      </div>
-    </div>
-  );
+    );
 };

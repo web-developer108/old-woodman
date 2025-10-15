@@ -1,11 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { CircleButton } from '../buttons/circle-button/circle-button.tsx';
 import { TelegramIcon } from '../icons/telegram-icon/telegram-icon.tsx';
 import { WhatsappIcon } from '../icons/whatsapp-icon/whatsapp-icon.tsx';
 import { InstagramIcon } from '../icons/instagram-icon/instagram-icon.tsx';
 import { AppColors } from '../../styles.ts';
 import styles from './social-panel.module.scss';
-import { useTranslation } from 'react-i18next';
 
 export const SocialPanel: React.FC = () => {
   const { t } = useTranslation('common');

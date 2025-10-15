@@ -21,15 +21,16 @@ export const CardsPreview: React.FC<CardsPreviewProps> = ({
     return (<div
         className={containerClass}>
 
-        {items.map((item) => (<div
-            key={item.id}
+        {items.map((item,index) => (<div
+            key={index}
             className={styles.card}>
             <div
                 className={styles.imageWrapper}
                 onClick={() => handleCardClick(item.id)}>
                 <CardImageSlider
                     images={item.images}
-                    alt={item.alt}/>
+                    alt={item.alt}
+                    categoryId={item.categoryId}/>
             </div>
             <div
                 className={styles.likeWrap}>

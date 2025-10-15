@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useRandomProducts} from "../../hooks/random-products/random-products.tsx";
+import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { FaceIcon } from '../../components/icons/face-icon/face-icon.tsx';
 import { useFavorites } from '../../hooks/favorites/favorites.tsx';
 import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
-import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
-import { useNavigate } from 'react-router-dom';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
-import { getRandomProducts } from '../../utils/get-random-item.ts';
 import type { ProductItem } from '../../config/config.types.ts';
 import styles from './favorites.module.scss'
 
@@ -23,12 +23,11 @@ const Favorites = () => {
       .map((fav) => getProductById(fav.id))
       .filter((item): item is ProductItem => !!item);
   }, [favorites, getProductById]);
-  const randomCollection = useMemo(() => {
-    return getRandomProducts({
-      count: 5,
-      excludeProductId: favorites.map((item) => item.id),
+
+    const randomCollection = useRandomProducts({
+        count: 4,
+        excludeProductId: favorites.map((item) => item.id),
     });
-  }, [favorites]);
   return (
     <ToolPageLayout>
       <div className={styles.favContainer}>

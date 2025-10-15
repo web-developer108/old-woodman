@@ -1,8 +1,8 @@
-import React, {useRef, useState} from "react";
-import type {CardImageSliderProps} from "./card-image-slider.types.ts";
+import React, { useRef, useState } from "react";
+import type { CardImageSliderProps } from "./card-image-slider.types.ts";
 import styles from "./card-image-slider.module.scss";
 
-export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, className }) => {
+export const CardImageSlider: React.FC<CardImageSliderProps> = ({images, alt, categoryId}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHover, setIsHover] = useState(false);
     const startXRef = useRef<number | null>(null);
@@ -27,10 +27,13 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
         if (startXRef.current === null) return;
         const diff = e.touches[0].clientX - startXRef.current;
 
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
+        if (Math.abs(diff) > 50)
+        {
+            if (diff > 0)
+            {
                 prev();
-            } else {
+            } else
+            {
                 next();
             }
             startXRef.current = null;
@@ -41,26 +44,27 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
         startXRef.current = null;
     };
 
+    const sliderClass = `${styles.slider} ${categoryId === 'doors' ? styles.doors : ''}`;
     return (
         <div
-            className={`${styles.slider} ${className}`}
+            className={sliderClass}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
-            <img src={images[currentIndex]} alt={alt} className={styles.image} />
+            <img src={images[currentIndex]} alt={alt} className={styles.image}/>
 
             {isHover && window.innerWidth > 810 && images.length > 1 && (
                 <>
                     <button className={`${styles.arrow} ${styles.prev}`} onClick={(e) => {
-                        e.stopPropagation(); // останавливаем всплытие, чтобы не вызывался handleCardClick
+                        e.stopPropagation();
                         prev();
                     }}>
                         &#10094;
                     </button>
-                    <button className={`${styles.arrow} ${styles.next}`}  onClick={(e) => {
+                    <button className={`${styles.arrow} ${styles.next}`} onClick={(e) => {
                         e.stopPropagation();
                         next();
                     }}>
@@ -70,7 +74,8 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({ images, alt, c
             )}
 
             <div className={styles.dots}>
-                {images.map((_, i) => (
+                {images.map((_,
+                    i) => (
                     <span
                         key={i}
                         className={`${styles.dot} ${i === currentIndex ? styles.active : ''}`}

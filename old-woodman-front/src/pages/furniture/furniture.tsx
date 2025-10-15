@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate.ts';
+import { useProductData } from "../../hooks/wp-data/wp-data.tsx";
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { PictureHeader } from '../../components/picture-header/picture-header.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
@@ -13,6 +14,7 @@ import { CardsPreview } from '../../components/cards-preview/cards-preview.tsx';
 import Gallery from '../../components/gallery/gallery.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
+import { Loader } from "../../components/loader/loader.tsx";
 import gallery1 from '@assets/images/furniture/gallery/gallery-1.webp';
 import gallery2 from '@assets/images/furniture/gallery/gallery-2.webp';
 import gallery3 from '@assets/images/furniture/gallery/gallery-3.webp';
@@ -59,6 +61,7 @@ const FurnitureOverview: React.FC = () => {
     const lang = i18n.language as 'ru' | 'kk';
     const navigate = useNavigate();
     const {getCollectionsByCategoryId} = useProductCatalog();
+    const { isLoaded } = useProductData();
 
     const collections = getCollectionsByCategoryId('furniture');
 
@@ -86,9 +89,12 @@ const FurnitureOverview: React.FC = () => {
                     <SocialButtons/>
                 </div>
 
+                {!isLoaded &&
+                    <Loader/>
+                }
+
                 {collections.map((collection) => {
                     const {id, heroImage, heroAlt, heroDescription, heroComment, title, items = []} = collection;
-
                     return (
                         <React.Fragment key={id}>
                             <ResponsiveCard

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToolPageLayout } from '../../components/tool-page-layout/tool-page-layout.tsx';
 import { useProductCatalog } from '../../hooks/catalog/use-product-catalog.ts';
 import { usePageTranslate } from '../../hooks/page-translate/page-translate';
+import { useProductData} from "../../hooks/wp-data/wp-data.tsx";
 import { PictureHeader } from '../../components/picture-header/picture-header';
 import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs.tsx';
 import { RunningText } from '../../components/running-text/running-text.tsx';
@@ -10,6 +11,7 @@ import { ResponsiveCard } from '../../components/responsive-card/responsive-card
 import { SectionTabs } from '../../components/section-tabs/section-tabs.tsx';
 import { SocialButtons } from '../../components/buttons/social-buttons/social-buttons.tsx';
 import { ProductSlider } from '../../components/product-slider/product-slider.tsx';
+import { Loader } from "../../components/loader/loader.tsx";
 import Gallery from '../../components/gallery/gallery.tsx';
 import NavigationBlock from '../../components/navigation-block/navigation-block.tsx';
 import TextInfo from '../../components/text-info/text-info.tsx';
@@ -44,11 +46,11 @@ const DoorsOverview = () => {
     const {t, i18n} = usePageTranslate();
     const lang = i18n.language as 'ru' | 'kk';
     const {getCollectionsByCategoryId} = useProductCatalog();
+    const { isLoaded } = useProductData();
     const navigate = useNavigate();
     const [visibleCount, setVisibleCount] = useState(3);
     const collections = getCollectionsByCategoryId('doors');
     const visibleCollections = collections.slice(0, visibleCount);
-
     return (<ToolPageLayout>
         <div className={styles.mainContainer}>
             <PictureHeader
@@ -71,7 +73,9 @@ const DoorsOverview = () => {
                 <div className={styles.socialButtons}>
                     <SocialButtons/>
                 </div>
-
+                {!isLoaded &&
+                <Loader/>
+                }
                 {visibleCollections.map((collection) => {
                     const {
                         id,

@@ -1,10 +1,10 @@
 import React from 'react';
-import type { LikeButtonProps } from './like-button.types.ts';
-import { useFavorites } from '../../../hooks/favorites/favorites.tsx';
 import useDevice from '../../../hooks/device/use-device.ts';
-import { LikeIcon } from '../../icons/like-icon/like-icon.tsx';
-import styles from './like-button.module.scss'
+import { useFavorites } from '../../../hooks/favorites/favorites.tsx';
 import { useTranslation } from 'react-i18next';
+import { LikeIcon } from '../../icons/like-icon/like-icon.tsx';
+import type { LikeButtonProps } from './like-button.types.ts';
+import styles from './like-button.module.scss'
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ productId }) => {
   const { t } = useTranslation('common');
