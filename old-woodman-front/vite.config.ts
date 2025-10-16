@@ -10,4 +10,15 @@ export default defineConfig({
       '@assets': '/src/assets',
     },
   },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom'],
+
+                    ui: ['react-i18next', 'simplebar-react'],
+                },
+            },
+        },
+    },
 });
