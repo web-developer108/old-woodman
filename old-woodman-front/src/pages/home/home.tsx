@@ -102,23 +102,16 @@ const Home = () => {
             faqRef.current.scrollIntoView({behavior: 'smooth'});
         }
     }, []);
-    useEffect(() => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = heroOne;
-        document.head.appendChild(link);
 
-        return () => {
-            document.head.removeChild(link);
-        };
-    }, []);
 
     return (<ToolPageLayout>
         <div className={styles.homePageContainer}>
             <section className={styles.hero}>
                 <div className={styles.imageWrapper}>
-                    <img src={heroOne} className={styles.heroImage}
+                    <img src={heroOne}
+                         className={styles.heroImage}
+                         fetchPriority='high'
+                         loading="eager"
                          alt="Элемент деревянного мебельного фасада для классического платяного шкафа из дуба с готической резьбой"/>
                     <div className={styles.heroContent}>
                         <h1 className={styles.title}>{(t('hero.title')).toUpperCase()}</h1>
