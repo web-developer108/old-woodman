@@ -1,0 +1,1 @@
+import{j as t}from"./index-C5Uq8mPh.js";import"./ui-CvrfViwR.js";const s=()=>t.jsx("svg",{width:"14",height:"15",viewBox:"0 0 14 15",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:t.jsx("path",{d:"M13 8.4L7 14M7 14L1 8.4M7 14L7 -2.62268e-07",stroke:"#222222",strokeWidth:"1.15"})});export{s as A};

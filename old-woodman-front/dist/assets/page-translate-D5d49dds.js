@@ -1,0 +1,1 @@
+import{u as s}from"./ui-CvrfViwR.js";import{c as e}from"./index-C5Uq8mPh.js";const n=o=>o.split("/").filter(Boolean)[0]||"home",m=o=>{const t=e(),a=n(t.pathname);return s([a,"common"])};export{m as u};
