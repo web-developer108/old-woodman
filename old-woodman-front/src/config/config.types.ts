@@ -15,6 +15,8 @@ export interface ProductItem {
     pageHeader?: LanguageText;
     text?: LanguageTextArray;
     shortName: LanguageText;
+    seoTitle?: LanguageText;
+    seoDescription?: LanguageText;
     images: string[];
     price: number;
     time?: number;

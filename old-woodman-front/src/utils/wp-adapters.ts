@@ -48,6 +48,14 @@ export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
             ru: acf.short_name.short_name_ru,
             kk: acf.short_name.short_name_kk,
         },
+        seoTitle: {
+            ru: acf.seo_title?.seo_title_ru || '',
+            kk: acf.seo_title?.seo_title_kk || '',
+        },
+        seoDescription: {
+            ru: acf.seo_description?.seo_description_ru || '',
+            kk: acf.seo_description?.seo_description_kk || '',
+        },
         images: [
             acf.image_1,
             acf.image_2,

@@ -15,6 +15,8 @@ export interface WpProductACF {
     page_header?: { page_header_ru: string; page_header_kk: string };
     text?: { ru: string; kk: string };
     short_name: { short_name_ru: string; short_name_kk: string };
+    seo_title?: { seo_title_ru: string; seo_title_kk: string; };
+    seo_description?: { seo_description_ru: string; seo_description_kk: string; };
     image_1?: string | false;
     image_2?: string | false;
     image_3?: string | false;
