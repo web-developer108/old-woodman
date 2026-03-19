@@ -120,6 +120,21 @@ export const DoorsDetails: React.FC = () => {
     const doorCollections = getCollectionsByCategoryId('doors');
 
     const filteredCollections = doorCollections.filter((c) => c.id !== collection.id);
+    const doorWidth = Array.isArray(selectedProduct.sizes?.width)
+        ? selectedProduct.sizes.width[0]
+        : selectedProduct.sizes?.width;
+
+    const doorHeight = Array.isArray(selectedProduct.sizes?.height)
+        ? selectedProduct.sizes.height[0]
+        : selectedProduct.sizes?.height;
+
+    const hasDoorSize =
+        typeof doorWidth === 'number' &&
+        typeof doorHeight === 'number';
+
+    const doorSizeText = hasDoorSize
+        ? `${t('parameter-header.sizes.text-1')} ${doorWidth}x${doorHeight} см.`
+        : t('parameter-header.sizes.text-1.default');
 
     return (
         <>
@@ -227,7 +242,7 @@ export const DoorsDetails: React.FC = () => {
                         <h2>{t('parameter-header.materials').toUpperCase()}</h2>
                         <span>{t('parameter-header.materials.text')}</span>
                         <h2>{t('parameter-header.sizes').toUpperCase()}</h2>
-                        <span>{t('parameter-header.sizes.text-1')}</span>
+                        <span>{doorSizeText}</span>
                         <span>{t('parameter-header.sizes.text-2')}</span>
                         <h2>{t('parameter-header.color').toUpperCase()}</h2>
                         <span>{t('parameter-header.color.text')}</span>
