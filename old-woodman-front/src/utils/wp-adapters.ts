@@ -23,7 +23,7 @@ export const mapWpToProductItem = (wpItem: WpProductResponse): ProductItem => {
                 .filter(Boolean)
             : [];
     return {
-        id: wpItem.title?.rendered,
+        id: acf.id || wpItem.title?.rendered || wpItem.slug,
         title: {
             ru: acf.title.title_ru,
             kk: acf.title.title_kk,

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oldwoodman.kz/sitemap.xml
+Sitemap: https://oldwoodman.kz/cms/frontend-sitemap.xml
